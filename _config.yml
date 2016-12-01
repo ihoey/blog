@@ -1,0 +1,107 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 梦魇小栈
+subtitle: 专注于分享
+description: 心，若没有栖息的地方，到哪里都是流浪......
+author: henry
+language: zh-Hans
+timezone: Asia/Shanghai
+avatar: http://of2np1oao.bkt.clouddn.com/ihoey/imgavatar.png
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://blog.ihoey.com
+root: /
+permalink: posts/:category/:year-:month-:day-:title.html
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 5
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+- type: git 
+  repo: git@git.coding.net:ihoey/blog.git,master
+- type: git 
+  repo: git@github.com:houyi1121/houyi1121.github.io.git,master
+- type: baidu_url_submitter
+
+  
+#百度分享
+baidu_analytics: 199400a900d7a62bfff2335224e096d8
+#多说
+duoshuo_shortname: stack
+#设置文章页数
+
+# hexo sitemap网站地图
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+index_generator:
+  per_page: 5
+
+archive_generator:
+  per_page: 20
+  yearly: true
+  monthly: true
+
+tag_generator:
+  per_page: 10
+
+#百度提交
+baidu_url_submit:
+  count: 5 ## 比如3，代表提交最新的三个链接
+  host: blog.ihoey.com ## 在百度站长平台中注册的域名
+  token: 7wRDqX7vpc1l69Uu ## 请注意这是您的秘钥， 请不要发布在公众仓库里!
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里

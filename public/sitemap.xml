@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ihoey.com/about/index.html</loc>
+    
+    <lastmod>2016-12-01T15:00:43.091Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ihoey.com/links/index.html</loc>
     
-    <lastmod>2016-11-28T15:01:57.074Z</lastmod>
+    <lastmod>2016-12-01T15:00:22.975Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ihoey.com/guestbook/index.html</loc>
+    
+    <lastmod>2016-12-01T14:59:48.371Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.ihoey.com/categories/index.html</loc>
+    
+    <lastmod>2016-12-01T09:02:05.604Z</lastmod>
     
   </url>
   
@@ -19,20 +40,6 @@
     <loc>http://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
     
     <lastmod>2016-11-27T02:31:03.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ihoey.com/about/index.html</loc>
-    
-    <lastmod>2016-11-26T12:38:47.471Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ihoey.com/guestbook/index.html</loc>
-    
-    <lastmod>2016-11-26T12:27:16.606Z</lastmod>
     
   </url>
   
@@ -194,13 +201,6 @@
     <loc>http://blog.ihoey.com/tags/index.html</loc>
     
     <lastmod>2016-11-10T15:04:16.289Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ihoey.com/categories/index.html</loc>
-    
-    <lastmod>2016-11-09T01:56:23.565Z</lastmod>
     
   </url>
   
