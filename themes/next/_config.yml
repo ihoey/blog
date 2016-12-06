@@ -74,10 +74,10 @@ scheme: Mist
 # - Introduce in 5.0.1
 # ---------------------------------------------------------------
 font:
-  enable: true
+  enable: false
 
-  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
-  host:
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default) //fonts.useso.com
+  host: 
 
   # Global font settings used on <body> element.
   global:
@@ -89,7 +89,7 @@ font:
   # Fallback to `global` font settings.
   headings:
     external: true
-    family:
+    family: Roboto Slab
 
   # Font settings for posts
   # Fallback to `global` font settings.
@@ -102,13 +102,13 @@ font:
   # The `size` option use `px` as unit
   logo:
     external: true
-    family:
+    family: Lobster Two
     size:
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
+    family: PT Mono
 
 
 
@@ -145,7 +145,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-#avatar:
+#avatar: http://of2np1oao.bkt.clouddn.com/ihoey/imgavatar.png
 
 
 # Table Of Contents in the Sidebar
@@ -159,7 +159,7 @@ toc:
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-#creative_commons: by-nc-sa
+# creative_commons: by-nc-sa
 #creative_commons:
 
 
@@ -218,7 +218,7 @@ scroll_to_more: true
 # Automatically Excerpt. Not recommand.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: true
+  enable: false
   length: 50
 
 
@@ -239,7 +239,7 @@ wechat_subscriber:
 
 # MathJax Support
 mathjax:
-  enable: true
+  enable: false
   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 
@@ -250,7 +250,8 @@ mathjax:
 #baidu_analytics:
 
 # Duoshuo ShortName
-#duoshuo_shortname:
+#多说
+duoshuo_shortname: stack
 
 # Disqus
 #disqus_shortname:
@@ -284,11 +285,11 @@ google_analytics: UA-87991666-1
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
-duoshuo_info:
-  ua_enable: false
-  admin_enable: false
-  user_id: 0
-  #admin_nickname: Author
+# duoshuo_info:
+#   ua_enable: false
+#   admin_enable: false
+#   user_id: 0
+#   admin_nickname: Author
 
 
 # Facebook SDK Support.
@@ -316,7 +317,7 @@ busuanzi_count:
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: <i class="fa fa-user"></i> 本站访客数
-  site_uv_footer: 人次
+  site_uv_footer: 人
   # custom pv span for the whole site
   site_pv: true
   site_pv_header: <i class="fa fa-eye"></i> 本站总访问量
@@ -326,9 +327,10 @@ busuanzi_count:
   page_pv_header: <i class="fa fa-file-o"></i> 本文总阅读量
   page_pv_footer: 次
 
+# 腾讯分析
 # Tencent analytics ID
   tencent_analytics: 59541779
-
+# 百度推送
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
 baidu_push: true
 
@@ -403,3 +405,7 @@ alipay: /qcode/alipay_qcode.png
 
 # Theme version
 version: 5.0.1
+
+# 文章末尾添加“本文结束”标记
+passage_end_tag:
+  enabled: true
