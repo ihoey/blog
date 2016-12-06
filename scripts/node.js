@@ -24,7 +24,7 @@ function run() {
 	} else {
 		echo("======================自动备份开始===========================");
 		cd('C:/Users/houyi/blog');    //此处修改为Hexo根目录路径
-		if (exec('git add --all').code !== 0) {
+		if (exec('git add .').code !== 0) {
 			echo('Error: Git add failed');
 			exit(1);
 		}
