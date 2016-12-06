@@ -332,7 +332,7 @@ busuanzi_count:
   tencent_analytics: 59541779
 # 百度推送
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: true
+# baidu_push: true
 
 
 

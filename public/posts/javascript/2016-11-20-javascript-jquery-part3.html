@@ -1,0 +1,952 @@
+<!doctype html>
+
+
+
+  
+
+<!--
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG  By:- ihoey.com
+-->
+<html class="theme-next mist use-motion">
+
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg" />
+
+
+
+
+
+
+
+
+<link href="//of2np1oao.bkt.clouddn.com/eevee.css" rel="stylesheet" type="text/css" />
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="原生Js,Js框架,JQuery," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦魇小栈" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JQuery分析及实现part3之属性模块功能及实现">
+<meta property="og:url" content="http://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html">
+<meta property="og:site_name" content="梦魇小栈">
+<meta property="og:description" content="JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!">
+<meta property="og:updated_time" content="2016-11-24T01:36:37.176Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JQuery分析及实现part3之属性模块功能及实现">
+<meta name="twitter:description" content="JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: '博主'
+    }
+  };
+</script>
+<script src="/js/src/set.js"></script>
+<link href="/css/cursor.css" rel="stylesheet" type="text/css" />
+
+  <title> JQuery分析及实现part3之属性模块功能及实现 | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-87991666-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?199400a900d7a62bfff2335224e096d8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梦魇小栈</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">专注于分享</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JQuery分析及实现part3之属性模块功能及实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-20T11:51:28+08:00" content="2016-11-20">
+              2016-11-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/posts/javascript/2016-11-20-javascript-jquery-part3.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="posts/javascript/2016-11-20-javascript-jquery-part3.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!</p>
+<a id="more"></a>
+<h2 id="知识点复习"><a href="#知识点复习" class="headerlink" title="知识点复习"></a>知识点复习</h2><ol>
+<li><p><code>css</code> 方法</p>
+<ul>
+<li>如果只传入一个参数<ul>
+<li>如果参数类型为对象,表示同时设置多个样式</li>
+<li>如果参数类型为字符串,表示获取指定的样式值</li>
+</ul>
+</li>
+<li>如果传入的两个参数,表示设置单个样式值</li>
+</ul>
+</li>
+<li><p><code>itcast.each</code> 方法: 遍历数组或伪数组</p>
+<ul>
+<li>第一个参数,指定遍历的对象</li>
+<li>第二个参数,指定的回调函数,对遍历到的每一个元素,进行相关处理</li>
+</ul>
+</li>
+</ol>
+<h2 id="attr方法-setAttribute-和-getAttribute"><a href="#attr方法-setAttribute-和-getAttribute" class="headerlink" title="attr方法( setAttribute 和 getAttribute )"></a>attr方法( setAttribute 和 getAttribute )</h2><ol>
+<li>功能: 获取(设置)属性节点值</li>
+<li>实现思路<ul>
+<li>给原型添加 <code>attr</code> 方法,定义两个参数:属性节点名字 <code>name</code> 以及属性节点值</li>
+<li>如果只传入一个参数<ul>
+<li>如果参数类型为对象,表示设置多个节点值</li>
+<li>否则获取指定的属性节点值(默认获取第一个 <code>dom</code> 元素的属性节点值)</li>
+</ul>
+</li>
+<li>如果传入两个参数,表示设置单个属性节点值.</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">attr: <span class="function"><span class="keyword">function</span>(<span class="params">name,value</span>)</span>&#123;</div><div class="line">	<span class="comment">//只传入一个参数</span></div><div class="line">	<span class="keyword">if</span>(value == <span class="literal">undefined</span>)&#123;</div><div class="line">		<span class="comment">//如果类型为对象,表示设置多个属性</span></div><div class="line">		<span class="keyword">if</span>(<span class="keyword">typeof</span> name ===<span class="string">'object'</span>)&#123;</div><div class="line">			<span class="comment">//遍历itcast上的每一个dom元素,并设置属性节点值</span></div><div class="line">			<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</div><div class="line">				<span class="comment">//枚举name对象上的每一个属性</span></div><div class="line">				<span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> name)&#123;</div><div class="line">					v.setAttribute(k, name[k]);</div><div class="line">				&#125;</div><div class="line">			&#125;);</div><div class="line">		&#125; <span class="keyword">else</span> &#123; <span class="comment">//如果类型为字符串,获取属性节点值</span></div><div class="line">			<span class="keyword">if</span>(!<span class="keyword">this</span>[<span class="number">0</span>]) <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>].getAttribute(name);</div><div class="line">		&#125;</div><div class="line">	&#125;<span class="keyword">else</span> &#123; <span class="comment">//传入两个参数,表示设置单个属性节点值</span></div><div class="line">		<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">			v.setAttribute(name, value)</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h2 id="html方法"><a href="#html方法" class="headerlink" title="html方法"></a>html方法</h2><ol>
+<li>功能: <ul>
+<li>不传参数,表示获取指定 <code>dom</code> 元素的 <code>innerHTML</code> 属性值</li>
+<li>否则,表示设置指定 <code>dom</code> 元素的 <code>innerHTML</code> 属性</li>
+</ul>
+</li>
+<li>实行思路<ul>
+<li>判断是否传入参数</li>
+<li>如果没穿,获取 <code>itcast</code> 对象上的第一个 <code>dom</code> 元素的 <code>innerHTML</code> 属性值</li>
+<li>否则,给 <code>itcast</code> 对象上的每一个 <code>dom</code> 元素设置 <code>innerHTML</code> 属性</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">html: <span class="function"><span class="keyword">function</span>(<span class="params">html</span>) </span>&#123;</div><div class="line">	<span class="comment">//如果没有给html传值,表示获取</span></div><div class="line">	<span class="keyword">if</span>(html==<span class="literal">undefined</span>)&#123;</div><div class="line">		<span class="comment">//如果icast没有任何dom元素,就返回一个期望值,即空字符串</span></div><div class="line">		<span class="comment">//如果有的话,就返回一个dom元素的innerHTML属性值</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>] ? <span class="keyword">this</span>[<span class="number">0</span>].innerHTML : <span class="string">''</span>;</div><div class="line">	&#125;<span class="keyword">else</span>&#123;<span class="comment">//如果给html船只,给itcast对象上的每一个dom元素设置innerHTML属性</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</div><div class="line">			v.innerHTML = html;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h2 id="text方法"><a href="#text方法" class="headerlink" title="text方法"></a>text方法</h2><ol>
+<li>功能<ul>
+<li>不传值,表示获取文本节点(返回的是后代中所有文本节点值)</li>
+<li>传值,设置指定 <code>dom</code> 元素文本值</li>
+</ul>
+</li>
+<li>实现思路<ul>
+<li>如果不传值,优先考虑浏览器是否支持 <code>textContent</code> 属性<ul>
+<li>如果支持,就使用 <code>textContent</code> 返回结果集中每一个 <code>dom</code> 元素的文本节点值</li>
+<li>否则,就是用 <code>innerText</code> 返回结果集中每一个 <code>dom</code> 元素的文本节点值</li>
+</ul>
+</li>
+<li>如果传值,给 <code>itcast</code> 对象上的每一个 <code>dom</code> 元素设置文本节点值.<ul>
+<li>如果支持 <code>textContent</code> 属性,就是用该属性设置文本</li>
+<li>否则,就是用 <code>innerText</code> 来设置文本.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">text: <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">	<span class="comment">// 如果没有传值，表示获取文本值</span></div><div class="line">	<span class="keyword">if</span>(text == <span class="literal">undefined</span>)&#123;</div><div class="line">		<span class="comment">// 定义结果变量，存储每个dom元素的文本</span></div><div class="line">		<span class="keyword">var</span> ret = <span class="string">''</span>;</div><div class="line">		<span class="comment">// 遍历每一个dom元素</span></div><div class="line">		<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">			<span class="comment">// 如果支持textContent，使用其获取文本，累加到ret上</span></div><div class="line">			ret += <span class="string">'textContent'</span> <span class="keyword">in</span> <span class="built_in">document</span> ?</div><div class="line">				v.textContent :</div><div class="line">				v.innerText.replace(<span class="regexp">/\r\n/g</span>, <span class="string">''</span>);</div><div class="line">		&#125;);</div><div class="line">		<span class="comment">// 返回所有文本</span></div><div class="line">		<span class="keyword">return</span> ret;</div><div class="line">	&#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果传值了，表示为每个dom设置文本</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">			<span class="comment">// 如果支持textContent，就使用该属性为当前dom元素设置文本节点值</span></div><div class="line">			<span class="comment">// 否则，使用innerText设置文本节点值。</span></div><div class="line">			<span class="keyword">if</span>(<span class="string">'textContent'</span> <span class="keyword">in</span> <span class="built_in">document</span>)&#123;</div><div class="line">				v.textContent = text;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				v.innerText = text;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<h2 id="val方法"><a href="#val方法" class="headerlink" title="val方法"></a>val方法</h2><ol>
+<li>功能( <code>value</code> 属性)<ul>
+<li>如果不传值,表示获取输入框的文本值</li>
+<li>如果传值, 表示给输入框 设置文本</li>
+</ul>
+</li>
+<li>实现思路<ul>
+<li>如果不传值，表示获取输入框的文本值（获取第一个文本框值）</li>
+<li>如果传值，表示给输入框 设置文本<ul>
+<li>遍历每一个输入框，同时给其设置文本<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">val: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">	<span class="comment">// 如果没有传值，表示获取第一个dom元素的value属性值</span></div><div class="line">	<span class="comment">// 如果itcast对象上没有任何dom元素，返回空字符串</span></div><div class="line">	<span class="keyword">if</span>(value == <span class="literal">undefined</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>] ? <span class="keyword">this</span>[<span class="number">0</span>].value : <span class="string">''</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;<span class="comment">// 否则，为每一个dom元素设置value属性值</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">this</span>.value = value;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="prop方法"><a href="#prop方法" class="headerlink" title="prop方法"></a>prop方法</h2><ol>
+<li>功能:和 <code>attr</code> 相似<ul>
+<li>注意: 有些属性名称,比如 <code>for</code> , <code>class</code> 是保留字或关键字不能作为对象属性名称,所以要创建一个对象,需要转换这类的属性</li>
+<li>定义 <code>propFix</code> 对象,存储上述属性到这属性名称的映射关系</li>
+<li>如果只传入一个参数<ul>
+<li>类型为对象,同时给  <code>dom</code> 对象添加属性</li>
+<li>类型为字符串,获取 <code>itcast</code> 对象上的第一个 <code>dom</code> 对象的指定属性值</li>
+</ul>
+</li>
+<li>如果传入的参数,给所有的 <code>dom</code> 对象添加单个属性</li>
+<li>细节: 无论是设置还是获取属性,在操作之前,先要从 <code>propFix</code> 对象拿到映射后的属性名称<ul>
+<li>如果拿到的心的属性名称不为 <code>undefined</code> ,就用映射后的属性名来操作 <code>dom</code> 对象</li>
+<li>否则,那么久使用旧的属性名称来操作 <code>dom</code> 对象.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 属性模块</span></div><div class="line">itcast.propFix = &#123;</div><div class="line">	<span class="string">'for'</span>: <span class="string">'htmlFor'</span>,</div><div class="line">	<span class="string">'class'</span>: <span class="string">'className'</span></div><div class="line">&#125;;</div><div class="line">itcast.each([</div><div class="line">	<span class="string">"tabIndex"</span>,</div><div class="line">	<span class="string">"readOnly"</span>,</div><div class="line">	<span class="string">"maxLength"</span>,</div><div class="line">	<span class="string">"cellSpacing"</span>,</div><div class="line">	<span class="string">"cellPadding"</span>,</div><div class="line">	<span class="string">"rowSpan"</span>,</div><div class="line">	<span class="string">"colSpan"</span>,</div><div class="line">	<span class="string">"useMap"</span>,</div><div class="line">	<span class="string">"frameBorder"</span>,</div><div class="line">	<span class="string">"contentEditable"</span></div><div class="line">], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	itcast.propFix[<span class="keyword">this</span>.toLowerCase()] = <span class="keyword">this</span>;</div><div class="line">&#125;);</div><div class="line">prop: <span class="function"><span class="keyword">function</span>(<span class="params">name, value</span>) </span>&#123;</div><div class="line">	<span class="comment">// 如果没有给value传值</span></div><div class="line">	<span class="keyword">var</span> prop;</div><div class="line">	<span class="keyword">if</span> (value == <span class="literal">undefined</span>) &#123;</div><div class="line">		<span class="comment">// 并且name的类型为 对象，表示给每一个dom对象添加多个属性</span></div><div class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'object'</span>) &#123;</div><div class="line">			<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> name) &#123;</div><div class="line">					<span class="comment">// 首先从propFix对象上获取属性名字</span></div><div class="line">					<span class="comment">// 如果有，就使用新的属性名字</span></div><div class="line">					<span class="comment">// 如果没有，就使用原来的属性名字</span></div><div class="line">					prop = itcast.propFix[k] ? itcast.propFix[k] : k;</div><div class="line">					<span class="keyword">this</span>[prop] = name[k];</div><div class="line">				&#125;</div><div class="line">			&#125;);</div><div class="line">		&#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果name的类型 为字符串，表示获取第一个dom对象的指定属性值</span></div><div class="line">			prop = itcast.propFix[name] ? itcast.propFix[name]: name;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.length &gt; <span class="number">0</span> ? <span class="keyword">this</span>[<span class="number">0</span>][prop] : <span class="literal">null</span>;</div><div class="line">		&#125;</div><div class="line">	&#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果传入两个参数，表示给每一个dom对象添加单个属性</span></div><div class="line">		<span class="comment">// 遍历itcast上的每一个dom对象，添加属性</span></div><div class="line">		prop = itcast.propFix[name] ? itcast.propFix[name]: name;</div><div class="line">		<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">this</span>[prop] = value;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 实现链式编程</span></div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+<div style="text-align:center;color: #ccc;font-size:14px;padding: 10px 0;">
+------ 本文结束 ------</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/qcode/weixin-qrcode.png" alt="Ihoey wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/qcode/wechat_qcode.png" alt="Ihoey WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/qcode/alipay_qcode.png" alt="Ihoey Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/原生Js/" rel="tag">#原生Js</a>
+          
+            <a href="/tags/Js框架/" rel="tag">#Js框架</a>
+          
+            <a href="/tags/JQuery/" rel="tag">#JQuery</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/javascript/2016-11-19-javascript-jquery-part2.html" rel="next" title="JQuery分析及实现part2之css部分功能及实现">
+                <i class="fa fa-chevron-left"></i> JQuery分析及实现part2之css部分功能及实现
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/javascript/2016-11-21-javascript-jquery-part4.html" rel="prev" title="JQuery分析及实现part4之DOM操作模块功能及实现">
+                JQuery分析及实现part4之DOM操作模块功能及实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="posts/javascript/2016-11-20-javascript-jquery-part3.html"
+           data-title="JQuery分析及实现part3之属性模块功能及实现" data-url="http://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://of2np1oao.bkt.clouddn.com/avatar.png"
+               alt="Ihoey" />
+          <p class="site-author-name" itemprop="name">Ihoey</p>
+          <p class="site-description motion-element" itemprop="description">心，若没有栖息的地方，到哪里都是流浪......</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/houyi1121" target="_blank" rel="external nofollow" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/hy951121" target="_blank" rel="external nofollow" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes" target="_blank" rel="external nofollow" title="QQ">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=houyi1121@hotmail.com" target="_blank" rel="external nofollow" title="E-mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dode.top/" title="梦魇|专注于分享" target="_blank">梦魇|专注于分享</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.ccyyao.top/" title="等待!!!" target="_blank">等待!!!</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.yc1993.xyz/" title="一叶知秋" target="_blank">一叶知秋</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点复习"><span class="nav-number">1.</span> <span class="nav-text">知识点复习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attr方法-setAttribute-和-getAttribute"><span class="nav-number">2.</span> <span class="nav-text">attr方法( setAttribute 和 getAttribute )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html方法"><span class="nav-number">3.</span> <span class="nav-text">html方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#text方法"><span class="nav-number">4.</span> <span class="nav-text">text方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#val方法"><span class="nav-number">5.</span> <span class="nav-text">val方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prop方法"><span class="nav-number">6.</span> <span class="nav-text">prop方法</span></a></li></ol></div>
+            
+          </div>
+          
+        </section>
+      
+        <div>
+          <p style="text-align: center;"><object type="application/x-shockwave-flash" style="outline:none;" data="http://of2np1oao.bkt.clouddn.com/hamster.swf" width="245" height="225" title="梦魇小栈"><param name="movie" value="http://of2np1oao.bkt.clouddn.com/hamster.swf"><param name="AllowScriptAccess" value="always"><param name="wmode" value="transparent"></object></p>
+        </div>
+    </div>
+
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ihoey</span>
+</div>
+
+<div class="powered-by">
+   由 <a class="theme-link" href="http://hexo.io" rel="external nofollow">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 - NexT.Ihoey
+</div>
+
+<div class="eevee">
+  <div class="body">
+    <div class="head">
+      <div class="ears">
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+      </div>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <div class="chest">
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+    </div>
+    <div class="legs">
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+    </div>
+    <div class="tail">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail -end"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i> 本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i> 本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"stack"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//of2np1oao.bkt.clouddn.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
