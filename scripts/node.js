@@ -19,16 +19,16 @@ try {
 }
 function run() {
 	if (!which('git')) {
-		echo('Sorry, this script requires git');
+		echo('对不起,这个脚本需要git');
 		exit(1);
 	} else {
-		echo("======================Auto Backup Begin===========================");
+		echo("======================自动备份开始===========================");
 		cd('C:/Users/houyi/blog');    //此处修改为Hexo根目录路径
 		if (exec('git add --all').code !== 0) {
 			echo('Error: Git add failed');
 			exit(1);
 		}
-		if (exec('git commit -am "更新源文件"').code !== 0) {
+		if (exec('git commit -m "更新源文件"').code !== 0) {
 			echo('Error: Git commit failed');
 			exit(1);
 		}
@@ -36,6 +36,6 @@ function run() {
 			echo('Error: Git push failed');
 			exit(1);
 		}
-		echo("==================Auto Backup Complete============================")
+		echo("======================自动备份完成===========================")
 	}
 }
