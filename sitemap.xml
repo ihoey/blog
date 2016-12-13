@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ihoey.com/about/index.html</loc>
+    
+    <lastmod>2016-12-13T06:41:34.478Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ihoey.com/guestbook/index.html</loc>
     
     <lastmod>2016-12-12T13:06:28.744Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://blog.ihoey.com/links/index.html</loc>
     
     <lastmod>2016-12-06T10:33:35.625Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ihoey.com/about/index.html</loc>
-    
-    <lastmod>2016-12-01T15:00:43.091Z</lastmod>
     
   </url>
   
