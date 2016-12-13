@@ -8,6 +8,7 @@ subtitle: 专注于分享
 description: 心，若没有栖息的地方，到哪里都是流浪......
 author: Ihoey
 language: zh-Hans
+# language: zh-CN
 timezone: Asia/Shanghai
 avatar: http://of2np1oao.bkt.clouddn.com/avatar.png
 
@@ -73,7 +74,7 @@ deploy:
 - type: git 
   repo: git@git.coding.net:ihoey/blog.git,master
 - type: git 
-  repo: git@github.com:houyi1121/blog.git,master
+  repo: git@github.com:ihoey/blog.git,master
 - type: baidu_url_submitter
 
 #百度分享
@@ -103,3 +104,6 @@ baidu_url_submit:
   host: blog.ihoey.com ## 在百度站长平台中注册的域名
   token: 7wRDqX7vpc1l69Uu ## 请注意这是您的秘钥， 请不要发布在公众仓库里!
   path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
+
+#换主题
+

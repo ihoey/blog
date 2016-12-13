@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ihoey.com/"/>
-  <updated>2016-11-27T08:02:51.268Z</updated>
+  <updated>2016-12-12T01:14:12.959Z</updated>
   <id>http://blog.ihoey.com/</id>
   
   <author>
@@ -14,6 +14,121 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Node第一部分-初体验</title>
+    <link href="http://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html"/>
+    <id>http://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</id>
+    <published>2016-12-12T01:12:32.000Z</published>
+    <updated>2016-12-12T01:14:12.959Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Node" scheme="http://blog.ihoey.com/categories/Node/"/>
+    
+    
+      <category term="Node" scheme="http://blog.ihoey.com/tags/Node/"/>
+    
+      <category term="Nodejs" scheme="http://blog.ihoey.com/tags/Nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Node第一部分-初体验</title>
+    <link href="http://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html"/>
+    <id>http://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html</id>
+    <published>2016-12-10T02:31:09.000Z</published>
+    <updated>2016-12-10T14:25:56.234Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
+</ul>
+<h2 id="Node是什么"><a href="#Node是什么" class="headerlink" title="Node是什么?"></a>Node是什么?</h2><ul>
+<li><code>Node</code> 中也包含 <code>js</code> 解析引擎( <code>Node</code> 现在用的就是 <code>V8</code> 引擎，速度非常快)</li>
+<li><code>Node</code></li>
+<li><code>PHP</code> 、 后端使用的语言(后端写的代码是在服务器！)<ul>
+<li>区分前端和后端(就是最终代码是在哪里执行的，在浏览器中执行就是前端，在服务器执行，就是后端)</li>
+</ul>
+</li>
+<li><code>Node</code> 其实【 <em>是一个包含的 <code>js</code> 解析引擎的软件</em> 】，(可以在后端使用)<ul>
+<li>有了 <code>js</code> 解析引擎就会解析 <code>js</code> 代码</li>
+</ul>
+</li>
+<li>浏览器的 <code>js</code><ul>
+<li>可以通过 <code>js</code> 操作 <code>html</code></li>
+<li>有 <code>DOM</code> (和操作 <code>html</code> 有关)，有 <code>BOM</code> (和浏览器有关)，有 <code>ECMA</code> (就是 <code>js</code> 语法规范)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><code>Node</code> 中的 <code>js</code><ul>
+<li>没有 <code>DOM</code>, 没有 <code>BOM</code>, 有 <code>ECMA</code></li>
+<li><code>windows</code> (也就是说没有 <code>windows</code> 对象)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Node安装"><a href="#Node安装" class="headerlink" title="Node安装"></a>Node安装</h2><h2 id="Node快速开始"><a href="#Node快速开始" class="headerlink" title="Node快速开始"></a>Node快速开始</h2><ul>
+<li>1.10 <code>xxx</code> , <code>Node</code> 就开源<ul>
+<li>开源的话, 别人就可以贡献源码! </li>
+<li>第三方社区: 觉得Node更新太慢! <ul>
+<li>第三方社区给予原来的Node继续开发加入了很多新的东西</li>
+</ul>
+</li>
+<li>合并: 4.x 直接升到4.x</li>
+<li>4.xxx  5.xxx  6.xxx 7.xx</li>
+</ul>
+</li>
+</ul>
+<h3 id="Node中引入模块-和暴露数据"><a href="#Node中引入模块-和暴露数据" class="headerlink" title="Node中引入模块, 和暴露数据"></a>Node中引入模块, 和暴露数据</h3><ul>
+<li>引入模块, 使用 <code>Node</code> 中提供的 <code>require(&#39;./jack.js&#39;)</code> 方法</li>
+<li>暴露数据最后使用的是 <code>module.exports = {xxx}</code><ul>
+<li>或者 <code>exports.xxx = yyy</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="node中不仅包含js解析引擎，还包含服务器软件的功能"><a href="#node中不仅包含js解析引擎，还包含服务器软件的功能" class="headerlink" title="node中不仅包含js解析引擎，还包含服务器软件的功能"></a>node中不仅包含js解析引擎，还包含服务器软件的功能</h3><ul>
+<li>我们电脑上只要安装了node,不需要其他的软件配置，就能够开启一个http服务</li>
+</ul>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><ul>
+<li>服务器就是一台电脑, 只是性能一般比我们普通电脑高!</li>
+</ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p><em>file协议，默认，是不能够发ajax请求的！</em></p>
+<ul>
+<li>服务器就是一台电脑(这个电脑是有独立ip)</li>
+<li>我们的笔记本也是电脑(也可以把最终的项目代码放到笔记本上! ,但是没有公司愿意这么干)</li>
+<li>操作系统都可能是一样的</li>
+<li>服务器能运行的软件，我们电脑也能运行</li>
+</ul>
+<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><ul>
+<li>我们在 <code>cmd</code> 窗口中敲一个命令, 本质上是执行了一个程序(软件)</li>
+<li>默认按下回车时, 会到当前命令行所对应的目录寻找文件, 如果找到就立即执行</li>
+<li>如果找不到就会到环境变量中的 <code>PATH</code> 中指定的目录中寻找!</li>
+</ul>
+<p>例:我们把 <code>node</code> 的默认安装目录: <code>C:\Program Files\nodejs</code>, 配置 <code>PATH</code> 上，那么<br>我们在 <code>cmd</code> 中敲命令时，如果当前目录找不到，就会到 <code>C:\Program Files\nodejs</code><br>目录寻找相应的文件执行!</p>
+<h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><ul>
+<li>系统底层还是命令</li>
+<li>windows系统刚开始的时候还没有界面</li>
+<li>在 <code>cmd</code> 中敲命令,或默认到当前命令行对应的目录中找文件执行</li>
+</ul>
+<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><h2 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Node&quot;&gt;&lt;a href=&quot;#Node&quot; class=&quot;headerlink&quot; title=&quot;Node&quot;&gt;&lt;/a&gt;Node&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;ex
+    
+    </summary>
+    
+      <category term="Node" scheme="http://blog.ihoey.com/categories/Node/"/>
+    
+    
+      <category term="Node" scheme="http://blog.ihoey.com/tags/Node/"/>
+    
+      <category term="Nodejs" scheme="http://blog.ihoey.com/tags/Nodejs/"/>
+    
+  </entry>
   
   <entry>
     <title>工具使用篇之Markdown</title>
@@ -1763,130 +1878,6 @@
     
     
       <category term="原型链" scheme="http://blog.ihoey.com/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js高级与面向对象之继承</title>
-    <link href="http://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html"/>
-    <id>http://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</id>
-    <published>2016-06-15T05:43:28.000Z</published>
-    <updated>2016-11-24T01:27:30.082Z</updated>
-    
-    <content type="html"><![CDATA[<p>一个对象没有某些属性和方法，另一个对象有，拿过来使用，就是继承</p>
-<a id="more"></a>
-<h2 id="继承的实现方式"><a href="#继承的实现方式" class="headerlink" title="继承的实现方式"></a>继承的实现方式</h2><h3 id="混入式继承"><a href="#混入式继承" class="headerlink" title="混入式继承"></a>混入式继承</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> obj1 = &#123;</div><div class="line">    <span class="attr">money</span> : <span class="number">10000000</span>,</div><div class="line">    <span class="attr">car</span> : <span class="number">100</span>,</div><div class="line">    <span class="attr">brand</span>: <span class="string">"布加迪威航"</span>,</div><div class="line">    <span class="attr">huaqian</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"不差钱，随便花"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(obj);</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj1)&#123;</div><div class="line">    <span class="comment">//money</span></div><div class="line">    <span class="comment">//car</span></div><div class="line">    <span class="comment">//brand</span></div><div class="line">    <span class="comment">//huaqian</span></div><div class="line">    obj[k] = obj1[k];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj);</div></pre></td></tr></table></figure>
-<h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><ul>
-<li>通过修改原型实现的继承 就是原型继承<br>  通过构造函数创建出来的对象继承自构造函数的原型对象</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> human = &#123;</div><div class="line">    <span class="attr">gender</span>:<span class="string">"female"</span>,</div><div class="line">    <span class="attr">height</span>: <span class="number">170</span>,</div><div class="line">    <span class="attr">weight</span>: <span class="number">50</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">//Person.prototype.name = "王莉莉";</span></div></pre></td></tr></table></figure>
-<h4 id="原型继承的方式"><a href="#原型继承的方式" class="headerlink" title="原型继承的方式"></a>原型继承的方式</h4><ol>
-<li>通过混入的方式给原型添加属性和方法</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Person.prototype</span></div><div class="line"><span class="keyword">var</span> human = &#123;</div><div class="line">    <span class="attr">gender</span>:<span class="string">"female"</span>,</div><div class="line">    <span class="attr">height</span>: <span class="number">170</span>,</div><div class="line">    <span class="attr">weight</span>: <span class="number">50</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Person.prototype.name = <span class="string">"王莉莉"</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> human)&#123;</div><div class="line">    Person.prototype[k] = human[k];</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(p.name,p.gender,p.height,p.weight);</div></pre></td></tr></table></figure>
-<ol>
-<li>修改原型对象</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Person.prototype.maimeng = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"感觉自己萌萌哒"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">p.maimeng();</div></pre></td></tr></table></figure>
-<ol>
-<li>替换原型对象</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Person.prototype = human;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="built_in">console</span>.log(p.gender);</div></pre></td></tr></table></figure>
-<h3 id="经典继承"><a href="#经典继承" class="headerlink" title="经典继承"></a>经典继承</h3><p>《JavaScript语言精粹》</p>
-<ul>
-<li>调用一个方法，就能实现继承<br><code>var obj1 = Object.create(obj)</code></li>
-<li>创建出来一个新的继承自参数 <code>obj</code> 的对象 <code>obj1</code> </li>
-<li>其实内部使用的就是原型继承</li>
-<li>ES5才支持的这个方法 需要考虑兼容性问题</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> human = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">"王莉莉"</span>,</div><div class="line">    <span class="attr">gender</span>: <span class="string">"female"</span>,</div><div class="line">    <span class="attr">dance</span> :<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"二人转，转转转"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(human);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj);</div></pre></td></tr></table></figure>
-<h2 id="处理经典继承的兼容性问题"><a href="#处理经典继承的兼容性问题" class="headerlink" title="处理经典继承的兼容性问题"></a>处理经典继承的兼容性问题</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="built_in">Object</span>.create)&#123;</div><div class="line">    <span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(&#123;<span class="attr">name</span>:<span class="string">"李狗二"</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;);</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="built_in">Object</span>.create = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line"></div><div class="line">		<span class="comment">//在这个函数中要实现的功能</span></div><div class="line">		<span class="comment">//就是，创建一个对象，将obj设置为该对象的原型</span></div><div class="line"></div><div class="line">		<span class="comment">//要设置原型，只能通过两种方式，</span></div><div class="line">		<span class="comment">// 一种是 对象.__proto__  另外一种是 构造函数.prototype</span></div><div class="line">		<span class="comment">//由于__proto__这个属性有兼容性问题，所以不使用</span></div><div class="line">		<span class="comment">//就只能使用 构造函数.prototype 去替换原型对象了</span></div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">        F.prototype = obj;</div><div class="line">        <span class="keyword">var</span> result = <span class="keyword">new</span> F();</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//不推荐直接修改内置对象，因为在多人开发的时候，会产生冲突</span></div><div class="line"></div><div class="line"><span class="built_in">Object</span>.creat = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"我是李二狗，我的create方法就是用来输出这句话的，哈哈哈"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hanyingxinCreate</span>(<span class="params">obj</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">Object</span>.create)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.creat(obj);</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">        F.prototype = obj;</div><div class="line">        <span class="keyword">var</span> result = <span class="keyword">new</span> F();</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="继承的实际应用"><a href="#继承的实际应用" class="headerlink" title="继承的实际应用"></a>继承的实际应用</h2><ul>
-<li><p>扩展内置对象</p>
-</li>
-<li><p>扩展 <code>string</code> 的方法  <code>trim()</code></p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//$.trim()</span></div><div class="line"></div><div class="line"><span class="built_in">Array</span>.prototype.sayHello = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(<span class="string">"Hello, i'm a Array"</span>)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line">arr.sayHello();</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr1 = [];</div><div class="line">arr1.sayHello();</div><div class="line"></div><div class="line"><span class="comment">//需求分析</span></div><div class="line"><span class="comment">//1.创建出来的对象得有数组的所有的方法和属性</span></div><div class="line"><span class="comment">//2.创建输出来的对象得有sayHello方法</span></div><div class="line"><span class="comment">//3.不能修改原生的内置对象</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyArray</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">MyArray.prototype = [];</div><div class="line">MyArray.prototype.sayHello = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"相加就加，随心所欲，为所欲为"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> myArr = <span class="keyword">new</span> MyArray();</div><div class="line">myArr.push(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">5</span>);</div><div class="line"><span class="built_in">console</span>.log(myArr);</div><div class="line">myArr.sayHello();</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;一个对象没有某些属性和方法，另一个对象有，拿过来使用，就是继承&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="http://blog.ihoey.com/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="http://blog.ihoey.com/tags/javascript/"/>
-    
-      <category term="js面向对象" scheme="http://blog.ihoey.com/tags/js%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    
-      <category term="继承" scheme="http://blog.ihoey.com/tags/%E7%BB%A7%E6%89%BF/"/>
-    
-      <category term="继承的实现方式" scheme="http://blog.ihoey.com/tags/%E7%BB%A7%E6%89%BF%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js高级与面向对象之原型</title>
-    <link href="http://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html"/>
-    <id>http://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</id>
-    <published>2016-06-04T05:41:47.000Z</published>
-    <updated>2016-11-24T01:26:39.852Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原型的基本概念"><a href="#原型的基本概念" class="headerlink" title="原型的基本概念"></a>原型的基本概念</h2><p>在构造函数创建出来的时候，系统会默认的帮构造函数创建并且关联一个空对象，这个对象就成为原型</p>
-<a id="more"></a>
-<p>##原型的作用</p>
-<p>原型中的所有成员都可以被和其关联的构造函数创建出来的对象访问</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如何利用原型解决构造函数存在的问题？</p>
-<ul>
-<li>利用原型的特性，将方法放到原型中去，供所有的对象访问</li>
-</ul>
-<h2 id="如何访问原型？"><a href="#如何访问原型？" class="headerlink" title="如何访问原型？"></a>如何访问原型？</h2><ul>
-<li>构造函数<code>.prototype</code></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> Person.prototype);</div><div class="line"><span class="built_in">console</span>.log(Person.prototype);</div></pre></td></tr></table></figure>
-<h2 id="如何使用原型？"><a href="#如何使用原型？" class="headerlink" title="如何使用原型？"></a>如何使用原型？</h2><ul>
-<li>使用对象的动态特性，为原型对象新增成员</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Person.prototype.eat = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"吃个大鸡腿儿"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p  = <span class="keyword">new</span> Person();</div><div class="line">p.eat();</div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person();</div><div class="line">p1.eat();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(p.eat == p1.eat);</div></pre></td></tr></table></figure>
-<ul>
-<li>直接替换原型对象</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Person.prototype = &#123;</div><div class="line">    <span class="attr">run</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"李二狗正在以时速1cm每小时的速度奔向餐厅"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(Person.prototype);</div><div class="line"><span class="keyword">var</span> p2 = <span class="keyword">new</span> Person();</div><div class="line">p2.run();</div></pre></td></tr></table></figure>
-<h2 id="原型使用的注意事项"><a href="#原型使用的注意事项" class="headerlink" title="原型使用的注意事项"></a>原型使用的注意事项</h2><p>对象访问属性的时候，会现在自身查找，如果找到了就直接使用如果没有找到，就去构造函数的原型对象中去查找</p>
-<ol>
-<li>一般情况下，只会将方法放入原型对象中，属性单独的放在对象中</li>
-<li>在获取对象的属性的时候，会现在对象中进行查找，然后去原型中查找</li>
-<li>在对象进行设置属性的时候，不会去原型中查找属性，而是直接在对象内进行查找，如果找到该属性，就修改，如果没有找到，就新增</li>
-<li>在替换原型对象的时候，要注意：替换之前创建出来的对象的原型和替换之后创建出来的对象的原型会不一致</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//Person.prototype.name = "张三";</span></div><div class="line">Person.prototype.sing = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Take me to your heart!"</span>);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="comment">//console.log(p.name);  //张三</span></div><div class="line">p.sing();  <span class="comment">//可以</span></div><div class="line"></div><div class="line"><span class="comment">//p.name = "李四";</span></div><div class="line"><span class="comment">//console.log(p.name);  //李四</span></div><div class="line"></div><div class="line">Person.prototype = &#123;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person();</div><div class="line"><span class="comment">//console.log(p1.name); //张三</span></div><div class="line">p1.sing();<span class="comment">//不可以</span></div><div class="line"></div><div class="line">p.sing();<span class="comment">//不可以  or  可以</span></div></pre></td></tr></table></figure>
-<h2 id="原型的访问方式"><a href="#原型的访问方式" class="headerlink" title="原型的访问方式"></a>原型的访问方式</h2><ol>
-<li>通过 <code>构造函数.prototype</code> 去访问</li>
-<li>通过 <code>对象.__proto__</code> 去访问<br> 注：<strong>proto</strong>这个属性 是非标准的！！！ 不推荐在开发过程中使用，只用于调试代码</li>
-</ol>
-<ul>
-<li><strong>.proto</strong>用法</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line">Person.prototype = &#123;</div><div class="line">    <span class="attr">name</span> : <span class="string">"迈克学摇滚"</span>,</div><div class="line">    <span class="attr">song</span> : <span class="string">"Take me to your heart"</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line">p.__proto__.count = <span class="number">100</span>;</div><div class="line"><span class="built_in">console</span>.log(p.__proto__);</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原型的基本概念&quot;&gt;&lt;a href=&quot;#原型的基本概念&quot; class=&quot;headerlink&quot; title=&quot;原型的基本概念&quot;&gt;&lt;/a&gt;原型的基本概念&lt;/h2&gt;&lt;p&gt;在构造函数创建出来的时候，系统会默认的帮构造函数创建并且关联一个空对象，这个对象就成为原型&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="http://blog.ihoey.com/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="http://blog.ihoey.com/tags/javascript/"/>
-    
-      <category term="原型" scheme="http://blog.ihoey.com/tags/%E5%8E%9F%E5%9E%8B/"/>
-    
-      <category term="原型的基本概念" scheme="http://blog.ihoey.com/tags/%E5%8E%9F%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
     
   </entry>
   

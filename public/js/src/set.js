@@ -229,20 +229,4 @@ window.onload = function () {
             'marginLeft': '0px'
         }, 400);
     });
-
-    host3 = window.location.href;
-    chinadomain3 = "http://blog.ihoey.com/";
-    if (host3.indexOf(chinadomain3) != -1) {
-
-        (function () {
-            var bp = document.createElement('script');
-            bp.src = '//push.zhanzhang.baidu.com/push.js';
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-
-    }
 }
-
-
-

@@ -16,8 +16,17 @@ rss: /atom.xml
 # Specify the date when the site was setup
 since: 2015
 
+# icon between year and author @Footer
+authoricon: henry
 
+# Footer `powered-by` and `theme-info` copyright
+copyright: false
 
+# Canonical, set a canonical link tag in your hexo, you could use it for your SEO of blog.
+# See: https://support.google.com/webmasters/answer/139066
+# Tips: Before you open this tag, remeber set up your URL in hexo _config.yml ( ex. url: http://yourdomain.com )
+canonical: true
+url: http://blog.ihoey.com
 
 # ---------------------------------------------------------------
 # Menu Settings
@@ -31,8 +40,10 @@ menu:
   about: /about
   archives: /archives
   tags: /tags
-  
+  categories: /categories
+  sitemap: /sitemap.xml
   #commonweal: /404.html
+  schedule: calendar
 
 
 # Enable/Disable menu icons.
@@ -47,10 +58,12 @@ menu_icons:
   about: user
   links: link
   guestbook: comment
-  #categories: th
+  categories: th
   tags: tags
   archives: archive
   #commonweal: heartbeat
+  schedule: calendar
+  sitemap: sitemap
 
 
 
@@ -60,9 +73,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-#scheme: Muse
-scheme: Mist
-#scheme: Pisces
+scheme: Muse
+# scheme: Mist
+# scheme: Pisces
 
 
 # ---------------------------------------------------------------
@@ -74,10 +87,10 @@ scheme: Mist
 # - Introduce in 5.0.1
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
-  # Uri of fonts host. E.g. //fonts.googleapis.com (Default) //fonts.useso.com
-  host: 
+  # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
+  host:
 
   # Global font settings used on <body> element.
   global:
@@ -89,7 +102,7 @@ font:
   # Fallback to `global` font settings.
   headings:
     external: true
-    family: Roboto Slab
+    family:
 
   # Font settings for posts
   # Fallback to `global` font settings.
@@ -102,13 +115,14 @@ font:
   # The `size` option use `px` as unit
   logo:
     external: true
-    family: Lobster Two
+    family:
     size:
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: PT Mono
+    family:
+    size:
 
 
 
@@ -140,12 +154,13 @@ social_icons:
   微博: weibo
   QQ: qq
   E-mail: envelope
+  # Twitter: twitter
 
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: http://of2np1oao.bkt.clouddn.com/ihoey/imgavatar.png
+avatar: http://of2np1oao.bkt.clouddn.com/avatar.png
 
 
 # Table Of Contents in the Sidebar
@@ -159,7 +174,7 @@ toc:
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-# creative_commons: by-nc-sa
+#creative_commons: by-nc-sa
 #creative_commons:
 
 
@@ -185,9 +200,42 @@ links_title: Links
 #links_layout: inline
 links:
   梦魇|专注于分享: http://www.dode.top/
-  #轻描淡写~: http://www.mcling.xyz/ 
-  等待!!!: http://www.ccyyao.top/ 
+  #轻描淡写~: http://www.mcling.xyz/
+  等待!!!: http://www.ccyyao.top/
   一叶知秋: http://www.yc1993.xyz/
+
+
+# ---------------------------------------------------------------
+# Post Settings
+# ---------------------------------------------------------------
+
+# Automatically scroll page to section which is under <!-- more --> mark.
+scroll_to_more: true
+
+# Automatically excerpt description in homepage as preamble text.
+excerpt_description: true
+
+# Automatically Excerpt. Not recommand.
+# Please use <!-- more --> in the post to control excerpt accurately.
+auto_excerpt:
+  enable: false
+  length: 50
+
+# Post meta display settings
+post_meta:
+  created_at: true
+  updated_at: false
+  categories: true
+
+
+# Wechat Subscriber
+wechat_subscriber:
+  enabled: true
+  #qcode: /path/to/your/wechatqcode ex. /uploads/wechat-qcode.jpg
+  qcode: /qcode/weixin-qrcode.png
+  #description: ex. subscribe to my blog by scanning my public wechat account
+  description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
+
 
 
 # ---------------------------------------------------------------
@@ -211,28 +259,6 @@ custom_logo:
 highlight_theme: normal
 
 
-# Automatically scroll page to section which is under <!-- more --> mark.
-scroll_to_more: true
-
-
-# Automatically Excerpt. Not recommand.
-# Please use <!-- more --> in the post to control excerpt accurately.
-auto_excerpt:
-  enable: false
-  length: 50
-
-
-# Wechat Subscriber
-wechat_subscriber:
-  enabled: true
-  #qcode: /path/to/your/wechatqcode ex. /uploads/wechat-qcode.jpg
-  qcode: /qcode/weixin-qrcode.png
-  #description: ex. subscribe to my blog by scanning my public wechat account
-  description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
-
-
-
-
 # ---------------------------------------------------------------
 # Third Party Services Settings
 # ---------------------------------------------------------------
@@ -240,6 +266,7 @@ wechat_subscriber:
 # MathJax Support
 mathjax:
   enable: false
+  per_page: false
   cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 
@@ -250,20 +277,24 @@ mathjax:
 #baidu_analytics:
 
 # Duoshuo ShortName
-#多说
 duoshuo_shortname: stack
 
 # Disqus
 #disqus_shortname:
 
+# Hypercomments
+#hypercomments_id:
+
 # Baidu Share
 # Available value:
 #    button | slide
+# Warning: Baidu Share does not support https.
 #baidushare:
 ##  type: button
 
 # Share
 #jiathis:
+# Warning: JiaThis does not support https.
 #add_this_id:
 
 # Share
@@ -274,22 +305,25 @@ duoshuo_shortname: stack
 google_site_verification: eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg
 
 
+
 # Google Analytics
 google_analytics: UA-87991666-1
-
 
 # CNZZ count
 #cnzz_siteid:
 
+# Application Insights
+# See https://azure.microsoft.com/en-us/services/application-insights/
+# application_insights:
 
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
-# duoshuo_info:
-#   ua_enable: false
-#   admin_enable: false
-#   user_id: 0
-#   admin_nickname: Author
+duoshuo_info:
+  ua_enable: false
+  admin_enable: false
+  user_id: 0
+  #admin_nickname: Author
 
 
 # Facebook SDK Support.
@@ -300,6 +334,15 @@ facebook_sdk:
   fb_admin:     #<user_id>
   like_button:  #true
   webmaster:    #true
+
+# Facebook comments plugin
+# This plugin depends on Facebook SDK.
+# If facebook_sdk.enable is false, Facebook comments plugin is unavailable.
+facebook_comments_plugin:
+  enable: false
+  num_of_posts: 10  # min posts num is 1
+  width: 100%       # default width is 550px
+  scheme: light     # default scheme is light (light or dark)
 
 
 # Show number of visitors to each article.
@@ -316,23 +359,51 @@ busuanzi_count:
   enable: true
   # custom uv span for the whole site
   site_uv: true
-  site_uv_header: <i class="fa fa-user"></i> 本站访客数
-  site_uv_footer: 人
+  site_uv_header: <i class="fa fa-user">访客数</i>
+  site_uv_footer: 枚
   # custom pv span for the whole site
   site_pv: true
-  site_pv_header: <i class="fa fa-eye"></i> 本站总访问量
+  site_pv_header: <i class="fa fa-eye">访问量</i>
   site_pv_footer: 次
   # custom pv span for one page only
   page_pv: true
-  page_pv_header: <i class="fa fa-file-o"></i> 本文总阅读量
+  page_pv_header: <i class="fa fa-file-o">我被看了</i>
   page_pv_footer: 次
 
-# 腾讯分析
+
 # Tencent analytics ID
-  tencent_analytics: 59541779
-# 百度推送
+tencent_analytics: 59541779
+
+
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
 baidu_push: false
+
+# Google Calendar
+# Share your recent schedule to others via calendar page
+#
+# API Documentation:
+# https://developers.google.com/google-apps/calendar/v3/reference/events/list
+calendar:
+  enable: false
+  calendar_id: <required>
+  api_key: <required>
+  orderBy: startTime
+  offsetMax: 24
+  offsetMin: 4
+  timeZone: Asia/Shanghai
+  showDeleted: false
+  singleEvents: true
+  maxResults: 250
+
+# Algolia Search
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We didn't find any results for the search: ${query}"
+    hits_stats: "${hits} results found in ${time} ms"
 
 
 
@@ -353,42 +424,47 @@ fancybox: true
 # For example
 #    jquery: https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js
 # Be aware that you should use the same version as internal ones to avoid potential problems.
+# Please use the https protocol of CDN files when you enable https on your site.
 vendors:
   # Internal path prefix. Please do not edit it.
   _internal: lib
 
   # Internal version: 2.1.3
-  jquery:
+  jquery: http://of2np1oao.bkt.clouddn.com/index.js
 
   # Internal version: 2.1.5
-  # http://fancyapps.com/fancybox/
-  fancybox:
-  fancybox_css:
+  # See: http://fancyapps.com/fancybox/
+  fancybox: http://of2np1oao.bkt.clouddn.com/jquery.fancybox.pack.js
+  fancybox_css: http://of2np1oao.bkt.clouddn.com/jquery.fancybox.css
 
   # Internal version: 1.0.6
-  # https://github.com/ftlabs/fastclick
-  fastclick:
+  # See: https://github.com/ftlabs/fastclick
+  fastclick: http://of2np1oao.bkt.clouddn.com/fastclick.min.js
 
   # Internal version: 1.9.7
-  # https://github.com/tuupola/jquery_lazyload
-  lazyload:
+  # See: https://github.com/tuupola/jquery_lazyload
+  lazyload: http://of2np1oao.bkt.clouddn.com/jquery.lazyload.js
 
   # Internal version: 1.2.1
-  # http://VelocityJS.org
-  velocity:
+  # See: http://VelocityJS.org
+  velocity: http://of2np1oao.bkt.clouddn.com/velocity.min.js
 
   # Internal version: 1.2.1
-  # http://VelocityJS.org
-  velocity_ui:
+  # See: http://VelocityJS.org
+  velocity_ui: http://of2np1oao.bkt.clouddn.com/velocity.ui.min.js
 
   # Internal version: 0.7.9
-  # https://faisalman.github.io/ua-parser-js/
-  ua_parser:
+  # See: https://faisalman.github.io/ua-parser-js/
+  ua_parser: http://of2np1oao.bkt.clouddn.com/ua-parser.pack.js
 
-  # Internal version: 4.4.0
-  # http://fontawesome.io/
+  # Internal version: 4.6.2
+  # See: http://fontawesome.io/
   fontawesome:
 
+  # Internal version: 1
+  # https://www.algolia.com
+  algolia_instant_js:
+  algolia_instant_css:
 
 # Assets
 css: css
@@ -403,9 +479,9 @@ reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作�
 wechatpay: /qcode/wechat_qcode.png
 alipay: /qcode/alipay_qcode.png
 
-# Theme version
-version: 5.0.1
-
 # 文章末尾添加“本文结束”标记
 passage_end_tag:
   enabled: true
+
+# Theme version
+version: 5.1.0
