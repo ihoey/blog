@@ -43,7 +43,7 @@ menu:
   categories: /categories
   sitemap: /sitemap.xml
   #commonweal: /404.html
-  schedule: calendar
+  # schedule: calendar
 
 
 # Enable/Disable menu icons.
@@ -62,7 +62,7 @@ menu_icons:
   tags: tags
   archives: archive
   #commonweal: heartbeat
-  schedule: calendar
+  # schedule: calendar
   sitemap: sitemap
 
 
