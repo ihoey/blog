@@ -321,16 +321,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/calendar" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            日程
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -386,7 +376,7 @@
               
                 
                 <a class="post-title-link" href="/posts/Node/2016-12-12-Node-part2.html" itemprop="url">
-                  Node第一部分-初体验
+                  Node第二部分-模块及工具
                 </a>
               
             
@@ -462,9 +452,14 @@
 
       
         
-          
-            
-          
+          <p>为了让 <code>NodeJs</code> 的文件可以相互调用，<code>NodeJs</code> 提供了一个简单的模块系统。<br>模块是 <code>NodeJs</code> 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 <code>NodeJs</code> 文件就是一个模块，这个文件可能是 <code>JavaScript</code> 代码、<code>JSON</code> 或者编译过的 <code>C/C++</code> 扩展。</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/posts/Node/2016-12-12-Node-part2.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -607,79 +602,19 @@
 
       
         
-          
-            <h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
-</ul>
-<h2 id="Node是什么"><a href="#Node是什么" class="headerlink" title="Node是什么?"></a>Node是什么?</h2><ul>
-<li><code>Node</code> 中也包含 <code>js</code> 解析引擎( <code>Node</code> 现在用的就是 <code>V8</code> 引擎，速度非常快)</li>
-<li><code>Node</code></li>
-<li><code>PHP</code> 、 后端使用的语言(后端写的代码是在服务器！)<ul>
-<li>区分前端和后端(就是最终代码是在哪里执行的，在浏览器中执行就是前端，在服务器执行，就是后端)</li>
-</ul>
-</li>
-<li><code>Node</code> 其实【 <em>是一个包含的 <code>js</code> 解析引擎的软件</em> 】，(可以在后端使用)<ul>
-<li>有了 <code>js</code> 解析引擎就会解析 <code>js</code> 代码</li>
-</ul>
-</li>
-<li>浏览器的 <code>js</code><ul>
-<li>可以通过 <code>js</code> 操作 <code>html</code></li>
-<li>有 <code>DOM</code> (和操作 <code>html</code> 有关)，有 <code>BOM</code> (和浏览器有关)，有 <code>ECMA</code> (就是 <code>js</code> 语法规范)</li>
-</ul>
-</li>
-</ul>
+          <h2 id="NodeJs是什么？"><a href="#NodeJs是什么？" class="headerlink" title="NodeJs是什么？"></a>NodeJs是什么？</h2><blockquote>
+<p>简单的说 <code>NodeJs</code> 就是运行在服务端的 <code>JavaScript</code> 。<code>NodeJs</code> 是一个基于 <code>Chrome JavaScript</code> 运行时建立的一个平台。<code>NodeJs</code> 是一个事件驱动 <code>I/O</code> 服务端 <code>JavaScript</code> 环境，基于 <code>Google</code> 的 <code>V8</code> 引擎，<code>V8</code> 引擎执行 <code>Javascript</code> 的速度非常快，性能非常好。</p>
+</blockquote>
 <ul>
-<li><code>Node</code> 中的 <code>js</code><ul>
-<li>没有 <code>DOM</code>, 没有 <code>BOM</code>, 有 <code>ECMA</code></li>
-<li><code>windows</code> (也就是说没有 <code>windows</code> 对象)</li>
+<li><a href="https://nodejs.org/en/">官网https://nodejs.org</a></li>
 </ul>
-</li>
-</ul>
-<h2 id="Node安装"><a href="#Node安装" class="headerlink" title="Node安装"></a>Node安装</h2><h2 id="Node快速开始"><a href="#Node快速开始" class="headerlink" title="Node快速开始"></a>Node快速开始</h2><ul>
-<li>1.10 <code>xxx</code> , <code>Node</code> 就开源<ul>
-<li>开源的话, 别人就可以贡献源码! </li>
-<li>第三方社区: 觉得Node更新太慢! <ul>
-<li>第三方社区给予原来的Node继续开发加入了很多新的东西</li>
-</ul>
-</li>
-<li>合并: 4.x 直接升到4.x</li>
-<li>4.xxx  5.xxx  6.xxx 7.xx</li>
-</ul>
-</li>
-</ul>
-<h3 id="Node中引入模块-和暴露数据"><a href="#Node中引入模块-和暴露数据" class="headerlink" title="Node中引入模块, 和暴露数据"></a>Node中引入模块, 和暴露数据</h3><ul>
-<li>引入模块, 使用 <code>Node</code> 中提供的 <code>require(&#39;./jack.js&#39;)</code> 方法</li>
-<li>暴露数据最后使用的是 <code>module.exports = {xxx}</code><ul>
-<li>或者 <code>exports.xxx = yyy</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="node中不仅包含js解析引擎，还包含服务器软件的功能"><a href="#node中不仅包含js解析引擎，还包含服务器软件的功能" class="headerlink" title="node中不仅包含js解析引擎，还包含服务器软件的功能"></a>node中不仅包含js解析引擎，还包含服务器软件的功能</h3><ul>
-<li>我们电脑上只要安装了node,不需要其他的软件配置，就能够开启一个http服务</li>
-</ul>
-<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><ul>
-<li>服务器就是一台电脑, 只是性能一般比我们普通电脑高!</li>
-</ul>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p><em>file协议，默认，是不能够发ajax请求的！</em></p>
-<ul>
-<li>服务器就是一台电脑(这个电脑是有独立ip)</li>
-<li>我们的笔记本也是电脑(也可以把最终的项目代码放到笔记本上! ,但是没有公司愿意这么干)</li>
-<li>操作系统都可能是一样的</li>
-<li>服务器能运行的软件，我们电脑也能运行</li>
-</ul>
-<h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><ul>
-<li>我们在 <code>cmd</code> 窗口中敲一个命令, 本质上是执行了一个程序(软件)</li>
-<li>默认按下回车时, 会到当前命令行所对应的目录寻找文件, 如果找到就立即执行</li>
-<li>如果找不到就会到环境变量中的 <code>PATH</code> 中指定的目录中寻找!</li>
-</ul>
-<p>例:我们把 <code>node</code> 的默认安装目录: <code>C:\Program Files\nodejs</code>, 配置 <code>PATH</code> 上，那么<br>我们在 <code>cmd</code> 中敲命令时，如果当前目录找不到，就会到 <code>C:\Program Files\nodejs</code><br>目录寻找相应的文件执行!</p>
-<h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><ul>
-<li>系统底层还是命令</li>
-<li>windows系统刚开始的时候还没有界面</li>
-<li>在 <code>cmd</code> 中敲命令,或默认到当前命令行对应的目录中找文件执行</li>
-</ul>
-<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><h2 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h2>
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/posts/Node/2016-12-10-Node-part1.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

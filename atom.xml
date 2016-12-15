@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ihoey.com/"/>
-  <updated>2016-12-12T01:14:12.959Z</updated>
+  <updated>2016-12-15T13:53:43.446Z</updated>
   <id>http://blog.ihoey.com/</id>
   
   <author>
@@ -16,13 +16,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Node第一部分-初体验</title>
+    <title>Node第二部分-模块及工具</title>
     <link href="http://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html"/>
     <id>http://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</id>
     <published>2016-12-12T01:12:32.000Z</published>
-    <updated>2016-12-12T01:14:12.959Z</updated>
+    <updated>2016-12-15T13:53:43.446Z</updated>
+    
+    <content type="html"><![CDATA[<p>为了让 <code>NodeJs</code> 的文件可以相互调用，<code>NodeJs</code> 提供了一个简单的模块系统。<br>模块是 <code>NodeJs</code> 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 <code>NodeJs</code> 文件就是一个模块，这个文件可能是 <code>JavaScript</code> 代码、<code>JSON</code> 或者编译过的 <code>C/C++</code> 扩展。</p>
+<a id="more"></a>
+<h2 id="NodeJs的模块"><a href="#NodeJs的模块" class="headerlink" title="NodeJs的模块"></a>NodeJs的模块</h2><ul>
+<li>核心模块(只要安装了node就会有的模块,已经被打包到了node.exe文件)</li>
+<li>自定义模块(我们自己写的js模块)</li>
+<li>第三方的模块(包)</li>
+</ul>
+<h2 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h2><ul>
+<li>http</li>
+<li>url</li>
+<li>fs</li>
+<li>……等</li>
+</ul>
+<h3 id="http-模块"><a href="#http-模块" class="headerlink" title="http 模块"></a>http 模块</h3><p>在我们的代码中请求它并把返回值赋给一个本地变量</p>
+<h3 id="url-模块"><a href="#url-模块" class="headerlink" title="url 模块"></a>url 模块</h3><ul>
+<li>用来操作url的</li>
+<li>url.parse(request.url,true)</li>
+</ul>
+<h2 id="fs文件操作模块"><a href="#fs文件操作模块" class="headerlink" title="fs文件操作模块"></a>fs文件操作模块</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</div><div class="line"><span class="comment">// 读取文件:</span></div><div class="line"><span class="comment">// 参数1：文件路径</span></div><div class="line"><span class="comment">// 参数2： 文件编码</span></div><div class="line"><span class="comment">// 返回值： 文件内容</span></div><div class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'./index.html'</span>,<span class="string">'utf8'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 写入文件</span></div><div class="line"><span class="comment">// 第一个参数：是要写入的文件目录,</span></div><div class="line"><span class="comment">// 第二个参数:是要写入的内容!</span></div><div class="line"><span class="comment">// 这个方法执行时会【覆盖】之前的文件内容!</span></div><div class="line">fs.writeFileSync(<span class="string">'./tmp.txt'</span>,<span class="string">'我是中国人，我爱自己的祖国!'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 追加文件</span></div><div class="line">fs.appendFileSync(<span class="string">'./xx.js'</span>,<span class="string">'我是小明，我在哪里?\r\n'</span>)</div><div class="line"></div><div class="line"> <span class="comment">// 创建目录</span></div><div class="line">    <span class="comment">// 判断目录是否存在，如果不存在，则创建</span></div><div class="line">    <span class="keyword">var</span> result = fs.existsSync(<span class="string">'data'</span>) <span class="comment">// 判断当前目录是否存在data目录</span></div><div class="line">    <span class="keyword">if</span>(!result)&#123;</div><div class="line">    <span class="built_in">console</span>.log(result)</div><div class="line">    <span class="comment">// 创建目录</span></div><div class="line">    fs.mkdirSync(<span class="string">'data'</span>)<span class="comment">// 在当前目录创建data目录</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<h2 id="dirname和firename"><a href="#dirname和firename" class="headerlink" title="dirname和firename"></a><strong>dirname和</strong>firename</h2><p>1, <strong>dirname 可在任意文件中直接使用,值表示当前文件所在路径字符串<br>2, </strong>firname 也可以在任意文件中使用,值表示当前文件的包含文件名的完整路径!</p>
+<h2 id="按顺序执行就是同步"><a href="#按顺序执行就是同步" class="headerlink" title="按顺序执行就是同步"></a>按顺序执行就是同步</h2><h2 id="form表单，提交get请求，会把请求参数添加到url中"><a href="#form表单，提交get请求，会把请求参数添加到url中" class="headerlink" title="form表单，提交get请求，会把请求参数添加到url中"></a>form表单，提交get请求，会把请求参数添加到url中</h2><h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向!"></a>重定向!</h2><ul>
+<li>在响应头里加上 Location:’新地址’,并设置状态为302</li>
+<li><code>res.setHeader(&#39;key&#39;,&#39;value&#39;)</code>// 设置响应头</li>
+<li><code>res.writeHead(状态码)</code>// 设置状态码!</li>
+<li>浏览器接收到数据后会重新向新地址跳转!</li>
+</ul>
+<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><ul>
+<li>node package manager</li>
+<li>node的包管理工具，管理的是第三方包</li>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="external">官网</a></li>
+<li>也能管理前端的包</li>
+</ul>
+<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><ul>
+<li>初始化: <code>npm init</code></li>
+<li><code>npm install &lt;包名&gt;</code></li>
+</ul>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h2 id="离线文档阅读器"><a href="#离线文档阅读器" class="headerlink" title="离线文档阅读器"></a>离线文档阅读器</h2><ul>
+<li><a href="https://zealdocs.org/" target="_blank" rel="external">windows版本</a></li>
+<li><a href="dash">mac版本</a></li>
+</ul>
+<h2 id="es6-es2015-每天一点点"><a href="#es6-es2015-每天一点点" class="headerlink" title="es6/es2015 每天一点点"></a>es6/es2015 每天一点点</h2><ul>
+<li>const<pre><code>//  const申明的数据，在栈中不可变，但是如果是对象，则对应的属性值可以变,也就是堆中的值可变,栈中的地址不可以变！
+</code></pre></li>
+<li>let<br>// let申明的变量，作用由大括号决定!</li>
+</ul>
+<h3 id="提交效率"><a href="#提交效率" class="headerlink" title="提交效率"></a>提交效率</h3><ul>
+<li>组合键: <code>win+E</code>, 打开资源管理器</li>
+<li>组合键: <code>wind+D</code>, 快速切换到桌面</li>
+<li>组合键: <code>ctrl+shift+esc</code> 快速打开任务管理器</li>
+</ul>
+]]></content>
     
     <summary type="html">
+    
+      &lt;p&gt;为了让 &lt;code&gt;NodeJs&lt;/code&gt; 的文件可以相互调用，&lt;code&gt;NodeJs&lt;/code&gt; 提供了一个简单的模块系统。&lt;br&gt;模块是 &lt;code&gt;NodeJs&lt;/code&gt; 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 &lt;code&gt;NodeJs&lt;/code&gt; 文件就是一个模块，这个文件可能是 &lt;code&gt;JavaScript&lt;/code&gt; 代码、&lt;code&gt;JSON&lt;/code&gt; 或者编译过的 &lt;code&gt;C/C++&lt;/code&gt; 扩展。&lt;/p&gt;
     
     </summary>
     
@@ -31,7 +85,7 @@
     
       <category term="Node" scheme="http://blog.ihoey.com/tags/Node/"/>
     
-      <category term="Nodejs" scheme="http://blog.ihoey.com/tags/Nodejs/"/>
+      <category term="NodeJs" scheme="http://blog.ihoey.com/tags/NodeJs/"/>
     
   </entry>
   
@@ -40,58 +94,66 @@
     <link href="http://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html"/>
     <id>http://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html</id>
     <published>2016-12-10T02:31:09.000Z</published>
-    <updated>2016-12-10T14:25:56.234Z</updated>
+    <updated>2016-12-15T13:37:32.294Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
-</ul>
-<h2 id="Node是什么"><a href="#Node是什么" class="headerlink" title="Node是什么?"></a>Node是什么?</h2><ul>
-<li><code>Node</code> 中也包含 <code>js</code> 解析引擎( <code>Node</code> 现在用的就是 <code>V8</code> 引擎，速度非常快)</li>
-<li><code>Node</code></li>
-<li><code>PHP</code> 、 后端使用的语言(后端写的代码是在服务器！)<ul>
-<li>区分前端和后端(就是最终代码是在哪里执行的，在浏览器中执行就是前端，在服务器执行，就是后端)</li>
-</ul>
-</li>
-<li><code>Node</code> 其实【 <em>是一个包含的 <code>js</code> 解析引擎的软件</em> 】，(可以在后端使用)<ul>
-<li>有了 <code>js</code> 解析引擎就会解析 <code>js</code> 代码</li>
-</ul>
-</li>
-<li>浏览器的 <code>js</code><ul>
-<li>可以通过 <code>js</code> 操作 <code>html</code></li>
-<li>有 <code>DOM</code> (和操作 <code>html</code> 有关)，有 <code>BOM</code> (和浏览器有关)，有 <code>ECMA</code> (就是 <code>js</code> 语法规范)</li>
-</ul>
-</li>
-</ul>
+    <content type="html"><![CDATA[<h2 id="NodeJs是什么？"><a href="#NodeJs是什么？" class="headerlink" title="NodeJs是什么？"></a>NodeJs是什么？</h2><blockquote>
+<p>简单的说 <code>NodeJs</code> 就是运行在服务端的 <code>JavaScript</code> 。<code>NodeJs</code> 是一个基于 <code>Chrome JavaScript</code> 运行时建立的一个平台。<code>NodeJs</code> 是一个事件驱动 <code>I/O</code> 服务端 <code>JavaScript</code> 环境，基于 <code>Google</code> 的 <code>V8</code> 引擎，<code>V8</code> 引擎执行 <code>Javascript</code> 的速度非常快，性能非常好。</p>
+</blockquote>
 <ul>
-<li><code>Node</code> 中的 <code>js</code><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网https://nodejs.org</a></li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><code>NodeJs</code> 自带运行时环境可在 <code>Javascript</code> 脚本的基础上可以解释和执行(这类似于 <code>JVM</code> 的 <code>Java</code> 字节码)。这个运行时允许在浏览器以外的任何机器上执行 <code>JavaScript</code> 代码。由于这种运行时在 <code>NodeJs</code> 上，所以 <code>JavaScript</code> 现在可以在服务器上并执行。</li>
+<li><code>NodeJs</code> 还提供了各种丰富的 <code>JavaScript</code> 模块库，它极大简化了使用 <code>NodeJs</code> 来扩展 <code>Web</code> 应用程序的研究与开发。</li>
+<li><code>NodeJs</code> = 运行环境 + <code>JavaScript</code> 库</li>
+</ul>
+<h3 id="浏览器和NodeJs中的Js"><a href="#浏览器和NodeJs中的Js" class="headerlink" title="浏览器和NodeJs中的Js"></a>浏览器和NodeJs中的Js</h3><ul>
+<li>浏览器的 <code>Js</code><ul>
+<li>可以通过 <code>Js</code> 操作 <code>Html</code></li>
+<li>有 <code>DOM</code> (和操作 <code>Html</code> 有关)，有 <code>BOM</code> (和浏览器有关)，有 <code>ECMA</code> (就是 <code>js</code> 语法规范)</li>
+</ul>
+</li>
+<li><code>Node</code> 中的 <code>Js</code><ul>
 <li>没有 <code>DOM</code>, 没有 <code>BOM</code>, 有 <code>ECMA</code></li>
 <li><code>windows</code> (也就是说没有 <code>windows</code> 对象)</li>
 </ul>
 </li>
 </ul>
-<h2 id="Node安装"><a href="#Node安装" class="headerlink" title="Node安装"></a>Node安装</h2><h2 id="Node快速开始"><a href="#Node快速开始" class="headerlink" title="Node快速开始"></a>Node快速开始</h2><ul>
-<li>1.10 <code>xxx</code> , <code>Node</code> 就开源<ul>
-<li>开源的话, 别人就可以贡献源码! </li>
-<li>第三方社区: 觉得Node更新太慢! <ul>
-<li>第三方社区给予原来的Node继续开发加入了很多新的东西</li>
+<h2 id="Node安装"><a href="#Node安装" class="headerlink" title="Node安装"></a>Node安装</h2><p>在 windows 上安装 NodeJs (本教程中使用)。使用 MSI 文件，并按照提示安装 NodeJs ，默认情况下，安装程序将 NodeJs 发行到 C:\Program Files\nodejs. 但这里我们可以根据需要修改安装路径到指定的文件夹，比如：D:\Program Files\nodejs，并将 D:\Program Files\nodejs 目录添加到 Window 系统的 PATH 环境变量中（或者安装的时候选中添加环境变量，下面会有提到）。</p>
+<ul>
+<li>第一步：双击下载的 <code>node-v7.2.1-x64.msi</code> 文件，出现提示安装界面</li>
+<li>第二步：选择安装目录，比如安装在目录 <code>D:\Program Files\nodejs</code> 中</li>
+<li>第三步：选择安装的模块和功能，这里全部安装，并添加到系统环境变量，最后一个选项</li>
+<li>最后一步：安装完成！</li>
+<li>验证安装：在 <code>CMD</code> 或者 <code>powershell</code> 中输入 <code>node -v</code> 注意中间有空格，显示版本号就说明安装成功了！</li>
+</ul>
+<h2 id="Node版本介绍"><a href="#Node版本介绍" class="headerlink" title="Node版本介绍"></a>Node版本介绍</h2><ul>
+<li><code>0.10.x</code> , <code>Node</code> 就开源了<ul>
+<li>开源（开放源代码）的话, 别人就可以贡献（提意见，修改等）源码! </li>
+<li>因为作者比较精益求精，所以后来第三方社区: 觉得Node更新太慢! <ul>
+<li>于是第三方社区在原来Node的基础上继续开发并加入了很多新的东西</li>
 </ul>
 </li>
-<li>合并: 4.x 直接升到4.x</li>
-<li>4.xxx  5.xxx  6.xxx 7.xx</li>
+<li>后来因为反响太大，作者便直接合并: 从 <code>0.10.x</code> 直接升到 <code>4.x</code></li>
+<li>版本历史 <code>4.x</code> <code>5.x</code> <code>6.x</code> <code>7.x</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="Node中引入模块-和暴露数据"><a href="#Node中引入模块-和暴露数据" class="headerlink" title="Node中引入模块, 和暴露数据"></a>Node中引入模块, 和暴露数据</h3><ul>
-<li>引入模块, 使用 <code>Node</code> 中提供的 <code>require(&#39;./jack.js&#39;)</code> 方法</li>
-<li>暴露数据最后使用的是 <code>module.exports = {xxx}</code><ul>
-<li>或者 <code>exports.xxx = yyy</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="node中不仅包含js解析引擎，还包含服务器软件的功能"><a href="#node中不仅包含js解析引擎，还包含服务器软件的功能" class="headerlink" title="node中不仅包含js解析引擎，还包含服务器软件的功能"></a>node中不仅包含js解析引擎，还包含服务器软件的功能</h3><ul>
+<h2 id="创建-NodeJs-应用"><a href="#创建-NodeJs-应用" class="headerlink" title="创建 NodeJs 应用"></a>创建 NodeJs 应用</h2><h3 id="步骤一、引入-required-模块"><a href="#步骤一、引入-required-模块" class="headerlink" title="步骤一、引入 required 模块"></a>步骤一、引入 required 模块</h3><p>我们使用 require 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div></pre></td></tr></table></figure>
+<h3 id="步骤一、创建服务器"><a href="#步骤一、创建服务器" class="headerlink" title="步骤一、创建服务器"></a>步骤一、创建服务器</h3><ul>
 <li>我们电脑上只要安装了node,不需要其他的软件配置，就能够开启一个http服务</li>
 </ul>
-<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><ul>
+<p>接下来我们使用 <code>http.createServer()</code> 方法创建服务器，并使用 <code>listen</code> 方法绑定 <code>8888</code> 端口。 函数通过 <code>request</code>, <code>response</code> 参数来接收和响应数据。<br>实例如下，在你项目的根目录下创建一个叫 <code>server.js</code> 的文件，并写入以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line">  <span class="comment">// 发送 http 头部</span></div><div class="line">  <span class="comment">// http 状态码：200 ：OK</span></div><div class="line">  <span class="comment">// 内容类型： text/piain</span></div><div class="line">  response.writeHead(<span class="number">200</span>,&#123;<span class="string">'Contenr-Type'</span>: <span class="string">'text/piain'</span>&#125;)</div><div class="line">  <span class="comment">//发送响应数据 ‘hello world’</span></div><div class="line">  response.end(<span class="string">'hello-world'</span>);</div><div class="line">  <span class="comment">//监听8888端口</span></div><div class="line">  &#125;).listen(<span class="number">8888</span>)</div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8888/'</span>)</div></pre></td></tr></table></figure>
+<p>以上代码我们完成了一个可以工作的 HTTP 服务器。<br>使用 node 命令执行以上的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node server.js</div><div class="line">Server running at http:<span class="comment">//127.0.0.1:8888/</span></div></pre></td></tr></table></figure>
+<p>接下来，打开浏览器访问 <a href="http://127.0.0.1:8888/，你会看到一个写着" target="_blank" rel="external">http://127.0.0.1:8888/，你会看到一个写着</a> “Hello World”的网页。</p>
+<blockquote>
+<p>服务器</p>
+</blockquote>
+<ul>
 <li>服务器就是一台电脑, 只是性能一般比我们普通电脑高!</li>
 </ul>
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p><em>file协议，默认，是不能够发ajax请求的！</em></p>
@@ -106,18 +168,22 @@
 <li>默认按下回车时, 会到当前命令行所对应的目录寻找文件, 如果找到就立即执行</li>
 <li>如果找不到就会到环境变量中的 <code>PATH</code> 中指定的目录中寻找!</li>
 </ul>
-<p>例:我们把 <code>node</code> 的默认安装目录: <code>C:\Program Files\nodejs</code>, 配置 <code>PATH</code> 上，那么<br>我们在 <code>cmd</code> 中敲命令时，如果当前目录找不到，就会到 <code>C:\Program Files\nodejs</code><br>目录寻找相应的文件执行!</p>
+<p>例:我们把 <code>node</code> 的默认安装目录: <code>D:\Program Files\nodejs</code>, 配置 <code>PATH</code> 上，那么<br>我们在 <code>cmd</code> 中敲命令时，如果当前目录找不到，就会到 <code>D:\Program Files\nodejs</code><br>目录寻找相应的文件执行!</p>
 <h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><ul>
 <li>系统底层还是命令</li>
 <li>windows系统刚开始的时候还没有界面</li>
 <li>在 <code>cmd</code> 中敲命令,或默认到当前命令行对应的目录中找文件执行</li>
 </ul>
-<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><h2 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h2>]]></content>
+]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Node&quot;&gt;&lt;a href=&quot;#Node&quot; class=&quot;headerlink&quot; title=&quot;Node&quot;&gt;&lt;/a&gt;Node&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;ex
+      &lt;h2 id=&quot;NodeJs是什么？&quot;&gt;&lt;a href=&quot;#NodeJs是什么？&quot; class=&quot;headerlink&quot; title=&quot;NodeJs是什么？&quot;&gt;&lt;/a&gt;NodeJs是什么？&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;简单的说 &lt;code&gt;NodeJs&lt;/code&gt; 就是运行在服务端的 &lt;code&gt;JavaScript&lt;/code&gt; 。&lt;code&gt;NodeJs&lt;/code&gt; 是一个基于 &lt;code&gt;Chrome JavaScript&lt;/code&gt; 运行时建立的一个平台。&lt;code&gt;NodeJs&lt;/code&gt; 是一个事件驱动 &lt;code&gt;I/O&lt;/code&gt; 服务端 &lt;code&gt;JavaScript&lt;/code&gt; 环境，基于 &lt;code&gt;Google&lt;/code&gt; 的 &lt;code&gt;V8&lt;/code&gt; 引擎，&lt;code&gt;V8&lt;/code&gt; 引擎执行 &lt;code&gt;Javascript&lt;/code&gt; 的速度非常快，性能非常好。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;官网https://nodejs.org&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -126,7 +192,7 @@
     
       <category term="Node" scheme="http://blog.ihoey.com/tags/Node/"/>
     
-      <category term="Nodejs" scheme="http://blog.ihoey.com/tags/Nodejs/"/>
+      <category term="NodeJs" scheme="http://blog.ihoey.com/tags/NodeJs/"/>
     
   </entry>
   

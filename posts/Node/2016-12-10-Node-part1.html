@@ -96,7 +96,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Node,Nodejs," />
+  <meta name="keywords" content="Node,NodeJs," />
 
 
 
@@ -114,49 +114,28 @@
 
 
 
-<meta name="description" content="Node
-官网
-
-Node是什么?
-Node 中也包含 js 解析引擎( Node 现在用的就是 V8 引擎，速度非常快)
-Node
-PHP 、 后端使用的语言(后端写的代码是在服务器！)
-区分前端和后端(就是最终代码是在哪里执行的，在浏览器中执行就是前端，在服务器执行，就是后端)
+<meta name="description" content="NodeJs是什么？
+简单的说 NodeJs 就是运行在服务端的 JavaScript 。NodeJs 是一个基于 Chrome JavaScript 运行时建立的一个平台。NodeJs 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript 的速度非常快，性能非常好。
 
 
-Node 其实【 是一个包含的 js 解析引擎的软件 】，(可以在后端使用)
-有了 js 解析引擎就会解析 js">
+官网https://nodejs.org">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node第一部分-初体验">
 <meta property="og:url" content="http://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html">
 <meta property="og:site_name" content="梦魇小栈">
-<meta property="og:description" content="Node
-官网
-
-Node是什么?
-Node 中也包含 js 解析引擎( Node 现在用的就是 V8 引擎，速度非常快)
-Node
-PHP 、 后端使用的语言(后端写的代码是在服务器！)
-区分前端和后端(就是最终代码是在哪里执行的，在浏览器中执行就是前端，在服务器执行，就是后端)
+<meta property="og:description" content="NodeJs是什么？
+简单的说 NodeJs 就是运行在服务端的 JavaScript 。NodeJs 是一个基于 Chrome JavaScript 运行时建立的一个平台。NodeJs 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript 的速度非常快，性能非常好。
 
 
-Node 其实【 是一个包含的 js 解析引擎的软件 】，(可以在后端使用)
-有了 js 解析引擎就会解析 js">
-<meta property="og:updated_time" content="2016-12-10T14:25:56.234Z">
+官网https://nodejs.org">
+<meta property="og:updated_time" content="2016-12-15T13:37:32.294Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node第一部分-初体验">
-<meta name="twitter:description" content="Node
-官网
-
-Node是什么?
-Node 中也包含 js 解析引擎( Node 现在用的就是 V8 引擎，速度非常快)
-Node
-PHP 、 后端使用的语言(后端写的代码是在服务器！)
-区分前端和后端(就是最终代码是在哪里执行的，在浏览器中执行就是前端，在服务器执行，就是后端)
+<meta name="twitter:description" content="NodeJs是什么？
+简单的说 NodeJs 就是运行在服务端的 JavaScript 。NodeJs 是一个基于 Chrome JavaScript 运行时建立的一个平台。NodeJs 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript 的速度非常快，性能非常好。
 
 
-Node 其实【 是一个包含的 js 解析引擎的软件 】，(可以在后端使用)
-有了 js 解析引擎就会解析 js">
+官网https://nodejs.org">
 
 
 
@@ -353,16 +332,6 @@ Node 其实【 是一个包含的 js 解析引擎的软件 】，(可以在后�
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/calendar" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            日程
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -495,56 +464,64 @@ Node 其实【 是一个包含的 js 解析引擎的软件 】，(可以在后�
       
 
       
-        <h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a></li>
-</ul>
-<h2 id="Node是什么"><a href="#Node是什么" class="headerlink" title="Node是什么?"></a>Node是什么?</h2><ul>
-<li><code>Node</code> 中也包含 <code>js</code> 解析引擎( <code>Node</code> 现在用的就是 <code>V8</code> 引擎，速度非常快)</li>
-<li><code>Node</code></li>
-<li><code>PHP</code> 、 后端使用的语言(后端写的代码是在服务器！)<ul>
-<li>区分前端和后端(就是最终代码是在哪里执行的，在浏览器中执行就是前端，在服务器执行，就是后端)</li>
-</ul>
-</li>
-<li><code>Node</code> 其实【 <em>是一个包含的 <code>js</code> 解析引擎的软件</em> 】，(可以在后端使用)<ul>
-<li>有了 <code>js</code> 解析引擎就会解析 <code>js</code> 代码</li>
-</ul>
-</li>
-<li>浏览器的 <code>js</code><ul>
-<li>可以通过 <code>js</code> 操作 <code>html</code></li>
-<li>有 <code>DOM</code> (和操作 <code>html</code> 有关)，有 <code>BOM</code> (和浏览器有关)，有 <code>ECMA</code> (就是 <code>js</code> 语法规范)</li>
-</ul>
-</li>
-</ul>
+        <h2 id="NodeJs是什么？"><a href="#NodeJs是什么？" class="headerlink" title="NodeJs是什么？"></a>NodeJs是什么？</h2><blockquote>
+<p>简单的说 <code>NodeJs</code> 就是运行在服务端的 <code>JavaScript</code> 。<code>NodeJs</code> 是一个基于 <code>Chrome JavaScript</code> 运行时建立的一个平台。<code>NodeJs</code> 是一个事件驱动 <code>I/O</code> 服务端 <code>JavaScript</code> 环境，基于 <code>Google</code> 的 <code>V8</code> 引擎，<code>V8</code> 引擎执行 <code>Javascript</code> 的速度非常快，性能非常好。</p>
+</blockquote>
 <ul>
-<li><code>Node</code> 中的 <code>js</code><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网https://nodejs.org</a></li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><code>NodeJs</code> 自带运行时环境可在 <code>Javascript</code> 脚本的基础上可以解释和执行(这类似于 <code>JVM</code> 的 <code>Java</code> 字节码)。这个运行时允许在浏览器以外的任何机器上执行 <code>JavaScript</code> 代码。由于这种运行时在 <code>NodeJs</code> 上，所以 <code>JavaScript</code> 现在可以在服务器上并执行。</li>
+<li><code>NodeJs</code> 还提供了各种丰富的 <code>JavaScript</code> 模块库，它极大简化了使用 <code>NodeJs</code> 来扩展 <code>Web</code> 应用程序的研究与开发。</li>
+<li><code>NodeJs</code> = 运行环境 + <code>JavaScript</code> 库</li>
+</ul>
+<h3 id="浏览器和NodeJs中的Js"><a href="#浏览器和NodeJs中的Js" class="headerlink" title="浏览器和NodeJs中的Js"></a>浏览器和NodeJs中的Js</h3><ul>
+<li>浏览器的 <code>Js</code><ul>
+<li>可以通过 <code>Js</code> 操作 <code>Html</code></li>
+<li>有 <code>DOM</code> (和操作 <code>Html</code> 有关)，有 <code>BOM</code> (和浏览器有关)，有 <code>ECMA</code> (就是 <code>js</code> 语法规范)</li>
+</ul>
+</li>
+<li><code>Node</code> 中的 <code>Js</code><ul>
 <li>没有 <code>DOM</code>, 没有 <code>BOM</code>, 有 <code>ECMA</code></li>
 <li><code>windows</code> (也就是说没有 <code>windows</code> 对象)</li>
 </ul>
 </li>
 </ul>
-<h2 id="Node安装"><a href="#Node安装" class="headerlink" title="Node安装"></a>Node安装</h2><h2 id="Node快速开始"><a href="#Node快速开始" class="headerlink" title="Node快速开始"></a>Node快速开始</h2><ul>
-<li>1.10 <code>xxx</code> , <code>Node</code> 就开源<ul>
-<li>开源的话, 别人就可以贡献源码! </li>
-<li>第三方社区: 觉得Node更新太慢! <ul>
-<li>第三方社区给予原来的Node继续开发加入了很多新的东西</li>
+<h2 id="Node安装"><a href="#Node安装" class="headerlink" title="Node安装"></a>Node安装</h2><p>在 windows 上安装 NodeJs (本教程中使用)。使用 MSI 文件，并按照提示安装 NodeJs ，默认情况下，安装程序将 NodeJs 发行到 C:\Program Files\nodejs. 但这里我们可以根据需要修改安装路径到指定的文件夹，比如：D:\Program Files\nodejs，并将 D:\Program Files\nodejs 目录添加到 Window 系统的 PATH 环境变量中（或者安装的时候选中添加环境变量，下面会有提到）。</p>
+<ul>
+<li>第一步：双击下载的 <code>node-v7.2.1-x64.msi</code> 文件，出现提示安装界面</li>
+<li>第二步：选择安装目录，比如安装在目录 <code>D:\Program Files\nodejs</code> 中</li>
+<li>第三步：选择安装的模块和功能，这里全部安装，并添加到系统环境变量，最后一个选项</li>
+<li>最后一步：安装完成！</li>
+<li>验证安装：在 <code>CMD</code> 或者 <code>powershell</code> 中输入 <code>node -v</code> 注意中间有空格，显示版本号就说明安装成功了！</li>
+</ul>
+<h2 id="Node版本介绍"><a href="#Node版本介绍" class="headerlink" title="Node版本介绍"></a>Node版本介绍</h2><ul>
+<li><code>0.10.x</code> , <code>Node</code> 就开源了<ul>
+<li>开源（开放源代码）的话, 别人就可以贡献（提意见，修改等）源码! </li>
+<li>因为作者比较精益求精，所以后来第三方社区: 觉得Node更新太慢! <ul>
+<li>于是第三方社区在原来Node的基础上继续开发并加入了很多新的东西</li>
 </ul>
 </li>
-<li>合并: 4.x 直接升到4.x</li>
-<li>4.xxx  5.xxx  6.xxx 7.xx</li>
+<li>后来因为反响太大，作者便直接合并: 从 <code>0.10.x</code> 直接升到 <code>4.x</code></li>
+<li>版本历史 <code>4.x</code> <code>5.x</code> <code>6.x</code> <code>7.x</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="Node中引入模块-和暴露数据"><a href="#Node中引入模块-和暴露数据" class="headerlink" title="Node中引入模块, 和暴露数据"></a>Node中引入模块, 和暴露数据</h3><ul>
-<li>引入模块, 使用 <code>Node</code> 中提供的 <code>require(&#39;./jack.js&#39;)</code> 方法</li>
-<li>暴露数据最后使用的是 <code>module.exports = {xxx}</code><ul>
-<li>或者 <code>exports.xxx = yyy</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="node中不仅包含js解析引擎，还包含服务器软件的功能"><a href="#node中不仅包含js解析引擎，还包含服务器软件的功能" class="headerlink" title="node中不仅包含js解析引擎，还包含服务器软件的功能"></a>node中不仅包含js解析引擎，还包含服务器软件的功能</h3><ul>
+<h2 id="创建-NodeJs-应用"><a href="#创建-NodeJs-应用" class="headerlink" title="创建 NodeJs 应用"></a>创建 NodeJs 应用</h2><h3 id="步骤一、引入-required-模块"><a href="#步骤一、引入-required-模块" class="headerlink" title="步骤一、引入 required 模块"></a>步骤一、引入 required 模块</h3><p>我们使用 require 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div></pre></td></tr></table></figure>
+<h3 id="步骤一、创建服务器"><a href="#步骤一、创建服务器" class="headerlink" title="步骤一、创建服务器"></a>步骤一、创建服务器</h3><ul>
 <li>我们电脑上只要安装了node,不需要其他的软件配置，就能够开启一个http服务</li>
 </ul>
-<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><ul>
+<p>接下来我们使用 <code>http.createServer()</code> 方法创建服务器，并使用 <code>listen</code> 方法绑定 <code>8888</code> 端口。 函数通过 <code>request</code>, <code>response</code> 参数来接收和响应数据。<br>实例如下，在你项目的根目录下创建一个叫 <code>server.js</code> 的文件，并写入以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line">  <span class="comment">// 发送 http 头部</span></div><div class="line">  <span class="comment">// http 状态码：200 ：OK</span></div><div class="line">  <span class="comment">// 内容类型： text/piain</span></div><div class="line">  response.writeHead(<span class="number">200</span>,&#123;<span class="string">'Contenr-Type'</span>: <span class="string">'text/piain'</span>&#125;)</div><div class="line">  <span class="comment">//发送响应数据 ‘hello world’</span></div><div class="line">  response.end(<span class="string">'hello-world'</span>);</div><div class="line">  <span class="comment">//监听8888端口</span></div><div class="line">  &#125;).listen(<span class="number">8888</span>)</div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8888/'</span>)</div></pre></td></tr></table></figure>
+<p>以上代码我们完成了一个可以工作的 HTTP 服务器。<br>使用 node 命令执行以上的代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node server.js</div><div class="line">Server running at http:<span class="comment">//127.0.0.1:8888/</span></div></pre></td></tr></table></figure>
+<p>接下来，打开浏览器访问 <a href="http://127.0.0.1:8888/，你会看到一个写着" target="_blank" rel="external">http://127.0.0.1:8888/，你会看到一个写着</a> “Hello World”的网页。</p>
+<blockquote>
+<p>服务器</p>
+</blockquote>
+<ul>
 <li>服务器就是一台电脑, 只是性能一般比我们普通电脑高!</li>
 </ul>
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p><em>file协议，默认，是不能够发ajax请求的！</em></p>
@@ -559,13 +536,13 @@ Node 其实【 是一个包含的 js 解析引擎的软件 】，(可以在后�
 <li>默认按下回车时, 会到当前命令行所对应的目录寻找文件, 如果找到就立即执行</li>
 <li>如果找不到就会到环境变量中的 <code>PATH</code> 中指定的目录中寻找!</li>
 </ul>
-<p>例:我们把 <code>node</code> 的默认安装目录: <code>C:\Program Files\nodejs</code>, 配置 <code>PATH</code> 上，那么<br>我们在 <code>cmd</code> 中敲命令时，如果当前目录找不到，就会到 <code>C:\Program Files\nodejs</code><br>目录寻找相应的文件执行!</p>
+<p>例:我们把 <code>node</code> 的默认安装目录: <code>D:\Program Files\nodejs</code>, 配置 <code>PATH</code> 上，那么<br>我们在 <code>cmd</code> 中敲命令时，如果当前目录找不到，就会到 <code>D:\Program Files\nodejs</code><br>目录寻找相应的文件执行!</p>
 <h2 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h2><ul>
 <li>系统底层还是命令</li>
 <li>windows系统刚开始的时候还没有界面</li>
 <li>在 <code>cmd</code> 中敲命令,或默认到当前命令行对应的目录中找文件执行</li>
 </ul>
-<h2 id="http"><a href="#http" class="headerlink" title="http"></a>http</h2><h2 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h2>
+
       
     </div>
 
@@ -625,7 +602,7 @@ Node 其实【 是一个包含的 js 解析引擎的软件 】，(可以在后�
           
             <a href="/tags/Node/" rel="tag"># Node</a>
           
-            <a href="/tags/Nodejs/" rel="tag"># Nodejs</a>
+            <a href="/tags/NodeJs/" rel="tag"># NodeJs</a>
           
         </div>
       
@@ -644,8 +621,8 @@ Node 其实【 是一个包含的 js 解析引擎的软件 】，(可以在后�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/Node/2016-12-12-Node-part2.html" rel="prev" title="Node第一部分-初体验">
-                Node第一部分-初体验 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/Node/2016-12-12-Node-part2.html" rel="prev" title="Node第二部分-模块及工具">
+                Node第二部分-模块及工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -840,7 +817,7 @@ Node 其实【 是一个包含的 js 解析引擎的软件 】，(可以在后�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Node"><span class="nav-number">1.</span> <span class="nav-text">Node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node是什么"><span class="nav-number">2.</span> <span class="nav-text">Node是什么?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node安装"><span class="nav-number">3.</span> <span class="nav-text">Node安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node快速开始"><span class="nav-number">4.</span> <span class="nav-text">Node快速开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node中引入模块-和暴露数据"><span class="nav-number">4.1.</span> <span class="nav-text">Node中引入模块, 和暴露数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#node中不仅包含js解析引擎，还包含服务器软件的功能"><span class="nav-number">4.2.</span> <span class="nav-text">node中不仅包含js解析引擎，还包含服务器软件的功能</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器"><span class="nav-number">5.</span> <span class="nav-text">服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">5.1.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">6.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行"><span class="nav-number">7.</span> <span class="nav-text">命令行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http"><span class="nav-number">8.</span> <span class="nav-text">http</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件读取"><span class="nav-number">9.</span> <span class="nav-text">文件读取</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NodeJs是什么？"><span class="nav-number">1.</span> <span class="nav-text">NodeJs是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器和NodeJs中的Js"><span class="nav-number">1.1.</span> <span class="nav-text">浏览器和NodeJs中的Js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node安装"><span class="nav-number">2.</span> <span class="nav-text">Node安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node版本介绍"><span class="nav-number">3.</span> <span class="nav-text">Node版本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建-NodeJs-应用"><span class="nav-number">4.</span> <span class="nav-text">创建 NodeJs 应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤一、引入-required-模块"><span class="nav-number">4.1.</span> <span class="nav-text">步骤一、引入 required 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤一、创建服务器"><span class="nav-number">4.2.</span> <span class="nav-text">步骤一、创建服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">4.3.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">5.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令行"><span class="nav-number">6.</span> <span class="nav-text">命令行</span></a></li></ol></div>
             
 
           </div>
