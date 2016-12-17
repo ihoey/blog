@@ -41,10 +41,8 @@
 
           {% if site.categories.length > 0 %}
             <div class="site-state-item site-state-categories">
-              {% if theme.menu.categories %}<a href="{{ url_for(theme.menu.categories) }}">{% endif %}
                 <span class="site-state-item-count">{{ site.categories.length }}</span>
                 <span class="site-state-item-name">{{ __('state.categories') }}</span>
-              {% if theme.menu.categories %}</a>{% endif %}
             </div>
           {% endif %}
 
@@ -72,7 +70,7 @@
           {% if theme.social %}
             {% for name, link in theme.social %}
               <span class="links-of-author-item">
-                <a href="{{ link }}" target="_blank" title="{{ name }}">
+                <a href="{{ link }}" target="_blank" title="{{ name }}" rel="nofollow">
                   {% if theme.social_icons.enable %}
                     <i class="fa fa-fw fa-{{ theme.social_icons[name] | default('globe') | lower }}"></i>
                   {% endif %}

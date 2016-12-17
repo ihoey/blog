@@ -14,7 +14,7 @@
         dsq.type = 'text/javascript';
         dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        ((document.getElementById('footer') || document.getElementsByTagName('body')[0]).appendChild(dsq);
       }
 
       run_disqus_script('count.js');
