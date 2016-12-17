@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.ihoey.com/"/>
-  <updated>2016-12-15T13:53:43.446Z</updated>
+  <updated>2016-12-17T12:34:55.139Z</updated>
   <id>http://blog.ihoey.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html"/>
     <id>http://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</id>
     <published>2016-12-12T01:12:32.000Z</published>
-    <updated>2016-12-15T13:53:43.446Z</updated>
+    <updated>2016-12-17T12:34:55.139Z</updated>
     
     <content type="html"><![CDATA[<p>为了让 <code>NodeJs</code> 的文件可以相互调用，<code>NodeJs</code> 提供了一个简单的模块系统。<br>模块是 <code>NodeJs</code> 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 <code>NodeJs</code> 文件就是一个模块，这个文件可能是 <code>JavaScript</code> 代码、<code>JSON</code> 或者编译过的 <code>C/C++</code> 扩展。</p>
 <a id="more"></a>
@@ -63,8 +63,7 @@
 <li><a href="dash">mac版本</a></li>
 </ul>
 <h2 id="es6-es2015-每天一点点"><a href="#es6-es2015-每天一点点" class="headerlink" title="es6/es2015 每天一点点"></a>es6/es2015 每天一点点</h2><ul>
-<li>const<pre><code>//  const申明的数据，在栈中不可变，但是如果是对象，则对应的属性值可以变,也就是堆中的值可变,栈中的地址不可以变！
-</code></pre></li>
+<li>const<br>//  const申明的数据，在栈中不可变，但是如果是对象，则对应的属性值可以变,也就是堆中的值可变,栈中的地址不可以变！</li>
 <li>let<br>// let申明的变量，作用由大括号决定!</li>
 </ul>
 <h3 id="提交效率"><a href="#提交效率" class="headerlink" title="提交效率"></a>提交效率</h3><ul>
@@ -201,7 +200,7 @@
     <link href="http://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html"/>
     <id>http://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</id>
     <published>2016-11-27T02:35:12.000Z</published>
-    <updated>2016-11-27T08:02:51.268Z</updated>
+    <updated>2016-12-17T12:26:30.648Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Markdown-介绍"><a href="#Markdown-介绍" class="headerlink" title="Markdown 介绍"></a>Markdown 介绍</h2><ul>
 <li><em>Markdown</em> 是一个 <strong>轻量级  高效率</strong> 的标记语言</li>
