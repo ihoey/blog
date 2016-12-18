@@ -29,7 +29,7 @@ function run() {
 			echo('Error: Git add failed');
 			exit(1);
 		}
-		if (exec('git commit -m "更新源文件"').code !== 0) {
+		if (exec('git commit -m "这个勤奋的家伙又更新源文件"').code !== 0) {
 			echo('Error: Git commit failed');
 			exit(1);
 		}
