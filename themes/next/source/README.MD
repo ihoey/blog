@@ -14,9 +14,9 @@
 
 <center> <h2>联系方式</h2> </center>
 
-- Email：<a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ihoeys@163.com">ihoeys@163.com</a>
+- Email：<a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com">mail@ihoey.com</a>
 - Q  Q：<a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes">1058221214</a>
-- 微博：<a href="http://weibo.com/hy951121">hy1121</a>
+- 微博：<a href="http://weibo.com/hy951121">ihoeys</a>
 
 ***
 
@@ -40,10 +40,3 @@
 
 啦啦啦，感谢你们啦，我会做的更好的呢
 2016-6-25:感谢你们的赞助了.虽然人不多,但我还是很感动的.
-
-
-***
-
-<iframe src="http://sponsor.ihoey.com/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
-
-***

@@ -11,7 +11,7 @@ categories: Node
 
 > 简单的说 `NodeJs` 就是运行在服务端的 `JavaScript` 。`NodeJs` 是一个基于 `Chrome JavaScript` 运行时建立的一个平台。`NodeJs` 是一个事件驱动 `I/O` 服务端 `JavaScript` 环境，基于 `Google` 的 `V8` 引擎，`V8` 引擎执行 `Javascript` 的速度非常快，性能非常好。
 
-- [官网https://nodejs.org](https://nodejs.org/en/)
+- 官网 `https://nodejs.org`
 
 <!--more-->
 
@@ -30,7 +30,7 @@ categories: Node
 
 ## Node安装
 
-在 windows 上安装 NodeJs (本教程中使用)。使用 MSI 文件，并按照提示安装 NodeJs ，默认情况下，安装程序将 NodeJs 发行到 C:\Program Files\nodejs. 但这里我们可以根据需要修改安装路径到指定的文件夹，比如：D:\Program Files\nodejs，并将 D:\Program Files\nodejs 目录添加到 Window 系统的 PATH 环境变量中（或者安装的时候选中添加环境变量，下面会有提到）。
+在 `windows` 上安装 `NodeJs` (本教程中使用)。使用 `MSI` 文件，并按照提示安装 `NodeJs` ，默认情况下，安装程序将 `NodeJs` 发行到 `C:\Program Files\nodejs`. 但这里我们可以根据需要修改安装路径到指定的文件夹，比如：`D:\Program Files\nodejs` ，并将 `D:\Program Files\nodejs` 目录添加到 `Window` 系统的 `PATH` 环境变量中（或者安装的时候选中添加环境变量，下面会有提到）。
 
 - 第一步：双击下载的 `node-v7.2.1-x64.msi` 文件，出现提示安装界面
 - 第二步：选择安装目录，比如安装在目录 `D:\Program Files\nodejs` 中
@@ -51,7 +51,7 @@ categories: Node
 
 ### 步骤一、引入 required 模块
 
-我们使用 require 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:
+我们使用 `require` 指令来载入 `http` 模块，并将实例化的 `HTTP` 赋值给变量 http，实例如下:
 
 ```js
 var http = require("http");
@@ -86,7 +86,7 @@ node server.js
 Server running at http://127.0.0.1:8888/
 ```
 
-接下来，打开浏览器访问 http://127.0.0.1:8888/，你会看到一个写着 "Hello World"的网页。
+接下来，打开浏览器访问 `http://127.0.0.1:8888/` ，你会看到一个写着 "Hello World"的网页。
 
 > 服务器
 
@@ -96,7 +96,7 @@ Server running at http://127.0.0.1:8888/
 
 *file协议，默认，是不能够发ajax请求的！*
 
-- 服务器就是一台电脑(这个电脑是有独立ip)
+- 服务器就是一台电脑(这个电脑是有独立 `ip` )
 - 我们的笔记本也是电脑(也可以把最终的项目代码放到笔记本上! ,但是没有公司愿意这么干)
 - 操作系统都可能是一样的
 - 服务器能运行的软件，我们电脑也能运行

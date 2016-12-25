@@ -19,9 +19,9 @@ date: 2016-11-09 09:58:04
 
 <center> <h2>联系方式</h2> </center>
 
-- Email：<a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ihoeys@163.com">ihoeys@163.com</a>
+- Email：<a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com">mail@ihoey.com</a>
 - Q  Q：<a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes">1058221214</a>
-- 微博：<a href="http://weibo.com/hy951121">hy1121</a>
+- 微博：<a href="http://weibo.com/hy951121">ihoeys</a>
 
 ***
 
