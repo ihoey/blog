@@ -93,13 +93,13 @@
     <link href="http://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html"/>
     <id>http://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html</id>
     <published>2016-12-10T02:31:09.000Z</published>
-    <updated>2016-12-15T13:37:32.294Z</updated>
+    <updated>2016-12-25T01:31:29.762Z</updated>
     
     <content type="html"><![CDATA[<h2 id="NodeJs是什么？"><a href="#NodeJs是什么？" class="headerlink" title="NodeJs是什么？"></a>NodeJs是什么？</h2><blockquote>
 <p>简单的说 <code>NodeJs</code> 就是运行在服务端的 <code>JavaScript</code> 。<code>NodeJs</code> 是一个基于 <code>Chrome JavaScript</code> 运行时建立的一个平台。<code>NodeJs</code> 是一个事件驱动 <code>I/O</code> 服务端 <code>JavaScript</code> 环境，基于 <code>Google</code> 的 <code>V8</code> 引擎，<code>V8</code> 引擎执行 <code>Javascript</code> 的速度非常快，性能非常好。</p>
 </blockquote>
 <ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="external">官网https://nodejs.org</a></li>
+<li>官网 <code>https://nodejs.org</code></li>
 </ul>
 <a id="more"></a>
 <ul>
@@ -119,7 +119,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Node安装"><a href="#Node安装" class="headerlink" title="Node安装"></a>Node安装</h2><p>在 windows 上安装 NodeJs (本教程中使用)。使用 MSI 文件，并按照提示安装 NodeJs ，默认情况下，安装程序将 NodeJs 发行到 C:\Program Files\nodejs. 但这里我们可以根据需要修改安装路径到指定的文件夹，比如：D:\Program Files\nodejs，并将 D:\Program Files\nodejs 目录添加到 Window 系统的 PATH 环境变量中（或者安装的时候选中添加环境变量，下面会有提到）。</p>
+<h2 id="Node安装"><a href="#Node安装" class="headerlink" title="Node安装"></a>Node安装</h2><p>在 <code>windows</code> 上安装 <code>NodeJs</code> (本教程中使用)。使用 <code>MSI</code> 文件，并按照提示安装 <code>NodeJs</code> ，默认情况下，安装程序将 <code>NodeJs</code> 发行到 <code>C:\Program Files\nodejs</code>. 但这里我们可以根据需要修改安装路径到指定的文件夹，比如：<code>D:\Program Files\nodejs</code> ，并将 <code>D:\Program Files\nodejs</code> 目录添加到 <code>Window</code> 系统的 <code>PATH</code> 环境变量中（或者安装的时候选中添加环境变量，下面会有提到）。</p>
 <ul>
 <li>第一步：双击下载的 <code>node-v7.2.1-x64.msi</code> 文件，出现提示安装界面</li>
 <li>第二步：选择安装目录，比如安装在目录 <code>D:\Program Files\nodejs</code> 中</li>
@@ -139,7 +139,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="创建-NodeJs-应用"><a href="#创建-NodeJs-应用" class="headerlink" title="创建 NodeJs 应用"></a>创建 NodeJs 应用</h2><h3 id="步骤一、引入-required-模块"><a href="#步骤一、引入-required-模块" class="headerlink" title="步骤一、引入 required 模块"></a>步骤一、引入 required 模块</h3><p>我们使用 require 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:</p>
+<h2 id="创建-NodeJs-应用"><a href="#创建-NodeJs-应用" class="headerlink" title="创建 NodeJs 应用"></a>创建 NodeJs 应用</h2><h3 id="步骤一、引入-required-模块"><a href="#步骤一、引入-required-模块" class="headerlink" title="步骤一、引入 required 模块"></a>步骤一、引入 required 模块</h3><p>我们使用 <code>require</code> 指令来载入 <code>http</code> 模块，并将实例化的 <code>HTTP</code> 赋值给变量 http，实例如下:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</div></pre></td></tr></table></figure>
 <h3 id="步骤一、创建服务器"><a href="#步骤一、创建服务器" class="headerlink" title="步骤一、创建服务器"></a>步骤一、创建服务器</h3><ul>
 <li>我们电脑上只要安装了node,不需要其他的软件配置，就能够开启一个http服务</li>
@@ -148,7 +148,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</div><div class="line"></div><div class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</div><div class="line">  <span class="comment">// 发送 http 头部</span></div><div class="line">  <span class="comment">// http 状态码：200 ：OK</span></div><div class="line">  <span class="comment">// 内容类型： text/piain</span></div><div class="line">  response.writeHead(<span class="number">200</span>,&#123;<span class="string">'Contenr-Type'</span>: <span class="string">'text/piain'</span>&#125;)</div><div class="line">  <span class="comment">//发送响应数据 ‘hello world’</span></div><div class="line">  response.end(<span class="string">'hello-world'</span>);</div><div class="line">  <span class="comment">//监听8888端口</span></div><div class="line">  &#125;).listen(<span class="number">8888</span>)</div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8888/'</span>)</div></pre></td></tr></table></figure>
 <p>以上代码我们完成了一个可以工作的 HTTP 服务器。<br>使用 node 命令执行以上的代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node server.js</div><div class="line">Server running at http:<span class="comment">//127.0.0.1:8888/</span></div></pre></td></tr></table></figure>
-<p>接下来，打开浏览器访问 <a href="http://127.0.0.1:8888/，你会看到一个写着" target="_blank" rel="external">http://127.0.0.1:8888/，你会看到一个写着</a> “Hello World”的网页。</p>
+<p>接下来，打开浏览器访问 <code>http://127.0.0.1:8888/</code> ，你会看到一个写着 “Hello World”的网页。</p>
 <blockquote>
 <p>服务器</p>
 </blockquote>
@@ -157,7 +157,7 @@
 </ul>
 <h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p><em>file协议，默认，是不能够发ajax请求的！</em></p>
 <ul>
-<li>服务器就是一台电脑(这个电脑是有独立ip)</li>
+<li>服务器就是一台电脑(这个电脑是有独立 <code>ip</code> )</li>
 <li>我们的笔记本也是电脑(也可以把最终的项目代码放到笔记本上! ,但是没有公司愿意这么干)</li>
 <li>操作系统都可能是一样的</li>
 <li>服务器能运行的软件，我们电脑也能运行</li>
@@ -181,7 +181,7 @@
 &lt;p&gt;简单的说 &lt;code&gt;NodeJs&lt;/code&gt; 就是运行在服务端的 &lt;code&gt;JavaScript&lt;/code&gt; 。&lt;code&gt;NodeJs&lt;/code&gt; 是一个基于 &lt;code&gt;Chrome JavaScript&lt;/code&gt; 运行时建立的一个平台。&lt;code&gt;NodeJs&lt;/code&gt; 是一个事件驱动 &lt;code&gt;I/O&lt;/code&gt; 服务端 &lt;code&gt;JavaScript&lt;/code&gt; 环境，基于 &lt;code&gt;Google&lt;/code&gt; 的 &lt;code&gt;V8&lt;/code&gt; 引擎，&lt;code&gt;V8&lt;/code&gt; 引擎执行 &lt;code&gt;Javascript&lt;/code&gt; 的速度非常快，性能非常好。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/&quot;&gt;官网https://nodejs.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;官网 &lt;code&gt;https://nodejs.org&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
