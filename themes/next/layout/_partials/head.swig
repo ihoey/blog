@@ -22,7 +22,7 @@
   <meta name="360-site-verification" content="{{ theme.qihu_site_verification }}" />
 {% endif %}
 
-<link href="//of2np1oao.bkt.clouddn.com/eevee.css" rel="stylesheet" type="text/css" />
+<link href="https://oisha19l0.qnssl.com/eevee.css" rel="stylesheet" type="text/css" />
 
 {% if theme.fancybox %}
   {% set fancybox_css_uri = url_for(theme.vendors._internal + '/fancybox/source/jquery.fancybox.css?v=2.1.5') %}

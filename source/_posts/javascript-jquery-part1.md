@@ -10,7 +10,7 @@ categories: javascript
 
 JQuery模块分析及其实现第一部分!
 
-<img src="http://of2np1oao.bkt.clouddn.com/ihoey/imgsp161118_190319.png" width="100%">
+<img src="https://oisha19l0.qnssl.com/20161119.png" width="100%">
 
 <!-- more -->
 
