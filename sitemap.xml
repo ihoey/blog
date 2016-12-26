@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ihoey.com/posts/javascript/2016-11-18-javascript-jquery-part1.html</loc>
+    
+    <lastmod>2016-12-26T11:38:22.477Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ihoey.com/links/index.html</loc>
     
-    <lastmod>2016-12-25T01:53:31.746Z</lastmod>
+    <lastmod>2016-12-25T10:03:32.590Z</lastmod>
     
   </url>
   
@@ -89,13 +96,6 @@
     <loc>http://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
     
     <lastmod>2016-11-24T01:36:18.943Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.ihoey.com/posts/javascript/2016-11-18-javascript-jquery-part1.html</loc>
-    
-    <lastmod>2016-11-24T01:35:48.250Z</lastmod>
     
   </url>
   
