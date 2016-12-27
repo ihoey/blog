@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ihoey.com/links/index.html</loc>
+    
+    <lastmod>2016-12-27T11:40:20.507Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/guestbook/index.html</loc>
+    
+    <lastmod>2016-12-27T11:40:01.005Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/about/index.html</loc>
+    
+    <lastmod>2016-12-27T11:39:20.021Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-18-javascript-jquery-part1.html</loc>
     
     <lastmod>2016-12-26T11:38:22.477Z</lastmod>
@@ -9,23 +30,9 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/links/index.html</loc>
-    
-    <lastmod>2016-12-25T10:03:32.590Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html</loc>
     
     <lastmod>2016-12-25T01:31:29.762Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.ihoey.com/about/index.html</loc>
-    
-    <lastmod>2016-12-25T01:20:13.105Z</lastmod>
     
   </url>
   
@@ -40,13 +47,6 @@
     <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
     
     <lastmod>2016-12-17T12:26:30.648Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.ihoey.com/guestbook/index.html</loc>
-    
-    <lastmod>2016-12-12T13:06:28.744Z</lastmod>
     
   </url>
   
