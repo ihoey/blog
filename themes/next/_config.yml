@@ -136,10 +136,10 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  GitHub: https://github.com/houyi1121
+  GitHub: https://github.com/ihoey
   微博: http://weibo.com/hy951121
   QQ: http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes
-  E-mail: https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=houyi1121@hotmail.com
+  E-mail: https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com
 
 # Social Links Icons
 # Icon Mapping:

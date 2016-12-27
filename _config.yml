@@ -10,11 +10,11 @@ author: Ihoey
 language: zh-Hans
 # language: zh-CN
 timezone: Asia/Shanghai
-avatar: http://of2np1oao.bkt.clouddn.com/avatar.png
+avatar: https://oisha19l0.qnssl.com/avatar.png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.ihoey.com
+url: https://blog.ihoey.com
 root: /
 permalink: posts/:category/:year-:month-:day-:title.html
 permalink_defaults:
