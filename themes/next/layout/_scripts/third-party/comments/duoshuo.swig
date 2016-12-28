@@ -12,7 +12,7 @@
       var ds = document.createElement('script');
       ds.type = 'text/javascript';ds.async = true;
       ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//oisha19l0.qnssl.com/embed.js';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//duoshuo.open.zycao.com/embed.js';
       ds.charset = 'UTF-8';
       (document.getElementsByTagName('head')[0]
       || document.getElementsByTagName('body')[0]).appendChild(ds);
@@ -25,9 +25,6 @@
       <script src="{{ theme.vendors.ua_parser | default(ua_parser_internal) }}"></script>
       <script src="{{ url_for(theme.js) }}/src/hook-duoshuo.js?v={{ theme.version }}"></script>
     {% endif %}
-    {% set ua_parser_internal = url_for(theme.vendors._internal) + '/ua-parser-js/dist/ua-parser.min.js?v=0.7.9' %}
-    <script src="{{ theme.vendors.ua_parser | default(ua_parser_internal) }}"></script>
-    <script src="{{ url_for(theme.js) }}/src/hook-duoshuo.js"></script>
   {% endif %}
 
 {% endif %}

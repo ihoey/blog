@@ -1,4 +1,3 @@
-
 .theme-next {
   $duoshuoBaseBorderColor = #c7d4e1;
   $duoshuoBaseBgColor = #f6f8fa;
@@ -210,9 +209,12 @@
 
 /*duoshuo UA style begin*/
 
-  #ds-reset .duoshuo-ua-admin {
-    display: inline-block;
-    color: red;
+  #ds-reset .duoshuo-ua-admin,.duoshuo-ua-platform,.duoshuo-ua-browser {
+    background-color: #00a67c!important;
+    border-color: #01B171!important;
+    border-radius: 4px;
+    padding: 0 5px!important;
+    color: white!important;
   }
 
   #ds-reset .duoshuo-ua-platform,
@@ -245,46 +247,60 @@
     border-color: #d9534f !important;
   }
 
-  .this_ua.platform.iOS, .this_ua.platform.Mac, .this_ua.platform.Windows {
-    background-color: #39b3d7 !important;
-    border-color: #46b8da !important;
+  .duoshuo-ua-platform-ios, .duoshuo-ua-platform-mac, .duoshuo-ua-platform-windows {
+    background-color: #E95620!important;
+    border-color: #4cae4c!important;
   }
 
-  .this_ua.platform.Linux {
+  .duoshuo-ua-platform-linux {
     background-color: #3A3A3A !important;
     border-color: #1F1F1F !important;
   }
 
-  .this_ua.platform.Android {
+  .duoshuo-ua-platform-ubuntu {
+    background-color: #DD4814!important;
+    border-color: #1F1F1F !important;
+  }
+
+  .duoshuo-ua-platform-android {
     background-color: #00C47D !important;
     border-color: #01B171 !important;
   }
 
-  .this_ua.browser.Mobile, .this_ua.browser.Chrome {
+  .duoshuo-ua-browser-mobile, .duoshuo-ua-browser-chrome {
     background-color: #5cb85c !important;
     border-color: #4cae4c !important;
   }
 
-  .this_ua.browser.Firefox {
+  .duoshuo-ua-browser-mobile.safari{
+    background-color: #666666!important;
+    border-color: #1F1F1F!important;
+  }
+
+  .duoshuo-ua-browser-firefox {
     background-color: #f0ad4e !important;
     border-color: #eea236 !important;
   }
 
-  .this_ua.browser.Maxthon, .this_ua.browser.IE {
+  .duoshuo-ua-browser-faxthon, .duoshuo-ua-browser-IE {
     background-color: #428bca !important;
     border-color: #357ebd !important;
   }
 
-  .this_ua.browser.baidu, .this_ua.browser.UCBrowser, .this_ua.browser.Opera {
+  .duoshuo-ua-browser-baidu, .duoshuo-ua-browser-UCBrowser, .duoshuo-ua-browser-opera {
     background-color: #d9534f !important;
     border-color: #d43f3a !important;
   }
 
-  .this_ua.browser.Android, .this_ua.browser.QQBrowser {
+  .duoshuo-ua-browser-android, .duoshuo-ua-browser-qqbrowser {
     background-color: #78ACE9 !important;
     border-color: #4cae4c !important;
   }
 
+  .duoshuo-ua-browser-nokiabrowser{
+    background-color: #014485!important;
+    border-color: #1F1F1F!important;
+  }
 /*duoshuo UA style end*/
 
 }
