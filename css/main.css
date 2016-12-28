@@ -1795,7 +1795,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f6afd9;
+  background: #304567;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2109,9 +2109,14 @@ pre .javascript .function {
 .theme-next #ds-thread #ds-reset .ds-service-list .ds-more-services:hover {
   background: none;
 }
-.theme-next #ds-reset .duoshuo-ua-admin {
-  display: inline-block;
-  color: #f00;
+.theme-next #ds-reset .duoshuo-ua-admin,
+.theme-next .duoshuo-ua-platform,
+.theme-next .duoshuo-ua-browser {
+  background-color: #00a67c !important;
+  border-color: #01b171 !important;
+  border-radius: 4px;
+  padding: 0 5px !important;
+  color: #fff !important;
 }
 .theme-next #ds-reset .duoshuo-ua-platform,
 .theme-next #ds-reset .duoshuo-ua-browser {
@@ -2139,44 +2144,56 @@ pre .javascript .function {
   background-color: #d9534f !important;
   border-color: #d9534f !important;
 }
-.theme-next .this_ua.platform.iOS,
-.theme-next .this_ua.platform.Mac,
-.theme-next .this_ua.platform.Windows {
-  background-color: #39b3d7 !important;
-  border-color: #46b8da !important;
+.theme-next .duoshuo-ua-platform-ios,
+.theme-next .duoshuo-ua-platform-mac,
+.theme-next .duoshuo-ua-platform-windows {
+  background-color: #e95620 !important;
+  border-color: #4cae4c !important;
 }
-.theme-next .this_ua.platform.Linux {
+.theme-next .duoshuo-ua-platform-linux {
   background-color: #3a3a3a !important;
   border-color: #1f1f1f !important;
 }
-.theme-next .this_ua.platform.Android {
+.theme-next .duoshuo-ua-platform-ubuntu {
+  background-color: #dd4814 !important;
+  border-color: #1f1f1f !important;
+}
+.theme-next .duoshuo-ua-platform-android {
   background-color: #00c47d !important;
   border-color: #01b171 !important;
 }
-.theme-next .this_ua.browser.Mobile,
-.theme-next .this_ua.browser.Chrome {
+.theme-next .duoshuo-ua-browser-mobile,
+.theme-next .duoshuo-ua-browser-chrome {
   background-color: #5cb85c !important;
   border-color: #4cae4c !important;
 }
-.theme-next .this_ua.browser.Firefox {
+.theme-next .duoshuo-ua-browser-mobile.safari {
+  background-color: #666 !important;
+  border-color: #1f1f1f !important;
+}
+.theme-next .duoshuo-ua-browser-firefox {
   background-color: #f0ad4e !important;
   border-color: #eea236 !important;
 }
-.theme-next .this_ua.browser.Maxthon,
-.theme-next .this_ua.browser.IE {
+.theme-next .duoshuo-ua-browser-faxthon,
+.theme-next .duoshuo-ua-browser-IE {
   background-color: #428bca !important;
   border-color: #357ebd !important;
 }
-.theme-next .this_ua.browser.baidu,
-.theme-next .this_ua.browser.UCBrowser,
-.theme-next .this_ua.browser.Opera {
+.theme-next .duoshuo-ua-browser-baidu,
+.theme-next .duoshuo-ua-browser-UCBrowser,
+.theme-next .duoshuo-ua-browser-opera {
   background-color: #d9534f !important;
   border-color: #d43f3a !important;
 }
-.theme-next .this_ua.browser.Android,
-.theme-next .this_ua.browser.QQBrowser {
+.theme-next .duoshuo-ua-browser-android,
+.theme-next .duoshuo-ua-browser-qqbrowser {
   background-color: #78ace9 !important;
   border-color: #4cae4c !important;
+}
+.theme-next .duoshuo-ua-browser-nokiabrowser {
+  background-color: #014485 !important;
+  border-color: #1f1f1f !important;
 }
 .post-spread {
   margin-top: 20px;
