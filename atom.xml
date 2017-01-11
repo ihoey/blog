@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.ihoey.com/"/>
-  <updated>2016-12-17T12:34:55.139Z</updated>
+  <updated>2017-01-11T11:02:21.655Z</updated>
   <id>https://blog.ihoey.com/</id>
   
   <author>
@@ -14,6 +14,784 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>adb设备信息查询修改刷机等命令</title>
+    <link href="https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html"/>
+    <id>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</id>
+    <published>2016-12-22T10:51:53.000Z</published>
+    <updated>2017-01-11T11:02:21.655Z</updated>
+    
+    <content type="html"><![CDATA[<p>ADB很强大，记住一些ADB命令有助于提高工作效率。<br>通过ADB命令查看wifi密码、MAC地址、设备信息、操作文件、查看文件、日志信息、卸载、启动和安装APK等</p>
+<a id="more"></a>
+<h2 id="查看设备信息"><a href="#查看设备信息" class="headerlink" title="查看设备信息"></a>查看设备信息</h2><ul>
+<li><code>adb logcat</code> – 查看日志</li>
+<li><code>adb shell dumpsys battery</code> – 电池状况<br>其中 scale 代表最大电量，level 代表当前电量。上面的输出表示还剩下 44% 的电量</li>
+<li><code>adb reboot</code> – 重启</li>
+<li><code>adb get-serialno</code> – 获取序列号</li>
+<li><code>adb shell  cat /sys/class/net/wlan0/address</code> – MAC 地址</li>
+<li><code>adb shell getprop ro.product.model</code> – 型号</li>
+<li><code>adb shell getprop ro.build.version.release</code> – 查看 Android 系统版本</li>
+<li><code>adb shell wm size</code> – 查看屏幕分辨率</li>
+<li><code>adb shell wm density</code> – 查看屏幕密度</li>
+<li><code>adb shell dumpsys window displays</code> – 显示屏参数</li>
+<li><code>adb shell settings get secure android_id</code> – android_id</li>
+<li><code>adb shell ifconfig | grep Mask</code> – IP 地址(powershell无效)</li>
+<li><code>adb shell cat /proc/cpuinfo</code> – CPU 信息</li>
+<li><code>adb shell cat /proc/meminfo</code> – 内存信息(输出内容: <code>MemTotal</code> 总内存，<code>MemFree</code> 空闲内存)</li>
+<li><code>adb shell cat /system/build.prop</code> – 更多硬件与系统属性</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">属性名</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ro.build.version.sdk</td>
+<td style="text-align:center">SDK 版本</td>
+</tr>
+<tr>
+<td style="text-align:center">ro.build.version.release</td>
+<td style="text-align:center">Android 系统版本</td>
+</tr>
+<tr>
+<td style="text-align:center">ro.build.version.security_patch</td>
+<td style="text-align:center">Android 安全补丁程序级别</td>
+</tr>
+<tr>
+<td style="text-align:center">ro.product.model</td>
+<td style="text-align:center">型号</td>
+</tr>
+<tr>
+<td style="text-align:center">ro.product.brand</td>
+<td style="text-align:center">品牌</td>
+</tr>
+<tr>
+<td style="text-align:center">ro.product.name</td>
+<td style="text-align:center">设备名</td>
+</tr>
+<tr>
+<td style="text-align:center">ro.product.board</td>
+<td style="text-align:center">处理器型号</td>
+</tr>
+<tr>
+<td style="text-align:center">ro.product.cpu.abilist</td>
+<td style="text-align:center">CPU 支持的 abi 列表</td>
+</tr>
+<tr>
+<td style="text-align:center">persist.sys.isUsbOtgEnabled</td>
+<td style="text-align:center">是否支持 OTG</td>
+</tr>
+<tr>
+<td style="text-align:center">dalvik.vm.heapsize</td>
+<td style="text-align:center">每个应用程序的内存上限</td>
+</tr>
+<tr>
+<td style="text-align:center">ro.sf.lcd_density</td>
+<td style="text-align:center">屏幕密度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="修改设置"><a href="#修改设置" class="headerlink" title="修改设置"></a>修改设置</h2><p><strong>注：</strong>修改设置之后，运行恢复命令有可能显示仍然不太正常，可以运行 <code>adb reboot</code> 重启设备，或手动重启。</p>
+<p>修改设置的原理主要是通过 settings 命令修改 /data/data/com.android.providers.settings/databases/settings.db 里存放的设置值。</p>
+<h3 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm size 480x1024</div></pre></td></tr></table></figure>
+<p>表示将分辨率修改为 480px * 1024px。</p>
+<p>恢复原分辨率命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm size reset</div></pre></td></tr></table></figure>
+<h3 id="屏幕密度"><a href="#屏幕密度" class="headerlink" title="屏幕密度"></a>屏幕密度</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm density 160</div></pre></td></tr></table></figure>
+<p>表示将屏幕密度修改为 160dpi。</p>
+<p>恢复原屏幕密度命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm density reset</div></pre></td></tr></table></figure>
+<h3 id="显示区域"><a href="#显示区域" class="headerlink" title="显示区域"></a>显示区域</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm overscan 0,0,0,200</div></pre></td></tr></table></figure>
+<p>四个数字分别表示距离左、上、右、下边缘的留白像素，以上命令表示将屏幕底部 200px 留白。</p>
+<p>恢复原显示区域命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm overscan reset</div></pre></td></tr></table></figure>
+<h3 id="关闭-USB-调试模式"><a href="#关闭-USB-调试模式" class="headerlink" title="关闭 USB 调试模式"></a>关闭 USB 调试模式</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell settings put global adb_enabled 0</div></pre></td></tr></table></figure>
+<p>恢复：</p>
+<p>用命令恢复不了了，毕竟关闭了 USB 调试 adb 就连接不上 Android 设备了。</p>
+<p>去设备上手动恢复吧：「设置」-「开发者选项」-「Android 调试」。</p>
+<h3 id="状态栏和导航栏的显示隐藏"><a href="#状态栏和导航栏的显示隐藏" class="headerlink" title="状态栏和导航栏的显示隐藏"></a>状态栏和导航栏的显示隐藏</h3><p>本节所说的相关设置对应 Cyanogenmod 里的「扩展桌面」。</p>
+<p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell settings put global policy_control &lt;key-values&gt;</div></pre></td></tr></table></figure>
+<p><code>&lt;key-values&gt;</code> 可由如下几种键及其对应的值组成，格式为 <code>&lt;key1&gt;=&lt;value1&gt;:&lt;key2&gt;=&lt;value2&gt;</code>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">key</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">immersive.full</td>
+<td style="text-align:center">同时隐藏</td>
+</tr>
+<tr>
+<td style="text-align:center">immersive.status</td>
+<td style="text-align:center">隐藏状态栏</td>
+</tr>
+<tr>
+<td style="text-align:center">immersive.navigation</td>
+<td style="text-align:center">隐藏导航栏</td>
+</tr>
+<tr>
+<td style="text-align:center">immersive.preconfirms</td>
+<td style="text-align:center">?</td>
+</tr>
+</tbody>
+</table>
+<p>这些键对应的值可则如下值用逗号组合：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">value</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>apps</code></td>
+<td style="text-align:center">所有应用</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:center">所有界面</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>packagename</code></td>
+<td style="text-align:center">指定应用</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>-packagename</code></td>
+<td style="text-align:center">排除指定应用</td>
+</tr>
+</tbody>
+</table>
+<p>例如：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell settings put global policy_control immersive.full=*</div></pre></td></tr></table></figure>
+<p>表示设置在所有界面下都同时隐藏状态栏和导航栏。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell settings put global policy_control immersive.status=com.package1,com.package2:immersive.navigation=apps,-com.package3</div></pre></td></tr></table></figure>
+<p>表示设置在包名为 <code>com.package1</code> 和 <code>com.package2</code> 的应用里隐藏状态栏，在除了包名为 <code>com.package3</code> 的所有应用里隐藏导航栏。</p>
+<h2 id="实用功能"><a href="#实用功能" class="headerlink" title="实用功能"></a>实用功能</h2><h3 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell screencap -p /sdcard/sc.png</div></pre></td></tr></table></figure>
+<p>然后将 png 文件导出到电脑：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb pull /sdcard/sc.png</div></pre></td></tr></table></figure>
+<p>可以使用 <code>adb shell screencap -h</code> 查看 <code>screencap</code> 命令的帮助信息，下面是两个有意义的参数及含义：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-p</td>
+<td style="text-align:center">指定保存文件为 png 格式</td>
+</tr>
+<tr>
+<td style="text-align:center">-d display-id</td>
+<td style="text-align:center">指定截图的显示屏编号（有多显示屏的情况下）</td>
+</tr>
+</tbody>
+</table>
+<p>实测如果指定文件名以 <code>.png</code> 结尾时可以省略 -p 参数；否则需要使用 -p 参数。如果不指定文件名，截图文件的内容将直接输出到 stdout。</p>
+<p>直接一行命令截图并保存到电脑的方法：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell screencap -p | sed <span class="string">"s/\r$//"</span> &gt; sc.png</div></pre></td></tr></table></figure>
+<p>这个方法需要用到 sed 命令，在 Linux 和 Mac 下直接就有，在 Windows 下 Git 安装目录的 bin 文件夹下也有。如果确实找不到该命令，可以下载 <a href="http://gnuwin32.sourceforge.net/packages/sed.htm" target="_blank" rel="external">sed for Windows</a> 并将 sed.exe 所在文件夹添加到 PATH 环境变量里。</p>
+<h3 id="录制屏幕"><a href="#录制屏幕" class="headerlink" title="录制屏幕"></a>录制屏幕</h3><p>录制屏幕以 mp4 格式保存到 /sdcard：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell screenrecord /sdcard/filename.mp4</div></pre></td></tr></table></figure>
+<p>需要停止时按 <kbd>Ctrl-C</kbd>，默认录制时间和最长录制时间都是 180 秒。</p>
+<p>如果需要导出到电脑：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb pull /sdcard/filename.mp4</div></pre></td></tr></table></figure>
+<p>可以使用 <code>adb shell screenrecord --help</code> 查看 <code>screenrecord</code> 命令的帮助信息，下面是常见参数及含义：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">–size WIDTHxHEIGHT</td>
+<td style="text-align:center">视频的尺寸，比如 <code>1280x720</code>，默认是屏幕分辨率。</td>
+</tr>
+<tr>
+<td style="text-align:center">–bit-rate RATE</td>
+<td style="text-align:center">视频的比特率，默认是 4Mbps。</td>
+</tr>
+<tr>
+<td style="text-align:center">–time-limit TIME</td>
+<td style="text-align:center">录制时长，单位秒。</td>
+</tr>
+<tr>
+<td style="text-align:center">–verbose</td>
+<td style="text-align:center">输出更多信息。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="重新挂载-system-分区为可写"><a href="#重新挂载-system-分区为可写" class="headerlink" title="重新挂载 system 分区为可写"></a>重新挂载 system 分区为可写</h3><p><strong>注：需要 root 权限。</strong></p>
+<p>/system 分区默认挂载为只读，但有些操作比如给 Android 系统添加命令、删除自带应用等需要对 /system 进行写操作，所以需要重新挂载它为可读写。</p>
+<p>步骤：</p>
+<ol>
+<li><p>进入 shell 并切换到 root 用户权限。</p>
+<p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">su</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看当前分区挂载情况。</p>
+<p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount</div></pre></td></tr></table></figure>
+<p>输出示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">rootfs / rootfs ro,relatime 0 0</div><div class="line">tmpfs /dev tmpfs rw,seclabel,nosuid,relatime,mode=755 0 0</div><div class="line">devpts /dev/pts devpts rw,seclabel,relatime,mode=600 0 0</div><div class="line">proc /proc proc rw,relatime 0 0</div><div class="line">sysfs /sys sysfs rw,seclabel,relatime 0 0</div><div class="line">selinuxfs /sys/fs/selinux selinuxfs rw,relatime 0 0</div><div class="line">debugfs /sys/kernel/debug debugfs rw,relatime 0 0</div><div class="line">none /var tmpfs rw,seclabel,relatime,mode=770,gid=1000 0 0</div><div class="line">none /acct cgroup rw,relatime,cpuacct 0 0</div><div class="line">none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0</div><div class="line">none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0</div><div class="line">tmpfs /mnt/asec tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0</div><div class="line">tmpfs /mnt/obb tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0</div><div class="line">none /dev/memcg cgroup rw,relatime,memory 0 0</div><div class="line">none /dev/cpuctl cgroup rw,relatime,cpu 0 0</div><div class="line">none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0</div><div class="line">none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0</div><div class="line">none /sys/fs/cgroup/freezer cgroup rw,relatime,freezer 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/system /system ext4 ro,seclabel,relatime,data=ordered 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/userdata /data ext4 rw,seclabel,nosuid,nodev,relatime,noauto_da_alloc,data=ordered 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/cache /cache ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/persist /persist ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/modem /firmware vfat ro,context=u:object_r:firmware_file:s0,relatime,uid=1000,gid=1000,fmask=0337,dmask=0227,codepage=cp437,iocharset=iso8859-1,shortname=lower,errors=remount-ro 0 0</div><div class="line">/dev/fuse /mnt/shell/emulated fuse rw,nosuid,nodev,relatime,user_id=1023,group_id=1023,default_permissions,allow_other 0 0</div><div class="line">/dev/fuse /mnt/shell/emulated/0 fuse rw,nosuid,nodev,relatime,user_id=1023,group_id=1023,default_permissions,allow_other 0 0</div></pre></td></tr></table></figure>
+<p>找到其中我们关注的带 /system 的那一行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/dev/block/platform/msm_sdcc.1/by-name/system /system ext4 ro,seclabel,relatime,data=ordered 0 0</div></pre></td></tr></table></figure>
+</li>
+<li><p>重新挂载。</p>
+<p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount -o remount,rw -t yaffs2 /dev/block/platform/msm_sdcc.1/by-name/system /system</div></pre></td></tr></table></figure>
+<p>这里的 <code>/dev/block/platform/msm_sdcc.1/by-name/system</code> 就是我们从上一步的输出里得到的文件路径。</p>
+</li>
+</ol>
+<p>如果输出没有提示错误的话，操作就成功了，可以对 /system 下的文件为所欲为了。</p>
+<h3 id="查看连接过的-WiFi-密码"><a href="#查看连接过的-WiFi-密码" class="headerlink" title="查看连接过的 WiFi 密码"></a>查看连接过的 WiFi 密码</h3><p><strong>注：需要 root 权限。</strong></p>
+<p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">su</div><div class="line">cat /data/misc/wifi/*.conf</div></pre></td></tr></table></figure>
+<p>输出示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">network=&#123;</div><div class="line">    ssid=<span class="string">"TP-LINK_9DFC"</span></div><div class="line">    scan_ssid=1</div><div class="line">    psk=<span class="string">"123456789"</span></div><div class="line">    key_mgmt=WPA-PSK</div><div class="line">    group=CCMP TKIP</div><div class="line">    auth_alg=OPEN</div><div class="line">    sim_num=1</div><div class="line">    priority=13893</div><div class="line">&#125;</div><div class="line"></div><div class="line">network=&#123;</div><div class="line">    ssid=<span class="string">"TP-LINK_F11E"</span></div><div class="line">    psk=<span class="string">"987654321"</span></div><div class="line">    key_mgmt=WPA-PSK</div><div class="line">    sim_num=1</div><div class="line">    priority=17293</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>ssid</code> 即为我们在 WLAN 设置里看到的名称，<code>psk</code> 为密码，<code>key_mgmt</code> 为安全加密方式。</p>
+<h3 id="设置系统日期和时间"><a href="#设置系统日期和时间" class="headerlink" title="设置系统日期和时间"></a>设置系统日期和时间</h3><p><strong>注：需要 root 权限。</strong></p>
+<p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">su</div><div class="line">date <span class="_">-s</span> 20160823.131500</div></pre></td></tr></table></figure>
+<p>表示将系统日期和时间更改为 2016 年 08 月 23 日 13 点 15 分 00 秒。</p>
+<h3 id="重启手机"><a href="#重启手机" class="headerlink" title="重启手机"></a>重启手机</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot</div></pre></td></tr></table></figure>
+<h3 id="检测设备是否已-root"><a href="#检测设备是否已-root" class="headerlink" title="检测设备是否已 root"></a>检测设备是否已 root</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">su</div></pre></td></tr></table></figure>
+<p>此时命令行提示符是 <code>$</code> 则表示没有 root 权限，是 <code>#</code> 则表示已 root。</p>
+<h3 id="使用-Monkey-进行压力测试"><a href="#使用-Monkey-进行压力测试" class="headerlink" title="使用 Monkey 进行压力测试"></a>使用 Monkey 进行压力测试</h3><p>Monkey 可以生成伪随机用户事件来模拟单击、触摸、手势等操作，可以对正在开发中的程序进行随机压力测试。</p>
+<p>简单用法：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell monkey -p &lt;packagename&gt; -v 500</div></pre></td></tr></table></figure>
+<p>表示向 <code>&lt;packagename&gt;</code> 指定的应用程序发送 500 个伪随机事件。</p>
+<p>Monkey 的详细用法参考 <a href="https://developer.android.com/studio/test/monkey.html" target="_blank" rel="external">官方文档</a>。</p>
+<h3 id="开启-关闭-WiFi"><a href="#开启-关闭-WiFi" class="headerlink" title="开启/关闭 WiFi"></a>开启/关闭 WiFi</h3><p><strong>注：需要 root 权限。</strong></p>
+<p>有时需要控制设备的 WiFi 状态，可以用以下指令完成。</p>
+<p>开启 WiFi：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">adb root</div><div class="line">adb shell svc wifi <span class="built_in">enable</span></div></pre></td></tr></table></figure>
+<p>关闭 WiFi：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">adb root</div><div class="line">adb shell svc wifi <span class="built_in">disable</span></div></pre></td></tr></table></figure>
+<p>若执行成功，输出为空；若未取得 root 权限执行此命令，将执行失败，输出 <code>Killed</code>。</p>
+<h2 id="刷机相关命令"><a href="#刷机相关命令" class="headerlink" title="刷机相关命令"></a>刷机相关命令</h2><h3 id="重启到-Recovery-模式"><a href="#重启到-Recovery-模式" class="headerlink" title="重启到 Recovery 模式"></a>重启到 Recovery 模式</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot recovery</div></pre></td></tr></table></figure>
+<h3 id="从-Recovery-重启到-Android"><a href="#从-Recovery-重启到-Android" class="headerlink" title="从 Recovery 重启到 Android"></a>从 Recovery 重启到 Android</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot</div></pre></td></tr></table></figure>
+<h3 id="重启到-Fastboot-模式"><a href="#重启到-Fastboot-模式" class="headerlink" title="重启到 Fastboot 模式"></a>重启到 Fastboot 模式</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot bootloader</div></pre></td></tr></table></figure>
+<h3 id="通过-sideload-更新系统"><a href="#通过-sideload-更新系统" class="headerlink" title="通过 sideload 更新系统"></a>通过 sideload 更新系统</h3><p>如果我们下载了 Android 设备对应的系统更新包到电脑上，那么也可以通过 adb 来完成更新。</p>
+<p>以 Recovery 模式下更新为例：</p>
+<ol>
+<li><p>重启到 Recovery 模式。</p>
+<p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot recovery</div></pre></td></tr></table></figure>
+</li>
+<li><p>在设备的 Recovery 界面上操作进入 <code>Apply update</code>-<code>Apply from ADB</code>。</p>
+<p>注：不同的 Recovery 菜单可能与此有差异，有的是一级菜单就有 <code>Apply update from ADB</code>。</p>
+</li>
+<li><p>通过 adb 上传和更新系统。</p>
+<p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb sideload &lt;path-to-update.zip&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="更多-adb-shell-命令"><a href="#更多-adb-shell-命令" class="headerlink" title="更多 adb shell 命令"></a>更多 adb shell 命令</h2><p>Android 系统是基于 Linux 内核的，所以 Linux 里的很多命令在 Android 里也有相同或类似的实现，在 <code>adb shell</code> 里可以调用。本文档前面的部分内容已经用到了 <code>adb shell</code> 命令。</p>
+<h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell ps</div></pre></td></tr></table></figure>
+<p>输出示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">USER     PID   PPID  VSIZE  RSS     WCHAN    PC        NAME</div><div class="line">root      1     0     8904   788   ffffffff 00000000 S /init</div><div class="line">root      2     0     0      0     ffffffff 00000000 S kthreadd</div><div class="line">...</div><div class="line">u0_a71    7779  5926  1538748 48896 ffffffff 00000000 S com.sohu.inputmethod.sogou:classic</div><div class="line">u0_a58    7963  5926  1561916 59568 ffffffff 00000000 S org.mazhuang.boottimemeasure</div><div class="line">...</div><div class="line">shell     8750  217   10640  740   00000000 b6f28340 R ps</div></pre></td></tr></table></figure>
+<p>各列含义：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">列名</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">USER</td>
+<td style="text-align:center">所属用户</td>
+</tr>
+<tr>
+<td style="text-align:center">PID</td>
+<td style="text-align:center">进程 ID</td>
+</tr>
+<tr>
+<td style="text-align:center">PPID</td>
+<td style="text-align:center">父进程 ID</td>
+</tr>
+<tr>
+<td style="text-align:center">NAME</td>
+<td style="text-align:center">进程名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="查看实时资源占用情况"><a href="#查看实时资源占用情况" class="headerlink" title="查看实时资源占用情况"></a>查看实时资源占用情况</h3><p>命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell top</div></pre></td></tr></table></figure>
+<p>输出示例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">User 0%, System 6%, IOW 0%, IRQ 0%</div><div class="line">User 3 + Nice 0 + Sys 21 + Idle 280 + IOW 0 + IRQ 0 + SIRQ 3 = 307</div><div class="line"></div><div class="line">  PID PR CPU% S  <span class="comment">#THR     VSS     RSS PCY UID      Name</span></div><div class="line"> 8763  0   3% R     1  10640K   1064K  <span class="built_in">fg</span> shell    top</div><div class="line">  131  0   3% S     1      0K      0K  <span class="built_in">fg</span> root     dhd_dpc</div><div class="line"> 6144  0   0% S   115 1682004K 115916K  <span class="built_in">fg</span> system   system_server</div><div class="line">  132  0   0% S     1      0K      0K  <span class="built_in">fg</span> root     dhd_rxf</div><div class="line"> 1731  0   0% S     6  20288K    788K  <span class="built_in">fg</span> root     /system/bin/mpdecision</div><div class="line">  217  0   0% S     6  18008K    356K  <span class="built_in">fg</span> shell    /sbin/adbd</div><div class="line"> ...</div><div class="line"> 7779  2   0% S    19 1538748K  48896K  <span class="built_in">bg</span> u0_a71   com.sohu.inputmethod.sogou:classic</div><div class="line"> 7963  0   0% S    18 1561916K  59568K  <span class="built_in">fg</span> u0_a58   org.mazhuang.boottimemeasure</div><div class="line"> ...</div></pre></td></tr></table></figure>
+<p>各列含义：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">列名</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">PID</td>
+<td style="text-align:center">进程 ID</td>
+</tr>
+<tr>
+<td style="text-align:center">PR</td>
+<td style="text-align:center">优先级</td>
+</tr>
+<tr>
+<td style="text-align:center">CPU%</td>
+<td style="text-align:center">当前瞬间占用 CPU 百分比</td>
+</tr>
+<tr>
+<td style="text-align:center">S</td>
+<td style="text-align:center">进程状态（R=运行，S=睡眠，T=跟踪/停止，Z=僵尸进程）</td>
+</tr>
+<tr>
+<td style="text-align:center">#THR</td>
+<td style="text-align:center">线程数</td>
+</tr>
+<tr>
+<td style="text-align:center">VSS</td>
+<td style="text-align:center">Virtual Set Size 虚拟耗用内存（包含共享库占用的内存）</td>
+</tr>
+<tr>
+<td style="text-align:center">RSS</td>
+<td style="text-align:center">Resident Set Size 实际使用物理内存（包含共享库占用的内存）</td>
+</tr>
+<tr>
+<td style="text-align:center">PCY</td>
+<td style="text-align:center">调度策略优先级，SP_BACKGROUND/SPFOREGROUND</td>
+</tr>
+<tr>
+<td style="text-align:center">UID</td>
+<td style="text-align:center">进程所有者的用户 ID</td>
+</tr>
+<tr>
+<td style="text-align:center">NAME</td>
+<td style="text-align:center">进程名</td>
+</tr>
+</tbody>
+</table>
+<p><code>top</code> 命令还支持一些命令行参数，详细用法如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Usage: top [ -m max_procs ] [ -n iterations ] [ <span class="_">-d</span> delay ] [ <span class="_">-s</span> sort_column ] [ -t ] [ -h ]</div><div class="line">    -m num  最多显示多少个进程</div><div class="line">    -n num  刷新多少次后退出</div><div class="line">    <span class="_">-d</span> num  刷新时间间隔（单位秒，默认值 5）</div><div class="line">    <span class="_">-s</span> col  按某列排序（可用 col 值：cpu, vss, rss, thr）</div><div class="line">    -t      显示线程信息</div><div class="line">    -h      显示帮助文档</div></pre></td></tr></table></figure>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>如下是其它常用命令的简单描述，前文已经专门讲过的命令不再额外说明：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">cat</td>
+<td style="text-align:center">显示文件内容</td>
+</tr>
+<tr>
+<td style="text-align:center">cd</td>
+<td style="text-align:center">切换目录</td>
+</tr>
+<tr>
+<td style="text-align:center">chmod</td>
+<td style="text-align:center">改变文件的存取模式/访问权限</td>
+</tr>
+<tr>
+<td style="text-align:center">df</td>
+<td style="text-align:center">查看磁盘空间使用情况</td>
+</tr>
+<tr>
+<td style="text-align:center">grep</td>
+<td style="text-align:center">过滤输出</td>
+</tr>
+<tr>
+<td style="text-align:center">kill</td>
+<td style="text-align:center">杀死指定 PID 的进程</td>
+</tr>
+<tr>
+<td style="text-align:center">ls</td>
+<td style="text-align:center">列举目录内容</td>
+</tr>
+<tr>
+<td style="text-align:center">mount</td>
+<td style="text-align:center">挂载目录的查看和管理</td>
+</tr>
+<tr>
+<td style="text-align:center">mv</td>
+<td style="text-align:center">移动或重命名文件</td>
+</tr>
+<tr>
+<td style="text-align:center">ps</td>
+<td style="text-align:center">查看正在运行的进程</td>
+</tr>
+<tr>
+<td style="text-align:center">rm</td>
+<td style="text-align:center">删除文件</td>
+</tr>
+<tr>
+<td style="text-align:center">top</td>
+<td style="text-align:center">查看进程的资源占用情况</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="启动-adb-server-失败"><a href="#启动-adb-server-失败" class="headerlink" title="启动 adb server 失败"></a>启动 adb server 失败</h3><p><strong>出错提示</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error: protocol fault (couldn\<span class="string">'t read status): No error</span></div></pre></td></tr></table></figure>
+<p><strong>可能原因</strong></p>
+<p>adb server 进程想使用的 5037 端口被占用。</p>
+<p><strong>解决方案</strong></p>
+<p>找到占用 5037 端口的进程，然后终止它。以 Windows 下为例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">netstat -ano | findstr LISTENING</div><div class="line"></div><div class="line">...</div><div class="line">TCP    0.0.0.0:5037           0.0.0.0:0              LISTENING       1548</div><div class="line">...</div></pre></td></tr></table></figure>
+<p>这里 1548 即为进程 ID，用命令结束该进程：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">taskkill /PID 1548</div></pre></td></tr></table></figure>
+<p>然后再启动 adb 就没问题了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ADB很强大，记住一些ADB命令有助于提高工作效率。&lt;br&gt;通过ADB命令查看wifi密码、MAC地址、设备信息、操作文件、查看文件、日志信息、卸载、启动和安装APK等&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://blog.ihoey.com/categories/Android/"/>
+    
+    
+      <category term="adb" scheme="https://blog.ihoey.com/tags/adb/"/>
+    
+      <category term="Android" scheme="https://blog.ihoey.com/tags/Android/"/>
+    
+      <category term="adb命令" scheme="https://blog.ihoey.com/tags/adb%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>adb(Android Debug Bridge，Android调试桥)常用命令</title>
+    <link href="https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html"/>
+    <id>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</id>
+    <published>2016-12-18T08:18:21.000Z</published>
+    <updated>2017-01-11T11:02:07.735Z</updated>
+    
+    <content type="html"><![CDATA[<p>说到 <code>ADB</code> 大家应该都不陌生，即 <code>Android Debug Bridge，Android</code> 调试桥，身为 <code>Android</code> 开发的我们，熟练使用 <code>ADB</code> 命令将会大大提升我们的开发效率， <code>ADB</code> 的命令有很多，今天就来整理下我在开发常用到的一些 ADB 命令。</p>
+<a id="more"></a>
+<p>ADB 的安装这里就不多说了，输入以下命令有如下提示就证明你环境ok，否则自行网上搜索解决下。</p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><ul>
+<li><code>adb version</code> – 查看版本</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ adb version</div><div class="line"></div><div class="line">Android Debug Bridge version 1.0.36</div><div class="line">Revision 8f855a3d9b35-android</div></pre></td></tr></table></figure>
+<ul>
+<li><code>adb [-d|-e|-s &lt;serialNumber&gt;] &lt;command&gt;</code> – adb 命令的基本语法<br>如果有多个设备/模拟器连接，则需要为命令指定目标设备。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">指定当前唯一通过 USB 连接的 Android 设备为命令目标</td>
+</tr>
+<tr>
+<td style="text-align:center">-e</td>
+<td style="text-align:center">指定当前唯一运行的模拟器为命令目标</td>
+</tr>
+<tr>
+<td style="text-align:center">-s <serialnumber></serialnumber></td>
+<td style="text-align:center">指定相应 serialNumber 号的设备/模拟器为命令目标</td>
+</tr>
+</tbody>
+</table>
+<p>在多个设备/模拟器连接的情况下较常用的是 -s <serialnumber> 参数，serialNumber 可以通过 adb devices 命令获取。如：</serialnumber></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ adb devices</div><div class="line"></div><div class="line">List of devices attached</div><div class="line">cf264b8f    device</div><div class="line">emulator-5554   device</div><div class="line"></div><div class="line"><span class="comment">#输出里的cf264b8f 和 emulator-5554 即为 serialNumber。比如这时想指定 cf264b8f 这个设备来运行 adb 命令获取屏幕分辨率：</span></div><div class="line"></div><div class="line">adb <span class="_">-s</span> cf264b8f shell wm size</div></pre></td></tr></table></figure>
+<p>遇到多设备/模拟器的情况均使用这几个参数为命令指定目标设备，下文中为简化描述，不再重复。</p>
+<ul>
+<li><code>adb start-server/adb kill-server</code>– 启动/停止 Server</li>
+</ul>
+<p>一般来说，这两个命令基本不会用到，因为只要设备连接正确，会自动启动 <code>adb server</code> 的，不过大家也需要知道这俩命令。</p>
+<ul>
+<li><code>adb -P &lt;port&gt; start-server</code> – 指定 adb server 的网络端口</li>
+</ul>
+<h2 id="设备连接"><a href="#设备连接" class="headerlink" title="设备连接"></a>设备连接</h2><ul>
+<li><code>adb devices</code> – 查看连接设备</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">eg:</div><div class="line">adb devices</div><div class="line"></div><div class="line"><span class="comment">#通过USB:</span></div><div class="line">List of devices attached</div><div class="line">02ae0c1021089daf       device</div><div class="line"></div><div class="line"><span class="comment">#通过IP:(会有一个端口号,一般都是5555)</span></div><div class="line">List of devices attached</div><div class="line">192.168.123.104:5555    device</div></pre></td></tr></table></figure>
+<ul>
+<li><code>adb connect &lt;device-ip-address&gt;</code> – 通过 IP 地址连接设备</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">eg:</div><div class="line">adb connect 192.168.123.104</div><div class="line"><span class="comment">#会提示:</span></div><div class="line">connected to 192.168.123.104:5555</div></pre></td></tr></table></figure>
+<ul>
+<li><code>adb disconnect &lt;device-ip-address&gt;</code> – 断开无线连接</li>
+</ul>
+<h2 id="应用管理"><a href="#应用管理" class="headerlink" title="应用管理"></a>应用管理</h2><ul>
+<li><code>adb install [-l\-r\-s\-d] &lt;path_to_apk&gt;</code> – 安装应用</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-l</td>
+<td style="text-align:center">将应用安装到保护目录 /mnt/asec</td>
+</tr>
+<tr>
+<td style="text-align:center">-r</td>
+<td style="text-align:center">允许覆盖安装允许覆盖安装</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:center">将应用安装到 sdcard</td>
+</tr>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">允许降级覆盖安装</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">eg:</div><div class="line">    adb install</div><div class="line">    adb install /Users/storm/temp/demo.apk</div><div class="line">    adb install -r demo.apk</div><div class="line">    adb install <span class="_">-s</span> demo.apk</div><div class="line"></div><div class="line"><span class="comment">#安装成功</span></div><div class="line">[100%] /data/<span class="built_in">local</span>/tmp/1.apk</div><div class="line">    pkg: /data/<span class="built_in">local</span>/tmp/1.apk</div><div class="line">Success</div><div class="line"></div><div class="line"><span class="comment">#安装失败</span></div><div class="line">[100%] /data/<span class="built_in">local</span>/tmp/map-20160831.apk</div><div class="line">        pkg: /data/<span class="built_in">local</span>/tmp/map-20160831.apk</div><div class="line">Failure [INSTALL_FAILED_ALREADY_EXISTS]</div><div class="line"></div><div class="line"><span class="comment">#adb install 内部原理简介</span></div><div class="line"></div><div class="line"><span class="comment">#adb install 实际是分三步完成：</span></div><div class="line"></div><div class="line"><span class="comment">#push apk 文件到 /data/local/tmp。</span></div><div class="line"></div><div class="line"><span class="comment">#调用 pm install 安装。</span></div><div class="line"></div><div class="line"><span class="comment">#删除 /data/local/tmp 下的对应 apk 文件。</span></div><div class="line"></div><div class="line"><span class="comment">#所以，必要的时候也可以根据这个步骤，手动分步执行安装过程。</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>adb uninstall [-k] &lt;packagename&gt;</code> – 卸载应用</li>
+</ul>
+<p><packagename> 表示应用的包名，-k 参数可选，表示卸载应用但保留数据和缓存目录。</packagename></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">eg：</div><div class="line">adb uninstall com.qihoo360.mobilesafe</div><div class="line"><span class="comment">#表示卸载 360 手机卫士。</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>adb shell pm clear &lt;packagename&gt;</code> – 清除应用数据与缓存</li>
+</ul>
+<p><packagename> 表示应用名包，这条命令的效果相当于在设置里的应用信息界面点击了「清除缓存」和「清除数据」。</packagename></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">eg:</div><div class="line">adb shell pm clear com.qihoo360.mobilesafe</div><div class="line"><span class="comment">#表示清除 360 手机卫士的数据和缓存。</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>adb shell pm list packages [-f/-d/-e/-s/-3/-i/-u] [FILTER]</code> – 查看应用列表</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">显示列表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">无</td>
+<td style="text-align:center">所有应用</td>
+</tr>
+<tr>
+<td style="text-align:center">-f</td>
+<td style="text-align:center">显示应用关联的 apk 文件</td>
+</tr>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">只显示 disabled 的应用</td>
+</tr>
+<tr>
+<td style="text-align:center">-e</td>
+<td style="text-align:center">只显示 enabled 的应用</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:center">只显示系统应用</td>
+</tr>
+<tr>
+<td style="text-align:center">-3</td>
+<td style="text-align:center">只显示第三方应用</td>
+</tr>
+<tr>
+<td style="text-align:center">[FILTER&gt;]</td>
+<td style="text-align:center">包名包含 <filter> 字符串</filter></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">eg:</div><div class="line">    <span class="comment">#系统应用</span></div><div class="line">    adb shell pm list packages <span class="_">-s</span></div><div class="line"></div><div class="line">    <span class="comment">#第三方应用</span></div><div class="line">    adb shell pm list packages -3</div><div class="line"></div><div class="line">    <span class="comment">#包名包含某字符串的应用</span></div><div class="line">    adb shell pm list packages mazhuang</div><div class="line"></div><div class="line">    <span class="comment">#当然也可以使用 grep 来过滤：</span></div><div class="line">    adb shell pm list packages | grep mazhuang</div></pre></td></tr></table></figure>
+<ul>
+<li><code>adb shell am force-stop &lt;packagename&gt;</code> – 强制停止应用</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">eg:</div><div class="line">adb shell am force-stop com.qihoo360.mobilesafe</div><div class="line"><span class="comment">#表示停止 360 安全卫士的一切进程与服务。</span></div></pre></td></tr></table></figure>
+<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><ul>
+<li><code>adb pull &lt;设备里的文件路径&gt; [电脑上的目录]</code> – 复制设备里的文件到电脑<br>其中 <code>电脑上的目录</code> 参数可以省略，默认复制到当前目录。</li>
+<li><code>adb push &lt;电脑上的文件路径&gt; &lt;设备里的目录&gt;</code> – 复制电脑里的文件到设备</li>
+</ul>
+<h2 id="模拟按键-输入"><a href="#模拟按键-输入" class="headerlink" title="模拟按键/输入"></a>模拟按键/输入</h2><ul>
+<li><code>adb shell input keyevent &lt;keycode&gt;</code> – 模拟按键/输入</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">keycode</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">HOME键</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">返回键</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">打开拨号应用</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:center">挂断电话</td>
+</tr>
+<tr>
+<td style="text-align:center">24</td>
+<td style="text-align:center">增加音量</td>
+</tr>
+<tr>
+<td style="text-align:center">25</td>
+<td style="text-align:center">降低音量</td>
+</tr>
+<tr>
+<td style="text-align:center">26</td>
+<td style="text-align:center">电源键</td>
+</tr>
+<tr>
+<td style="text-align:center">27</td>
+<td style="text-align:center">拍照（需要在相机应用里）</td>
+</tr>
+<tr>
+<td style="text-align:center">64</td>
+<td style="text-align:center">打开浏览器</td>
+</tr>
+<tr>
+<td style="text-align:center">82</td>
+<td style="text-align:center">菜单键</td>
+</tr>
+<tr>
+<td style="text-align:center">85</td>
+<td style="text-align:center">播放/暂停</td>
+</tr>
+<tr>
+<td style="text-align:center">86</td>
+<td style="text-align:center">停止播放</td>
+</tr>
+<tr>
+<td style="text-align:center">87</td>
+<td style="text-align:center">播放下一首</td>
+</tr>
+<tr>
+<td style="text-align:center">88</td>
+<td style="text-align:center">播放上一首</td>
+</tr>
+<tr>
+<td style="text-align:center">122</td>
+<td style="text-align:center">移动光标到行首或列表顶部</td>
+</tr>
+<tr>
+<td style="text-align:center">123</td>
+<td style="text-align:center">移动光标到行末或列表底部</td>
+</tr>
+<tr>
+<td style="text-align:center">126</td>
+<td style="text-align:center">恢复播放</td>
+</tr>
+<tr>
+<td style="text-align:center">127</td>
+<td style="text-align:center">暂停播放</td>
+</tr>
+<tr>
+<td style="text-align:center">164</td>
+<td style="text-align:center">静音</td>
+</tr>
+<tr>
+<td style="text-align:center">176</td>
+<td style="text-align:center">打开系统设置</td>
+</tr>
+<tr>
+<td style="text-align:center">187</td>
+<td style="text-align:center">切换应用</td>
+</tr>
+<tr>
+<td style="text-align:center">207</td>
+<td style="text-align:center">打开联系人</td>
+</tr>
+<tr>
+<td style="text-align:center">208</td>
+<td style="text-align:center">打开日历</td>
+</tr>
+<tr>
+<td style="text-align:center">209</td>
+<td style="text-align:center">打开音乐</td>
+</tr>
+<tr>
+<td style="text-align:center">210</td>
+<td style="text-align:center">打开计算器</td>
+</tr>
+<tr>
+<td style="text-align:center">220</td>
+<td style="text-align:center">降低屏幕亮度</td>
+</tr>
+<tr>
+<td style="text-align:center">221</td>
+<td style="text-align:center">提高屏幕亮度</td>
+</tr>
+<tr>
+<td style="text-align:center">223</td>
+<td style="text-align:center">系统休眠</td>
+</tr>
+<tr>
+<td style="text-align:center">224</td>
+<td style="text-align:center">点亮屏幕</td>
+</tr>
+<tr>
+<td style="text-align:center">231</td>
+<td style="text-align:center">打开语音助手</td>
+</tr>
+<tr>
+<td style="text-align:center">276</td>
+<td style="text-align:center">如果没有 wakelock 则让系统休眠</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">eg:</div><div class="line"><span class="comment">#电源键</span></div><div class="line">adb shell input keyevent 26</div><div class="line"></div><div class="line"><span class="comment">#菜单键</span></div><div class="line">adb shell input keyevent 82</div><div class="line"></div><div class="line"><span class="comment">#HOME 键</span></div><div class="line">adb shell input keyevent 3</div><div class="line"></div><div class="line"><span class="comment">#返回键</span></div><div class="line">adb shell input keyevent 4</div><div class="line"></div><div class="line"><span class="comment">#音量加/减/静音</span></div><div class="line">adb shell input keyevent 24/25/164</div><div class="line"></div><div class="line"><span class="comment">#滑动解锁(参数 300 1000 300 500 分别表示起始点x坐标 起始点y坐标 结束点x坐标 结束点y坐标)</span></div><div class="line">adb shell input swipe 300 1000 300 500</div><div class="line"></div><div class="line"><span class="comment">#在焦点处于某文本框时，可以通过 input 命令来输入文本</span></div><div class="line">adb shell input text hello</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;说到 &lt;code&gt;ADB&lt;/code&gt; 大家应该都不陌生，即 &lt;code&gt;Android Debug Bridge，Android&lt;/code&gt; 调试桥，身为 &lt;code&gt;Android&lt;/code&gt; 开发的我们，熟练使用 &lt;code&gt;ADB&lt;/code&gt; 命令将会大大提升我们的开发效率， &lt;code&gt;ADB&lt;/code&gt; 的命令有很多，今天就来整理下我在开发常用到的一些 ADB 命令。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Android" scheme="https://blog.ihoey.com/categories/Android/"/>
+    
+    
+      <category term="adb" scheme="https://blog.ihoey.com/tags/adb/"/>
+    
+      <category term="Android" scheme="https://blog.ihoey.com/tags/Android/"/>
+    
+      <category term="adb命令" scheme="https://blog.ihoey.com/tags/adb%E5%91%BD%E4%BB%A4/"/>
+    
+  </entry>
   
   <entry>
     <title>Node第二部分-模块及工具</title>
@@ -200,11 +978,11 @@
     <link href="https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html"/>
     <id>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</id>
     <published>2016-11-27T02:35:12.000Z</published>
-    <updated>2016-12-17T12:26:30.648Z</updated>
+    <updated>2017-01-11T12:28:08.814Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Markdown-介绍"><a href="#Markdown-介绍" class="headerlink" title="Markdown 介绍"></a>Markdown 介绍</h2><ul>
 <li><em>Markdown</em> 是一个 <strong>轻量级  高效率</strong> 的标记语言</li>
-<li>轻量级标记语言，2004 年被 <code>John Gruber</code> 创造， 它允许人们“使用易读易写的纯文本格式编写文档”， Markdown 最重要的设计就是可读性， Markdown 可以选择性的转换为 HTML 文档格式， 很多网站目前都使用了 Markdown 或者其变种，例如Github、简书等大型社区。</li>
+<li>轻量级标记语言，<code>2004</code> 年被 <code>John Gruber</code> 创造， 它允许人们“使用易读易写的纯文本格式编写文档”， Markdown 最重要的设计就是可读性， Markdown 可以选择性的转换为 <code>HTML</code> 文档格式， 很多网站目前都使用了 <code>Markdown</code> 或者其变种，例如 <code>Github</code> 、简书等大型社区。</li>
 </ul>
 <a id="more"></a>
 <h2 id="Markdown-使用场景"><a href="#Markdown-使用场景" class="headerlink" title="Markdown 使用场景"></a>Markdown 使用场景</h2><ul>
@@ -232,16 +1010,27 @@
 </li>
 <li>gitbook</li>
 </ul>
-<p>实时预览工具只是为了达到所见即所得的效果而已， 适合初学者学习 Markdown ， 我们真正在进行写作的时候，其实是不需要实时预览的， 因为 Markdown 标记语言本身已经足够清晰了。</p>
-<h2 id="Markdown-安装和配置编写预览环境"><a href="#Markdown-安装和配置编写预览环境" class="headerlink" title="Markdown 安装和配置编写预览环境"></a>Markdown 安装和配置编写预览环境</h2><h3 id="Webstorm"><a href="#Webstorm" class="headerlink" title="Webstorm"></a>Webstorm</h3><h3 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a>Visual Studio Code</h3><h3 id="Sublime"><a href="#Sublime" class="headerlink" title="Sublime"></a>Sublime</h3><ul>
+<p>实时预览工具只是为了达到所见即所得的效果而已， 适合初学者学习 <code>Markdown</code> ， 我们真正在进行写作的时候，其实是不需要实时预览的， 因为 Markdown 标记语言本身已经足够清晰了。</p>
+<h2 id="Markdown-安装和配置编写预览环境-sublime"><a href="#Markdown-安装和配置编写预览环境-sublime" class="headerlink" title="Markdown 安装和配置编写预览环境(sublime)"></a>Markdown 安装和配置编写预览环境(sublime)</h2><ul>
+<li>按下键 <code>Ctrl+Shift+p</code> 调出命令面板，找到 <code>Package Control: install Pakage</code> 这一项。搜索 <code>markdown preview</code> ，点击安装。</li>
+<li><code>Markdown Preview</code> 较常用的功能是 <code>preview in browser</code> 和 <code>Export HTML in Sublime Text</code> ，前者可以在浏览器看到预览效果，后者可将 <code>markdown</code> 保存为 <code>html</code> 文件。</li>
+<li><code>preview in browser</code> 据称是实时的，但是实践上还是需要在 <code>st</code> 保存，然后浏览器刷新才能看到新的效果，好在 <code>markdown</code> 写得多的话也不需要每敲一行看一次效果。</li>
+</ul>
+<h3 id="Webstorm"><a href="#Webstorm" class="headerlink" title="Webstorm"></a>Webstorm</h3><ul>
+<li>打开<code>webstorm</code> ，<code>File--&gt;Setting--&gt;输入plugin--&gt;Install JetBrains plugin...--&gt;输入markdown--&gt;</code>点击右边的 <code>Install</code> ,安装完，重启 <code>webstorm</code>。</li>
+</ul>
+<h3 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a>Visual Studio Code</h3><ul>
+<li><code>Visual Studio Code</code> 自带 <code>markdown</code> 预览,所以不需要安装插件,不过可以安装语法高亮主题</li>
+</ul>
+<h3 id="Sublime"><a href="#Sublime" class="headerlink" title="Sublime"></a>Sublime</h3><ul>
 <li>MarkdownEditing 主题、自动补齐等功能</li>
 <li>MarkdownPreview 在浏览器预览</li>
 <li>MarkdownTOC 自动生成导航</li>
 <li>Table Editor 自动表格编辑</li>
 <li><a href="https://packagecontrol.io/" target="_blank" rel="external">packagecontrol</a> Sublime 的插件生态系统网站</li>
 </ul>
-<p>只要有写作的地方，都可以使用 Markdown 来书写。</p>
-<h2 id="Markdown-标题书写"><a href="#Markdown-标题书写" class="headerlink" title="Markdown 标题书写"></a>Markdown 标题书写</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 一级标题 </span></div><div class="line"><span class="section">## 二级标题 </span></div><div class="line"><span class="section">### 三级标题</span></div><div class="line">...</div><div class="line"><span class="section">###### 六级标签</span></div><div class="line">一共六级标题</div></pre></td></tr></table></figure>
+<p>只要有写作的地方，都可以使用 <code>Markdown</code> 来书写。</p>
+<h2 id="Markdown-标题书写"><a href="#Markdown-标题书写" class="headerlink" title="Markdown 标题书写"></a>Markdown 标题书写</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="section"># 一级标题</span></div><div class="line"><span class="section">## 二级标题</span></div><div class="line"><span class="section">### 三级标题</span></div><div class="line">...</div><div class="line"><span class="section">###### 六级标签</span></div><div class="line">一共六级标题</div></pre></td></tr></table></figure>
 <h2 id="Markdown-列表书写语法"><a href="#Markdown-列表书写语法" class="headerlink" title="Markdown 列表书写语法"></a>Markdown 列表书写语法</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
 <li>一级列表建议使用 <code>-</code><ul>
 <li>二级列表建议使用 <code>+</code><ul>
@@ -274,14 +1063,61 @@
 </ol>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">3. </span>有序列表嵌套有序列表</div><div class="line"><span class="code">    1. 有序列表嵌套有序列表</span></div><div class="line"><span class="code">        1. 有序列表嵌套有序列表</span></div></pre></td></tr></table></figure>
 <h4 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h4><p>无论是有序列表还是无序列表,如果就写一级列表不嵌套就可以紧凑写到一起即可,如果嵌套多级列表最好在列表项之间只用空行隔开</p>
-<h2 id="Markdown-图片链接书写语法"><a href="#Markdown-图片链接书写语法" class="headerlink" title="Markdown 图片链接书写语法"></a>Markdown 图片链接书写语法</h2><h3 id="Markdown-图片书写语法"><a href="#Markdown-图片书写语法" class="headerlink" title="Markdown 图片书写语法"></a>Markdown 图片书写语法</h3><p><img src="" alt=""></p>
-<h3 id="Markdown-链接书写语法"><a href="#Markdown-链接书写语法" class="headerlink" title="Markdown 链接书写语法"></a>Markdown 链接书写语法</h3>]]></content>
+<h2 id="Markdown-图片链接书写语法"><a href="#Markdown-图片链接书写语法" class="headerlink" title="Markdown 图片链接书写语法"></a>Markdown 图片链接书写语法</h2><h3 id="Markdown-图片书写语法"><a href="#Markdown-图片书写语法" class="headerlink" title="Markdown 图片书写语法"></a>Markdown 图片书写语法</h3><ul>
+<li><code>![图片](http://blog.ihoey.com/img/img.jpg)</code></li>
+</ul>
+<h3 id="Markdown-链接书写语法"><a href="#Markdown-链接书写语法" class="headerlink" title="Markdown 链接书写语法"></a>Markdown 链接书写语法</h3><ul>
+<li><code>[链接](http://blog.ihoey.com)</code></li>
+</ul>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+<li><code>&gt; 例如这样</code></li>
+</ul>
+<blockquote>
+<p>例如这样</p>
+</blockquote>
+<h2 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h2><ul>
+<li><code>Markdown</code> 的粗体和斜体也非常简单，用两个 <code>*</code> 包含一段文本就是粗体的语法，用一个 <code>*</code> 包含一段文本就是斜体的语法</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="strong">**这里是粗体**</span></div><div class="line"><span class="emphasis">*这里是斜体*</span></div></pre></td></tr></table></figure>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">| 表头           | 表头            | 表头   |</div><div class="line">| :------------- | :-------------: | -----: |</div><div class="line">| 左对齐         | 居中对齐        | 右对齐 |</div><div class="line">| 左对齐         | 居中对齐        | 右对齐 |</div><div class="line">| 左对齐         | 居中对齐        | 右对齐 |</div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表头</th>
+<th style="text-align:center">表头</th>
+<th style="text-align:right">表头</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中对齐</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中对齐</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中对齐</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+</tbody>
+</table>
+<h2 id="代码框"><a href="#代码框" class="headerlink" title="代码框"></a>代码框</h2><p>由三个 ` 反引号包裹, 行内代码在代码前后加一个 ` 反引号</p>
+<h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="section">## 0. 目录&#123;#index&#125;</span></div><div class="line">跳转到[<span class="string">目录</span>](<span class="link">#index</span>)</div></pre></td></tr></table></figure>
+<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">* </span><span class="bullet">* *</span></div><div class="line"><span class="emphasis">***</span></div><div class="line"><span class="strong">*****</span></div><div class="line"><span class="section">- - -</span></div><div class="line">---------------------------------------</div></pre></td></tr></table></figure>
+<p>显示效果都一样：</p>
+<hr>
+]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;Markdown-介绍&quot;&gt;&lt;a href=&quot;#Markdown-介绍&quot; class=&quot;headerlink&quot; title=&quot;Markdown 介绍&quot;&gt;&lt;/a&gt;Markdown 介绍&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Markdown&lt;/em&gt; 是一个 &lt;strong&gt;轻量级  高效率&lt;/strong&gt; 的标记语言&lt;/li&gt;
-&lt;li&gt;轻量级标记语言，2004 年被 &lt;code&gt;John Gruber&lt;/code&gt; 创造， 它允许人们“使用易读易写的纯文本格式编写文档”， Markdown 最重要的设计就是可读性， Markdown 可以选择性的转换为 HTML 文档格式， 很多网站目前都使用了 Markdown 或者其变种，例如Github、简书等大型社区。&lt;/li&gt;
+&lt;li&gt;轻量级标记语言，&lt;code&gt;2004&lt;/code&gt; 年被 &lt;code&gt;John Gruber&lt;/code&gt; 创造， 它允许人们“使用易读易写的纯文本格式编写文档”， Markdown 最重要的设计就是可读性， Markdown 可以选择性的转换为 &lt;code&gt;HTML&lt;/code&gt; 文档格式， 很多网站目前都使用了 &lt;code&gt;Markdown&lt;/code&gt; 或者其变种，例如 &lt;code&gt;Github&lt;/code&gt; 、简书等大型社区。&lt;/li&gt;
 &lt;/ul&gt;
     
     </summary>
@@ -1832,117 +2668,6 @@
     
     
       <category term="javascript" scheme="https://blog.ihoey.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js高级与面向对象之函数</title>
-    <link href="https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html"/>
-    <id>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</id>
-    <published>2016-07-22T11:40:39.000Z</published>
-    <updated>2016-11-24T01:28:37.656Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="comment">//函数体</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//2.函数表达式</span></div><div class="line"><span class="keyword">var</span> func1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="comment">//3.通过Function构造函数来创建</span></div><div class="line"><span class="keyword">var</span> func2 = <span class="keyword">new</span> <span class="built_in">Function</span>();</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="函数的name属性"><a href="#函数的name属性" class="headerlink" title="函数的name属性"></a>函数的name属性</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"><span class="comment">//p.constructor</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> p);  <span class="comment">//object</span></div><div class="line"><span class="built_in">console</span>.log(p.constructor.toString());</div><div class="line"><span class="built_in">console</span>.log(Person.name);</div><div class="line"><span class="built_in">console</span>.log(p.constructor.name);</div></pre></td></tr></table></figure>
-<p>函数都会有一个 <code>name</code> 属性，所以我们可以通过对象先找到构造函数，然后直接访问构造函数的 <code>name</code> ，就拿到了具体类型</p>
-<h2 id="Function的使用"><a href="#Function的使用" class="headerlink" title="Function的使用"></a>Function的使用</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Function函数所有的参数全都是字符串</span></div><div class="line"><span class="comment">//Function函数的作用就是将所有的参数组合起来，变成一个函数</span></div><div class="line"><span class="comment">//1、如果只传一个参数，那么这个函数必然是函数体</span></div><div class="line"><span class="comment">//2、如果传多个参数，那么最后一个参数表示函数体，前面的参数代表将要创建的函数的参数</span></div><div class="line"><span class="comment">//3、如果不传参数，表示创建一个空函数</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Function</span>(arg1, arg2, arg3, ..., argN, body);</div></pre></td></tr></table></figure>
-<h3 id="创建一个打印一句话的函数"><a href="#创建一个打印一句话的函数" class="headerlink" title="创建一个打印一句话的函数"></a>创建一个打印一句话的函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//传统的方式</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"你好"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//使用Function</span></div><div class="line"><span class="keyword">var</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"console.log('你好');"</span>);</div></pre></td></tr></table></figure>
-<h3 id="创建一个空函数"><a href="#创建一个空函数" class="headerlink" title="创建一个空函数"></a>创建一个空函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//传统的方式</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line"><span class="comment">//Function</span></div><div class="line"><span class="keyword">var</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>();</div></pre></td></tr></table></figure>
-<h3 id="创建一个有参数的函数"><a href="#创建一个有参数的函数" class="headerlink" title="创建一个有参数的函数"></a>创建一个有参数的函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//传统的方式</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(num);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//Function</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>()&#123;<span class="string">"num"</span>, <span class="string">"console.log(num);"</span>&#125;;</div></pre></td></tr></table></figure>
-<h2 id="静态成员与实例成员的概念"><a href="#静态成员与实例成员的概念" class="headerlink" title="静态成员与实例成员的概念"></a>静态成员与实例成员的概念</h2><p>静态成员和实例成员这两个概念其实也是从面相对象的编程语言中引入的，对应到 <code>JavaScript</code> 中的理解为：</p>
-<h3 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h3><ul>
-<li>静态成员是指静态属性和静态方法，所谓静态，就是有构造函数提供的。</li>
-</ul>
-<h3 id="实例成员"><a href="#实例成员" class="headerlink" title="实例成员"></a>实例成员</h3><ul>
-<li>实例成员是值实例属性和实例方法，所谓实例，就是由构造函数创建出来的对象。</li>
-</ul>
-<h3 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">"zs"</span>,</div><div class="line">    <span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"Hello World"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//下面这个sayHi方法就是构造函数自己的方法，也就是静态方法</span></div><div class="line">Person.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"I'm a Person"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//原型属性属于构造函数，所以原型属性是静态属性</span></div><div class="line">Person.prototype = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line"><span class="comment">//这里的name是构造函数创建出来的实例对象的属性，所以是实例属性</span></div><div class="line">p.name = <span class="string">"李四"</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//这里的sayHello也是构造函数创建出来的实例对象的方法，所以是实例方法</span></div><div class="line">p.sayHello();</div></pre></td></tr></table></figure>
-<p>提示：</p>
-<p>一般工具型方法都有静态成员提供, 一般与实例对象有关的方法由实例成员表示.</p>
-<p>工具方法：比如 <code>jQuery.Ajax()</code> 、 <code>jQuery.trim()</code> 、 <code>jQuery.Each()</code></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;函数声明&quot;&gt;&lt;a href=&quot;#函数声明&quot; class=&quot;headerlink&quot; title=&quot;函数声明&quot;&gt;&lt;/a&gt;函数声明&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;func&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;//函数体&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//2.函数表达式&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; func1 = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;//3.通过Function构造函数来创建&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; func2 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;Function&lt;/span&gt;();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://blog.ihoey.com/categories/javascript/"/>
-    
-    
-      <category term="Function" scheme="https://blog.ihoey.com/tags/Function/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js高级与面向对象之原型链</title>
-    <link href="https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html"/>
-    <id>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</id>
-    <published>2016-07-09T11:41:47.000Z</published>
-    <updated>2016-11-24T01:28:07.277Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="原型链是什么？"><a href="#原型链是什么？" class="headerlink" title="原型链是什么？"></a>原型链是什么？</h2><p>只要是对象就会有原型，那么所有的原型就会形成一个链式的结构，这个结构就称为原型链</p>
-<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="comment">//p---&gt;Person.prototype-----&gt;Object.Prototype-----&gt;null</span></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(Person.prototype);</div><div class="line"><span class="comment">//原型也是一个对象，是对象，就有构造函数，有构造函数，就有原型</span></div></pre></td></tr></table></figure>
-<h2 id="修改原型链"><a href="#修改原型链" class="headerlink" title="修改原型链"></a>修改原型链</h2><ul>
-<li>原型链结构可以进行修改</li>
-<li><p>替换原型对象就可以修改原型链结构</p>
-</li>
-<li><p>原型继承的概念重定义</p>
-</li>
-<li><p>通过修改原型链的结构实现的继承就是原型继承</p>
-</li>
-<li><p>属性的搜索原则</p>
-</li>
-<li>在对象访问属性的时候，会遵守一个原则</li>
-</ul>
-<ol>
-<li>现在对象本身中进行查找，如果本身中有，就直接使用，</li>
-<li>如果没有，就去原型中查找，如果原型中有，就直接使用</li>
-<li>如果没有，重复步骤2，直到找到 <code>null</code></li>
-</ol>
-<ul>
-<li><p>设置属性没有搜索原则，只会在本身中进行搜索</p>
-</li>
-<li><p>由于属性搜索原则的存在，所以对象可以直接访问 <code>.constructor</code> 属性找到其构造函数</p>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Human</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">Person.prototype = <span class="keyword">new</span> Human();</div><div class="line"></div><div class="line"><span class="comment">//p----&gt;Person.prototype-----&gt;Human.prototype-----&gt;Object.prototype-----&gt;null</span></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div></pre></td></tr></table></figure>
-<h2 id="复杂的原型链"><a href="#复杂的原型链" class="headerlink" title="复杂的原型链"></a>复杂的原型链</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = <span class="string">"123"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Human</span>(<span class="params"></span></span></div><div class="line"></div><div class="line">)&#123;&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> animal = <span class="keyword">new</span> Animal();</div><div class="line">Human.prototype = animal;</div><div class="line"></div><div class="line"><span class="keyword">var</span> h = <span class="keyword">new</span> Human();</div><div class="line"><span class="comment">//通过h去访问constructor属性的顺序</span></div><div class="line"><span class="comment">//1.现在h自身查找 h中没有</span></div><div class="line"><span class="comment">//2.去Human.prototype 也就是 h.__proto___  也就是animal中去找</span></div><div class="line"><span class="comment">//3.再去anmail这个对象的原型中 也就是 Animal.prototype 也即是 animal.__proto__ 中去找</span></div><div class="line"><span class="comment">//4.找到的就是Animal</span></div><div class="line"><span class="built_in">console</span>.log(h.constructor);</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Man</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> h1 = <span class="keyword">new</span> Human();</div><div class="line">Man.prototype = h1;</div><div class="line"></div><div class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> Man();</div><div class="line"><span class="comment">//1.第一步在m自己中找 没有</span></div><div class="line"><span class="comment">//2.m.__proto__  也就是Man.prototype 也就是 h1中去查找 没有</span></div><div class="line"><span class="comment">//3.h1的原型 也就是 h1.__proto__ 也就是 Human.prototype</span></div><div class="line"><span class="comment">//4.去上面看吧</span></div><div class="line"><span class="built_in">console</span>.log(m.constructor);</div></pre></td></tr></table></figure>
-<h2 id="instanceof关键字"><a href="#instanceof关键字" class="headerlink" title="instanceof关键字"></a>instanceof关键字</h2><ul>
-<li>对象 <code>instanceof</code> 构造函数</li>
-<li>检测一个对象是不是通过某个构造函数创建出来的(不准确的说法)</li>
-<li>检测一个构造函数的原型 <code>（构造函数.prototype）</code> 是否在某个对象的原型链上</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">        &#125;</div><div class="line"><span class="comment">//p----&gt;Person.prototype----&gt;Object.prototype----&gt;null</span></div><div class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> Person);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</div></pre></td></tr></table></figure>
-<h2 id="Object-prototype成员"><a href="#Object-prototype成员" class="headerlink" title="Object.prototype成员"></a>Object.prototype成员</h2><ol>
-<li><code>constructor</code>  指向原型相关的构造函数</li>
-<li><code>hasOwnProperty</code> 判断对象本身是否拥有指定的属性  不包含原型中的成员<br><code>对象.hasOwnProperty(属性名)</code></li>
-<li><code>isPrototypeOf</code> 判断一个对象是否某个对象的原型<br><code>对象.isPrototypeOf(另外一个对象)</code></li>
-<li><p><code>propertyIsEnumerable</code>  判断对象自己的属性是不是可以被遍历 <code>（for-in）</code> 如果不是自己的或者不能被遍历都会返回 <code>false</code><br><code>对象.propertyIsEnumerable(属性名)</code><br><code>Object.defineProperty(对象，属性名，对象（描述信息）)</code></p>
-</li>
-<li><p><code>toLocaleString</code>  <code>toString</code>   都是将对象转换为字符串的方法<br><code>tolocalString</code> 打印本地格式的字符串  本地格式是获取的系统设置<br><code>toString</code> 直接转换成字符串</p>
-</li>
-<li><code>valueOf</code> 方法<br>当对象参与运算的时候，会首先调用对象的 <code>valuOf</code> 方法获取对象的值<br>如果获取到的这个值可以参与运算，就直接拿来使用<br>如果不能参与运算，就会去调用该对象的 <code>toString</code> 方法</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">    <span class="attr">valueOf</span> :<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="attr">toString</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">"我叫李二狗"</span>;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//console.log(obj.valueOf());</span></div><div class="line"><span class="built_in">console</span>.log(obj.toString());</div><div class="line"><span class="built_in">console</span>.log( obj + <span class="number">1</span>);</div></pre></td></tr></table></figure>
-<ol>
-<li><strong>proto</strong>  指向对象的原型  非标准属性</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="built_in">console</span>.log(now.toString());</div><div class="line"><span class="built_in">console</span>.log(now.toLocaleString());</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">      <span class="attr">name</span>:<span class="string">""</span>,</div><div class="line">    <span class="attr">age</span>:<span class="number">18</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.toString());</div><div class="line"><span class="built_in">console</span>.log(obj.toLocaleString());</div><div class="line"></div><div class="line">obj.__proto__.name =  <span class="string">"张三"</span>;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj)&#123;</div><div class="line">    <span class="built_in">console</span>.log(k);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.propertyIsEnumerable(<span class="string">"name"</span>));</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.__proto__ = &#123;</div><div class="line">   <span class="attr">beautifulLevel</span> : <span class="string">"High"</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj.hasOwnProperty(<span class="string">"beautifulLevel"</span>));</div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj1 = &#123;&#125;;</div><div class="line"></div><div class="line">obj.__proto__ = obj1;</div><div class="line"><span class="built_in">console</span>.log(obj1.isPrototypeOf(obj));</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;原型链是什么？&quot;&gt;&lt;a href=&quot;#原型链是什么？&quot; class=&quot;headerlink&quot; title=&quot;原型链是什么？&quot;&gt;&lt;/a&gt;原型链是什么？&lt;/h2&gt;&lt;p&gt;只要是对象就会有原型，那么所有的原型就会形成一个链式的结构，这个结构就称为原型链&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://blog.ihoey.com/categories/javascript/"/>
-    
-    
-      <category term="原型链" scheme="https://blog.ihoey.com/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
     
   </entry>
   
