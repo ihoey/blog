@@ -3,6 +3,76 @@
 
 
     
+  <url>
+    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
+    <lastmod>2017-01-11T12:28:08.814Z</lastmod>
+    <data>
+        <display>
+        <title>工具使用篇之Markdown</title>
+        <pubTime>2016-11-27T02:35:12.000Z</pubTime>
+        
+        <tag>Markdown语法规范</tag>
+         
+        <tag>tools</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="https://blog.ihoey.com/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
+    <lastmod>2017-01-11T11:02:21.655Z</lastmod>
+    <data>
+        <display>
+        <title>adb设备信息查询修改刷机等命令</title>
+        <pubTime>2016-12-22T10:51:53.000Z</pubTime>
+        
+        <tag>adb</tag>
+         
+        <tag>Android</tag>
+         
+        <tag>adb命令</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</loc>
+    <lastmod>2017-01-11T11:02:07.735Z</lastmod>
+    <data>
+        <display>
+        <title>adb(Android Debug Bridge，Android调试桥)常用命令</title>
+        <pubTime>2016-12-18T08:18:21.000Z</pubTime>
+        
+        <tag>adb</tag>
+         
+        <tag>Android</tag>
+         
+        <tag>adb命令</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
     
@@ -68,28 +138,6 @@
            
              
               <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
-    <lastmod>2016-12-17T12:26:30.648Z</lastmod>
-    <data>
-        <display>
-        <title>工具使用篇之Markdown</title>
-        <pubTime>2016-11-27T02:35:12.000Z</pubTime>
-        
-        <tag>Markdown语法规范</tag>
-         
-        <tag>tools</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="https://blog.ihoey.com/categories/Markdown/"/>
           
         </display>
     </data>

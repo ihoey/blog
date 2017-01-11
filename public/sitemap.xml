@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
+    
+    <lastmod>2017-01-11T12:28:08.814Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
+    
+    <lastmod>2017-01-11T11:02:21.655Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</loc>
+    
+    <lastmod>2017-01-11T11:02:07.735Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ihoey.com/links/index.html</loc>
     
     <lastmod>2016-12-30T12:47:54.734Z</lastmod>
@@ -40,13 +61,6 @@
     <loc>https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</loc>
     
     <lastmod>2016-12-17T12:34:55.139Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
-    
-    <lastmod>2016-12-17T12:26:30.648Z</lastmod>
     
   </url>
   
