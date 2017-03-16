@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html</loc>
+    <lastmod>2017-03-16T10:40:47.880Z</lastmod>
+    <data>
+        <display>
+        <title>科学上网之shadowsocks 服务端安装</title>
+        <pubTime>2017-03-16T10:38:46.000Z</pubTime>
+        
+        <tag>科学上网</tag>
+         
+        <tag>shadowsocks</tag>
+         
+         
+           
+             
+              <breadCrumb title="shadowsocks" url="https://blog.ihoey.com/categories/shadowsocks/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
     <lastmod>2017-01-11T12:28:08.814Z</lastmod>
     <data>
@@ -72,7 +95,6 @@
     </data>
     </url>
 
-    
     
     
     
