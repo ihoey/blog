@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html</loc>
+    <lastmod>2017-03-27T07:08:24.767Z</lastmod>
+    <data>
+        <display>
+        <title>MongoDB学习笔记</title>
+        <pubTime>2017-03-27T07:07:03.000Z</pubTime>
+        
+        <tag>MongoDB</tag>
+         
+        <tag>NoSQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="MongoDB" url="https://blog.ihoey.com/categories/MongoDB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-23-mongodb.html</loc>
+    <lastmod>2017-03-27T07:07:52.679Z</lastmod>
+    <data>
+        <display>
+        <title>MongoDB安装笔记</title>
+        <pubTime>2017-03-23T08:25:11.000Z</pubTime>
+        
+        <tag>MongoDB</tag>
+         
+        <tag>NoSQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="MongoDB" url="https://blog.ihoey.com/categories/MongoDB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html</loc>
     <lastmod>2017-03-16T10:40:47.880Z</lastmod>
     <data>

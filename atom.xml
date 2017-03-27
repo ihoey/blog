@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.ihoey.com/"/>
-  <updated>2017-03-16T10:40:47.880Z</updated>
+  <updated>2017-03-27T07:08:24.767Z</updated>
   <id>https://blog.ihoey.com/</id>
   
   <author>
@@ -14,6 +14,96 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MongoDB学习笔记</title>
+    <link href="https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html"/>
+    <id>https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html</id>
+    <published>2017-03-27T07:07:03.000Z</published>
+    <updated>2017-03-27T07:08:24.767Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+    
+    </summary>
+    
+      <category term="MongoDB" scheme="https://blog.ihoey.com/categories/MongoDB/"/>
+    
+    
+      <category term="MongoDB" scheme="https://blog.ihoey.com/tags/MongoDB/"/>
+    
+      <category term="NoSQL" scheme="https://blog.ihoey.com/tags/NoSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MongoDB安装笔记</title>
+    <link href="https://blog.ihoey.com/posts/MongoDB/2017-03-23-mongodb.html"/>
+    <id>https://blog.ihoey.com/posts/MongoDB/2017-03-23-mongodb.html</id>
+    <published>2017-03-23T08:25:11.000Z</published>
+    <updated>2017-03-27T07:07:52.679Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="mongodb概述"><a href="#mongodb概述" class="headerlink" title="mongodb概述"></a>mongodb概述</h2><pre><code>`MongoDB` 是一个跨平台的，面向文档的数据库，提供高性能，高可用性和可扩展性方便. `MongoDB` 将数据存储为一个文档，数据结构由键值 `(key=&gt;value)` 对组成。`MongoDB` 文档类似于 `JSON` 对象。字段值可以包含其他文档，数组及文档数组。
+</code></pre><a id="more"></a>
+<h2 id="mongodb安装"><a href="#mongodb安装" class="headerlink" title="mongodb安装"></a>mongodb安装</h2><pre><code>mongodb下载地址 `https://www.mongodb.com/download-center#community` ,在此选择对应的系统版本进行安装
+</code></pre><ul>
+<li><p><code>Windows</code> 系统的安装, 直接下一步即可</p>
+<ul>
+<li>对不知道系统版本和位数的同学这里提供两个命令可查看当前<code>Windows</code>系统的版本和位数.<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">wmic os get caption</div><div class="line">wmic os get osarchitecture</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>Linux</code> 系统的安装:</p>
+<ul>
+<li>导入包管理系统使用的公钥 <code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6</code></li>
+<li>为MongoDB创建一个列表文件:<ul>
+<li><code>Ubuntu 12.04</code> 版本: <code>echo &quot;deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu precise/mongodb-org/3.4 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list</code></li>
+<li><code>Ubuntu 14.04</code> 版本: <code>echo &quot;deb [ arch=amd64 ] http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.4 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list</code></li>
+<li><code>Ubuntu 16.04</code> 版本: <code>echo &quot;deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list</code></li>
+</ul>
+</li>
+<li>重新加载本地包数据库 <code>sudo apt-get update</code></li>
+<li>安装<code>MongoDB</code>包 <code>sudo apt-get install -y mongodb-org</code></li>
+</ul>
+</li>
+<li><p><code>OS X</code> 系统的安装</p>
+<ul>
+<li>下载 <code>curl -O https://fastdl.mongodb.org/osx/mongodb-osx-x86_64-3.4.2.tgz</code></li>
+<li>解压 <code>tar -zxvf mongodb-osx-x86_64-3.4.2.tgz</code></li>
+<li>指定存放文件夹 <code>mkdir -p mongodb &amp;&amp; cp -R -n mongodb-osx-x86_64-3.4.2 / mongodb</code></li>
+<li>设置变量添加到<code>shell</code>的 <code>rc</code>文件中（例如<code>~/.bashrc</code>）： <code>export  PATH = &lt;mongodb-install-directory&gt; / bin：$ PATH</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><ul>
+<li>创建数据目录(我这里是在<code>D</code>盘下) <code>mkdir -p /Server-related/DB</code></li>
+<li>设置数据文件路径(在<code>mongodb</code>安装目录下运行) <code>mongod --dbpath=D:\Server-related\DB</code></li>
+</ul>
+<h2 id="连接mongodb"><a href="#连接mongodb" class="headerlink" title="连接mongodb"></a>连接mongodb</h2><ul>
+<li>打开<code>mongodb</code>安装目录下的 <code>mongo.exe</code></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;mongodb概述&quot;&gt;&lt;a href=&quot;#mongodb概述&quot; class=&quot;headerlink&quot; title=&quot;mongodb概述&quot;&gt;&lt;/a&gt;mongodb概述&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;`MongoDB` 是一个跨平台的，面向文档的数据库，提供高性能，高可用性和可扩展性方便. `MongoDB` 将数据存储为一个文档，数据结构由键值 `(key=&amp;gt;value)` 对组成。`MongoDB` 文档类似于 `JSON` 对象。字段值可以包含其他文档，数组及文档数组。
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="MongoDB" scheme="https://blog.ihoey.com/categories/MongoDB/"/>
+    
+    
+      <category term="MongoDB" scheme="https://blog.ihoey.com/tags/MongoDB/"/>
+    
+      <category term="NoSQL" scheme="https://blog.ihoey.com/tags/NoSQL/"/>
+    
+  </entry>
   
   <entry>
     <title>科学上网之shadowsocks 服务端安装</title>
@@ -2474,133 +2564,6 @@
     <summary type="html">
     
       &lt;p&gt;javascript高级与面向对象笔记整理，接part5篇！！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://blog.ihoey.com/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://blog.ihoey.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript高级篇之part5</title>
-    <link href="https://blog.ihoey.com/posts/javascript/2016-11-10-javascript-part5.html"/>
-    <id>https://blog.ihoey.com/posts/javascript/2016-11-10-javascript-part5.html</id>
-    <published>2016-11-10T13:43:36.000Z</published>
-    <updated>2016-11-24T01:30:21.970Z</updated>
-    
-    <content type="html"><![CDATA[<p>javascript高级与面向对象笔记整理，接part4篇！！</p>
-<a id="more"></a>
-<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><h3 id="词法作用域的概念"><a href="#词法作用域的概念" class="headerlink" title="词法作用域的概念"></a>词法作用域的概念</h3><p>变量的作用域在代码写好的时候就已经可以确定，这种作用域就是词法作用域</p>
-<ul>
-<li><code>JavaScript</code> 中没有动态作用域</li>
-<li><code>JavaScript</code> 中没有块级作用域</li>
-</ul>
-<h2 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h2><p>JS代码执行分两个阶段，首先进行预解析，再执行<br>在预解析阶段，系统会将所有的变量声明以及函数声明提升到当前作用域的最顶上</p>
-<ul>
-<li>当函数同名的时候，都会提升，但是后面的函数会将前面的函数覆盖</li>
-<li>当函数和变量同名的时候，只会提升函数声明，变量声明会被忽略</li>
-<li>变量提升是分作用域的</li>
-<li>变量提升是分段（ <code>script</code> 标签）</li>
-<li>函数表达式是不会被提升,提升的只是变量的声明。  <code>var func= function(){};</code></li>
-<li>条件式函数声明，根据浏览器不同，提升的情况不同，最新的浏览器中都不会进行提升</li>
-</ul>
-<h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><p>在 <code>js</code> 中只有函数可以限定作用域，然后，函数中又可以声明函数，这样就形成了一个由内向外进行访问的链式结构，这个结构就叫做作用域链</p>
-<h3 id="如何绘制作用域链"><a href="#如何绘制作用域链" class="headerlink" title="如何绘制作用域链"></a>如何绘制作用域链</h3><ol>
-<li>先画一条直线，表示0级作用域链，也就是全局作用域</li>
-<li>再在全局作用域中查找变量以及函数的声明，将所有找到的这些成员以小方块的形式放在0级作用域链上</li>
-<li>如果全局作用域中有函数成员，那就从该函数中在引出一条线，表示1级作用域链</li>
-<li>再去1级作用域中进行查找变量以及函数的声明，在把他们画出来，</li>
-<li>如果还有函数，就接着去找。。。。直到没有函数为止</li>
-</ol>
-<h3 id="变量的搜索原则"><a href="#变量的搜索原则" class="headerlink" title="变量的搜索原则"></a>变量的搜索原则</h3><ol>
-<li>首先在当前作用域中进行查找，如果找到了就直接使用</li>
-<li>如果没有找到，就去上一级作用域中进行查找，如果找到了就直接使用</li>
-<li>果没有找到，就继续往上查找，直到找到全局作用域为止</li>
-</ol>
-<h3 id="如何分析面试题"><a href="#如何分析面试题" class="headerlink" title="如何分析面试题"></a>如何分析面试题</h3><ol>
-<li>先进行提升处理（把提升后的代码写出来）</li>
-<li>然后根据作用域及作用域链还有变量搜索原则进行分析</li>
-</ol>
-<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><ul>
-<li>语文解释：封闭的包裹结构</li>
-<li>js的解释：函数就是一个闭包</li>
-</ul>
-<h3 id="闭包要解决的问题是什么？"><a href="#闭包要解决的问题是什么？" class="headerlink" title="闭包要解决的问题是什么？"></a>闭包要解决的问题是什么？</h3><p>函数内部的数据无法被外界直接访问！</p>
-<h3 id="如何解决？"><a href="#如何解决？" class="headerlink" title="如何解决？"></a>如何解决？</h3><p>在函数内部返回一个函数，用来操作该函数内部的数据。</p>
-<h3 id="闭包的原理（作用域）"><a href="#闭包的原理（作用域）" class="headerlink" title="闭包的原理（作用域）"></a>闭包的原理（作用域）</h3><p>函数中的变量无法被上一级作用域访问，但是可以被下一级作用域访问。</p>
-<h3 id="闭包的基本模型"><a href="#闭包的基本模型" class="headerlink" title="闭包的基本模型"></a>闭包的基本模型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> name = <span class="string">""</span>;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">return</span> name;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="如何访问多个数据？"><a href="#如何访问多个数据？" class="headerlink" title="如何访问多个数据？"></a>如何访问多个数据？</h3><p>返回一个对象，对象中包含对所有数据的设置和访问的方法，在函数外部接收到该对象之后，就可以操作函数内部的数据</p>
-<h3 id="点击事件的注册问题"><a href="#点击事件的注册问题" class="headerlink" title="点击事件的注册问题"></a>点击事件的注册问题</h3><p>如果在<code>for</code>循环中使用循环的控制变量i来处理点击事件中的内容，那么这个 <code>i</code> 在点击事件触发的时候，循环已经结束，<code>i</code> 已经变成了最后一个值，所以会不准确</p>
-<h4 id="如何解决"><a href="#如何解决" class="headerlink" title="如何解决"></a>如何解决</h4><p>在点击事件的处理函数内部，访问的时候，不要去使用 <code>i</code>，而是使用这个函数自己的一个私有的数据。<br>所以需要使用一个拥有自己的变量的函数来做点击事件的处理函数。</p>
-<pre><code>这个函数需要通过闭包来创建。
-</code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">j</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(j);  <span class="comment">//这里的j就是只有这个函数可以访问的一个私有的变量</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>上面的函数调用之后的返回值，就拥有了自己独立的变量，我们可以使用它来做点击事件的处理函数
-</code></pre><h3 id="setTimeout的回调函数执行时间问题"><a href="#setTimeout的回调函数执行时间问题" class="headerlink" title="setTimeout的回调函数执行时间问题"></a>setTimeout的回调函数执行时间问题</h3><p><code>setTimeout</code> 和 <code>setInterval</code> 中的回调函数，会在所有的主逻辑代码执行完之后，才依次检查执行时间是不是到了，到了就会执行</p>
-<p>当把 <code>setTimeout</code> 放在一个for循环语句中的时候，如果在回调函数中使用了循环中变量i<br>那么，当 <code>setTimeout</code> 的回调函数执行的时候， <code>for</code> 循环已经执行完毕，i已经是最后一个值</p>
-<h4 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h4><p>回调函数不应该去使用 <code>for</code> 循环中的 <code>i</code> ，而是使用自己的一个私有变量</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">j</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> fucntion()&#123;</div><div class="line">        <span class="built_in">console</span>.log(j)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">setTimeout(f(i),<span class="number">0</span>);</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;javascript高级与面向对象笔记整理，接part4篇！！&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://blog.ihoey.com/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="https://blog.ihoey.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript高级篇之part4</title>
-    <link href="https://blog.ihoey.com/posts/javascript/2016-11-09-javascript-part4.html"/>
-    <id>https://blog.ihoey.com/posts/javascript/2016-11-09-javascript-part4.html</id>
-    <published>2016-11-09T13:19:05.000Z</published>
-    <updated>2016-11-24T01:30:05.120Z</updated>
-    
-    <content type="html"><![CDATA[<p>javascript高级与面向对象笔记整理，接part3篇！！</p>
-<a id="more"></a>
-<h2 id="绘制原型三角"><a href="#绘制原型三角" class="headerlink" title="绘制原型三角"></a>绘制原型三角</h2><h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><h2 id="原型链图"><a href="#原型链图" class="headerlink" title="原型链图"></a>原型链图</h2><h2 id="属性搜索原则"><a href="#属性搜索原则" class="headerlink" title="属性搜索原则"></a>属性搜索原则</h2><p>只有获取属性的时候会遵守这个原则</p>
-<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a><code>instanceof</code></h2><h2 id="Object-prototype-的成员"><a href="#Object-prototype-的成员" class="headerlink" title="Object.prototype 的成员"></a><code>Object.prototype</code> 的成员</h2><ul>
-<li><code>constructor</code> 属性<br>  指向原型相关的构造函数</li>
-<li><code>hasOwnProperty</code> 方法<br>  对象 <code>.hasOwnProperty</code>（属性名）</li>
-<li><code>isPrototypeOf</code> 方法<br>  对象<code>.isPrototypeOf</code>（对象1）判断对象是否是对象1的原型</li>
-<li><code>propertyIsEnmerable</code> 方法<br>  对象<code>.propertyIsEnmerable</code>(属性)</li>
-<li><code>toSting</code>  <code>toLocaleSting</code> 方法<br>  转换成字符串，<code>toLocaleSting</code>会将对象转换成</li>
-<li><code>valueOf</code> 方法<br>  胡i去兑现的值，再回去运算的时候先调用<code>valueOf</code>方法</li>
-<li><code>__proto__</code> 属性<br>  指向对象的原型</li>
-<li>双下划线开头的属性都是属于非标准属性</li>
-<li>单下划线开头 一般框架中的私有属性</li>
-</ul>
-<h2 id="Function"><a href="#Function" class="headerlink" title=".Function"></a><code>.Function</code></h2><h2 id="eval"><a href="#eval" class="headerlink" title="eval"></a><code>eval</code></h2><h2 id="静态成员和实例成员"><a href="#静态成员和实例成员" class="headerlink" title="静态成员和实例成员"></a>静态成员和实例成员</h2><h3 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h3><ul>
-<li>通过构造函数访问成员的就是静态成员</li>
-<li>构造函数 <code>.prototype</code></li>
-<li>构造函数 <code>.name</code></li>
-<li>构造函数 <code>.length</code> （形参的个数）</li>
-</ul>
-<h3 id="实例成员"><a href="#实例成员" class="headerlink" title="实例成员"></a>实例成员</h3><p>通过对象访问的成员就是实例成员</p>
-<ul>
-<li>只要是通过对象访问到的都是实例成员</li>
-<li>比如 <code>p.name</code>    <code>p.age</code>    <code>p.__proto__</code>……</li>
-</ul>
-<h2 id="arguments-对象"><a href="#arguments-对象" class="headerlink" title="arguments 对象"></a><code>arguments</code> 对象</h2><p>只能在函数内部使用</p>
-<ul>
-<li>当函数调用的时候会将所有的输惨存入 <code>arguments</code> 对象</li>
-<li><code>arguments.length</code> （实参的个数）</li>
-<li><code>arguments.callee</code> 指向函数本身。用在匿名函数递归</li>
-<li>构造函数 <code>.arguments</code> 和函数里面的 <code>arguments</code> 不是一回事儿</li>
-<li>构造函数 <code>.arguments</code> 已被弃用</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;javascript高级与面向对象笔记整理，接part3篇！！&lt;/p&gt;
     
     </summary>
     
