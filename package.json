@@ -5,6 +5,9 @@
   "hexo": {
     "version": "3.2.2"
   },
+  "scripts": {
+  "start": "hexo clean && hexo g && hexo d"
+  },
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-baidu-url-submit": "0.0.5",

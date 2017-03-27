@@ -71,10 +71,12 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-- type: git 
-  repo: git@git.coding.net:ihoey/ihoey.coding.me.git,master
-- type: git 
+- type: git
+  repo: git@git.coding.net:ihoey/ihoey.coding.me.git,hexo
+- type: git
   repo: git@github.com:ihoey/blog.git,master
+# - type: git
+#   repo: git@52.199.162.160:/repo/blog.git,master
 - type: baidu_url_submitter
 
 #百度分享
