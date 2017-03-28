@@ -72,7 +72,7 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
 - type: git
-  repo: git@git.coding.net:ihoey/ihoey.coding.me.git,hexo
+  repo: git@git.coding.net:ihoey/ihoey.coding.me.git,master
 - type: git
   repo: git@github.com:ihoey/blog.git,master
 # - type: git
