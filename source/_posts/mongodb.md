@@ -8,11 +8,13 @@ categories: MongoDB
 ---
 
 ## mongodb概述
-    `MongoDB` 是一个跨平台的，面向文档的数据库，提供高性能，高可用性和可扩展性方便. `MongoDB` 将数据存储为一个文档，数据结构由键值 `(key=>value)` 对组成。`MongoDB` 文档类似于 `JSON` 对象。字段值可以包含其他文档，数组及文档数组。
+
+- `MongoDB` 是一个跨平台的，面向文档的数据库，提供高性能，高可用性和可扩展性方便. `MongoDB` 将数据存储为一个文档，数据结构由键值 `(key=>value)` 对组成。`MongoDB` 文档类似于 `JSON` 对象。字段值可以包含其他文档，数组及文档数组。
 
 <!--more-->
 
 ## mongodb安装
+
     mongodb下载地址 `https://www.mongodb.com/download-center#community` ,在此选择对应的系统版本进行安装
 
 - `Windows` 系统的安装, 直接下一步即可
