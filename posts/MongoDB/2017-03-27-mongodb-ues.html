@@ -114,13 +114,16 @@
 
 
 
+<meta name="description" content="本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MongoDB学习笔记">
 <meta property="og:url" content="https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html">
 <meta property="og:site_name" content="梦魇小栈">
-<meta property="og:updated_time" content="2017-03-27T07:08:24.767Z">
+<meta property="og:description" content="本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.">
+<meta property="og:updated_time" content="2017-04-10T04:20:10.773Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB学习笔记">
+<meta name="twitter:description" content="本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.">
 
 
 
@@ -439,7 +442,156 @@
       
 
       
-        <a id="more"></a>
+        <pre><code>本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.
+</code></pre><a id="more"></a>
+<h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><ul>
+<li><code>Help</code>查看命令提示<ul>
+<li><code>db.help()</code>;</li>
+<li><code>db.yourColl.help()</code>;</li>
+<li><code>db.youColl.find().help()</code>;</li>
+</ul>
+</li>
+<li>切换/创建数据库<ul>
+<li><code>use yourDB</code>;  当创建一个集合(<code>table</code>)的时候会自动创建当前数据库</li>
+</ul>
+</li>
+<li>查询所有数据库<ul>
+<li><code>show dbs</code>;</li>
+</ul>
+</li>
+<li>删除当前使用数据库<ul>
+<li><code>db.dropDatabase()</code>;</li>
+</ul>
+</li>
+<li>从指定主机上克隆数据库<ul>
+<li>从指定主机上克隆数据库</li>
+</ul>
+</li>
+<li>从指定的机器上复制指定数据库数据到某个数据库<ul>
+<li><code>db.copyDatabase(&quot;mydb&quot;, &quot;temp&quot;, &quot;127.0.0.1&quot;)</code>;将本机的<code>mydb</code>的数据复制到<code>temp</code>数据库中</li>
+</ul>
+</li>
+<li>修复当前数据库<ul>
+<li><code>db.repairDatabase()</code>;</li>
+</ul>
+</li>
+<li>查看当前使用的数据库<ul>
+<li><code>db.getName()</code>;</li>
+</ul>
+</li>
+<li>显示当前db状态<ul>
+<li><code>db.stats()</code>;</li>
+</ul>
+</li>
+<li>当前db版本<ul>
+<li><code>db.version()</code>;</li>
+</ul>
+</li>
+<li>查看当前db的链接机器地址<ul>
+<li><code>db.getMongo()</code>;</li>
+</ul>
+</li>
+</ul>
+<h2 id="Collection聚集集合操作"><a href="#Collection聚集集合操作" class="headerlink" title="Collection聚集集合操作"></a>Collection聚集集合操作</h2><ul>
+<li>创建一个聚集集合（<code>table</code>）<ul>
+<li><code>db.createCollection(“collName”, {size: 20, capped: 5, max: 100})</code>;</li>
+</ul>
+</li>
+<li>得到指定名称的聚集集合（<code>table</code>）<ul>
+<li><code>db.getCollection(&quot;account&quot;)</code>;</li>
+</ul>
+</li>
+<li>得到当前db的所有聚集集合<ul>
+<li><code>db.getCollectionNames()</code>;</li>
+</ul>
+</li>
+<li>显示当前db所有聚集索引的状态<ul>
+<li><code>db.printCollectionStats()</code>;</li>
+</ul>
+</li>
+</ul>
+<h2 id="用户相关操作"><a href="#用户相关操作" class="headerlink" title="用户相关操作"></a>用户相关操作</h2><ul>
+<li>添加一个用户<ul>
+<li><code>db.addUser(&quot;name&quot;)</code>;</li>
+<li><code>db.addUser(&quot;userName&quot;, &quot;pwd123&quot;, true)</code>; 添加用户、设置密码、是否只读</li>
+</ul>
+</li>
+<li>数据库认证、安全模式<ul>
+<li><code>db.auth(&quot;userName&quot;, &quot;123123&quot;)</code>;</li>
+</ul>
+</li>
+<li>显示当前所有用户<ul>
+<li><code>show users</code>;</li>
+</ul>
+</li>
+<li>删除用户<ul>
+<li><code>db.removeUser(&quot;userName&quot;)</code>;</li>
+</ul>
+</li>
+</ul>
+<h2 id="聚集集合查询"><a href="#聚集集合查询" class="headerlink" title="聚集集合查询"></a>聚集集合查询</h2><ul>
+<li>查询所有记录<ul>
+<li><code>db.userInfo.find()</code>; 相当于：<code>select* from userInfo</code>;默认每页显示20条记录，当显示不下的情况下,可以用it迭代命令查询下一页数据。注意：键入it命令不能带“;”但是你可以设置每页显示数据的大小,用DBQuery.shellBatchSize= 50;这样每页就显示50条记录了。</li>
+</ul>
+</li>
+<li>查询去掉后的当前聚集集合中的某列的重复数据<ul>
+<li><code>db.userInfo.distinct(&quot;name&quot;)</code>;会过滤掉name中的相同数据,相当于：<code>select distict name from userInfo</code>;</li>
+</ul>
+</li>
+<li>查询<code>age = 22</code>的记录<ul>
+<li><code>db.userInfo.find({&quot;age&quot;: 22})</code>; 相当于：<code>select * from userInfo where age = 22</code>;</li>
+</ul>
+</li>
+<li>查询<code>age &gt; 22</code>的记录<ul>
+<li><code>db.userInfo.find({age: {$gt: 22}})</code>;</li>
+</ul>
+</li>
+<li>查询<code>age &lt; 22</code>的记录<ul>
+<li><code>db.userInfo.find({age: {$lt: 22}})</code>;</li>
+</ul>
+</li>
+<li>查询<code>age &gt;= 25</code>的记录<ul>
+<li><code>db.userInfo.find({age: {$gte: 25}})</code>;</li>
+</ul>
+</li>
+<li>查询<code>age &gt;= 23</code> 并且 <code>age &lt;= 26</code><ul>
+<li><code>db.userInfo.find({age: {$gte: 23, $lte: 26}})</code>;</li>
+</ul>
+</li>
+<li>查询<code>name</code>中包含 <code>mongo</code>的数据<ul>
+<li><code>db.userInfo.find({name: /mongo/})</code>;</li>
+</ul>
+</li>
+<li>查询<code>name</code>中以<code>mongo</code>开头的<ul>
+<li><code>db.userInfo.find({name: /^mongo/})</code>;</li>
+</ul>
+</li>
+<li>查询指定列<code>name</code>、<code>age</code>数据<ul>
+<li><code>db.userInfo.find({}, {name: 1, age: 1})</code>;当然<code>name</code>也可以用<code>true</code>或<code>false</code>,当用<code>ture</code>的情况下河<code>name:1</code>效果一样，如果用<code>false</code>就是排除<code>name</code>，显示<code>name</code>以外的列信息。</li>
+</ul>
+</li>
+<li>查询指定列<code>name</code>、<code>age</code>数据, <code>age &gt; 25</code>.<ul>
+<li><code>db.userInfo.find({age: {$gt: 25}}, {name: 1, age: 1})</code>;</li>
+</ul>
+</li>
+<li>按照年龄排序<ul>
+<li>升序：<code>db.userInfo.find().sort({age: 1})</code>;</li>
+<li>降序：<code>db.userInfo.find().sort({age: -1})</code>;</li>
+</ul>
+</li>
+<li>查询<code>name = zhangsan, age = 22</code>的数据<ul>
+<li><code>db.userInfo.find({name: &#39;zhangsan&#39;, age: 22})</code>;</li>
+</ul>
+</li>
+<li>查询前5条数据<ul>
+<li><code>db.userInfo.find().limit(5)</code>;</li>
+</ul>
+</li>
+<li>查询10条以后的数据<ul>
+<li><code>db.userInfo.find().skip(10)</code>;</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -567,8 +719,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://oisha19l0.qnssl.com/avatar.png"
@@ -692,6 +853,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常用操作"><span class="nav-number">1.</span> <span class="nav-text">常用操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection聚集集合操作"><span class="nav-number">2.</span> <span class="nav-text">Collection聚集集合操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户相关操作"><span class="nav-number">3.</span> <span class="nav-text">用户相关操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚集集合查询"><span class="nav-number">4.</span> <span class="nav-text">聚集集合查询</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
         <div>
           <p style="text-align: center;"><object type="application/x-shockwave-flash" style="outline:none;" data="https://oisha19l0.qnssl.com/hamster.swf" width="245" height="225" title="梦魇小栈"><param name="movie" value="https://oisha19l0.qnssl.com/hamster.swf"><param name="AllowScriptAccess" value="always"><param name="wmode" value="transparent"></object></p>
