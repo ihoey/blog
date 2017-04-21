@@ -3,8 +3,8 @@ language: node_js #设置语言
 node_js: stable #设置相应的版本
 
 install:
-	- npm install -g hexo-cli
-	- npm install hexo-generator-search --save
+  - npm install -g hexo-cli
+  - npm install hexo-generator-search --save
   - npm install # 安装 package.json 中的插件
 
 cache: #缓存配置
