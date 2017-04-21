@@ -7,7 +7,7 @@ tags:
 categories: MongoDB
 ---
 
-    本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.
+本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.
 
 <!--more-->
 
@@ -94,3 +94,31 @@ categories: MongoDB
     + `db.userInfo.find().limit(5)`;
 - 查询10条以后的数据
     + `db.userInfo.find().skip(10)`;
+- 查询在5-10之间的数据
+    + `db.userInfo.find().limit(10).skip(5)`;可用于分页，limit是pageSize，skip是第几页*pageSize
+- or与 查询
+    + `db.userInfo.find({$or: [{age: 22}, {age: 25}]})`;
+- 查询第一条数据
+    + `db.userInfo.findOne()`;
+    + `db.userInfo.find().limit(1)`;
+- 查询某个结果集的记录条数
+    + `db.userInfo.find({age: {$gte: 25}}).count()`;如果要返回限制之后的记录数量，要使用count(true)或者count(非0)
+    + `db.users.find().skip(10).limit(5).count(true)`;
+- 按照某列进行排序
+    + `db.userInfo.find({sex: {$exists: true}}).count()`;
+
+## 索引
+
+- 创建索引
+    + `db.userInfo.ensureIndex({name: 1})`;
+    + `db.userInfo.ensureIndex({name: 1, ts: -1})`;
+- 查询当前聚集集合所有索引
+    + `db.userInfo.getIndexes()`;
+- 查看总索引记录大小
+    + `db.userInfo.totalIndexSize()`;
+- 读取当前集合的所有index信息
+    + `db.users.reIndex()`;
+- 删除指定索引
+    + `db.users.dropIndex("name_1")`;
+- 删除所有索引
+    + `db.users.dropIndexes()`;

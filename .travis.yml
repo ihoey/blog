@@ -1,0 +1,34 @@
+language: node_js
+
+node_js: stable
+
+install:
+	- npm install
+
+# .travis.yml 配置
+cache:
+  directories:
+    - node_modules
+
+before_script:
+
+script:
+	- hexo clean
+	- hexo generate
+
+after_script:
+	- cd ./public
+	- git init
+	- git config user.name "ihoey"
+	- git config user.email "mail@ihoey.com"
+	- git add .
+	- git commit -m " 这个勤奋的家伙又更新了~"
+	- git push --force --quiet "https://${ihoey_blog}@${GH_REF}" master:master
+
+branches:
+	only:
+		- master
+
+env:
+	global:
+		- GH_REF: git@github.com:ihoey/blog.git

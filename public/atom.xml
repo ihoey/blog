@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.ihoey.com/"/>
-  <updated>2017-04-10T04:20:10.773Z</updated>
+  <updated>2017-04-10T09:06:41.652Z</updated>
   <id>https://blog.ihoey.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html"/>
     <id>https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html</id>
     <published>2017-03-27T07:07:03.000Z</published>
-    <updated>2017-04-10T04:20:10.773Z</updated>
+    <updated>2017-04-10T09:06:41.652Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.
-</code></pre><a id="more"></a>
+    <content type="html"><![CDATA[<p>本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.</p>
+<a id="more"></a>
 <h2 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h2><ul>
 <li><code>Help</code>查看命令提示<ul>
 <li><code>db.help()</code>;</li>
@@ -171,13 +171,61 @@
 <li><code>db.userInfo.find().skip(10)</code>;</li>
 </ul>
 </li>
+<li>查询在5-10之间的数据<ul>
+<li><code>db.userInfo.find().limit(10).skip(5)</code>;可用于分页，limit是pageSize，skip是第几页*pageSize</li>
+</ul>
+</li>
+<li>or与 查询<ul>
+<li><code>db.userInfo.find({$or: [{age: 22}, {age: 25}]})</code>;</li>
+</ul>
+</li>
+<li>查询第一条数据<ul>
+<li><code>db.userInfo.findOne()</code>;</li>
+<li><code>db.userInfo.find().limit(1)</code>;</li>
+</ul>
+</li>
+<li>查询某个结果集的记录条数<ul>
+<li><code>db.userInfo.find({age: {$gte: 25}}).count()</code>;如果要返回限制之后的记录数量，要使用count(true)或者count(非0)</li>
+<li><code>db.users.find().skip(10).limit(5).count(true)</code>;</li>
+</ul>
+</li>
+<li>按照某列进行排序<ul>
+<li><code>db.userInfo.find({sex: {$exists: true}}).count()</code>;</li>
+</ul>
+</li>
+</ul>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ul>
+<li>创建索引<ul>
+<li><code>db.userInfo.ensureIndex({name: 1})</code>;</li>
+<li><code>db.userInfo.ensureIndex({name: 1, ts: -1})</code>;</li>
+</ul>
+</li>
+<li>查询当前聚集集合所有索引<ul>
+<li><code>db.userInfo.getIndexes()</code>;</li>
+</ul>
+</li>
+<li>查看总索引记录大小<ul>
+<li><code>db.userInfo.totalIndexSize()</code>;</li>
+</ul>
+</li>
+<li>读取当前集合的所有index信息<ul>
+<li><code>db.users.reIndex()</code>;</li>
+</ul>
+</li>
+<li>删除指定索引<ul>
+<li><code>db.users.dropIndex(&quot;name_1&quot;)</code>;</li>
+</ul>
+</li>
+<li>删除所有索引<ul>
+<li><code>db.users.dropIndexes()</code>;</li>
+</ul>
+</li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;pre&gt;&lt;code&gt;本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.
-&lt;/code&gt;&lt;/pre&gt;
+      &lt;p&gt;本篇文章介绍学习MongoDB的一些常用命令,希望能帮助大家.&lt;/p&gt;
     
     </summary>
     
