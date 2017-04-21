@@ -1,3 +1,5 @@
+![bulid](https://travis-ci.org/ihoey/blog.svg?branch=master)
+
 <blockquote class="blockquote-center">愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。</blockquote>
 
 <center>首先梦魇小栈欢迎您的到来!</center>
