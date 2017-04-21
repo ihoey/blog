@@ -1,20 +1,17 @@
-language: node_js
+language: node_js #设置语言
 
-node_js: stable
+node_js: stable #设置相应的版本
 
 install:
-	- npm install
+  - npm install # 安装 package.json 中的插件
 
-# .travis.yml 配置
-cache:
+cache: #缓存配置
   directories:
     - node_modules
 
-before_script:
-
 script:
-	- hexo clean
-	- hexo generate
+  - hexo cl  #清除
+  - hexo g  #生成
 
 after_script:
 	- cd ./public
@@ -27,7 +24,7 @@ after_script:
 
 branches:
 	only:
-		- master
+		- hexo
 
 env:
 	global:

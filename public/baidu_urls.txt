@@ -1,5 +1,0 @@
-https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html
-https://blog.ihoey.com/posts/MongoDB/2017-03-23-mongodb.html
-https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html
-https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html
-https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html
