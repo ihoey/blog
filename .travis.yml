@@ -18,6 +18,7 @@ script:
 after_script:
   - cd ./public
   - git init
+  - git config --global --unset http.proxy
   - git config user.name "ihoey"
   - git config user.email "mail@ihoey.com"
   - git add .
