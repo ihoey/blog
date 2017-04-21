@@ -22,7 +22,7 @@ after_script:
   - git config user.name "ihoey"
   - git config user.email "mail@ihoey.com"
   - git add .
-  - git commit -m " 这个勤奋的家伙又更新了~"
+  - git commit -m "这个勤奋的家伙又更新了~"
   - git push --force --quiet "https://${ihoey_blog}@${GH_REF}" master:master
 
 branches:
