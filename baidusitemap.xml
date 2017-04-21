@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/Cron/2017-04-22-Cron.html</loc>
+    <lastmod>2017-04-21T16:34:17.892Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 使用 Cron 实现计划任务</title>
+        <pubTime>2017-04-21T16:21:21.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+        <tag>Cron</tag>
+         
+         
+           
+             
+              <breadCrumb title="Cron" url="https://blog.ihoey.com/categories/Cron/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html</loc>
     <lastmod>2017-04-21T14:09:41.558Z</lastmod>
     <data>

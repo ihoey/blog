@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ihoey.com/posts/Cron/2017-04-22-Cron.html</loc>
+    
+    <lastmod>2017-04-21T16:34:17.892Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html</loc>
     
     <lastmod>2017-04-21T14:09:41.558Z</lastmod>
