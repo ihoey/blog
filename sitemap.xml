@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ihoey.com/posts/CSS3/2017-04-28-pseudo-elements-and-pseudo-classes.html</loc>
+    
+    <lastmod>2017-04-28T14:42:40.894Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ihoey.com/posts/Git/2017-04-23-git.html</loc>
     
     <lastmod>2017-04-22T03:20:20.797Z</lastmod>
