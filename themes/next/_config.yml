@@ -6,7 +6,7 @@
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客"
+keywords: "梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -17,7 +17,7 @@ rss: /atom.xml
 since: 2015
 
 # icon between year and author @Footer
-authoricon: henry
+authoricon: ihoey
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: false
@@ -484,6 +484,9 @@ alipay: /qcode/alipay_qcode.png
 # 文章末尾添加“本文结束”标记
 passage_end_tag:
   enabled: true
+
+#网易云跟帖
+gentie_productKey: 0a8258b8dd904e989766bdb2fe198eba
 
 # Theme version
 version: 5.1.0
