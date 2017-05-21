@@ -25,5 +25,11 @@
     "hexo-renderer-stylus": "^0.3.1",
     "hexo-server": "^0.2.0",
     "shelljs": "^0.7.7"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-html-minify": "0.0.14",
+    "gulp-uglify": "^3.0.0"
   }
 }
