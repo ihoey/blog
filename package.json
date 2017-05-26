@@ -29,7 +29,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-csso": "^3.0.0",
-    "gulp-html-minify": "0.0.14",
+    "gulp-html-beautify": "^1.0.1",
     "gulp-uglify": "^3.0.0"
   }
 }
