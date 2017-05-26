@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.ihoey.com/"/>
-  <updated>2017-04-28T14:42:40.894Z</updated>
+  <updated>2017-05-26T13:50:41.414Z</updated>
   <id>https://blog.ihoey.com/</id>
   
   <author>
@@ -14,6 +14,109 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>liunx_shell</title>
+    <link href="https://blog.ihoey.com/posts/liunx/2017-05-26-liunx-shell.html"/>
+    <id>https://blog.ihoey.com/posts/liunx/2017-05-26-liunx-shell.html</id>
+    <published>2017-05-26T13:49:04.000Z</published>
+    <updated>2017-05-26T13:50:41.414Z</updated>
+    
+    <content type="html"><![CDATA[<p>记录使用到的 <code>liunx</code> 命令!</p>
+<a id="more"></a>
+<h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><ul>
+<li>安装: <code>sudo apt-get install git</code></li>
+</ul>
+<h2 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h2><ul>
+<li>安装: <code>sudo apt-get install nginx</code></li>
+<li>启动: <code>sudo /etc/init.d/nginx start</code></li>
+<li>停止: <code>sudo /etc/init.d/nginx stop</code></li>
+<li>重启: <code>sudo /etc/init.d/nginx restart</code></li>
+<li>检查配置文件: <code>sudo service nginx configtest</code></li>
+<li>重载配置文件: <code>sudo service nginx reload</code></li>
+<li>查询nginx进程: <code>ps -ef | grep nginx</code></li>
+</ul>
+<h2 id="Nginx-配置"><a href="#Nginx-配置" class="headerlink" title="Nginx 配置"></a>Nginx 配置</h2><p><code>sudo vim /etc/nginx/sites-available/default</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">    listen 80 default_server;</div><div class="line">    listen [::]:80 default_server ipv6only=on;</div><div class="line"></div><div class="line">    <span class="comment"># 如果要支持HTTPS，修改这里</span></div><div class="line">    <span class="comment"># 可以使用 https://letsencrypt.org 的免费SSL证书</span></div><div class="line">    <span class="comment">#listen 443 ssl;</span></div><div class="line">    <span class="comment">#ssl_certificate     www.example.com.crt;</span></div><div class="line">    <span class="comment">#ssl_certificate_key www.example.com.key;</span></div><div class="line">    <span class="comment">#ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;</span></div><div class="line">    <span class="comment">#ssl_ciphers         HIGH:!aNULL:!MD5;</span></div><div class="line"></div><div class="line">    <span class="comment"># 重定向所有HTTP到HTTPS</span></div><div class="line">    <span class="comment"># rewrite ^(.*)$ https://$host$1 permanent;</span></div><div class="line"></div><div class="line">    <span class="comment"># 网站根目录，根据需要修改</span></div><div class="line">    root /usr/share/nginx/html;</div><div class="line">    <span class="comment"># 增加index.php</span></div><div class="line">    index index.php index.html index.htm;</div><div class="line"></div><div class="line">    <span class="comment"># 假设域名是 ssl.mcxiaoke.com</span></div><div class="line">    server_name ssl.mcxiaoke.com; <span class="comment">#绑定域名</span></div><div class="line"></div><div class="line">    location / &#123;</div><div class="line">        try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ =404;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    error_page 404 /404.html;</div><div class="line">    error_page 500 502 503 504 /50x.html;</div><div class="line">    location = /50x.html &#123;</div><div class="line">        root /usr/share/nginx/html;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">#支持php-fpm的配置</span></div><div class="line">    location ~ \.php$ &#123;</div><div class="line">        try_files <span class="variable">$uri</span> =404;</div><div class="line">        fastcgi_split_path_info ^(.+\.php)(/.+)$;</div><div class="line">        fastcgi_pass unix:/var/run/php5-fpm.sock;</div><div class="line">        fastcgi_index index.php;</div><div class="line">        fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</div><div class="line">        include fastcgi_params;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="安装-MySQL"><a href="#安装-MySQL" class="headerlink" title="安装 MySQL"></a>安装 MySQL</h2><ul>
+<li>安装: <code>sudo apt-get install mysql-server</code></li>
+</ul>
+<h2 id="安装-php-fpm"><a href="#安装-php-fpm" class="headerlink" title="安装 php-fpm"></a>安装 php-fpm</h2><ul>
+<li>安装: <code>sudo apt-get install php5-fpm</code></li>
+<li>重启: <code>sudo service php5-fpm restart</code></li>
+<li>安装PHP常用扩展: <code>sudo apt-get install php5-mysql php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-xcache</code></li>
+</ul>
+<h2 id="常用linux命令说明"><a href="#常用linux命令说明" class="headerlink" title="常用linux命令说明"></a>常用linux命令说明</h2><ul>
+<li>查看端口占用: <code>lsof -i:80</code></li>
+<li>杀死进程: <code>kill -9 3274</code></li>
+<li><code>tar</code><ul>
+<li>z- 用<code>gzip</code>对存档压缩或解压</li>
+<li>x-从存档展开文件</li>
+<li>v-详细显示处理的文件</li>
+<li>f-指定存档或设备</li>
+</ul>
+</li>
+<li><p><code>chmod</code><br>  +</p>
+</li>
+<li><p>更新源: <code>sudo apt-get update</code></p>
+</li>
+<li>更新已安装的包<code>sudo apt-get upgrade</code></li>
+</ul>
+<h2 id="账号和密码文件"><a href="#账号和密码文件" class="headerlink" title="账号和密码文件"></a>账号和密码文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ls -al /etc/passwd /etc/shadow</div><div class="line">-rw-r–r– 1 root root 1611 2011-12-16 05:30 /etc/passwd <span class="comment"># 保存的是账号</span></div><div class="line">-rw-r—– 1 root shadow 947 2011-12-16 05:30 /etc/shadow <span class="comment"># 账号的密码等信息</span></div></pre></td></tr></table></figure>
+<h3 id="etc-passwd"><a href="#etc-passwd" class="headerlink" title="/etc/passwd"></a>/etc/passwd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root:x:0:0:root:/root:/bin/bash</div><div class="line">daemon:x:1:1:daemon:/usr/sbin:/bin/sh</div><div class="line">bin:x:2:2:bin:/bin:/bin/sh</div><div class="line">sys:x:3:3:sys:/dev:/bin/sh</div></pre></td></tr></table></figure>
+<ol>
+<li>账号名称</li>
+<li>原先用来保存密码的，现在密码都放在/etc/shadow中，所以这里显示x</li>
+<li>UID，也就是使用者ID。默认的系统管理员的UID为0，我们添加用户的时候最好使用1000以上的UID，1-1000范围的UID最好保留给系统用。</li>
+<li>GID，也就是群组ID</li>
+<li>关于账号的一些说明信息（暂时可以忽略）</li>
+<li>账号的家目录，家目录就是你登陆系统后默认的那个目录</li>
+<li>账号使用的shell</li>
+</ol>
+<h3 id="etc-shadow"><a href="#etc-shadow" class="headerlink" title="/etc/shadow"></a>/etc/shadow</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root:!:15324:0:99999:7:::</div><div class="line">daemon:*:15259:0:99999:7:::</div><div class="line">bin:*:15259:0:99999:7:::</div><div class="line">letuknowit:<span class="variable">$1</span><span class="variable">$cPf</span>/cIvr<span class="variable">$sCws95uSip2ljTK052DDB</span>.:15400:5:60:7:2:15490:</div></pre></td></tr></table></figure>
+<ol>
+<li>账户名称（密码需要与账户对应的嘛）</li>
+<li>加密后的密码（总不能学CSDN放明文密码，是吧），如果这一栏的第一个字符为!或者*的话，说明这是一个不能登录的账户，从上面可以看出，ubuntu默认的就不启用root账户。</li>
+<li>最近改动密码的日期（不是日期吗，咋是一堆数字，别急，这个是从1970年1月1日算起的总的天数）。那怎么才能知道今天距1970年1月1日有多少天呢？很简单，你改下密码，然后看下这个栏目中的数字是多少就可以了！</li>
+<li>密码不可被变更的天数：设置了这个值，则表示从变更密码的日期算起，多少天内无法再次修改密码，如果是0的话，则没有限制</li>
+<li>密码需要重新变更的天数：密码经常更换才能保证安全，为了提醒某些经常不更换密码的用户，可以设置一个天数，强制让用户更换密码，也就是说该用户的密码会在多少天后过期，如果为99999则没有限制</li>
+<li>密码过期预警天数：如果在5中设置了密码需要重新变更的天数，则会在密码过期的前多少天进行提醒，提示用户其密码将在多少天后过期</li>
+<li>密码过期的宽恕时间：如果在5中设置的日期过后，用户仍然没有修改密码，则该用户还可以继续使用的天数</li>
+<li>账号失效日期，过了这个日期账号就不能用了</li>
+<li>保留的</li>
+</ol>
+<p>以上面最后用户letuknowit为例（15400对应的日期为2012年3月1日），其保护如下信息：</p>
+<ol>
+<li>用户letuknowit最近一次修改密码的日期是2012年3月1日，</li>
+<li>在2012年3月6日之前不能再改动密码了，</li>
+<li>在2012-3-1到2012-4-29期间letuknowit需要更改密码，</li>
+<li>在2012-4-29之前的7天，letuknowit登陆系统的时候，系统会提示letuknowit其密码即将过期，</li>
+<li>如果letuknowit一直到2012-4-29都没有修改密码，则其仍然可以继续使用该账户2天，2天后该账户将不可用</li>
+<li>无论如何，到了2012年5月29日，该账号都将失效</li>
+</ol>
+<h2 id="主机名"><a href="#主机名" class="headerlink" title="主机名"></a>主机名</h2><ul>
+<li>查看主机名: <code>hostname</code> 或<code>uname –n</code>，均可以查看到当前主机的主机名。</li>
+<li>临时修改主机名: <code>hostname 新主机名</code></li>
+<li>永久修改主机名: <code>/etc/hostname</code>文件中修改</li>
+<li><code>host</code> 文件: <code>/etc/hosts</code> 存放的是域名与ip的对应关系, 添加一个新主机名到<code>127.0.0.1</code>.</li>
+</ul>
+<p>待续中…</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录使用到的 &lt;code&gt;liunx&lt;/code&gt; 命令!&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="liunx" scheme="https://blog.ihoey.com/categories/liunx/"/>
+    
+    
+      <category term="liunx" scheme="https://blog.ihoey.com/tags/liunx/"/>
+    
+      <category term="shell" scheme="https://blog.ihoey.com/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>重新认识伪类和伪元素</title>
@@ -2596,109 +2699,6 @@
     <summary type="html">
     
       &lt;p&gt;Canvas笔记总结！！&lt;br&gt;接前部分~&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Canvas" scheme="https://blog.ihoey.com/categories/Canvas/"/>
-    
-    
-      <category term="Canvas" scheme="https://blog.ihoey.com/tags/Canvas/"/>
-    
-      <category term="HTML5" scheme="https://blog.ihoey.com/tags/HTML5/"/>
-    
-      <category term="画布" scheme="https://blog.ihoey.com/tags/%E7%94%BB%E5%B8%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Canvas知识整理part2</title>
-    <link href="https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html"/>
-    <id>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</id>
-    <published>2016-11-14T11:42:44.000Z</published>
-    <updated>2016-11-24T01:34:33.712Z</updated>
-    
-    <content type="html"><![CDATA[<p>Html5Canvas笔记整理，接part1篇！！</p>
-<p>绘制图形不仅仅是利用线条来实现绘图, 还可以有快捷的绘制图形的办法!</p>
-<ol>
-<li>绘制矩形</li>
-<li>绘制圆弧</li>
-<li>绘制文本</li>
-<li>绘制图片</li>
-<li>绘制动画</li>
-</ol>
-<a id="more"></a>
-<h2 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h2><ol>
-<li>strokeRect();</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">strokeRect(x, y, w, h)</div></pre></td></tr></table></figure>
-<p><code>x</code>, <code>x</code>坐标<br><code>y</code>, <code>y</code>坐标<br><code>w</code>, 矩形宽<br><code>h</code>, 矩形高<br>功能：绘制一个矩形路径，并描边</p>
-<ul>
-<li>用来绘制一个矩形. 比起直接使用 <code>moveTo</code> 和 <code>lineTo</code> 方法要简单许多.</li>
-<li>该方法的前两个参数表示绘制矩形的左上角的坐标. 后两个参数表示这个矩形的宽高.</li>
-<li>使用该方法不需要使用 <code>moveTo</code> 方法设置起始点, 也不需要调用 <code>stroke</code> 等绘画方法.</li>
-<li>绘制的矩形支持 <code>strokeStyle</code> 设置颜色样式.</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.strokeStyle = <span class="string">'red'</span>;</div><div class="line">ctx.strokeRect( <span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">100</span> );</div></pre></td></tr></table></figure>
-<ol>
-<li>fillRect();</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fillRect(x, y, w, h)</div></pre></td></tr></table></figure>
-<p><code>x</code>, <code>x</code>坐标<br><code>y</code>, <code>y</code>坐标<br><code>w</code>, 矩形宽<br><code>h</code>, 矩形高<br>功能：绘制一个矩形路径，并填充</p>
-<ul>
-<li>用来绘制一个矩形. 比起直接使用 <code>moveTo</code> 和 <code>lineTo</code> 方法要简单许多.</li>
-<li>该方法的前两个参数表示绘制矩形的左上角的坐标. 后两个参数表示这个矩形的宽高.</li>
-<li>使用该方法不需要使用 <code>moveTo</code> 方法设置起始点, 也不需要调用 <code>stroke</code> 等绘画方法.</li>
-<li>绘制的矩形支持 <code>fillStyle</code> 设置颜色样式.</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.fillStyle = <span class="string">'green'</span>;</div><div class="line">ctx.fillRect( <span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">100</span> );</div></pre></td></tr></table></figure>
-<ol>
-<li>rect();</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rect(x, y, w, h)</div></pre></td></tr></table></figure>
-<p><code>x</code>, <code>x</code>坐标<br><code>y</code>, y坐标<br><code>w</code>, 矩形宽<br><code>h</code>, 矩形高<br>功能：绘制一个矩形路径，不描边</p>
-<ol>
-<li>clearRect();</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">clearRect(x, y, w, h)</div></pre></td></tr></table></figure>
-<p><code>x</code>, <code>x</code>坐标<br><code>y</code>, <code>y</code>坐标<br><code>w</code>, 矩形宽<br><code>h</code>, 矩形高<br>功能：清除指定的矩形区域</p>
-<ul>
-<li>用于清除画布中的矩形区域的内容.</li>
-<li>参数 <code>x</code>, <code>y</code> 表示矩形区域左上角的坐标,<code>width</code> 与 <code>height</code> 表示矩形区域的宽高.</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.fillRect( <span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">100</span> );</div><div class="line">ctx.clearRect( <span class="number">110</span>, <span class="number">110</span>, <span class="number">50</span>, <span class="number">50</span> );</div></pre></td></tr></table></figure>
-<ul>
-<li>save restore<br>  save 保存当前的路径状态<br>  restore 恢复上一次保存的路径状态( <code>restore</code> 是与之对应的,先 <code>save</code> 的,后被 <code>restore</code> )</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">10</span>, y = <span class="number">10</span>, oldx = <span class="number">10</span>, oldy = <span class="number">10</span>;</div><div class="line"><span class="keyword">var</span> width = <span class="number">100</span>, height = <span class="number">50</span>;     </div><div class="line"><span class="keyword">var</span> intervalId = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	ctx.clearRect( oldx - <span class="number">1</span>, oldy - <span class="number">1</span>, width + <span class="number">2</span>, height + <span class="number">2</span> );</div><div class="line"></div><div class="line">	ctx.strokeRect( x, y, width, height );</div><div class="line"></div><div class="line">	oldx = x;</div><div class="line">	oldy = y;</div><div class="line"></div><div class="line">	x += <span class="number">4</span>;</div><div class="line">	y += <span class="number">2</span>;</div><div class="line"></div><div class="line">	<span class="keyword">if</span> ( oldy &gt;= <span class="number">200</span> ) &#123;</div><div class="line">		<span class="comment">// clearInterval( intervalId );</span></div><div class="line">		x = <span class="number">10</span>, y = <span class="number">10</span>;</div><div class="line">	&#125;</div><div class="line">&#125;, <span class="number">20</span>);</div></pre></td></tr></table></figure>
-<h2 id="绘制圆弧"><a href="#绘制圆弧" class="headerlink" title="绘制圆弧"></a>绘制圆弧</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arc(x, y, r, startAngle, endAngle, anticlockwise)</div></pre></td></tr></table></figure>
-<ul>
-<li><code>x,y</code> 圆心坐标</li>
-<li><code>r</code>  圆的半径</li>
-<li><code>startAngle</code> 起始角度（弧度表示）</li>
-<li><code>endAngle</code> 结束角度（弧度表示）</li>
-<li><code>anticlockwise</code> 是否逆时针绘制，注意找角的时候还是顺时针找</li>
-</ul>
-<p>注意事项，每次画完弧之后，都会保存点，下次绘图会从该点开始</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 在 200, 200 的地方绘制一段半径为 100 的圆弧, 圆心角为 - PI / 2 到 PI / 4</span></div><div class="line">...</div><div class="line">ctx.arc( <span class="number">200</span>, <span class="number">200</span>, <span class="number">100</span>, -<span class="built_in">Math</span>.PI/<span class="number">2</span>, <span class="built_in">Math</span>.PI/<span class="number">4</span> );</div><div class="line">ctx.stroke();</div><div class="line"></div><div class="line"><span class="comment">// 为了方便看清楚结构, 绘制坐标轴</span></div><div class="line">ctx.beginPath();</div><div class="line">ctx.strokeStyle = <span class="string">'red'</span>;</div><div class="line">ctx.moveTo( <span class="number">50</span>, <span class="number">200</span> );</div><div class="line">ctx.lineTo( <span class="number">350</span>, <span class="number">200</span> );</div><div class="line"></div><div class="line">ctx.moveTo( <span class="number">200</span>, <span class="number">50</span> );</div><div class="line">ctx.lineTo( <span class="number">200</span>, <span class="number">350</span> );</div><div class="line"></div><div class="line">ctx.moveTo( <span class="number">200</span>, <span class="number">200</span> );</div><div class="line">ctx.lineTo( <span class="number">300</span>, <span class="number">300</span> );</div><div class="line"></div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
-<h2 id="绘制扇形"><a href="#绘制扇形" class="headerlink" title="绘制扇形"></a>绘制扇形</h2><p>先 <code>moveTo</code> 圆心，然后画弧 ，然后 <code>closePath</code> 弧就有了</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">ctx.strokeStyle = <span class="string">'red'</span>;</div><div class="line">ctx.fillStyle = <span class="string">'pink'</span>;</div><div class="line"></div><div class="line">ctx.moveTo( <span class="number">100</span>, <span class="number">200</span> );</div><div class="line">ctx.arc( <span class="number">100</span>, <span class="number">200</span>, <span class="number">100</span>, -<span class="built_in">Math</span>.PI/<span class="number">3</span>, <span class="built_in">Math</span>.PI/<span class="number">3</span> );</div><div class="line">ctx.closePath();</div><div class="line">ctx.stroke();</div><div class="line"></div><div class="line">ctx.beginPath();</div><div class="line">ctx.moveTo( <span class="number">300</span>, <span class="number">200</span> );</div><div class="line">ctx.arc( <span class="number">300</span>, <span class="number">200</span>, <span class="number">100</span>, -<span class="built_in">Math</span>.PI/<span class="number">3</span>, <span class="built_in">Math</span>.PI/<span class="number">3</span> );</div><div class="line">ctx.closePath();</div><div class="line">ctx.fill();</div></pre></td></tr></table></figure>
-<h2 id="绘制扇形动画"><a href="#绘制扇形动画" class="headerlink" title="绘制扇形动画"></a>绘制扇形动画</h2><p>绘制扇形动画, 就是每隔几毫秒( 20 毫秒)擦除以前绘制的内容, 然后在以前绘制的基础上比以前多绘制一点东西. 这里多绘制的内容就是由角度决定. 比如一开始角度从 <code>-Math.PI / 2</code> 开始绘制. 那么每次角度都 <code>+0.1</code> , 直到 绘制到 <code>Math.PI * 3 / 2</code>为止.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">ctx.fillStyle = <span class="string">'green'</span>;</div><div class="line"><span class="keyword">var</span> startAngle = -<span class="built_in">Math</span>.PI / <span class="number">2</span>,</div><div class="line">	angle = startAngle,</div><div class="line">	x = <span class="number">200</span>, y = <span class="number">200</span>,</div><div class="line">	r = <span class="number">100</span>;</div><div class="line"><span class="keyword">var</span> intervalId = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="comment">// 清除之前绘制的内容</span></div><div class="line">	ctx.clearRect( <span class="number">0</span>, <span class="number">0</span>, cas.width, cas.height );</div><div class="line">	<span class="comment">// 角度增量</span></div><div class="line">	angle += <span class="number">0.1</span>;</div><div class="line">	<span class="comment">// 判断是否停止计时器</span></div><div class="line">	<span class="keyword">if</span> ( angle &gt;= <span class="built_in">Math</span>.PI * <span class="number">3</span> / <span class="number">2</span> ) &#123;</div><div class="line">		clearInterval( intervalId);</div><div class="line">		angle = <span class="built_in">Math</span>.PI * <span class="number">3</span> / <span class="number">2</span>; </div><div class="line">		<span class="built_in">console</span>.log( <span class="string">'绘制完成'</span> );</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 绘制</span></div><div class="line">	ctx.moveTo( x, y );</div><div class="line">	ctx.arc( x, y, r, startAngle, angle );</div><div class="line">	ctx.fill();</div><div class="line">&#125;, <span class="number">20</span>);</div></pre></td></tr></table></figure>
-<h2 id="绘制饼形图"><a href="#绘制饼形图" class="headerlink" title="绘制饼形图"></a>绘制饼形图</h2><pre><code>等分的饼图,饼图的起始位置在    `-90°` .
-</code></pre><p>绘制饼形图最大的特点是角度是叠加的. 开始从 <code>-Math.PI/2</code> 开始绘制, 达到执行角 <code>x</code> 后, 下一个区域从 <code>x</code> 开始绘制, 然后有到一个角 <code>y</code> 停下来. 如此反复到 <code>Math.PI * 3 / 2</code> 结束.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">200</span>, y = <span class="number">200</span>,</div><div class="line">	r = <span class="number">100</span>,</div><div class="line">	step = <span class="built_in">Math</span>.PI * <span class="number">2</span> / <span class="number">3</span>,     <span class="comment">// 120 度一个区域</span></div><div class="line">	start = -<span class="built_in">Math</span>.PI / <span class="number">2</span>,       <span class="comment">// 起始角度</span></div><div class="line">	colors = [ <span class="string">'red'</span>, <span class="string">'green'</span>, <span class="string">'blue'</span> ];</div><div class="line"></div><div class="line"><span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ ) &#123;</div><div class="line">	ctx.beginPath();</div><div class="line">	ctx.moveTo( x, y );</div><div class="line">	ctx.fillStyle = colors[ i ];</div><div class="line">	ctx.arc( x, y, r, start, start+=step );</div><div class="line">	ctx.fill();</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Html5Canvas笔记整理，接part1篇！！&lt;/p&gt;
-&lt;p&gt;绘制图形不仅仅是利用线条来实现绘图, 还可以有快捷的绘制图形的办法!&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;绘制矩形&lt;/li&gt;
-&lt;li&gt;绘制圆弧&lt;/li&gt;
-&lt;li&gt;绘制文本&lt;/li&gt;
-&lt;li&gt;绘制图片&lt;/li&gt;
-&lt;li&gt;绘制动画&lt;/li&gt;
-&lt;/ol&gt;
     
     </summary>
     
