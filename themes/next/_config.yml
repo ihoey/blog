@@ -473,8 +473,8 @@ css: css
 js: js
 images: images
 
-#多说热文
-duoshuo_hotartical: true
+# #多说热文
+# duoshuo_hotartical: true
 
 #打赏-支付宝-微信
 reward_comment: 满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！
