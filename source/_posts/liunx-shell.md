@@ -1,13 +1,13 @@
 ---
-title: liunx_shell
+title: Linux常用命令笔记
 date: 2017-05-26 21:49:04
 tags:
-    - liunx
+    - Linux
     - shell
-categories: liunx
+categories: Linux
 ---
 
-记录使用到的 `liunx` 命令!
+记录使用到的 `Linux` 命令!
 
 <!-- more -->
 
