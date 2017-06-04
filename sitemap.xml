@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.ihoey.com/posts/liunx/2017-05-26-liunx-shell.html</loc>
+    <loc>https://blog.ihoey.com/posts/Node/2017-05-10-npm.html</loc>
     
-    <lastmod>2017-05-26T13:50:41.414Z</lastmod>
+    <lastmod>2017-06-04T14:41:31.310Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html</loc>
+    
+    <lastmod>2017-06-04T14:03:35.737Z</lastmod>
     
   </url>
   

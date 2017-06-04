@@ -4,21 +4,43 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/liunx/2017-05-26-liunx-shell.html</loc>
-    <lastmod>2017-05-26T13:50:41.414Z</lastmod>
+    <loc>https://blog.ihoey.com/posts/Node/2017-05-10-npm.html</loc>
+    <lastmod>2017-06-04T14:41:31.310Z</lastmod>
     <data>
         <display>
-        <title>liunx_shell</title>
+        <title>NPM 学习笔记整理</title>
+        <pubTime>2017-05-09T19:25:24.000Z</pubTime>
+        
+        <tag>Node</tag>
+         
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html</loc>
+    <lastmod>2017-06-04T14:03:35.737Z</lastmod>
+    <data>
+        <display>
+        <title>Linux常用命令笔记</title>
         <pubTime>2017-05-26T13:49:04.000Z</pubTime>
         
-        <tag>liunx</tag>
+        <tag>Linux</tag>
          
         <tag>shell</tag>
          
          
            
              
-              <breadCrumb title="liunx" url="https://blog.ihoey.com/categories/liunx/"/>
+              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
           
         </display>
     </data>

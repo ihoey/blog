@@ -1795,7 +1795,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff6396;
+  background: #ff7c77;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2676,6 +2676,13 @@ code {
   color: #fc6423;
   background: #fbf7f8;
   margin: 2px;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  font-weight: normal;
+  font-size: 13px;
+  text-align: center;
+  padding: 0 3px !important;
 }
 .highlight,
 pre {
@@ -2684,7 +2691,6 @@ pre {
   border-radius: 3px;
 }
 .highlight,
-code,
 pre {
   border: 1px solid #d6d6d6;
 }
@@ -2693,4 +2699,7 @@ pre {
 }
 .header-inner {
   padding-top: 310px;
+}
+.ds-alert {
+  display: none !important;
 }

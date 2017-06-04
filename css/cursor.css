@@ -85,7 +85,7 @@ body{
 	-moz-user-select: none;
 	-webkit-user-select: none;
 }
-pre{
+pre, code{
 	-ms-user-select: text;
 	-moz-user-select: text;
 	-webkit-user-select: text;
