@@ -35,11 +35,11 @@ url: https://blog.ihoey.com
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  links: /links
-  guestbook: /guestbook
-  about: /about
-  archives: /archives
-  tags: /tags
+  links: /links/index.html
+  guestbook: /guestbook/index.html
+  about: /about/index.html
+  archives: /archives/index.html
+  tags: /tags/index.html
   # categories: /categories
   sitemap: /sitemap.xml
   #commonweal: /404.html
