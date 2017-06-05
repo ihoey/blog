@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ihoey.com/about/index.html</loc>
+    
+    <lastmod>2017-06-05T11:04:15.665Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ihoey.com/links/index.html</loc>
     
-    <lastmod>2017-06-05T09:56:57.772Z</lastmod>
+    <lastmod>2017-06-05T11:00:22.278Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html</loc>
     
     <lastmod>2017-06-04T14:03:35.737Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.ihoey.com/about/index.html</loc>
-    
-    <lastmod>2017-05-26T09:51:07.484Z</lastmod>
     
   </url>
   
