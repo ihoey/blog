@@ -123,9 +123,9 @@
     <link href="https://blog.ihoey.com/posts/Node/2017-05-10-npm.html"/>
     <id>https://blog.ihoey.com/posts/Node/2017-05-10-npm.html</id>
     <published>2017-05-09T19:25:24.000Z</published>
-    <updated>2017-06-04T14:41:31.310Z</updated>
+    <updated>2017-06-05T03:16:44.814Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="什么是-NPM"><a href="#什么是-NPM" class="headerlink" title="什么是 NPM"></a>什么是 NPM</h1><p><code>npm</code> 之于 <code>Node</code> ，就像 <code>pip</code> 之于 <code>Python</code> , <code>gem</code> 之于 <code>Ruby</code> , <code>pear</code> 之于 <code>PHP</code> 。</p>
+    <content type="html"><![CDATA[<h1 id="什么是-NPM"><a href="#什么是-NPM" class="headerlink" title="什么是 NPM"></a>什么是 NPM</h1><p><code>npm</code> 之于 <code>Node</code> ，就像 <code>pip</code> 之于 <code>Python</code> , <code>gem</code> 之于 <code>Ruby</code> , <code>composer</code> 之于 <code>PHP</code> 。</p>
 <p><code>npm</code> 是 <code>Node</code> 官方提供的包管理工具，他已经成了 <code>Node</code> 包的标准发布平台，用于 <code>Node</code> 包的发布、传播、依赖控制。<br><code>npm</code> 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。</p>
 <a id="more"></a>
 <h1 id="为什么要使用-NPM"><a href="#为什么要使用-NPM" class="headerlink" title="为什么要使用 NPM"></a>为什么要使用 NPM</h1><p><code>npm</code> 是随同 <code>Node</code> 一起安装的包管理工具，能解决 <code>Node</code> 代码部署上的很多问题，常见的场景有以下几种：</p>
@@ -249,7 +249,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;什么是-NPM&quot;&gt;&lt;a href=&quot;#什么是-NPM&quot; class=&quot;headerlink&quot; title=&quot;什么是 NPM&quot;&gt;&lt;/a&gt;什么是 NPM&lt;/h1&gt;&lt;p&gt;&lt;code&gt;npm&lt;/code&gt; 之于 &lt;code&gt;Node&lt;/code&gt; ，就像 &lt;code&gt;pip&lt;/code&gt; 之于 &lt;code&gt;Python&lt;/code&gt; , &lt;code&gt;gem&lt;/code&gt; 之于 &lt;code&gt;Ruby&lt;/code&gt; , &lt;code&gt;pear&lt;/code&gt; 之于 &lt;code&gt;PHP&lt;/code&gt; 。&lt;/p&gt;
+      &lt;h1 id=&quot;什么是-NPM&quot;&gt;&lt;a href=&quot;#什么是-NPM&quot; class=&quot;headerlink&quot; title=&quot;什么是 NPM&quot;&gt;&lt;/a&gt;什么是 NPM&lt;/h1&gt;&lt;p&gt;&lt;code&gt;npm&lt;/code&gt; 之于 &lt;code&gt;Node&lt;/code&gt; ，就像 &lt;code&gt;pip&lt;/code&gt; 之于 &lt;code&gt;Python&lt;/code&gt; , &lt;code&gt;gem&lt;/code&gt; 之于 &lt;code&gt;Ruby&lt;/code&gt; , &lt;code&gt;composer&lt;/code&gt; 之于 &lt;code&gt;PHP&lt;/code&gt; 。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;npm&lt;/code&gt; 是 &lt;code&gt;Node&lt;/code&gt; 官方提供的包管理工具，他已经成了 &lt;code&gt;Node&lt;/code&gt; 包的标准发布平台，用于 &lt;code&gt;Node&lt;/code&gt; 包的发布、传播、依赖控制。&lt;br&gt;&lt;code&gt;npm&lt;/code&gt; 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。&lt;/p&gt;
     
     </summary>
