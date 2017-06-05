@@ -75,6 +75,8 @@ deploy:
   repo: git@git.coding.net:ihoey/ihoey.coding.me.git,master
 - type: git
   repo: git@github.com:ihoey/blog.git,master
+- type: git
+  repo: git@13.113.62.136:/var/repo/blog.git,master
 # - type: git
 #   repo: git@52.199.162.160:/repo/blog.git,master
 - type: baidu_url_submitter

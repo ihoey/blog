@@ -8,7 +8,7 @@ date: 2016-11-10 20:36:20
 
 ## Blog friends
 
-- [杰杰无敌](https://blog.liujiefront.com "杰杰无敌")  - 每天进步一点点,杰杰无敌,liujiefront,liujie,刘杰的个人blog
+- [杰杰无敌](https://blog.liujiefront.com "杰杰无敌")  -  每天进步一点点,杰杰无敌,liujiefront,liujie,刘杰的个人blog
 - [梦魇|专注于分享](http://www.dode.top/ "梦魇|专注于分享™")  -  一个帮助过我的好朋友，技术很不错
 - [一叶知秋](http://www.webmars.xyz/)  -  森林里出现了两条路，而我选择了人迹罕至的一条，从此决定了一切际遇的不同！
 - [等待!!!](http://www.ccyyao.top/)  -  爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中!
