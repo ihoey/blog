@@ -9,7 +9,7 @@ categories: Node
 
 # 什么是 NPM
 
-`npm` 之于 `Node` ，就像 `pip` 之于 `Python` , `gem` 之于 `Ruby` , `pear` 之于 `PHP` 。
+`npm` 之于 `Node` ，就像 `pip` 之于 `Python` , `gem` 之于 `Ruby` , `composer` 之于 `PHP` 。
 
 `npm` 是 `Node` 官方提供的包管理工具，他已经成了 `Node` 包的标准发布平台，用于 `Node` 包的发布、传播、依赖控制。
 `npm` 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。

@@ -278,7 +278,7 @@ mathjax:
 #baidu_analytics:
 
 # Duoshuo ShortName
-duoshuo_shortname: \u0073\u0074\u0061\u0063\u006b
+# duoshuo_shortname: \u0073\u0074\u0061\u0063\u006b
 # stack
 
 # Disqus
@@ -321,11 +321,11 @@ google_analytics: UA-87991666-1
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
-duoshuo_info:
-  ua_enable: true
-  admin_enable: true
-  user_id: 13295934
-  admin_nickname: 站长大大
+# duoshuo_info:
+#   ua_enable: true
+#   admin_enable: true
+#   user_id: 13295934
+#   admin_nickname: 站长大大
 
 
 # Facebook SDK Support.
