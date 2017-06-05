@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ihoey.com/guestbook/index.html</loc>
+    
+    <lastmod>2017-06-05T06:59:27.790Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ihoey.com/posts/Node/2017-05-10-npm.html</loc>
     
     <lastmod>2017-06-05T03:16:44.814Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>https://blog.ihoey.com/links/index.html</loc>
     
     <lastmod>2017-05-26T09:51:28.254Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.ihoey.com/guestbook/index.html</loc>
-    
-    <lastmod>2017-05-26T09:51:19.548Z</lastmod>
     
   </url>
   
