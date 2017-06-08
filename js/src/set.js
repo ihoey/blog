@@ -2,25 +2,25 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by:   henry
- * @Last Modified time: 2016-11-22 21:38:02
+ * @Last Modified time: 2017-06-08 15:13:43
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
 
 // 点击爱心
-!function (e, t, a) {
+! function(e, t, a) {
     function n() {
         c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), o(), r()
     }
 
     function r() {
-        for (var e = 0; e < d.length; e++)d[e].alpha <= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e].y-- , d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = "left:" + d[e].x + "px;top:" + d[e].y + "px;opacity:" + d[e].alpha + ";transform:scale(" + d[e].scale + "," + d[e].scale + ") rotate(45deg);background:" + d[e].color + ";z-index:99999");
+        for (var e = 0; e < d.length; e++) d[e].alpha <= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e].y--, d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = "left:" + d[e].x + "px;top:" + d[e].y + "px;opacity:" + d[e].alpha + ";transform:scale(" + d[e].scale + "," + d[e].scale + ") rotate(45deg);background:" + d[e].color + ";z-index:99999");
         requestAnimationFrame(r)
     }
 
     function o() {
         var t = "function" == typeof e.onclick && e.onclick;
-        e.onclick = function (e) {
+        e.onclick = function(e) {
             t && t(), i(e)
         }
     }
@@ -53,12 +53,12 @@ console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c
     }
 
     var d = [];
-    e.requestAnimationFrame = function () {
-        return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+    e.requestAnimationFrame = function() {
+        return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(e) {
             setTimeout(e, 1e3 / 60)
         }
-    } (), n()
-} (window, document);
+    }(), n()
+}(window, document);
 
 
 console.log("\n %c 梦魇|专注于分享 QQ:1058221214 %c http://www.dode.top \n\n", "color: #FF0000; background: #4bffba; padding:5px 0; border-radius: 5px 5px 5px 5px;", "background: #fadfa3; padding:5px 0; border-radius: 5px 5px 5px 5px;");
@@ -76,7 +76,7 @@ console.log('程序员A：哎 太累了日子没法过了 怎么才能换行啊'
 console.log('程序员B：打回车呀！');
 
 // 控制台图案
-(function (global) {
+(function(global) {
     var character_planar = {
         H: [
             '|ˉ|ˉ|    |ˉ|ˉ|',
@@ -202,31 +202,40 @@ console.log(Alphabet('HY1121', 'planar'));
 
 
 // 标题变化
-window.onload = function () {
+window.onload = function() {
     var OriginTitile = document.title;
     var titleTime;
-    document.addEventListener('visibilitychange', function () {
+    document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
             $('[rel="icon"]').attr('href', "/img/TEP.ico");
             document.title = '╭(°A°`)╮ 页面崩溃啦 ~ 快回来看看~ | 梦魇小栈！';
             clearTimeout(titleTime);
-        }
-        else {
+        } else {
             $('[rel="icon"]').attr('href', "/favicon.ico");
             document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitile;
-            titleTime = setTimeout(function () {
+            titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             }, 2000);
         }
     });
 
-    $('.post-title a,.post-more-link').hover(function () {
+    $('.post-title a,.post-more-link').hover(function() {
         $(this).stop().animate({
             'marginLeft': '10px'
         }, 200);
-    }, function () {
+    }, function() {
         $(this).stop().animate({
             'marginLeft': '0px'
         }, 400);
     });
+
+    $.ajax({
+            url: 'https://sslapi.hitokoto.cn/',
+            type: 'GET',
+            dataType: 'json'
+        })
+        .done(function(data) {
+            html = '' + data.hitokoto + '  来自于 ' + data.from;
+            $('#hitokoto').text(html);
+        })
 }
