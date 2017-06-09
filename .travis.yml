@@ -6,6 +6,7 @@ install:
   - npm install -g hexo-cli
   - npm install hexo-generator-search --save
   - npm install # 安装 package.json 中的插件
+  - npm install debug # 安装 package.json 中的插件
 
 cache: #缓存配置
   directories:
