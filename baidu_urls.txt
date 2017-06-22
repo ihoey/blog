@@ -1,5 +1,5 @@
+https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html
 https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html
 https://blog.ihoey.com/posts/Node/2017-05-10-npm.html
 https://blog.ihoey.com/posts/CSS3/2017-04-28-pseudo-elements-and-pseudo-classes.html
 https://blog.ihoey.com/posts/Git/2017-04-23-git.html
-https://blog.ihoey.com/posts/Cron/2017-04-22-Cron.html
