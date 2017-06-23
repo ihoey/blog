@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/Git/2017-04-23-git.html</loc>
+    <lastmod>2017-06-23T03:46:49.727Z</lastmod>
+    <data>
+        <display>
+        <title>Git 常用命令学习及整理</title>
+        <pubTime>2017-04-23T02:23:21.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+             
+              <breadCrumb title="Git" url="https://blog.ihoey.com/categories/Git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html</loc>
+    <lastmod>2017-06-23T03:30:23.267Z</lastmod>
+    <data>
+        <display>
+        <title>Linux常用命令笔记</title>
+        <pubTime>2017-05-26T13:49:04.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html</loc>
     <lastmod>2017-06-22T12:25:00.791Z</lastmod>
     <data>
@@ -49,28 +91,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html</loc>
-    <lastmod>2017-06-04T14:03:35.737Z</lastmod>
-    <data>
-        <display>
-        <title>Linux常用命令笔记</title>
-        <pubTime>2017-05-26T13:49:04.000Z</pubTime>
-        
-        <tag>Linux</tag>
-         
-        <tag>shell</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html</loc>
     <lastmod>2017-05-24T04:50:40.862Z</lastmod>
     <data>
@@ -108,26 +128,6 @@
            
              
               <breadCrumb title="CSS3" url="https://blog.ihoey.com/categories/CSS3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/Git/2017-04-23-git.html</loc>
-    <lastmod>2017-04-22T03:20:20.797Z</lastmod>
-    <data>
-        <display>
-        <title>Git 常用命令学习及整理</title>
-        <pubTime>2017-04-23T02:23:21.000Z</pubTime>
-        
-        <tag>Git</tag>
-         
-         
-           
-             
-              <breadCrumb title="Git" url="https://blog.ihoey.com/categories/Git/"/>
           
         </display>
     </data>
