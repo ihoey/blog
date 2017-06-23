@@ -18,13 +18,13 @@ categories: Git
 ## 配置
 
 ```sh
-git config --global user.name "ihoey"           #设置git用户名
-git config --global user.email "mail@ihoey.com" #设置git邮箱
-git config --global color.ui true               #为true是终端着色
-git config --global alias.co checkout           #配置checkout的别名
-git config --global alias.ci commit             #配置commit的别名
-git config --global alias.st status             #配置status的别名
-git config --global alias.br branch             #配置branch的别名
+git config --global user.name "ihoey"           # 设置git用户名
+git config --global user.email "mail@ihoey.com" # 设置git邮箱
+git config --global color.ui true               # 为true是终端着色
+git config --global alias.co checkout           # 配置checkout的别名
+git config --global alias.ci commit             # 配置commit的别名
+git config --global alias.st status             # 配置status的别名
+git config --global alias.br branch             # 配置branch的别名
 git config --global core.editor "mate -w"       # 设置Editor使用textmate
 git config -l                                   # 列举所有配置
 #用户的git配置文件~/.gitconfig
@@ -34,10 +34,10 @@ git config -l                                   # 列举所有配置
 
 ```sh
 ssh-keygen -t rsa -C "mail@ihoey.com"
-#连续3个回车。如果不需要密码的话。
-#最后得到了两个文件：id_rsa和id_rsa.pub，在~/.ssh/文件夹下面
-#id_rsa为你的私钥，不可以告诉别人
-#id_rsa.pub为你的公钥，一般会放在你的服务器做ssh登录，或者放在github上面
+# 连续3个回车。如果不需要密码的话。
+# 最后得到了两个文件：id_rsa和id_rsa.pub，在~/.ssh/文件夹下面
+# id_rsa为你的私钥，不可以告诉别人
+# id_rsa.pub为你的公钥，一般会放在你的服务器做ssh登录，或者放在github上面
 ```
 
 
@@ -150,7 +150,7 @@ git checkout --track origin/branch     # 跟踪某个远程分支创建相应的
 git checkout -b <local_branch> origin/<remote_branch>  # 基于远程分支创建本地分支，功能同上
 git push                         # push所有分支
 git push origin master           # 将本地主分支推到远程主分支
-git push -u origin master    # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)
+git push -u origin master        # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)
 git push origin <local_branch>   # 创建远程分支， origin是远程仓库名
 git push origin <local_branch>:<remote_branch>  # 创建远程分支
 git push origin :<remote_branch> #先删除本地分支(git br -d <branch>)，然后再push删除远程分支
