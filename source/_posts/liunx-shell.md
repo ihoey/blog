@@ -13,7 +13,7 @@ categories: Linux
 
 ## 安装 Git
 
-- 安装: `sudo apt-get install git`
+- 安装: `sudo apt-get install git` , `git` 配置请查看[]()。
 
 ## 安装 Nginx
 

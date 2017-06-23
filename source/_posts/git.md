@@ -30,6 +30,21 @@ git config -l                                   # 列举所有配置
 #用户的git配置文件~/.gitconfig
 ```
 
+## SSH 秘钥
+
+```sh
+ssh-keygen -t rsa -C "mail@ihoey.com"
+#连续3个回车。如果不需要密码的话。
+#最后得到了两个文件：id_rsa和id_rsa.pub，在~/.ssh/文件夹下面
+#id_rsa为你的私钥，不可以告诉别人
+#id_rsa.pub为你的公钥，一般会放在你的服务器做ssh登录，或者放在github上面
+```
+
+
+## GitHub 测试
+
+*ssh -T git@github.com* 将公钥放在`github`测试是否验证通过命令，选择 `yes` 如果看到 `Hi` 后面是你的用户名，就说明成功了。
+
 ## 基本命令
 
 - 创建`git`仓库 `git init`
