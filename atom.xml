@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.ihoey.com/"/>
-  <updated>2017-07-03T10:51:52.976Z</updated>
+  <updated>2017-07-06T11:02:09.253Z</updated>
   <id>https://blog.ihoey.com/</id>
   
   <author>
@@ -16,11 +16,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>继多说、网易关停之后该何去何从(网易云跟帖宣布2017年8月1日停止服务)</title>
+    <link href="https://blog.ihoey.com/posts/Linux/2017-07-06-comment_ru_he_xuan_ze.html"/>
+    <id>https://blog.ihoey.com/posts/Linux/2017-07-06-comment_ru_he_xuan_ze.html</id>
+    <published>2017-07-06T10:51:21.000Z</published>
+    <updated>2017-07-06T11:02:09.253Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://oisha19l0.qnssl.com/IHOEY_20170706_171445.png" alt="comment_ihoey"><br>继多说（多说关闭想必大家都已经知道了）关闭之后，很多人包括我，都转移到了网易云跟帖，现在网易云跟帖也正式发出公告宣布于2017年8月1日停止服务。</p>
+<a id="more"></a>
+<p>在多说关闭之后，使用网易云跟帖的站点非常多，昨日宣布停止服务，小编也感到很意外。官方在QQ群内通知并没有说明具体原因，或许还是评论服务的老话题——盈利！</p>
+<p>并且QQ群管理称涉及网易自身评论，开源几乎不大！</p>
+<p>这是5号在QQ群里提前得到的通知！<br><img src="https://oisha19l0.qnssl.com/IHOEY_20170706_171444.png" alt="comment_ihoey"></p>
+<p>后续在跟帖官网发出的公告！<br><img src="https://oisha19l0.qnssl.com/IHOEY_20170706_184907.png" alt="comment_ihoey"></p>
+<p>多说刚挂了两个月，跟帖也跟着去了，刚做的提醒小功能都还没怎么用，好伤心，不知道小伙伴下一步都选择什么呢？有好用的推荐一下啊！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://oisha19l0.qnssl.com/IHOEY_20170706_171445.png&quot; alt=&quot;comment_ihoey&quot;&gt;&lt;br&gt;继多说（多说关闭想必大家都已经知道了）关闭之后，很多人包括我，都转移到了网易云跟帖，现在网易云跟帖也正式发出公告宣布于2017年8月1日停止服务。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://blog.ihoey.com/categories/Linux/"/>
+    
+    
+      <category term="comment" scheme="https://blog.ihoey.com/tags/comment/"/>
+    
+  </entry>
+  
+  <entry>
     <title>重新介绍 JavaScript（JS全面系列教程）</title>
     <link href="https://blog.ihoey.com/posts/javascript/2017-07-03-A_re-introduction_to_JavaScript.html"/>
     <id>https://blog.ihoey.com/posts/javascript/2017-07-03-A_re-introduction_to_JavaScript.html</id>
     <published>2017-07-03T10:51:21.000Z</published>
-    <updated>2017-07-03T10:51:52.976Z</updated>
+    <updated>2017-07-06T09:18:04.022Z</updated>
     
     <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>为什么会有这一篇“重新介绍”呢？因为 <code>JavaScript</code> 堪称世界上被人误解最深的编程语言。虽然常被嘲为“玩具语言”，但在它看似简洁的外衣下，还隐藏着强大的语言特性。 <code>JavaScript</code> 目前广泛应用于众多知名应用中，对于网页和移动开发者来说，深入理解 <code>JavaScript</code> 就尤有必要。</p>
 <a id="more"></a>
@@ -2782,135 +2811,6 @@
     <summary type="html">
     
       &lt;p&gt;JQuery模块分析及其实现第四部分属性部分功能及实现,接第三部分!&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://blog.ihoey.com/categories/javascript/"/>
-    
-    
-      <category term="原生Js" scheme="https://blog.ihoey.com/tags/%E5%8E%9F%E7%94%9FJs/"/>
-    
-      <category term="Js框架" scheme="https://blog.ihoey.com/tags/Js%E6%A1%86%E6%9E%B6/"/>
-    
-      <category term="JQuery" scheme="https://blog.ihoey.com/tags/JQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JQuery分析及实现part3之属性模块功能及实现</title>
-    <link href="https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html"/>
-    <id>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</id>
-    <published>2016-11-20T03:51:28.000Z</published>
-    <updated>2016-11-24T01:36:37.176Z</updated>
-    
-    <content type="html"><![CDATA[<p>JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!</p>
-<a id="more"></a>
-<h2 id="知识点复习"><a href="#知识点复习" class="headerlink" title="知识点复习"></a>知识点复习</h2><ol>
-<li><p><code>css</code> 方法</p>
-<ul>
-<li>如果只传入一个参数<ul>
-<li>如果参数类型为对象,表示同时设置多个样式</li>
-<li>如果参数类型为字符串,表示获取指定的样式值</li>
-</ul>
-</li>
-<li>如果传入的两个参数,表示设置单个样式值</li>
-</ul>
-</li>
-<li><p><code>itcast.each</code> 方法: 遍历数组或伪数组</p>
-<ul>
-<li>第一个参数,指定遍历的对象</li>
-<li>第二个参数,指定的回调函数,对遍历到的每一个元素,进行相关处理</li>
-</ul>
-</li>
-</ol>
-<h2 id="attr方法-setAttribute-和-getAttribute"><a href="#attr方法-setAttribute-和-getAttribute" class="headerlink" title="attr方法( setAttribute 和 getAttribute )"></a>attr方法( setAttribute 和 getAttribute )</h2><ol>
-<li>功能: 获取(设置)属性节点值</li>
-<li>实现思路<ul>
-<li>给原型添加 <code>attr</code> 方法,定义两个参数:属性节点名字 <code>name</code> 以及属性节点值</li>
-<li>如果只传入一个参数<ul>
-<li>如果参数类型为对象,表示设置多个节点值</li>
-<li>否则获取指定的属性节点值(默认获取第一个 <code>dom</code> 元素的属性节点值)</li>
-</ul>
-</li>
-<li>如果传入两个参数,表示设置单个属性节点值.</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">attr: <span class="function"><span class="keyword">function</span>(<span class="params">name,value</span>)</span>&#123;</div><div class="line">	<span class="comment">//只传入一个参数</span></div><div class="line">	<span class="keyword">if</span>(value == <span class="literal">undefined</span>)&#123;</div><div class="line">		<span class="comment">//如果类型为对象,表示设置多个属性</span></div><div class="line">		<span class="keyword">if</span>(<span class="keyword">typeof</span> name ===<span class="string">'object'</span>)&#123;</div><div class="line">			<span class="comment">//遍历itcast上的每一个dom元素,并设置属性节点值</span></div><div class="line">			<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</div><div class="line">				<span class="comment">//枚举name对象上的每一个属性</span></div><div class="line">				<span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> name)&#123;</div><div class="line">					v.setAttribute(k, name[k]);</div><div class="line">				&#125;</div><div class="line">			&#125;);</div><div class="line">		&#125; <span class="keyword">else</span> &#123; <span class="comment">//如果类型为字符串,获取属性节点值</span></div><div class="line">			<span class="keyword">if</span>(!<span class="keyword">this</span>[<span class="number">0</span>]) <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>].getAttribute(name);</div><div class="line">		&#125;</div><div class="line">	&#125;<span class="keyword">else</span> &#123; <span class="comment">//传入两个参数,表示设置单个属性节点值</span></div><div class="line">		<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">			v.setAttribute(name, value)</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<h2 id="html方法"><a href="#html方法" class="headerlink" title="html方法"></a>html方法</h2><ol>
-<li>功能: <ul>
-<li>不传参数,表示获取指定 <code>dom</code> 元素的 <code>innerHTML</code> 属性值</li>
-<li>否则,表示设置指定 <code>dom</code> 元素的 <code>innerHTML</code> 属性</li>
-</ul>
-</li>
-<li>实行思路<ul>
-<li>判断是否传入参数</li>
-<li>如果没穿,获取 <code>itcast</code> 对象上的第一个 <code>dom</code> 元素的 <code>innerHTML</code> 属性值</li>
-<li>否则,给 <code>itcast</code> 对象上的每一个 <code>dom</code> 元素设置 <code>innerHTML</code> 属性</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">html: <span class="function"><span class="keyword">function</span>(<span class="params">html</span>) </span>&#123;</div><div class="line">	<span class="comment">//如果没有给html传值,表示获取</span></div><div class="line">	<span class="keyword">if</span>(html==<span class="literal">undefined</span>)&#123;</div><div class="line">		<span class="comment">//如果icast没有任何dom元素,就返回一个期望值,即空字符串</span></div><div class="line">		<span class="comment">//如果有的话,就返回一个dom元素的innerHTML属性值</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>] ? <span class="keyword">this</span>[<span class="number">0</span>].innerHTML : <span class="string">''</span>;</div><div class="line">	&#125;<span class="keyword">else</span>&#123;<span class="comment">//如果给html船只,给itcast对象上的每一个dom元素设置innerHTML属性</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</div><div class="line">			v.innerHTML = html;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<h2 id="text方法"><a href="#text方法" class="headerlink" title="text方法"></a>text方法</h2><ol>
-<li>功能<ul>
-<li>不传值,表示获取文本节点(返回的是后代中所有文本节点值)</li>
-<li>传值,设置指定 <code>dom</code> 元素文本值</li>
-</ul>
-</li>
-<li>实现思路<ul>
-<li>如果不传值,优先考虑浏览器是否支持 <code>textContent</code> 属性<ul>
-<li>如果支持,就使用 <code>textContent</code> 返回结果集中每一个 <code>dom</code> 元素的文本节点值</li>
-<li>否则,就是用 <code>innerText</code> 返回结果集中每一个 <code>dom</code> 元素的文本节点值</li>
-</ul>
-</li>
-<li>如果传值,给 <code>itcast</code> 对象上的每一个 <code>dom</code> 元素设置文本节点值.<ul>
-<li>如果支持 <code>textContent</code> 属性,就是用该属性设置文本</li>
-<li>否则,就是用 <code>innerText</code> 来设置文本.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">text: <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</div><div class="line">	<span class="comment">// 如果没有传值，表示获取文本值</span></div><div class="line">	<span class="keyword">if</span>(text == <span class="literal">undefined</span>)&#123;</div><div class="line">		<span class="comment">// 定义结果变量，存储每个dom元素的文本</span></div><div class="line">		<span class="keyword">var</span> ret = <span class="string">''</span>;</div><div class="line">		<span class="comment">// 遍历每一个dom元素</span></div><div class="line">		<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">			<span class="comment">// 如果支持textContent，使用其获取文本，累加到ret上</span></div><div class="line">			ret += <span class="string">'textContent'</span> <span class="keyword">in</span> <span class="built_in">document</span> ?</div><div class="line">				v.textContent :</div><div class="line">				v.innerText.replace(<span class="regexp">/\r\n/g</span>, <span class="string">''</span>);</div><div class="line">		&#125;);</div><div class="line">		<span class="comment">// 返回所有文本</span></div><div class="line">		<span class="keyword">return</span> ret;</div><div class="line">	&#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果传值了，表示为每个dom设置文本</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</div><div class="line">			<span class="comment">// 如果支持textContent，就使用该属性为当前dom元素设置文本节点值</span></div><div class="line">			<span class="comment">// 否则，使用innerText设置文本节点值。</span></div><div class="line">			<span class="keyword">if</span>(<span class="string">'textContent'</span> <span class="keyword">in</span> <span class="built_in">document</span>)&#123;</div><div class="line">				v.textContent = text;</div><div class="line">			&#125; <span class="keyword">else</span> &#123;</div><div class="line">				v.innerText = text;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<h2 id="val方法"><a href="#val方法" class="headerlink" title="val方法"></a>val方法</h2><ol>
-<li>功能( <code>value</code> 属性)<ul>
-<li>如果不传值,表示获取输入框的文本值</li>
-<li>如果传值, 表示给输入框 设置文本</li>
-</ul>
-</li>
-<li>实现思路<ul>
-<li>如果不传值，表示获取输入框的文本值（获取第一个文本框值）</li>
-<li>如果传值，表示给输入框 设置文本<ul>
-<li>遍历每一个输入框，同时给其设置文本<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">val: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">	<span class="comment">// 如果没有传值，表示获取第一个dom元素的value属性值</span></div><div class="line">	<span class="comment">// 如果itcast对象上没有任何dom元素，返回空字符串</span></div><div class="line">	<span class="keyword">if</span>(value == <span class="literal">undefined</span>)&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>] ? <span class="keyword">this</span>[<span class="number">0</span>].value : <span class="string">''</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;<span class="comment">// 否则，为每一个dom元素设置value属性值</span></div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">this</span>.value = value;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="prop方法"><a href="#prop方法" class="headerlink" title="prop方法"></a>prop方法</h2><ol>
-<li>功能:和 <code>attr</code> 相似<ul>
-<li>注意: 有些属性名称,比如 <code>for</code> , <code>class</code> 是保留字或关键字不能作为对象属性名称,所以要创建一个对象,需要转换这类的属性</li>
-<li>定义 <code>propFix</code> 对象,存储上述属性到这属性名称的映射关系</li>
-<li>如果只传入一个参数<ul>
-<li>类型为对象,同时给  <code>dom</code> 对象添加属性</li>
-<li>类型为字符串,获取 <code>itcast</code> 对象上的第一个 <code>dom</code> 对象的指定属性值</li>
-</ul>
-</li>
-<li>如果传入的参数,给所有的 <code>dom</code> 对象添加单个属性</li>
-<li>细节: 无论是设置还是获取属性,在操作之前,先要从 <code>propFix</code> 对象拿到映射后的属性名称<ul>
-<li>如果拿到的心的属性名称不为 <code>undefined</code> ,就用映射后的属性名来操作 <code>dom</code> 对象</li>
-<li>否则,那么久使用旧的属性名称来操作 <code>dom</code> 对象.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 属性模块</span></div><div class="line">itcast.propFix = &#123;</div><div class="line">	<span class="string">'for'</span>: <span class="string">'htmlFor'</span>,</div><div class="line">	<span class="string">'class'</span>: <span class="string">'className'</span></div><div class="line">&#125;;</div><div class="line">itcast.each([</div><div class="line">	<span class="string">"tabIndex"</span>,</div><div class="line">	<span class="string">"readOnly"</span>,</div><div class="line">	<span class="string">"maxLength"</span>,</div><div class="line">	<span class="string">"cellSpacing"</span>,</div><div class="line">	<span class="string">"cellPadding"</span>,</div><div class="line">	<span class="string">"rowSpan"</span>,</div><div class="line">	<span class="string">"colSpan"</span>,</div><div class="line">	<span class="string">"useMap"</span>,</div><div class="line">	<span class="string">"frameBorder"</span>,</div><div class="line">	<span class="string">"contentEditable"</span></div><div class="line">], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	itcast.propFix[<span class="keyword">this</span>.toLowerCase()] = <span class="keyword">this</span>;</div><div class="line">&#125;);</div><div class="line">prop: <span class="function"><span class="keyword">function</span>(<span class="params">name, value</span>) </span>&#123;</div><div class="line">	<span class="comment">// 如果没有给value传值</span></div><div class="line">	<span class="keyword">var</span> prop;</div><div class="line">	<span class="keyword">if</span> (value == <span class="literal">undefined</span>) &#123;</div><div class="line">		<span class="comment">// 并且name的类型为 对象，表示给每一个dom对象添加多个属性</span></div><div class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'object'</span>) &#123;</div><div class="line">			<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">				<span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> name) &#123;</div><div class="line">					<span class="comment">// 首先从propFix对象上获取属性名字</span></div><div class="line">					<span class="comment">// 如果有，就使用新的属性名字</span></div><div class="line">					<span class="comment">// 如果没有，就使用原来的属性名字</span></div><div class="line">					prop = itcast.propFix[k] ? itcast.propFix[k] : k;</div><div class="line">					<span class="keyword">this</span>[prop] = name[k];</div><div class="line">				&#125;</div><div class="line">			&#125;);</div><div class="line">		&#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果name的类型 为字符串，表示获取第一个dom对象的指定属性值</span></div><div class="line">			prop = itcast.propFix[name] ? itcast.propFix[name]: name;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.length &gt; <span class="number">0</span> ? <span class="keyword">this</span>[<span class="number">0</span>][prop] : <span class="literal">null</span>;</div><div class="line">		&#125;</div><div class="line">	&#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果传入两个参数，表示给每一个dom对象添加单个属性</span></div><div class="line">		<span class="comment">// 遍历itcast上的每一个dom对象，添加属性</span></div><div class="line">		prop = itcast.propFix[name] ? itcast.propFix[name]: name;</div><div class="line">		<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">			<span class="keyword">this</span>[prop] = value;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">	<span class="comment">// 实现链式编程</span></div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!&lt;/p&gt;
     
     </summary>
     
