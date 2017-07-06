@@ -6,7 +6,7 @@ tags:
 categories: Linux
 ---
 
-![comment_ihoey](https://oisha19l0.qnssl.com/IHOEY_20170706_171445.png)
+![comment_ihoey](https://oisha19l0.qnssl.com/IHOEY_20170706_184907.png)
 继多说（多说关闭想必大家都已经知道了）关闭之后，很多人包括我，都转移到了网易云跟帖，现在网易云跟帖也正式发出公告宣布于2017年8月1日停止服务。
 
 <!-- more -->
@@ -15,10 +15,8 @@ categories: Linux
 
 并且QQ群管理称涉及网易自身评论，开源几乎不大！
 
-这是5号在QQ群里提前得到的通知！
-![comment_ihoey](https://oisha19l0.qnssl.com/IHOEY_20170706_171444.png)
-
-后续在跟帖官网发出的公告！
-![comment_ihoey](https://oisha19l0.qnssl.com/IHOEY_20170706_184907.png)
+这是提前在官方群得到的通知！
+![comment_ihoey](https://oisha19l0.qnssl.com/IHOEY_20170706_171445.png)
 
 多说刚挂了两个月，跟帖也跟着去了，刚做的提醒小功能都还没怎么用，好伤心，不知道小伙伴下一步都选择什么呢？有好用的推荐一下啊！
+![comment_ihoey](https://oisha19l0.qnssl.com/IHOEY_20170706_171444.png)
