@@ -15,6 +15,8 @@ date: 2016-11-10 20:36:20
 - [心雨](http://www.mcling.xyz)  -  天再高又怎样, 踮起脚尖就更接近阳光!
 - [neoFelhz](https://blog.neofelhz.ga)  -  拾穗者的故事
 - [mythsman](https://blog.mythsman.com)  -  哈哈,目测大佬一枚
+- [https://gao4.pw/](https://gao4.pw/)  -  沫雨
+- [http://www.ad-s.cn/](http://www.ad-s.cn/)  -  冰封博客
 
 ***
 
