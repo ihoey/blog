@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ihoey.com/links/index.html</loc>
+    
+    <lastmod>2017-07-07T15:06:02.562Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ihoey.com/posts/Linux/2017-07-06-comment_ru_he_xuan_ze.html</loc>
     
     <lastmod>2017-07-06T11:05:46.877Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>https://blog.ihoey.com/about/index.html</loc>
     
     <lastmod>2017-06-05T11:04:15.665Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.ihoey.com/links/index.html</loc>
-    
-    <lastmod>2017-06-05T11:00:22.278Z</lastmod>
     
   </url>
   
