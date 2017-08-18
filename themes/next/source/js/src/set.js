@@ -238,4 +238,7 @@ window.onload = function() {
             html = '' + data.hitokoto + '  来自于 ' + data.from;
             $('#hitokoto').text(html);
         })
+
+    $('#comments .cm-article').attr('data-key',window.document.location.pathname)
+    
 }

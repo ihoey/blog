@@ -22,7 +22,7 @@
       <div id="hypercomments_widget"></div>
     {% endif %}
     <!-- 在需要展示评论框处插入 -->
-    <div class="cm-article" data-key="window.document.location.pathname"></div>
+    <div class="cm-article" data-key=""></div>
     <!-- </body> 标签结束前插入 -->
     <link rel="stylesheet" href="//comment.moe/dest/static/css/plus.css">
     <script src="//comment.moe/dest/static/js/build.js" charset="UTF-8"></script>
