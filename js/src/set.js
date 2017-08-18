@@ -2,7 +2,7 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by:   henry
- * @Last Modified time: 2017-06-08 15:13:43
+ * @Last Modified time: 2017-08-18 11:23:20
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
@@ -239,6 +239,6 @@ window.onload = function() {
             $('#hitokoto').text(html);
         })
 
-    $('#comments .cm-article').attr('data-key',window.document.location.pathname)
-    
+    $('#comments .cm-article').attr('data-key',window.document.location.pathname);
+    // window.萌评.运转();
 }
