@@ -26,5 +26,9 @@
     <!-- </body> 标签结束前插入 -->
     <link rel="stylesheet" href="//comment.moe/dest/static/css/plus.css">
     <script src="//comment.moe/dest/static/js/build.js" charset="UTF-8"></script>
+    <script>
+      $('#comments .cm-article').attr('data-key', window.document.location.pathname);
+      window.萌评.运转();
+    </script>
   </div>
 {% endif %}
