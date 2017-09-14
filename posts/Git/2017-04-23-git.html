@@ -1,0 +1,973 @@
+<!doctype html>
+
+
+
+  
+
+
+<!--
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG  By:- ihoey.com
+-->
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg" />
+
+
+
+
+
+
+
+
+<link href="https://oisha19l0.qnssl.com/eevee.css" rel="stylesheet" type="text/css" />
+
+
+  
+  
+    
+  
+  <link href="https://oisha19l0.qnssl.com/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Git," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦魇小栈" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="最近用Git比较多，所以大概整理下 Git是目前世界上最先进的分布式版本控制系统。">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 常用命令学习及整理">
+<meta property="og:url" content="https://blog.ihoey.com/posts/Git/2017-04-23-git.html">
+<meta property="og:site_name" content="梦魇小栈">
+<meta property="og:description" content="最近用Git比较多，所以大概整理下 Git是目前世界上最先进的分布式版本控制系统。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-14T08:46:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 常用命令学习及整理">
+<meta name="twitter:description" content="最近用Git比较多，所以大概整理下 Git是目前世界上最先进的分布式版本控制系统。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '站长大大'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.ihoey.com/posts/Git/2017-04-23-git.html"/>
+
+
+
+
+<script src="/js/src/set.js"></script>
+<link href="/css/cursor.css" rel="stylesheet" type="text/css" />
+
+
+  <title> Git 常用命令学习及整理 | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-87991666-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199400a900d7a62bfff2335224e096d8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=59541779";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梦魇小栈</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">专注于分享</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+<div id="hitokoto" style="
+    text-align: center;
+    padding-top: 25px;
+"></div>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Git/2017-04-23-git.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Ihoey">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://oisha19l0.qnssl.com/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梦魇小栈">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梦魇小栈" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Git 常用命令学习及整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-23T10:23:21+08:00">
+                2017-04-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">我被看了</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近用Git比较多，所以大概整理下 <strong>Git是目前世界上最先进的分布式版本控制系统。</strong></p>
+<a id="more"></a>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装软件就不多说了，这个肯定都会了</p>
+<ul>
+<li>下载地址：<a class="active" href="https://git-scm.com/downloads" rel="external" target="_blank">Downloads</a></li>
+</ul>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"ihoey"</span>           <span class="comment"># 设置git用户名</span></div><div class="line">git config --global user.email <span class="string">"mail@ihoey.com"</span> <span class="comment"># 设置git邮箱</span></div><div class="line">git config --global color.ui <span class="literal">true</span>               <span class="comment"># 为true是终端着色</span></div><div class="line">git config --global alias.co checkout           <span class="comment"># 配置checkout的别名</span></div><div class="line">git config --global alias.ci commit             <span class="comment"># 配置commit的别名</span></div><div class="line">git config --global alias.st status             <span class="comment"># 配置status的别名</span></div><div class="line">git config --global alias.br branch             <span class="comment"># 配置branch的别名</span></div><div class="line">git config --global core.editor <span class="string">"mate -w"</span>       <span class="comment"># 设置Editor使用textmate</span></div><div class="line">git config -l                                   <span class="comment"># 列举所有配置</span></div><div class="line"><span class="comment">#用户的git配置文件~/.gitconfig</span></div></pre></td></tr></table></figure>
+<h2 id="SSH-秘钥"><a href="#SSH-秘钥" class="headerlink" title="SSH 秘钥"></a>SSH 秘钥</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"mail@ihoey.com"</span></div><div class="line"><span class="comment"># 连续3个回车。如果不需要密码的话。</span></div><div class="line"><span class="comment"># 最后得到了两个文件：id_rsa和id_rsa.pub，在~/.ssh/文件夹下面</span></div><div class="line"><span class="comment"># id_rsa为你的私钥，不可以告诉别人</span></div><div class="line"><span class="comment"># id_rsa.pub为你的公钥，一般会放在你的服务器做ssh登录，或者放在github上面</span></div></pre></td></tr></table></figure>
+<h2 id="GitHub-测试"><a href="#GitHub-测试" class="headerlink" title="GitHub 测试"></a>GitHub 测试</h2><p><em>ssh -T git@github.com</em> 将公钥放在<code>github</code>测试是否验证通过命令，选择 <code>yes</code> 如果看到 <code>Hi</code> 后面是你的用户名，就说明成功了。</p>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><ul>
+<li>创建<code>git</code>仓库 <code>git init</code></li>
+<li>添加文件到暂存区 <code>git add fileName</code> / <code>git add .</code></li>
+<li>提交文件到仓库 <code>git commit -m &quot;版本提交信息&quot;</code></li>
+<li>查看文件提交状态 <code>git status</code></li>
+<li>查看文件修改的信息 <code>git diff readme.txt</code></li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">help</span> &lt;<span class="built_in">command</span>&gt;          <span class="comment"># 显示command的help</span></div><div class="line">git show                    <span class="comment"># 显示某次提交的内容</span></div><div class="line">git show <span class="variable">$id</span></div><div class="line"></div><div class="line">git checkout  -- &lt;file&gt;     <span class="comment"># 抛弃工作区修改</span></div><div class="line">git checkout  .             <span class="comment"># 抛弃工作区修改</span></div><div class="line"></div><div class="line">git add &lt;file&gt;              <span class="comment"># 将工作文件修改提交到本地暂存区</span></div><div class="line">git add .                   <span class="comment"># 将所有修改过的工作文件提交暂存区</span></div><div class="line"></div><div class="line">git rm &lt;file&gt;               <span class="comment"># 从版本库中删除文件</span></div><div class="line">git rm &lt;file&gt; --cached      <span class="comment"># 从版本库中删除文件，但不删除文件</span></div><div class="line"></div><div class="line">git reset &lt;file&gt;            <span class="comment"># 从暂存区恢复到工作文件</span></div><div class="line">git reset -- .              <span class="comment"># 从暂存区恢复到工作文件</span></div><div class="line">git reset --hard            <span class="comment"># 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改</span></div><div class="line"></div><div class="line">git commit -m <span class="string">"some comments"</span></div><div class="line"></div><div class="line">git revert &lt;<span class="variable">$id</span>&gt;            <span class="comment"># 恢复某次提交的状态，恢复动作本身也创建了一次提交对象</span></div><div class="line">git revert HEAD             <span class="comment"># 恢复最后一次提交的状态</span></div></pre></td></tr></table></figure>
+<h2 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git diff &lt;file&gt;                 <span class="comment"># 比较当前文件和暂存区文件差异</span></div><div class="line">git diff</div><div class="line">git diff &lt;<span class="variable">$id1</span>&gt; &lt;<span class="variable">$id2</span>&gt;          <span class="comment"># 比较两次提交之间的差异</span></div><div class="line">git diff &lt;branch1&gt;..&lt;branch2&gt;   <span class="comment"># 在两个分支之间比较</span></div><div class="line">git diff --staged               <span class="comment"># 比较暂存区和版本库差异</span></div><div class="line">git diff --cached               <span class="comment"># 比较暂存区和版本库差异</span></div><div class="line">git diff --<span class="built_in">stat</span>                 <span class="comment"># 仅仅比较统计信息</span></div></pre></td></tr></table></figure>
+<h2 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span></div><div class="line">git <span class="built_in">log</span> &lt;file&gt;      <span class="comment"># 查看该文件每次提交记录</span></div><div class="line">git <span class="built_in">log</span> -p &lt;file&gt;   <span class="comment"># 查看每次详细修改内容的diff</span></div><div class="line">git <span class="built_in">log</span> -p -2       <span class="comment"># 查看最近两次详细修改内容的diff</span></div><div class="line">git <span class="built_in">log</span> --<span class="built_in">stat</span>      <span class="comment"># 查看提交统计信息</span></div></pre></td></tr></table></figure>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">git branch -r                           <span class="comment"># 查看远程分支</span></div><div class="line">git branch &lt;new_branch&gt;                 <span class="comment"># 创建新的分支</span></div><div class="line">git branch -v                           <span class="comment"># 查看各个分支最后提交信息</span></div><div class="line">git branch --merged                     <span class="comment"># 查看已经被合并到当前分支的分支</span></div><div class="line">git branch --no-merged                  <span class="comment"># 查看尚未被合并到当前分支的分支</span></div><div class="line"></div><div class="line">git checkout &lt;branch&gt;                   <span class="comment"># 切换到某个分支</span></div><div class="line">git checkout -b &lt;new_branch&gt;            <span class="comment"># 创建新的分支，并且切换过去</span></div><div class="line">git checkout -b &lt;new_branch&gt; &lt;branch&gt;   <span class="comment"># 基于branch创建新的new_branch</span></div><div class="line">git checkout <span class="variable">$id</span>       <span class="comment"># 把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除</span></div><div class="line">git checkout <span class="variable">$id</span> -b &lt;new_branch&gt;        <span class="comment"># 把某次历史提交记录checkout出来，创建成一个分支</span></div><div class="line">git branch -d &lt;branch&gt;                  <span class="comment"># 删除某个分支</span></div><div class="line">git branch -D &lt;branch&gt; <span class="comment"># 强制删除某个分支 (未被合并的分支被删除的时候需要强制)</span></div></pre></td></tr></table></figure>
+<h2 id="分支合并和rebase"><a href="#分支合并和rebase" class="headerlink" title="分支合并和rebase"></a>分支合并和rebase</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git merge &lt;branch&gt;               <span class="comment"># 将branch分支合并到当前分支</span></div><div class="line">git merge --no-ff &lt;branch&gt;       <span class="comment"># 不要Fast-Foward合并，这样可以生成merge提交</span></div><div class="line">git rebase master &lt;branch&gt;       <span class="comment"># 将master rebase到branch，相当于：</span></div><div class="line">git checkout &lt;branch&gt; &amp;&amp; git rebase master &amp;&amp; git checkout master &amp;&amp; git merge &lt;branch&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>在我们操作过程中。<code>merge</code>操作遇到冲突的时候，当前<code>merge</code>不能继续进行下去。手动修改冲突内容后，<code>add</code> 修改，<code>commit</code> 就可以了。</li>
+<li>而<code>rebase</code> 操作的话，会中断<code>rebase</code>,同时会提示去解决冲突。解决冲突后,将修改<code>add</code>后执行<code>git rebase –continue</code>继续操作，或者<code>git rebase –skip</code>忽略冲突。</li>
+</ul>
+<h2 id="Git暂存管理"><a href="#Git暂存管理" class="headerlink" title="Git暂存管理"></a>Git暂存管理</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git stash                        <span class="comment"># 暂存</span></div><div class="line">git stash list                   <span class="comment"># 列所有stash</span></div><div class="line">git stash apply                  <span class="comment"># 恢复暂存的内容</span></div><div class="line">git stash drop                   <span class="comment"># 删除暂存区</span></div></pre></td></tr></table></figure>
+<h2 id="远程分支管理"><a href="#远程分支管理" class="headerlink" title="远程分支管理"></a>远程分支管理</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">git pull                         <span class="comment"># 抓取远程仓库所有分支更新并合并到本地</span></div><div class="line">git pull --no-ff                 <span class="comment"># 抓取远程仓库所有分支更新并合并到本地，不要快进合并</span></div><div class="line">git fetch origin                 <span class="comment"># 抓取远程仓库更新</span></div><div class="line">git merge origin/master          <span class="comment"># 将远程主分支合并到本地当前分支</span></div><div class="line">git checkout --track origin/branch     <span class="comment"># 跟踪某个远程分支创建相应的本地分支</span></div><div class="line">git checkout -b &lt;local_branch&gt; origin/&lt;remote_branch&gt;  <span class="comment"># 基于远程分支创建本地分支，功能同上</span></div><div class="line">git push                         <span class="comment"># push所有分支</span></div><div class="line">git push origin master           <span class="comment"># 将本地主分支推到远程主分支</span></div><div class="line">git push -u origin master        <span class="comment"># 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)</span></div><div class="line">git push origin &lt;local_branch&gt;   <span class="comment"># 创建远程分支， origin是远程仓库名</span></div><div class="line">git push origin &lt;local_branch&gt;:&lt;remote_branch&gt;  <span class="comment"># 创建远程分支</span></div><div class="line">git push origin :&lt;remote_branch&gt; <span class="comment">#先删除本地分支(git br -d &lt;branch&gt;)，然后再push删除远程分支</span></div></pre></td></tr></table></figure>
+<h2 id="Git远程仓库管理"><a href="#Git远程仓库管理" class="headerlink" title="Git远程仓库管理"></a>Git远程仓库管理</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git remote -v                    <span class="comment"># 查看远程服务器地址和仓库名称</span></div><div class="line">git remote show origin           <span class="comment"># 查看远程服务器仓库状态</span></div><div class="line">git remote add origin git@github.com:ihoey/blog.git     <span class="comment"># 添加远程仓库地址</span></div><div class="line">git remote <span class="built_in">set</span>-url origin git@github.com:ihoey/blog.git <span class="comment"># 设置远程仓库地址(用于修改远程仓库地址)</span></div><div class="line">git remote rm &lt;repository&gt;       <span class="comment"># 删除远程仓库</span></div></pre></td></tr></table></figure>
+<h2 id="创建远程仓库"><a href="#创建远程仓库" class="headerlink" title="创建远程仓库"></a>创建远程仓库</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> --bare ihoey.com blog.git     <span class="comment"># 用带版本的项目创建纯版本仓库</span></div><div class="line">scp -r my_blog.git git@ihoey.com:~      <span class="comment"># 将纯仓库上传到服务器上</span></div><div class="line">mkdir blog.git &amp;&amp; <span class="built_in">cd</span> blog.git &amp;&amp; git --bare init <span class="comment"># 在服务器创建纯仓库</span></div><div class="line"></div><div class="line">git push -u origin master         <span class="comment"># 客户端首次提交</span></div><div class="line">git push -u origin develop        <span class="comment"># 首次将本地develop分支提交到远程develop分支，并且track</span></div><div class="line"></div><div class="line">git remote <span class="built_in">set</span>-head origin master <span class="comment"># 设置远程仓库的HEAD指向master分支</span></div></pre></td></tr></table></figure>
+<h2 id="设置跟踪远程库和本地库"><a href="#设置跟踪远程库和本地库" class="headerlink" title="设置跟踪远程库和本地库"></a>设置跟踪远程库和本地库</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch --<span class="built_in">set</span>-upstream master origin/master      <span class="comment">#master</span></div><div class="line">git branch --<span class="built_in">set</span>-upstream develop origin/develop    <span class="comment">#develop</span></div></pre></td></tr></table></figure>
+<h2 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mkdir XX    <span class="comment">#(创建一个空目录 XX指目录名)</span></div><div class="line"><span class="built_in">pwd</span>         <span class="comment">#显示当前目录的路径。</span></div><div class="line">cat XX      <span class="comment">#查看XX文件内容</span></div><div class="line">rm  XX      <span class="comment">#删除文件</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div style="text-align:center;color: #0f0;font-size:14px;padding: 10px 0;">
+------ 有问题请 <a href="http://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 或者私信我的 <a href="http://weibo.com/hy951121" rel="nofollow" style="text-align:center;color: #00c4ff;">微博</a> ------</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/qcode/wechat_qcode.png" alt="Ihoey WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/qcode/alipay_qcode.png" alt="Ihoey Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> Git</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/Cron/2017-04-22-Cron.html" rel="next" title="Ubuntu 使用 Cron 实现计划任务">
+                <i class="fa fa-chevron-left"></i> Ubuntu 使用 Cron 实现计划任务
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/CSS3/2017-04-28-pseudo-elements-and-pseudo-classes.html" rel="prev" title="重新认识伪类和伪元素">
+                重新认识伪类和伪元素 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+    <!-- 在需要展示评论框处插入 -->
+    <div class="cm-article" data-key=""></div>
+    <!-- </body> 标签结束前插入 -->
+    <link rel="stylesheet" href="//comment.moe/dest/static/css/plus.css">
+    <script src="//comment.moe/dest/static/js/build.js" charset="UTF-8"></script>
+    <script>
+      window.onload = function () {
+        $('#comments .cm-article').attr('data-key', window.document.location.pathname);
+        window.萌评.运转();
+      }
+    </script>
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://oisha19l0.qnssl.com/avatar.png"
+               alt="Ihoey" />
+          <p class="site-author-name" itemprop="name">Ihoey</p>
+          <p class="site-description motion-element" itemprop="description">心，若没有栖息的地方，到哪里都是流浪......</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives/index.html">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ihoey" target="_blank" title="GitHub" rel="nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/hy951121" target="_blank" title="微博" rel="nofollow">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes" target="_blank" title="QQ" rel="nofollow">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com" target="_blank" title="E-mail" rel="nofollow">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dode.top/links.html" title="梦魇|专注于分享" target="_blank">梦魇|专注于分享</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.mcling.xyz/links/" title="轻描淡写~" target="_blank">轻描淡写~</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.webmars.xyz/" title="一叶知秋" target="_blank">一叶知秋</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://blog.mythsman.com/" title="mythsman" target="_blank">mythsman</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.isthnew.com/links" title="可乐没气的猫" target="_blank">可乐没气的猫</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.bboysoul.com/" title="Bboysoul" target="_blank">Bboysoul</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-秘钥"><span class="nav-number">3.</span> <span class="nav-text">SSH 秘钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-测试"><span class="nav-number">4.</span> <span class="nav-text">GitHub 测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本命令"><span class="nav-number">5.</span> <span class="nav-text">基本命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看文件"><span class="nav-number">6.</span> <span class="nav-text">查看文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看提交记录"><span class="nav-number">7.</span> <span class="nav-text">查看提交记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支管理"><span class="nav-number">8.</span> <span class="nav-text">分支管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分支合并和rebase"><span class="nav-number">9.</span> <span class="nav-text">分支合并和rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git暂存管理"><span class="nav-number">10.</span> <span class="nav-text">Git暂存管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#远程分支管理"><span class="nav-number">11.</span> <span class="nav-text">远程分支管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git远程仓库管理"><span class="nav-number">12.</span> <span class="nav-text">Git远程仓库管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建远程仓库"><span class="nav-number">13.</span> <span class="nav-text">创建远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置跟踪远程库和本地库"><span class="nav-number">14.</span> <span class="nav-text">设置跟踪远程库和本地库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他命令"><span class="nav-number">15.</span> <span class="nav-text">其他命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+<!--         <div>
+          <p style="text-align: center;"><object type="application/x-shockwave-flash" style="outline:none;" data="https://oisha19l0.qnssl.com/hamster.swf" width="245" height="225" title="梦魇小栈"><param name="movie" value="https://oisha19l0.qnssl.com/hamster.swf"><param name="AllowScriptAccess" value="always"><param name="wmode" value="transparent"></object></p>
+        </div> -->
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-ihoey"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ihoey</span>
+</div>
+
+
+
+<div class="eevee">
+  <div class="body">
+    <div class="head">
+      <div class="ears">
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+      </div>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <div class="chest">
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+    </div>
+    <div class="legs">
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+    </div>
+    <div class="tail">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail -end"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">你是第</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>枚看到我的</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/index.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/jquery.lazyload.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

@@ -1,0 +1,1064 @@
+<!doctype html>
+
+
+
+  
+
+
+<!--
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG  By:- ihoey.com
+-->
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg" />
+
+
+
+
+
+
+
+
+<link href="https://oisha19l0.qnssl.com/eevee.css" rel="stylesheet" type="text/css" />
+
+
+  
+  
+    
+  
+  <link href="https://oisha19l0.qnssl.com/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Node,npm," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦魇小栈" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="什么是 NPMnpm 之于 Node ，就像 pip 之于 Python , gem 之于 Ruby , composer 之于 PHP 。 npm 是 Node 官方提供的包管理工具，他已经成了 Node 包的标准发布平台，用于 Node 包的发布、传播、依赖控制。npm 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。">
+<meta name="keywords" content="Node,npm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NPM 学习笔记整理">
+<meta property="og:url" content="https://blog.ihoey.com/posts/Node/2017-05-10-npm.html">
+<meta property="og:site_name" content="梦魇小栈">
+<meta property="og:description" content="什么是 NPMnpm 之于 Node ，就像 pip 之于 Python , gem 之于 Ruby , composer 之于 PHP 。 npm 是 Node 官方提供的包管理工具，他已经成了 Node 包的标准发布平台，用于 Node 包的发布、传播、依赖控制。npm 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-14T08:46:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NPM 学习笔记整理">
+<meta name="twitter:description" content="什么是 NPMnpm 之于 Node ，就像 pip 之于 Python , gem 之于 Ruby , composer 之于 PHP 。 npm 是 Node 官方提供的包管理工具，他已经成了 Node 包的标准发布平台，用于 Node 包的发布、传播、依赖控制。npm 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 'undefined',
+      author: '站长大大'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.ihoey.com/posts/Node/2017-05-10-npm.html"/>
+
+
+
+
+<script src="/js/src/set.js"></script>
+<link href="/css/cursor.css" rel="stylesheet" type="text/css" />
+
+
+  <title> NPM 学习笔记整理 | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-87991666-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199400a900d7a62bfff2335224e096d8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=59541779";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梦魇小栈</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">专注于分享</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />
+            
+            留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/index.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            Sitemap
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+<div id="hitokoto" style="
+    text-align: center;
+    padding-top: 25px;
+"></div>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Node/2017-05-10-npm.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Ihoey">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://oisha19l0.qnssl.com/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梦魇小栈">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梦魇小栈" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                NPM 学习笔记整理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-10T03:25:24+08:00">
+                2017-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node/" itemprop="url" rel="index">
+                    <span itemprop="name">Node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">我被看了</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="什么是-NPM"><a href="#什么是-NPM" class="headerlink" title="什么是 NPM"></a>什么是 NPM</h1><p><code>npm</code> 之于 <code>Node</code> ，就像 <code>pip</code> 之于 <code>Python</code> , <code>gem</code> 之于 <code>Ruby</code> , <code>composer</code> 之于 <code>PHP</code> 。</p>
+<p><code>npm</code> 是 <code>Node</code> 官方提供的包管理工具，他已经成了 <code>Node</code> 包的标准发布平台，用于 <code>Node</code> 包的发布、传播、依赖控制。<br><code>npm</code> 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。</p>
+<a id="more"></a>
+<h1 id="为什么要使用-NPM"><a href="#为什么要使用-NPM" class="headerlink" title="为什么要使用 NPM"></a>为什么要使用 NPM</h1><p><code>npm</code> 是随同 <code>Node</code> 一起安装的包管理工具，能解决 <code>Node</code> 代码部署上的很多问题，常见的场景有以下几种：</p>
+<ul>
+<li>允许用户从 <code>npm</code> 服务器下载别人编写的第三方包到本地使用。</li>
+<li>允许用户从 <code>npm</code> 服务器下载并安装别人编写的命令行程序到本地使用。</li>
+<li>允许用户将自己编写的包或命令行程序上传到 <code>npm</code> 服务器供别人使用。</li>
+</ul>
+<p><code>npm</code> 的背后，是基于 <code>CouchDB</code> 的一个数据库，详细记录了每个包的信息，包括作者、版本、依赖、授权信息等。它的一个很重要的作用就是：将开发者从繁琐的包管理工作（版本、依赖等）中解放出来，更加专注于功能的开发。</p>
+<h1 id="如何使用-NPM"><a href="#如何使用-NPM" class="headerlink" title="如何使用 NPM"></a>如何使用 NPM</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>npm</code> 不需要单独安装。在安装 <code>Node</code> 的时候，会连带一起安装 <code>npm</code> 。但是，<code>Node</code> 附带的 <code>npm</code> 可能不是最新版本，最后用下面的命令，更新到最新版本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install npm@latest -g</div></pre></td></tr></table></figure>
+<p>如果是 Window 系统使用以下命令即可：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install npm -g</div></pre></td></tr></table></figure>
+<p>也就是使用 <code>npm</code> 安装自己。之所以可以这样，是因为 <code>npm</code> 本身与 <code>Node</code> 的其他模块没有区别。</p>
+<p>然后，运行下面的命令，查看各种信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 查看 npm 命令列表</span></div><div class="line">$ npm <span class="built_in">help</span></div><div class="line"></div><div class="line"><span class="comment"># 查看各个命令的简单用法</span></div><div class="line">$ npm -l</div><div class="line"></div><div class="line"><span class="comment"># 查看 npm 的版本</span></div><div class="line">$ npm -v</div><div class="line"></div><div class="line"><span class="comment"># 查看 npm 的配置</span></div><div class="line">$ npm config list -l</div></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="npm-init"><a href="#npm-init" class="headerlink" title="npm init"></a>npm init</h3><p><code>npm init</code> 用来初始化生成一个新的 <code>package.json</code> 文件。它会向用户提问一系列问题，如果你觉得不用修改默认配置，一路回车就可以了。<br>如果使用了 <code>-f</code>（代表<code>force</code>）、<code>-y</code>（代表<code>yes</code>），则跳过提问阶段，直接生成一个新的 <code>package.json</code> 文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm init -y</div></pre></td></tr></table></figure>
+<h3 id="npm-set"><a href="#npm-set" class="headerlink" title="npm set"></a>npm set</h3><p><code>npm set</code> 用来设置环境变量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="built_in">set</span> init-author-name <span class="string">'Your name'</span></div><div class="line">$ npm <span class="built_in">set</span> init-author-email <span class="string">'Your email'</span></div><div class="line">$ npm <span class="built_in">set</span> init-author-url <span class="string">'http://yourdomain.com'</span></div><div class="line">$ npm <span class="built_in">set</span> init-license <span class="string">'MIT'</span></div></pre></td></tr></table></figure>
+<p>上面命令等于为 <code>npm init</code> 设置了默认值，以后执行 <code>npm init</code> 的时候，<code>package.json</code>的作者姓名、邮件、主页、许可证字段就会自动写入预设的值。这些信息会存放在用户主目录的 <code>~/.npmrc</code>文件，使得用户不用每个项目都输入。如果某个项目有不同的设置，可以针对该项目运行 <code>npm config</code>。</p>
+<h3 id="npm-info"><a href="#npm-info" class="headerlink" title="npm info"></a>npm info</h3><p><code>npm info</code> 命令可以查看每个模块的具体信息。比如，查看 <code>underscore</code> 模块的信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm info underscore</div></pre></td></tr></table></figure>
+<p>上面命令返回一个 <code>JavaScript</code> 对象，包含了 <code>underscore</code> 模块的详细信息。这个对象的每个成员，都可以直接从 <code>info</code> 命令查询。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm info underscore description</div><div class="line"></div><div class="line">$ npm info underscore homepage</div><div class="line"></div><div class="line">$ npm info underscore version</div></pre></td></tr></table></figure>
+<h3 id="npm-search"><a href="#npm-search" class="headerlink" title="npm search"></a>npm search</h3><p><code>npm search</code> 命令用于搜索 <code>npm</code> 仓库，它后面可以跟字符串，也可以跟正则表达式。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm search &lt;搜索词&gt;</div></pre></td></tr></table></figure>
+<h3 id="npm-list"><a href="#npm-list" class="headerlink" title="npm list"></a>npm list</h3><p><code>npm list</code> 命令以树形结构列出当前项目安装的所有模块，以及它们依赖的模块。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ npm list</div><div class="line"></div><div class="line"><span class="comment"># 加上 global 参数，会列出全局安装的模块</span></div><div class="line">$ npm list -global</div><div class="line"></div><div class="line"><span class="comment"># npm list 命令也可以列出单个模块</span></div><div class="line">$ npm list underscore</div></pre></td></tr></table></figure>
+<h3 id="npm-install"><a href="#npm-install" class="headerlink" title="npm install"></a>npm install</h3><p>使用 <code>npm</code> 安装包的命令格式为：<code>npm [install/i] [package_name]</code></p>
+<h4 id="本地模式和全局模式"><a href="#本地模式和全局模式" class="headerlink" title="本地模式和全局模式"></a>本地模式和全局模式</h4><p><code>npm</code> 在默认情况下会从 <a href="http://npmjs.org" target="_blank" rel="external">NPM</a> 搜索或下载包，将包安装到当前目录的 <code>node_modules</code> 子目录下。</p>
+<p>如果你熟悉 <code>Ruby</code> 的 <code>gem</code> 或者 <code>Python</code> 的 <code>pip</code> ，你会发现 <code>npm</code> 与它们的行为不同， <code>gem</code> 或 <code>pip</code> 总是以全局模式安装，使包可以供所有的程序使用，而 <code>npm</code> 默认会把包安装到当前目录下。这反映了 <code>npm</code> 不同的设计哲学。如果把包安装到全局，可以提供程序的重复利用程度，避免同样的内容的多分副本，但坏处是难以处理不同的版本依赖。如果把包安装到当前目录，或者说本地，则不会有不同程序依赖不同版本的包的冲突问题，同时还减轻了包作者的 <code>API</code> 兼容性压力，但缺陷则是同一个包可能会被安装许多次。</p>
+<p>我们在使用 <code>supervisor</code> 的时候使用了 <code>npm install -g supervisor</code> 命令，就是以全局模式安装 <code>supervisor</code> 。</p>
+<p>这里注意一点的就是， <code>supervisor</code> 必须安装到全局，如果你不安装到全局，错误命令会提示你安装到全局。如果不想安装到默认的全局，也可以自己修改全局路径到当前路径 <code>npm config set prefix &quot;路径&quot;</code> 安装完以后就可以用 <code>supervisor</code> 来启动服务了。<br><code>supervisor</code> 可以帮助你实现这个功能，它会监视你对代码的驱动，并自动重启 <code>Node</code> 。</p>
+<p>一般来说，全局安装只适用于工具模块，比如 <code>eslint</code> 和 <code>gulp</code> 。关于使用全局模式，多数时候并不是因为许多程序都有可能用到了它，为了减少多重副本而使用全局模式，而是因为 <strong>本地模式不会注册 <code>PATH</code> 环境变量</strong>。<br>“本地安装”指的是将一个模块下载到当前项目的 <code>node_modules</code> 子目录，然后只有在项目目录之中，才能调用这个模块。</p>
+<p>本地模式和全局模式的特点如下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">模式</th>
+<th style="text-align:center">可通过 require 使用</th>
+<th style="text-align:center">注册 PATH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">本地模式</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">全局模式</td>
+<td style="text-align:center">否</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 本地安装</span></div><div class="line">$ npm install &lt;package name&gt;</div><div class="line"></div><div class="line"><span class="comment"># 全局安装</span></div><div class="line">$ sudo npm install -global &lt;package name&gt;</div><div class="line">$ sudo npm install -g &lt;package name&gt;</div></pre></td></tr></table></figure>
+<p><code>npm install</code> 也支持直接输入 <code>Github</code> 代码库地址。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install git://github.com/package/path.git</div><div class="line">$ npm install git://github.com/package/path.git<span class="comment">#0.1.0</span></div></pre></td></tr></table></figure>
+<p>安装之前，<code>npm install</code> 会先检查，<code>node_modules</code> 目录之中是否已经存在指定模块。如果存在，就不再重新安装了，即使远程仓库已经有了一个新版本，也是如此。</p>
+<p>如果你希望，一个模块不管是否安装过， <code>npm</code> 都要强制重新安装，可以使用 <code>-f</code> 或 <code>--force</code> 参数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install &lt;packageName&gt; --force</div></pre></td></tr></table></figure>
+<h4 id="安装不同版本"><a href="#安装不同版本" class="headerlink" title="安装不同版本"></a>安装不同版本</h4><p><code>install</code> 命令总是安装模块的最新版本，如果要安装模块的特定版本，可以在模块名后面加上 <code>@</code> 和版本号。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ npm install sax@latest</div><div class="line">$ npm install sax@0.1.1</div><div class="line">$ npm install sax@<span class="string">"&gt;=0.1.0 &lt;0.2.0"</span></div></pre></td></tr></table></figure>
+<p><code>install</code> 命令可以使用不同参数，指定所安装的模块属于哪一种性质的依赖关系，即出现在 <code>packages.json</code> 文件的哪一项中。</p>
+<blockquote>
+<p>–save：模块名将被添加到 dependencies，可以简化为参数-S。<br>–save-dev：模块名将被添加到 devDependencies，可以简化为参数-D。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install sax --save</div><div class="line">$ npm install node-tap --save-dev</div><div class="line"><span class="comment"># 或者</span></div><div class="line">$ npm install sax -S</div><div class="line">$ npm install node-tap -D</div></pre></td></tr></table></figure>
+<h5 id="dependencies-依赖"><a href="#dependencies-依赖" class="headerlink" title="dependencies 依赖"></a>dependencies 依赖</h5><p>这个可以说是我们 <code>npm</code> 核心一项内容，依赖管理，这个对象里面的内容就是我们这个项目所依赖的 <code>js</code> 模块包。下面这段代码表示我们依赖了 <code>markdown-it</code> 这个包，版本是 <code>^8.1.0</code> ，代表最小依赖版本是 <code>8.1.0</code> ，如果这个包有更新，那么当我们使用 <code>npm install</code> 命令的时候， <code>npm</code> 会帮我们下载最新的包。当别人引用我们这个包的时候，包内的依赖包也会被下载下来。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"markdown-it"</span>: <span class="string">"^8.1.0"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="devDependencies-开发依赖"><a href="#devDependencies-开发依赖" class="headerlink" title="devDependencies 开发依赖"></a>devDependencies 开发依赖</h5><p>在我们开发的时候会用到的一些包，只是在开发环境中需要用到，但是在别人引用我们包的时候，不会用到这些内容，放在 <code>devDependencies</code> 的包，在别人引用的时候不会被 <code>npm</code> 下载。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"autoprefixer"</span>: <span class="string">"^6.4.0"</span>,</div><div class="line">    <span class="string">"babel-preset-es2015"</span>: <span class="string">"^6.0.0"</span>,</div><div class="line">    <span class="string">"babel-preset-stage-2"</span>: <span class="string">"^6.0.0"</span>,</div><div class="line">    <span class="string">"babel-register"</span>: <span class="string">"^6.0.0"</span>,</div><div class="line">    <span class="string">"webpack"</span>: <span class="string">"^1.13.2"</span>,</div><div class="line">    <span class="string">"webpack-dev-middleware"</span>: <span class="string">"^1.8.3"</span>,</div><div class="line">    <span class="string">"webpack-hot-middleware"</span>: <span class="string">"^2.12.2"</span>,</div><div class="line">    <span class="string">"webpack-merge"</span>: <span class="string">"^0.14.1"</span>,</div><div class="line">    <span class="string">"highlightjs"</span>: <span class="string">"^9.8.0"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>当你有了一个完整的 <code>package.json</code>文件的时候，就可以让人一眼看出来，这个模块的基本信息，和这个模块所需要依赖的包。我们可以通过 <code>npm install</code> 就可以很方便的下载好这个模块所需要的包。</p>
+<p><code>npm install</code> 默认会安装 <code>dependencies</code> 字段和 <code>devDependencies</code> 字段中的所有模块，如果使用 <code>--production</code> 参数，可以只安装 <code>dependencies</code> 字段的模块。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ npm install --production</div><div class="line"><span class="comment"># 或者</span></div><div class="line">$ NODE_ENV=production npm install</div></pre></td></tr></table></figure>
+<p>一旦安装了某个模块，就可以在代码中用 <code>require</code> 命令加载这个模块。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> backbone = <span class="built_in">require</span>(<span class="string">'backbone'</span>)</div><div class="line"><span class="built_in">console</span>.log(backbone.VERSION)</div></pre></td></tr></table></figure>
+<h3 id="npm-run"><a href="#npm-run" class="headerlink" title="npm run"></a>npm run</h3><p><code>npm</code> 不仅可以用于模块管理，还可以用于执行脚本。<code>package.json</code> 文件有一个 <code>scripts</code> 字段，可以用于指定脚本命令，供 <code>npm</code> 直接调用。<br><code>package.json</code> 文件内容：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"myproject"</span>,</div><div class="line">  <span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"jshint"</span>: <span class="string">"latest"</span>,</div><div class="line">    <span class="string">"browserify"</span>: <span class="string">"latest"</span>,</div><div class="line">    <span class="string">"mocha"</span>: <span class="string">"latest"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"lint"</span>: <span class="string">"jshint **.js"</span>,</div><div class="line">    <span class="string">"test"</span>: <span class="string">"mocha test/"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="scripts-脚本"><a href="#scripts-脚本" class="headerlink" title="scripts 脚本"></a>scripts 脚本</h4><p>顾名思义，就是一些脚本代码，可以通过 <code>npm run script-key</code> 来调用，例如在这个 <code>package.json</code> 的文件夹下使用 <code>npm run dev</code> 就相当于运行了 <code>node build/dev-server.js</code> 这一段代码。使用 <code>scripts</code> 的目的就是为了把一些要执行的代码合并到一起，使用 npm run 来快速的运行，方便省事。<br><code>npm run</code> 是 <code>npm run-script</code> 的缩写，一般都使用前者，但是后者可以更好的反应这个命令的本质。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 脚本</span></div><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"dev"</span>: <span class="string">"node build/dev-server.js"</span>,</div><div class="line">    <span class="string">"build"</span>: <span class="string">"node build/build.js"</span>,</div><div class="line">    <span class="string">"docs"</span>: <span class="string">"node build/docs.js"</span>,</div><div class="line">    <span class="string">"build-docs"</span>: <span class="string">"npm run docs &amp; git checkout gh-pages &amp; xcopy /sy dist\\* . &amp; git add . &amp; git commit -m 'auto-pages' &amp; git push &amp; git checkout master"</span>,</div><div class="line">    <span class="string">"build-publish"</span>: <span class="string">"rmdir /S /Q lib &amp; npm run build &amp;git add . &amp; git commit -m auto-build &amp; npm version patch &amp; npm publish &amp; git push"</span>,</div><div class="line">    <span class="string">"lint"</span>: <span class="string">"eslint --ext .js,.vue src"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>npm run</code> 如果不加任何参数，直接运行，会列出 <code>package.json</code> 里面所有可以执行的脚本命令。<br><code>npm</code> 内置了两个命令简写， <code>npm test</code> 等同于执行 <code>npm run test</code> ，<code>npm start</code> 等同于执行 <code>npm run start</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"build"</span>: <span class="string">"npm run build-js &amp;&amp; npm run build-css"</span></div></pre></td></tr></table></figure>
+<p>上面的写法是先运行 <code>npm run build-js</code> ，然后再运行 <code>npm run build-css</code> ，两个命令中间用 <code>&amp;&amp;</code> 连接。如果希望两个命令同时平行执行，它们中间可以用 <code>&amp;</code> 连接。</p>
+<p>写在 <code>scripts</code> 属性中的命令，也可以在 <code>node_modules/.bin</code> 目录中直接写成 <code>bash</code> 脚本。下面是一个 <code>bash</code> 脚本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"></div><div class="line"><span class="built_in">cd</span> site/main</div><div class="line">browserify browser/main.js | uglifyjs -mc &gt; static/bundle.js</div></pre></td></tr></table></figure>
+<p>假定上面的脚本文件名为 <code>build.sh</code> ，并且权限为可执行，就可以在 <code>scripts</code> 属性中引用该文件。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"build-js"</span>: <span class="string">"bin/build.sh"</span></div></pre></td></tr></table></figure>
+<h3 id="pre-和-post-脚本"><a href="#pre-和-post-脚本" class="headerlink" title="pre- 和 post- 脚本"></a>pre- 和 post- 脚本</h3><p><code>npm run</code> 为每条命令提供了 <code>pre-</code> 和 <code>post-</code> 两个钩子（ <code>hook</code> ）。以 <code>npm run lint</code> 为例，执行这条命令之前， <code>npm</code> 会先查看有没有定义 <code>prelint</code> 和 <code>postlint</code> 两个钩子，如果有的话，就会先执行 <code>npm run prelint</code> ，然后执行 <code>npm run lint</code> ，最后执行 <code>npm run postlint</code> 。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"myproject"</span>,</div><div class="line">  <span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"eslint"</span>: <span class="string">"latest"</span></div><div class="line">    <span class="string">"karma"</span>: <span class="string">"latest"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"lint"</span>: <span class="string">"eslint --cache --ext .js --ext .jsx src"</span>,</div><div class="line">    <span class="string">"test"</span>: <span class="string">"karma start --log-leve=error karma.config.js --single-run=true"</span>,</div><div class="line">    <span class="string">"pretest"</span>: <span class="string">"npm run lint"</span>,</div><div class="line">    <span class="string">"posttest"</span>: <span class="string">"echo 'Finished running tests'"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面代码是一个 <code>package.json</code> 文件的例子。如果执行 <code>npm test</code>，会按下面的顺序执行相应的命令。</p>
+<ol>
+<li><code>pretest</code></li>
+<li><code>test</code></li>
+<li><code>posttest</code></li>
+</ol>
+<p>如果执行过程出错，就不会执行排在后面的脚本，即如果 <code>prelint</code> 脚本执行出错，就不会接着执行 <code>lint</code> 和 <code>postlint</code> 脚本。</p>
+<h3 id="npm-bin"><a href="#npm-bin" class="headerlink" title="npm bin"></a>npm bin</h3><p><code>npm bin</code> 命令显示相对于当前目录的，<code>Node</code> 模块的可执行脚本所在的目录（即 <code>.bin</code> 目录）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 项目根目录下执行</span></div><div class="line">$ npm bin</div><div class="line">./node_modules/.bin</div></pre></td></tr></table></figure>
+<h1 id="创建全局链接"><a href="#创建全局链接" class="headerlink" title="创建全局链接"></a>创建全局链接</h1><p><code>npm</code> 提供了一个有趣的命令 <code>npm link</code>，它的功能是在本地包和全局包之间创建符号链接。我们说过使用全局模式安装的包不能直接通过 <code>require</code> 使用。但通过 <code>npm link</code> 命令可以打破这一限制。举个例子，我们已经通过 <code>npm install -g express</code> 安装了 <code>express</code> ，这时在工程的目录下运行命令：<code>npm link express ./node_modules/express -&gt; /user/local/lib/node_modules/express</code><br>我们可以在 <code>node_modules</code> 子目录中发现一个指向安装到全局的包的符号链接。通过这种方法，我们就可以把全局包当做本地包来使用了。<br>除了将全局的包链接到本地以外，使用 <code>npm link</code> 命令还可以将本地的包链接到全局。使用方法是在包目录（<code>package.json</code> 所在目录）中运行 <code>npm link</code> 命令。如果我们要开发一个包，利用这种方法可以非常方便地在不同的工程间进行测试。</p>
+<h1 id="创建包"><a href="#创建包" class="headerlink" title="创建包"></a>创建包</h1><p>包是在模块基础上更深一步的抽象，<code>Node</code> 的包类似于 <code>C/C++</code> 的函数库或者 <code>Java</code> 、<code>.Net</code> 的类库。它将某个独立的功能封装起来，用于发布、更新、依赖管理和版本控制。<code>Node</code> 根据 <code>CommonJS</code> 规范实现了包机制，开发了 <code>npm</code> 来解决包的发布和获取需求。<br><code>Node</code> 的包是一个目录，其中包含了一个 <code>JSON</code> 格式的包说明文件 <code>package.json</code>。严格符合 <code>CommonJS</code> 规范的包应该具备以下特征：</p>
+<ul>
+<li><code>package.json</code> 必须在包的顶层目录下；</li>
+<li>二进制文件应该在 <code>bin</code> 目录下；</li>
+<li><code>JavaScript</code> 代码应该在 <code>lib</code> 目录下；</li>
+<li>文档应该在 <code>doc</code> 目录下；</li>
+<li>单元测试应该在 <code>test</code> 目录下。</li>
+</ul>
+<p><code>Node</code> 对包的要求并没有这么严格，只要顶层目录下有 <code>package.json</code>，并符合一些规范即可。当然为了提高兼容性，我们还是建议你在制作包的时候，严格遵守 <code>CommonJS</code> 规范。</p>
+<p>我们也可以把文件夹封装为一个模块，即所谓的包。包通常是一些模块的集合，在模块的基础上提供了更高层的抽象，相当于提供了一些固定接口的函数库。通过定制 <code>package.json</code>，我们可以创建更复杂，更完善，更符合规范的包用于发布。</p>
+<p><code>Node</code> 在调用某个包时，会首先检查包中 <code>packgage.json</code> 文件的 <code>main</code> 字段，将其作为包的接口模块，如果 <code>package.json</code> 或 <code>main</code> 字段不存在，会尝试寻找 index.js 或 index.node 作为包的接口。</p>
+<p><code>package.json</code> 是 <code>CommonJS</code> 规定的用来描述包的文件，完全符合规范的 <code>package.json</code> 文件应该含有以下字段：<br><span id="inline-yellow">name</span>: 包的名字，必须是唯一的，由小写英文字母、数字和下划线组成，不能包含空格。<br><span id="inline-blue">description</span>: 包的简要说明。<br><span id="inline-green">version</span>: 符合语义化版本识别规范的版本字符串。<br><span id="inline-red">keywords</span>: 关键字数组，通常用于搜索。<br><span id="inline-purple">maintainers</span>: 维护者数组，每个元素要包含 <code>name</code> 、 <code>email</code>(可选)、 <code>web</code>(可选)字段。<br><span id="inline-yellow">contributors</span>: 贡献者数组，格式与 <code>maintainers</code> 相同。包的作者应该是贡献者数组的第一个元素。<br><span id="inline-blue">bugs</span>: 提交 <code>bug</code> 的地址，可以是网址或者电子邮件地址。<br><span id="inline-green">licenses</span>: 许可证数组，每个元素要包含 <code>type</code> （许可证的名称）和 url（链接到许可证文本的地址）字段。<br><span id="inline-red">repositories</span>: 仓库托管地址数组，每个元素要包含 <code>type</code> （仓库的类型，如 git）、URL（仓库的地址）和 path（相对于仓库的路径，可选）字段。<br><span id="inline-purple">dependencies</span>: 包的依赖，一个关联数组，由包名称和版本号组成。</p>
+<h1 id="包的发布"><a href="#包的发布" class="headerlink" title="包的发布"></a>包的发布</h1><p>通过使用 <code>npm init</code> 可以根据交互式回答产生一个符合标准的 <code>package.json</code>。创建一个 <code>index.js</code> 作为包的接口,一个简单的包就制作完成了。<br>在发布前,我们还需要获得一个账号用于今后维护自己的包,使用 <code>npm adduser</code> 根据提示完成账号的创建<br>完成后可以使用 <code>npm whoami</code> 检测是否已经取得了账号。<br>接下来,在 <code>package.json</code> 所在目录下运行 <code>npm publish</code>，稍等片刻就可以完成发布了，打开浏览器，访问 <a href="http://search.npmjs.org/" target="_blank" rel="external">NPM搜索</a> 就可以找到自己刚刚发布的包了。现在我们可以在世界的任意一台计算机上使用 <code>npm install neveryumodule</code> 命令来安装它。<br>如果你的包将来有更新,只需要在 <code>package.json</code> 文件中修改 <code>version</code> 字段,然后重新使用 <code>npm publish</code>命令就行了。<br>如果你对已发布的包不满意，可以使用 <code>npm unpublish</code> 命令来取消发布。</p>
+<p id="div-border-top-yellow"><em>需要说明的是： <code>json</code> 文件不能有注释</em><br></p>
+
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="http://javascript.ruanyifeng.com/nodejs/npm.html" target="_blank" rel="external">http://javascript.ruanyifeng.com/nodejs/npm.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div style="text-align:center;color: #0f0;font-size:14px;padding: 10px 0;">
+------ 有问题请 <a href="http://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 或者私信我的 <a href="http://weibo.com/hy951121" rel="nofollow" style="text-align:center;color: #00c4ff;">微博</a> ------</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/qcode/wechat_qcode.png" alt="Ihoey WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/qcode/alipay_qcode.png" alt="Ihoey Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Node/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> Node</a>
+          
+            <a href="/tags/npm/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> npm</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/CSS3/2017-04-28-pseudo-elements-and-pseudo-classes.html" rel="next" title="重新认识伪类和伪元素">
+                <i class="fa fa-chevron-left"></i> 重新认识伪类和伪元素
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/Linux/2017-05-26-liunx-shell.html" rel="prev" title="Linux常用命令笔记">
+                Linux常用命令笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+    <!-- 在需要展示评论框处插入 -->
+    <div class="cm-article" data-key=""></div>
+    <!-- </body> 标签结束前插入 -->
+    <link rel="stylesheet" href="//comment.moe/dest/static/css/plus.css">
+    <script src="//comment.moe/dest/static/js/build.js" charset="UTF-8"></script>
+    <script>
+      window.onload = function () {
+        $('#comments .cm-article').attr('data-key', window.document.location.pathname);
+        window.萌评.运转();
+      }
+    </script>
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://oisha19l0.qnssl.com/avatar.png"
+               alt="Ihoey" />
+          <p class="site-author-name" itemprop="name">Ihoey</p>
+          <p class="site-description motion-element" itemprop="description">心，若没有栖息的地方，到哪里都是流浪......</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives/index.html">
+              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/ihoey" target="_blank" title="GitHub" rel="nofollow">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/hy951121" target="_blank" title="微博" rel="nofollow">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes" target="_blank" title="QQ" rel="nofollow">
+                  
+                    <i class="fa fa-fw fa-qq"></i>
+                  
+                  QQ
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com" target="_blank" title="E-mail" rel="nofollow">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                  E-mail
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.dode.top/links.html" title="梦魇|专注于分享" target="_blank">梦魇|专注于分享</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.mcling.xyz/links/" title="轻描淡写~" target="_blank">轻描淡写~</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.webmars.xyz/" title="一叶知秋" target="_blank">一叶知秋</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://blog.mythsman.com/" title="mythsman" target="_blank">mythsman</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.isthnew.com/links" title="可乐没气的猫" target="_blank">可乐没气的猫</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.bboysoul.com/" title="Bboysoul" target="_blank">Bboysoul</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-NPM"><span class="nav-number">1.</span> <span class="nav-text">什么是 NPM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么要使用-NPM"><span class="nav-number">2.</span> <span class="nav-text">为什么要使用 NPM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何使用-NPM"><span class="nav-number">3.</span> <span class="nav-text">如何使用 NPM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-init"><span class="nav-number">3.2.1.</span> <span class="nav-text">npm init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-set"><span class="nav-number">3.2.2.</span> <span class="nav-text">npm set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-info"><span class="nav-number">3.2.3.</span> <span class="nav-text">npm info</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-search"><span class="nav-number">3.2.4.</span> <span class="nav-text">npm search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-list"><span class="nav-number">3.2.5.</span> <span class="nav-text">npm list</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-install"><span class="nav-number">3.2.6.</span> <span class="nav-text">npm install</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#本地模式和全局模式"><span class="nav-number">3.2.6.1.</span> <span class="nav-text">本地模式和全局模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装不同版本"><span class="nav-number">3.2.6.2.</span> <span class="nav-text">安装不同版本</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#dependencies-依赖"><span class="nav-number">3.2.6.2.1.</span> <span class="nav-text">dependencies 依赖</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#devDependencies-开发依赖"><span class="nav-number">3.2.6.2.2.</span> <span class="nav-text">devDependencies 开发依赖</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-run"><span class="nav-number">3.2.7.</span> <span class="nav-text">npm run</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#scripts-脚本"><span class="nav-number">3.2.7.1.</span> <span class="nav-text">scripts 脚本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pre-和-post-脚本"><span class="nav-number">3.2.8.</span> <span class="nav-text">pre- 和 post- 脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-bin"><span class="nav-number">3.2.9.</span> <span class="nav-text">npm bin</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建全局链接"><span class="nav-number">4.</span> <span class="nav-text">创建全局链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建包"><span class="nav-number">5.</span> <span class="nav-text">创建包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包的发布"><span class="nav-number">6.</span> <span class="nav-text">包的发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">7.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+<!--         <div>
+          <p style="text-align: center;"><object type="application/x-shockwave-flash" style="outline:none;" data="https://oisha19l0.qnssl.com/hamster.swf" width="245" height="225" title="梦魇小栈"><param name="movie" value="https://oisha19l0.qnssl.com/hamster.swf"><param name="AllowScriptAccess" value="always"><param name="wmode" value="transparent"></object></p>
+        </div> -->
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-ihoey"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ihoey</span>
+</div>
+
+
+
+<div class="eevee">
+  <div class="body">
+    <div class="head">
+      <div class="ears">
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+      </div>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <div class="chest">
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+    </div>
+    <div class="legs">
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+    </div>
+    <div class="tail">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail -end"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user">你是第</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>枚看到我的</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye">访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/index.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/fastclick.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/jquery.lazyload.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/velocity.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/velocity.ui.min.js"></script>
+
+  
+  <script type="text/javascript" src="https://oisha19l0.qnssl.com/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
