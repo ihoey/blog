@@ -120,4 +120,21 @@ describe('striptags', function() {
 
         assert.equal(striptags(html, allowedTags), text);
     });
+
+    it('should strip the tag\'s properties and attributes', function() {
+        var html = '<a href="http://google.com" title="foo" data-id="0">Click here</a>',
+            allowedTags = [],
+            text = 'Click here';
+
+        assert.equal(striptags(html, allowedTags), text);
+    });
+
+    it('should replace with the tagReplacement parameter', function() {
+        var html = 'Line One<br>Line Two',
+            allowedTags = [],
+            tagReplacement = '\n',
+            text = 'Line One\nLine Two';
+
+        assert.equal(striptags(html, allowedTags, tagReplacement), text);
+    });
 });

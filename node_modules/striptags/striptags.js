@@ -14,6 +14,7 @@
         root.striptags = factory();
   }
 }(this, function () {
+
     var STATE_OUTPUT       = 0,
         STATE_HTML         = 1,
         STATE_PRE_COMMENT  = 2,
@@ -21,7 +22,7 @@
         WHITESPACE         = /\s/,
         ALLOWED_TAGS_REGEX = /<(\w*)>/g;
 
-    function striptags(html, allowableTags) {
+    function striptags(html, allowableTags, tagReplacement) {
         var html = html || '',
             state = STATE_OUTPUT,
             depth = 0,
@@ -225,6 +226,8 @@
 
             if (allowableTags.indexOf(normalized) !== -1) {
                 output += tagBuffer;
+            } else if (tagReplacement) {
+                output += tagReplacement;
             }
 
             tagBuffer = '';
