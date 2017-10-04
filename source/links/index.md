@@ -18,6 +18,7 @@ date: 2016-11-10 20:36:20
 - [https://gao4.pw/](https://gao4.pw/友情链接)  -  沫雨
 - [http://www.ad-s.cn/](http://www.ad-s.cn/)  -  冰封博客
 - [可乐没气的猫](https://www.isthnew.com/links/)  -  热爱科技，热爱生活，分享思维，吐槽不平
+- [萌小喵](http://blog.awumiao.cn/)  -  念念不忘，必有回响
 
 ***
 
