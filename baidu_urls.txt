@@ -1,5 +1,5 @@
+https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html
+https://blog.ihoey.com/posts/uncategorized/2017-11-21-Mac-OS-X-command-line-tool.html
 https://blog.ihoey.com/posts/Linux/2017-07-06-comment_ru_he_xuan_ze.html
 https://blog.ihoey.com/posts/javascript/2017-07-03-A_re-introduction_to_JavaScript.html
 https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html
-https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html
-https://blog.ihoey.com/posts/Node/2017-05-10-npm.html

@@ -345,6 +345,276 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Ihoey">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://oisha19l0.qnssl.com/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梦魇小栈">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梦魇小栈" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/posts/Node/2017-11-24-npm-version.html" itemprop="url">
+                  笔记：NPM版本号自增，自动化发布NPM包
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-24T19:08:43+08:00">
+                2017-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Node/" itemprop="url" rel="index">
+                    <span itemprop="name">Node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="提升一个包的版本号"><a href="#提升一个包的版本号" class="headerlink" title="提升一个包的版本号"></a>提升一个包的版本号</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm version [&lt;newversion&gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]</div></pre></td></tr></table></figure>
+<p><code>Description</code> 在一个包的目录下执行此命令，会提升版本号，并把这个新的版本号写进<code>package.json</code>文件，如果存在<code>npm-shrinkwrap.json</code>，也会写进去。<br>参数 <code>newversion</code> 应该是一个有效的semver字符串, 或者是<code>pathch</code>, <code>minor</code>, <code>major</code>等,<code>semver.inc</code>中定义的任意一个有效的。<br><code>major</code>： 版本号中第一段数字自增1 <code>minor</code>: 版本号中第一段数字自增1 <code>patch</code>: 版本号中第三段数字自增1<br>如果<code>package.json</code>中的<code>scripts</code>包含<code>version</code>,<code>preversion</code>,<code>postversion</code>，他们将作为<code>npm version</code>的一部分被执行。</p>
+<p>可以将此放入到npm script流中，自动化构建！</p>
+<h2 id="npm-不常用的命令"><a href="#npm-不常用的命令" class="headerlink" title="npm 不常用的命令"></a>npm 不常用的命令</h2><p><code>npm view</code> 包名 <code>version</code> 相看某个包的最新版本号<br><code>npm ls</code> 列出当前安装的所有包<br><code>npm root</code> 查看当前包的安装路径<br><code>npm root -g</code> 查看全局包的安装路径<br><code>npm config ls</code> 查看 <code>npm</code> 当前配置</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/uncategorized/2017-11-21-Mac-OS-X-command-line-tool.html">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Ihoey">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://oisha19l0.qnssl.com/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="梦魇小栈">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="梦魇小栈" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/posts/uncategorized/2017-11-21-Mac-OS-X-command-line-tool.html" itemprop="url">
+                  不可不知的Mac OS X专用命令行工具(持续更新中)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-21T13:45:05+08:00">
+                2017-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>OS X</code> 的终端下通用很多 <code>Unix</code> 的工具和脚本。如果从 <code>Linux</code> 迁移到 <code>OS X</code> 会发现很多熟悉的命令和脚本工具，其实并没有任何区别。</p>
+<p>但是 <code>OS X</code> 也提供了很多其他系统所没有的特别的命令行工具。我们推荐 <code>8</code> 个这类的工具，希望有助于提高在 <code>Mac</code> 的命令行环境下的效率。</p>
+<h1 id="open"><a href="#open" class="headerlink" title="open"></a>open</h1><p><code>open</code> 命令用于打开文件、目录或执行程序。就等同于在命令行模式下，重复图形界面“双击”的动作。例如这个命令与在 <code>Finder</code> 中双击 <code>Safari</code> 是一样的：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`open /Applications/Safari.app/`</div></pre></td></tr></table></figure>
+<p>如果 <code>open</code> 一个文件，则会使用关联的程序打开之。例如 <code>open screenshot.png</code> 会在 <code>Preview</code> 中查看图片。</p>
+<p>可以使用 <code>-a</code> 选项要求自行选择打开的程序，或使用 <code>-e</code> 强制在 <code>TextEdit</code> 中编辑此文件。</p>
+<p><code>open</code> 一个目录会在 <code>Finder</code> 窗口中打开此目录。一个很有用的技巧是 <code>open .</code> 打开当前目录。</p>
+<p><code>Finder</code> 和终端的交互是双向的——把文件从 <code>Finder</code> 中拖入终端，就等同于把文件的完整路径粘贴到命令行中。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Linux/2017-07-06-comment_ru_he_xuan_ze.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -765,298 +1035,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Ihoey">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="https://oisha19l0.qnssl.com/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="梦魇小栈">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="梦魇小栈" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/posts/Linux/2017-05-26-liunx-shell.html" itemprop="url">
-                  Linux常用命令笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-26T21:49:04+08:00">
-                2017-05-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>记录使用到的 <code>Linux</code> 命令!</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/posts/Linux/2017-05-26-liunx-shell.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Node/2017-05-10-npm.html">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Ihoey">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="https://oisha19l0.qnssl.com/avatar.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="梦魇小栈">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="梦魇小栈" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/posts/Node/2017-05-10-npm.html" itemprop="url">
-                  NPM 学习笔记整理
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-10T03:25:24+08:00">
-                2017-05-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Node/" itemprop="url" rel="index">
-                    <span itemprop="name">Node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="什么是-NPM"><a href="#什么是-NPM" class="headerlink" title="什么是 NPM"></a>什么是 NPM</h1><p><code>npm</code> 之于 <code>Node</code> ，就像 <code>pip</code> 之于 <code>Python</code> , <code>gem</code> 之于 <code>Ruby</code> , <code>composer</code> 之于 <code>PHP</code> 。</p>
-<p><code>npm</code> 是 <code>Node</code> 官方提供的包管理工具，他已经成了 <code>Node</code> 包的标准发布平台，用于 <code>Node</code> 包的发布、传播、依赖控制。<br><code>npm</code> 提供了命令行工具，使你可以方便地下载、安装、升级、删除包，也可以让你作为开发者发布并维护包。</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/posts/Node/2017-05-10-npm.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1097,7 +1080,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives/index.html">
-              <span class="site-state-item-count">39</span>
+              <span class="site-state-item-count">41</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
