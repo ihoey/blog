@@ -2,10 +2,12 @@
 var _exec = require('child_process').exec;
 
 hexo.on('new', function(data){
+	console.log('subl ' + data.path);
 // both ways work
 //_exec('"D:\\Program Files\\Sublime Text 3\\sublime_text.exe" ' + data.path);
 // _exec('start "" "D:\\Program Files (x86)\\Microsoft VS Code\\Code.exe" ' + data.path);
-_exec('start "" "D:\\Program Files\\sublime\\sublime_text.exe" ' + data.path);
+// _exec('start "" "D:\\Program Files\\sublime\\sublime_text.exe" ' + data.path);
+_exec('subl ' + data.path);
 });
 
 //监听 当deploy完成后执行备份
