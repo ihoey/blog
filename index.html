@@ -440,13 +440,15 @@
 
       
         
-          
-            <h1 id="提升一个包的版本号"><a href="#提升一个包的版本号" class="headerlink" title="提升一个包的版本号"></a>提升一个包的版本号</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm version [&lt;newversion&gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]</div></pre></td></tr></table></figure>
-<p><code>Description</code> 在一个包的目录下执行此命令，会提升版本号，并把这个新的版本号写进<code>package.json</code>文件，如果存在<code>npm-shrinkwrap.json</code>，也会写进去。<br>参数 <code>newversion</code> 应该是一个有效的semver字符串, 或者是<code>pathch</code>, <code>minor</code>, <code>major</code>等,<code>semver.inc</code>中定义的任意一个有效的。<br><code>major</code>： 版本号中第一段数字自增1 <code>minor</code>: 版本号中第一段数字自增1 <code>patch</code>: 版本号中第三段数字自增1<br>如果<code>package.json</code>中的<code>scripts</code>包含<code>version</code>,<code>preversion</code>,<code>postversion</code>，他们将作为<code>npm version</code>的一部分被执行。</p>
-<p>可以将此放入到npm script流中，自动化构建！</p>
-<h2 id="npm-不常用的命令"><a href="#npm-不常用的命令" class="headerlink" title="npm 不常用的命令"></a>npm 不常用的命令</h2><p><code>npm view</code> 包名 <code>version</code> 相看某个包的最新版本号<br><code>npm ls</code> 列出当前安装的所有包<br><code>npm root</code> 查看当前包的安装路径<br><code>npm root -g</code> 查看全局包的安装路径<br><code>npm config ls</code> 查看 <code>npm</code> 当前配置</p>
-
-          
+          <h1 id="提升一个包的版本号"><a href="#提升一个包的版本号" class="headerlink" title="提升一个包的版本号"></a>提升一个包的版本号</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm version [&lt;newversion&gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]</div></pre></td></tr></table></figure>
+<p><code>Description</code> 在一个包的目录下执行此命令，会提升版本号，并把这个新的版本号写进<code>package.json</code>文件，如果存在<code>npm-shrinkwrap.json</code>，也会写进去。</p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/posts/Node/2017-11-24-npm-version.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -564,17 +566,15 @@
 
       
         
-          
-            <p><code>OS X</code> 的终端下通用很多 <code>Unix</code> 的工具和脚本。如果从 <code>Linux</code> 迁移到 <code>OS X</code> 会发现很多熟悉的命令和脚本工具，其实并没有任何区别。</p>
+          <p><code>OS X</code> 的终端下通用很多 <code>Unix</code> 的工具和脚本。如果从 <code>Linux</code> 迁移到 <code>OS X</code> 会发现很多熟悉的命令和脚本工具，其实并没有任何区别。</p>
 <p>但是 <code>OS X</code> 也提供了很多其他系统所没有的特别的命令行工具。我们推荐 <code>8</code> 个这类的工具，希望有助于提高在 <code>Mac</code> 的命令行环境下的效率。</p>
-<h1 id="open"><a href="#open" class="headerlink" title="open"></a>open</h1><p><code>open</code> 命令用于打开文件、目录或执行程序。就等同于在命令行模式下，重复图形界面“双击”的动作。例如这个命令与在 <code>Finder</code> 中双击 <code>Safari</code> 是一样的：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`open /Applications/Safari.app/`</div></pre></td></tr></table></figure>
-<p>如果 <code>open</code> 一个文件，则会使用关联的程序打开之。例如 <code>open screenshot.png</code> 会在 <code>Preview</code> 中查看图片。</p>
-<p>可以使用 <code>-a</code> 选项要求自行选择打开的程序，或使用 <code>-e</code> 强制在 <code>TextEdit</code> 中编辑此文件。</p>
-<p><code>open</code> 一个目录会在 <code>Finder</code> 窗口中打开此目录。一个很有用的技巧是 <code>open .</code> 打开当前目录。</p>
-<p><code>Finder</code> 和终端的交互是双向的——把文件从 <code>Finder</code> 中拖入终端，就等同于把文件的完整路径粘贴到命令行中。</p>
-
-          
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/posts/uncategorized/2017-11-21-Mac-OS-X-command-line-tool.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
