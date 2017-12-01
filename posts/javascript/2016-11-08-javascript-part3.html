@@ -473,21 +473,21 @@
 <li>如果没有，就去原型中查找，如果找到了就直接使用</li>
 <li>如果没有找到，就去原型的原型中查找，以此往复，直到找到 <code>null</code></li>
 </ol>
-<h3 id="Array-prototype-是一个空数组"><a href="#Array-prototype-是一个空数组" class="headerlink" title="Array.prototype 是一个空数组"></a><code>Array.prototype</code> 是一个空数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//arr----&gt;Array.prototype-----&gt;Object.Prototype-----&gt;null</span></div><div class="line"><span class="keyword">var</span> arr = [];</div></pre></td></tr></table></figure>
-<h2 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a><code>instanceof</code> 关键字</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">对象  <span class="keyword">instanceof</span> 构造函数</div><div class="line"><span class="comment">//返回值为boolean类型</span></div><div class="line"><span class="comment">//功能： 判断构造函数的原型是不是在该对象的原型链上</span></div></pre></td></tr></table></figure>
+<h3 id="Array-prototype-是一个空数组"><a href="#Array-prototype-是一个空数组" class="headerlink" title="Array.prototype 是一个空数组"></a><code>Array.prototype</code> 是一个空数组</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//arr----&gt;Array.prototype-----&gt;Object.Prototype-----&gt;null</span></span><br><span class="line"><span class="keyword">var</span> arr = [];</span><br></pre></td></tr></table></figure>
+<h2 id="instanceof-关键字"><a href="#instanceof-关键字" class="headerlink" title="instanceof 关键字"></a><code>instanceof</code> 关键字</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象  <span class="keyword">instanceof</span> 构造函数</span><br><span class="line"><span class="comment">//返回值为boolean类型</span></span><br><span class="line"><span class="comment">//功能： 判断构造函数的原型是不是在该对象的原型链上</span></span><br></pre></td></tr></table></figure>
 <h2 id="Object-prototype-的成员"><a href="#Object-prototype-的成员" class="headerlink" title="Object.prototype 的成员"></a><code>Object.prototype</code> 的成员</h2><ul>
 <li><code>constructor</code> 原型中的属性指向和原型相关的构造函数</li>
 <li><code>hasOwnProperty</code></li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">对象.hasOwnProperty(属性名)</div><div class="line"><span class="comment">//返回值为boolean类型</span></div><div class="line"><span class="comment">//功能：判断属性是否存在对象本身中</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象.hasOwnProperty(属性名)</span><br><span class="line"><span class="comment">//返回值为boolean类型</span></span><br><span class="line"><span class="comment">//功能：判断属性是否存在对象本身中</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>isPrototypeOf</code></li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">对象.isPrototypeof(对象<span class="number">1</span>)</div><div class="line"><span class="comment">//返回值为boolean</span></div><div class="line"><span class="comment">//功能：判断对象是否是对象1的原型对象</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象.isPrototypeof(对象<span class="number">1</span>)</span><br><span class="line"><span class="comment">//返回值为boolean</span></span><br><span class="line"><span class="comment">//功能：判断对象是否是对象1的原型对象</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>propertyIsEnumerable</code></li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">对象.propertyIsEnumberable(属性名)</div><div class="line"><span class="comment">//返回值为boolean</span></div><div class="line"><span class="comment">//功能：判断属性是否属于对象本身并且能够被遍历（`for-in`）</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象.propertyIsEnumberable(属性名)</span><br><span class="line"><span class="comment">//返回值为boolean</span></span><br><span class="line"><span class="comment">//功能：判断属性是否属于对象本身并且能够被遍历（`for-in`）</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>toString toLocaleString</code></li>
 </ul>
@@ -497,7 +497,7 @@
 <p>  在对象参与运算的时候，会首先调用 <code>valueOf</code> 方法，如果获取到的值能够参与运算就直接使用，<br>  如果不能参与运算，就调用 <code>toString</code> 方法</p>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[]==![] <span class="literal">true</span></div><div class="line">&#123;&#125;==!&#123;&#125; <span class="literal">false</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[]==![] <span class="literal">true</span></span><br><span class="line">&#123;&#125;==!&#123;&#125; <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><p>用来创建函数的</p>
 <ul>
 <li>如果不传参数，创建出来的是空函数</li>

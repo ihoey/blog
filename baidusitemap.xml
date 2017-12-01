@@ -69,30 +69,6 @@
     
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>JQuery分析及实现part6之动画模块功能及实现</title>
-        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
-        
-        <tag>原生Js</tag>
-         
-        <tag>Js框架</tag>
-         
-        <tag>JQuery</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -117,19 +93,23 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html</loc>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>博客评论网易云跟帖评论提醒功能</title>
-        <pubTime>2017-06-22T11:00:21.000Z</pubTime>
+        <title>adb设备信息查询修改刷机等命令</title>
+        <pubTime>2016-12-22T10:51:53.000Z</pubTime>
         
-        <tag>comment</tag>
+        <tag>adb</tag>
+         
+        <tag>Android</tag>
+         
+        <tag>adb命令</tag>
          
          
            
              
-              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
+              <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
           
         </display>
     </data>
@@ -161,12 +141,32 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>Canvas知识整理part2</title>
-        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
+        <title>博客评论网易云跟帖评论提醒功能</title>
+        <pubTime>2017-06-22T11:00:21.000Z</pubTime>
+        
+        <tag>comment</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Canvas部分知识总结</title>
+        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
         
         <tag>Canvas</tag>
          
@@ -185,12 +185,32 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
+    <loc>https://blog.ihoey.com/posts/Linux/2017-07-06-comment_ru_he_xuan_ze.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>Canvas部分知识总结</title>
-        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
+        <title>继多说、网易关停之后该何去何从(网易云跟帖宣布2017年8月1日停止服务)</title>
+        <pubTime>2017-07-06T10:51:21.000Z</pubTime>
+        
+        <tag>comment</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Canvas知识整理part2</title>
+        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
         
         <tag>Canvas</tag>
          
@@ -229,19 +249,21 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Linux/2017-07-06-comment_ru_he_xuan_ze.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2017-07-03-A_re-introduction_to_JavaScript.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>继多说、网易关停之后该何去何从(网易云跟帖宣布2017年8月1日停止服务)</title>
-        <pubTime>2017-07-06T10:51:21.000Z</pubTime>
+        <title>重新介绍 JavaScript（JS全面系列教程）</title>
+        <pubTime>2017-07-03T10:51:21.000Z</pubTime>
         
-        <tag>comment</tag>
+        <tag>javascript</tag>
+         
+        <tag>Function</tag>
          
          
            
              
-              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
           
         </display>
     </data>
@@ -275,14 +297,20 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之函数</title>
-        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
+        <title>js高级与面向对象之继承</title>
+        <pubTime>2016-06-15T05:43:28.000Z</pubTime>
         
-        <tag>Function</tag>
+        <tag>javascript</tag>
+         
+        <tag>js面向对象</tag>
+         
+        <tag>继承</tag>
+         
+        <tag>继承的实现方式</tag>
          
          
            
@@ -317,66 +345,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Cron/2017-04-22-Cron.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>Ubuntu 使用 Cron 实现计划任务</title>
-        <pubTime>2017-04-21T16:21:21.000Z</pubTime>
+        <title>js高级与面向对象之函数</title>
+        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
         
-        <tag>Ubuntu</tag>
-         
-        <tag>Cron</tag>
-         
-         
-           
-             
-              <breadCrumb title="Cron" url="https://blog.ihoey.com/categories/Cron/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>js高级与面向对象之继承</title>
-        <pubTime>2016-06-15T05:43:28.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>js面向对象</tag>
-         
-        <tag>继承</tag>
-         
-        <tag>继承的实现方式</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-18-javascript-jquery-part1.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>JQuery分析及实现part1框架结构</title>
-        <pubTime>2016-11-18T10:40:35.000Z</pubTime>
-        
-        <tag>原生Js</tag>
-         
-        <tag>Js框架</tag>
-         
-        <tag>JQuery</tag>
+        <tag>Function</tag>
          
          
            
@@ -419,6 +395,30 @@
         <display>
         <title>JQuery分析及实现part3之属性模块功能及实现</title>
         <pubTime>2016-11-20T03:51:28.000Z</pubTime>
+        
+        <tag>原生Js</tag>
+         
+        <tag>Js框架</tag>
+         
+        <tag>JQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-18-javascript-jquery-part1.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>JQuery分析及实现part1框架结构</title>
+        <pubTime>2016-11-18T10:40:35.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -531,14 +531,18 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-18-javascript-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part2</title>
-        <pubTime>2016-05-18T10:29:33.000Z</pubTime>
+        <title>JQuery分析及实现part6之动画模块功能及实现</title>
+        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
         
-        <tag>javascript</tag>
+        <tag>原生Js</tag>
+         
+        <tag>Js框架</tag>
+         
+        <tag>JQuery</tag>
          
          
            
@@ -551,12 +555,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-08-javascript-part1.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-18-javascript-part2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part1</title>
-        <pubTime>2016-05-08T09:31:48.000Z</pubTime>
+        <title>JavaScript高级篇之part2</title>
+        <pubTime>2016-05-18T10:29:33.000Z</pubTime>
         
         <tag>javascript</tag>
          
@@ -651,26 +655,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>js高级与面向对象之原型链</title>
-        <pubTime>2016-07-09T11:41:47.000Z</pubTime>
-        
-        <tag>原型链</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -695,14 +679,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-12-javascript-summary.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇总结</title>
-        <pubTime>2016-11-12T11:04:31.000Z</pubTime>
+        <title>js高级与面向对象之原型链</title>
+        <pubTime>2016-07-09T11:41:47.000Z</pubTime>
         
-        <tag>javascript</tag>
+        <tag>原型链</tag>
          
          
            
@@ -737,21 +721,19 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-12-javascript-summary.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>MongoDB学习笔记</title>
-        <pubTime>2017-03-27T07:07:03.000Z</pubTime>
+        <title>JavaScript高级篇总结</title>
+        <pubTime>2016-11-12T11:04:31.000Z</pubTime>
         
-        <tag>MongoDB</tag>
-         
-        <tag>NoSQL</tag>
+        <tag>javascript</tag>
          
          
            
              
-              <breadCrumb title="MongoDB" url="https://blog.ihoey.com/categories/MongoDB/"/>
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
           
         </display>
     </data>
@@ -781,87 +763,21 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2017-07-03-A_re-introduction_to_JavaScript.html</loc>
+    <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>重新介绍 JavaScript（JS全面系列教程）</title>
-        <pubTime>2017-07-03T10:51:21.000Z</pubTime>
+        <title>MongoDB学习笔记</title>
+        <pubTime>2017-03-27T07:07:03.000Z</pubTime>
         
-        <tag>javascript</tag>
+        <tag>MongoDB</tag>
          
-        <tag>Function</tag>
+        <tag>NoSQL</tag>
          
          
            
              
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/Node/2017-05-10-npm.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>NPM 学习笔记整理</title>
-        <pubTime>2017-05-09T19:25:24.000Z</pubTime>
-        
-        <tag>Node</tag>
-         
-        <tag>npm</tag>
-         
-         
-           
-             
-              <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/CSS3/2017-04-28-pseudo-elements-and-pseudo-classes.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>重新认识伪类和伪元素</title>
-        <pubTime>2017-04-28T08:35:10.000Z</pubTime>
-        
-        <tag>伪类</tag>
-         
-        <tag>伪元素</tag>
-         
-         
-           
-             
-              <breadCrumb title="CSS3" url="https://blog.ihoey.com/categories/CSS3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>工具使用篇之Markdown</title>
-        <pubTime>2016-11-27T02:35:12.000Z</pubTime>
-        
-        <tag>tools</tag>
-         
-        <tag>Markdown语法规范</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="https://blog.ihoey.com/categories/Markdown/"/>
+              <breadCrumb title="MongoDB" url="https://blog.ihoey.com/categories/MongoDB/"/>
           
         </display>
     </data>
@@ -891,6 +807,95 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/Cron/2017-04-22-Cron.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu 使用 Cron 实现计划任务</title>
+        <pubTime>2017-04-21T16:21:21.000Z</pubTime>
+        
+        <tag>Ubuntu</tag>
+         
+        <tag>Cron</tag>
+         
+         
+           
+             
+              <breadCrumb title="Cron" url="https://blog.ihoey.com/categories/Cron/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/CSS3/2017-04-28-pseudo-elements-and-pseudo-classes.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>重新认识伪类和伪元素</title>
+        <pubTime>2017-04-28T08:35:10.000Z</pubTime>
+        
+        <tag>伪类</tag>
+         
+        <tag>伪元素</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS3" url="https://blog.ihoey.com/categories/CSS3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Node/2017-05-10-npm.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>NPM 学习笔记整理</title>
+        <pubTime>2017-05-09T19:25:24.000Z</pubTime>
+        
+        <tag>Node</tag>
+         
+        <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>工具使用篇之Markdown</title>
+        <pubTime>2016-11-27T02:35:12.000Z</pubTime>
+        
+        <tag>tools</tag>
+         
+        <tag>Markdown语法规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="https://blog.ihoey.com/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -915,27 +920,22 @@
     
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-08-javascript-part1.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>adb设备信息查询修改刷机等命令</title>
-        <pubTime>2016-12-22T10:51:53.000Z</pubTime>
+        <title>JavaScript高级篇之part1</title>
+        <pubTime>2016-05-08T09:31:48.000Z</pubTime>
         
-        <tag>adb</tag>
-         
-        <tag>Android</tag>
-         
-        <tag>adb命令</tag>
+        <tag>javascript</tag>
          
          
            
              
-              <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
           
         </display>
     </data>
     </url>
 
-    
 </urlset>

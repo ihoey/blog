@@ -517,28 +517,28 @@
 <h2 id="修改设置"><a href="#修改设置" class="headerlink" title="修改设置"></a>修改设置</h2><p><strong>注：</strong>修改设置之后，运行恢复命令有可能显示仍然不太正常，可以运行 <code>adb reboot</code> 重启设备，或手动重启。</p>
 <p>修改设置的原理主要是通过 settings 命令修改 /data/data/com.android.providers.settings/databases/settings.db 里存放的设置值。</p>
 <h3 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm size 480x1024</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm size 480x1024</span><br></pre></td></tr></table></figure>
 <p>表示将分辨率修改为 480px * 1024px。</p>
 <p>恢复原分辨率命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm size reset</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm size reset</span><br></pre></td></tr></table></figure>
 <h3 id="屏幕密度"><a href="#屏幕密度" class="headerlink" title="屏幕密度"></a>屏幕密度</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm density 160</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm density 160</span><br></pre></td></tr></table></figure>
 <p>表示将屏幕密度修改为 160dpi。</p>
 <p>恢复原屏幕密度命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm density reset</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm density reset</span><br></pre></td></tr></table></figure>
 <h3 id="显示区域"><a href="#显示区域" class="headerlink" title="显示区域"></a>显示区域</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm overscan 0,0,0,200</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm overscan 0,0,0,200</span><br></pre></td></tr></table></figure>
 <p>四个数字分别表示距离左、上、右、下边缘的留白像素，以上命令表示将屏幕底部 200px 留白。</p>
 <p>恢复原显示区域命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell wm overscan reset</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm overscan reset</span><br></pre></td></tr></table></figure>
 <h3 id="关闭-USB-调试模式"><a href="#关闭-USB-调试模式" class="headerlink" title="关闭 USB 调试模式"></a>关闭 USB 调试模式</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell settings put global adb_enabled 0</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global adb_enabled 0</span><br></pre></td></tr></table></figure>
 <p>恢复：</p>
 <p>用命令恢复不了了，毕竟关闭了 USB 调试 adb 就连接不上 Android 设备了。</p>
 <p>去设备上手动恢复吧：「设置」-「开发者选项」-「Android 调试」。</p>
 <h3 id="状态栏和导航栏的显示隐藏"><a href="#状态栏和导航栏的显示隐藏" class="headerlink" title="状态栏和导航栏的显示隐藏"></a>状态栏和导航栏的显示隐藏</h3><p>本节所说的相关设置对应 Cyanogenmod 里的「扩展桌面」。</p>
 <p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell settings put global policy_control &lt;key-values&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global policy_control &lt;key-values&gt;</span><br></pre></td></tr></table></figure>
 <p><code>&lt;key-values&gt;</code> 可由如下几种键及其对应的值组成，格式为 <code>&lt;key1&gt;=&lt;value1&gt;:&lt;key2&gt;=&lt;value2&gt;</code>。</p>
 <table>
 <thead>
@@ -594,14 +594,14 @@
 </tbody>
 </table>
 <p>例如：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell settings put global policy_control immersive.full=*</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global policy_control immersive.full=*</span><br></pre></td></tr></table></figure>
 <p>表示设置在所有界面下都同时隐藏状态栏和导航栏。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell settings put global policy_control immersive.status=com.package1,com.package2:immersive.navigation=apps,-com.package3</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global policy_control immersive.status=com.package1,com.package2:immersive.navigation=apps,-com.package3</span><br></pre></td></tr></table></figure>
 <p>表示设置在包名为 <code>com.package1</code> 和 <code>com.package2</code> 的应用里隐藏状态栏，在除了包名为 <code>com.package3</code> 的所有应用里隐藏导航栏。</p>
 <h2 id="实用功能"><a href="#实用功能" class="headerlink" title="实用功能"></a>实用功能</h2><h3 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell screencap -p /sdcard/sc.png</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell screencap -p /sdcard/sc.png</span><br></pre></td></tr></table></figure>
 <p>然后将 png 文件导出到电脑：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb pull /sdcard/sc.png</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull /sdcard/sc.png</span><br></pre></td></tr></table></figure>
 <p>可以使用 <code>adb shell screencap -h</code> 查看 <code>screencap</code> 命令的帮助信息，下面是两个有意义的参数及含义：</p>
 <table>
 <thead>
@@ -623,13 +623,13 @@
 </table>
 <p>实测如果指定文件名以 <code>.png</code> 结尾时可以省略 -p 参数；否则需要使用 -p 参数。如果不指定文件名，截图文件的内容将直接输出到 stdout。</p>
 <p>直接一行命令截图并保存到电脑的方法：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell screencap -p | sed <span class="string">"s/\r$//"</span> &gt; sc.png</div></pre></td></tr></table></figure>
-<p>这个方法需要用到 sed 命令，在 Linux 和 Mac 下直接就有，在 Windows 下 Git 安装目录的 bin 文件夹下也有。如果确实找不到该命令，可以下载 <a href="http://gnuwin32.sourceforge.net/packages/sed.htm" target="_blank" rel="external">sed for Windows</a> 并将 sed.exe 所在文件夹添加到 PATH 环境变量里。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell screencap -p | sed <span class="string">"s/\r$//"</span> &gt; sc.png</span><br></pre></td></tr></table></figure>
+<p>这个方法需要用到 sed 命令，在 Linux 和 Mac 下直接就有，在 Windows 下 Git 安装目录的 bin 文件夹下也有。如果确实找不到该命令，可以下载 <a href="http://gnuwin32.sourceforge.net/packages/sed.htm" target="_blank" rel="noopener">sed for Windows</a> 并将 sed.exe 所在文件夹添加到 PATH 环境变量里。</p>
 <h3 id="录制屏幕"><a href="#录制屏幕" class="headerlink" title="录制屏幕"></a>录制屏幕</h3><p>录制屏幕以 mp4 格式保存到 /sdcard：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell screenrecord /sdcard/filename.mp4</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell screenrecord /sdcard/filename.mp4</span><br></pre></td></tr></table></figure>
 <p>需要停止时按 <kbd>Ctrl-C</kbd>，默认录制时间和最长录制时间都是 180 秒。</p>
 <p>如果需要导出到电脑：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb pull /sdcard/filename.mp4</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull /sdcard/filename.mp4</span><br></pre></td></tr></table></figure>
 <p>可以使用 <code>adb shell screenrecord --help</code> 查看 <code>screenrecord</code> 命令的帮助信息，下面是常见参数及含义：</p>
 <table>
 <thead>
@@ -663,76 +663,76 @@
 <ol>
 <li><p>进入 shell 并切换到 root 用户权限。</p>
 <p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">su</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">su</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>查看当前分区挂载情况。</p>
 <p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount</span><br></pre></td></tr></table></figure>
 <p>输出示例：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">rootfs / rootfs ro,relatime 0 0</div><div class="line">tmpfs /dev tmpfs rw,seclabel,nosuid,relatime,mode=755 0 0</div><div class="line">devpts /dev/pts devpts rw,seclabel,relatime,mode=600 0 0</div><div class="line">proc /proc proc rw,relatime 0 0</div><div class="line">sysfs /sys sysfs rw,seclabel,relatime 0 0</div><div class="line">selinuxfs /sys/fs/selinux selinuxfs rw,relatime 0 0</div><div class="line">debugfs /sys/kernel/debug debugfs rw,relatime 0 0</div><div class="line">none /var tmpfs rw,seclabel,relatime,mode=770,gid=1000 0 0</div><div class="line">none /acct cgroup rw,relatime,cpuacct 0 0</div><div class="line">none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0</div><div class="line">none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0</div><div class="line">tmpfs /mnt/asec tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0</div><div class="line">tmpfs /mnt/obb tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0</div><div class="line">none /dev/memcg cgroup rw,relatime,memory 0 0</div><div class="line">none /dev/cpuctl cgroup rw,relatime,cpu 0 0</div><div class="line">none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0</div><div class="line">none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0</div><div class="line">none /sys/fs/cgroup/freezer cgroup rw,relatime,freezer 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/system /system ext4 ro,seclabel,relatime,data=ordered 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/userdata /data ext4 rw,seclabel,nosuid,nodev,relatime,noauto_da_alloc,data=ordered 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/cache /cache ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/persist /persist ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0</div><div class="line">/dev/block/platform/msm_sdcc.1/by-name/modem /firmware vfat ro,context=u:object_r:firmware_file:s0,relatime,uid=1000,gid=1000,fmask=0337,dmask=0227,codepage=cp437,iocharset=iso8859-1,shortname=lower,errors=remount-ro 0 0</div><div class="line">/dev/fuse /mnt/shell/emulated fuse rw,nosuid,nodev,relatime,user_id=1023,group_id=1023,default_permissions,allow_other 0 0</div><div class="line">/dev/fuse /mnt/shell/emulated/0 fuse rw,nosuid,nodev,relatime,user_id=1023,group_id=1023,default_permissions,allow_other 0 0</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">rootfs / rootfs ro,relatime 0 0</span><br><span class="line">tmpfs /dev tmpfs rw,seclabel,nosuid,relatime,mode=755 0 0</span><br><span class="line">devpts /dev/pts devpts rw,seclabel,relatime,mode=600 0 0</span><br><span class="line">proc /proc proc rw,relatime 0 0</span><br><span class="line">sysfs /sys sysfs rw,seclabel,relatime 0 0</span><br><span class="line">selinuxfs /sys/fs/selinux selinuxfs rw,relatime 0 0</span><br><span class="line">debugfs /sys/kernel/debug debugfs rw,relatime 0 0</span><br><span class="line">none /var tmpfs rw,seclabel,relatime,mode=770,gid=1000 0 0</span><br><span class="line">none /acct cgroup rw,relatime,cpuacct 0 0</span><br><span class="line">none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0</span><br><span class="line">none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0</span><br><span class="line">tmpfs /mnt/asec tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0</span><br><span class="line">tmpfs /mnt/obb tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0</span><br><span class="line">none /dev/memcg cgroup rw,relatime,memory 0 0</span><br><span class="line">none /dev/cpuctl cgroup rw,relatime,cpu 0 0</span><br><span class="line">none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0</span><br><span class="line">none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0</span><br><span class="line">none /sys/fs/cgroup/freezer cgroup rw,relatime,freezer 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/system /system ext4 ro,seclabel,relatime,data=ordered 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/userdata /data ext4 rw,seclabel,nosuid,nodev,relatime,noauto_da_alloc,data=ordered 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/cache /cache ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/persist /persist ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/modem /firmware vfat ro,context=u:object_r:firmware_file:s0,relatime,uid=1000,gid=1000,fmask=0337,dmask=0227,codepage=cp437,iocharset=iso8859-1,shortname=lower,errors=remount-ro 0 0</span><br><span class="line">/dev/fuse /mnt/shell/emulated fuse rw,nosuid,nodev,relatime,user_id=1023,group_id=1023,default_permissions,allow_other 0 0</span><br><span class="line">/dev/fuse /mnt/shell/emulated/0 fuse rw,nosuid,nodev,relatime,user_id=1023,group_id=1023,default_permissions,allow_other 0 0</span><br></pre></td></tr></table></figure>
 <p>找到其中我们关注的带 /system 的那一行：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/dev/block/platform/msm_sdcc.1/by-name/system /system ext4 ro,seclabel,relatime,data=ordered 0 0</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/block/platform/msm_sdcc.1/by-name/system /system ext4 ro,seclabel,relatime,data=ordered 0 0</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重新挂载。</p>
 <p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mount -o remount,rw -t yaffs2 /dev/block/platform/msm_sdcc.1/by-name/system /system</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o remount,rw -t yaffs2 /dev/block/platform/msm_sdcc.1/by-name/system /system</span><br></pre></td></tr></table></figure>
 <p>这里的 <code>/dev/block/platform/msm_sdcc.1/by-name/system</code> 就是我们从上一步的输出里得到的文件路径。</p>
 </li>
 </ol>
 <p>如果输出没有提示错误的话，操作就成功了，可以对 /system 下的文件为所欲为了。</p>
 <h3 id="查看连接过的-WiFi-密码"><a href="#查看连接过的-WiFi-密码" class="headerlink" title="查看连接过的 WiFi 密码"></a>查看连接过的 WiFi 密码</h3><p><strong>注：需要 root 权限。</strong></p>
 <p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">su</div><div class="line">cat /data/misc/wifi/*.conf</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">su</span><br><span class="line">cat /data/misc/wifi/*.conf</span><br></pre></td></tr></table></figure>
 <p>输出示例：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">network=&#123;</div><div class="line">    ssid=<span class="string">"TP-LINK_9DFC"</span></div><div class="line">    scan_ssid=1</div><div class="line">    psk=<span class="string">"123456789"</span></div><div class="line">    key_mgmt=WPA-PSK</div><div class="line">    group=CCMP TKIP</div><div class="line">    auth_alg=OPEN</div><div class="line">    sim_num=1</div><div class="line">    priority=13893</div><div class="line">&#125;</div><div class="line"></div><div class="line">network=&#123;</div><div class="line">    ssid=<span class="string">"TP-LINK_F11E"</span></div><div class="line">    psk=<span class="string">"987654321"</span></div><div class="line">    key_mgmt=WPA-PSK</div><div class="line">    sim_num=1</div><div class="line">    priority=17293</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">network=&#123;</span><br><span class="line">    ssid=<span class="string">"TP-LINK_9DFC"</span></span><br><span class="line">    scan_ssid=1</span><br><span class="line">    psk=<span class="string">"123456789"</span></span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    group=CCMP TKIP</span><br><span class="line">    auth_alg=OPEN</span><br><span class="line">    sim_num=1</span><br><span class="line">    priority=13893</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line">    ssid=<span class="string">"TP-LINK_F11E"</span></span><br><span class="line">    psk=<span class="string">"987654321"</span></span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    sim_num=1</span><br><span class="line">    priority=17293</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>ssid</code> 即为我们在 WLAN 设置里看到的名称，<code>psk</code> 为密码，<code>key_mgmt</code> 为安全加密方式。</p>
 <h3 id="设置系统日期和时间"><a href="#设置系统日期和时间" class="headerlink" title="设置系统日期和时间"></a>设置系统日期和时间</h3><p><strong>注：需要 root 权限。</strong></p>
 <p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">su</div><div class="line">date -s 20160823.131500</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">su</span><br><span class="line">date -s 20160823.131500</span><br></pre></td></tr></table></figure>
 <p>表示将系统日期和时间更改为 2016 年 08 月 23 日 13 点 15 分 00 秒。</p>
 <h3 id="重启手机"><a href="#重启手机" class="headerlink" title="重启手机"></a>重启手机</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot</span><br></pre></td></tr></table></figure>
 <h3 id="检测设备是否已-root"><a href="#检测设备是否已-root" class="headerlink" title="检测设备是否已 root"></a>检测设备是否已 root</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">adb shell</div><div class="line">su</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">su</span><br></pre></td></tr></table></figure>
 <p>此时命令行提示符是 <code>$</code> 则表示没有 root 权限，是 <code>#</code> 则表示已 root。</p>
 <h3 id="使用-Monkey-进行压力测试"><a href="#使用-Monkey-进行压力测试" class="headerlink" title="使用 Monkey 进行压力测试"></a>使用 Monkey 进行压力测试</h3><p>Monkey 可以生成伪随机用户事件来模拟单击、触摸、手势等操作，可以对正在开发中的程序进行随机压力测试。</p>
 <p>简单用法：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell monkey -p &lt;packagename&gt; -v 500</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell monkey -p &lt;packagename&gt; -v 500</span><br></pre></td></tr></table></figure>
 <p>表示向 <code>&lt;packagename&gt;</code> 指定的应用程序发送 500 个伪随机事件。</p>
-<p>Monkey 的详细用法参考 <a href="https://developer.android.com/studio/test/monkey.html" target="_blank" rel="external">官方文档</a>。</p>
+<p>Monkey 的详细用法参考 <a href="https://developer.android.com/studio/test/monkey.html" target="_blank" rel="noopener">官方文档</a>。</p>
 <h3 id="开启-关闭-WiFi"><a href="#开启-关闭-WiFi" class="headerlink" title="开启/关闭 WiFi"></a>开启/关闭 WiFi</h3><p><strong>注：需要 root 权限。</strong></p>
 <p>有时需要控制设备的 WiFi 状态，可以用以下指令完成。</p>
 <p>开启 WiFi：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">adb root</div><div class="line">adb shell svc wifi <span class="built_in">enable</span></div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb root</span><br><span class="line">adb shell svc wifi <span class="built_in">enable</span></span><br></pre></td></tr></table></figure>
 <p>关闭 WiFi：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">adb root</div><div class="line">adb shell svc wifi <span class="built_in">disable</span></div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb root</span><br><span class="line">adb shell svc wifi <span class="built_in">disable</span></span><br></pre></td></tr></table></figure>
 <p>若执行成功，输出为空；若未取得 root 权限执行此命令，将执行失败，输出 <code>Killed</code>。</p>
 <h2 id="刷机相关命令"><a href="#刷机相关命令" class="headerlink" title="刷机相关命令"></a>刷机相关命令</h2><h3 id="重启到-Recovery-模式"><a href="#重启到-Recovery-模式" class="headerlink" title="重启到 Recovery 模式"></a>重启到 Recovery 模式</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot recovery</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot recovery</span><br></pre></td></tr></table></figure>
 <h3 id="从-Recovery-重启到-Android"><a href="#从-Recovery-重启到-Android" class="headerlink" title="从 Recovery 重启到 Android"></a>从 Recovery 重启到 Android</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot</span><br></pre></td></tr></table></figure>
 <h3 id="重启到-Fastboot-模式"><a href="#重启到-Fastboot-模式" class="headerlink" title="重启到 Fastboot 模式"></a>重启到 Fastboot 模式</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot bootloader</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure>
 <h3 id="通过-sideload-更新系统"><a href="#通过-sideload-更新系统" class="headerlink" title="通过 sideload 更新系统"></a>通过 sideload 更新系统</h3><p>如果我们下载了 Android 设备对应的系统更新包到电脑上，那么也可以通过 adb 来完成更新。</p>
 <p>以 Recovery 模式下更新为例：</p>
 <ol>
 <li><p>重启到 Recovery 模式。</p>
 <p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb reboot recovery</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot recovery</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在设备的 Recovery 界面上操作进入 <code>Apply update</code>-<code>Apply from ADB</code>。</p>
 <p>注：不同的 Recovery 菜单可能与此有差异，有的是一级菜单就有 <code>Apply update from ADB</code>。</p>
 </li>
 <li><p>通过 adb 上传和更新系统。</p>
 <p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb sideload &lt;path-to-update.zip&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb sideload &lt;path-to-update.zip&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h2 id="更多-adb-shell-命令"><a href="#更多-adb-shell-命令" class="headerlink" title="更多 adb shell 命令"></a>更多 adb shell 命令</h2><p>Android 系统是基于 Linux 内核的，所以 Linux 里的很多命令在 Android 里也有相同或类似的实现，在 <code>adb shell</code> 里可以调用。本文档前面的部分内容已经用到了 <code>adb shell</code> 命令。</p>
 <h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell ps</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell ps</span><br></pre></td></tr></table></figure>
 <p>输出示例：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">USER     PID   PPID  VSIZE  RSS     WCHAN    PC        NAME</div><div class="line">root      1     0     8904   788   ffffffff 00000000 S /init</div><div class="line">root      2     0     0      0     ffffffff 00000000 S kthreadd</div><div class="line">...</div><div class="line">u0_a71    7779  5926  1538748 48896 ffffffff 00000000 S com.sohu.inputmethod.sogou:classic</div><div class="line">u0_a58    7963  5926  1561916 59568 ffffffff 00000000 S org.mazhuang.boottimemeasure</div><div class="line">...</div><div class="line">shell     8750  217   10640  740   00000000 b6f28340 R ps</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">USER     PID   PPID  VSIZE  RSS     WCHAN    PC        NAME</span><br><span class="line">root      1     0     8904   788   ffffffff 00000000 S /init</span><br><span class="line">root      2     0     0      0     ffffffff 00000000 S kthreadd</span><br><span class="line">...</span><br><span class="line">u0_a71    7779  5926  1538748 48896 ffffffff 00000000 S com.sohu.inputmethod.sogou:classic</span><br><span class="line">u0_a58    7963  5926  1561916 59568 ffffffff 00000000 S org.mazhuang.boottimemeasure</span><br><span class="line">...</span><br><span class="line">shell     8750  217   10640  740   00000000 b6f28340 R ps</span><br></pre></td></tr></table></figure>
 <p>各列含义：</p>
 <table>
 <thead>
@@ -761,9 +761,9 @@
 </tbody>
 </table>
 <h3 id="查看实时资源占用情况"><a href="#查看实时资源占用情况" class="headerlink" title="查看实时资源占用情况"></a>查看实时资源占用情况</h3><p>命令：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adb shell top</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell top</span><br></pre></td></tr></table></figure>
 <p>输出示例：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">User 0%, System 6%, IOW 0%, IRQ 0%</div><div class="line">User 3 + Nice 0 + Sys 21 + Idle 280 + IOW 0 + IRQ 0 + SIRQ 3 = 307</div><div class="line"></div><div class="line">  PID PR CPU% S  <span class="comment">#THR     VSS     RSS PCY UID      Name</span></div><div class="line"> 8763  0   3% R     1  10640K   1064K  <span class="built_in">fg</span> shell    top</div><div class="line">  131  0   3% S     1      0K      0K  <span class="built_in">fg</span> root     dhd_dpc</div><div class="line"> 6144  0   0% S   115 1682004K 115916K  <span class="built_in">fg</span> system   system_server</div><div class="line">  132  0   0% S     1      0K      0K  <span class="built_in">fg</span> root     dhd_rxf</div><div class="line"> 1731  0   0% S     6  20288K    788K  <span class="built_in">fg</span> root     /system/bin/mpdecision</div><div class="line">  217  0   0% S     6  18008K    356K  <span class="built_in">fg</span> shell    /sbin/adbd</div><div class="line"> ...</div><div class="line"> 7779  2   0% S    19 1538748K  48896K  <span class="built_in">bg</span> u0_a71   com.sohu.inputmethod.sogou:classic</div><div class="line"> 7963  0   0% S    18 1561916K  59568K  <span class="built_in">fg</span> u0_a58   org.mazhuang.boottimemeasure</div><div class="line"> ...</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">User 0%, System 6%, IOW 0%, IRQ 0%</span><br><span class="line">User 3 + Nice 0 + Sys 21 + Idle 280 + IOW 0 + IRQ 0 + SIRQ 3 = 307</span><br><span class="line"></span><br><span class="line">  PID PR CPU% S  <span class="comment">#THR     VSS     RSS PCY UID      Name</span></span><br><span class="line"> 8763  0   3% R     1  10640K   1064K  <span class="built_in">fg</span> shell    top</span><br><span class="line">  131  0   3% S     1      0K      0K  <span class="built_in">fg</span> root     dhd_dpc</span><br><span class="line"> 6144  0   0% S   115 1682004K 115916K  <span class="built_in">fg</span> system   system_server</span><br><span class="line">  132  0   0% S     1      0K      0K  <span class="built_in">fg</span> root     dhd_rxf</span><br><span class="line"> 1731  0   0% S     6  20288K    788K  <span class="built_in">fg</span> root     /system/bin/mpdecision</span><br><span class="line">  217  0   0% S     6  18008K    356K  <span class="built_in">fg</span> shell    /sbin/adbd</span><br><span class="line"> ...</span><br><span class="line"> 7779  2   0% S    19 1538748K  48896K  <span class="built_in">bg</span> u0_a71   com.sohu.inputmethod.sogou:classic</span><br><span class="line"> 7963  0   0% S    18 1561916K  59568K  <span class="built_in">fg</span> u0_a58   org.mazhuang.boottimemeasure</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure>
 <p>各列含义：</p>
 <table>
 <thead>
@@ -816,7 +816,7 @@
 </tbody>
 </table>
 <p><code>top</code> 命令还支持一些命令行参数，详细用法如下：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Usage: top [ -m max_procs ] [ -n iterations ] [ -d delay ] [ -s sort_column ] [ -t ] [ -h ]</div><div class="line">    -m num  最多显示多少个进程</div><div class="line">    -n num  刷新多少次后退出</div><div class="line">    -d num  刷新时间间隔（单位秒，默认值 5）</div><div class="line">    -s col  按某列排序（可用 col 值：cpu, vss, rss, thr）</div><div class="line">    -t      显示线程信息</div><div class="line">    -h      显示帮助文档</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Usage: top [ -m max_procs ] [ -n iterations ] [ -d delay ] [ -s sort_column ] [ -t ] [ -h ]</span><br><span class="line">    -m num  最多显示多少个进程</span><br><span class="line">    -n num  刷新多少次后退出</span><br><span class="line">    -d num  刷新时间间隔（单位秒，默认值 5）</span><br><span class="line">    -s col  按某列排序（可用 col 值：cpu, vss, rss, thr）</span><br><span class="line">    -t      显示线程信息</span><br><span class="line">    -h      显示帮助文档</span><br></pre></td></tr></table></figure>
 <h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>如下是其它常用命令的简单描述，前文已经专门讲过的命令不再额外说明：</p>
 <table>
 <thead>
@@ -877,14 +877,14 @@
 </tbody>
 </table>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="启动-adb-server-失败"><a href="#启动-adb-server-失败" class="headerlink" title="启动 adb server 失败"></a>启动 adb server 失败</h3><p><strong>出错提示</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">error: protocol fault (couldn\<span class="string">'t read status): No error</span></div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: protocol fault (couldn\<span class="string">'t read status): No error</span></span><br></pre></td></tr></table></figure>
 <p><strong>可能原因</strong></p>
 <p>adb server 进程想使用的 5037 端口被占用。</p>
 <p><strong>解决方案</strong></p>
 <p>找到占用 5037 端口的进程，然后终止它。以 Windows 下为例：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">netstat -ano | findstr LISTENING</div><div class="line"></div><div class="line">...</div><div class="line">TCP    0.0.0.0:5037           0.0.0.0:0              LISTENING       1548</div><div class="line">...</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr LISTENING</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">TCP    0.0.0.0:5037           0.0.0.0:0              LISTENING       1548</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>这里 1548 即为进程 ID，用命令结束该进程：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">taskkill /PID 1548</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /PID 1548</span><br></pre></td></tr></table></figure>
 <p>然后再启动 adb 就没问题了。</p>
 
       
