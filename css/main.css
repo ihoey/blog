@@ -1795,7 +1795,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #79530f;
+  background: #6e77f6;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2692,6 +2692,10 @@ pre {
 .header-inner {
   padding-top: 310px;
 }
-.ds-alert {
-  display: none !important;
+.wf img.anonymous {
+  filter: none;
+  opacity: 1;
+}
+.wf a {
+  border: none;
 }
