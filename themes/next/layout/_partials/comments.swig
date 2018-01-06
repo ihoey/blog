@@ -21,32 +21,18 @@
     {% elseif theme.hypercomments_id %}
       <div id="hypercomments_widget"></div>
     {% endif %}
-    <!-- 在需要展示评论框处插入 -->
-    {# <div class="cm-article" data-key=""></div> #}
-    <!-- </body> 标签结束前插入 -->
-    {# <link rel="stylesheet" href="//comment.moe/dest/static/css/plus.css"> #}
-    {# <script src="//comment.moe/dest/static/js/build.js" charset="UTF-8"></script> #}
-    {# <script>
-      window.onload = function () {
-        $('#comments .cm-article').attr('data-key', window.document.location.pathname);
-        window.萌评.运转();
-      }
-    </script> #}
     <div class="wildfire_thread"></div>
     <script>
-      // Random body background dark color
-      // document.body.style.background = `hsl(${Math.random()*360}, 80%, 10%)`
       var wildfireConfig = () => ({
         databaseProvider: 'wilddog',
         databaseConfig: {
           siteId: 'ihoey'
         },
-        pageURL: document.URL,
-        pageTitle: document.title,
+        pageURL: '{{ page.permalink }}',
+        pageTitle: '{{ page.title }}',
         theme: 'light',
-        // theme: 'dark',
-        // locale: 'en'
-        locale: 'zh-CN'
+        locale: 'zh-CN',
+        defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
       })
     </script>
     <script src="https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js"></script>
