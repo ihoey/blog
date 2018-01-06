@@ -136,18 +136,7 @@
     scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 'undefined',
-      author: '站长大大'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+    motion: true
   };
 </script>
 
@@ -573,27 +562,18 @@
           
   <div class="comments" id="comments">
     
-    <!-- 在需要展示评论框处插入 -->
-    
-    <!-- </body> 标签结束前插入 -->
-    
-    
-    
     <div class="wildfire_thread"></div>
     <script>
-      // Random body background dark color
-      // document.body.style.background = `hsl(${Math.random()*360}, 80%, 10%)`
       var wildfireConfig = () => ({
         databaseProvider: 'wilddog',
         databaseConfig: {
           siteId: 'ihoey'
         },
-        pageURL: document.URL,
-        pageTitle: document.title,
+        pageURL: 'https://blog.ihoey.com/posts/Git/2017-04-23-git.html',
+        pageTitle: 'Git 常用命令学习及整理',
         theme: 'light',
-        // theme: 'dark',
-        // locale: 'en'
-        locale: 'zh-CN'
+        locale: 'zh-CN',
+        defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
       })
     </script>
     <script src="https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js"></script>

@@ -140,18 +140,7 @@
     scheme: 'Muse',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 'undefined',
-      author: '站长大大'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+    motion: true
   };
 </script>
 
@@ -552,27 +541,18 @@
           
   <div class="comments" id="comments">
     
-    <!-- 在需要展示评论框处插入 -->
-    
-    <!-- </body> 标签结束前插入 -->
-    
-    
-    
     <div class="wildfire_thread"></div>
     <script>
-      // Random body background dark color
-      // document.body.style.background = `hsl(${Math.random()*360}, 80%, 10%)`
       var wildfireConfig = () => ({
         databaseProvider: 'wilddog',
         databaseConfig: {
           siteId: 'ihoey'
         },
-        pageURL: document.URL,
-        pageTitle: document.title,
+        pageURL: 'https://blog.ihoey.com/posts/Linux/2017-07-06-comment_ru_he_xuan_ze.html',
+        pageTitle: '继多说、网易关停之后该何去何从(网易云跟帖宣布2017年8月1日停止服务)',
         theme: 'light',
-        // theme: 'dark',
-        // locale: 'en'
-        locale: 'zh-CN'
+        locale: 'zh-CN',
+        defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
       })
     </script>
     <script src="https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js"></script>
