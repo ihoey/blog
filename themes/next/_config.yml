@@ -199,13 +199,14 @@ links_title: Links
 #links_layout: block
 #links_layout: inline
 links:
-  梦魇|专注于分享: http://www.dode.top/links.html
-  轻描淡写~: http://www.mcling.xyz/links/
+  # 梦魇|专注于分享: http://www.dode.top/links.html
+  # 轻描淡写~: http://www.mcling.xyz/links/
   # 等待!!!: http://www.ccyyao.top/
-  一叶知秋: http://www.webmars.xyz/
+  # 一叶知秋: http://www.webmars.xyz/
   mythsman: https://blog.mythsman.com/
   可乐没气的猫: https://www.isthnew.com/links
   Bboysoul: http://www.bboysoul.com/
+  jnduan's Blog: https://jnan.org/
 
 # ---------------------------------------------------------------
 # Post Settings
