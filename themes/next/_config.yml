@@ -463,12 +463,12 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome:
+  fontawesome: //cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
-  algolia_instant_js:
-  algolia_instant_css:
+  # algolia_instant_js:
+  # algolia_instant_css:
 
 # Assets
 css: css
@@ -488,7 +488,7 @@ passage_end_tag:
   enabled: true
 
 #网易云跟帖
-gentie_productKey: 0a8258b8dd904e989766bdb2fe198eba
+# gentie_productKey: 0a8258b8dd904e989766bdb2fe198eba
 
 # Theme version
 version: 5.1.0
