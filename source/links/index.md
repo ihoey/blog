@@ -1,6 +1,7 @@
 ---
 title: 友情链接
 date: 2016-11-10 20:36:20
+comments: true
 ---
 
 <blockquote class="blockquote-center">过一个平凡无趣的人生实在太容易了，你可以不读书，不冒险，不运动，不写作，不外出，不折腾……但是，人生最后悔的事情就是：我本可以</blockquote>
@@ -21,6 +22,8 @@ date: 2016-11-10 20:36:20
 - [萌小喵](http://blog.awumiao.cn/)  -  念念不忘，必有回响
 - [火辣辣](http://huolalaweb.com/)  - 个人前端博客
 - [jnduan's Blog](https://jnan.org/)  -  How lucky you are, how hard you work.
+- [来语直搜](www.zhisou.cc)  --  来语直搜
+- [阿斗](lijinghu.club)  --  人生苦短,都要加油哦~
 
 ***
 

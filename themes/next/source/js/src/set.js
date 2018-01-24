@@ -1,8 +1,8 @@
 /*
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
- * @Last Modified by:   henry
- * @Last Modified time: 2017-08-31 18:29:37
+ * @Last Modified by: ihoey
+ * @Last Modified time: 2018-01-23 20:46:10
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
@@ -220,7 +220,7 @@ window.onload = function() {
     }
   });
 
-  $('.post-title a,.post-more-link').hover(function() {
+  $('.post-title .post-title-link,.post-button .btn').hover(function () {
     $(this).stop().animate({
       'marginLeft': '10px'
     }, 200);
