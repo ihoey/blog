@@ -23,7 +23,7 @@ comments: true
 - [火辣辣](http://huolalaweb.com/)  - 个人前端博客
 - [jnduan's Blog](https://jnan.org/)  -  How lucky you are, how hard you work.
 - [来语直搜](http://www.zhisou.cc/)  --  来语直搜
-- [阿斗](http://lijinghu.club/)  --  人生苦短,都要加油哦~
+- [阿斗](http://www.lijinghua.club/)  --  人生苦短,都要加油哦~
 
 ***
 
