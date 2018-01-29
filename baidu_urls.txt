@@ -1,5 +1,5 @@
+https://blog.ihoey.com/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html
 https://blog.ihoey.com/posts/Node/2017-12-25-Merry-Christmas.html
 https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html
 https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html
 https://blog.ihoey.com/posts/Mac/2017-11-21-Mac-OS-X-command-line-tool.html
-https://blog.ihoey.com/posts/Linux/2017-07-06-comment_ru_he_xuan_ze.html
