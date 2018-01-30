@@ -124,7 +124,7 @@
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="步骤使用 JavaScript 实现拖拽的步骤：  让元素捕获事件（mousedown, mousemove &amp;amp; mouseup） 单击并不释放，触发 mousedown，标记开始拖拽，并获取元素和鼠标的位置 拖动鼠标，触发 mousemove，不断的获取鼠标的位置，并通过计算重新确定元素的位置 释放师表，触发 mouseup，结束拖拽，确定元素位置并更新">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-29T09:34:31.915Z">
+<meta property="og:updated_time" content="2018-01-30T04:26:02.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 JavaScript 实现简单的拖拽">
 <meta name="twitter:description" content="步骤使用 JavaScript 实现拖拽的步骤：  让元素捕获事件（mousedown, mousemove &amp;amp; mouseup） 单击并不释放，触发 mousedown，标记开始拖拽，并获取元素和鼠标的位置 拖动鼠标，触发 mousemove，不断的获取鼠标的位置，并通过计算重新确定元素的位置 释放师表，触发 mouseup，结束拖拽，确定元素位置并更新">
@@ -461,9 +461,9 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">move</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (dragging) &#123;</span><br><span class="line">    <span class="keyword">var</span> x = getMouseXY(e).x - offsetX;</span><br><span class="line">    <span class="keyword">var</span> y = getMouseXY(e).y - offsetY;</span><br><span class="line">    <span class="keyword">var</span> width = <span class="built_in">document</span>.documentElement.clientWidth - box.offsetWidth;</span><br><span class="line">    <span class="keyword">var</span> height = <span class="built_in">document</span>.documentElement.clientHeight - box.offsetHeight;</span><br><span class="line"></span><br><span class="line">    x = <span class="built_in">Math</span>.min(<span class="built_in">Math</span>.max(<span class="number">0</span>, x), width);</span><br><span class="line">    y = <span class="built_in">Math</span>.min(<span class="built_in">Math</span>.max(<span class="number">0</span>, y), height);</span><br><span class="line"></span><br><span class="line">    box.style.left = x + <span class="string">'px'</span>;</span><br><span class="line">    box.style.top = y + <span class="string">'px'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>变量 <code>width / height</code> 表示可移动的位置的大小，这里是 <code>document</code> 减去元素的大小（元素不会超出可移动的范围）。<br><code>Math.min</code> 使得元素不会超出可移动访问的右边界（元素 <code>x</code> 坐标不会超过 <code>width</code>），<code>Math.max</code> 使得元素不会超出可移动范围的左边界（元素的 x 坐标不小于 0）。<br>最后将改变后的元素 <code>left</code> 与 <code>top</code> 值应用当元素上，即修改元素的样式。<br><code>mouseup</code><br>拖拽结束，取消拖拽的标记。使其触发 <code>mousemove</code> 事件，但不做任何处理。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">up</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  dragging = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<iframe src="//fiddle.jshell.net/Lr73mn89/show/light/" frameborder="0" sandbox="allow-forms allow-scripts allow-same-origin allow-modals allow-popups" allow="midi; geolocation; microphone; camera" width="100%" height="200px"></iframe>
+<h2 id="在线演示"><a href="#在线演示" class="headerlink" title="在线演示"></a>在线演示</h2><iframe src="//fiddle.jshell.net/Lr73mn89/show/light/" frameborder="0" sandbox="allow-forms allow-scripts allow-same-origin allow-modals allow-popups" allow="midi; geolocation; microphone; camera" width="100%" height="200px"></iframe>
 
-<p>总结<br>上面使用的简单的 <code>JavaScript</code> 代码实现了元素的拖拽，但并没有对兼容性问题全面考虑，也没有对性能优化，有不必要的事件触发。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上面使用的简单的 <code>JavaScript</code> 代码实现了元素的拖拽，但并没有对兼容性问题全面考虑，也没有对性能优化，有不必要的事件触发。</p>
 
       
     </div>
@@ -536,6 +536,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/Linux/2018-01-30-Hexo-NexT-Wildfire.html" rel="prev" title="在Hexo博客 NexT主题中部署Wildfire评论系统">
+                在Hexo博客 NexT主题中部署Wildfire评论系统 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -618,7 +622,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives/index.html">
-              <span class="site-state-item-count">44</span>
+              <span class="site-state-item-count">45</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -741,7 +745,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取鼠标位置"><span class="nav-number">3.</span> <span class="nav-text">获取鼠标位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件触发函数"><span class="nav-number">4.</span> <span class="nav-text">事件触发函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取鼠标位置"><span class="nav-number">3.</span> <span class="nav-text">获取鼠标位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件触发函数"><span class="nav-number">4.</span> <span class="nav-text">事件触发函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在线演示"><span class="nav-number">5.</span> <span class="nav-text">在线演示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

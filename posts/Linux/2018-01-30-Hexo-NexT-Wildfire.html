@@ -98,7 +98,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="原生Js,Js框架,JQuery," />
+  <meta name="keywords" content="comment," />
 
 
 
@@ -116,18 +116,18 @@
 
 
 
-<meta name="description" content="JQuery模块分析及其实现第五部分事件部分功能及实现,接第四部分!">
-<meta name="keywords" content="原生Js,Js框架,JQuery">
+<meta name="description" content="前一段时间，发现了一个评论系统很好用，果断把这个评论系统换到自己的博客里了。 所以本文主要讲在 Hexo 的 NexT 主题中如何使用 Wildfire ，至于其他的博客以及其他的主题中如何使用的问题，我就不多说了。有需求的朋友可以去项目主页提问，或者在这里提问也可以。如果我懂得话一定会回答的。">
+<meta name="keywords" content="comment">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JQuery分析及实现part5之事件模块功能及实现">
-<meta property="og:url" content="https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html">
+<meta property="og:title" content="在Hexo博客 NexT主题中部署Wildfire评论系统">
+<meta property="og:url" content="https://blog.ihoey.com/posts/Linux/2018-01-30-Hexo-NexT-Wildfire.html">
 <meta property="og:site_name" content="梦魇小栈">
-<meta property="og:description" content="JQuery模块分析及其实现第五部分事件部分功能及实现,接第四部分!">
+<meta property="og:description" content="前一段时间，发现了一个评论系统很好用，果断把这个评论系统换到自己的博客里了。 所以本文主要讲在 Hexo 的 NexT 主题中如何使用 Wildfire ，至于其他的博客以及其他的主题中如何使用的问题，我就不多说了。有需求的朋友可以去项目主页提问，或者在这里提问也可以。如果我懂得话一定会回答的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-14T08:46:53.000Z">
+<meta property="og:updated_time" content="2018-01-30T04:24:18.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JQuery分析及实现part5之事件模块功能及实现">
-<meta name="twitter:description" content="JQuery模块分析及其实现第五部分事件部分功能及实现,接第四部分!">
+<meta name="twitter:title" content="在Hexo博客 NexT主题中部署Wildfire评论系统">
+<meta name="twitter:description" content="前一段时间，发现了一个评论系统很好用，果断把这个评论系统换到自己的博客里了。 所以本文主要讲在 Hexo 的 NexT 主题中如何使用 Wildfire ，至于其他的博客以及其他的主题中如何使用的问题，我就不多说了。有需求的朋友可以去项目主页提问，或者在这里提问也可以。如果我懂得话一定会回答的。">
 
 
 
@@ -144,7 +144,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html"/>
+  <link rel="canonical" href="https://blog.ihoey.com/posts/Linux/2018-01-30-Hexo-NexT-Wildfire.html"/>
 
 
 
@@ -153,7 +153,7 @@
 <link href="/css/cursor.css" rel="stylesheet" type="text/css" />
 
 
-  <title> JQuery分析及实现part5之事件模块功能及实现 | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布 </title>
+  <title> 在Hexo博客 NexT主题中部署Wildfire评论系统 | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -336,7 +336,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html">
+  <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Linux/2018-01-30-Hexo-NexT-Wildfire.html">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Ihoey">
@@ -360,7 +360,7 @@
             
             
               
-                JQuery分析及实现part5之事件模块功能及实现
+                在Hexo博客 NexT主题中部署Wildfire评论系统
               
             
           </h1>
@@ -373,8 +373,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-23T10:27:16+08:00">
-                2016-11-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-30T12:14:00+08:00">
+                2018-01-30
               </time>
             
 
@@ -392,8 +392,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
                   </a>
                 </span>
 
@@ -432,142 +432,22 @@
       
 
       
-        <p>JQuery模块分析及其实现第五部分事件部分功能及实现,接第四部分!</p>
+        <p>前一段时间，发现了一个评论系统很好用，果断把这个评论系统换到自己的博客里了。</p>
+<p>所以本文主要讲在 <code>Hexo</code> 的 <code>NexT</code> 主题中如何使用 <code>Wildfire</code> ，至于其他的博客以及其他的主题中如何使用的问题，我就不多说了。有需求的朋友可以去项目主页提问，或者在这里提问也可以。如果我懂得话一定会回答的。</p>
 <a id="more"></a>
-<h2 id="remove-方法"><a href="#remove-方法" class="headerlink" title="remove 方法"></a>remove 方法</h2><ol>
-<li>功能:将筛选出来的所有 <code>dom</code> 元素删除掉</li>
-<li>实现思路<ul>
-<li>遍历 <code>this</code> 上的所有 <code>dom</code> 元素;</li>
-<li>获取当前 <code>dom</code> 元素的父节点,调用 <code>removeChild</code> 方法删除自己;</li>
-<li>循环结束,返回 <code>this</code> .</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">remove: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.parentNode.removeChild(<span class="keyword">this</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h2 id="empty-方法"><a href="#empty-方法" class="headerlink" title="empty 方法"></a>empty 方法</h2><ol>
-<li>功能:将筛选出来的所有 <code>dom</code> 元素,清空后代节点</li>
-<li>实现思路<ul>
-<li>遍历 <code>this</code> 上的所有 <code>dom</code> 元素;</li>
-<li>直接给当前 <code>dom</code> 元素的 <code>innerHTML</code> 属性赋值为空字符串;</li>
-<li>循环结束,返回 <code>this</code> ,实现链式编程.</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">empty: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.innerHTML = <span class="string">''</span>;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><b>以上接第四部分 <code>dom</code> 操作模块</b></p>
-<hr>
-<p><b>事件部分begin</b></p>
-<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><ol>
-<li><p>DOM 0方式</p>
-<ul>
-<li>通过 <code>dom</code> 元素的 <code>on + 事件名</code> 属性来绑定事件,并且赋值为 一个字符串;</li>
-<li>上述字符串为 执行该事件的代码块(逻辑);</li>
-<li>缺点:可读性以及可维护性不好.</li>
-</ul>
-</li>
-<li><p>DOM 0方式的加强版</p>
-<ul>
-<li>通过 <code>dom</code> 元素的 <code>on + 事件名</code> 属性来绑定事件,并且赋值为 一个事件处理函数;</li>
-<li>缺点:定义很多的全局函数,容易造成内存过大的损耗,依然没有解决 <code>js</code> 代码和 <code>html</code> 的耦合度关系;</li>
-</ul>
-</li>
-<li><p>IE标准</p>
-<ul>
-<li>通过 <code>attachEvent</code> 来绑定事件;</li>
-<li>语法: <code>dom.attachEvent(type, callback)</code>;</li>
-<li>移除事件: <code>detachEvent(type, callback)</code>;<ul>
-<li>注意:如果想要删除某个事件的处理函数,不能将该处理函数定义为匿名的</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>W3C标准</p>
-<ul>
-<li>通过 <code>addEventListener</code> 方法来给dom元素绑定事件;</li>
-<li>语法: <code>dom.addEventListener(type, callback, useCapture默认值为false)</code>;</li>
-<li>移除事件: <code>removEventListener(type, callback)</code>;<ul>
-<li>注意:如果想要删除某个事件的处理函数,不能将该处理函数定义为匿名的</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>事件流</p>
-<ul>
-<li>概念: 用户在触发某一动作时,页面所做相关反映的过程</li>
-<li>三个阶段:<ul>
-<li>事件捕获阶段</li>
-<li>处于事件源阶段</li>
-<li>冒泡阶段</li>
-</ul>
-</li>
-<li>事件流种类<ul>
-<li>捕获型事件流: 事件处理函数是在事件的捕获阶段执行</li>
-<li>冒泡型事件流: 事件处理函数是在事件的冒泡阶段执行</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>attachEvent 和 addEventListener 区别</p>
-<ul>
-<li>参数个数不同</li>
-<li>事件类型传值不同<ul>
-<li><code>IE</code> 标准需要加 <code>on</code> 前缀</li>
-<li><code>W3C</code> 标准不加 <code>on</code> 前缀</li>
-</ul>
-</li>
-<li>在绑定多个事件处理函数时，<code>IE</code> 在执行事件处理函数时,顺序不定(根据版本),而 <code>W3C</code>按照对垒结构来一次执行事件的处理函数</li>
-<li>在事件处理函数内 <code>this</code> 指向不同<ul>
-<li>IE: <code>window</code></li>
-<li>W3C: 返回正在执行事件的处理函数的 <code>dom</code> 元素</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="addEvent-方法"><a href="#addEvent-方法" class="headerlink" title="addEvent 方法"></a>addEvent 方法</h2><ol>
-<li>根据浏览器能力,提前返回事件绑定方法</li>
-<li>如果浏览器符合 <code>W3C</code> 标准,使用 <code>addEventListener</code> 来绑定事件</li>
-<li>否则就使用 <code>attachEvent</code> 来绑定事件</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//提前返回</span></span><br><span class="line"><span class="keyword">var</span> addEvent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 如果符合W3C标准，使用addEvnetListener绑定事件</span></span><br><span class="line">    <span class="keyword">if</span> (global.addEventListener) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">elem, type, callback, useCapture</span>) </span>&#123;</span><br><span class="line">            elem.addEventListener(type, callback, useCapture || <span class="literal">false</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 否则就使用IE标准的 attachEvent绑定事件</span></span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">elem, type, callback</span>) </span>&#123;</span><br><span class="line">            elem.attachEvent(<span class="string">'on'</span> + type, callback);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
-<h2 id="removeEvent-方法"><a href="#removeEvent-方法" class="headerlink" title="removeEvent 方法"></a>removeEvent 方法</h2><ol>
-<li>根据浏览器能力,提前返回事件移除方法</li>
-<li>如果浏览器符合 <code>W3C</code> 标准,使用 <code>removeEventListener</code> 来移除事件处理函数</li>
-<li>否则就使用 <code>detachEvent</code> 来移除事件处理函数</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//提前返回</span></span><br><span class="line"><span class="keyword">var</span> removeEvent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (global.removeEventListener) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">elem, type, callback</span>) </span>&#123;</span><br><span class="line">            elem.removeEventListener(type, callback);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">elem, type, callback</span>) </span>&#123;</span><br><span class="line">            elem.detachEvent(<span class="string">'on'</span> + type, callback);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure>
-<h2 id="on-方法"><a href="#on-方法" class="headerlink" title="on 方法"></a>on 方法</h2><ol>
-<li>功能:给 <code>itcast</code> 对象上的所有的 <code>dom</code> 元素绑定事件</li>
-<li>实现思路<ul>
-<li>遍历 <code>this</code> 上所有 <code>dom</code> 元素</li>
-<li>调用 <code>addEvent</code> 给当前遍历到的 <code>dom</code> 元素绑定事件</li>
-<li>返回 <code>this</code> ，实现链式编程</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">on: <span class="function"><span class="keyword">function</span>(<span class="params">type, callback, capture</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        addEvent(<span class="keyword">this</span>, type, callback, capture);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h2 id="off-方法"><a href="#off-方法" class="headerlink" title="off 方法"></a>off 方法</h2><ol>
-<li>功能：移除 <code>itcast</code> 对象上所有 <code>dom</code> 元素的事件处理函数</li>
-<li>实现思路<ul>
-<li>遍历 <code>this</code> 上所有 <code>dom</code> 元素</li>
-<li>调用 <code>removeEvent</code> 给当前遍历到的 <code>dom</code> 元素移除相应事件的处理函数</li>
-<li>返回 <code>this</code> ，实现链式编程</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">off: <span class="function"><span class="keyword">function</span>(<span class="params">type, callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        removeEvent(<span class="keyword">this</span>, type, callback);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="click-方法"><a href="#click-方法" class="headerlink" title="click 方法"></a>click 方法</h2><ol>
-<li>功能: 给 <code>itcast</code> 对象上的所有的 <code>dom</code> 元素绑定单击事件处理函数的</li>
-<li>语法: <code>itcast对象.click(callback)</code>;</li>
-<li>实现思路<ul>
-<li>遍历 <code>this</code> 上的所有 <code>dom</code> 元素</li>
-<li>调用 <code>addEventListener</code> 分别传值即可</li>
-<li><code>return this</code> 实现链式编程</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">click: <span class="function"><span class="keyword">function</span>(<span class="params">callback, capture</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        addEvent(<span class="keyword">this</span>, <span class="string">'click'</span>, callback, capture);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="快捷绑定事件方法"><a href="#快捷绑定事件方法" class="headerlink" title="快捷绑定事件方法"></a>快捷绑定事件方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">itcast.each([<span class="string">'click'</span>, <span class="string">'dblclick'</span>, <span class="string">'keypress'</span>, <span class="string">'keyup'</span>, <span class="string">'keydown'</span>, <span class="string">'mouseover'</span>, <span class="string">'mouseout'</span>,</span><br><span class="line"><span class="string">'mouseenter'</span>, <span class="string">'mouseleave'</span>, <span class="string">'mousemove'</span>, <span class="string">'mouseup'</span>, <span class="string">'mousedown'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">    itcast.fn[type] = <span class="function"><span class="keyword">function</span>(<span class="params">callback, capture</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.on(type, callback, capture);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="修改-NexT-评论模板"><a href="#修改-NexT-评论模板" class="headerlink" title="修改 NexT 评论模板"></a>修改 NexT 评论模板</h2><p>在你的博客项目中，打开./themes/next/layout/_partials/comments.swig 这个文件。<br>将文件尾部的内容：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.comments %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"comments"</span> <span class="attr">id</span>=<span class="string">"comments"</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">    &#123;% elseif theme.livere_uid %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"lv-container"</span> <span class="attr">data-id</span>=<span class="string">"city"</span> <span class="attr">data-uid</span>=<span class="string">"&#123;&#123; theme.livere_uid &#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- 添加内容的位置在这里 --&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>修改为成下面的内容：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if page.comments %&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"comments"</span> <span class="attr">id</span>=<span class="string">"comments"</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">    &#123;% elseif theme.livere_uid %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"lv-container"</span> <span class="attr">data-id</span>=<span class="string">"city"</span> <span class="attr">data-uid</span>=<span class="string">"&#123;&#123; theme.livere_uid &#125;&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% elseif theme.wildfire.enable %&#125;</span><br><span class="line">      <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .wildfire_thread a &#123;border-bottom: none&#125;</span></span><br><span class="line"><span class="undefined">      </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wildfire_thread"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> wildfireConfig = <span class="function"><span class="params">()</span> =&gt;</span> (&#123;</span></span><br><span class="line"><span class="javascript">          databaseProvider: <span class="string">'&#123;&#123; theme.wildfire.database_provider &#125;&#125;'</span>,</span></span><br><span class="line"><span class="undefined">          databaseConfig: &#123;</span></span><br><span class="line"><span class="javascript">          &#123;% <span class="keyword">if</span> (theme.wildfire.database_provider) === <span class="string">'wilddog'</span> %&#125;</span></span><br><span class="line"><span class="javascript">            siteId: <span class="string">'&#123;&#123; theme.wildfire.site_id &#125;&#125;'</span></span></span><br><span class="line"><span class="javascript">          &#123;% elseif (theme.wildfire.database_provider) === <span class="string">'firebase'</span> %&#125;</span></span><br><span class="line"><span class="javascript">            apiKey: <span class="string">'&#123;&#123; theme.wildfire.api_key &#125;&#125;'</span>,</span></span><br><span class="line"><span class="javascript">            authDomain: <span class="string">'&#123;&#123; theme.wildfire.auth_domain &#125;&#125;'</span>,</span></span><br><span class="line"><span class="javascript">            databaseURL: <span class="string">'&#123;&#123; theme.wildfire.database_url &#125;&#125;'</span>,</span></span><br><span class="line"><span class="javascript">            projectId: <span class="string">'&#123;&#123; theme.wildfire.project_id &#125;&#125;'</span>,</span></span><br><span class="line"><span class="javascript">            storageBucket: <span class="string">'&#123;&#123;theme.wildfire.storage_bucket&#125;&#125;'</span>,</span></span><br><span class="line"><span class="javascript">            messagingSenderId: <span class="string">'&#123;&#123;theme.wildfire.messaging_sender_id&#125;&#125;'</span></span></span><br><span class="line"><span class="undefined">          &#123;% endif %&#125;</span></span><br><span class="line"><span class="undefined">          &#125;,</span></span><br><span class="line"><span class="javascript">          theme: <span class="string">'&#123;&#123;theme.wildfire.theme&#125;&#125;'</span>,</span></span><br><span class="line"><span class="javascript">          locale: <span class="string">'&#123;&#123;theme.wildfire.locale&#125;&#125;'</span></span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">      </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'https://unpkg.com/wildfire/dist/wildfire.auto.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>然后保存。</p>
+<h2 id="增加设置内容"><a href="#增加设置内容" class="headerlink" title="增加设置内容"></a>增加设置内容</h2><p>打开主题设置文件 <code>./themes/next/_config.yml</code>，注意：不是站点设置文件。<br>将下面的代码复制到合适的位置（包含全部注释）：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Wildfire Support</span></span><br><span class="line"><span class="attr">wildfire:</span></span><br><span class="line">  <span class="comment">## 开启Wildfire支持</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment">## 主题颜色，目前可选值为light/dark两种，默认为light</span></span><br><span class="line"><span class="attr">  theme:</span> <span class="string">light</span></span><br><span class="line">  <span class="comment">## 系统语言，目前可选值为en/zh-CN两种，默认为en</span></span><br><span class="line"><span class="attr">  locale:</span> <span class="string">zh-CN</span></span><br><span class="line">  <span class="comment">## Wilddog配置</span></span><br><span class="line"><span class="attr">  database_provider:</span> <span class="string">wilddog</span></span><br><span class="line"><span class="attr">  site_id:</span> <span class="string">site_id</span></span><br><span class="line"><span class="attr">  avatarURL:</span> <span class="attr">https://image.flaticon.com/icons/svg/621/621863.svg</span></span><br><span class="line">  <span class="comment">## Firebase配置</span></span><br><span class="line">  <span class="comment"># database_provider: firebase</span></span><br><span class="line">  <span class="comment"># api_key: apiKey</span></span><br><span class="line">  <span class="comment"># auth_domain: authDomain</span></span><br><span class="line">  <span class="comment"># database_url: databaseURL</span></span><br><span class="line">  <span class="comment"># project_id: projectId</span></span><br><span class="line">  <span class="comment"># storage_bucket: storageBucket</span></span><br><span class="line">  <span class="comment"># messaging_sender_id: messagingSenderId</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的是，复制的时候不要修改这个配置的缩进关系。另外 <code>Wilddog</code> 和 <code>Firebase</code> 两者的配置只能选择其一。比如要使用 <code>Wilddog</code> 的话，配置内容就如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">wildfire:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  theme:</span> <span class="string">light</span></span><br><span class="line"><span class="attr">  locale:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">  database_provider:</span> <span class="string">wilddog</span></span><br><span class="line"><span class="attr">  site_id:</span> <span class="string">wdg_my_site_id</span></span><br></pre></td></tr></table></figure>
+<p>如果要使用 <code>Firebase</code> 则配置选择为如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">wildfire:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  theme:</span> <span class="string">light</span></span><br><span class="line"><span class="attr">  locale:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">  database_provider:</span> <span class="string">firebase</span></span><br><span class="line"><span class="attr">  api_key:</span> <span class="string">your_apiKey</span></span><br><span class="line"><span class="attr">  auth_domain:</span> <span class="string">your_authDomain</span></span><br><span class="line"><span class="attr">  database_url:</span> <span class="string">your_databaseURL</span></span><br><span class="line"><span class="attr">  project_id:</span> <span class="string">your_projectId</span></span><br><span class="line"><span class="attr">  storage_bucket:</span> <span class="string">your_storageBucket</span></span><br><span class="line"><span class="attr">  messaging_sender_id:</span> <span class="string">your_messagingSenderId</span></span><br></pre></td></tr></table></figure>
+<p>上面的值呢，就需要大家从自己建好的 <code>APP</code> 应用中拷贝过来了。</p>
+<h2 id="完成部署"><a href="#完成部署" class="headerlink" title="完成部署"></a>完成部署</h2><p>下面就可以直接 <code>hexo generate</code> 生成就可以了。很简单吧~<br>当然如果还有什么问题，欢迎在这里提问哦。</p>
 
       
     </div>
@@ -622,11 +502,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/原生Js/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> 原生Js</a>
-          
-            <a href="/tags/Js框架/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> Js框架</a>
-          
-            <a href="/tags/JQuery/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> JQuery</a>
+            <a href="/tags/comment/" rel="tag"><i class="fa fa-tag" aria-hidden="true"></i> comment</a>
           
         </div>
       
@@ -635,8 +511,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/javascript/2016-11-21-javascript-jquery-part4.html" rel="next" title="JQuery分析及实现part4之DOM操作模块功能及实现">
-                <i class="fa fa-chevron-left"></i> JQuery分析及实现part4之DOM操作模块功能及实现
+              <a href="/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html" rel="next" title="使用 JavaScript 实现简单的拖拽">
+                <i class="fa fa-chevron-left"></i> 使用 JavaScript 实现简单的拖拽
               </a>
             
           </div>
@@ -644,10 +520,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/javascript/2016-11-24-javascript-jquery-part6.html" rel="prev" title="JQuery分析及实现part6之动画模块功能及实现">
-                JQuery分析及实现part6之动画模块功能及实现 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -680,8 +552,8 @@
         databaseConfig: {
           siteId: 'ihoey'
         },
-        pageURL: 'https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html',
-        pageTitle: 'JQuery分析及实现part5之事件模块功能及实现',
+        pageURL: 'https://blog.ihoey.com/posts/Linux/2018-01-30-Hexo-NexT-Wildfire.html',
+        pageTitle: '在Hexo博客 NexT主题中部署Wildfire评论系统',
         theme: 'light',
         locale: 'zh-CN',
         defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
@@ -853,7 +725,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#remove-方法"><span class="nav-number">1.</span> <span class="nav-text">remove 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#empty-方法"><span class="nav-number">2.</span> <span class="nav-text">empty 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件绑定"><span class="nav-number">3.</span> <span class="nav-text">事件绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#addEvent-方法"><span class="nav-number">4.</span> <span class="nav-text">addEvent 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#removeEvent-方法"><span class="nav-number">5.</span> <span class="nav-text">removeEvent 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#on-方法"><span class="nav-number">6.</span> <span class="nav-text">on 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#off-方法"><span class="nav-number">7.</span> <span class="nav-text">off 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#click-方法"><span class="nav-number">8.</span> <span class="nav-text">click 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快捷绑定事件方法"><span class="nav-number">9.</span> <span class="nav-text">快捷绑定事件方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#修改-NexT-评论模板"><span class="nav-number">1.</span> <span class="nav-text">修改 NexT 评论模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增加设置内容"><span class="nav-number">2.</span> <span class="nav-text">增加设置内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成部署"><span class="nav-number">3.</span> <span class="nav-text">完成部署</span></a></li></ol></div>
             
 
           </div>
