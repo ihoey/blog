@@ -1,5 +1,5 @@
+https://blog.ihoey.com/posts/Linux/2018-01-31-linux-sed-command.html
 https://blog.ihoey.com/posts/Linux/2018-01-30-Hexo-NexT-Wildfire.html
 https://blog.ihoey.com/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html
 https://blog.ihoey.com/posts/Node/2017-12-25-Merry-Christmas.html
 https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html
-https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html
