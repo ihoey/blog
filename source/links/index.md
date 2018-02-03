@@ -24,6 +24,7 @@ comments: true
 - [jnduan's Blog](https://jnan.org/)  -  How lucky you are, how hard you work.
 - [来语直搜](http://www.zhisou.cc/)  --  来语直搜
 - [阿斗](http://www.lijinghua.club/)  --  人生苦短,都要加油哦~
+- [gcZhou](https://oohyo.github.io/)  --  er567's blog
 
 ***
 
