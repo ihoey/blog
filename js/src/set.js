@@ -2,7 +2,7 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by: ihoey
- * @Last Modified time: 2018-01-23 20:46:10
+ * @Last Modified time: 2018-01-23 21:12:37
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
@@ -61,7 +61,7 @@ console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c
 }(window, document);
 
 
-console.log("\n %c 梦魇|专注于分享 QQ:1058221214 %c http://www.dode.top \n\n", "color: #FF0000; background: #4bffba; padding:5px 0; border-radius: 5px 5px 5px 5px;", "background: #fadfa3; padding:5px 0; border-radius: 5px 5px 5px 5px;");
+console.log("\n %c 梦魇|专注于分享 QQ:1058221214 %c https://blog.ihoey.com/ \n\n", "color: #FF0000; background: #4bffba; padding:5px 0; border-radius: 5px 5px 5px 5px;", "background: #fadfa3; padding:5px 0; border-radius: 5px 5px 5px 5px;");
 console.log('%c一颗红心向太阳,吼吼~', 'text-shadow: 3px 1px 1px grey');
 console.info('%c楼上药不能停！', 'text-shadow: 3px 1px 1px grey');
 console.warn('%c楼上嘴太贱！', 'text-shadow: 3px 1px 1px grey');
@@ -208,7 +208,7 @@ window.onload = function() {
   var titleTime;
   document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-      $('[rel="icon"]').attr('href', "/img/TEP.ico");
+      $('[rel="icon"]').attr('href', "/images/fail.ico");
       document.title = '╭(°A°`)╮ 页面崩溃啦 ~ 快回来看看~ | 梦魇小栈！';
       clearTimeout(titleTime);
     } else {
