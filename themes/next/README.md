@@ -1,43 +1,121 @@
-# NexT
+<div align="right">Language: :us:
+<a title="Chinese" href="docs/zh-CN/README.md">:cn:</a>
+<a title="Russian" href="docs/ru/README.md">:ru:</a></div>
 
-> 精于心，简于形
+# <div align="center"><a title="Go to homepage" href="https://theme-next.org"><img align="center" width="56" height="56" src="https://raw.githubusercontent.com/theme-next/hexo-theme-next/master/source/images/logo.svg?sanitize=true"></a> e x T</div>
 
-<a href="http://blog.ihoey.com/" target="_blank">在线预览 Preview</a> | <a href="http://theme-next.iissnan.com" target="_blank">NexT 使用文档</a> |  [English Documentation](README.en.md)
+<p align="center">«NexT» is a high quality elegant <a href="http://hexo.io">Hexo</a> theme. It is crafted from scratch, with love.</p>
 
-[![Join the chat at https://gitter.im/iissnan/hexo-theme-next](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/iissnan/hexo-theme-next?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-![NexT Schemes](http://iissnan.com/nexus/next/next-schemes.jpg)
-
-
-## 浏览器支持 Browser support
-
-![Browser support](http://iissnan.com/nexus/next/browser-support.png)
-
-
-## 贡献 Contributing
-
-接受各种形式的贡献，包括不限于提交问题与需求，修复代码。等待您的`Pull Request`。
-
-Any types of contribution are welcome. Thanks.
-
-## 开发 Development
-
-NexT 主旨在于简洁优雅且易于使用，所以首先要尽量确保 NexT 的简洁易用性。
-
-NexT is built for easily use with elegant appearance. First things first, always keep things simple.
-
-## [开发历史 Changelog](https://github.com/iissnan/hexo-theme-next/wiki/Changelog)
-
+[![lang-image]][lang-url]
+[![gitter-image]][gitter-url]
+[![riot-image]][riot-url]
+[![t-chat-image]][t-chat-url]
+[![t-news-image]][t-news-url]
+[![travis-image]][travis-url]
+[![rel-image]][releases-url]
 [![hexo-image]][hexo-url]
-[![bower-image]][bower-url]
-[![jquery-image]][jquery-url]
-[![velocity-image]][velocity-url]
+[![lic-image]][lic-url]
 
-[hexo-image]: http://img.shields.io/badge/Hexo-2.4+-2BAF2B.svg?style=flat-square
+## Live Preview
+
+* :heart_decoration: Muse scheme: [LEAFERx](https://leaferx.online) | [XiaMo](https://notes.wanghao.work) | [OAwan](https://oawan.me)
+* :six_pointed_star: Mist scheme: [Jeff](https://blog.zzbd.org) | [uchuhimo](http://uchuhimo.me) | [xirong](http://www.ixirong.com)
+* :pisces: Pisces scheme: [Vi](http://notes.iissnan.com) | [Acris](https://acris.me) | [Rainy](https://rainylog.com)
+* :gemini: Gemini scheme: [Ivan.Nginx](https://almostover.ru) | [Alynx](http://sh.alynx.xyz) | [Raincal](https://raincal.top)
+
+More «NexT» examples [here](https://github.com/iissnan/hexo-theme-next/issues/119).
+
+## Installation
+
+Simplest way to install is by cloning whole repository:
+
+   ```sh
+   $ cd hexo
+   $ git clone https://github.com/theme-next/hexo-theme-next themes/next
+   ```
+
+Or you can see [detailed installation instructions][docs-installation-url] if you want any other variant.
+
+## Plugins
+
+In NexT config now you can find dependencies on each module which was moved to external repositories which can be found by [main organization link](https://github.com/theme-next).
+
+For example, you want to use `fancybox` in your site. Go to NexT config and see:
+
+```yml
+# Fancybox
+# Dependencies: https://github.com/theme-next/theme-next-fancybox
+fancybox: false
+```
+
+Then turn on `fancybox` and go to «Dependencies» link with installation instructions of this module.
+
+## Update
+
+You can update to latest master branch by the following command:
+
+```sh
+$ cd themes/next
+$ git pull
+```
+
+And if you see any error message during update (something like **«Commit your changes or stash them before you can merge»**), recommended to learn [Hexo data files][docs-data-files-url] feature.\
+Howbeit, you can bypass update errors by `Commit`, `Stash` or `Discard` local changes. See [here](https://stackoverflow.com/a/15745424/5861495) how to do it.
+
+If you want to update from v5.1.x to v6.0.x, read [here][docs-update-5-1-x-url].
+
+## Known Bugs
+
+For those who also encounter **«[Error: Cannot find module 'hexo-util'](https://github.com/iissnan/hexo-theme-next/issues/1490)»**, please check your NPM version.
+
+* `> 3`: Still not work? Please remove `node_modules` directory and reinstall using `npm install`.
+* `< 3`: Please add `hexo-util` explicitly via `npm install --save-dev hexo-util` to you site package deps.
+
+## Contributing
+
+Contribution is welcome, feel free to open an issue and fork. Waiting for your pull request.
+
+## Third party applications
+
+* :triangular_flag_on_post: <a title="Hexo Markdown Editor" href="https://github.com/zhuzhuyule/HexoEditor" target="_blank">HexoEditor</a>
+
+[browser-image]: https://img.shields.io/badge/browser-%20chrome%20%7C%20firefox%20%7C%20opera%20%7C%20safari%20%7C%20ie%20%3E%3D%209-lightgrey.svg
+[browser-url]: https://www.browserstack.com
+
+[lang-image]: https://img.shields.io/badge/languages-15-orange.svg "Add or improve translate with GitLocalize!"
+[lang-url]: https://gitlocalize.com/repo/698
+
+[gitter-image]: https://badges.gitter.im/Join%20Chat.svg
+[gitter-url]: https://gitter.im/theme-next
+
+[riot-image]: https://img.shields.io/badge/riot-join%20chat-green.svg
+[riot-url]: https://riot.im/app/#/room/#NexT:matrix.org
+
+[t-chat-image]: https://img.shields.io/badge/telegram-chat-lightgrey.svg
+[t-chat-url]: https://t.me/joinchat/GUNHXA-vZkgSMuimL1VmMw
+
+[t-news-image]: https://img.shields.io/badge/telegram-news-lightgrey.svg
+[t-news-url]: https://t.me/theme_next
+
+[travis-image]: https://travis-ci.org/theme-next/hexo-theme-next.svg?branch=master
+[travis-url]: https://travis-ci.org/theme-next/hexo-theme-next?branch=master "Travis CI [Linux]"
+
+[hexo-image]: https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg
 [hexo-url]: http://hexo.io
-[bower-image]: http://img.shields.io/badge/Bower-*-2BAF2B.svg?style=flat-square
-[bower-url]: http://bower.io
-[jquery-image]: https://img.shields.io/badge/jquery-2.1-2BAF2B.svg?style=flat-square
-[jquery-url]: http://jquery.com/
-[velocity-image]: https://img.shields.io/badge/Velocity-1.2-2BAF2B.svg?style=flat-square
-[velocity-url]: http://julian.com/research/velocity/
+
+[lic-image]: https://img.shields.io/badge/license-%20AGPL-blue.svg
+[lic-url]: https://github.com/theme-next/hexo-theme-next/blob/master/LICENSE.md
+
+<!--[rel-image]: https://img.shields.io/github/release/theme-next/hexo-theme-next.svg-->
+[rel-image]: https://badge.fury.io/gh/theme-next%2Fhexo-theme-next.svg
+<!--[mnt-image]: https://img.shields.io/maintenance/yes/2018.svg-->
+
+[download-latest-url]: https://github.com/theme-next/hexo-theme-next/archive/master.zip
+[releases-latest-url]: https://github.com/theme-next/hexo-theme-next/releases/latest
+[releases-url]: https://github.com/theme-next/hexo-theme-next/releases
+[tags-url]: https://github.com/theme-next/hexo-theme-next/tags
+[commits-url]: https://github.com/theme-next/hexo-theme-next/commits/master
+
+[docs-installation-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md
+[docs-data-files-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md
+[docs-update-5-1-x-url]: https://github.com/theme-next/hexo-theme-next/blob/master/docs/UPDATE-FROM-5.1.X.md

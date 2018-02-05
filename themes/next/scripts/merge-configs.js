@@ -1,51 +1,27 @@
 /* global hexo */
 
+var merge = require('./merge');
+
 /**
- * Merge configs in _data/next.yml into hexo.theme.config.
- * Note: configs in _data/next.yml will override configs in hexo.theme.config.
+ * Merge configs from _data/next.yml into hexo.theme.config.
+ * Note: configs in _data/next.yml will rewrite or override configs in hexo.theme.config.
  */
 hexo.on('generateBefore', function () {
   if (hexo.locals.get) {
     var data = hexo.locals.get('data');
-    data && data.next && assign(hexo.theme.config, data.next);
-  }
-});
-
-
-// https://github.com/sindresorhus/object-assign
-function assign(target, source) {
-  var from;
-  var keys;
-  var to = toObject(target);
-
-  for (var s = 1; s < arguments.length; s++) {
-    from = arguments[s];
-    keys = ownEnumerableKeys(Object(from));
-
-    for (var i = 0; i < keys.length; i++) {
-      to[keys[i]] = from[keys[i]];
+    if (data && data.next) {
+      if (data.next.override) {
+        hexo.theme.config = data.next;
+      } else {
+        merge(hexo.config, data.next);
+        merge(hexo.theme.config, data.next);
+      }
+    /**
+     * If next.yml not exists, then merge all `theme_config.*`
+     * options from main Hexo config into hexo.theme.config.
+     */
+    } else {
+      merge(hexo.theme.config, hexo.config.theme_config);
     }
   }
-
-  return to;
-}
-
-function toObject(val) {
-  if (val == null) {
-    throw new TypeError('Object.assign cannot be called with null or undefined');
-  }
-
-  return Object(val);
-}
-
-function ownEnumerableKeys(obj) {
-  var keys = Object.getOwnPropertyNames(obj);
-
-  if (Object.getOwnPropertySymbols) {
-    keys = keys.concat(Object.getOwnPropertySymbols(obj));
-  }
-
-  return keys.filter(function (key) {
-    return Object.prototype.propertyIsEnumerable.call(obj, key);
-  });
-}
+});

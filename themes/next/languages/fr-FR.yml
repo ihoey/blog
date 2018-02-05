@@ -25,6 +25,17 @@ post:
   read_more: Lire la suite
   untitled: Non titré
   toc_empty: This post does not have a Table of Contents
+  visitors: Visitors
+  wordcount: Words count in article
+  min2read: Reading time
+  totalcount: Site words total count
+  totaltime: Site reading time
+  copyright:
+    author: Post author
+    link: Post link
+    license_title: Copyright Notice
+    license_content: 'All articles in this blog are licensed under
+      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally.'
 
 page:
   totally: Total
@@ -56,7 +67,6 @@ state:
   tags: tags
   categories: categories
 
-
 cheers:
   um: Um..
   ok: OK
@@ -70,3 +80,10 @@ keep_on: Et ca ne fait que commencer.
 symbol:
   comma: ', '
   period: '. '
+  colon: ':'
+
+reward:
+  donate: Donate
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  bitcoin: Bitcoin

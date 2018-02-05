@@ -1,45 +1,68 @@
-<div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
-  {% if theme.custom_logo.image and theme.scheme === 'Muse' %}
-    <div class="site-meta-headline">
-      <a>
-        <img class="custom-logo-image" src="{{ theme.custom_logo.image }}"
-             alt="{{ config.title }}"/>
+<div class="site-brand-wrapper">
+  <div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
+    {% if theme.custom_logo.image and theme.scheme === 'Muse' %}
+      <div class="site-meta-headline">
+        <a>
+          <img class="custom-logo-image" src="{{ theme.custom_logo.image }}"
+               alt="{{ config.title }}"/>
+        </a>
+      </div>
+    {% endif %}
+
+    <div class="custom-logo-site-title">
+      <a href="{{ config.root }}"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">{{ config.title }}</span>
+        <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-  {% endif %}
-
-  <div class="custom-logo-site-title">
-    <a href="{{ config.root }}"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">{{ config.title }}</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+      {% if theme.seo %}
+        <h1 class="site-subtitle" itemprop="description">{{ config.subtitle }}</h1>
+      {% else %}
+        <p class="site-subtitle">{{ config.subtitle }}</p>
+      {% endif %}
   </div>
-  <p class="site-subtitle">{{ config.subtitle }}</p>
-</div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
-  {% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.tinysou_Key || config.search %}
+  {% set hasSearch = theme.swiftype_key || theme.algolia_search.enable || theme.tinysou_Key || theme.local_search.enable %}
 
   {% if theme.menu %}
     <ul id="menu" class="menu">
       {% for name, path in theme.menu %}
         {% set itemName = name.toLowerCase() %}
-        <li class="menu-item menu-item-{{ itemName }}">
-          <a href="{{ url_for(path) }}" rel="section">
-            {% if theme.menu_icons.enable %}
-              <i class="menu-item-icon fa fa-fw fa-{{theme.menu_icons[itemName] | default('question-circle') | lower }}"></i> <br />
-            {% endif %}
-            {{ __('menu.' + itemName) }}
-          </a>
+        <li class="menu-item menu-item-{{ itemName | replace(' ', '-') }}">
+          <a href="{{ url_for(path.split('||')[0]) | trim }}" rel="section">
+            {% if theme.menu_settings.icons %}{#
+            #}<i class="menu-item-icon fa fa-fw fa-{{ path.split('||')[1] | trim | default('question-circle') }}"></i> <br />{#
+          #}{% endif %}{#
+
+          #}{% if theme.menu_settings.badges %}{#
+            #}{% if name == 'archives' %}{#
+              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+              #}<span class="badge">{{ site.posts.length }}</span>
+              {% elseif name == 'categories' %}{#
+              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+              #}<span class="badge">{{ site.categories.length }}</span>
+              {% elseif name == 'tags' %}{#
+              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+              #}<span class="badge">{{ site.tags.length }}</span>
+              {% else %}{#
+              #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+            #}{% endif %}{#
+          #}{% else %}{#
+            #}{{ __('menu.' + name) | replace('menu.', '') }}{#
+          #}{% endif %}{#
+
+        #}</a>
         </li>
       {% endfor %}
 
@@ -47,14 +70,14 @@
         <li class="menu-item menu-item-search">
           {% if theme.swiftype_key %}
             <a href="javascript:;" class="st-search-show-outputs">
-          {% elseif config.search %}
+          {% elseif theme.local_search.enable || theme.algolia_search.enable %}
             <a href="javascript:;" class="popup-trigger">
           {% endif %}
-            {% if theme.menu_icons.enable %}
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            {% endif %}
-            {{ __('menu.search') }}
-          </a>
+            {% if theme.menu_settings.icons %}
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />{#
+          #}{% endif %}{#
+          #}{{ __('menu.search') }}{#
+        #}</a>
         </li>
       {% endif %}
     </ul>
@@ -66,9 +89,10 @@
     </div>
   {% endif %}
 </nav>
-<div id="hitokoto" style="
-    text-align: center;
-    padding-top: 25px;
-"></div>
 
-{% include '../_custom/header.swig' %}
+{% if theme.custom_file_path.header %}
+  {% set custom_header = '../../../../' + theme.custom_file_path.header %}
+{% else %}
+  {% set custom_header = '../_custom/header.swig' %}
+{% endif %}
+{% include custom_header %}
