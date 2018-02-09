@@ -14,9 +14,9 @@
         
         <tag>Ubuntu</tag>
          
-        <tag>shell</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>shell</tag>
          
          
            
@@ -185,12 +185,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-13-canvas-part1.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>Canvas部分知识总结</title>
-        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
+        <title>Canvas知识整理part1</title>
+        <pubTime>2016-11-13T11:39:33.000Z</pubTime>
         
         <tag>Canvas</tag>
          
@@ -209,12 +209,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>Canvas知识整理part2</title>
-        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
+        <title>Canvas部分知识总结</title>
+        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
         
         <tag>Canvas</tag>
          
@@ -341,21 +341,21 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2017-07-03-A_re-introduction_to_JavaScript.html</loc>
+    <loc>https://blog.ihoey.com/posts/Cron/2017-04-22-Cron.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>重新介绍 JavaScript（JS全面系列教程）</title>
-        <pubTime>2017-07-03T10:51:21.000Z</pubTime>
+        <title>Ubuntu 使用 Cron 实现计划任务</title>
+        <pubTime>2017-04-21T16:21:21.000Z</pubTime>
         
-        <tag>javascript</tag>
+        <tag>Ubuntu</tag>
          
-        <tag>Function</tag>
+        <tag>Cron</tag>
          
          
            
              
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+              <breadCrumb title="Cron" url="https://blog.ihoey.com/categories/Cron/"/>
           
         </display>
     </data>
@@ -509,21 +509,21 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Cron/2017-04-22-Cron.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2017-07-03-A_re-introduction_to_JavaScript.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>Ubuntu 使用 Cron 实现计划任务</title>
-        <pubTime>2017-04-21T16:21:21.000Z</pubTime>
+        <title>重新介绍 JavaScript（JS全面系列教程）</title>
+        <pubTime>2017-07-03T10:51:21.000Z</pubTime>
         
-        <tag>Ubuntu</tag>
+        <tag>javascript</tag>
          
-        <tag>Cron</tag>
+        <tag>Function</tag>
          
          
            
              
-              <breadCrumb title="Cron" url="https://blog.ihoey.com/categories/Cron/"/>
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
           
         </display>
     </data>
@@ -635,26 +635,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-11-javascript-part6.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript高级篇之part6</title>
-        <pubTime>2016-11-11T11:35:55.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-10-javascript-part5.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -675,14 +655,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-11-javascript-part6.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之原型链</title>
-        <pubTime>2016-07-09T11:41:47.000Z</pubTime>
+        <title>JavaScript高级篇之part6</title>
+        <pubTime>2016-11-11T11:35:55.000Z</pubTime>
         
-        <tag>原型链</tag>
+        <tag>javascript</tag>
          
          
            
@@ -719,6 +699,26 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>js高级与面向对象之原型链</title>
+        <pubTime>2016-07-09T11:41:47.000Z</pubTime>
+        
+        <tag>原型链</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-12-javascript-summary.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -732,6 +732,28 @@
            
              
               <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Linux常用命令笔记</title>
+        <pubTime>2017-05-26T13:49:04.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+        <tag>shell</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
           
         </display>
     </data>
@@ -754,28 +776,6 @@
            
              
               <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>Linux常用命令笔记</title>
-        <pubTime>2017-05-26T13:49:04.000Z</pubTime>
-        
-        <tag>shell</tag>
-         
-        <tag>Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
           
         </display>
     </data>
@@ -893,28 +893,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>科学上网之shadowsocks 服务端安装</title>
-        <pubTime>2017-03-16T10:38:46.000Z</pubTime>
-        
-        <tag>科学上网</tag>
-         
-        <tag>shadowsocks</tag>
-         
-         
-           
-             
-              <breadCrumb title="shadowsocks" url="https://blog.ihoey.com/categories/shadowsocks/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -932,6 +910,28 @@
            
              
               <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>科学上网之shadowsocks 服务端安装</title>
+        <pubTime>2017-03-16T10:38:46.000Z</pubTime>
+        
+        <tag>科学上网</tag>
+         
+        <tag>shadowsocks</tag>
+         
+         
+           
+             
+              <breadCrumb title="shadowsocks" url="https://blog.ihoey.com/categories/shadowsocks/"/>
           
         </display>
     </data>
@@ -960,6 +960,7 @@
     </url>
 
     
+    
   <url>
     <loc>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
@@ -984,31 +985,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-13-canvas-part1.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>Canvas知识整理part1</title>
-        <pubTime>2016-11-13T11:39:33.000Z</pubTime>
-        
-        <tag>Canvas</tag>
-         
-        <tag>HTML5</tag>
-         
-        <tag>画布</tag>
-         
-         
-           
-             
-              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
@@ -1023,6 +999,30 @@
            
              
               <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Canvas知识整理part2</title>
+        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
+        
+        <tag>Canvas</tag>
+         
+        <tag>HTML5</tag>
+         
+        <tag>画布</tag>
+         
+         
+           
+             
+              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
           
         </display>
     </data>
