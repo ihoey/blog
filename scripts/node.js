@@ -26,16 +26,17 @@ function run() {
 		exit(1);
 	} else {
 		echo("======================自动备份开始===========================");
-		cd('F:\blog');    //此处修改为Hexo根目录路径
+    // cd('F:\blog');    //此处修改为Hexo根目录路径
+    console.log(__filename);
 		if (exec('git add .').code !== 0) {
 			echo('Error: Git add failed');
 			exit(1);
 		}
-		if (exec('git commit -m "这个勤奋的家伙又更新源文件"').code !== 0) {
+		if (exec('git commit -m "这个勤奋的家伙又更新源文件!"').code !== 0) {
 			echo('Error: Git commit failed');
 			exit(1);
 		}
-		if (exec('git push origin hexo').code !== 0) {
+		if (exec('git push origin hexo --force').code !== 0) {
 			echo('Error: Git push failed');
 			exit(1);
 		}
