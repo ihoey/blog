@@ -440,10 +440,6 @@
       
         
           <p>由于放假后网络原因不方便使用电脑，需要创建一个 <code>crontab</code> 定时任务，用来在每天固定时间执行一个 <code>Shell</code> 脚本</p>
-<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="添加计划任务"><a href="#添加计划任务" class="headerlink" title="添加计划任务"></a>添加计划任务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br><span class="line"></span><br><span class="line">* 10,19 * * * sh /root/home/cron.sh &gt;&gt; /root/home/temp.txt #每天10点和19点执行一次,路径一定要是绝对路径</span><br><span class="line">30 9 * * * curl "https://sc.ftqq.com/SCU10625Td571049c53dd2e36148f134*****44ef59855df9df77c.send?text=-~" # 每天九点半执行一次</span><br></pre></td></tr></table></figure>
-<h3 id="重启计划任务"><a href="#重启计划任务" class="headerlink" title="重启计划任务"></a>重启计划任务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service crond start</span><br></pre></td></tr></table></figure>
-<p>到了时间以后发现第一个没有反应,第二个是有效的,后来一步步排查问题发现问题</p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在 <code>Shell</code> 脚本中，有对该脚本所在目录的相关文件进行操作的逻辑，在一开始实现时，对当前目录的文件操作时都是使用的相对目录，即 <code>./*</code> 。在终端直接 <code>sh</code> 执行时没有任何问题，正常结束，而一旦在 <code>crontab</code> 中定时执行时，就出现问题，如提示 <code>file not found</code> 或者没有任何输出等错误。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/Linux/2018-02-13-crontab-part1.html" rel="contents">
