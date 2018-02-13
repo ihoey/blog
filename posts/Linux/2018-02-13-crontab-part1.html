@@ -140,21 +140,20 @@
 
 
   
-  <meta name="keywords" content="Node,NodeJs," />
+  <meta name="keywords" content="梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布" />
 
 
-<meta name="description" content="为了让 NodeJs 的文件可以相互调用，NodeJs 提供了一个简单的模块系统。模块是 NodeJs 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 NodeJs 文件就是一个模块，这个文件可能是 JavaScript 代码、JSON 或者编译过的 C/C++ 扩展。">
-<meta name="keywords" content="Node,NodeJs">
+<meta name="description" content="由于放假后网络原因不方便使用电脑，需要创建一个 crontab 定时任务，用来在每天固定时间执行一个 Shell 脚本 过程添加计划任务1234crontab -e* 10,19 * * * sh /root/home/cron.sh &amp;gt;&amp;gt; /root/home/temp.txt #每天10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node第二部分-模块及工具">
-<meta property="og:url" content="https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html">
+<meta property="og:title" content="crontab 踩坑之绝对路径">
+<meta property="og:url" content="https://blog.ihoey.com/posts/Linux/2018-02-13-crontab-part1.html">
 <meta property="og:site_name" content="梦魇小栈">
-<meta property="og:description" content="为了让 NodeJs 的文件可以相互调用，NodeJs 提供了一个简单的模块系统。模块是 NodeJs 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 NodeJs 文件就是一个模块，这个文件可能是 JavaScript 代码、JSON 或者编译过的 C/C++ 扩展。">
+<meta property="og:description" content="由于放假后网络原因不方便使用电脑，需要创建一个 crontab 定时任务，用来在每天固定时间执行一个 Shell 脚本 过程添加计划任务1234crontab -e* 10,19 * * * sh /root/home/cron.sh &amp;gt;&amp;gt; /root/home/temp.txt #每天10点和19点执行一次,路径一定要是绝对路径30 9 * * * curl &quot;https://sc.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-14T08:46:53.000Z">
+<meta property="og:updated_time" content="2018-02-13T02:35:48.314Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node第二部分-模块及工具">
-<meta name="twitter:description" content="为了让 NodeJs 的文件可以相互调用，NodeJs 提供了一个简单的模块系统。模块是 NodeJs 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 NodeJs 文件就是一个模块，这个文件可能是 JavaScript 代码、JSON 或者编译过的 C/C++ 扩展。">
+<meta name="twitter:title" content="crontab 踩坑之绝对路径">
+<meta name="twitter:description" content="由于放假后网络原因不方便使用电脑，需要创建一个 crontab 定时任务，用来在每天固定时间执行一个 Shell 脚本 过程添加计划任务1234crontab -e* 10,19 * * * sh /root/home/cron.sh &amp;gt;&amp;gt; /root/home/temp.txt #每天10点和19点执行一次,路径一定要是绝对路径30 9 * * * curl &quot;https://sc.">
 
 
 
@@ -163,10 +162,10 @@
 
 
 
-  <link rel="canonical" href="https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html"/>
+  <link rel="canonical" href="https://blog.ihoey.com/posts/Linux/2018-02-13-crontab-part1.html"/>
 
 
-  <title>Node第二部分-模块及工具 | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布 </title>
+  <title>crontab 踩坑之绝对路径 | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布 </title>
   
 
 
@@ -353,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Linux/2018-02-13-crontab-part1.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ihoey">
@@ -370,7 +369,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Node第二部分-模块及工具</h2>
+          <h2 class="post-title" itemprop="name headline">crontab 踩坑之绝对路径</h2>
         
 
         <div class="post-meta">
@@ -382,7 +381,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-12T09:12:32+08:00">2016-12-12</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T10:09:26+08:00">2018-02-13</time>
             
 
             
@@ -403,7 +402,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Node/" itemprop="url" rel="index"><span itemprop="name">Node</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
 
                 
                 
@@ -442,55 +441,23 @@
       
 
       
-        <p>为了让 <code>NodeJs</code> 的文件可以相互调用，<code>NodeJs</code> 提供了一个简单的模块系统。<br>模块是 <code>NodeJs</code> 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 <code>NodeJs</code> 文件就是一个模块，这个文件可能是 <code>JavaScript</code> 代码、<code>JSON</code> 或者编译过的 <code>C/C++</code> 扩展。</p>
+        <p>由于放假后网络原因不方便使用电脑，需要创建一个 <code>crontab</code> 定时任务，用来在每天固定时间执行一个 <code>Shell</code> 脚本</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="添加计划任务"><a href="#添加计划任务" class="headerlink" title="添加计划任务"></a>添加计划任务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br><span class="line"></span><br><span class="line">* 10,19 * * * sh /root/home/cron.sh &gt;&gt; /root/home/temp.txt #每天10点和19点执行一次,路径一定要是绝对路径</span><br><span class="line">30 9 * * * curl "https://sc.ftqq.com/SCU10625Td571049c53dd2e36148f134*****44ef59855df9df77c.send?text=-~" # 每天九点半执行一次</span><br></pre></td></tr></table></figure>
+<h3 id="重启计划任务"><a href="#重启计划任务" class="headerlink" title="重启计划任务"></a>重启计划任务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service crond start</span><br></pre></td></tr></table></figure>
+<p>到了时间以后发现第一个没有反应,第二个是有效的,后来一步步排查问题发现问题</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在 <code>Shell</code> 脚本中，有对该脚本所在目录的相关文件进行操作的逻辑，在一开始实现时，对当前目录的文件操作时都是使用的相对目录，即 <code>./*</code> 。在终端直接 <code>sh</code> 执行时没有任何问题，正常结束，而一旦在 <code>crontab</code> 中定时执行时，就出现问题，如提示 <code>file not found</code> 或者没有任何输出等错误。</p>
 <a id="more"></a>
-<h2 id="NodeJs的模块"><a href="#NodeJs的模块" class="headerlink" title="NodeJs的模块"></a>NodeJs的模块</h2><ul>
-<li>核心模块(只要安装了node就会有的模块,已经被打包到了node.exe文件)</li>
-<li>自定义模块(我们自己写的js模块)</li>
-<li>第三方的模块(包)</li>
+<p>之前的脚本内容是</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">echo "test" &gt;&gt; temp.txt</span><br><span class="line">git add .</span><br><span class="line">git commit -m"更新"</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><p>出现问题后，我在脚本中试着打印出 <code>crontab</code> 执行时的当前目录，如 <code>curPath=$(pwd)</code> ，执行后发现，打印出的结果为 <code>$HOME</code> 的目录，而非脚本所在的原始目录，这就造成了在脚本中使用相对路径时出现找不到的情况。</p>
+<p>找到问题后，解决方法有两个：</p>
+<ul>
+<li>将相对路径替换为绝对路径。（ps：如脚本中包含某些Shell命令，且命令的某些参数为默认当前目录的，都需要显式的给出绝对路径）</li>
+<li>在操作相对路径之前，使用 <code>cd /....../</code> ，在执行脚本时强制进入到该目录。</li>
 </ul>
-<h2 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h2><ul>
-<li>http</li>
-<li>url</li>
-<li>fs</li>
-<li>……等</li>
-</ul>
-<h3 id="http-模块"><a href="#http-模块" class="headerlink" title="http 模块"></a>http 模块</h3><p>在我们的代码中请求它并把返回值赋给一个本地变量</p>
-<h3 id="url-模块"><a href="#url-模块" class="headerlink" title="url 模块"></a>url 模块</h3><ul>
-<li>用来操作url的</li>
-<li>url.parse(request.url,true)</li>
-</ul>
-<h2 id="fs文件操作模块"><a href="#fs文件操作模块" class="headerlink" title="fs文件操作模块"></a>fs文件操作模块</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="comment">// 读取文件:</span></span><br><span class="line"><span class="comment">// 参数1：文件路径</span></span><br><span class="line"><span class="comment">// 参数2： 文件编码</span></span><br><span class="line"><span class="comment">// 返回值： 文件内容</span></span><br><span class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'./index.html'</span>,<span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写入文件</span></span><br><span class="line"><span class="comment">// 第一个参数：是要写入的文件目录,</span></span><br><span class="line"><span class="comment">// 第二个参数:是要写入的内容!</span></span><br><span class="line"><span class="comment">// 这个方法执行时会【覆盖】之前的文件内容!</span></span><br><span class="line">fs.writeFileSync(<span class="string">'./tmp.txt'</span>,<span class="string">'我是中国人，我爱自己的祖国!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 追加文件</span></span><br><span class="line">fs.appendFileSync(<span class="string">'./xx.js'</span>,<span class="string">'我是小明，我在哪里?\r\n'</span>)</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 创建目录</span></span><br><span class="line">    <span class="comment">// 判断目录是否存在，如果不存在，则创建</span></span><br><span class="line">    <span class="keyword">var</span> result = fs.existsSync(<span class="string">'data'</span>) <span class="comment">// 判断当前目录是否存在data目录</span></span><br><span class="line">    <span class="keyword">if</span>(!result)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result)</span><br><span class="line">    <span class="comment">// 创建目录</span></span><br><span class="line">    fs.mkdirSync(<span class="string">'data'</span>)<span class="comment">// 在当前目录创建data目录</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="dirname和firename"><a href="#dirname和firename" class="headerlink" title="dirname和firename"></a><strong>dirname和</strong>firename</h2><p>1, <strong>dirname 可在任意文件中直接使用,值表示当前文件所在路径字符串<br>2, </strong>firname 也可以在任意文件中使用,值表示当前文件的包含文件名的完整路径!</p>
-<h2 id="按顺序执行就是同步"><a href="#按顺序执行就是同步" class="headerlink" title="按顺序执行就是同步"></a>按顺序执行就是同步</h2><h2 id="form表单，提交get请求，会把请求参数添加到url中"><a href="#form表单，提交get请求，会把请求参数添加到url中" class="headerlink" title="form表单，提交get请求，会把请求参数添加到url中"></a>form表单，提交get请求，会把请求参数添加到url中</h2><h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向!"></a>重定向!</h2><ul>
-<li>在响应头里加上 Location:’新地址’,并设置状态为302</li>
-<li><code>res.setHeader(&#39;key&#39;,&#39;value&#39;)</code>// 设置响应头</li>
-<li><code>res.writeHead(状态码)</code>// 设置状态码!</li>
-<li>浏览器接收到数据后会重新向新地址跳转!</li>
-</ul>
-<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><ul>
-<li>node package manager</li>
-<li>node的包管理工具，管理的是第三方包</li>
-<li><a href="https://www.npmjs.com/" target="_blank" rel="noopener">官网</a></li>
-<li>也能管理前端的包</li>
-</ul>
-<h3 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h3><ul>
-<li>初始化: <code>npm init</code></li>
-<li><code>npm install &lt;包名&gt;</code></li>
-</ul>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><h2 id="离线文档阅读器"><a href="#离线文档阅读器" class="headerlink" title="离线文档阅读器"></a>离线文档阅读器</h2><ul>
-<li><a href="https://zealdocs.org/" target="_blank" rel="noopener">windows版本</a></li>
-<li><a href="dash">mac版本</a></li>
-</ul>
-<h2 id="es6-es2015-每天一点点"><a href="#es6-es2015-每天一点点" class="headerlink" title="es6/es2015 每天一点点"></a>es6/es2015 每天一点点</h2><ul>
-<li>const<br>//  const申明的数据，在栈中不可变，但是如果是对象，则对应的属性值可以变,也就是堆中的值可变,栈中的地址不可以变！</li>
-<li>let<br>// let申明的变量，作用由大括号决定!</li>
-</ul>
-<h3 id="提交效率"><a href="#提交效率" class="headerlink" title="提交效率"></a>提交效率</h3><ul>
-<li>组合键: <code>win+E</code>, 打开资源管理器</li>
-<li>组合键: <code>wind+D</code>, 快速切换到桌面</li>
-<li>组合键: <code>ctrl+shift+esc</code> 快速打开任务管理器</li>
-</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /root/home/</span><br><span class="line"></span><br><span class="line">echo "test" &gt;&gt; temp.txt</span><br><span class="line">git add .</span><br><span class="line">git commit -m"更新"</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<h3 id="排查问题可以查看日志来看是否执行"><a href="#排查问题可以查看日志来看是否执行" class="headerlink" title="排查问题可以查看日志来看是否执行"></a>排查问题可以查看日志来看是否执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">编辑</span></span><br><span class="line">sudo vim /etc/rsyslog.d/50-default.conf</span><br><span class="line"><span class="meta">#</span><span class="bash">找到将cron前面的注释符去掉</span></span><br><span class="line">cron.*              /var/log/cron.log</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 然后查看日志,到指定时间看是否执行</span></span></span><br><span class="line">tail -f /var/log/cron.log</span><br></pre></td></tr></table></figure>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>系统在执行定时任务时，是不会加载任何环境变量的，所以当脚本需要环境变量时，可以通过在脚本中添加 <code>source /etc/profile</code> 命令来使配置生效。</p>
 
       
     </div>
@@ -543,14 +510,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Node/" rel="tag"># Node</a>
-          
-            <a href="/tags/NodeJs/" rel="tag"># NodeJs</a>
-          
-        </div>
-      
 
       
       
@@ -560,8 +519,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/Node/2016-12-10-Node-part1.html" rel="next" title="Node第一部分-初体验">
-                <i class="fa fa-chevron-left"></i> Node第一部分-初体验
+              <a href="/posts/Linux/2018-01-31-linux-sed-command.html" rel="next" title="SED 命令简明教程">
+                <i class="fa fa-chevron-left"></i> SED 命令简明教程
               </a>
             
           </div>
@@ -569,10 +528,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html" rel="prev" title="adb(Android Debug Bridge，Android调试桥)常用命令">
-                adb(Android Debug Bridge，Android调试桥)常用命令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -608,8 +563,8 @@
             siteId: 'ihoey'
           
           },
-          pageURL: 'https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html',
-          pageTitle: 'Node第二部分-模块及工具',
+          pageURL: 'https://blog.ihoey.com/posts/Linux/2018-02-13-crontab-part1.html',
+          pageTitle: 'crontab 踩坑之绝对路径',
           theme: 'light',
           locale: 'zh-CN',
           defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
@@ -787,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NodeJs的模块"><span class="nav-number">1.</span> <span class="nav-text">NodeJs的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心模块"><span class="nav-number">2.</span> <span class="nav-text">核心模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#http-模块"><span class="nav-number">2.1.</span> <span class="nav-text">http 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url-模块"><span class="nav-number">2.2.</span> <span class="nav-text">url 模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fs文件操作模块"><span class="nav-number">3.</span> <span class="nav-text">fs文件操作模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dirname和firename"><span class="nav-number">4.</span> <span class="nav-text">dirname和firename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按顺序执行就是同步"><span class="nav-number">5.</span> <span class="nav-text">按顺序执行就是同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#form表单，提交get请求，会把请求参数添加到url中"><span class="nav-number">6.</span> <span class="nav-text">form表单，提交get请求，会把请求参数添加到url中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重定向"><span class="nav-number">7.</span> <span class="nav-text">重定向!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm"><span class="nav-number">8.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装包"><span class="nav-number">8.1.</span> <span class="nav-text">安装包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展"><span class="nav-number">9.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线文档阅读器"><span class="nav-number">10.</span> <span class="nav-text">离线文档阅读器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#es6-es2015-每天一点点"><span class="nav-number">11.</span> <span class="nav-text">es6/es2015 每天一点点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提交效率"><span class="nav-number">11.1.</span> <span class="nav-text">提交效率</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">1.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加计划任务"><span class="nav-number">1.1.</span> <span class="nav-text">添加计划任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启计划任务"><span class="nav-number">1.2.</span> <span class="nav-text">重启计划任务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">2.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决问题"><span class="nav-number">3.</span> <span class="nav-text">解决问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#排查问题可以查看日志来看是否执行"><span class="nav-number">3.1.</span> <span class="nav-text">排查问题可以查看日志来看是否执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a></li></ol></div>
             
 
           </div>

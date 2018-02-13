@@ -352,6 +352,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Linux/2018-02-13-crontab-part1.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ihoey">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://oisha19l0.qnssl.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦魇小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/Linux/2018-02-13-crontab-part1.html" itemprop="url">crontab 踩坑之绝对路径</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-13T10:09:26+08:00">2018-02-13</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>由于放假后网络原因不方便使用电脑，需要创建一个 <code>crontab</code> 定时任务，用来在每天固定时间执行一个 <code>Shell</code> 脚本</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="添加计划任务"><a href="#添加计划任务" class="headerlink" title="添加计划任务"></a>添加计划任务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br><span class="line"></span><br><span class="line">* 10,19 * * * sh /root/home/cron.sh &gt;&gt; /root/home/temp.txt #每天10点和19点执行一次,路径一定要是绝对路径</span><br><span class="line">30 9 * * * curl "https://sc.ftqq.com/SCU10625Td571049c53dd2e36148f134*****44ef59855df9df77c.send?text=-~" # 每天九点半执行一次</span><br></pre></td></tr></table></figure>
+<h3 id="重启计划任务"><a href="#重启计划任务" class="headerlink" title="重启计划任务"></a>重启计划任务</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service crond start</span><br></pre></td></tr></table></figure>
+<p>到了时间以后发现第一个没有反应,第二个是有效的,后来一步步排查问题发现问题</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在 <code>Shell</code> 脚本中，有对该脚本所在目录的相关文件进行操作的逻辑，在一开始实现时，对当前目录的文件操作时都是使用的相对目录，即 <code>./*</code> 。在终端直接 <code>sh</code> 执行时没有任何问题，正常结束，而一旦在 <code>crontab</code> 中定时执行时，就出现问题，如提示 <code>file not found</code> 或者没有任何输出等错误。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/Linux/2018-02-13-crontab-part1.html" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Linux/2018-01-31-linux-sed-command.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -925,151 +1074,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ihoey">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://oisha19l0.qnssl.com/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梦魇小栈">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/javascript/2017-11-29-javascript-getGverify.html" itemprop="url">JAVASCRIPT生成图形验证码</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-29T19:49:01+08:00">2017-11-29</time>
-            
-
-            
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>本文实例为大家分享了js生成图形验证码的具体代码，供大家参考，具体内容如下</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/javascript/2017-11-29-javascript-getGverify.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1121,7 +1125,7 @@
                 
                   <a href="/archives/index.html">
                 
-                    <span class="site-state-item-count">46</span>
+                    <span class="site-state-item-count">47</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
