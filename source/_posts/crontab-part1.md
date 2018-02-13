@@ -66,11 +66,13 @@ git push origin master
 ### 排查问题可以查看日志来看是否执行
 
 ```shell
-#编辑
+#编辑rsyslog
 sudo vim /etc/rsyslog.d/50-default.conf
-#找到将cron前面的注释符去掉
+#找到rsyslog中cron一行将前面的注释符#去掉
 cron.*              /var/log/cron.log
-## 然后查看日志,到指定时间看是否执行
+#重启rsyslog
+sudo  service rsyslog  restart
+# 然后查看日志,到指定时间看是否执行
 tail -f /var/log/cron.log
 ```
 
