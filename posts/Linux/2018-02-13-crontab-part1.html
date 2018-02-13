@@ -150,7 +150,7 @@
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="由于放假后网络原因不方便使用电脑，需要创建一个 crontab 定时任务，用来在每天固定时间执行一个 Shell 脚本">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-13T02:38:23.925Z">
+<meta property="og:updated_time" content="2018-02-13T02:41:35.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="crontab 踩坑之绝对路径">
 <meta name="twitter:description" content="由于放假后网络原因不方便使用电脑，需要创建一个 crontab 定时任务，用来在每天固定时间执行一个 Shell 脚本">
@@ -456,7 +456,7 @@
 <li>在操作相对路径之前，使用 <code>cd /....../</code> ，在执行脚本时强制进入到该目录。</li>
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /root/home/</span><br><span class="line"></span><br><span class="line">echo "test" &gt;&gt; temp.txt</span><br><span class="line">git add .</span><br><span class="line">git commit -m"更新"</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
-<h3 id="排查问题可以查看日志来看是否执行"><a href="#排查问题可以查看日志来看是否执行" class="headerlink" title="排查问题可以查看日志来看是否执行"></a>排查问题可以查看日志来看是否执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">编辑</span></span><br><span class="line">sudo vim /etc/rsyslog.d/50-default.conf</span><br><span class="line"><span class="meta">#</span><span class="bash">找到将cron前面的注释符去掉</span></span><br><span class="line">cron.*              /var/log/cron.log</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># 然后查看日志,到指定时间看是否执行</span></span></span><br><span class="line">tail -f /var/log/cron.log</span><br></pre></td></tr></table></figure>
+<h3 id="排查问题可以查看日志来看是否执行"><a href="#排查问题可以查看日志来看是否执行" class="headerlink" title="排查问题可以查看日志来看是否执行"></a>排查问题可以查看日志来看是否执行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">编辑rsyslog</span></span><br><span class="line">sudo vim /etc/rsyslog.d/50-default.conf</span><br><span class="line"><span class="meta">#</span><span class="bash">找到rsyslog中cron一行将前面的注释符<span class="comment">#去掉</span></span></span><br><span class="line">cron.*              /var/log/cron.log</span><br><span class="line"><span class="meta">#</span><span class="bash">重启rsyslog</span></span><br><span class="line">sudo  service rsyslog  restart</span><br><span class="line"><span class="meta">#</span><span class="bash"> 然后查看日志,到指定时间看是否执行</span></span><br><span class="line">tail -f /var/log/cron.log</span><br></pre></td></tr></table></figure>
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>系统在执行定时任务时，是不会加载任何环境变量的，所以当脚本需要环境变量时，可以通过在脚本中添加 <code>source /etc/profile</code> 命令来使配置生效。</p>
 
       
