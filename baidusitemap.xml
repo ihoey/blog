@@ -205,12 +205,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>Canvas知识整理part2</title>
-        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
+        <title>Canvas部分知识总结</title>
+        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
         
         <tag>Canvas</tag>
          
@@ -458,12 +458,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
-        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
+        <title>JQuery分析及实现part5之事件模块功能及实现</title>
+        <pubTime>2016-11-23T02:27:16.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -482,12 +482,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part5之事件模块功能及实现</title>
-        <pubTime>2016-11-23T02:27:16.000Z</pubTime>
+        <title>JQuery分析及实现part6之动画模块功能及实现</title>
+        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -572,12 +572,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-08-javascript-part3.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-18-javascript-part2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part3</title>
-        <pubTime>2016-11-08T11:39:35.000Z</pubTime>
+        <title>JavaScript高级篇之part2</title>
+        <pubTime>2016-05-18T10:29:33.000Z</pubTime>
         
         <tag>javascript</tag>
          
@@ -592,12 +592,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-18-javascript-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-08-javascript-part3.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part2</title>
-        <pubTime>2016-05-18T10:29:33.000Z</pubTime>
+        <title>JavaScript高级篇之part3</title>
+        <pubTime>2016-11-08T11:39:35.000Z</pubTime>
         
         <tag>javascript</tag>
          
@@ -652,14 +652,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-11-javascript-part6.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part6</title>
-        <pubTime>2016-11-11T11:35:55.000Z</pubTime>
+        <title>js高级与面向对象之原型链</title>
+        <pubTime>2016-07-09T11:41:47.000Z</pubTime>
         
-        <tag>javascript</tag>
+        <tag>原型链</tag>
          
          
            
@@ -672,14 +672,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-11-javascript-part6.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之原型链</title>
-        <pubTime>2016-07-09T11:41:47.000Z</pubTime>
+        <title>JavaScript高级篇之part6</title>
+        <pubTime>2016-11-11T11:35:55.000Z</pubTime>
         
-        <tag>原型链</tag>
+        <tag>javascript</tag>
          
          
            
@@ -716,26 +716,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-12-javascript-summary.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript高级篇总结</title>
-        <pubTime>2016-11-12T11:04:31.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -751,6 +731,26 @@
            
              
               <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-12-javascript-summary.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript高级篇总结</title>
+        <pubTime>2016-11-12T11:04:31.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
           
         </display>
     </data>
@@ -848,6 +848,28 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/CSS3/2017-04-28-pseudo-elements-and-pseudo-classes.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>重新认识伪类和伪元素</title>
+        <pubTime>2017-04-28T08:35:10.000Z</pubTime>
+        
+        <tag>伪类</tag>
+         
+        <tag>伪元素</tag>
+         
+         
+           
+             
+              <breadCrumb title="CSS3" url="https://blog.ihoey.com/categories/CSS3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/Node/2017-05-10-npm.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -892,21 +914,41 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/CSS3/2017-04-28-pseudo-elements-and-pseudo-classes.html</loc>
+    <loc>https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>重新认识伪类和伪元素</title>
-        <pubTime>2017-04-28T08:35:10.000Z</pubTime>
+        <title>博客评论网易云跟帖评论提醒功能</title>
+        <pubTime>2017-06-22T11:00:21.000Z</pubTime>
         
-        <tag>伪类</tag>
-         
-        <tag>伪元素</tag>
+        <tag>comment</tag>
          
          
            
              
-              <breadCrumb title="CSS3" url="https://blog.ihoey.com/categories/CSS3/"/>
+              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>工具使用篇之Markdown</title>
+        <pubTime>2016-11-27T02:35:12.000Z</pubTime>
+        
+        <tag>tools</tag>
+         
+        <tag>Markdown语法规范</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="https://blog.ihoey.com/categories/Markdown/"/>
           
         </display>
     </data>
@@ -937,48 +979,6 @@
     </url>
 
     
-  <url>
-    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>工具使用篇之Markdown</title>
-        <pubTime>2016-11-27T02:35:12.000Z</pubTime>
-        
-        <tag>tools</tag>
-         
-        <tag>Markdown语法规范</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="https://blog.ihoey.com/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>博客评论网易云跟帖评论提醒功能</title>
-        <pubTime>2017-06-22T11:00:21.000Z</pubTime>
-        
-        <tag>comment</tag>
-         
-         
-           
-             
-              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://blog.ihoey.com/posts/Canvas/2016-11-13-canvas-part1.html</loc>
@@ -1005,12 +1005,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>Canvas部分知识总结</title>
-        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
+        <title>Canvas知识整理part2</title>
+        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
         
         <tag>Canvas</tag>
          
@@ -1029,12 +1029,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part6之动画模块功能及实现</title>
-        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
+        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
+        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
         
         <tag>原生Js</tag>
          
