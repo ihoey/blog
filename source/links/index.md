@@ -15,19 +15,19 @@ comments: true
 <!-- - [等待!!!](http://www.ccyyao.top/links/)  -  爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中! -->
 <!-- - [心雨](http://www.mcling.xyz/links/)  -  天再高又怎样, 踮起脚尖就更接近阳光! -->
 <!-- - [neoFelhz](https://blog.neofelhz.ga)  -  拾穗者的故事 -->
-- [mythsman](https://blog.mythsman.com)  -  哈哈,目测大佬一枚
-- [https://gao4.pw/](https://gao4.pw/友情链接)  -  沫雨
-- [http://www.ad-s.cn/](http://www.ad-s.cn/)  -  冰封博客
+- [Myths](https://blog.mythsman.com)  -  闻道有先后，术业有专攻
+- [MoeYi's Blog](https://gao4.pw/友情链接)  -   MoeYi's Blog
+- [冰封的博客](https://www.ad-s.cn/links)  -  一位孤独的旅人
 - [可乐没气的猫](https://www.isthnew.com/links/)  -  热爱科技，热爱生活，分享思维，吐槽不平
 - [萌小喵](http://blog.awumiao.cn/)  -  念念不忘，必有回响
-- [火辣辣](http://huolalaweb.com/)  - 个人前端博客
+- [火辣辣](http://huolalaweb.com/about/)  - 个人前端博客
 - [jnduan's Blog](https://jnan.org/)  -  How lucky you are, how hard you work.
 - [来语直搜](http://www.zhisou.cc/)  --  来语直搜
-- [阿斗](http://www.lijinghua.club/)  --  人生苦短,都要加油哦~
+- [阿斗](https://www.lijinghua.club/links)  --  人生苦短,都要加油哦~
 - [gcZhou](https://oohyo.github.io/)  --  er567's blog
-- [刘伟的博客](https://darrenliuwei.com/)  --  less is more
-- [Axton Yao](https://flyhigher.top/)  --  Always Dream. Always Explore.
-- [钟储兵博客](http://www.zcbboke.com/)  --  钟储兵博客，是一个关注web全栈开发和江西seo优化的个人博客，主要涵盖web前后端、网络运营、seo优化、资源分享、猿梦日记等。
+- [刘伟的博客](https://darrenliuwei.com/links/)  --  less is more
+- [Axton Yao](https://flyhigher.top/links)  --  Always Dream. Always Explore.
+- [钟储兵博客](http://www.zcbboke.com/)  --  钟储兵博客
 
 ***
 
@@ -52,7 +52,7 @@ comments: true
 - 名称：梦魇小栈
 - 地址：https://blog.ihoey.com/
 - 描述：心，若没有栖息的地方，到哪里都是流浪......
-- 图片：https://oisha19l0.qnssl.com/avatar.png
+- 图片：<a href="https://oisha19l0.qnssl.com/avatar.png" rel="nofollow">https://oisha19l0.qnssl.com/avatar.png</a>
 
 ***
 
