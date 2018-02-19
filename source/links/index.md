@@ -25,7 +25,8 @@ comments: true
 - [来语直搜](http://www.zhisou.cc/)  --  来语直搜
 - [阿斗](http://www.lijinghua.club/)  --  人生苦短,都要加油哦~
 - [gcZhou](https://oohyo.github.io/)  --  er567's blog
-- [刘伟的博客](https://darrenliuwei.com/links/)  --  less is more
+- [刘伟的博客](https://darrenliuwei.com/)  --  less is more
+- [Axton Yao](https://flyhigher.top/)  --  Always Dream. Always Explore.
 
 ***
 
