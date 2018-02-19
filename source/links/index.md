@@ -27,6 +27,7 @@ comments: true
 - [gcZhou](https://oohyo.github.io/)  --  er567's blog
 - [刘伟的博客](https://darrenliuwei.com/)  --  less is more
 - [Axton Yao](https://flyhigher.top/)  --  Always Dream. Always Explore.
+- [钟储兵博客](http://www.zcbboke.com/)  --  钟储兵博客，是一个关注web全栈开发和江西seo优化的个人博客，主要涵盖web前后端、网络运营、seo优化、资源分享、猿梦日记等。
 
 ***
 
