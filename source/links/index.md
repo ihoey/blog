@@ -9,7 +9,7 @@ comments: true
 
 ## Blog friends
 
-- [杰杰无敌](https://blog.liujiefront.com "杰杰无敌")  -  每天进步一点点,杰杰无敌,liujiefront,liujie,刘杰的个人blog
+- [杰杰无敌](https://blog.liujiefront.com/links/)  -  每天进步一点点,杰杰无敌,liujiefront,liujie,刘杰的个人blog
 <!-- - [梦魇|专注于分享](http://www.dode.top/links.html "梦魇|专注于分享™")  -  一个帮助过我的好朋友，技术很不错 -->
 <!-- - [一叶知秋](http://www.webmars.xyz/)  -  森林里出现了两条路，而我选择了人迹罕至的一条，从此决定了一切际遇的不同！ -->
 <!-- - [等待!!!](http://www.ccyyao.top/links/)  -  爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中! -->
@@ -25,7 +25,7 @@ comments: true
 - [来语直搜](http://www.zhisou.cc/)  --  来语直搜
 - [阿斗](https://www.lijinghua.club/links)  --  人生苦短,都要加油哦~
 - [gcZhou](https://oohyo.github.io/)  --  er567's blog
-- [刘伟的博客](https://darrenliuwei.com/links/)  --  less is more
+- [刘伟的博客](https://darrenliuwei.com/)  --  less is more
 - [Axton Yao](https://flyhigher.top/links)  --  Always Dream. Always Explore.
 - [钟储兵博客](http://www.zcbboke.com/)  --  钟储兵博客
 
