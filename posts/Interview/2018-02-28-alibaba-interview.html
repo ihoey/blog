@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<!--
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG  By:- ihoey.com
+-->
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://oisha19l0.qnssl.com/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.2" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=6.0.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.0.2">
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.0.2',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+<link href="/css/cursor.css" rel="stylesheet" type="text/css" />
+<link href="https://oisha19l0.qnssl.com/eevee.css" rel="stylesheet" type="text/css" />
+<script src="/js/src/set.js"></script>
+
+
+  
+  <meta name="keywords" content="面试," />
+
+
+<meta name="description" content="脑子混了记得不多了，记得多少就记录多少吧。。。。">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试分享：2018阿里巴巴前端面试总结(题目+答案)">
+<meta property="og:url" content="https://blog.ihoey.com/posts/Interview/2018-02-28-alibaba-interview.html">
+<meta property="og:site_name" content="梦魇小栈">
+<meta property="og:description" content="脑子混了记得不多了，记得多少就记录多少吧。。。。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-02-28T10:43:31.432Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试分享：2018阿里巴巴前端面试总结(题目+答案)">
+<meta name="twitter:description" content="脑子混了记得不多了，记得多少就记录多少吧。。。。">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦魇小栈" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://blog.ihoey.com/posts/Interview/2018-02-28-alibaba-interview.html"/>
+
+
+  <title>面试分享：2018阿里巴巴前端面试总结(题目+答案) | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布 </title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87991666-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-87991666-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199400a900d7a62bfff2335224e096d8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">梦魇小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">专注于分享</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/index.html" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-link"></i> <br />友情链接</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-guestbook">
+          <a href="/guestbook/index.html" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />留言</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/index.html" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />我是谁˚∆˚</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/index.html" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/index.html" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+<div id="hitokoto" style="
+    text-align: center;
+    padding-top: 25px;
+"></div>
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Interview/2018-02-28-alibaba-interview.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ihoey">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://oisha19l0.qnssl.com/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦魇小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">面试分享：2018阿里巴巴前端面试总结(题目+答案)</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-28T17:37:18+08:00">2018-02-28</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Interview/" itemprop="url" rel="index"><span itemprop="name">Interview</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"> 我被看了</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>脑子混了记得不多了，记得多少就记录多少吧。。。。</p>
+<a id="more"></a>
+<h2 id="使用css实现一个持续的动画效果"><a href="#使用css实现一个持续的动画效果" class="headerlink" title="使用css实现一个持续的动画效果"></a>使用css实现一个持续的动画效果</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">animation</span><span class="selector-pseudo">:mymove</span> 5<span class="selector-tag">s</span> <span class="selector-tag">infinite</span>;</span><br><span class="line">@<span class="keyword">keyframes</span> mymove &#123;</span><br><span class="line"><span class="selector-tag">from</span> &#123;<span class="attribute">top</span>:<span class="number">0px</span>;&#125;</span><br><span class="line"><span class="selector-tag">to</span> &#123;<span class="attribute">top</span>:<span class="number">200px</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>主要考：<code>animation</code> 用法</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>animation-name</code></td>
+<td style="text-align:left">规定需要绑定到选择器的 keyframe 名称。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-duration</code></td>
+<td style="text-align:left">规定完成动画所花费的时间，以秒或毫秒计。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-timing-function</code></td>
+<td style="text-align:left">规定动画的速度曲线。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-delay</code></td>
+<td style="text-align:left">规定在动画开始之前的延迟。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-iteration-count</code></td>
+<td style="text-align:left">规定动画应该播放的次数。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>animation-direction</code></td>
+<td style="text-align:left">规定是否应该轮流反向播放动画。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="使用js实现一个持续的动画效果"><a href="#使用js实现一个持续的动画效果" class="headerlink" title="使用js实现一个持续的动画效果"></a>使用js实现一个持续的动画效果</h2><p>最开始的思路是用定时器实现，最后没有想的太完整，面试官给出的答案是用<code>requestAnimationFrame</code>。</p>
+<ul>
+<li>定时器思路</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> e = <span class="built_in">document</span>.getElementById(<span class="string">'e'</span>)</span><br><span class="line"><span class="keyword">var</span> falg = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> left = <span class="number">0</span>;</span><br><span class="line">setInterval(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    left == <span class="number">0</span> ? falg = <span class="literal">true</span> : left == <span class="number">100</span> ? falg = <span class="literal">false</span> : <span class="string">''</span></span><br><span class="line">    falg ? e.style.left = <span class="string">` <span class="subst">$&#123;left++&#125;</span>px`</span> : e.style.left = <span class="string">` <span class="subst">$&#123;left--&#125;</span>px`</span></span><br><span class="line">&#125;, <span class="number">1000</span> / <span class="number">60</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>requestAnimationFrame</code><br>由于之前没有用过这个 <code>API</code> 所以是现学的。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//兼容性处理</span></span><br><span class="line"><span class="built_in">window</span>.requestAnimFrame = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span>  <span class="built_in">window</span>.requestAnimationFrame       ||</span><br><span class="line">          <span class="built_in">window</span>.webkitRequestAnimationFrame ||</span><br><span class="line">          <span class="built_in">window</span>.mozRequestAnimationFrame    ||</span><br><span class="line">          <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">            <span class="built_in">window</span>.setTimeout(callback, <span class="number">1000</span> / <span class="number">60</span>);</span><br><span class="line">          &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> e = <span class="built_in">document</span>.getElementById(<span class="string">"e"</span>);</span><br><span class="line"><span class="keyword">var</span> flag = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> left = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    left == <span class="number">0</span> ? flag = <span class="literal">true</span> : left == <span class="number">100</span> ? flag = <span class="literal">false</span> : <span class="string">''</span>;</span><br><span class="line">    flag ? e.style.left = <span class="string">` <span class="subst">$&#123;left++&#125;</span>px`</span> :</span><br><span class="line">        e.style.left = <span class="string">` <span class="subst">$&#123;left--&#125;</span>px`</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">animloop</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    render();</span><br><span class="line">    requestAnimFrame(animloop);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>不足之处请指正（毕竟是现学的）顺便查了一下优势：</p>
+<ul>
+<li>浏览器可以优化并行的动画动作，更合理的重新排列动作序列，并把能够合并的动作放在一个渲染周期内完成，从而呈现出更流畅的动画效果</li>
+<li>解决毫秒的不精确性</li>
+<li>避免过度渲染（渲染频率太高、<code>tab</code> 不可见暂停等等）<br>注：<code>requestAnimFrame</code> 和 定时器一样也头一个类似的清除方法 <code>cancelAnimationFrame</code>。</li>
+</ul>
+<h2 id="右边宽度固定，左边自适应"><a href="#右边宽度固定，左边自适应" class="headerlink" title="右边宽度固定，左边自适应"></a>右边宽度固定，左边自适应</h2><p>第一种：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">body&#123;</span></span><br><span class="line"><span class="undefined">    display: flex;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.left</span>&#123;</span></span><br><span class="line"><span class="undefined">    background-color: rebeccapurple;</span></span><br><span class="line"><span class="undefined">    height: 200px;</span></span><br><span class="line"><span class="undefined">    flex: 1;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.right</span>&#123;</span></span><br><span class="line"><span class="undefined">    background-color: red;</span></span><br><span class="line"><span class="undefined">    height: 200px;</span></span><br><span class="line"><span class="undefined">    width: 100px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>第二种</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    div &#123;</span></span><br><span class="line"><span class="undefined">        height: 200px;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.left</span> &#123;</span></span><br><span class="line"><span class="undefined">        float: right;</span></span><br><span class="line"><span class="undefined">        width: 200px;</span></span><br><span class="line"><span class="undefined">        background-color: rebeccapurple;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.right</span> &#123;</span></span><br><span class="line"><span class="undefined">        margin-right: 200px;</span></span><br><span class="line"><span class="undefined">        background-color: red;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>暂时想到了两种。</p>
+<h2 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h2><p>第一种</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#center</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">translate</span>(-50%,-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二种</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#center</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">    <span class="attribute">margin</span>:-<span class="number">50px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第三种</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#center</span>&#123;</span><br><span class="line">    <span class="attribute">position</span>:absolute;</span><br><span class="line">    <span class="attribute">margin</span>:auto;</span><br><span class="line">    <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">bottom</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">right</span>:<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第四种 <code>flex</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:flex;</span><br><span class="line">    <span class="attribute">justify-content</span>:center;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四种定位的区别"><a href="#四种定位的区别" class="headerlink" title="四种定位的区别"></a>四种定位的区别</h2><ul>
+<li><code>static</code> 是默认值</li>
+<li><code>relative</code> 相对定位 相对于自身原有位置进行偏移，仍处于标准文档流中</li>
+<li><code>absolute</code> 绝对定位 相对于最近的已定位的祖先元素, 有已定位(指<code>position</code>不是<code>static</code>的元素)祖先元素, 以最近的祖先元素为参考标准。如果无已定位祖先元素, 以<code>body</code>元素为偏移参照基准, 完全脱离了标准文档流。</li>
+<li><code>fixed</code> 固定定位的元素会相对于视窗来定位,这意味着即便页面滚动，它还是会停留在相同的位置。一个固定定位元素不会保留它原本在页面应有的空隙。</li>
+</ul>
+<h2 id="Flex布局用的多吗？"><a href="#Flex布局用的多吗？" class="headerlink" title="Flex布局用的多吗？"></a>Flex布局用的多吗？</h2><p>因为项目考虑兼容 <code>IE9</code> 所以直接说用的不多</p>
+<h2 id="移动端适配怎么做的？"><a href="#移动端适配怎么做的？" class="headerlink" title="移动端适配怎么做的？"></a>移动端适配怎么做的？</h2><p>使用媒体查询做的响应式布局，根据不同屏幕宽度加载不同<code>css</code>.</p>
+<h2 id="let与var的区别？"><a href="#let与var的区别？" class="headerlink" title="let与var的区别？"></a>let与var的区别？</h2><p><code>let</code> 为 <code>ES6</code> 新添加申明变量的命令，它类似于 <code>var</code>，但是有以下不同：</p>
+<ul>
+<li><code>var</code> 声明的变量，其作用域为该语句所在的函数内，且存在变量提升现象</li>
+<li><code>let</code> 声明的变量，其作用域为该语句所在的代码块内，不存在变量提升</li>
+<li><code>let</code> 不允许重复声明.</li>
+</ul>
+<h2 id="为什么-var-可以重复声明？（这个就不知道了）"><a href="#为什么-var-可以重复声明？（这个就不知道了）" class="headerlink" title="为什么 var 可以重复声明？（这个就不知道了）"></a>为什么 var 可以重复声明？（这个就不知道了）</h2><p>当我们执行代码时，我们可以简单的理解为新变量分配一块儿内存，命名为<code>a</code>，并赋值为<code>2</code>，但在运行的时候编译器与引擎还会进行两项额外的操作：判断变量是否已经声明：</p>
+<ul>
+<li>首先编译器对代码进行分析拆解，从左至右遇见<code>var a</code>，则编译器会询问作用域是否已经存在叫 <code>a</code> 的变量了，如果不存在，则招呼作用域声明一个新的变量<code>a</code>，若已经存在，则忽略<code>var</code> 继续向下编译，这时<code>a = 2</code>被编译成可执行的代码供引擎使用。</li>
+<li>引擎遇见<code>a=2</code>时同样会询问在当前的作用域下是否有变量<code>a</code>，若存在，则将<code>a</code>赋值为<code>2</code>（由于第一步编译器忽略了重复声明的<code>var</code>，且作用域中已经有<code>a</code>，所以重复声明会发生值得覆盖而并不会报错）。若不存在，则顺着作用域链向上查找，若最终找到了变量<code>a</code>则将其赋值<code>2</code>，若没有找到，则招呼作用域声明一个变量<code>a</code>并赋值为<code>2</code>。<br><a href="http://www.cnblogs.com/neil080320/p/6529679.html" target="_blank" rel="noopener">参考链接</a></li>
+</ul>
+<h2 id="封装一个函数，参数是定时器的时间，-then执行回调函数。"><a href="#封装一个函数，参数是定时器的时间，-then执行回调函数。" class="headerlink" title="封装一个函数，参数是定时器的时间，.then执行回调函数。"></a>封装一个函数，参数是定时器的时间，.then执行回调函数。</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span> (<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> setTimeout(resolve, time));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="一个关于-this-指向的问题"><a href="#一个关于-this-指向的问题" class="headerlink" title="一个关于 this 指向的问题"></a>一个关于 this 指向的问题</h2><p>差不多应该是这样，记不太清了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">obj = &#123;</span><br><span class="line">    name: <span class="string">'a'</span>,</span><br><span class="line">    getName : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn = obj.getName</span><br><span class="line">obj.getName()</span><br><span class="line"><span class="keyword">var</span> fn2 = obj.getName()</span><br><span class="line">fn()</span><br><span class="line">fn2()</span><br></pre></td></tr></table></figure></p>
+<h2 id="CommonJS-中的-require-exports-和-ES6-中的-import-export-区别？"><a href="#CommonJS-中的-require-exports-和-ES6-中的-import-export-区别？" class="headerlink" title="CommonJS 中的 require/exports 和 ES6 中的 import/export 区别？"></a>CommonJS 中的 require/exports 和 ES6 中的 import/export 区别？</h2><ul>
+<li><code>CommonJS</code> 模块的重要特性是加载时执行，即脚本代码在 <code>require</code> 的时候，就会全部执行。一旦出现某个模块被”循环加载”，就只输出已经执行的部分，还未执行的部分不会输出。</li>
+<li><code>ES6</code> 模块是动态引用，如果使用 <code>import</code> 从一个模块加载变量，那些变量不会被缓存，而是成为一个指向被加载模块的引用，需要开发者自己保证，真正取值的时候能够取到值。</li>
+<li><code>import/export</code> 最终都是编译为 <code>require/exports</code> 来执行的。</li>
+<li><code>CommonJS</code> 规范规定，每个模块内部，<code>module</code> 变量代表当前模块。这个变量是一个对象，它的 <code>exports</code> 属性（即 <code>module.exports</code> ）是对外的接口。加载某个模块，其实是加载该模块的 <code>module.exports</code> 属性。</li>
+<li><code>export</code> 命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系。</li>
+</ul>
+<h2 id="一行代码实现数组去重？"><a href="#一行代码实现数组去重？" class="headerlink" title="一行代码实现数组去重？"></a>一行代码实现数组去重？</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[...new <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="string">'a'</span>,<span class="number">1</span>,<span class="string">'a'</span>])]</span><br></pre></td></tr></table></figure>
+<h2 id="使用addEventListener点击li弹出内容，并且动态添加li之后有效"><a href="#使用addEventListener点击li弹出内容，并且动态添加li之后有效" class="headerlink" title="使用addEventListener点击li弹出内容，并且动态添加li之后有效"></a>使用addEventListener点击li弹出内容，并且动态添加li之后有效</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个题没答出来😨😨</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ulNode = <span class="built_in">document</span>.getElementById(<span class="string">"ul"</span>);</span><br><span class="line">    ulNode.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (e.target &amp;&amp; e.target.nodeName.toUpperCase() == <span class="string">"LI"</span>) &#123;</span><br><span class="line">            alert(e.target.innerHTML);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="怎么判断两个对象相等？"><a href="#怎么判断两个对象相等？" class="headerlink" title="怎么判断两个对象相等？"></a>怎么判断两个对象相等？</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">obj=&#123;</span><br><span class="line">    a:<span class="number">1</span>,</span><br><span class="line">    b:<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line">obj2=&#123;</span><br><span class="line">    a:<span class="number">1</span>,</span><br><span class="line">    b:<span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line">obj3=&#123;</span><br><span class="line">    a:<span class="number">1</span>,</span><br><span class="line">    b:<span class="number">2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最开始的思路是遍历来判断，但是最后好像没有说清楚，查了下，好像可以转换为字符串来判断。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">JSON</span>.stringify(obj)==<span class="built_in">JSON</span>.stringify(obj2);<span class="comment">//true</span></span><br><span class="line"><span class="built_in">JSON</span>.stringify(obj)==<span class="built_in">JSON</span>.stringify(obj3);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+<h2 id="项目做过哪些性能优化？"><a href="#项目做过哪些性能优化？" class="headerlink" title="项目做过哪些性能优化？"></a>项目做过哪些性能优化？</h2><ul>
+<li>减少 <code>HTTP</code> 请求数</li>
+<li>减少 <code>DNS</code> 查询</li>
+<li>使用 <code>CDN</code></li>
+<li>避免重定向</li>
+<li>图片懒加载</li>
+<li>减少 <code>DOM</code> 元素数量</li>
+<li>减少 <code>DOM</code> 操作</li>
+<li>使用外部 <code>JavaScript</code> 和 <code>CSS</code></li>
+<li>压缩 <code>JavaScript</code> 、 <code>CSS</code> 、字体、图片等</li>
+<li>优化 <code>CSS Sprite</code></li>
+<li>使用 <code>iconfont</code></li>
+<li>字体裁剪</li>
+<li>多域名分发划分内容到不同域名</li>
+<li>尽量减少 <code>iframe</code> 使用</li>
+<li>避免图片 <code>src</code> 为空</li>
+<li>把样式表放在 <head> 中</head></li>
+<li>把脚本放在页面底部<br>欢迎补充。。。</li>
+</ul>
+<h2 id="模块化开发是怎么做的？"><a href="#模块化开发是怎么做的？" class="headerlink" title="模块化开发是怎么做的？"></a>模块化开发是怎么做的？</h2><p>使用命名空间。</p>
+<h2 id="有没有使用过webpack？"><a href="#有没有使用过webpack？" class="headerlink" title="有没有使用过webpack？"></a>有没有使用过webpack？</h2><p>我说Vue项目中使用了，然后就没问了。</p>
+<h2 id="gulp自己写过任务吗？还是都用的模块？"><a href="#gulp自己写过任务吗？还是都用的模块？" class="headerlink" title="gulp自己写过任务吗？还是都用的模块？"></a>gulp自己写过任务吗？还是都用的模块？</h2><p>不知道怎么怎么回答，不都是使用模块来写的么，然后就说是使用模块。</p>
+<h2 id="Vue-router-除了-router-link-怎么实现跳转"><a href="#Vue-router-除了-router-link-怎么实现跳转" class="headerlink" title="Vue router 除了 router-link 怎么实现跳转?"></a>Vue router 除了 router-link 怎么实现跳转?</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">router.go(<span class="number">1</span>)</span><br><span class="line">router.push(<span class="string">'/'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="Vue-router-跳转和-location-href-有什么区别？"><a href="#Vue-router-跳转和-location-href-有什么区别？" class="headerlink" title="Vue router 跳转和 location.href 有什么区别？"></a>Vue router 跳转和 location.href 有什么区别？</h2><p><code>router</code> 是 <code>hash</code> 改变<br><code>location.href</code> 是页面跳转，刷新页面</p>
+<h2 id="Vue-双向绑定实现原理？"><a href="#Vue-双向绑定实现原理？" class="headerlink" title="Vue 双向绑定实现原理？"></a>Vue 双向绑定实现原理？</h2><p>通过 <code>Object.defineProperty</code> 实现的</p>
+<h2 id="你能实现一下双向绑定吗？😰😰"><a href="#你能实现一下双向绑定吗？😰😰" class="headerlink" title="你能实现一下双向绑定吗？😰😰"></a>你能实现一下双向绑定吗？😰😰</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"txt"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"show-txt"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> obj = &#123;&#125;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">Object</span>.defineProperty(obj, <span class="string">'txt'</span>, &#123;</span></span><br><span class="line"><span class="javascript">            get: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> obj</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="javascript">            set: <span class="function"><span class="keyword">function</span> (<span class="params">newValue</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.getElementById(<span class="string">'txt'</span>).value = newValue</span></span><br><span class="line"><span class="javascript">                <span class="built_in">document</span>.getElementById(<span class="string">'show-txt'</span>).innerHTML = newValue</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            obj.txt = e.target.value</span></span><br><span class="line"><span class="undefined">        &#125;)</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="React-和-Vue-有什么区别？"><a href="#React-和-Vue-有什么区别？" class="headerlink" title="React 和 Vue 有什么区别？"></a>React 和 Vue 有什么区别？</h2><h2 id="Set-和-Map-数据结构（😨😨）"><a href="#Set-和-Map-数据结构（😨😨）" class="headerlink" title="Set 和 Map 数据结构（😨😨）"></a>Set 和 Map 数据结构（😨😨）</h2><ul>
+<li><code>ES6</code> 提供了新的数据结构 <code>Set</code> 它类似于数组，但是成员的值都是唯一的，没有重复的值。</li>
+<li><code>ES6</code> 提供了 <code>Map</code> 数据结构。它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。也就是说，<code>Object</code> 结构提供了“字符串—值”的对应，<code>Map</code> 结构提供了“值—值”的对应，是一种更完善的 <code>Hash</code> 结构实现。</li>
+</ul>
+<h2 id="WeakMap-和-Map-的区别"><a href="#WeakMap-和-Map-的区别" class="headerlink" title="WeakMap 和 Map 的区别?"></a>WeakMap 和 Map 的区别?</h2><ul>
+<li><code>WeakMap</code> 结构与 <code>Map</code> 结构基本类似，唯一的区别是它只接受对象作为键名（ <code>null</code> 除外），不接受其他类型的值作为键名，而且键名所指向的对象，不计入垃圾回收机制。</li>
+<li><code>WeakMap</code> 最大的好处是可以避免内存泄漏。一个仅被 <code>WeakMap</code> 作为 <code>key</code> 而引用的对象，会被垃圾回收器回收掉。</li>
+<li><code>WeakMap</code> 拥有和 <code>Map</code> 类似的 <code>set(key, value)</code> 、<code>get(key)、has(key)</code>、<code>delete(key)</code> 和 <code>clear()</code> 方法, 没有任何与迭代有关的属性和方法。</li>
+</ul>
+<h2 id="重排和重绘"><a href="#重排和重绘" class="headerlink" title="重排和重绘"></a>重排和重绘</h2><ul>
+<li>部分渲染树（或者整个渲染树）需要重新分析并且节点尺寸需要重新计算。这被称为重排。注意这里至少会有一次重排-初始化页面布局。</li>
+<li>由于节点的几何属性发生改变或者由于样式发生改变，例如改变元素背景色时，屏幕上的部分内容需要更新。这样的更新被称为重绘。</li>
+</ul>
+<h2 id="什么情况会触发重排和重绘？"><a href="#什么情况会触发重排和重绘？" class="headerlink" title="什么情况会触发重排和重绘？"></a>什么情况会触发重排和重绘？</h2><ul>
+<li>添加、删除、更新 <code>DOM</code> 节点</li>
+<li>通过 <code>display: none</code> 隐藏一个 <code>DOM</code> 节点-触发重排和重绘</li>
+<li>通过 <code>visibility: hidden</code> 隐藏一个 <code>DOM</code> 节点-只触发重绘，因为没有几何变化</li>
+<li>移动或者给页面中的 <code>DOM</code> 节点添加动画</li>
+<li>添加一个样式表，调整样式属性</li>
+<li>用户行为，例如调整窗口大小，改变字号，或者滚动。</li>
+</ul>
+<h2 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h2><p>浏览器缓存分为强缓存和协商缓存。当客户端请求某个资源时，获取缓存的流程如下：</p>
+<ul>
+<li>先根据这个资源的一些 <code>http header</code> 判断它是否命中强缓存，如果命中，则直接从本地获取缓存资源，不会发请求到服务器；</li>
+<li>当强缓存没有命中时，客户端会发送请求到服务器，服务器通过另一些<code>request header</code>验证这个资源是否命中协商缓存，称为<code>http</code>再验证，如果命中，服务器将请求返回，但不返回资源，而是告诉客户端直接从缓存中获取，客户端收到返回后就会从缓存中获取资源；</li>
+<li>强缓存和协商缓存共同之处在于，如果命中缓存，服务器都不会返回资源；</li>
+<li>区别是，强缓存不对发送请求到服务器，但协商缓存会。</li>
+<li>当协商缓存也没命中时，服务器就会将资源发送回客户端。</li>
+<li>当 <code>ctrl+f5</code> 强制刷新网页时，直接从服务器加载，跳过强缓存和协商缓存；</li>
+<li>当 <code>f5</code> 刷新网页时，跳过强缓存，但是会检查协商缓存；</li>
+</ul>
+<h3 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h3><ul>
+<li>Expires（该字段是 <code>http1.0</code> 时的规范，值为一个绝对时间的 <code>GMT</code> 格式的时间字符串，代表缓存资源的过期时间）</li>
+<li>Cache-Control:max-age（该字段是 <code>http1.1</code> 的规范，强缓存利用其 <code>max-age</code> 值来判断缓存资源的最大生命周期，它的值单位为秒）</li>
+</ul>
+<h3 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h3><ul>
+<li>Last-Modified（值为资源最后更新时间，随服务器response返回）</li>
+<li>If-Modified-Since（通过比较两个时间来判断资源在两次请求期间是否有过修改，如果没有修改，则命中协商缓存）</li>
+<li>ETag（表示资源内容的唯一标识，随服务器response返回）</li>
+<li>If-None-Match（服务器通过比较请求头部的If-None-Match与当前资源的ETag是否一致来判断资源是否在两次请求之间有过修改，如果没有修改，则命中协商缓存）</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+          <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
+------ 有问题请 <a href="http://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 或者私聊我的 <a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes" rel="nofollow" style="text-align:center;color: #00c4ff;">QQ</a> ------</div>
+
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/qcode/wechat_qcode.png" alt="Ihoey 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/qcode/alipay_qcode.png" alt="Ihoey 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/Linux/2018-02-13-crontab-part1.html" rel="next" title="crontab 踩坑之绝对路径">
+                <i class="fa fa-chevron-left"></i> crontab 踩坑之绝对路径
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+      <div class="wildfire_thread"></div>
+      <script type="text/javascript">
+        var wildfireConfig = () => ({
+          databaseProvider: 'wilddog',
+          databaseConfig: {
+          
+            siteId: 'ihoey'
+          
+          },
+          pageURL: 'https://blog.ihoey.com/posts/Interview/2018-02-28-alibaba-interview.html',
+          pageTitle: '面试分享：2018阿里巴巴前端面试总结(题目+答案)',
+          theme: 'light',
+          locale: 'zh-CN',
+          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
+        })
+      </script>
+      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
+    
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://oisha19l0.qnssl.com/avatar.png"
+                alt="Ihoey" />
+            
+              <p class="site-author-name" itemprop="name">Ihoey</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/index.html">
+                
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/ihoey" target="_blank" title="GitHub" rel="nofollow">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/hy951121" target="_blank" title="微博" rel="nofollow">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes" target="_blank" title="QQ" rel="nofollow">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com" target="_blank" title="E-mail" rel="nofollow">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.mythsman.com/" title="mythsman" target="_blank">mythsman</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.isthnew.com/links" title="可乐没气的猫" target="_blank">可乐没气的猫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.bboysoul.com/" title="Bboysoul" target="_blank">Bboysoul</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jnan.org/" title="jnduan's Blog" target="_blank">jnduan's Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用css实现一个持续的动画效果"><span class="nav-number">1.</span> <span class="nav-text">使用css实现一个持续的动画效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用js实现一个持续的动画效果"><span class="nav-number">2.</span> <span class="nav-text">使用js实现一个持续的动画效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#右边宽度固定，左边自适应"><span class="nav-number">3.</span> <span class="nav-text">右边宽度固定，左边自适应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#水平垂直居中"><span class="nav-number">4.</span> <span class="nav-text">水平垂直居中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四种定位的区别"><span class="nav-number">5.</span> <span class="nav-text">四种定位的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flex布局用的多吗？"><span class="nav-number">6.</span> <span class="nav-text">Flex布局用的多吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动端适配怎么做的？"><span class="nav-number">7.</span> <span class="nav-text">移动端适配怎么做的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let与var的区别？"><span class="nav-number">8.</span> <span class="nav-text">let与var的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么-var-可以重复声明？（这个就不知道了）"><span class="nav-number">9.</span> <span class="nav-text">为什么 var 可以重复声明？（这个就不知道了）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#封装一个函数，参数是定时器的时间，-then执行回调函数。"><span class="nav-number">10.</span> <span class="nav-text">封装一个函数，参数是定时器的时间，.then执行回调函数。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个关于-this-指向的问题"><span class="nav-number">11.</span> <span class="nav-text">一个关于 this 指向的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CommonJS-中的-require-exports-和-ES6-中的-import-export-区别？"><span class="nav-number">12.</span> <span class="nav-text">CommonJS 中的 require/exports 和 ES6 中的 import/export 区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一行代码实现数组去重？"><span class="nav-number">13.</span> <span class="nav-text">一行代码实现数组去重？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用addEventListener点击li弹出内容，并且动态添加li之后有效"><span class="nav-number">14.</span> <span class="nav-text">使用addEventListener点击li弹出内容，并且动态添加li之后有效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么判断两个对象相等？"><span class="nav-number">15.</span> <span class="nav-text">怎么判断两个对象相等？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目做过哪些性能优化？"><span class="nav-number">16.</span> <span class="nav-text">项目做过哪些性能优化？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化开发是怎么做的？"><span class="nav-number">17.</span> <span class="nav-text">模块化开发是怎么做的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有没有使用过webpack？"><span class="nav-number">18.</span> <span class="nav-text">有没有使用过webpack？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp自己写过任务吗？还是都用的模块？"><span class="nav-number">19.</span> <span class="nav-text">gulp自己写过任务吗？还是都用的模块？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-router-除了-router-link-怎么实现跳转"><span class="nav-number">20.</span> <span class="nav-text">Vue router 除了 router-link 怎么实现跳转?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-router-跳转和-location-href-有什么区别？"><span class="nav-number">21.</span> <span class="nav-text">Vue router 跳转和 location.href 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue-双向绑定实现原理？"><span class="nav-number">22.</span> <span class="nav-text">Vue 双向绑定实现原理？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你能实现一下双向绑定吗？😰😰"><span class="nav-number">23.</span> <span class="nav-text">你能实现一下双向绑定吗？😰😰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-和-Vue-有什么区别？"><span class="nav-number">24.</span> <span class="nav-text">React 和 Vue 有什么区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-和-Map-数据结构（😨😨）"><span class="nav-number">25.</span> <span class="nav-text">Set 和 Map 数据结构（😨😨）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WeakMap-和-Map-的区别"><span class="nav-number">26.</span> <span class="nav-text">WeakMap 和 Map 的区别?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重排和重绘"><span class="nav-number">27.</span> <span class="nav-text">重排和重绘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么情况会触发重排和重绘？"><span class="nav-number">28.</span> <span class="nav-text">什么情况会触发重排和重绘？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器缓存"><span class="nav-number">29.</span> <span class="nav-text">浏览器缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#强缓存"><span class="nav-number">29.1.</span> <span class="nav-text">强缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协商缓存"><span class="nav-number">29.2.</span> <span class="nav-text">协商缓存</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ihoey</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="eevee">
+  <div class="body">
+    <div class="head">
+      <div class="ears">
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+      </div>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <div class="chest">
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+    </div>
+    <div class="legs">
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+    </div>
+    <div class="tail">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail -end"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"> 你是第</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      枚看到我的
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"> 访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=59541779";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://oisha19l0.qnssl.com/index.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://oisha19l0.qnssl.com/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://oisha19l0.qnssl.com/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://oisha19l0.qnssl.com/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.2"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
