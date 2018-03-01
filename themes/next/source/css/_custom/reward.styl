@@ -1,0 +1,225 @@
+.reward-content {
+  width: 100%;
+  height: 240px;
+  position: relative;
+}
+
+#QRBox {
+	width: 100%;
+	height: 100%;
+}
+
+.reward-content .list,
+.reward-content .list li,
+.reward-content .list-left li {
+	list-style: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.pos-a {
+	position: absolute;
+}
+
+.blur {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
+
+#DonateText {
+	position: absolute;
+  left: 38%;
+  top: 34%;
+  width: 70px;
+	height: 70px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 70px;
+	background: #ffd886 url(/images/like.svg) no-repeat center 10px;
+	background-size: 20px;
+	border-radius: 35px;
+	text-align: center;
+	transform: rotatez(-15deg) translate(-50%, -50%);
+  border: none;
+}
+
+#donateBox {
+	float: left;
+	left: 50%;
+	top: 50%
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	width: 299px;
+	height: 28px;
+  transform: translate(-50%, -50%);
+	z-index: 1;
+}
+
+#donateBox li {
+	float: left;
+	width: calc(100% / 4);
+  height: 100%;
+	text-align: center;
+	border-left: 1px solid #ddd;
+	background: no-repeat center center;
+	background-size: 45px;
+	transition: all .3s;
+	cursor: pointer;
+	overflow: hidden;
+	line-height: 100px;
+	opacity: 0.5;
+}
+
+#PayPal a{
+  display: block;
+  height: 100%;
+  border: none;
+}
+
+#donateBox li:hover {
+	opacity: 1;
+}
+
+#donateBox>li:first-child {
+	border-width: 0;
+}
+
+#donateBox #PayPal {
+	background-image: url(/images/paypal.svg);
+}
+
+#donateBox>#QQ {
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGgAAAAeCAYAAADAZ1t9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Njk3N0UwRjlGRUU4MTFFNUE3QTA5REQyQjdBNjNGMDciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Njk3N0UwRkFGRUU4MTFFNUE3QTA5REQyQjdBNjNGMDciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2OTc3RTBGN0ZFRTgxMUU1QTdBMDlERDJCN0E2M0YwNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2OTc3RTBGOEZFRTgxMUU1QTdBMDlERDJCN0E2M0YwNyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Po9qQOUAAAlxSURBVHja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');
+}
+
+#donateBox #AliPay {
+	background-image: url(/images/alipay.svg);
+}
+
+#donateBox #WeChat {
+	background-image: url(/images/wechat.svg);
+}
+
+#QRBox {
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: rgba(255,255,255,0.3);
+	display: none;
+  perspective: 400px;
+}
+
+#MainBox {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	left: calc(50% - 100px);
+	top: calc(50% - 100px);
+	background: #fff no-repeat center center;
+	background-size: 190px;
+	border-radius: 6px;
+	text-align: center;
+  opacity: 0;
+	box-shadow: 0px 2px 7px rgba(0,0,0,0.3);
+	transition: all 1s ease-in-out;
+	transform-style: preserve-3d;
+  transform-origin: center center;
+  overflow: hidden;
+	cursor: pointer;
+}
+
+#btc-key {
+	opacity: 0;
+	width: 2px;
+	height: 8px;
+	overflow: hidden;
+	left: -2px;
+	top: -8px;
+}
+
+#github {
+	width: 24px;
+	height: 24px;
+	left: calc(50% + 135px);
+	top: calc(50% - 30px);
+	background: no-repeat center center url(/images/github.svg);
+	background-size: contain;
+	opacity: 0.3;
+	transform: rotatez(15deg);
+}
+
+#MainBox.showQR {
+	opacity: 1;
+  animation-name:showQR;
+  animation-duration:3s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:1;
+  animation-fill-mode:forwards;
+  -webkit-animation:showQR 3s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes showQR {
+	from {
+		transform: rotateX(90deg);
+	}
+	8% {
+		opacity: 1;
+		transform: rotateX(-60deg);
+	}
+	18% {
+		opacity: 1;
+		transform: rotateX(40deg);
+	}
+	34% {
+		opacity: 1;
+		transform: rotateX(-28deg);
+	}
+	44% {
+		opacity: 1;
+		transform: rotateX(18deg);
+	}
+	58% {
+		opacity: 1;
+		transform: rotateX(-12deg);
+	}
+	72% {
+		opacity: 1;
+		transform: rotateX(9deg);
+	}
+	88% {
+		opacity: 1;
+		transform: rotateX(-5deg);
+	}
+	96% {
+		opacity: 1;
+		transform: rotateX(2deg);
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+#MainBox.hideQR {
+	opacity: 1;
+  animation-name:hideQR;
+  animation-duration:0.5s;
+  animation-timing-function:ease-in-out;
+  animation-iteration-count:1;
+  animation-fill-mode:forwards;
+  -webkit-animation:hideQR 0.5s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes hideQR {
+	from {
+	}
+	20%,50% {
+		transform: scale(1.08,1.08);
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		transform: rotateZ(40deg) scale(0.6,0.6);
+	}
+}

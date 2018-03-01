@@ -282,9 +282,16 @@ wechat_subscriber:
   description: 欢迎您扫一扫上面的微信公众号，订阅我的博客！
 
 # Reward
-reward_comment: 满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！
-wechatpay: /qcode/wechat_qcode.png
-alipay: /qcode/alipay_qcode.png
+reward:
+  enable: true
+  reward_comment: 满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！
+  TencentQR: /qcode/tencent_qcode.png
+  AliPayQR: /qcode/alipay_qcode.png
+  WeChatQR: /qcode/wechat_qcode.png
+  PayPalLink: https://www.paypal.me/ihoey
+  Github: https://github.com/houyi1121/Playing-reward
+# wechatpay: /qcode/wechat_qcode.png
+# alipay: /qcode/alipay_qcode.png
 # bitcoin: /images/bitcoin.png
 
 # Declare license on posts

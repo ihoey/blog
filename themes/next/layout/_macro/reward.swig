@@ -1,30 +1,16 @@
 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>{{ theme.reward_comment }}</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>{{ __('reward.donate') }}</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    {% if theme.wechatpay %}
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="{{ url_for(theme.wechatpay) }}" alt="{{ theme.author }} {{ __('reward.wechatpay') }}"/>
-        <p>{{ __('reward.wechatpay') }}</p>
+  <div>{{ theme.reward.reward_comment }}</div>
+  <div class="reward-content">
+    	<a id="github" href="{{ theme.reward.Github }}" target="_blank" class="pos-a" title="Github"></a>
+      <a href="{{ theme.url }}" target="_blank" id="DonateText" title="ihoey.com">ihoey.com</a>
+      <ul id="donateBox" class="list pos-a">
+        <li id="PayPal"><a href="{{ theme.reward.PayPalLink }}" target="_blank" title="PayPal">PayPal</a></li>
+        <li id="QQ" data-img="{{ theme.reward.TencentQR }}" title="QQ">QQ</li>
+        <li id="AliPay" data-img="{{ theme.reward.AliPayQR }}" title="{{ __('reward.alipay') }}">{{ __('reward.alipay') }}</li>
+        <li id="WeChat" data-img="{{ theme.reward.WeChatQR }}" title="{{ __('reward.wechatpay') }}">{{ __('reward.wechatpay') }}</li>
+      </ul>
+      <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
       </div>
-    {% endif %}
-
-    {% if theme.alipay %}
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="{{ url_for(theme.alipay) }}" alt="{{ theme.author }} {{ __('reward.alipay') }}"/>
-        <p>{{ __('reward.alipay') }}</p>
-      </div>
-    {% endif %}
-
-    {% if theme.bitcoin %}
-      <div id="bitcoin" style="display: inline-block">
-        <img id="bitcoin_qr" src="{{ url_for(theme.bitcoin) }}" alt="{{ theme.author }} {{ __('reward.bitcoin') }}"/>
-        <p>{{ __('reward.bitcoin') }}</p>
-      </div>
-    {% endif %}
-
   </div>
 </div>
