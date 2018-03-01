@@ -474,32 +474,22 @@
     
 
     
-
     
       <div>
         <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
   <div>满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</div>
-  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-    <span>打赏</span>
-  </button>
-  <div id="QR" style="display: none;">
-
-    
-      <div id="wechat" style="display: inline-block">
-        <img id="wechat_qr" src="/qcode/wechat_qcode.png" alt="Ihoey 微信支付"/>
-        <p>微信支付</p>
+  <div class="reward-content">
+    	<a id="github" href="https://github.com/houyi1121/Playing-reward" target="_blank" class="pos-a" title="Github"></a>
+      <a href="https://blog.ihoey.com" target="_blank" id="DonateText" title="ihoey.com">ihoey.com</a>
+      <ul id="donateBox" class="list pos-a">
+        <li id="PayPal"><a href="https://www.paypal.me/ihoey" target="_blank" title="PayPal">PayPal</a></li>
+        <li id="QQ" data-img="/qcode/tencent_qcode.png" title="QQ">QQ</li>
+        <li id="AliPay" data-img="/qcode/alipay_qcode.png" title="支付宝">支付宝</li>
+        <li id="WeChat" data-img="/qcode/wechat_qcode.png" title="微信支付">微信支付</li>
+      </ul>
+      <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
       </div>
-    
-
-    
-      <div id="alipay" style="display: inline-block">
-        <img id="alipay_qr" src="/qcode/alipay_qcode.png" alt="Ihoey 支付宝"/>
-        <p>支付宝</p>
-      </div>
-    
-
-    
-
   </div>
 </div>
 
@@ -507,7 +497,6 @@
     
 
     
-
     <footer class="post-footer">
       
         <div class="post-tags">

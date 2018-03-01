@@ -2,13 +2,13 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by: ihoey
- * @Last Modified time: 2018-01-23 21:12:37
+ * @Last Modified time: 2018-03-01 17:43:11
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
 
 // 点击爱心
-! function(e, t, a) {
+! function (e, t, a) {
   function n() {
     c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), o(), r()
   }
@@ -20,7 +20,7 @@ console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c
 
   function o() {
     var t = "function" == typeof e.onclick && e.onclick;
-    e.onclick = function(e) {
+    e.onclick = function (e) {
       t && t(), i(e)
     }
   }
@@ -53,8 +53,8 @@ console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c
   }
 
   var d = [];
-  e.requestAnimationFrame = function() {
-    return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(e) {
+  e.requestAnimationFrame = function () {
+    return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
       setTimeout(e, 1e3 / 60)
     }
   }(), n()
@@ -68,7 +68,15 @@ console.warn('%c楼上嘴太贱！', 'text-shadow: 3px 1px 1px grey');
 console.info('%c楼上关你毛事？', 'text-shadow: 3px 1px 1px grey');
 console.log('%c都不要说啦！', 'text-shadow: 3px 1px 1px grey');
 console.warn('%c楼主，你的购物车该结账了！', 'text-shadow: 3px 1px 1px grey');
-var data = [{ '品名': '杜雷斯', '数量': 4, '价格': 99.00, }, { '品名': '冈本', '数量': 3, '价格': 99.00, }];
+var data = [{
+  '品名': '杜雷斯',
+  '数量': 4,
+  '价格': 99.00,
+}, {
+  '品名': '冈本',
+  '数量': 3,
+  '价格': 99.00,
+}];
 console.table(data);
 console.info('嘚瑟嘚瑟！哈哈，钱不够不准向我借，最讨厌借钱的人了，哼哼！！');
 console.log('%c女朋友就是私有变量，只有我这个类才能调用！', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:2em;');
@@ -76,7 +84,7 @@ console.log('程序员A：哎 太累了日子没法过了 怎么才能换行啊'
 console.log('程序员B：打回车呀！');
 
 // 控制台图案
-(function(global) {
+(function (global) {
   var character_planar = {
     H: [
       '|ˉ|ˉ|    |ˉ|ˉ|',
@@ -203,10 +211,10 @@ console.log('程序员B：打回车呀！');
 console.log(Alphabet('HY1121', 'planar'));
 
 // 标题变化
-window.onload = function() {
+window.onload = function () {
   var OriginTitile = document.title;
   var titleTime;
-  document.addEventListener('visibilitychange', function() {
+  document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
       $('[rel="icon"]').attr('href', "/images/fail.ico");
       document.title = '╭(°A°`)╮ 页面崩溃啦 ~ 快回来看看~ | 梦魇小栈！';
@@ -214,7 +222,7 @@ window.onload = function() {
     } else {
       $('[rel="icon"]').attr('href', "/favicon.ico");
       document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitile;
-      titleTime = setTimeout(function() {
+      titleTime = setTimeout(function () {
         document.title = OriginTitile;
       }, 2000);
     }
@@ -224,7 +232,7 @@ window.onload = function() {
     $(this).stop().animate({
       'marginLeft': '10px'
     }, 200);
-  }, function() {
+  }, function () {
     $(this).stop().animate({
       'marginLeft': '0px'
     }, 400);
@@ -235,8 +243,33 @@ window.onload = function() {
       type: 'GET',
       dataType: 'json'
     })
-    .done(function(data) {
+    .done(function (data) {
       html = '' + data.hitokoto + '  来自于 ' + data.from;
       $('#hitokoto').text(html);
     })
+  //打赏
+  var QRBox = $('#QRBox');
+  var MainBox = $('#MainBox');
+
+  function showQR(QR) {
+    if (QR) MainBox.css('background-image', 'url(' + QR + ')');
+    $('#DonateText,#donateBox,#github').addClass('blur');
+    QRBox.fadeIn(300, function (argument) {
+      MainBox.addClass('showQR');
+    });
+  }
+
+  $('#donateBox>li').click(function (event) {
+    if ($(this).attr('data-img')) showQR($(this).attr('data-img'));
+  });
+
+  MainBox.click(function (event) {
+    MainBox.removeClass('showQR').addClass('hideQR');
+    setTimeout(function (a) {
+      QRBox.fadeOut(300, function (argument) {
+        MainBox.removeClass('hideQR');
+      });
+      $('#DonateText,#donateBox,#github').removeClass('blur');
+    }, 600);
+  });
 }
