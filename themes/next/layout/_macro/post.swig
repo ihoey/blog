@@ -347,6 +347,7 @@
         {% include 'wechat-subscriber.swig' %}
       </div>
     {% endif %}
+
     {% if theme.reward.enable and not is_index %}
       <div>
         {% include 'reward.swig' %}

@@ -62,6 +62,14 @@
         {% else %}
           {{ page.content }}
         {% endif %}
+
+        {% if theme.reward.enable and not is_index %}
+          <div>
+            {% include '_macro/reward.swig' %}
+          </div>
+          <hr>
+        {% endif %}
+
       </div>
       {#####################}
       {### END PAGE BODY ###}

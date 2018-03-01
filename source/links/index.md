@@ -55,7 +55,3 @@ comments: true
 - 图片：<a href="https://oisha19l0.qnssl.com/avatar.png" rel="nofollow">https://oisha19l0.qnssl.com/avatar.png</a>
 
 ***
-
-<iframe src="https://sponsor.ihoey.com/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"  frameborder="0" scrolling="no"></iframe>
-
-***
