@@ -1,7 +1,5 @@
 {#
 Custom head.
 #}
-
-<link href="/css/cursor.css" rel="stylesheet" type="text/css" />
-<link href="https://oisha19l0.qnssl.com/eevee.css" rel="stylesheet" type="text/css" />
 <script src="/js/src/set.js"></script>
+<script src="//at.alicdn.com/t/font_578712_r53hcxa8tibb7qfr.js"></script>

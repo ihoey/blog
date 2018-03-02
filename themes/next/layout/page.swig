@@ -8,6 +8,8 @@
     #}{{ __('title.category') + page_title_suffix }}{#
   #}{% elif page.type === "tags" and not page.title %}{#
     #}{{ __('title.tag') + page_title_suffix }}{#
+  #}{% elif page.type === "links" and not page.title %}{#
+    #}{{ __('title.link') + page_title_suffix }}{#
   #}{% else %}{#
     #}{{ page.title + page_title_suffix }}{#
   #}{% endif %}{#
@@ -59,6 +61,10 @@
               {{ list_categories() }}
             </div>
           </div>
+        {% elif page.type === 'links' %}
+            <div class="link-all-page">
+              {% include 'link.swig' %}
+            </div>
         {% else %}
           {{ page.content }}
         {% endif %}
