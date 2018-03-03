@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #47227d;
+  background: #ff259e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2495,6 +2495,9 @@ ol {
 }
 .sidebar-toggle {
   box-sizing: content-box;
+}
+.site-brand-wrapper {
+  position: static;
 }
 code {
   color: #fc6423;
