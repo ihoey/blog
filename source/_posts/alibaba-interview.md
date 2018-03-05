@@ -40,11 +40,11 @@ to {top:200px;}
 
 ```js
 var e = document.getElementById('e')
-var falg = true;
+var flag = true;
 var left = 0;
 setInterval(() => {
-    left == 0 ? falg = true : left == 100 ? falg = false : ''
-    falg ? e.style.left = ` ${left++}px` : e.style.left = ` ${left--}px`
+    left == 0 ? flag = true : left == 100 ? flag = false : ''
+    flag ? e.style.left = ` ${left++}px` : e.style.left = ` ${left--}px`
 }, 1000 / 60)
 ```
 
