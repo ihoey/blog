@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #33019e;
+  background: #32ab47;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2515,6 +2515,7 @@ pre {
 }
 .header {
   background: url("https://oisha19l0.qnssl.com/header_background.jpg") no-repeat;
+  background-size: cover;
 }
 .header-inner {
   padding-top: 310px;
