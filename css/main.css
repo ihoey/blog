@@ -1082,6 +1082,9 @@ pre .javascript .function {
 .back-to-top.back-to-top-on {
   bottom: 19px;
 }
+.header {
+  background: transparent;
+}
 .header-inner {
   position: relative;
 }
@@ -1815,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #adffff;
+  background: #322e32;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2511,8 +2514,8 @@ pre {
   border: 1px solid #d6d6d6;
 }
 .header {
-  background: url("https://oisha19l0.qnssl.com/header_background.jpg") no-repeat;
   background-size: cover;
+  background: url("https://oisha19l0.qnssl.com/header_background.jpg") no-repeat;
 }
 .header-inner {
   padding-top: 310px;

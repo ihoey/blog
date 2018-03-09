@@ -503,12 +503,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part7之 Ajax 模块功能及实现</title>
-        <pubTime>2016-11-25T13:31:12.000Z</pubTime>
+        <title>JQuery分析及实现part6之动画模块功能及实现</title>
+        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -527,12 +527,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part6之动画模块功能及实现</title>
-        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
+        <title>JQuery分析及实现part7之 Ajax 模块功能及实现</title>
+        <pubTime>2016-11-25T13:31:12.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -571,19 +571,23 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html</loc>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>博客评论网易云跟帖评论提醒功能</title>
-        <pubTime>2017-06-22T11:00:21.000Z</pubTime>
+        <title>adb设备信息查询修改刷机等命令</title>
+        <pubTime>2016-12-22T10:51:53.000Z</pubTime>
         
-        <tag>comment</tag>
+        <tag>adb</tag>
+         
+        <tag>Android</tag>
+         
+        <tag>adb命令</tag>
          
          
            
              
-              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
+              <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
           
         </display>
     </data>
@@ -735,23 +739,19 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
+    <loc>https://blog.ihoey.com/posts/Linux/2017-06-22-blog-comment-gentie-remind.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>adb设备信息查询修改刷机等命令</title>
-        <pubTime>2016-12-22T10:51:53.000Z</pubTime>
+        <title>博客评论网易云跟帖评论提醒功能</title>
+        <pubTime>2017-06-22T11:00:21.000Z</pubTime>
         
-        <tag>adb</tag>
-         
-        <tag>Android</tag>
-         
-        <tag>adb命令</tag>
+        <tag>comment</tag>
          
          
            
              
-              <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
+              <breadCrumb title="Linux" url="https://blog.ihoey.com/categories/Linux/"/>
           
         </display>
     </data>
@@ -825,12 +825,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-13-canvas-part1.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>Canvas知识整理part2</title>
-        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
+        <title>Canvas知识整理part1</title>
+        <pubTime>2016-11-13T11:39:33.000Z</pubTime>
         
         <tag>Canvas</tag>
          
@@ -915,30 +915,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-13-canvas-part1.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>Canvas知识整理part1</title>
-        <pubTime>2016-11-13T11:39:33.000Z</pubTime>
-        
-        <tag>Canvas</tag>
-         
-        <tag>HTML5</tag>
-         
-        <tag>画布</tag>
-         
-         
-           
-             
-              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -954,6 +930,30 @@
            
              
               <breadCrumb title="Markdown" url="https://blog.ihoey.com/categories/Markdown/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Canvas知识整理part2</title>
+        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
+        
+        <tag>Canvas</tag>
+         
+        <tag>HTML5</tag>
+         
+        <tag>画布</tag>
+         
+         
+           
+             
+              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
           
         </display>
     </data>
