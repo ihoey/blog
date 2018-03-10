@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>https://blog.ihoey.com/posts/Interview/2018-02-28-alibaba-interview.html</loc>
     <lastmod>2018-03-05T06:21:38.459Z</lastmod>
@@ -22,7 +23,6 @@
     </data>
     </url>
 
-    
     
     
     
@@ -227,12 +227,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-18-javascript-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-08-javascript-part3.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part2</title>
-        <pubTime>2016-05-18T10:29:33.000Z</pubTime>
+        <title>JavaScript高级篇之part3</title>
+        <pubTime>2016-11-08T11:39:35.000Z</pubTime>
         
         <tag>javascript</tag>
          
@@ -313,6 +313,28 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>js高级与面向对象之构造函数</title>
+        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>js构造函数</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -351,28 +373,6 @@
         <tag>继承</tag>
          
         <tag>继承的实现方式</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>js高级与面向对象之构造函数</title>
-        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>js构造函数</tag>
          
          
            
@@ -457,12 +457,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part5之事件模块功能及实现</title>
-        <pubTime>2016-11-23T02:27:16.000Z</pubTime>
+        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
+        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -595,12 +595,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-08-javascript-part3.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-18-javascript-part2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part3</title>
-        <pubTime>2016-11-08T11:39:35.000Z</pubTime>
+        <title>JavaScript高级篇之part2</title>
+        <pubTime>2016-05-18T10:29:33.000Z</pubTime>
         
         <tag>javascript</tag>
          
@@ -695,26 +695,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-12-javascript-summary.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript高级篇总结</title>
-        <pubTime>2016-11-12T11:04:31.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -727,6 +707,26 @@
         <tag>原型</tag>
          
         <tag>原型的基本概念</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-12-javascript-summary.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript高级篇总结</title>
+        <pubTime>2016-11-12T11:04:31.000Z</pubTime>
+        
+        <tag>javascript</tag>
          
          
            
@@ -1049,12 +1049,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
-        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
+        <title>JQuery分析及实现part5之事件模块功能及实现</title>
+        <pubTime>2016-11-23T02:27:16.000Z</pubTime>
         
         <tag>原生Js</tag>
          
