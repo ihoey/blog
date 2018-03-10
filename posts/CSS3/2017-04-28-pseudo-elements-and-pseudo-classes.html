@@ -484,18 +484,18 @@
 <li>该伪元素不是<code>CSS</code>的标准，它的实现可能在将来会有所改变，所以要决定使用时必须谨慎。<br>在一些浏览器中（<code>IE10</code>和<code>Firefox18</code>及其以下版本）会使用单冒号的形式。</li>
 <li>对于伪元素 <code>:before</code> 和 <code>:after</code> 而言，属性 <code>content</code> 是必须设置的，我们知道属性的值可以为字符串，也可以有其它形式，比如指向一张图片的 <code>URL:</code></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content: url(&apos;img/icon.png&apos;)</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content: url(&apos;img/icon.png&apos;)</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li>配合伪类使用<ul>
 <li>伪元素 <code>:before</code> 还可以配合伪类使用，这里举经常与 <code>:before</code> 配合使用的伪类 <code>:hover</code> 为例：</li>
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.before:hover:before&#123;content:&apos;you before&apos;; color:red;&#125;</span><br><span class="line">&lt;div class=&quot;before&quot;&gt; me&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.before:hover:before&#123;content:&apos;you before&apos;; color:red;&#125;</span><br><span class="line">&lt;div class=&quot;before&quot;&gt; me&lt;/div&gt;</span><br></pre></td></tr></table></figure></div>
 <ul>
 <li>配合取值函数 <code>attr()</code> 使用</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a::before&#123;content: attr(title)&#125;</span><br><span class="line">&lt;a href=&quot;https://blog.ihoey.com&quot; title=&quot;梦魇小栈&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">效果</span><br><span class="line">&lt;a href=&quot;https://blog.ihoey.com&quot; title=&quot;梦魇小栈&quot;&gt;梦魇小栈&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a::before&#123;content: attr(title)&#125;</span><br><span class="line">&lt;a href=&quot;https://blog.ihoey.com&quot; title=&quot;梦魇小栈&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">效果</span><br><span class="line">&lt;a href=&quot;https://blog.ihoey.com&quot; title=&quot;梦魇小栈&quot;&gt;梦魇小栈&lt;/a&gt;</span><br></pre></td></tr></table></figure></div>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
 <li>伪元素和伪类之所以这么容易混淆，是因为他们的效果类似而且写法相仿，但实际上 <code>css3</code> 为了区分两者，已经明确规定了伪类用一个冒号来表示，而伪元素则用两个冒号来表示。</li>
 <li>伪类的效果可以通过添加一个实际的类来达到，而伪元素的效果则需要通过添加一个实际的元素才能达到，这也是为什么他们一个称为伪类，一个称为伪元素的原因。</li>

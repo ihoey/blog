@@ -440,7 +440,7 @@
       
 
       
-        <h1 id="提升一个包的版本号"><a href="#提升一个包的版本号" class="headerlink" title="提升一个包的版本号"></a>提升一个包的版本号</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm version [&lt;newversion&gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]</span><br></pre></td></tr></table></figure>
+        <h1 id="提升一个包的版本号"><a href="#提升一个包的版本号" class="headerlink" title="提升一个包的版本号"></a>提升一个包的版本号</h1><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm version [&lt;newversion&gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]</span><br></pre></td></tr></table></figure></div>
 <p><code>Description</code> 在一个包的目录下执行此命令，会提升版本号，并把这个新的版本号写进<code>package.json</code>文件，如果存在<code>npm-shrinkwrap.json</code>，也会写进去。</p>
 <a id="more"></a>
 <p>参数 <code>newversion</code> 应该是一个有效的semver字符串, 或者是<code>pathch</code>, <code>minor</code>, <code>major</code>等,<code>semver.inc</code>中定义的任意一个有效的。<br><code>major</code>： 版本号中第一段数字自增1 <code>minor</code>: 版本号中第一段数字自增1 <code>patch</code>: 版本号中第三段数字自增1<br>如果<code>package.json</code>中的<code>scripts</code>包含<code>version</code>,<code>preversion</code>,<code>postversion</code>，他们将作为<code>npm version</code>的一部分被执行。</p>
