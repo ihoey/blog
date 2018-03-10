@@ -23,7 +23,7 @@ comments: true
 - Email：<a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com">mail@ihoey.com</a>
 - Q  Q：<a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes">1058221214</a>
 - 微博：<a href="http://weibo.com/hy951121">ihoeys</a>
-- 欢迎加入QQ群：<a href="https://shang.qq.com/wpa/qunwpa?idkey=9049819d22fc4a5c4906cc246fec5236c193ff1b2ad365530ead8c3590cfac06">ihoeys</a>
+- 欢迎加入QQ群：<a href="https://shang.qq.com/wpa/qunwpa?idkey=9049819d22fc4a5c4906cc246fec5236c193ff1b2ad365530ead8c3590cfac06">点我呀！</a>
 
 ***
 
