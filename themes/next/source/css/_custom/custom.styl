@@ -1,4 +1,3 @@
-// Custom styles.
 ul {
   list-style-type: bengali;
 }
@@ -9,7 +8,7 @@ ul {
 }
 
 .site-author-image {
-  border-radius: 50%
+  border-radius: 50%;
   -webkit-transition: 1s all;
   -moz-transition: 1s all;
   -ms-transition: 1s all;
@@ -24,30 +23,31 @@ ul {
   transform: rotate(360deg) scale(1.1);
 }
 
-ol{
-  margin-left: 20px!important;
+ol {
+  margin-left: 20px !important;
 }
 
 .posts-expand .fancybox img {
-    display: inline-block;
+  display: inline-block;
 }
 
-.posts-expand table{
+.posts-expand table {
   font-family: Georgia;
 }
 
-.posts-expand .post-title, .posts-expand .post-meta {
-    text-align: center;
+.posts-expand .post-title,
+.posts-expand .post-meta {
+  text-align: center;
 }
 
 .post-more-link {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .post-more-link .btn {
-    border: 1px solid;
-    padding: 0 5px;
+  border: 1px solid;
+  padding: 0 5px;
 }
 
 .sidebar-toggle {
@@ -58,45 +58,40 @@ ol{
   position: static;
 }
 
-// 代码块自定义样式``内的
 code {
-    color: #fc6423;
-    padding: 0 3px !important;
-}
-
-// 大代码块的自定义样式
-.highlight, pre {
-    margin: 5px 0;
-    padding: 5px;
-    border-radius: 3px;
-}
-
-.highlight, pre {
-    border: 1px solid #d6d6d6;
+  color: #c7254e;
+  background-color: #f9f2f4;
 }
 
 .header {
-    background-size: cover;
-    background: url('https://oisha19l0.qnssl.com/header_background.jpg') no-repeat;
+  background-size: cover;
+  background: url('https://oisha19l0.qnssl.com/header_background.jpg') no-repeat;
 }
 
 .header-inner {
-    padding-top: 310px;
+  padding-top: 310px;
 }
 
 .wf .wf-body img {
-    filter: none;
-    opacity: 1;
+  filter: none;
+  opacity: 1;
 }
 
-.wf a{
-    border: none;
+.wf a {
+  border: none;
 }
 
-*:not(a) {
+html,
+body {
   cursor: url("../images/cursor.ico"), auto;
+}
+
+::selection {
+  background: #d25462;
+  color: #fff;
 }
 
 @import "reward.css";
 @import "links.css";
 @import "../eevee.css";
+@import "codeblock";
