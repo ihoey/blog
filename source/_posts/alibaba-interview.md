@@ -437,3 +437,5 @@ router.push('/')
 - If-Modified-Since（通过比较两个时间来判断资源在两次请求期间是否有过修改，如果没有修改，则命中协商缓存）
 - ETag（表示资源内容的唯一标识，随服务器response返回）
 - If-None-Match（服务器通过比较请求头部的If-None-Match与当前资源的ETag是否一致来判断资源是否在两次请求之间有过修改，如果没有修改，则命中协商缓存）
+
+[![](https://badge.juejin.im/entry/5a968ba56fb9a06340524128/likes.svg?style=flat-square)](https://juejin.im/entry/5a968ba56fb9a06340524128/detail)

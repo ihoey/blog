@@ -941,3 +941,5 @@ function addHandler() {
 另外一种避免闭包的好方法是在 `window.onunload` 事件发生期间破坏循环引用。很多事件库都能完成这项工作。注意这样做将使 `Firefox` 中的 `bfcache` 无法工作。所以除非有其他必要的原因，最好不要在 `Firefox` 中注册一个 `onunload` 的监听器。
 
 原文来自：[重新介绍 JavaScript（JS 教程）](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+
+[![](https://badge.juejin.im/entry/595a40785188250d92086765/likes.svg?style=flat-square)](https://juejin.im/entry/595a40785188250d92086765/detail)
