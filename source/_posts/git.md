@@ -17,7 +17,7 @@ categories: Git
 
 ## 配置
 
-```sh
+```bash
 git config --global user.name "ihoey"           # 设置git用户名
 git config --global user.email "mail@ihoey.com" # 设置git邮箱
 git config --global color.ui true               # 为true是终端着色
@@ -32,7 +32,7 @@ git config -l                                   # 列举所有配置
 
 ## SSH 秘钥
 
-```sh
+```bash
 ssh-keygen -t rsa -C "mail@ihoey.com"
 # 连续3个回车。如果不需要密码的话。
 # 最后得到了两个文件：id_rsa和id_rsa.pub，在~/.ssh/文件夹下面
@@ -43,7 +43,10 @@ ssh-keygen -t rsa -C "mail@ihoey.com"
 
 ## GitHub 测试
 
-*ssh -T git@github.com* 将公钥放在`github`测试是否验证通过命令，选择 `yes` 如果看到 `Hi` 后面是你的用户名，就说明成功了。
+```bash
+ssh -T git@github.com
+# 将公钥放在 github 测试是否验证通过命令，选择 yes 如果看到 Hi 后面是你的用户名，就说明成功了。
+```
 
 ## 基本命令
 
@@ -53,7 +56,7 @@ ssh-keygen -t rsa -C "mail@ihoey.com"
 - 查看文件提交状态 `git status`
 - 查看文件修改的信息 `git diff readme.txt `
 
-```sh
+```bash
 git help <command>          # 显示command的help
 git show                    # 显示某次提交的内容
 git show $id
@@ -80,7 +83,7 @@ git revert HEAD             # 恢复最后一次提交的状态
 
 ## 查看文件
 
-```sh
+```bash
 git diff <file>                 # 比较当前文件和暂存区文件差异
 git diff
 git diff <$id1> <$id2>          # 比较两次提交之间的差异
@@ -92,7 +95,7 @@ git diff --stat                 # 仅仅比较统计信息
 
 ## 查看提交记录
 
-```sh
+```bash
 git log
 git log <file>      # 查看该文件每次提交记录
 git log -p <file>   # 查看每次详细修改内容的diff
@@ -102,7 +105,7 @@ git log --stat      # 查看提交统计信息
 
 ## 分支管理
 
-```sh
+```bash
 git branch -r                           # 查看远程分支
 git branch <new_branch>                 # 创建新的分支
 git branch -v                           # 查看各个分支最后提交信息
@@ -112,15 +115,15 @@ git branch --no-merged                  # 查看尚未被合并到当前分支�
 git checkout <branch>                   # 切换到某个分支
 git checkout -b <new_branch>            # 创建新的分支，并且切换过去
 git checkout -b <new_branch> <branch>   # 基于branch创建新的new_branch
-git checkout $id       # 把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除
+git checkout $id                        # 把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除
 git checkout $id -b <new_branch>        # 把某次历史提交记录checkout出来，创建成一个分支
 git branch -d <branch>                  # 删除某个分支
-git branch -D <branch> # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)
+git branch -D <branch>                  # 强制删除某个分支 (未被合并的分支被删除的时候需要强制)
 ```
 
 ## 分支合并和rebase
 
-```sh
+```bash
 git merge <branch>               # 将branch分支合并到当前分支
 git merge --no-ff <branch>       # 不要Fast-Foward合并，这样可以生成merge提交
 git rebase master <branch>       # 将master rebase到branch，相当于：
@@ -132,7 +135,7 @@ git checkout <branch> && git rebase master && git checkout master && git merge <
 
 ## Git暂存管理
 
-```sh
+```bash
 git stash                        # 暂存
 git stash list                   # 列所有stash
 git stash apply                  # 恢复暂存的内容
@@ -141,7 +144,7 @@ git stash drop                   # 删除暂存区
 
 ## 远程分支管理
 
-```sh
+```bash
 git pull                         # 抓取远程仓库所有分支更新并合并到本地
 git pull --no-ff                 # 抓取远程仓库所有分支更新并合并到本地，不要快进合并
 git fetch origin                 # 抓取远程仓库更新
@@ -158,7 +161,7 @@ git push origin :<remote_branch> #先删除本地分支(git br -d <branch>)，�
 
 ## Git远程仓库管理
 
-```sh
+```bash
 git remote -v                    # 查看远程服务器地址和仓库名称
 git remote show origin           # 查看远程服务器仓库状态
 git remote add origin git@github.com:ihoey/blog.git     # 添加远程仓库地址
@@ -168,7 +171,7 @@ git remote rm <repository>       # 删除远程仓库
 
 ## 创建远程仓库
 
-```sh
+```bash
 git clone --bare ihoey.com blog.git     # 用带版本的项目创建纯版本仓库
 scp -r my_blog.git git@ihoey.com:~      # 将纯仓库上传到服务器上
 mkdir blog.git && cd blog.git && git --bare init # 在服务器创建纯仓库
@@ -181,14 +184,14 @@ git remote set-head origin master # 设置远程仓库的HEAD指向master分支
 
 ## 设置跟踪远程库和本地库
 
-```sh
+```bash
 git branch --set-upstream master origin/master      #master
 git branch --set-upstream develop origin/develop    #develop
 ```
 
 ## 其他命令
 
-```sh
+```bash
 mkdir XX    #(创建一个空目录 XX指目录名)
 pwd         #显示当前目录的路径。
 cat XX      #查看XX文件内容

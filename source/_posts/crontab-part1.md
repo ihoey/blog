@@ -16,7 +16,7 @@ categories: Linux
 
 ### 添加计划任务
 
-```shell
+```bash
 crontab -e
 
 * 10,19 * * * sh /root/home/cron.sh >> /root/home/temp.txt #每天10点和19点执行一次,路径一定要是绝对路径
@@ -25,7 +25,7 @@ crontab -e
 
 ### 重启计划任务
 
-```shell
+```bash
 sudo service crond start
 ```
 
@@ -38,7 +38,7 @@ sudo service crond start
 
 之前的脚本内容是
 
-```shell
+```bash
 echo "test" >> temp.txt
 git add .
 git commit -m"更新"
@@ -54,7 +54,7 @@ git push origin master
 - 将相对路径替换为绝对路径。（ps：如脚本中包含某些Shell命令，且命令的某些参数为默认当前目录的，都需要显式的给出绝对路径）
 - 在操作相对路径之前，使用 `cd /....../` ，在执行脚本时强制进入到该目录。
 
-```shell
+```bash
 cd /root/home/
 
 echo "test" >> temp.txt
@@ -65,7 +65,7 @@ git push origin master
 
 ### 排查问题可以查看日志来看是否执行
 
-```shell
+```bash
 #编辑rsyslog
 sudo vim /etc/rsyslog.d/50-default.conf
 #找到rsyslog中cron一行将前面的注释符#去掉
