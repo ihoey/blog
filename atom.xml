@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.ihoey.com/"/>
-  <updated>2018-03-12T10:56:07.184Z</updated>
+  <updated>2018-03-15T11:11:09.659Z</updated>
   <id>https://blog.ihoey.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决 ubuntu 服务器中文乱码</title>
+    <link href="https://blog.ihoey.com/posts/Linux/2018-03-15-ubuntu-zh-CN-UTF-8.html"/>
+    <id>https://blog.ihoey.com/posts/Linux/2018-03-15-ubuntu-zh-CN-UTF-8.html</id>
+    <published>2018-03-15T11:02:18.000Z</published>
+    <updated>2018-03-15T11:11:09.659Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前买了阿里云的服务器，后来在上面编辑中文字符的时候发现乱码，在网上找了下解决方案，发现比较乱，有的也不太好用，特此整理了一下可用的一个方案。</p><a id="more"></a><h2 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h2><p>检查是否已经安装了中文包支持。终端输入： <code>sudo dpkg -l</code> 查看是否安装了中文支持（ <code>language-pack-zh</code>）的软件包。</p><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>没有安装，那就终端执行命令 ： <code>apt-get install language-pack-zh</code></p><h2 id="配置语言环境变量"><a href="#配置语言环境变量" class="headerlink" title="配置语言环境变量"></a>配置语言环境变量</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/environment</span><br></pre></td></tr></table></figure></div><p>在下面添加如下两行:</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LANG=<span class="string">"zh_CN.UTF-8"</span></span><br><span class="line">LANGUAGE=<span class="string">"zh_CN:zh:en_US:en"</span></span><br></pre></td></tr></table></figure></div><p>打开文件:</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /var/lib/locales/supported.d/<span class="built_in">local</span></span><br></pre></td></tr></table></figure></div><p>添加zh_CN.GB2312字符集，如下:</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">en_US.UTF-8 UTF-8</span><br><span class="line">zh_CN.UTF-8 UTF-8</span><br><span class="line">zh_CN.GBK GBK</span><br><span class="line">zh_CN GB2312</span><br></pre></td></tr></table></figure></div><p>保存后，执行命令:</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo locale-gen</span><br></pre></td></tr></table></figure></div><h2 id="设置系统默认语言"><a href="#设置系统默认语言" class="headerlink" title="设置系统默认语言"></a>设置系统默认语言</h2><p><code>vim</code> 编辑器编辑文档:</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/default/locale</span><br></pre></td></tr></table></figure></div><p>修改为:</p><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LANG=<span class="string">"zh_CN.UTF-8"</span></span><br><span class="line">LANGUAGE=<span class="string">"zh_CN:zh:en_US:en"</span></span><br><span class="line"></span><br><span class="line">sudo reboot</span><br></pre></td></tr></table></figure></div><p>重启 <code>Ubuntu</code> 下次登录就是中文界面的了。而且也解决了系统中文的乱码现象。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前买了阿里云的服务器，后来在上面编辑中文字符的时候发现乱码，在网上找了下解决方案，发现比较乱，有的也不太好用，特此整理了一下可用的一个方案。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://blog.ihoey.com/categories/Linux/"/>
+    
+    
+      <category term="Ubuntu" scheme="https://blog.ihoey.com/tags/Ubuntu/"/>
+    
+      <category term="Linux" scheme="https://blog.ihoey.com/tags/Linux/"/>
+    
+      <category term="shell" scheme="https://blog.ihoey.com/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>面试分享：2018阿里巴巴前端面试总结(题目+答案)</title>
@@ -474,30 +500,6 @@
       <category term="MongoDB" scheme="https://blog.ihoey.com/tags/MongoDB/"/>
     
       <category term="NoSQL" scheme="https://blog.ihoey.com/tags/NoSQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>科学上网之shadowsocks 服务端安装</title>
-    <link href="https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html"/>
-    <id>https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html</id>
-    <published>2017-03-16T10:38:46.000Z</published>
-    <updated>2017-09-14T08:46:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>轻松搭建<code>shadowsocks</code>,及相关配置说明</p><a id="more"></a><h2 id="安装shadowsocks依赖-我的服务器系统是ubuntu"><a href="#安装shadowsocks依赖-我的服务器系统是ubuntu" class="headerlink" title="安装shadowsocks依赖(我的服务器系统是ubuntu)"></a>安装shadowsocks依赖(我的服务器系统是ubuntu)</h2><ul><li><code>sudo -s</code> // 获取超级管理员权限</li><li><code>apt-get update</code> // 更新apt-get</li><li><code>apt-get install python-pip</code> // 安装python包管理工具pip</li><li><code>pip install shadowsocks</code> // 安装shadowsocks</li></ul><h2 id="配置shadowsocks"><a href="#配置shadowsocks" class="headerlink" title="配置shadowsocks"></a>配置shadowsocks</h2><ul><li><code>vi /etc/shadowsocks.json</code></li></ul><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//单一端口</span><br><span class="line">&#123;</span><br><span class="line">    "server":"0.0.0.0",//服务器 ip地址 (IPv4/IPv6)</span><br><span class="line">    "server_port":1121,//服务器监听的端口,注意不要设为使用中的端口</span><br><span class="line">    "local_address":"127.0.0.1",//默认即可</span><br><span class="line">    "local_port":1080,</span><br><span class="line">    "password":"password",//密码</span><br><span class="line">    "timeout":300,//超时时间（秒）</span><br><span class="line">    "method":"aes-256-cfb",//加密方式</span><br><span class="line">    "fast_open":false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//多端口</span><br><span class="line">  &#123;</span><br><span class="line">   "server":"my_server_ip",  //填入你的IP地址</span><br><span class="line">   "local_address": "127.0.0.1",</span><br><span class="line">   "local_port":1080,</span><br><span class="line">    "port_password": &#123;</span><br><span class="line">        "8381": "foobar1",    //端口号，密码</span><br><span class="line">        "8382": "foobar2",</span><br><span class="line">        "8383": "foobar3",</span><br><span class="line">        "8384": "foobar4"</span><br><span class="line">   &#125;,</span><br><span class="line">   "timeout":300,</span><br><span class="line">   "method":"aes-256-cfb",</span><br><span class="line">   "fast_open": false</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><h2 id="优化shadowsocks服务"><a href="#优化shadowsocks服务" class="headerlink" title="优化shadowsocks服务"></a>优化shadowsocks服务</h2><ul><li>在终端输入 <code>vi /etc/sysctl.d/local.conf</code></li></ul><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># max open files</span><br><span class="line">fs.file-max = 1024000</span><br><span class="line"># max read buffer</span><br><span class="line">net.core.rmem_max = 67108864</span><br><span class="line"># max write buffer</span><br><span class="line">net.core.wmem_max = 67108864</span><br><span class="line"># default read buffer</span><br><span class="line">net.core.rmem_default = 65536</span><br><span class="line"># default write buffer</span><br><span class="line">net.core.wmem_default = 65536</span><br><span class="line"># max processor input queue</span><br><span class="line">net.core.netdev_max_backlog = 4096</span><br><span class="line"># max backlog</span><br><span class="line">net.core.somaxconn = 4096</span><br><span class="line"></span><br><span class="line"># resist SYN flood attacks</span><br><span class="line">net.ipv4.tcp_syncookies = 1</span><br><span class="line"># reuse timewait sockets when safe</span><br><span class="line">net.ipv4.tcp_tw_reuse = 1</span><br><span class="line"># turn off fast timewait sockets recycling</span><br><span class="line">net.ipv4.tcp_tw_recycle = 0</span><br><span class="line"># short FIN timeout</span><br><span class="line">net.ipv4.tcp_fin_timeout = 30</span><br><span class="line"># short keepalive time</span><br><span class="line">net.ipv4.tcp_keepalive_time = 1200</span><br><span class="line"># outbound port range</span><br><span class="line">net.ipv4.ip_local_port_range = 10000 65000</span><br><span class="line"># max SYN backlog</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 4096</span><br><span class="line"># max timewait sockets held by system simultaneously</span><br><span class="line">net.ipv4.tcp_max_tw_buckets = 5000</span><br><span class="line"># TCP receive buffer</span><br><span class="line">net.ipv4.tcp_rmem = 4096 87380 67108864</span><br><span class="line"># TCP write buffer</span><br><span class="line">net.ipv4.tcp_wmem = 4096 65536 67108864</span><br><span class="line"># turn on path MTU discovery</span><br><span class="line">net.ipv4.tcp_mtu_probing = 1</span><br><span class="line"></span><br><span class="line"># for high-latency network</span><br><span class="line">net.ipv4.tcp_congestion_control = hybla</span><br><span class="line"># forward ivp4</span><br><span class="line">net.ipv4.ip_forward = 1</span><br></pre></td></tr></table></figure><ul><li>配置生效：<code>sysctl --system</code></li></ul><h2 id="开启shadowsocks服务"><a href="#开启shadowsocks服务" class="headerlink" title="开启shadowsocks服务"></a>开启shadowsocks服务</h2><ul><li><code>ssserver -c /etc/shadowsocks.json -d start</code></li></ul><h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><ul><li><code>ssserver -c /etc/shadowsocks.json -d stop</code></li></ul><h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><ul><li>重启(修改配置要重启才生效)：<code>ssserver -c /etc/shadowsocks.json -d restart</code></li></ul><h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><ul><li><code>/var/log/shadowsocks.log</code></li></ul><h2 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h2><ul><li><p><code>ssserver -h</code></p><p>  如果出现故障，试试把<code>/etc/shadowsocks.json</code>里改为<code>&quot;server&quot;=&quot;0.0.0.0&quot;.</code> 小心不要掉<code>,</code></p></li></ul><h2 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h2><ul><li>在终端输入 <code>vi /etc/rc.local</code></li><li>把 <code>sudo ssserver -c /etc/shadowsocks.json -d start</code>加进去</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;轻松搭建&lt;code&gt;shadowsocks&lt;/code&gt;,及相关配置说明&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="shadowsocks" scheme="https://blog.ihoey.com/categories/shadowsocks/"/>
-    
-    
-      <category term="科学上网" scheme="https://blog.ihoey.com/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
-    
-      <category term="shadowsocks" scheme="https://blog.ihoey.com/tags/shadowsocks/"/>
     
   </entry>
   
