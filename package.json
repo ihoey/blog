@@ -2,6 +2,13 @@
   "name": "ihoey_blog",
   "version": "6.0.0",
   "private": true,
+  "author": "ihoey",
+  "contributors": [{
+    "name": "ihoey",
+    "email": "mail@ihoey.com"
+  }],
+  "license": "MIT",
+  "description": "心，若没有栖息的地方，到哪里都是流浪......",
   "hexo": {
     "version": "3.4.2"
   },

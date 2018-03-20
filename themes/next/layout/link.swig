@@ -8,7 +8,7 @@
               <img src="{{ i.avatar }}" alt="{{ i.name }}" height="72px" width="72px" />
             {% endif %}#}
             <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-1"></use>
+                <use xlink:href="#icon-1" id="link"></use>
             </svg>
             <h3 class="ihoey-links-title">{{ i.name }}</h3>
             <p class="ihoey-links-des">{{ i.description }}</p>
