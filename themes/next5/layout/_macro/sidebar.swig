@@ -135,7 +135,7 @@
       <!--/noindex-->
       {% endif %}
 <!--         <div>
-          <p style="text-align: center;"><object type="application/x-shockwave-flash" style="outline:none;" data="https://oisha19l0.qnssl.com/hamster.swf" width="245" height="225" title="梦魇小栈"><param name="movie" value="https://oisha19l0.qnssl.com/hamster.swf"><param name="AllowScriptAccess" value="always"><param name="wmode" value="transparent"></object></p>
+          <p style="text-align: center;"><object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.dode.top/hamster.swf" width="245" height="225" title="梦魇小栈"><param name="movie" value="https://cdn.dode.top/hamster.swf"><param name="AllowScriptAccess" value="always"><param name="wmode" value="transparent"></object></p>
         </div> -->
     </div>
   </aside>

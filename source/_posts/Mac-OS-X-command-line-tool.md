@@ -159,7 +159,7 @@ say -f mynovel.txt -o myaudiobook.aiff
 
 也可以通过 `Homebrew` 做有趣的事情： `brew install archey` 会安装 `Archey` （在启动命令行时显示苹果 `LOGO` 和计算机硬件参数的小工具）。
 
-![item2](https://oisha19l0.qnssl.com/item2.png)
+![item2](https://cdn.dode.top/item2.png)
 
 `Homebrew` 能安装的工具数量庞大，并且一直保持更新。`Homebrew` 最棒的一点是：所有的文件都被约束在 `/usr/local/` 一个位置之下。也就是说可以通过 `Homebrew` 安装新版软件的同时，保持系统内置的依赖库或其他软件不变。同时如果想彻底删除 `Homebrew` ，也变得非常简单。
 
