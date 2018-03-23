@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e55425;
+  background: #a2ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2801,6 +2801,7 @@ body {
 
 .link-all-page .ihoey-links a {
   display: block;
+  height: 100%;
   color: #333;
   text-decoration: none;
   border: none;
