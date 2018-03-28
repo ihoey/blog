@@ -2,7 +2,7 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by: ihoey
- * @Last Modified time: 2018-03-28 16:07:22
+ * @Last Modified time: 2018-03-28 16:24:49
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
@@ -272,11 +272,4 @@ window.onload = function () {
       $('#DonateText,#donateBox,#github').removeClass('blur');
     }, 600);
   });
-
-  // // 链接
-  // var link = document.querySelectorAll('#link');
-
-  // link.forEach((e, i) => {
-  //   e.href.baseVal = '#icon-' + ++i;
-  // })
 }

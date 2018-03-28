@@ -377,30 +377,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>JQuery分析及实现part2之css部分功能及实现</title>
-        <pubTime>2016-11-19T11:02:01.000Z</pubTime>
-        
-        <tag>原生Js</tag>
-         
-        <tag>Js框架</tag>
-         
-        <tag>JQuery</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -425,12 +401,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part3之属性模块功能及实现</title>
-        <pubTime>2016-11-20T03:51:28.000Z</pubTime>
+        <title>JQuery分析及实现part2之css部分功能及实现</title>
+        <pubTime>2016-11-19T11:02:01.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -449,12 +425,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part5之事件模块功能及实现</title>
-        <pubTime>2016-11-23T02:27:16.000Z</pubTime>
+        <title>JQuery分析及实现part3之属性模块功能及实现</title>
+        <pubTime>2016-11-20T03:51:28.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -497,6 +473,30 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>JQuery分析及实现part5之事件模块功能及实现</title>
+        <pubTime>2016-11-23T02:27:16.000Z</pubTime>
+        
+        <tag>原生Js</tag>
+         
+        <tag>Js框架</tag>
+         
+        <tag>JQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/Canvas/2016-11-13-canvas-part1.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -521,14 +521,18 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-08-javascript-part1.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part1</title>
-        <pubTime>2016-05-08T09:31:48.000Z</pubTime>
+        <title>JQuery分析及实现part7之 Ajax 模块功能及实现</title>
+        <pubTime>2016-11-25T13:31:12.000Z</pubTime>
         
-        <tag>javascript</tag>
+        <tag>原生Js</tag>
+         
+        <tag>Js框架</tag>
+         
+        <tag>JQuery</tag>
          
          
            
@@ -541,18 +545,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-08-javascript-part1.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part6之动画模块功能及实现</title>
-        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
+        <title>JavaScript高级篇之part1</title>
+        <pubTime>2016-05-08T09:31:48.000Z</pubTime>
         
-        <tag>原生Js</tag>
-         
-        <tag>Js框架</tag>
-         
-        <tag>JQuery</tag>
+        <tag>javascript</tag>
          
          
            
@@ -625,12 +625,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-10-javascript-part5.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-11-javascript-part6.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part5</title>
-        <pubTime>2016-11-10T13:43:36.000Z</pubTime>
+        <title>JavaScript高级篇之part6</title>
+        <pubTime>2016-11-11T11:35:55.000Z</pubTime>
         
         <tag>javascript</tag>
          
@@ -645,18 +645,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-10-javascript-part5.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之原型</title>
-        <pubTime>2016-06-04T05:41:47.000Z</pubTime>
+        <title>JavaScript高级篇之part5</title>
+        <pubTime>2016-11-10T13:43:36.000Z</pubTime>
         
         <tag>javascript</tag>
-         
-        <tag>原型</tag>
-         
-        <tag>原型的基本概念</tag>
          
          
            
@@ -695,14 +691,18 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-11-javascript-part6.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JavaScript高级篇之part6</title>
-        <pubTime>2016-11-11T11:35:55.000Z</pubTime>
+        <title>js高级与面向对象之原型</title>
+        <pubTime>2016-06-04T05:41:47.000Z</pubTime>
         
         <tag>javascript</tag>
+         
+        <tag>原型</tag>
+         
+        <tag>原型的基本概念</tag>
          
          
            
@@ -728,6 +728,30 @@
            
              
               <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>adb(Android Debug Bridge，Android调试桥)常用命令</title>
+        <pubTime>2016-12-18T08:18:21.000Z</pubTime>
+        
+        <tag>adb</tag>
+         
+        <tag>Android</tag>
+         
+        <tag>adb命令</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
           
         </display>
     </data>
@@ -801,23 +825,19 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>adb设备信息查询修改刷机等命令</title>
-        <pubTime>2016-12-22T10:51:53.000Z</pubTime>
+        <title>js高级与面向对象之函数</title>
+        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
         
-        <tag>adb</tag>
-         
-        <tag>Android</tag>
-         
-        <tag>adb命令</tag>
+        <tag>Function</tag>
          
          
            
              
-              <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
           
         </display>
     </data>
@@ -840,28 +860,6 @@
            
              
               <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>js高级与面向对象之构造函数</title>
-        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>js构造函数</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
           
         </display>
     </data>
@@ -913,12 +911,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</loc>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>adb(Android Debug Bridge，Android调试桥)常用命令</title>
-        <pubTime>2016-12-18T08:18:21.000Z</pubTime>
+        <title>adb设备信息查询修改刷机等命令</title>
+        <pubTime>2016-12-22T10:51:53.000Z</pubTime>
         
         <tag>adb</tag>
          
@@ -930,6 +928,28 @@
            
              
               <breadCrumb title="Android" url="https://blog.ihoey.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>js高级与面向对象之构造函数</title>
+        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>js构造函数</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
           
         </display>
     </data>
@@ -959,30 +979,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>Canvas部分知识总结</title>
-        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
-        
-        <tag>Canvas</tag>
-         
-        <tag>HTML5</tag>
-         
-        <tag>画布</tag>
-         
-         
-           
-             
-              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -1005,26 +1001,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
-    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
-    <data>
-        <display>
-        <title>js高级与面向对象之函数</title>
-        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
-        
-        <tag>Function</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
@@ -1040,6 +1016,30 @@
            
              
               <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
+    <lastmod>2017-09-14T08:46:53.000Z</lastmod>
+    <data>
+        <display>
+        <title>Canvas部分知识总结</title>
+        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
+        
+        <tag>Canvas</tag>
+         
+        <tag>HTML5</tag>
+         
+        <tag>画布</tag>
+         
+         
+           
+             
+              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
           
         </display>
     </data>
@@ -1073,12 +1073,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
     <lastmod>2017-09-14T08:46:53.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part7之 Ajax 模块功能及实现</title>
-        <pubTime>2016-11-25T13:31:12.000Z</pubTime>
+        <title>JQuery分析及实现part6之动画模块功能及实现</title>
+        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
         
         <tag>原生Js</tag>
          
