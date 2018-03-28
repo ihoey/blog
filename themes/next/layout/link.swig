@@ -1,15 +1,16 @@
 <blockquote class="blockquote-center">{{ page.quotes }}</blockquote>
 <h2>Blog friends</h2>
 <ul class="ihoey-links">
-  {% for i in site.data.links %}
+  {% for e,i in site.data.links %}
     <li class="ihoey-links-item">
         <a href="{{ i.link }}" title="{{ i.name }}" target="_blank">
-            {#{% if i.avatar %}
+            {% if i.avatar %}
               <img src="{{ i.avatar }}" alt="{{ i.name }}" height="72px" width="72px" />
-            {% endif %}#}
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-1" id="link"></use>
-            </svg>
+              {% else %}
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-{{e+1}}" id="link"></use>
+              </svg>
+            {% endif %}
             <h3 class="ihoey-links-title">{{ i.name }}</h3>
             <p class="ihoey-links-des">{{ i.description }}</p>
         </a>

@@ -14,6 +14,7 @@
   name: 冰封的博客
   link: https://www.ad-s.cn/links
   description: "一位孤独的旅人"
+  avatar: https://tp.corli.cn/data/f_37774230.jpg
 -
   name: 可乐没气的猫
   link: https://www.isthnew.com/links/
@@ -58,14 +59,17 @@
   name: 李伟(Waylee)
   link: https://waylee.net/
   description: "不忘初心方得始终"
+  avatar: https://tx.diygu.com/avatar/96391810d42f9c28518866bb182f45aa-50
 -
   name: 三秋
   link: https://sanqiu.org/
   description: "雨零耶，君将留？"
+  avatar: https://sanqiu.org/s/tupian/sanqiu.gif
 -
   name: 洛哩哩~
   link: https://lolili.cc/
   description: "只要你能幸福，我是谁，又有什么关系？记不记得住，又有什么关系啊！"
+  avatar: https://lolili.cc/static/images/default/head.png
 -
   name: 同良小栈
   link: https://togln.com/
