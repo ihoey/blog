@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #244152;
+  background: #776aff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2524,6 +2524,9 @@ body {
 ::selection {
   background: #d25462;
   color: #fff;
+}
+blockquote {
+  font-family: 'comic sans ms';
 }
 .reward-content {
   width: 100%;
