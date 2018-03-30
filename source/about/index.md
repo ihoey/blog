@@ -27,6 +27,10 @@ comments: true
 
 ***
 
+<blockquote class="blockquote-center">Let life be beautiful like summer flowers and death like autumn leaves.</blockquote>
+
+***
+
 [2016-10-25] 站点从SinaAppEngine(SAE)迁移到Coding/GitHub, 国内用户默认解析至Coding, 海外则解析至GitHub, 互为备份, 改善了访问速度与稳定性
 
 ***
