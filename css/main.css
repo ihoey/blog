@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff83ff;
+  background: #d2ff2e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2516,6 +2516,9 @@ code {
 }
 .wf a {
   border: none;
+}
+.wf .wf-reply-form textarea {
+  background: url("https://cdn.dode.top/plbj.png") right bottom no-repeat;
 }
 html,
 body {
