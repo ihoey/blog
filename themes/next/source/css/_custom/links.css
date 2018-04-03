@@ -59,6 +59,7 @@
   margin: 0;
   float: left;
   border: none;
+  pointer-events:none
 }
 
 .link-all-page .ihoey-links .ihoey-links-item:hover {
