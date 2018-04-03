@@ -3,7 +3,7 @@
 <ul class="ihoey-links">
   {% for e,i in site.data.links %}
     <li class="ihoey-links-item">
-        <a href="{{ i.link }}" title="{{ i.name }}" target="_blank">
+        <a href="{{ i.link }}" class="group-picture" title="{{ i.name }}" target="_blank">
             {% if i.avatar %}
               <img src="{{ i.avatar }}" alt="{{ i.name }}" height="72px" width="72px" />
               {% else %}
