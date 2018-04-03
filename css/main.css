@@ -1818,7 +1818,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d2ff2e;
+  background: #df8fad;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2818,6 +2818,7 @@ body {
   margin: 0;
   float: left;
   border: none;
+  pointer-events:none
 }
 
 .link-all-page .ihoey-links .ihoey-links-item:hover {
