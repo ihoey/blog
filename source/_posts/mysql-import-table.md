@@ -6,6 +6,8 @@ tags:
   - Ubuntu
   - NoSQL
   - shell
+categories:
+  - MySQL
 ---
 
 记录一下数据库导入文件方法~
