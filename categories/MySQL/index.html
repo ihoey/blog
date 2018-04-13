@@ -138,21 +138,19 @@
 
 
   
-  <meta name="keywords" content="Ubuntu,shell,MySQL,NoSQL," />
+  <meta name="keywords" content="梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布" />
 
 
-<meta name="description" content="记录一下数据库导入文件方法~">
-<meta name="keywords" content="Ubuntu,shell,MySQL,NoSQL">
-<meta property="og:type" content="article">
-<meta property="og:title" content="用 MySQL 导入 SQL 文件">
-<meta property="og:url" content="https://blog.ihoey.com/posts/uncategorized/2018-04-13-mysql-import-table.html">
+<meta name="description" content="心，若没有栖息的地方，到哪里都是流浪......">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梦魇小栈">
+<meta property="og:url" content="https://blog.ihoey.com/categories/MySQL/index.html">
 <meta property="og:site_name" content="梦魇小栈">
-<meta property="og:description" content="记录一下数据库导入文件方法~">
+<meta property="og:description" content="心，若没有栖息的地方，到哪里都是流浪......">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-13T05:27:56.095Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用 MySQL 导入 SQL 文件">
-<meta name="twitter:description" content="记录一下数据库导入文件方法~">
+<meta name="twitter:title" content="梦魇小栈">
+<meta name="twitter:description" content="心，若没有栖息的地方，到哪里都是流浪......">
 
 
 
@@ -161,10 +159,10 @@
 
 
 
-  <link rel="canonical" href="https://blog.ihoey.com/posts/uncategorized/2018-04-13-mysql-import-table.html"/>
+  <link rel="canonical" href="https://blog.ihoey.com/categories/MySQL/"/>
 
 
-  <title>用 MySQL 导入 SQL 文件 | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布 </title>
+  <title>分类: MySQL | 梦魇小栈 - 梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布 </title>
   
 
 
@@ -230,7 +228,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -335,227 +333,59 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  
+  
+  
+  <div class="post-block category">
 
-  
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h2>MySQL<small>分类</small>
+        </h2>
+      </div>
 
-  
-  
-  
-
-  
+      
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/uncategorized/2018-04-13-mysql-import-table.html">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ihoey">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.dode.top/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梦魇小栈">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h3 class="post-title">
         
-        
-          <h2 class="post-title" itemprop="name headline">用 MySQL 导入 SQL 文件</h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/posts/MySQL/2018-04-13-mysql-import-table.html" itemprop="url">
               
-                <span class="post-meta-item-text">发表于</span>
+                <span itemprop="name">用 MySQL 导入 SQL 文件</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T13:07:19+08:00">2018-04-13</time>
-            
+            </a>
+        
+      </h3>
 
-            
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"> 我被看了</i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>记录一下数据库导入文件方法~</p>
-<a id="more"></a>
-<blockquote>
-<p>方案一</p>
-</blockquote>
-<h2 id="登录数据库"><a href="#登录数据库" class="headerlink" title="登录数据库"></a>登录数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p123</span><br></pre></td></tr></table></figure></div>
-<h2 id="检查已经存在的数据库"><a href="#检查已经存在的数据库" class="headerlink" title="检查已经存在的数据库"></a>检查已经存在的数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure></div>
-<h2 id="创建新的数据库"><a href="#创建新的数据库" class="headerlink" title="创建新的数据库"></a>创建新的数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database <span class="built_in">test</span>;</span><br><span class="line"><span class="comment"># 查看已经存在的是为了避免重复创建</span></span><br></pre></td></tr></table></figure></div>
-<h2 id="选择你所创建的数据库"><a href="#选择你所创建的数据库" class="headerlink" title="选择你所创建的数据库"></a>选择你所创建的数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use <span class="built_in">test</span>;</span><br></pre></td></tr></table></figure></div>
-<h2 id="导入sql文件"><a href="#导入sql文件" class="headerlink" title="导入sql文件"></a>导入sql文件</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> db-test.sql;</span><br><span class="line"><span class="comment">#注意sql文件的路径</span></span><br></pre></td></tr></table></figure></div>
-<h2 id="查看导入结果"><a href="#查看导入结果" class="headerlink" title="查看导入结果"></a>查看导入结果</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure></div>
-<h2 id="退出数据库"><a href="#退出数据库" class="headerlink" title="退出数据库"></a>退出数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span>;</span><br></pre></td></tr></table></figure></div>
-<blockquote>
-<p>方案二</p>
-</blockquote>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p123 <span class="built_in">test</span> &lt; test.sql</span><br><span class="line"><span class="comment"># mysql -u 用户名 -p 密码 数据库名 &lt; 数据库名.sql</span></span><br></pre></td></tr></table></figure></div>
-
-      
-    </div>
-    
-    
-    
-
-    
-      <div>
-          <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
-
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-13T13:07:19+08:00"
+              content="2018-04-13" >
+          04-13
+        </time>
       </div>
-    
 
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</div>
-  <div class="reward-content">
-    	<a id="github" href="https://github.com/houyi1121/Playing-reward" target="_blank" class="pos-a" title="Github"></a>
-      <a href="https://blog.ihoey.com" target="_blank" id="DonateText" title="ihoey.com">ihoey.com</a>
-      <ul id="donateBox" class="list pos-a">
-        <li id="PayPal"><a href="https://www.paypal.me/ihoey" target="_blank" title="PayPal">PayPal</a></li>
-        <li id="QQ" data-img="/qcode/tencent_qcode.png" title="QQ">QQ</li>
-        <li id="AliPay" data-img="/qcode/alipay_qcode.png" title="支付宝">支付宝</li>
-        <li id="WeChat" data-img="/qcode/wechat_qcode.png" title="微信支付">微信支付</li>
-      </ul>
-      <div id="QRBox" class="pos-f left-100">
-        <div id="MainBox"></div>
-      </div>
-  </div>
-</div>
-
-      </div>
-    
-
-    
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
-          
-            <a href="/tags/shell/" rel="tag"># shell</a>
-          
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
-          
-            <a href="/tags/NoSQL/" rel="tag"># NoSQL</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/posts/Linux/2018-03-15-ubuntu-zh-CN-UTF-8.html" rel="next" title="解决 ubuntu 服务器中文乱码">
-                <i class="fa fa-chevron-left"></i> 解决 ubuntu 服务器中文乱码
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
+    </header>
   </article>
 
 
-
-    <div class="post-spread">
       
     </div>
+
   </div>
+  
+  
+  
+
+  
+
 
 
           </div>
           
-
-  
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/posts/uncategorized/2018-04-13-mysql-import-table.html',
-          pageTitle: '用 MySQL 导入 SQL 文件',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
-
-
 
         </div>
         
@@ -576,17 +406,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -616,7 +437,7 @@
                 
                 <div class="site-state-item site-state-categories">
                   <a href="/categories/index.html">
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -732,22 +553,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#登录数据库"><span class="nav-number">1.</span> <span class="nav-text">登录数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检查已经存在的数据库"><span class="nav-number">2.</span> <span class="nav-text">检查已经存在的数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建新的数据库"><span class="nav-number">3.</span> <span class="nav-text">创建新的数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择你所创建的数据库"><span class="nav-number">4.</span> <span class="nav-text">选择你所创建的数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入sql文件"><span class="nav-number">5.</span> <span class="nav-text">导入sql文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看导入结果"><span class="nav-number">6.</span> <span class="nav-text">查看导入结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#退出数据库"><span class="nav-number">7.</span> <span class="nav-text">退出数据库</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -967,10 +772,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.0.2"></script>
-
-
 
   
 
