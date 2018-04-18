@@ -81,9 +81,12 @@
   name: 木木的小站
   link: https://www.javascriper.com/
   description: "前端路上的木木"
-  # avatar:
 -
   name: 水墨寒的博客
   link: https://smohan.net/
   description: "水墨寒，90后双鱼座普通男青年！WEB前端工程师。喜欢敲代码的感觉，相信编程是一门艺术，自诩为游弋在代码里的人生。"
   avatar: https://secure.gravatar.com/avatar/85356416ea5399c0dc1ea9fd354b1c8e?s=100
+-
+  name: persilee’s blog
+  link: https://lishaoy.net
+  description: "李少颖的博客"
