@@ -38,9 +38,9 @@
     
       <category term="shell" scheme="https://blog.ihoey.com/tags/shell/"/>
     
-      <category term="MySQL" scheme="https://blog.ihoey.com/tags/MySQL/"/>
-    
       <category term="NoSQL" scheme="https://blog.ihoey.com/tags/NoSQL/"/>
+    
+      <category term="MySQL" scheme="https://blog.ihoey.com/tags/MySQL/"/>
     
   </entry>
   
@@ -499,9 +499,9 @@
       <category term="MongoDB" scheme="https://blog.ihoey.com/categories/MongoDB/"/>
     
     
-      <category term="NoSQL" scheme="https://blog.ihoey.com/tags/NoSQL/"/>
-    
       <category term="MongoDB" scheme="https://blog.ihoey.com/tags/MongoDB/"/>
+    
+      <category term="NoSQL" scheme="https://blog.ihoey.com/tags/NoSQL/"/>
     
   </entry>
   
