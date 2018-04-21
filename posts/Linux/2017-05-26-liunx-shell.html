@@ -411,6 +411,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/Linux/2017-05-26-liunx-shell.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hitalk-comment-count" data-xid="/posts/Linux/2017-05-26-liunx-shell.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -504,7 +514,7 @@
 <li>保留的</li>
 </ol>
 <p>以上面最后用户letuknowit为例（15400对应的日期为2012年3月1日），其保护如下信息：</p>
-<ol>
+<ol start="3">
 <li>用户letuknowit最近一次修改密码的日期是2012年3月1日，</li>
 <li>在2012年3月6日之前不能再改动密码了，</li>
 <li>在2012-3-1到2012-4-29期间letuknowit需要更改密码，</li>
@@ -617,24 +627,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html',
-          pageTitle: 'Linux常用命令笔记',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -1088,6 +1083,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

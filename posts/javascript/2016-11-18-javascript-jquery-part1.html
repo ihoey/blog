@@ -413,6 +413,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/javascript/2016-11-18-javascript-jquery-part1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hitalk-comment-count" data-xid="/posts/javascript/2016-11-18-javascript-jquery-part1.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -479,7 +489,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">global</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> init;</span><br><span class="line">	<span class="comment">// 核心函数（工厂函数）</span></span><br><span class="line">	<span class="keyword">var</span> itcast = <span class="function"><span class="keyword">function</span>(<span class="params">selector</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> itcast.fn.init(selector);</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 核心原型	</span></span><br><span class="line">	itcast.fn = itcast.prototype = &#123;</span><br><span class="line">		<span class="keyword">constructor</span>: itcast</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	// 构造函数</span><br><span class="line">	init = itcast.fn.init = function(selector) &#123;&#125;;</span><br><span class="line">	<span class="comment">// 实现init对象继承自itcast原型</span></span><br><span class="line">	init.prototype = itcast.fn;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 可扩展方法</span></span><br><span class="line">	<span class="comment">// 如果target为undefined值，那么就是给this扩展成员</span></span><br><span class="line">	<span class="comment">// 否则就是给target对象扩展。</span></span><br><span class="line">	itcast.extend = itcast.fn.extend = <span class="function"><span class="keyword">function</span>(<span class="params">source, target</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">var</span> k;</span><br><span class="line">		<span class="comment">// 如果target为undefined值，就赋值为this</span></span><br><span class="line">		<span class="comment">// 给this扩展成员</span></span><br><span class="line">		<span class="keyword">if</span> (target == <span class="literal">undefined</span>) &#123;</span><br><span class="line">			target = <span class="keyword">this</span>;</span><br><span class="line">		&#125;	</span><br><span class="line"></span><br><span class="line">		<span class="comment">// target = target || this;</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(k <span class="keyword">in</span> source)&#123;</span><br><span class="line">			target[k] = source[k];</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="comment">// 暴露给用户</span></span><br><span class="line">	global.$ = global.itcast = itcast;</span><br><span class="line">&#125;(<span class="built_in">window</span>));</span><br><span class="line"></span><br><span class="line">itcast.fn.addClass = <span class="function"><span class="keyword">function</span>(<span class="params">className</span>) </span>&#123;&#125;;</span><br><span class="line">itcast.fn.append = <span class="function"><span class="keyword">function</span>(<span class="params">className</span>) </span>&#123;&#125;;</span><br></pre></td></tr></table></figure></div>
-<ol>
+<ol start="7">
 <li><p>完善<code>init</code>构造函数</p>
 <ul>
 <li><code>selector</code> 类型：<ul>
@@ -625,24 +635,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/posts/javascript/2016-11-18-javascript-jquery-part1.html',
-          pageTitle: 'JQuery分析及实现part1框架结构',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -1096,6 +1091,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

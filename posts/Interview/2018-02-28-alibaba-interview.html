@@ -413,6 +413,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/Interview/2018-02-28-alibaba-interview.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hitalk-comment-count" data-xid="/posts/Interview/2018-02-28-alibaba-interview.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -707,24 +717,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/posts/Interview/2018-02-28-alibaba-interview.html',
-          pageTitle: '面试分享：2018阿里巴巴前端面试总结(题目+答案)',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -1178,6 +1173,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

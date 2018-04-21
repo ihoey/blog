@@ -579,24 +579,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/tags/index.html',
-          pageTitle: '标签',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -1025,6 +1010,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

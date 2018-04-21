@@ -141,7 +141,7 @@
   <meta name="keywords" content="Node,NodeJs," />
 
 
-<meta name="description" content="NodeJs是什么？ 简单的说 NodeJs 就是运行在服务端的 JavaScript 。NodeJs 是一个基于 Chrome JavaScript 运行时建立的一个平台。NodeJs 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript">
+<meta name="description" content="NodeJs是什么？ 简单的说 NodeJs 就是运行在服务端的 JavaScript 。NodeJs 是一个基于 Chrome JavaScript 运行时建立的一个平台。NodeJs 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript 的速度非常快，性能非常好。   官网 https://nodejs.org">
 <meta name="keywords" content="Node,NodeJs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node第一部分-初体验">
@@ -411,6 +411,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/Node/2016-12-10-Node-part1.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hitalk-comment-count" data-xid="/posts/Node/2016-12-10-Node-part1.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -616,24 +626,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/posts/Node/2016-12-10-Node-part1.html',
-          pageTitle: 'Node第一部分-初体验',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -1087,6 +1082,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

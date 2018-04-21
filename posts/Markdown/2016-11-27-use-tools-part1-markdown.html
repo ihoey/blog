@@ -141,7 +141,7 @@
   <meta name="keywords" content="tools,Markdown语法规范," />
 
 
-<meta name="description" content="Markdown 介绍 Markdown 是一个 轻量级  高效率 的标记语言 轻量级标记语言，2004 年被 John Gruber 创造， 它允许人们“使用易读易写的纯文本格式编写文档”， Markdown 最重要的设计就是可读性， Markdown 可以选择性的转换为 HTML 文档格式， 很多网站目前都使用了 ">
+<meta name="description" content="Markdown 介绍 Markdown 是一个 轻量级  高效率 的标记语言 轻量级标记语言，2004 年被 John Gruber 创造， 它允许人们“使用易读易写的纯文本格式编写文档”， Markdown 最重要的设计就是可读性， Markdown 可以选择性的转换为 HTML 文档格式， 很多网站目前都使用了 Markdown 或者其变种，例如 Github 、简书等大型社区。">
 <meta name="keywords" content="tools,Markdown语法规范">
 <meta property="og:type" content="article">
 <meta property="og:title" content="工具使用篇之Markdown">
@@ -411,6 +411,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/Markdown/2016-11-27-use-tools-part1-markdown.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hitalk-comment-count" data-xid="/posts/Markdown/2016-11-27-use-tools-part1-markdown.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -512,7 +522,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="MARKDOWN"><figure class="iseeu highlight /markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">2. </span>有序列表嵌套无序列表</span><br><span class="line"><span class="code">    - 有序列表嵌套无序列表</span></span><br><span class="line"><span class="code">        + 有序列表嵌套无序列表</span></span><br></pre></td></tr></table></figure></div>
-<ol>
+<ol start="3">
 <li>有序列表嵌套有序列表<ol>
 <li>有序列表嵌套有序列表<ol>
 <li>有序列表嵌套有序列表</li>
@@ -669,24 +679,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html',
-          pageTitle: '工具使用篇之Markdown',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -1140,6 +1135,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

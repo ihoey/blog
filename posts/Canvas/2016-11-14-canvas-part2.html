@@ -411,6 +411,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/Canvas/2016-11-14-canvas-part2.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hitalk-comment-count" data-xid="/posts/Canvas/2016-11-14-canvas-part2.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -462,7 +472,7 @@
 <li>绘制的矩形支持 <code>strokeStyle</code> 设置颜色样式.</li>
 </ul>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctx.strokeStyle = <span class="string">'red'</span>;</span><br><span class="line">ctx.strokeRect( <span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">100</span> );</span><br></pre></td></tr></table></figure></div>
-<ol>
+<ol start="2">
 <li>fillRect();</li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fillRect(x, y, w, h)</span><br></pre></td></tr></table></figure></div>
@@ -474,12 +484,12 @@
 <li>绘制的矩形支持 <code>fillStyle</code> 设置颜色样式.</li>
 </ul>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ctx.fillStyle = <span class="string">'green'</span>;</span><br><span class="line">ctx.fillRect( <span class="number">100</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">100</span> );</span><br></pre></td></tr></table></figure></div>
-<ol>
+<ol start="3">
 <li>rect();</li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rect(x, y, w, h)</span><br></pre></td></tr></table></figure></div>
 <p><code>x</code>, <code>x</code>坐标<br><code>y</code>, y坐标<br><code>w</code>, 矩形宽<br><code>h</code>, 矩形高<br>功能：绘制一个矩形路径，不描边</p>
-<ol>
+<ol start="4">
 <li>clearRect();</li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearRect(x, y, w, h)</span><br></pre></td></tr></table></figure></div>
@@ -609,24 +619,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html',
-          pageTitle: 'Canvas知识整理part2',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -1080,6 +1075,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

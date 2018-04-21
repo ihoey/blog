@@ -141,7 +141,7 @@
   <meta name="keywords" content="梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布" />
 
 
-<meta name="description" content="I eat alone. I sleep alone. I cry alone. So….cool.   你想说些什么呢？就在这里回复吧~ 欢迎灌水，来者不拒！如果你觉得我的博客对你有价值，并且有帮助到你，欢迎向我捐赠，就当是请我喝杯饮料~ 另外,你确定就看看不留个爪爪么!                    支付宝">
+<meta name="description" content="I eat alone. I sleep alone. I cry alone. So….cool.   你想说些什么呢？就在这里回复吧~ 欢迎灌水，来者不拒！如果你觉得我的博客对你有价值，并且有帮助到你，欢迎向我捐赠，就当是请我喝杯饮料~ 另外,你确定就看看不留个爪爪么!                    支付宝打赏">
 <meta property="og:type" content="website">
 <meta property="og:title" content="留言板">
 <meta property="og:url" content="https://blog.ihoey.com/guestbook/index.html">
@@ -403,24 +403,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/guestbook/index.html',
-          pageTitle: '留言板',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -849,6 +834,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

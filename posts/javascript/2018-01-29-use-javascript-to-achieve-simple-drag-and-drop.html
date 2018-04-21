@@ -141,7 +141,7 @@
   <meta name="keywords" content="javascript," />
 
 
-<meta name="description" content="步骤使用 JavaScript 实现拖拽的步骤：  让元素捕获事件（mousedown, mousemove &amp;amp; mouseup） 单击并不释放，触发 mousedown，标记开始拖拽，并获取元素和鼠标的位置 拖动鼠标，触发 mousemove，不断的获取鼠标的位置，并通过计算重新确定元素的位置 释放师">
+<meta name="description" content="步骤使用 JavaScript 实现拖拽的步骤：  让元素捕获事件（mousedown, mousemove &amp;amp; mouseup） 单击并不释放，触发 mousedown，标记开始拖拽，并获取元素和鼠标的位置 拖动鼠标，触发 mousemove，不断的获取鼠标的位置，并通过计算重新确定元素的位置 释放师表，触发 mouseup，结束拖拽，确定元素位置并更新">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 JavaScript 实现简单的拖拽">
@@ -411,6 +411,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hitalk-comment-count" data-xid="/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -568,24 +578,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html',
-          pageTitle: '使用 JavaScript 实现简单的拖拽',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -1039,6 +1034,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 

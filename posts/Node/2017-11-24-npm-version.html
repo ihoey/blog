@@ -141,7 +141,7 @@
   <meta name="keywords" content="Node,NodeJs,npm," />
 
 
-<meta name="description" content="提升一个包的版本号1npm version [&amp;lt;newversion&amp;gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git] Description 在一个包的目录下执行此命令，会提">
+<meta name="description" content="提升一个包的版本号1npm version [&amp;lt;newversion&amp;gt; | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git] Description 在一个包的目录下执行此命令，会提升版本号，并把这个新的版本号写进package.json文件，如果存在npm-shrinkwra">
 <meta name="keywords" content="Node,NodeJs,npm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记：NPM版本号自增，自动化发布NPM包">
@@ -411,6 +411,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/Node/2017-11-24-npm-version.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hitalk-comment-count" data-xid="/posts/Node/2017-11-24-npm-version.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -546,24 +556,9 @@
           
 
   
-      <div class="wildfire_thread"></div>
-      <script type="text/javascript">
-        var wildfireConfig = () => ({
-          databaseProvider: 'wilddog',
-          databaseConfig: {
-          
-            siteId: 'ihoey'
-          
-          },
-          pageURL: 'https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html',
-          pageTitle: '笔记：NPM版本号自增，自动化发布NPM包',
-          theme: 'light',
-          locale: 'zh-CN',
-          defaultAvatarURL: 'https://image.flaticon.com/icons/svg/621/621863.svg'
-        })
-      </script>
-      <script src='https://unpkg.com/wildfire@0.3.8/dist/wildfire.auto.js'></script>
-    
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -1017,6 +1012,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
