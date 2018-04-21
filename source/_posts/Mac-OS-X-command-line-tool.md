@@ -4,7 +4,7 @@ date: 2017-11-21 13:45:05
 tags:
     - Mac
     - Mac OS
-categories: 
+categories:
     - Mac
 ---
 
@@ -14,11 +14,11 @@ categories:
 
 <!-- more -->
 
-# open
+## open
 
 `open` 命令用于打开文件、目录或执行程序。就等同于在命令行模式下，重复图形界面“双击”的动作。例如这个命令与在 `Finder` 中双击 `Safari` 是一样的：
 
-```shell
+```bash
 `open /Applications/Safari.app/`
 ```
 
@@ -30,11 +30,11 @@ categories:
 
 `Finder` 和终端的交互是双向的——把文件从 `Finder` 中拖入终端，就等同于把文件的完整路径粘贴到命令行中。
 
-# pbcopy 和 pbpaste
+## pbcopy 和 pbpaste
 
 这两个工具可以打通命令行和剪贴板。当然用鼠标操作复制粘贴也可以——但这两个工具的真正威力，发挥在将其用作Unix工具的时候。意思就是说：可以将这两个工具用作管道、IO重定向以及和其他命令的整合。例如：
 
-```shell
+```bash
 ls ~ | pbcopy
 ```
 
@@ -42,23 +42,23 @@ ls ~ | pbcopy
 
 也可以把任意文件的内容读入剪贴板：
 
-```shell
+```bash
 pbcopy < blogpost.txt
 ```
 
 做点更疯狂的尝试：获取最新 Google 纪念徽标（doodle）的 URL 并复制到剪贴板：
 
-```shell
+```bash
 curl http://www.google.com/doodles#oodles/archive | grep -A5 'latest-doodle on' | grep 'img src' | sed s/.*'<img src="\/\/'/''/ | sed s/'" alt=".*'/''/ | pbcopy
 ```
 
 使用管道语法配合 `pbcopy` 工具可以简单的抓取命令的输出，而不必向上滚动翻阅终端窗口。可以用于和他人分享命令行的标准和错误输出。 `pbcopy` 和 `pbpaste` 也可以用于自动化或加速执行一些事情。例如把一些邮件的主题存为任务列表，就可以先从 `Mail.app` 中复制主题，再运行：
 
-```shell
+```bash
 pbpaste >> tasklist.txt
 ```
 
-# mdfind
+## mdfind
 
 许多 `Linux` 用户都发现 `Linux` 下查找文件的方法在 `OS X` 上不好用。当然经典的 `Unix find` 命令总是可以，但既然 `OS X` 有杀手级搜索工具 `Spotlight` ，为什么不在命令行上也使用一下呢？
 
@@ -66,49 +66,49 @@ pbpaste >> tasklist.txt
 
 `mdfind`还提供更多的搜索选项。例如`-onlyin`选项可以约束搜索范围为一个目录：
 
-```shell
+```bash
 mdfind -onlyin ~/Documents essay
 ```
 
 `mdfind` 的索引数据库在后台自动更新，不过你也可以使用 `mdutil` 工具诊断数据库的问题，诊断 `mdfind` 的问题也等同于诊断 `Spotlight` 。如果 `Spotlight` 的工作不正确，`mdutil -E `命令可以强制重建索引数据库。也可以用 `mdutil -i` 彻底关闭文件索引。
 
-# screencapture
+## screencapture
 
 `screencapture` 命令可以截图。和 `Grab.app` 与 `cmd + shift + 3` 或 `cmd + shift + 4` 热键相似，但更加的灵活。
 
 抓取包含鼠标光标的全屏幕，并以 `image.png` 插入到新邮件的附件中：
 
-```shell
+```bash
 screencapture -C -M image.png
 ```
 
 用鼠标选择抓取窗口（及阴影）并复制到剪贴板：
 
-```shell
+```bash
 screencapture -c -W
 ```
 
 延时10秒后抓屏，并在Preview中打开之：
 
-```shell
+```bash
 screencapture -T 10 -P image.png
 ```
 
 用鼠标截取一个矩形区域，抓取后存为pdf文件：
 
-```shell
+```bash
 screencapture -s -t pdf image.pdf
 ```
 
 更多用法请参阅 `screencapture --help` 。
 
-# launchctl
+## launchctl
 
 `launchctl` 管理 `OS X` 的启动脚本，控制启动计算机时需要开启的服务。也可以设置定时执行特定任务的脚本，就像 `Linux cron` 一样。
 
 例如，开机时自动启动 `Apache` 服务器：
 
-```shell
+```bash
 sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ```
 
@@ -116,7 +116,7 @@ sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 
 `Launchd` 脚本存储在以下位置：
 
-```shell
+```bash
 ~/Library/LaunchAgents
 /Library/LaunchAgents
 /Library/LaunchDaemons
@@ -126,16 +126,16 @@ sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 
 <!-- 启动脚本的格式可以参考这篇blog，或苹果开发者中心的文章。你也可以使用Lingon应用来完全取代命令行。 -->
 
-# say
+## say
 
 `say` 是一个文本转语音（`TTS`）的有趣的工具，引擎和 `OS X` 使用的一样也是 `VoiceOver` 。如果不加其他选项，则会简单的语音朗读你给定的字符串：
 
-```shell
+```bash
 say "Never trust a computer you can't lift."
 用-f选项朗读特定文本文件，-o选项将朗读结果存为音频文件而不是播放：
 ```
 
-```shell
+```bash
 say -f mynovel.txt -o myaudiobook.aiff
 ```
 
@@ -145,13 +145,13 @@ say -f mynovel.txt -o myaudiobook.aiff
 
 可以在系统设置 `（System Preferences）` 的字典和语音 `（Dictation & Speech）` 选项中调整系统的语音选项甚至是语音的语言。
 
-# diskutil
+## diskutil
 
 `diskutil` 是 `OS X` 磁盘工具应用的命令行版。既可以完成图形界面应用的所有任务，也可以做一些全盘填0、全盘填随机数等额外的任务。先使用 `diskutil list` 查看所有磁盘的列表和所在路径，然后对特定的磁盘执行命令。
 
 警告：不正确使用 `diskutil` 可能意外的破坏磁盘数据。请小心。
 
-# brew #
+## brew
 
 `Homebrew` 程序提供的 `brew` ，严格来讲不是一个 `OS X` 的原生命令，但任何一个 `OS X` 的专业用户都不会错过它。“ `OS X` 缺少的包管理器”这个评价是恰如其分的。如果你曾经在 `Linux` 上使用过 `apt-get` （或其他包管理器——译者注），你就会发现 `Homebrew` 基本上是一样的。
 
@@ -165,7 +165,7 @@ say -f mynovel.txt -o myaudiobook.aiff
 
 （注：删除 `Homebrew` 最好还是不要直接删除 `/usr/local/` 。应当用这个卸载脚本点击预览。）
 
-```shell
+```bash
 #!/bin/sh
 # Just copy and paste the lines below (all at once, it won't work line by line!)
 # MAKE SURE YOU ARE HAPPY WITH WHAT IT DOES FIRST! THERE IS NO WARRANTY!
@@ -195,7 +195,10 @@ rm -rf ~/Library/Logs/Homebrew
 rm -rf /Library/Caches/Homebrew
 ```
 
+## 在 访达 中预览 webp 格式图片
 
+`WebP`文件的快速查看插件
 
-
-
+```bash
+curl -L https://raw.github.com/emin/WebPQuickLook/master/install.sh | sh
+```
