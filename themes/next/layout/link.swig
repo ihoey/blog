@@ -5,14 +5,14 @@
     <li class="ihoey-links-item">
         <a href="{{ i.link }}" class="group-picture" title="{{ i.name }}" target="_blank">
             {% if i.avatar %}
-              <img src="{{ i.avatar }}" alt="{{ i.name }}" height="72px" width="72px" />
+              <img src="{{ i.avatar }}" alt="{{ i.name }}" title="{{ i.name }}" height="72px" width="72px" />
               {% else %}
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-{{e+1}}" id="link"></use>
               </svg>
             {% endif %}
-            <h3 class="ihoey-links-title">{{ i.name }}</h3>
-            <p class="ihoey-links-des">{{ i.description }}</p>
+            <h3 class="ihoey-links-title" title="{{ i.name }}">{{ i.name }}</h3>
+            <p class="ihoey-links-des" title="{{ i.description }}">{{ i.description }}</p>
         </a>
     </li>
   {% endfor %}
