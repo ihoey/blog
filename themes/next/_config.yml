@@ -455,12 +455,12 @@ changyan:
 # more info please open https://valine.js.org
 valine:
   enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  appid: Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz
+  appkey: SnlgtrRYvxJimSYDRw2GBr6H
+  notify: false
   verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
-  avatar: mm # gravatar style
+  placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
+  avatar: wavatar # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
 
