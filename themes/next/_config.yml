@@ -450,11 +450,11 @@ changyan:
   appkey:
 
 
-# Valine.
+# Hitalk.
 # You can get your appid and appkey from https://leancloud.cn
-# more info please open https://valine.js.org
-valine:
-  enable: false
+# more info please open https://Hitalk.js.org
+hitalk:
+  enable: true
   appid: Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz
   appkey: SnlgtrRYvxJimSYDRw2GBr6H
   notify: false
@@ -909,7 +909,7 @@ passage_end_tag:
 # Wildfire Support
 wildfire:
   ## 开启Wildfire支持
-  enable: true
+  enable: false
   ## 主题颜色，目前可选值为light/dark两种，默认为light
   theme: light
   ## 系统语言，目前可选值为en/zh-CN两种，默认为en

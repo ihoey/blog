@@ -55,7 +55,7 @@
       {% endif %}
     </div>
 
-  {% elseif theme.valine.enable and theme.valine.appid and theme.valine.appkey %}
+  {% elseif theme.hitalk.enable and theme.hitalk.appid and theme.hitalk.appkey %}
     <div class="comments" id="comments">
     </div>
   {% elseif theme.wildfire.enable %}
