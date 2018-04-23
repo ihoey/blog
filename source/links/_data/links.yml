@@ -23,10 +23,10 @@
 #   name: 萌小喵
 #   link: http://blog.awumiao.cn/
 #   description: "念念不忘，必有回响"
-# -
-#   name: 火辣辣
-#   link: http://huolalaweb.com/about/
-#   description: "个人前端博客"
+-
+  name: 火辣辣
+  link: http://huolalaweb.com/about/
+  description: "个人前端博客"
 -
   name: jnduan's Blog
   link: https://jnan.org/
