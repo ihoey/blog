@@ -1,6 +1,0 @@
-files:
-  - source: /languages/_en.yml
-    translation: /languages/%locale%.%file_extension%
-    languages_mapping:
-      locale:
-        ru: ru
