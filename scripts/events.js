@@ -3,8 +3,8 @@ require('shelljs/global');
 
 // new 后自动打开编辑器
 hexo.on('new', function (data) {
-  console.log('subl ' + data.path);
-  _exec('subl ' + data.path);
+  console.log('code ' + data.path);
+  _exec('code ' + data.path);
 });
 
 //监听 当 deploy 完成后执行备份
