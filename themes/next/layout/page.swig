@@ -13,7 +13,6 @@
   #}{% else %}{#
     #}{{ page.title + page_title_suffix }}{#
   #}{% endif %}{#
-  #} - {{ theme.keywords }}{#
 #}{% endblock %}
 
 {% block page_class %}page-post-detail{% endblock %}

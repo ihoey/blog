@@ -7,7 +7,6 @@
 {% if theme.motion.enable %}
   {% set html_class = html_class + ' use-motion' %}
 {% endif %}
-
 <!--
                            _ooOoo_
                           o8888888o
@@ -30,7 +29,6 @@
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
                  佛祖保佑       永无BUG  By:- ihoey.com
 -->
-
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
   {{ partial('_partials/head/head.swig', {}, {cache: theme.cache.enable}) }}
