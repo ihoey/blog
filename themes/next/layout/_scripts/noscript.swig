@@ -17,10 +17,5 @@
       opacity: initial;
       top: initial;
     }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
   </style>
 </noscript>

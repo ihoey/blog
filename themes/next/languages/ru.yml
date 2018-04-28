@@ -1,98 +1,96 @@
 ---
-author: Автор
-cheers:
-  excellent: Великолепно
-  good: Хорошо
-  great: Замечательно
-  nice: Неплохо
-  ok: OK
-  um: Эм..
-counter:
-  archive_posts:
-    four: "%d записи всего."
-    one: 1 запись.
-    other: "%d записей всего."
-    three: "%d записи всего."
-    two: "%d записи всего."
-    zero: Нет записей.
-  categories:
-    four: "%d категории всего."
-    one: 1 категория.
-    other: "%d категорий всего."
-    three: "%d категории всего."
-    two: "%d категории всего."
-    zero: Нет категорий.
-  tag_cloud:
-    four: "%d тэга всего."
-    one: 1 тэг.
-    other: "%d тэгов всего."
-    three: "%d тэга всего."
-    two: "%d тэга всего."
-    zero: Нет тэгов.
-footer:
-  powered: Powered by %s
-  theme: Theme
-keep_on: Продолжаю писать.
-menu:
-  about: О сайте
-  archives: Архив
-  categories: Категории
-  commonweal: Страница 404
-  home: Главная
-  schedule: Календарь
-  search: Поиск
-  sitemap: Карта сайта
-  tags: Тэги
-page:
-  tags: тэги
-  totally: Всего
-post:
-  copyright:
-    author: Автор записи
-    license_title: Информация об авторских правах
-    link: Ссылка на запись
-    license_content: Все записи на этом сайте защищены лицензией %s если не указано
-      дополнительно.
-  created: Дата создания записи
-  in: в категории
-  min2read: Время чтения в минутах
-  modified: Дата обновления записи
-  more: далее
-  posted: Размещено
-  read_more: Читать полностью
-  sticky: Ссылка
-  toc_empty: Эта запись без оглавления
-  totalcount: Общее кол-во слов в записях
-  totaltime: Время чтения всего сайта
-  untitled: Без имени
-  visitors: Просмотров
-  wordcount: Кол-во слов в статье
-  symbols_count: Кол-во символов в статье
-  symbols_time: Время чтения в минутах
-  total_symbols: Общее кол-во символов в записях
-  total_time: Время чтения всего сайта
-reward:
-  alipay: Alipay
-  bitcoin: Bitcoin
-  donate: Донат
-  wechatpay: WeChat Pay
-search:
-  placeholder: Поиск...
-sidebar:
-  overview: Обзор
-  toc: Содержание
-state:
-  categories: Категории
-  pages: Страницы
-  posts: Архив
-  tags: Тэги
-symbol:
-  colon: ":"
-  comma: ", "
-  period: ". "
 title:
   archive: Архив
   category: Категория
-  schedule: Календарь
   tag: Тэг
+  schedule: Календарь
+menu:
+  home: Главная
+  archives: Архив
+  categories: Категории
+  tags: Тэги
+  about: О сайте
+  search: Поиск
+  schedule: Календарь
+  sitemap: Карта сайта
+  commonweal: Страница 404
+sidebar:
+  overview: Обзор
+  toc: Содержание
+post:
+  posted: Размещено
+  edited: Изменено
+  created: Создано
+  modified: Изменено
+  edit: Редактировать запись
+  in: в категории
+  more: more
+  read_more: Читать полностью
+  untitled: Без имени
+  sticky: Ссылка
+  toc_empty: Эта запись без оглавления
+  views: Просмотров
+  comments_count: Комментариев
+  related_posts: Похожие записи
+  copy_button: Скопировать
+  copyright:
+    author: Автор записи
+    link: Ссылка на запись
+    license_title: Информация об авторских правах
+    license_content: "Все записи на этом сайте защищены лицензией %s, если не указано дополнительно."
+page:
+  totally: Всего
+  tags: тэги
+footer:
+  powered: "Генератор — %s"
+  theme: Тема
+  total_views: Всего просмотров
+  total_visitors: Всего посетителей
+counter:
+  tag_cloud:
+    zero: Нет тэгов.
+    one: 1 тэг.
+    other: "%d тэгов всего."
+  categories:
+    zero: Нет категорий.
+    one: 1 категория.
+    other: "%d категорий всего."
+  archive_posts:
+    zero: Нет записей.
+    one: 1 запись.
+    other: "%d записей всего."
+state:
+  posts: Архив
+  pages: Страницы
+  tags: Тэги
+  categories: Категории
+search:
+  placeholder: Поиск...
+cheers:
+  um: Эм..
+  ok: OK
+  nice: Неплохо
+  good: Хорошо
+  great: Замечательно
+  excellent: Великолепно
+keep_on: Продолжаю писать.
+symbol:
+  comma: ", "
+  period: ". "
+  colon: ": "
+reward:
+  donate: Донат
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  bitcoin: Bitcoin
 gitmentbutton: Открыть Gitment комментарии
+accessibility:
+  nav_toggle: Показать/скрыть меню
+  prev_page: Предыдущая страница
+  next_page: Следующая страница
+symbols_count_time:
+  count: Кол-во символов в статье
+  count_total: Общее кол-во символов
+  time: Время чтения
+  time_total: Общее время чтения
+  time_minutes: мин.

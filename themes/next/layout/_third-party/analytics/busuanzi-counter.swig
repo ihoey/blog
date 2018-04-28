@@ -2,19 +2,17 @@
 <div class="busuanzi-count">
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  {% if theme.busuanzi_count.site_uv %}
-    <span class="site-uv">
-      {{ theme.busuanzi_count.site_uv_header }}
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      {{ theme.busuanzi_count.site_uv_footer }}
+  {% if theme.busuanzi_count.total_visitors %}
+    <span class="site-uv" title="{{ __('footer.total_visitors') }}">
+      <i class="fa fa-{{ theme.busuanzi_count.total_visitors_icon }}"> 你是第</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>枚看到我的
     </span>
   {% endif %}
 
-  {% if theme.busuanzi_count.site_pv %}
-    <span class="site-pv">
-      {{ theme.busuanzi_count.site_pv_header }}
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      {{ theme.busuanzi_count.site_pv_footer }}
+  {% if theme.busuanzi_count.total_views %}
+    <span class="site-pv" title="{{ __('footer.total_views') }}">
+      <i class="fa fa-{{ theme.busuanzi_count.total_views_icon }}"> 访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
     </span>
   {% endif %}
 </div>
