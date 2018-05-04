@@ -2,9 +2,9 @@
 title: JAVASCRIPT生成图形验证码
 date: 2017-11-29 19:49:01
 tags:
-    - javascript
-    - 原生Js
-    - tools
+  - javascript
+  - 原生Js
+  - tools
 categories: javascript
 ---
 

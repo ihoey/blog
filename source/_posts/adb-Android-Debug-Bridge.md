@@ -2,9 +2,9 @@
 title: adb(Android Debug Bridge，Android调试桥)常用命令
 date: 2016-12-18 16:18:21
 tags:
-    - adb
-    - Android
-    - adb命令
+  - adb
+  - Android
+  - adb命令
 categories: Android
 ---
 

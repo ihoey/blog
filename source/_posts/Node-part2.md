@@ -1,9 +1,9 @@
 ---
 title: Node第二部分-模块及工具
 date: 2016-12-12 09:12:32
-tags: 
-    - Node
-    - NodeJs 
+tags:
+  - Node
+  - NodeJs
 categories: Node
 ---
 为了让 `NodeJs` 的文件可以相互调用，`NodeJs` 提供了一个简单的模块系统。

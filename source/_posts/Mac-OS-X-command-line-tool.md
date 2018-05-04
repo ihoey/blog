@@ -2,10 +2,10 @@
 title: 不可不知的Mac OS X专用命令行工具(持续更新中)
 date: 2017-11-21 13:45:05
 tags:
-    - Mac
-    - Mac OS
+  - Mac
+  - Mac OS
 categories:
-    - Mac
+  - Mac
 ---
 
 `OS X` 的终端下通用很多 `Unix` 的工具和脚本。如果从 `Linux` 迁移到 `OS X` 会发现很多熟悉的命令和脚本工具，其实并没有任何区别。

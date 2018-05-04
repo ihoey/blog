@@ -2,8 +2,8 @@
 title: Linux常用命令笔记
 date: 2017-05-26 21:49:04
 tags:
-    - Linux
-    - shell
+  - Linux
+  - shell
 categories: Linux
 ---
 

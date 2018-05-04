@@ -1,9 +1,9 @@
 ---
 title: 解决 ubuntu 服务器中文乱码
 tags:
-    - Linux
-    - shell
-    - Ubuntu
+  - Linux
+  - shell
+  - Ubuntu
 categories:
   - Linux
 date: 2018-03-15 19:02:18

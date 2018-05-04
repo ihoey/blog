@@ -1,10 +1,10 @@
 ---
 title: crontab 踩坑之绝对路径
 date: 2018-02-13 10:09:26
-    - Ubuntu
-    - Cron
-    - Linux
-    - shell
+  - Ubuntu
+  - Cron
+  - Linux
+  - shell
 categories: Linux
 ---
 

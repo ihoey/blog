@@ -2,10 +2,10 @@
 title: Ubuntu 使用 Cron 实现计划任务
 date: 2017-04-22 00:21:21
 tags:
-    - Ubuntu
-    - Cron
-    - Linux
-    - shell
+  - Ubuntu
+  - Cron
+  - Linux
+  - shell
 categories: Cron
 ---
 

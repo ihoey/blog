@@ -2,8 +2,8 @@
 title: 科学上网之shadowsocks 服务端安装
 date: 2017-03-16 18:38:46
 tags:
-    - 科学上网
-    - shadowsocks
+  - 科学上网
+  - shadowsocks
 categories: shadowsocks
 ---
 

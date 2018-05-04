@@ -2,9 +2,9 @@
 title: adb设备信息查询修改刷机等命令
 date: 2016-12-22 18:51:53
 tags:
-    - adb
-    - Android
-    - adb命令
+  - adb
+  - Android
+  - adb命令
 categories: Android
 ---
 

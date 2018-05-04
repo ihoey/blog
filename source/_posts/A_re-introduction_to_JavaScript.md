@@ -2,8 +2,8 @@
 title: 重新介绍 JavaScript（JS全面系列教程）
 date: 2017-7-3 18:51:21
 tags:
-    - javascript
-    - Function
+  - javascript
+  - Function
 categories: javascript
 ---
 

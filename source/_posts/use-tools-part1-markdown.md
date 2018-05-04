@@ -2,8 +2,8 @@
 title: 工具使用篇之Markdown
 date: 2016-11-27 10:35:12
 tags:
-    - Markdown语法规范
-    - tools
+  - Markdown语法规范
+  - tools
 categories: Markdown
 ---
 
@@ -93,12 +93,12 @@ categories: Markdown
 
 1. 有序列表直接使用序列加一个点开头, 然后加一个
 2. 有序列表嵌套无序列表
-    - 有序列表中嵌套无需列表
+  - 有序列表中嵌套无需列表
         + 有序列表中嵌套无需列表
 
 ```Markdown
 2. 有序列表嵌套无序列表
-    - 有序列表嵌套无序列表
+  - 有序列表嵌套无序列表
         + 有序列表嵌套无序列表
 ```
 

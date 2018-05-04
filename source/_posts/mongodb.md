@@ -2,8 +2,8 @@
 title: MongoDB安装笔记
 date: 2017-03-23 16:25:11
 tags:
-    - MongoDB
-    - NoSQL
+  - MongoDB
+  - NoSQL
 categories: MongoDB
 ---
 
