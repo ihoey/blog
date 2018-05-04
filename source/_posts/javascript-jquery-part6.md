@@ -1,7 +1,7 @@
 ---
 title: JQuery分析及实现part6之动画模块功能及实现
 date: 2016-11-24 09:38:13
-tags: 
+tags:
 	- 原生Js
 	- Js框架
 	- JQuery
@@ -88,8 +88,8 @@ function animate() {
 		* 计算当前动画元素所在的位置, 然后累计到其对应属性值上.
 		* 首先计算动画的时间间隔
 		* 如果时间间隔大于或等于指定的总时间, 那么就停止动画并设置动画元素到达终点
-		* 否则, 根据速度, 动画时间间隔计算出位移. 再将其于起始位置累加后赋值给 `elem` 
-	* 定义定时器, 开始动画. 
+		* 否则, 根据速度, 动画时间间隔计算出位移. 再将其于起始位置累加后赋值给 `elem`
+	* 定义定时器, 开始动画.
 
 ```js
 var animate = function(elem, target, duration) {
@@ -143,7 +143,7 @@ $(function() {
 	* S：	位移
 	* 正方向：	S = v0 * t + a + t * t / 2;
 2. S ==> target - location <br> t ==> duration <br> v0 = 0
-3. 正方向 <br> a = 2 * ( S - v0 * t) / ( t * t) <br> ==> = 2 * S / ( t * t) <br> ==> = 2 * ( target - location ) / ( duration * duration ) <br> vt = 2 * ( target - location ) / duration 
+3. 正方向 <br> a = 2 * ( S - v0 * t) / ( t * t) <br> ==> = 2 * S / ( t * t) <br> ==> = 2 * ( target - location ) / ( duration * duration ) <br> vt = 2 * ( target - location ) / duration
 4. time 时间间隔内的 匀减速位移 <br> tween = v0 * t - a * t * t / 2 <br> ==> tween = 2 * ( target - location ) * time / duration <br> - (target - location ) * time * time / ( duration * duration )
 
 ```js
@@ -200,7 +200,7 @@ $(function() {
 	d: 总时间
 */
 
-var easing = {		
+var easing = {
 	linear: function(x, t, b, c, d) {
 		return (c - b) * t / d;
 	},
@@ -360,7 +360,7 @@ var animate = function(elem, target, duration, easingName) {
 			time; // 当前动画经过总时间间隔
 
 		location = elem.offsetLeft;
-		distance = target - location;				
+		distance = target - location;
 		startTime = +new Date;  // 转换毫秒值
 		// 用来计算动画当前位移，并制定动画元素的位置
 		var render = function() {

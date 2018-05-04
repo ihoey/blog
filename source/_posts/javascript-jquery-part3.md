@@ -1,7 +1,7 @@
 ---
 title: JQuery分析及实现part3之属性模块功能及实现
 date: 2016-11-20 11:51:28
-tags: 
+tags:
 	- 原生Js
 	- Js框架
 	- JQuery
@@ -62,7 +62,7 @@ attr: function(name,value){
 
 ## html方法
 
-1. 功能: 
+1. 功能:
 	* 不传参数,表示获取指定 `dom` 元素的 `innerHTML` 属性值
 	* 否则,表示设置指定 `dom` 元素的 `innerHTML` 属性
 2. 实行思路

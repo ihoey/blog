@@ -1,7 +1,7 @@
 ---
 title: Canvas知识整理part2
 date: 2016-11-14 19:42:44
-tags: 
+tags:
 	- Canvas
 	- HTML5
 	- 画布
@@ -96,10 +96,10 @@ ctx.clearRect( 110, 110, 50, 50 );
 * save restore
 	save 保存当前的路径状态
 	restore 恢复上一次保存的路径状态( `restore` 是与之对应的,先 `save` 的,后被 `restore` )
-	
+
 ```js
 var x = 10, y = 10, oldx = 10, oldy = 10;
-var width = 100, height = 50;     
+var width = 100, height = 50;
 var intervalId = setInterval(function () {
 	ctx.clearRect( oldx - 1, oldy - 1, width + 2, height + 2 );
 
@@ -191,7 +191,7 @@ var intervalId = setInterval(function () {
 	// 判断是否停止计时器
 	if ( angle >= Math.PI * 3 / 2 ) {
 		clearInterval( intervalId);
-		angle = Math.PI * 3 / 2; 
+		angle = Math.PI * 3 / 2;
 		console.log( '绘制完成' );
 	}
 	// 绘制

@@ -1,7 +1,7 @@
 ---
 title: JQuery分析及实现part1框架结构
 date: 2016-11-18 18:40:35
-tags: 
+tags:
 	- 原生Js
 	- Js框架
 	- JQuery
@@ -15,7 +15,7 @@ JQuery模块分析及其实现第一部分!
 <!-- more -->
 
 ## 案例：获取指定DOM下所有子元素
-	
+
 1. 在框架内部，遍历子节点，应该使用 `firstChild` 和 `nextSibling` 两种方式实现,代码如下。
 获取 `id` 为 `dv` 的元素下所有的子元素 `nodeType：1 - 12 (1 2 3 8 9 11 --documentFrament)` .
 
@@ -68,7 +68,7 @@ function getChildren(parent) {
 	}
 	// 返回结果
 	return ret;
-} 
+}
 
 
 //使用for循环
@@ -77,7 +77,7 @@ function getChildren(parent) {
 		elem = parent.firstChild;
 	for(; elem ; elem = elem.nextSibling){
 		if(elem.nodeType === 1) ret.push(elem);
-	}			
+	}
 	return ret;
 }
 
@@ -111,7 +111,7 @@ console.log(getChildren(document.getElementById('dv')));
 		return new itcast.fn.init(selector);
 	};
 
-	// 核心原型	
+	// 核心原型
 	itcast.fn = itcast.prototype = {
 		constructor: itcast
 	};
@@ -130,13 +130,13 @@ console.log(getChildren(document.getElementById('dv')));
 		// 给this扩展成员
 		if (target == undefined) {
 			target = this;
-		}	
+		}
 
 		// target = target || this;
 
 		for(k in source){
 			target[k] = source[k];
-		}		
+		}
 	};
 	// 暴露给用户
 	global.$ = global.itcast = itcast;
@@ -153,8 +153,8 @@ itcast.fn.append = function(className) {};
 		- 字符串
 			* 选择器：	 `div` 根据选择器筛选dom元素，并以伪数组形式 存储在 `this` 上
 			*  `html` 字符串 `<p>123</p><p>456</p>` `<p>` 将html字符串 转换成 `html` 元素
-		- `DOM` 节点 
-		- `DOM` 数组（伪数组） 
+		- `DOM` 节点
+		- `DOM` 数组（伪数组）
 		- `function`：入口函数 `DOMContentLoaded`
 			* 使用静态属性 `isReady` 存储 `dom` 树是否加载完毕
 			* 判断 `isReady` 值， 如果为 `true` ，就直接执行传入的函数。
@@ -197,7 +197,7 @@ itcast.fn.append = function(className) {};
 		// handle: string
 		else if(itcast.isString(selector)){
 			// handle: html string '<p>123</p>'
-			if(itcast.isHTML(selector)){						
+			if(itcast.isHTML(selector)){
 				// 怎么存储 以伪数组对象形式存储 dom元素
 				Array.prototype.push.apply(this, itcast.parseHTML(selector));
 			}
@@ -222,10 +222,10 @@ itcast.fn.append = function(className) {};
 			var _type = Object.prototype.toString.call(selector).
 					slice(8, -1).toLowerCase();
 			// 如果不是数组类型,就 将其转换 为 真数组类型
-			if(_type !== 'array') 
+			if(_type !== 'array')
 				selector = Array.prototype.slice.call(selector);
 			Array.prototype.push.apply(this, selector);
-		}	
+		}
 		// handle: function
 		else if(itcast.isFunction(selector)){
 			if(itcast.isReady){
@@ -234,7 +234,7 @@ itcast.fn.append = function(className) {};
 				doucment.addEventListener('DOMContentLoaded', function() {
 					selector();
 					itcast.isReady = true;
-				});	
+				});
 			}
 		}
 	};
@@ -274,7 +274,7 @@ itcast.fn.append = function(className) {};
 			return !!obj && typeof obj === 'string';
 		},
 		isHTML: function(obj) {
-			return !!obj && obj.charAt(0) === '<' && 
+			return !!obj && obj.charAt(0) === '<' &&
 				obj.charAt(obj.length - 1) === '>' &&
 				obj.length >= 3;
 		},
@@ -292,7 +292,7 @@ itcast.fn.append = function(className) {};
 				length = !!obj && 'length' in obj && obj.length;
 			// 过滤 window对象和函数对象
 			if(itcast.isFunction(obj) || itcast.isGlobal(obj)) return false;
-			return _type === 'array' || length === 0 || 
+			return _type === 'array' || length === 0 ||
 				typeof length === 'number' && length > 0 && (length - 1) in obj;
 		}
 	});

@@ -1,7 +1,7 @@
 ---
 title: JQuery分析及实现part2之css部分功能及实现
 date: 2016-11-19 19:02:01
-tags: 
+tags:
 	- 原生Js
 	- Js框架
 	- JQuery
@@ -14,7 +14,7 @@ JQuery模块分析及其实现第二部分css部分功能及实现,接第一部�
 
 ## hasClass方法
 
-1. 功能:如果结果集里只要有一个 `dom` 元素,具有指定的样式类,就返回 `true` 
+1. 功能:如果结果集里只要有一个 `dom` 元素,具有指定的样式类,就返回 `true`
 2. 实现思路
 	* 定义结果变量 `ret` ,默认值为 `false`
 	* 遍历结果集的每一个 `dom` 元素,如果当前 `dom` 元素具有指定的样式类,将 `ret=true` 结束循环
@@ -27,7 +27,7 @@ JQuery模块分析及其实现第二部分css部分功能及实现,接第一部�
 hasClass: function(className) {
 	// 默认结果false
 	var ret = false;
-	// 遍历this上的每一个dom元素					
+	// 遍历this上的每一个dom元素
 	// for(var i = 0, l = this.length;i < l;i++){
 	// 	// 如果当前dom元素具有指定的样式类
 	// 	// 返回值为true，结束循环
@@ -167,7 +167,7 @@ css: function(name, value) {
 	return this;
 },
 ```
-	
+
 ## addClass方法
 
 1. 功能:给结果集中的每一个 `dom` 元素添加指定样式类.
@@ -207,7 +207,7 @@ removeClass:function(className) {
 
 ## toggleClass方法
 
-1. 功能: 切换指定的样式类,如果有,就删除,没有就添加     
+1. 功能: 切换指定的样式类,如果有,就删除,没有就添加
 2. 实现思路
 	* 遍历 `this` 上的每一个 `dom` 元素
 	* 判断当前遍历到的 `dom` 元素是否含有指定的样式类
@@ -220,7 +220,7 @@ toggleClass: function(className) {
 		// 将当前遍历到的元素转换成itcast对象
 		var $v = itcast(v);
 		// 如果具有指定的样式类，就删除该样式类
-		if($v.hasClass(className)){					
+		if($v.hasClass(className)){
 			$v.removeClass(className);
 		} else { // 如果没有指定的样式类，就添加该样式类
 			$v.addClass(className);

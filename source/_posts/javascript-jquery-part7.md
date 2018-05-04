@@ -1,7 +1,7 @@
 ---
 title: JQuery分析及实现part7之 Ajax 模块功能及实现
 date: 2016-11-25 21:31:12
-tags: 
+tags:
 	- 原生Js
 	- Js框架
 	- JQuery
@@ -18,7 +18,7 @@ JQuery模块分析及其实现第七部分 Ajax 部分功能及实现,接第六�
 
 ```js
 function createRequest() {
-	return window.XMLHttpRequest ? new window.XMLHttpRequest() : 
+	return window.XMLHttpRequest ? new window.XMLHttpRequest() :
 		new ActiveXObject('Microsoft.XMLHTTP');
 }
 
@@ -63,7 +63,7 @@ console.log(formatData(data));//name=%E6%A2%A6%E9%AD%87%E5%B0%8F%E6%A0%88&age=2&
 	};
 
 	function createRequest() {
-		return window.XMLHttpRequest ? new window.XMLHttpRequest() : 
+		return window.XMLHttpRequest ? new window.XMLHttpRequest() :
 			new ActiveXObject('Microsoft.XMLHTTP');
 	}
 
@@ -78,8 +78,8 @@ console.log(formatData(data));//name=%E6%A2%A6%E9%AD%87%E5%B0%8F%E6%A0%88&age=2&
 	}
 
 	function ajax(config) {
-		var context = {}, 
-			xhr, 
+		var context = {},
+			xhr,
 			postData = '';
 		// 过滤无效参数
 		if(!config || !config.url) {
@@ -104,7 +104,7 @@ console.log(formatData(data));//name=%E6%A2%A6%E9%AD%87%E5%B0%8F%E6%A0%88&age=2&
 		} else {
 			// 模拟表单提交，设置请求头信息
 			xhr.setRequestHeader('Content-Type', context.contentType);
-			xhr.open('POST', context.url, context.async);				
+			xhr.open('POST', context.url, context.async);
 		}
 		// 4：监听请求状态
 		xhr.onreadystatechange = function() {
@@ -153,5 +153,5 @@ console.log(formatData(data));//name=%E6%A2%A6%E9%AD%87%E5%B0%8F%E6%A0%88&age=2&
 	* 创建全局回调函数
 	* 设置超时时间,如果超过此时间,也没有得到数据,表示请求失败.否则,请求成功
 	* 发送请求: 指定 `script` 标签的 `src` 属性值
- 
+
 

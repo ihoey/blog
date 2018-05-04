@@ -1,7 +1,7 @@
 ---
 title: JQuery分析及实现part4之DOM操作模块功能及实现
 date: 2016-11-21 19:08:10
-tags: 
+tags:
 	- 原生Js
 	- Js框架
 	- JQuery
@@ -31,7 +31,7 @@ JQuery模块分析及其实现第四部分属性部分功能及实现,接第三�
 
 ```js
 appendTo: function(target) {
-	var node, 
+	var node,
 		ret = [];
 	// 统一target类型 为itcast对象（为了方便操作）
 	target = itcast(target);
@@ -125,7 +125,7 @@ prependTo: function(target) {
 
 1. 语法: `<itcast对象>.prepend(source);`
 2. 功能:把 `source` 上的所有的 `dom` 元素,添加到 `this` 上的最前边
-3. 实现思路: 
+3. 实现思路:
 	* 统一 `source` 类型,为 `itcast` 对象
 	* 通过 `source` 调用 `prependTo` 方法,将 `source` 上的所有 `dom` 添加到 `this` 上的最前边
 	*  `return this` 实现链式编程
@@ -169,7 +169,7 @@ next: function() {
 },
 ```
 
-## nextAll  
+## nextAll
 
 1. 功能:获取 `itcast` 对象上所有 `dom` 元素下面的所有兄弟元素 `(nextSiling)`
 2. 语法: `<itcast对象>.nextAll();` 返回值类型, `itcast` 对象
@@ -300,7 +300,7 @@ unique: function(arr) {
 				// 如果遍历到的当前元素和val相同，返回其索引值
 				if(this[i] == val) return i;
 			}
-			// 那么表示不存在指定参数值就返回 -1 
+			// 那么表示不存在指定参数值就返回 -1
 			return -1;
 		};
 	}
@@ -355,7 +355,7 @@ prevAll:function(){
 		for(var node=this.previousSibling;node;node=node.previousSibling){
 			if(node.nodeType===1) ret.push(node);
 		}
-		
+
 	});
 	return itcast(itcast.unique(ret));
 }

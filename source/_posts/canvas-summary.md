@@ -1,7 +1,7 @@
 ---
 title: Canvas部分知识总结
 date: 2016-11-15 20:38:26
-tags: 
+tags:
 	- Canvas
 	- HTML5
 	- 画布

@@ -1,7 +1,7 @@
 ---
 title: js高级与面向对象之继承
 date: 2016-06-15 13:43:28
-tags: 
+tags:
 	- javascript
 	- js面向对象
 	- 继承
@@ -103,7 +103,7 @@ console.log(p.gender);
 《JavaScript语言精粹》
 * 调用一个方法，就能实现继承
 `var obj1 = Object.create(obj)`
-* 创建出来一个新的继承自参数 `obj` 的对象 `obj1` 
+* 创建出来一个新的继承自参数 `obj` 的对象 `obj1`
 * 其实内部使用的就是原型继承
 * ES5才支持的这个方法 需要考虑兼容性问题
 
