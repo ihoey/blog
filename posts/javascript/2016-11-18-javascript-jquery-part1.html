@@ -147,7 +147,7 @@
 <meta property="og:description" content="JQuery模块分析及其实现第一部分!">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://cdn.dode.top/20161119.png">
-<meta property="og:updated_time" content="2018-05-04T10:01:59.740Z">
+<meta property="og:updated_time" content="2018-05-10T08:45:23.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JQuery分析及实现part1框架结构">
 <meta name="twitter:description" content="JQuery模块分析及其实现第一部分!">
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-04 18:01:59" itemprop="dateModified" datetime="2018-05-04T18:01:59+08:00">2018-05-04</time>
+                <time title="修改时间：2018-05-10 16:45:23" itemprop="dateModified" datetime="2018-05-10T16:45:23+08:00">2018-05-10</time>
               
             
           </span>
@@ -545,19 +545,15 @@
 <ul>
 <li><code>selector</code> 类型：<ul>
 <li>无效值： <code>null</code> <code>undefined</code> <code>&#39; &#39;</code> <code>false</code></li>
-<li>字符串<ul>
-<li>选择器：     <code>div</code> 根据选择器筛选dom元素，并以伪数组形式 存储在 <code>this</code> 上</li>
-<li><code>html</code> 字符串 <code>&lt;p&gt;123&lt;/p&gt;&lt;p&gt;456&lt;/p&gt;</code> <code>&lt;p&gt;</code> 将html字符串 转换成 <code>html</code> 元素</li>
-</ul>
-</li>
+<li>字符串<pre><code>* 选择器：     `div` 根据选择器筛选dom元素，并以伪数组形式 存储在 `this` 上
+*  `html` 字符串 `&lt;p&gt;123&lt;/p&gt;&lt;p&gt;456&lt;/p&gt;` `&lt;p&gt;` 将html字符串 转换成 `html` 元素
+</code></pre></li>
 <li><code>DOM</code> 节点</li>
 <li><code>DOM</code> 数组（伪数组）</li>
-<li><code>function</code>：入口函数 <code>DOMContentLoaded</code><ul>
-<li>使用静态属性 <code>isReady</code> 存储 <code>dom</code> 树是否加载完毕</li>
-<li>判断 <code>isReady</code> 值， 如果为 <code>true</code> ，就直接执行传入的函数。</li>
-<li>否则，就给 <code>document</code> 的 <code>DOMContentLoaded</code> 事件绑定处理程序，在处理程序中，先将 <code>isReady</code> 赋值为 <code>true</code> ，在执行传入的函数。</li>
-</ul>
-</li>
+<li><code>function</code>：入口函数 <code>DOMContentLoaded</code><pre><code>* 使用静态属性 `isReady` 存储 `dom` 树是否加载完毕
+* 判断 `isReady` 值， 如果为 `true` ，就直接执行传入的函数。
+* 否则，就给 `document` 的 `DOMContentLoaded` 事件绑定处理程序，在处理程序中，先将 `isReady` 赋值为 `true` ，在执行传入的函数。
+</code></pre></li>
 </ul>
 </li>
 </ul>
