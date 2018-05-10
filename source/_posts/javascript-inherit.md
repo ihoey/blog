@@ -2,10 +2,10 @@
 title: js高级与面向对象之继承
 date: 2016-06-15 13:43:28
 tags:
-	- javascript
-	- js面向对象
-	- 继承
-	- 继承的实现方式
+  - javascript
+  - js面向对象
+  - 继承
+  - 继承的实现方式
 categories: javascript
 ---
 

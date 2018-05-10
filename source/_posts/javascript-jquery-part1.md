@@ -2,9 +2,9 @@
 title: JQuery分析及实现part1框架结构
 date: 2016-11-18 18:40:35
 tags:
-	- 原生Js
-	- Js框架
-	- JQuery
+  - 原生Js
+  - Js框架
+  - JQuery
 categories: javascript
 ---
 
@@ -149,13 +149,13 @@ itcast.fn.append = function(className) {};
 7. 完善`init`构造函数
 
 	+ `selector` 类型：
-		- 无效值： `null` `undefined` `' '` `false`
-		- 字符串
+	  - 无效值： `null` `undefined` `' '` `false`
+	  - 字符串
 			* 选择器：	 `div` 根据选择器筛选dom元素，并以伪数组形式 存储在 `this` 上
 			*  `html` 字符串 `<p>123</p><p>456</p>` `<p>` 将html字符串 转换成 `html` 元素
-		- `DOM` 节点
-		- `DOM` 数组（伪数组）
-		- `function`：入口函数 `DOMContentLoaded`
+	  - `DOM` 节点
+	  - `DOM` 数组（伪数组）
+	  - `function`：入口函数 `DOMContentLoaded`
 			* 使用静态属性 `isReady` 存储 `dom` 树是否加载完毕
 			* 判断 `isReady` 值， 如果为 `true` ，就直接执行传入的函数。
 			* 否则，就给 `document` 的 `DOMContentLoaded` 事件绑定处理程序，在处理程序中，先将 `isReady` 赋值为 `true` ，在执行传入的函数。

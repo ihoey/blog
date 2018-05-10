@@ -2,8 +2,8 @@
 title: js高级与面向对象之构造函数
 date: 2016-05-20 13:39:33
 tags:
-	- javascript
-	- js构造函数
+  - javascript
+  - js构造函数
 categories: javascript
 ---
 

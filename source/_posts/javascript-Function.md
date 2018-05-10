@@ -2,7 +2,7 @@
 title: js高级与面向对象之函数
 date: 2016-07-22 19:40:39
 tags:
-	- Function
+  - Function
 categories: javascript
 ---
 

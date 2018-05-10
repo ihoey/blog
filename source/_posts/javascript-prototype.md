@@ -2,9 +2,9 @@
 title: js高级与面向对象之原型
 date: 2016-06-04 13:41:47
 tags:
-	- javascript
-	- 原型
-	- 原型的基本概念
+  - javascript
+  - 原型
+  - 原型的基本概念
 categories: javascript
 ---
 

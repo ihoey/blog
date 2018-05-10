@@ -2,9 +2,9 @@
 title: JQuery分析及实现part7之 Ajax 模块功能及实现
 date: 2016-11-25 21:31:12
 tags:
-	- 原生Js
-	- Js框架
-	- JQuery
+  - 原生Js
+  - Js框架
+  - JQuery
 categories: javascript
 ---
 

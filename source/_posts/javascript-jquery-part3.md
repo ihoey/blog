@@ -2,9 +2,9 @@
 title: JQuery分析及实现part3之属性模块功能及实现
 date: 2016-11-20 11:51:28
 tags:
-	- 原生Js
-	- Js框架
-	- JQuery
+  - 原生Js
+  - Js框架
+  - JQuery
 categories: javascript
 ---
 

@@ -2,10 +2,10 @@
 title: Hexo 最常用的几个命令
 date: 2015-08-28 18:29:33
 tags:
-	- hexo
-	- 梦魇小栈
-	- 梦魇
-	- houyi1121
+  - hexo
+  - 梦魇小栈
+  - 梦魇
+  - houyi1121
 categories: Hexo
 ---
 Hexo 约有二十个命令，但普通用户经常使用的大概只有下列几个:

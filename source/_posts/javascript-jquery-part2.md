@@ -2,9 +2,9 @@
 title: JQuery分析及实现part2之css部分功能及实现
 date: 2016-11-19 19:02:01
 tags:
-	- 原生Js
-	- Js框架
-	- JQuery
+  - 原生Js
+  - Js框架
+  - JQuery
 categories: javascript
 ---
 

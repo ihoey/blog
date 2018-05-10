@@ -2,7 +2,7 @@
 title: js高级与面向对象之原型链
 date: 2016-7-09 19:41:47
 tags:
-	- 原型链
+  - 原型链
 categories: javascript
 ---
 

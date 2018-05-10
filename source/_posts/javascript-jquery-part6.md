@@ -2,9 +2,9 @@
 title: JQuery分析及实现part6之动画模块功能及实现
 date: 2016-11-24 09:38:13
 tags:
-	- 原生Js
-	- Js框架
-	- JQuery
+  - 原生Js
+  - Js框架
+  - JQuery
 categories: javascript
 ---
 

@@ -2,9 +2,9 @@
 title: JQuery分析及实现part5之事件模块功能及实现
 date: 2016-11-23 10:27:16
 tags:
-	- 原生Js
-	- Js框架
-	- JQuery
+  - 原生Js
+  - Js框架
+  - JQuery
 categories: javascript
 ---
 

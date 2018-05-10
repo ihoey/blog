@@ -2,9 +2,9 @@
 title: Canvas知识整理part2
 date: 2016-11-14 19:42:44
 tags:
-	- Canvas
-	- HTML5
-	- 画布
+  - Canvas
+  - HTML5
+  - 画布
 categories: Canvas
 ---
 Html5Canvas笔记整理，接part1篇！！
