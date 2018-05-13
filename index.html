@@ -302,7 +302,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/index.html" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">51</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">52</span></a>
   </li>
         
         
@@ -310,7 +310,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/index.html" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">45</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">46</span></a>
   </li>
         
         
@@ -356,6 +356,193 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Node/2018-05-13-pm2-study.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ihoey">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.dode.top/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦魇小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/Node/2018-05-13-pm2-study.html" itemprop="url">
+                  记一下 pm2 常用配置及命令
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-13 16:45:46 / 修改时间：17:03:14" itemprop="dateCreated datePublished" datetime="2018-05-13T16:45:46+08:00">2018-05-13</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Node/" itemprop="url" rel="index"><span itemprop="name">Node</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/Node/2018-05-13-pm2-study.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/Node/2018-05-13-pm2-study.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>PM2</code> 是 <code>node</code> 进程管理工具，可以利用它来简化很多 <code>node</code> 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。本文就 <code>PM2</code> 进行入门性的介绍，基本涵盖了 <code>PM2</code> 的常用的功能和配置。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure></div>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">pm2 start [server.js]</span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">pm2 list</span><br><span class="line"><span class="comment"># 查看当前所跑服务的详情</span></span><br><span class="line">pm2 show [name]</span><br><span class="line"><span class="comment"># 查看更加详细的信息这个命令可查看pm2配置 包括日志文件存放的位置等</span></span><br><span class="line">pm2 stop [id/name]</span><br><span class="line"><span class="comment"># 关闭某个服务</span></span><br><span class="line">pm2 delete [id/name]</span><br><span class="line"><span class="comment"># 删除某个服务</span></span><br><span class="line">pm2 stop all</span><br><span class="line"><span class="comment"># 关闭所有服务</span></span><br><span class="line">pm2 logs</span><br><span class="line"><span class="comment"># 查看实时日志</span></span><br><span class="line">pm2 restart [name]</span><br><span class="line"><span class="comment"># 重新启动服务</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>参数说明：</p>
+<ul>
+<li><code>--watch</code>：监听应用目录的变化，一旦发生变化，自动重启。如果要精确监听、不见听的目录，最好通过配置文件。</li>
+<li><code>-i --instances</code>：启用多少个实例，可用于负载均衡。如果 <code>-i 0</code> 或者 <code>-i max</code>，则根据当前机器核数确定实例数目。</li>
+<li><code>--ignore-watch</code>：排除监听的目录/文件，可以是特定的文件名，也可以是正则。比如 <code>--ignore-watch=&quot;test node_modules &quot;some scripts&quot;&quot;</code></li>
+<li><code>-n --name</code>：应用的名称。查看应用信息的时候可以用到。</li>
+<li><code>-o --output &lt;path&gt;</code>：标准输出日志文件的路径。</li>
+<li><code>-e --error &lt;path&gt;</code>：错误输出日志文件的路径。</li>
+</ul>
+<h2 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pm2 start ./bin/www --watch</span><br><span class="line"><span class="comment">#注意，这里用了--watch参数，意味着当你的应用代码发生变化时，pm2会帮你自动重启服务</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="配置及部署"><a href="#配置及部署" class="headerlink" title="配置及部署"></a>配置及部署</h2><p>部署的配置文件示例</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  // 数组中放的是需要发布的项目一些变量的定义</span><br><span class="line">  "apps": [&#123;</span><br><span class="line">    "name": "xxx", //项目名称</span><br><span class="line">    "script": "server.js", //用来启动的脚本</span><br><span class="line">    // "instances":2,</span><br><span class="line">    // 启动项目所需要的环境变量</span><br><span class="line">    "env": &#123;</span><br><span class="line">      "COMMON_VARIABLE": "true", //设置为true 可以在启动的时传入外部的变量进去</span><br><span class="line">    &#125;,</span><br><span class="line">    "env_production": &#123;</span><br><span class="line">      "NODE_ENV": "production"</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;],</span><br><span class="line">  // 部署</span><br><span class="line">  "deploy": &#123;</span><br><span class="line">    "production": &#123;</span><br><span class="line">      "user": "root",</span><br><span class="line">      "host": "0.0.0.0", //可以是数组 部署到多台主机</span><br><span class="line">      "ref": "origin/master", //选择拿哪个个分支的代码</span><br><span class="line">      "repo": "git@github.com:ihoey/hitalk.git", //仓库地址</span><br><span class="line">      "path": "/root/www/hitalk/production", //要发布到服务器上哪个目录下面</span><br><span class="line">      "ssh_options": "StrictHostKeyChecking=no", //避免key验证导致代码更新到远程仓库失败</span><br><span class="line">      "post-deploy": "source ~/.nvm/nvm.sh &amp;&amp; pm2 startOrRestart ecosystem.json --env production", //发布之后执行的动作 执行开启或更新pm2运行的服务</span><br><span class="line">      "pre-deploy-local": "echo 'Deploy Done!'", //本地发布之前的动作</span><br><span class="line">      "env": &#123; //指定部署到远程的仓库的环境 是production生产环境</span><br><span class="line">        "NODE_ENV": "production"</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="初始化配置"><a href="#初始化配置" class="headerlink" title="初始化配置"></a>初始化配置</h3><p>第一次部署</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 deploy ecosystem.json production setup</span><br></pre></td></tr></table></figure></div>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 deploy ecosystem.json production</span><br></pre></td></tr></table></figure></div>
+<p>好了，先记录这么多~</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1098,191 +1285,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Linux/2018-02-13-crontab-part1.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ihoey">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.dode.top/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梦魇小栈">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/Linux/2018-02-13-crontab-part1.html" itemprop="url">
-                  crontab 踩坑之绝对路径
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-02-13 10:09:26" itemprop="dateCreated datePublished" datetime="2018-02-13T10:09:26+08:00">2018-02-13</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-05-10 16:48:38" itemprop="dateModified" datetime="2018-05-10T16:48:38+08:00">2018-05-10</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/Linux/2018-02-13-crontab-part1.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/Linux/2018-02-13-crontab-part1.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>由于放假后网络原因不方便使用电脑，需要创建一个 <code>crontab</code> 定时任务，用来在每天固定时间执行一个 <code>Shell</code> 脚本</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/Linux/2018-02-13-crontab-part1.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1334,7 +1336,7 @@
                 
                   <a href="/archives/index.html">
                 
-                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1480,7 +1482,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">45</span>
+                      
+                    
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
