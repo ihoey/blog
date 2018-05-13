@@ -138,18 +138,18 @@
 <script src="//at.alicdn.com/t/font_578712_g26jo2kbzd5qm2t9.js"></script>
 
 
-  <meta name="description" content="PM2 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。本文就 PM2 进行入门性的介绍，基本涵盖了 PM2 的常用的功能和配置。 安装1npm install -g pm2 常用命令12345678910111213141516pm2 start [server.js]# 启动服务pm2 list# 查看当前所跑">
+  <meta name="description" content="PM2 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。本文就 PM2 进行入门性的介绍，基本涵盖了 PM2 的常用的功能和配置。">
 <meta name="keywords" content="pm2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一下 pm2 常用配置及命令">
 <meta property="og:url" content="https://blog.ihoey.com/posts/Node/2018-05-13-pm2-study.html">
 <meta property="og:site_name" content="梦魇小栈">
-<meta property="og:description" content="PM2 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。本文就 PM2 进行入门性的介绍，基本涵盖了 PM2 的常用的功能和配置。 安装1npm install -g pm2 常用命令12345678910111213141516pm2 start [server.js]# 启动服务pm2 list# 查看当前所跑">
+<meta property="og:description" content="PM2 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。本文就 PM2 进行入门性的介绍，基本涵盖了 PM2 的常用的功能和配置。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-13T09:03:14.604Z">
+<meta property="og:updated_time" content="2018-05-13T09:06:27.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一下 pm2 常用配置及命令">
-<meta name="twitter:description" content="PM2 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。本文就 PM2 进行入门性的介绍，基本涵盖了 PM2 的常用的功能和配置。 安装1npm install -g pm2 常用命令12345678910111213141516pm2 start [server.js]# 启动服务pm2 list# 查看当前所跑">
+<meta name="twitter:description" content="PM2 是 node 进程管理工具，可以利用它来简化很多 node 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。本文就 PM2 进行入门性的介绍，基本涵盖了 PM2 的常用的功能和配置。">
 
 
 
@@ -415,7 +415,7 @@
                 
               
 
-              <time title="创建时间：2018-05-13 16:45:46 / 修改时间：17:03:14" itemprop="dateCreated datePublished" datetime="2018-05-13T16:45:46+08:00">2018-05-13</time>
+              <time title="创建时间：2018-05-13 16:45:46 / 修改时间：17:06:27" itemprop="dateCreated datePublished" datetime="2018-05-13T16:45:46+08:00">2018-05-13</time>
             
 
             
@@ -490,6 +490,7 @@
 
       
         <p><code>PM2</code> 是 <code>node</code> 进程管理工具，可以利用它来简化很多 <code>node</code> 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。本文就 <code>PM2</code> 进行入门性的介绍，基本涵盖了 <code>PM2</code> 的常用的功能和配置。</p>
+<a id="more"></a>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g pm2</span><br></pre></td></tr></table></figure></div>
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">pm2 start [server.js]</span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">pm2 list</span><br><span class="line"><span class="comment"># 查看当前所跑服务的详情</span></span><br><span class="line">pm2 show [name]</span><br><span class="line"><span class="comment"># 查看更加详细的信息这个命令可查看pm2配置 包括日志文件存放的位置等</span></span><br><span class="line">pm2 stop [id/name]</span><br><span class="line"><span class="comment"># 关闭某个服务</span></span><br><span class="line">pm2 delete [id/name]</span><br><span class="line"><span class="comment"># 删除某个服务</span></span><br><span class="line">pm2 stop all</span><br><span class="line"><span class="comment"># 关闭所有服务</span></span><br><span class="line">pm2 logs</span><br><span class="line"><span class="comment"># 查看实时日志</span></span><br><span class="line">pm2 restart [name]</span><br><span class="line"><span class="comment"># 重新启动服务</span></span><br></pre></td></tr></table></figure></div>
 <h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>参数说明：</p>
