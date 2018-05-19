@@ -98,7 +98,6 @@
   name: 量子广告
   link: http://blog.ynxiu.com/
   description: "协作发展 畅想双赢"
-  avatar: http://blog.ynxiu.com/images/avatar.jpg
 -
   name: 姬长信
   link: https://blog.isoyu.com/
@@ -107,7 +106,7 @@
   name: 奈何
   link: http://www.naihes.cn/
   description: "生亦何欢，死亦何苦！"
-  avatar: http://www.naihes.cn/logo.gif
+  avatar: https://cdn.dode.top/www.naihes.cn.gif?imageView2/0/q/75|imageslim
 -
   name: WQian五千
   link: https://wqian.net
