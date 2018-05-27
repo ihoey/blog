@@ -9,6 +9,7 @@ var attributes = [
 var attributesStr = attributes.join(' ')
 
 hexo.extend.filter.register('after_render', function (data) {
+  console.log(data);
   while (/<figure class="highlight ([a-zA-Z]+)">.*?<\/figure>/.test(data.content)) {
     data.content = data.content.replace(/<figure class="highlight ([a-zA-Z]+)">.*?<\/figure>/, function () {
       var language = RegExp.$1 || 'plain'
