@@ -7,7 +7,20 @@ categories:
 date: 2018-05-27 14:24:29
 ---
 
-最近有人问我博客的代码块是怎么做的，然后好久没有写文章了，趁着周末有时间就水一篇吧~
+最近有人问我博客的代码块是怎么做的，如下面的代码块，然后好久没有写文章了，趁着周末有时间就水一篇吧~
+
+```JavaScript
+var arr = 'abcdaabc';
+
+var info = arr
+    .split('')
+    .reduce((p, k) => (p[k]++ || (p[k] = 1), p), {});
+
+console.log(info); //{ a: 3, b: 2, c: 2, d: 1 }
+
+```
+
+<!-- more -->
 
 `hexo` 会有各种生命周期和事件，平时可能不会用到，但是能很好的利用的话，可以提高不少效率。比如文章多到一定程度之后，每次创建新文章都会被淹没在文件夹里面，在博客根目录下创建一个 `scripts` 文件夹，放一个 `events.js` 文件。这样每次通过` hexo new post` 创建新文章就会自动用 `code` 打开了~
 
@@ -61,7 +74,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 
 然后在 `highlight.js` 的基础上调整下样式，包裹上一层类 `mac Panel` 的效果。
 
-在 `blog/themes/next/source/css/_custom` 目录下新建一个样式文件，文件内容如下
+在 `blog/themes/next/source/css/_custom` 目录下新建一个 `.styl` 的样式文件 ，文件内容如下
 
 ```css
 .highlight-wrap[data-rel] {
