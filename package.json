@@ -32,6 +32,7 @@
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.1",
-    "shelljs": "^0.8.1"
+    "shelljs": "^0.8.1",
+    "uglify-js": "^3.3.27"
   }
 }
