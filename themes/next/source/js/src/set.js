@@ -2,13 +2,13 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by: ihoey
- * @Last Modified time: 2018-05-04 19:52:23
+ * @Last Modified time: 2018-06-13 16:16:17
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
 
 // 点击爱心
-! function (e, t, a) {
+! function (e, t) {
   function n() {
     c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), o(), r()
   }
@@ -79,7 +79,7 @@ var data = [{
 }];
 console.table(data);
 console.info('嘚瑟嘚瑟！哈哈，钱不够不准向我借，最讨厌借钱的人了，哼哼！！');
-console.log('%c女朋友就是私有变量，只有我这个类才能调用！', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;-webkit-background-clip: text;font-size:2em;');
+console.log('%c女朋友就是私有变量，只有我这个类才能调用！', 'background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:#fff;-webkit-background-clip: text;font-size:2em;');
 console.log('程序员A：哎 太累了日子没法过了 怎么才能换行啊');
 console.log('程序员B：打回车呀！');
 
@@ -188,16 +188,13 @@ console.log('程序员B：打回车呀！');
 
   console.error('这个错误是特意为了吸引你来看console的！')
 
-  function Alphabet(str, mode) {
-    if (mode === 'planar') {
-      var character = character_planar;
-    }
+  function Alphabet(str) {
     var result = '\n';
     var strArr = str.split('\n');
     for (var k = 0; k < strArr.length; k++) {
       for (var j = 0; j < 7; j++) {
         for (var i = 0, length = strArr[k].length; i < length; i++) {
-          result = result + character[strArr[k][i]][j];
+          result = result + character_planar[strArr[k][i]][j];
         }
         result = result + '\n';
       }
@@ -208,7 +205,7 @@ console.log('程序员B：打回车呀！');
   global.Alphabet = Alphabet;
 })(window)
 
-console.log(Alphabet('HY1121', 'planar'));
+console.log(Alphabet('HY1121'));
 
 // 标题变化
 window.onload = function () {
@@ -249,19 +246,19 @@ window.onload = function () {
   function showQR(QR) {
     if (QR) MainBox.css('background-image', 'url(' + QR + ')');
     $('#DonateText,#donateBox,#github').addClass('blur');
-    QRBox.fadeIn(300, function (argument) {
+    QRBox.fadeIn(300, function () {
       MainBox.addClass('showQR');
     });
   }
 
-  $('#donateBox>li').click(function (event) {
+  $('#donateBox>li').click(function () {
     if ($(this).attr('data-img')) showQR($(this).attr('data-img'));
   });
 
-  MainBox.click(function (event) {
+  MainBox.click(function () {
     MainBox.removeClass('showQR').addClass('hideQR');
-    setTimeout(function (a) {
-      QRBox.fadeOut(300, function (argument) {
+    setTimeout(function () {
+      QRBox.fadeOut(300, function () {
         MainBox.removeClass('hideQR');
       });
       $('#DonateText,#donateBox,#github').removeClass('blur');
