@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html</loc>
+    <lastmod>2018-06-26T09:16:24.983Z</lastmod>
+    <data>
+        <display>
+        <title>JAVASCRIPT生成图形验证码</title>
+        <pubTime>2017-11-29T11:49:01.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>原生Js</tag>
+         
+        <tag>tools</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/Hexo/2018-05-27-hexo-code-block.html</loc>
     <lastmod>2018-05-27T15:06:39.948Z</lastmod>
     <data>
@@ -142,54 +166,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
-    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
-    <data>
-        <display>
-        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
-        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
-        
-        <tag>原生Js</tag>
-         
-        <tag>Js框架</tag>
-         
-        <tag>JQuery</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
-    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
-    <data>
-        <display>
-        <title>JQuery分析及实现part3之属性模块功能及实现</title>
-        <pubTime>2016-11-20T03:51:28.000Z</pubTime>
-        
-        <tag>原生Js</tag>
-         
-        <tag>Js框架</tag>
-         
-        <tag>JQuery</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
     <lastmod>2018-05-10T08:45:23.042Z</lastmod>
     <data>
@@ -214,78 +190,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
-    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
-    <data>
-        <display>
-        <title>js高级与面向对象之继承</title>
-        <pubTime>2016-06-15T05:43:28.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>js面向对象</tag>
-         
-        <tag>继承</tag>
-         
-        <tag>继承的实现方式</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
-    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
-    <data>
-        <display>
-        <title>js高级与面向对象之构造函数</title>
-        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>js构造函数</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
-    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
-    <data>
-        <display>
-        <title>Canvas知识整理part2</title>
-        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
-        
-        <tag>Canvas</tag>
-         
-        <tag>HTML5</tag>
-         
-        <tag>画布</tag>
-         
-         
-           
-             
-              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
     <lastmod>2018-05-10T08:45:23.042Z</lastmod>
     <data>
@@ -298,6 +202,30 @@
         <tag>原型</tag>
          
         <tag>原型的基本概念</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
+    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
+    <data>
+        <display>
+        <title>JQuery分析及实现part3之属性模块功能及实现</title>
+        <pubTime>2016-11-20T03:51:28.000Z</pubTime>
+        
+        <tag>原生Js</tag>
+         
+        <tag>Js框架</tag>
+         
+        <tag>JQuery</tag>
          
          
            
@@ -354,14 +282,40 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
     <lastmod>2018-05-10T08:45:23.042Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之函数</title>
-        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
+        <title>Canvas知识整理part2</title>
+        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
         
-        <tag>Function</tag>
+        <tag>Canvas</tag>
+         
+        <tag>HTML5</tag>
+         
+        <tag>画布</tag>
+         
+         
+           
+             
+              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
+    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
+    <data>
+        <display>
+        <title>js高级与面向对象之构造函数</title>
+        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>js构造函数</tag>
          
          
            
@@ -400,6 +354,56 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
+    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
+    <data>
+        <display>
+        <title>js高级与面向对象之继承</title>
+        <pubTime>2016-06-15T05:43:28.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>js面向对象</tag>
+         
+        <tag>继承</tag>
+         
+        <tag>继承的实现方式</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
+    <data>
+        <display>
+        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
+        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
+        
+        <tag>原生Js</tag>
+         
+        <tag>Js框架</tag>
+         
+        <tag>JQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
     <lastmod>2018-05-10T08:45:23.042Z</lastmod>
     <data>
@@ -412,6 +416,26 @@
         <tag>Js框架</tag>
          
         <tag>JQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
+    <lastmod>2018-05-10T08:45:23.042Z</lastmod>
+    <data>
+        <display>
+        <title>js高级与面向对象之函数</title>
+        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
+        
+        <tag>Function</tag>
          
          
            
@@ -604,28 +628,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</loc>
-    <lastmod>2018-05-04T10:02:27.000Z</lastmod>
-    <data>
-        <display>
-        <title>Node第二部分-模块及工具</title>
-        <pubTime>2016-12-12T01:12:32.000Z</pubTime>
-        
-        <tag>Node</tag>
-         
-        <tag>NodeJs</tag>
-         
-         
-           
-             
-              <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html</loc>
     <lastmod>2018-05-04T10:02:27.000Z</lastmod>
     <data>
@@ -638,6 +640,28 @@
         <tag>NodeJs</tag>
          
         <tag>npm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Node" url="https://blog.ihoey.com/categories/Node/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</loc>
+    <lastmod>2018-05-04T10:02:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>Node第二部分-模块及工具</title>
+        <pubTime>2016-12-12T01:12:32.000Z</pubTime>
+        
+        <tag>Node</tag>
+         
+        <tag>NodeJs</tag>
          
          
            
@@ -958,30 +982,6 @@
         <pubTime>2016-05-08T09:31:48.000Z</pubTime>
         
         <tag>javascript</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html</loc>
-    <lastmod>2018-05-04T10:01:57.000Z</lastmod>
-    <data>
-        <display>
-        <title>JAVASCRIPT生成图形验证码</title>
-        <pubTime>2017-11-29T11:49:01.000Z</pubTime>
-        
-        <tag>javascript</tag>
-         
-        <tag>原生Js</tag>
-         
-        <tag>tools</tag>
          
          
            
