@@ -2,7 +2,7 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by: ihoey
- * @Last Modified time: 2018-06-13 16:16:17
+ * @Last Modified time: 2018-07-30 22:41:10
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
@@ -235,7 +235,7 @@ window.onload = function () {
     }, 400);
   });
 
-  $.getJSON('https://sslapi.hitokoto.cn/', function (s) {
+  $.getJSON('https://v1.hitokoto.cn/', function (s) {
     $('#hitokoto').text('' + s.hitokoto + '  来自于 ' + s.from)
   });
 
@@ -377,10 +377,11 @@ window.onload = function () {
   window.setInterval(showHitokoto, 30000);
 
   function showHitokoto() {
-    $.getJSON('https://sslapi.hitokoto.cn/', function (result) {
+    $.getJSON('https://v1.hitokoto.cn/', function (result) {
       showMessage(result.hitokoto, 5000);
     });
   }
+
   function showMessage(text, timeout) {
     if (Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1) - 1];
     $('.message').stop();
