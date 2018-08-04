@@ -1828,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #65eb94;
+  background: #65ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2646,7 +2646,7 @@ code {
 }
 .header {
   background-size: cover;
-  background: url("https://cdn.dode.top/header_background.jpg") no-repeat;
+  background: url("https://cdn.dode.top/header_background.jpg?imageView2/0/format/webp/q/75|imageslim") no-repeat;
 }
 .header-inner {
   padding-top: 310px;
