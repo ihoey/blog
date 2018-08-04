@@ -32,7 +32,7 @@ categories:
 
 ## pbcopy 和 pbpaste
 
-这两个工具可以打通命令行和剪贴板。当然用鼠标操作复制粘贴也可以——但这两个工具的真正威力，发挥在将其用作Unix工具的时候。意思就是说：可以将这两个工具用作管道、IO重定向以及和其他命令的整合。例如：
+这两个工具可以打通命令行和剪贴板。当然用鼠标操作复制粘贴也可以——但这两个工具的真正威力，发挥在将其用作 Unix 工具的时候。意思就是说：可以将这两个工具用作管道、IO 重定向以及和其他命令的整合。例如：
 
 ```bash
 ls ~ | pbcopy
@@ -62,7 +62,7 @@ pbpaste >> tasklist.txt
 
 许多 `Linux` 用户都发现 `Linux` 下查找文件的方法在 `OS X` 上不好用。当然经典的 `Unix find` 命令总是可以，但既然 `OS X` 有杀手级搜索工具 `Spotlight` ，为什么不在命令行上也使用一下呢？
 
-这就是mdfind命令了。 `Spotlight` 能做的查找， `mdfind` 也能做。包括搜索文件的内容和元数据（`metadata`）。
+这就是 mdfind 命令了。 `Spotlight` 能做的查找， `mdfind` 也能做。包括搜索文件的内容和元数据（`metadata`）。
 
 `mdfind`还提供更多的搜索选项。例如`-onlyin`选项可以约束搜索范围为一个目录：
 
@@ -70,7 +70,7 @@ pbpaste >> tasklist.txt
 mdfind -onlyin ~/Documents essay
 ```
 
-`mdfind` 的索引数据库在后台自动更新，不过你也可以使用 `mdutil` 工具诊断数据库的问题，诊断 `mdfind` 的问题也等同于诊断 `Spotlight` 。如果 `Spotlight` 的工作不正确，`mdutil -E `命令可以强制重建索引数据库。也可以用 `mdutil -i` 彻底关闭文件索引。
+`mdfind` 的索引数据库在后台自动更新，不过你也可以使用 `mdutil` 工具诊断数据库的问题，诊断 `mdfind` 的问题也等同于诊断 `Spotlight` 。如果 `Spotlight` 的工作不正确，`mdutil -E`命令可以强制重建索引数据库。也可以用 `mdutil -i` 彻底关闭文件索引。
 
 ## screencapture
 
@@ -88,13 +88,13 @@ screencapture -C -M image.png
 screencapture -c -W
 ```
 
-延时10秒后抓屏，并在Preview中打开之：
+延时 10 秒后抓屏，并在 Preview 中打开之：
 
 ```bash
 screencapture -T 10 -P image.png
 ```
 
-用鼠标截取一个矩形区域，抓取后存为pdf文件：
+用鼠标截取一个矩形区域，抓取后存为 pdf 文件：
 
 ```bash
 screencapture -s -t pdf image.pdf
@@ -147,7 +147,7 @@ say -f mynovel.txt -o myaudiobook.aiff
 
 ## diskutil
 
-`diskutil` 是 `OS X` 磁盘工具应用的命令行版。既可以完成图形界面应用的所有任务，也可以做一些全盘填0、全盘填随机数等额外的任务。先使用 `diskutil list` 查看所有磁盘的列表和所在路径，然后对特定的磁盘执行命令。
+`diskutil` 是 `OS X` 磁盘工具应用的命令行版。既可以完成图形界面应用的所有任务，也可以做一些全盘填 0、全盘填随机数等额外的任务。先使用 `diskutil list` 查看所有磁盘的列表和所在路径，然后对特定的磁盘执行命令。
 
 警告：不正确使用 `diskutil` 可能意外的破坏磁盘数据。请小心。
 
@@ -159,7 +159,7 @@ say -f mynovel.txt -o myaudiobook.aiff
 
 也可以通过 `Homebrew` 做有趣的事情： `brew install archey` 会安装 `Archey` （在启动命令行时显示苹果 `LOGO` 和计算机硬件参数的小工具）。
 
-![item2](https://cdn.dode.top/item2.png)
+![item2](https://cdn.dode.top/item2.png?imageView2/0/format/webp/q/75|imageslim)
 
 `Homebrew` 能安装的工具数量庞大，并且一直保持更新。`Homebrew` 最棒的一点是：所有的文件都被约束在 `/usr/local/` 一个位置之下。也就是说可以通过 `Homebrew` 安装新版软件的同时，保持系统内置的依赖库或其他软件不变。同时如果想彻底删除 `Homebrew` ，也变得非常简单。
 

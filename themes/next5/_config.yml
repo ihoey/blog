@@ -160,7 +160,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: https://cdn.dode.top/avatar.png
+avatar: https://cdn.dode.top/avatar.png?imageView2/0/format/webp/q/75|imageslim
 
 
 # Table Of Contents in the Sidebar

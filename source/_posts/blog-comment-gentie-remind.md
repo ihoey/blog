@@ -6,8 +6,8 @@ tags:
 categories: Linux
 ---
 
-![comment_ihoey](https://cdn.dode.top/comment_ihoey.png)
-多说官方宣布17年6月1号停止维护，一个优秀的评论系统从此倒下了，令人唏嘘不已，还是要感谢多说团队多年的付出。眼下留给博主们的选择也就畅言和网易云跟帖了。经过综合考虑选择了网易跟帖，由于网易云跟帖没有提醒功能，所以今天就做了一个邮件提醒的功能。
+![comment_ihoey](https://cdn.dode.top/comment_ihoey.png?imageView2/0/format/webp/q/75|imageslim)
+多说官方宣布 17 年 6 月 1 号停止维护，一个优秀的评论系统从此倒下了，令人唏嘘不已，还是要感谢多说团队多年的付出。眼下留给博主们的选择也就畅言和网易云跟帖了。经过综合考虑选择了网易跟帖，由于网易云跟帖没有提醒功能，所以今天就做了一个邮件提醒的功能。
 
 <!-- more -->
 
@@ -17,33 +17,34 @@ categories: Linux
 
 ## 数据回推
 
-在获取代码里面有个优化设置功能，需要我们自己设置接口来接受评论推送。以下邮件评论提示由php来实现。php模拟邮箱登录发送邮件采用如下库：http://download.csdn.net/download/zhong960725/9755214
-，亲测能正常使用，需要配置smtp服务区，端口，帐号和密码等。 网易通过结果返回的数据如下：
+在获取代码里面有个优化设置功能，需要我们自己设置接口来接受评论推送。以下邮件评论提示由 php 来实现。php 模拟邮箱登录发送邮件采用如下库：http://download.csdn.net/download/zhong960725/9755214
+，亲测能正常使用，需要配置 smtp 服务区，端口，帐号和密码等。 网易通过结果返回的数据如下：
 
 ```json
 [
   {
-    "title" : "xxx",//文章标题
-    "url" : "http://localhost/1.htm",//文章url
-    "sourceId" : "xxx",//文章唯一id
-    "ctime" : 11111,//文章创建时间
-    "comments" : [{
-        "cid" : "xxx",//跟贴id
-        "content" : "xxxx",//内容
-        "ctime" : 11111,//创建时间
-        "pid" : "xxxx",//父贴id
-        "ip" : "127.0.0.1",//发贴ip
-        "source" : "web",//来源 app,web,wap
-        "anonymous" : false,//是否匿名跟贴 false：非匿名 true：匿名
-        "attachment" : {
-          "type" : 0,//0没有附件 1为图片 2为语音 3为视频
-          "desc" : "xxx",//描述
-          "info" : "http://localhost/1.jpg"//附件地址
+    "title": "xxx", //文章标题
+    "url": "http://localhost/1.htm", //文章url
+    "sourceId": "xxx", //文章唯一id
+    "ctime": 11111, //文章创建时间
+    "comments": [
+      {
+        "cid": "xxx", //跟贴id
+        "content": "xxxx", //内容
+        "ctime": 11111, //创建时间
+        "pid": "xxxx", //父贴id
+        "ip": "127.0.0.1", //发贴ip
+        "source": "web", //来源 app,web,wap
+        "anonymous": false, //是否匿名跟贴 false：非匿名 true：匿名
+        "attachment": {
+          "type": 0, //0没有附件 1为图片 2为语音 3为视频
+          "desc": "xxx", //描述
+          "info": "http://localhost/1.jpg" //附件地址
         },
-        "user" : {
-          "userId" : "xxx",//第三方用户id
-          "nickname" : "xxx",//昵称
-          "avatar" : "http://localhost/2.png"//头像地址
+        "user": {
+          "userId": "xxx", //第三方用户id
+          "nickname": "xxx", //昵称
+          "avatar": "http://localhost/2.png" //头像地址
         }
       }
     ]
@@ -53,10 +54,11 @@ categories: Linux
 
 ## 服务器配置
 
-- 搭建`web`服务器,博客前面有提到，可以[Linux常用命令笔记](https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html)
+- 搭建`web`服务器,博客前面有提到，可以[Linux 常用命令笔记](https://blog.ihoey.com/posts/Linux/2017-05-26-liunx-shell.html)
 - 搭建`PHP`环境,由于我的服务器是`Ubuntu 16.04`的,所以貌似不能安装`php5`了,所以这里是`php7`。
-    + 安装`PHP` : `sudo apt-get install -y php7.0 php7.0-fpm php7.0-cli php7.0-common php7.0-mbstring php7.0-gd php7.0-intl php7.0-xml php7.0-mysql php7.0-mcrypt php7.0-zip`.
+  - 安装`PHP` : `sudo apt-get install -y php7.0 php7.0-fpm php7.0-cli php7.0-common php7.0-mbstring php7.0-gd php7.0-intl php7.0-xml php7.0-mysql php7.0-mcrypt php7.0-zip`.
 - 配置`nginx`,
+
 ```json
 server {
         listen 80;
@@ -120,4 +122,3 @@ if(count($receiver) > 0) {
 ## 设置回推
 
 优化设置里面的回推结果设置如下就好`http://yourDomain/comment.php`;
-

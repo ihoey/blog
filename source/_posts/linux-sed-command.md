@@ -9,7 +9,7 @@ categories:
   - Linux
 ---
 
-`awk`于1977年出生，今年36岁本命年，`sed`比`awk`大2-3岁，`awk`就像林妹妹，sed就是宝玉哥哥了。所以 林妹妹跳了个`Topless`，他的哥哥`sed`坐不住了，也一定要出来抖一抖。
+`awk`于 1977 年出生，今年 36 岁本命年，`sed`比`awk`大 2-3 岁，`awk`就像林妹妹，sed 就是宝玉哥哥了。所以 林妹妹跳了个`Topless`，他的哥哥`sed`坐不住了，也一定要出来抖一抖。
 
 `sed`全名叫`stream editor`，流编辑器，用程序的方式来编辑文本，相当的`hacker`啊。`sed`基本上就是玩正则模式匹配，所以，玩`sed`的人，正则表达式一般都比较强。
 
@@ -17,7 +17,7 @@ categories:
 
 同样，本篇文章不会说`sed`的全部东西，你可以参看 [`sed`的手册](http://www.gnu.org/software/sed/manual/sed.html) ，我这里主要还是想和大家竞争一下那些从手机指缝间或马桶里流走的时间，用这些时间来学习一些东西。当然，接下来的还是要靠大家自己双手。
 
-## 用s命令替换
+## 用 s 命令替换
 
 我使用下面的这段文本做演示：
 
@@ -96,8 +96,8 @@ This is my goat ---
 - `\<` 表示词首。 如：`\<abc` 表示以 `abc` 为首的詞。
 - `\>` 表示词尾。 如：`abc\>` 表示以 `abc` 結尾的詞。
 - `.` 表示任何单个字符。
-- `*` 表示某个字符出现了0次或多次。
-- `[ ]` 字符集合。 如：`[abc]` 表示匹配a或b或c，还有 `[a-zA-Z]` 表示匹配所有的`26`个字符。如果其中有`^`表示反，如 `[^a]` 表示非a的字符
+- `*` 表示某个字符出现了 0 次或多次。
+- `[ ]` 字符集合。 如：`[abc]` 表示匹配 a 或 b 或 c，还有 `[a-zA-Z]` 表示匹配所有的`26`个字符。如果其中有`^`表示反，如 `[^a]` 表示非 a 的字符
 
 正规则表达式是一些很牛的事，比如我们要去掉某`html`中的`tags`：
 
@@ -152,10 +152,9 @@ cat my.txt
 This is my dog, my dog's name is frank
 This is my fish, my fish's name is george
 This is my goat, my goat's name is adam"
-
 ```
 
-只替换每一行的第一个s：
+只替换每一行的第一个 s：
 
 ```shell
 sed 's/s/S/1' my.txt
@@ -232,11 +231,11 @@ goat:adam"
 
 然后：`\1`就是`cat`，`\2`就是`betty`
 
-## sed的命令
+## sed 的命令
 
 让我们回到最一开始的例子`pets.txt`，让我们来看几个命令：
 
-### N命令
+### N 命令
 
 先来看`N`命令 —— 把下一行的内容纳入当成缓冲区做匹配。
 
@@ -273,7 +272,7 @@ This is my fish,  my fish's name is george
 This is my goat,  my goat's name is adam
 ```
 
-### a命令和i命令
+### a 命令和 i 命令
 
 `a`命令就是`append`， `i`命令就是`insert`，它们是用来添加行的。如：
 
@@ -321,7 +320,7 @@ This is my goat, my goat's name is adam
 ----"
 ```
 
-### c命令
+### c 命令
 
 `c` 命令是替换匹配行
 
@@ -339,7 +338,7 @@ This is my monkey, my monkey's name is wukong
 This is my goat, my goat's name is adam"
 ```
 
-### d命令
+### d 命令
 
 删除匹配行
 
@@ -358,7 +357,7 @@ sed '2,$d' my.txt
 "This is my cat, my cat's name is betty"
 ```
 
-### p命令
+### p 命令
 
 打印命令
 
@@ -534,7 +533,7 @@ three
 
 是不是有点没看懂，我作个图你就看懂了。
 
-![](https://cdn.dode.top/blog/sed_demo_00.jpg)
+![](https://cdn.dode.top/blog/sed_demo_00.jpg?imageView2/0/format/webp/q/75|imageslim)
 
 第二个示例，反序了一个文件的行：
 
@@ -553,6 +552,6 @@ one
 
 这个执行序列很难理解，做个图如下大家就明白了：
 
-![](https://cdn.dode.top/blog/sed_demo.jpg)
+![](https://cdn.dode.top/blog/sed_demo.jpg?imageView2/0/format/webp/q/75|imageslim)
 
 就先说这么多吧，希望对大家有用。

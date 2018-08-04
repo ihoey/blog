@@ -1,3 +1,4 @@
+<script src="//at.alicdn.com/t/font_578712_g26jo2kbzd5qm2t9.js"></script>
 <blockquote class="blockquote-center">{{ page.quotes }}</blockquote>
 <h2>Blog friends</h2>
 <ul class="ihoey-links">
