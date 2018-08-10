@@ -1828,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #505070;
+  background: #ecff98;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2661,6 +2661,11 @@ body {
 }
 .blockquote-center {
   font-family: 'comic sans ms';
+}
+@media (max-width: 420px) {
+  .eevee {
+    display: none;
+  }
 }
 .message {
   width: 200px;
