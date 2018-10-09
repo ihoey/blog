@@ -923,7 +923,7 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: //cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css
+  fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
@@ -943,7 +943,7 @@ vendors:
   canvas_nest:
 
   # three
-  three: https://cdn.bootcss.com/three.js/r83/three.min.js
+  three: https://cdnjs.cloudflare.com/ajax/libs/three.js/92/three.min.js
 
   # three_waves
   # https://github.com/jjandxa/three_waves
