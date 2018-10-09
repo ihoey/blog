@@ -65,21 +65,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
-    
-    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
-    
-    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -93,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -107,14 +93,21 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/Hexo/2015-08-28-hello-world.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    
+    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/posts/Hexo/2015-08-28-hello-world.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -142,7 +135,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
+    
+    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -156,7 +156,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -219,14 +219,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html</loc>
+    <loc>https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</loc>
     
     <lastmod>2018-05-04T10:02:27.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html</loc>
     
     <lastmod>2018-05-04T10:02:27.000Z</lastmod>
     
