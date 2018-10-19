@@ -17,12 +17,11 @@ var info = arr
     .reduce((p, k) => (p[k]++ || (p[k] = 1), p), {});
 
 console.log(info); //{ a: 3, b: 2, c: 2, d: 1 }
-
 ```
 
 <!-- more -->
 
-`hexo` 会有各种生命周期和事件，平时可能不会用到，但是能很好的利用的话，可以提高不少效率。比如文章多到一定程度之后，每次创建新文章都会被淹没在文件夹里面，在博客根目录下创建一个 `scripts` 文件夹，放一个 `events.js` 文件。这样每次通过` hexo new post` 创建新文章就会自动用 `code` 打开了~
+`hexo` 会有各种生命周期和事件，平时可能不会用到，但是能很好的利用的话，可以提高不少效率。比如文章多到一定程度之后，每次创建新文章都会被淹没在文件夹里面，在博客根目录下创建一个 `scripts` 文件夹，放一个 `events.js` 文件。这样每次通过`hexo new post` 创建新文章就会自动用 `code` 打开了~
 
 ```JavaScript
 var exec = require('child_process').exec;
@@ -81,20 +80,20 @@ hexo.extend.filter.register('after_post_render', function (data) {
   position: relative;
   overflow: hidden;
   border-radius: 5px;
-  box-shadow: 0 10px 30px 0px rgba(0,0,0,0.4);
+  box-shadow: 0 10px 30px 0px rgba(0, 0, 0, 0.4);
   margin: 35px 0;
   ::-webkit-scrollbar {
     height: 10px;
   }
 
   ::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-      border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   }
   &::before {
     color: white;
@@ -115,7 +114,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
     float: left;
   }
   &::after {
-    content: " ";
+    content: ' ';
     position: absolute;
     -webkit-border-radius: 50%;
     border-radius: 50%;
@@ -141,3 +140,5 @@ highlight_theme: night eighties
 ```
 
 OK，大功告成~
+
+我的博客即将同步至腾讯云+社区，邀请大家一同入驻：https://cloud.tencent.com/developer/support-plan?invite_code=2t8yu2xdpn280
