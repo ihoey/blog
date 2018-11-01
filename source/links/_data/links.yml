@@ -1,119 +1,97 @@
--
-  name: 杰杰无敌
+- name: 杰杰无敌
   link: https://blog.liujiefront.com/links/
-  description: "每天进步一点点,杰杰无敌,liujiefront,liujie,刘杰的个人blog"
--
-  name: Myths
+  description: '每天进步一点点,杰杰无敌,liujiefront,liujie,刘杰的个人blog'
+- name: Myths
   link: https://blog.mythsman.com
-  description: "闻道有先后，术业有专攻"
--
-  name: MoeYi's Blog
+  description: '闻道有先后，术业有专攻'
+- name: MoeYi's Blog
   link: https://gao4.pw/友情链接
   description: "MoeYi's Blog"
--
-  name: 冰峰博客
+- name: 冰峰博客
   link: https://www.ad-s.cn/links
-  description: "一位孤独的旅人"
+  description: '一位孤独的旅人'
   avatar: https://tp.corli.cn/data/f_37774230.jpg
--
-  name: 可乐没气的猫
+- name: 可乐没气的猫
   link: https://www.isthnew.com/links/
-  description: "热爱科技，热爱生活，分享思维，吐槽不平"
+  description: '热爱科技，热爱生活，分享思维，吐槽不平'
 # -
 #   name: 萌小喵
 #   link: http://blog.awumiao.cn/
 #   description: "念念不忘，必有回响"
--
-  name: 火辣辣
+- name: 火辣辣
   link: http://huolalaweb.com/about/
-  description: "个人前端博客"
--
-  name: jnduan's Blog
+  description: '个人前端博客'
+- name: jnduan's Blog
   link: https://jnan.org/
-  description: "How lucky you are, how hard you work."
--
-  name: 来语直搜
+  description: 'How lucky you are, how hard you work.'
+- name: 来语直搜
   link: http://www.zhisou.cc/
-  description: "来语直搜"
--
-  name: 阿斗
+  description: '来语直搜'
+- name: 阿斗
   link: https://www.lijinghua.club/
-  description: "追逐一生"
+  description: '追逐一生'
   avatar: https://cdn.dode.top/blog/links/lijinhua_link.jpeg?imageView2/0/format/webp/q/75|imageslim
--
-  name: er567
+- name: er567
   link: https://oohyo.github.io/
-  description: "吾念所归,无惧无退"
+  description: '吾念所归,无惧无退'
   avatar: https://avatars1.githubusercontent.com/u/20676204?s=460&v=4
--
-  name: 刘伟
+- name: 刘伟
   link: https://darrenliuwei.com/
-  description: "less is more"
--
-  name: Axton Yao
+  description: 'less is more'
+- name: Axton Yao
   link: https://flyhigher.top/links
-  description: "Always Dream. Always Explore."
--
-  name: 钟储兵博客
+  description: 'Always Dream. Always Explore.'
+- name: 钟储兵博客
   link: http://www.zcbboke.com/
-  description: "钟储兵博客"
--
-  name: 李伟(Waylee)
+  description: '钟储兵博客'
+- name: 李伟(Waylee)
   link: https://waylee.net/
-  description: "不忘初心方得始终"
+  description: '不忘初心方得始终'
   avatar: https://tx.diygu.com/avatar/96391810d42f9c28518866bb182f45aa-50
--
-  name: 三秋
+- name: 三秋
   link: https://sanqiu.org/
-  description: "雨零耶，君将留？"
+  description: '雨零耶，君将留？'
   avatar: https://sanqiu.org/s/tupian/sanqiu.gif
--
-  name: 洛哩哩~
+- name: 洛哩哩~
   link: https://lolili.cc/
-  description: "只要你能幸福，我是谁，又有什么关系？记不记得住，又有什么关系啊！"
+  description: '只要你能幸福，我是谁，又有什么关系？记不记得住，又有什么关系啊！'
   avatar: https://lolili.cc/static/images/default/head.png
--
-  name: 同良小栈
+- name: 同良小栈
   link: https://togln.com/
-  description: "戏子入画，一曲天涯。"
+  description: '戏子入画，一曲天涯。'
   avatar: https://togln.com/tx.jpg
--
-  name: Dorr的小站
+- name: Dorr的小站
   link: https://www.javascriper.com/
-  description: "前端路上的木木"
--
-  name: 水墨寒的博客
+  description: '前端路上的木木'
+- name: 水墨寒的博客
   link: https://smohan.net/
-  description: "水墨寒，90后双鱼座普通男青年！WEB前端工程师。喜欢敲代码的感觉，相信编程是一门艺术，自诩为游弋在代码里的人生。"
+  description: '水墨寒，90后双鱼座普通男青年！WEB前端工程师。喜欢敲代码的感觉，相信编程是一门艺术，自诩为游弋在代码里的人生。'
   avatar: https://secure.gravatar.com/avatar/85356416ea5399c0dc1ea9fd354b1c8e?s=100
--
-  name: persilee’s blog
+- name: persilee’s blog
   link: https://lishaoy.net
-  description: "李少颖的博客"
--
-  name: LIZCBLOG博客
+  description: '李少颖的博客'
+- name: LIZCBLOG博客
   link: https://www.lizc.me/
-  description: "(lizc.me)个人博客，夜深人静，一个it前端男，在书桌前的故事..."
--
-  name: 量子广告
+  description: '(lizc.me)个人博客，夜深人静，一个it前端男，在书桌前的故事...'
+- name: 量子广告
   link: http://blog.ynxiu.com/
-  description: "协作发展 畅想双赢"
--
-  name: 姬长信
+  description: '协作发展 畅想双赢'
+- name: 姬长信
   link: https://blog.isoyu.com/
-  description: "姬长信,主要iPhone开发,iOS开发,iPad开发,Mac开发.现致力为所有移动开发者提供资讯服务、问答服务、代码下载、工具库及服务。"
--
-  name: 奈何
+  description: '姬长信,主要iPhone开发,iOS开发,iPad开发,Mac开发.现致力为所有移动开发者提供资讯服务、问答服务、代码下载、工具库及服务。'
+- name: 奈何
   link: http://www.naihes.cn/
-  description: "生亦何欢，死亦何苦！"
+  description: '生亦何欢，死亦何苦！'
   avatar: https://cdn.dode.top/www.naihes.cn.gif?imageView2/0/format/webp/q/75|imageslim
--
-  name: WQian五千
+- name: WQian五千
   link: https://wqian.net
-  description: "有点小技，有点经验，有点幽默，有点情感，欢迎光临WQian五千。"
+  description: '有点小技，有点经验，有点幽默，有点情感，欢迎光临WQian五千。'
   avatar: https://wqian.net/images/avatar0.png
--
-  name: JerryC
+- name: JerryC
   link: https://jerryc.me/
-  description: "Never put off till tomorrow what you can do today"
+  description: 'Never put off till tomorrow what you can do today'
   avatar: http://jerryc.me/img/avatar.png
+- name: sunq's blog
+  link: http://www.sunq.xyz
+  description: '新站初写成，但是会一直更新哒'
+  avatar: http://www.sunq.xyz/favicon.ico
