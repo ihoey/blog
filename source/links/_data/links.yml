@@ -4,9 +4,9 @@
 - name: Myths
   link: https://blog.mythsman.com
   description: '闻道有先后，术业有专攻'
-- name: MoeYi's Blog
-  link: https://gao4.pw/友情链接
-  description: "MoeYi's Blog"
+# - name: MoeYi's Blog
+#   link: https://gao4.pw/友情链接
+#   description: "MoeYi's Blog"
 - name: 冰峰博客
   link: https://www.ad-s.cn/links
   description: '一位孤独的旅人'
@@ -41,9 +41,9 @@
 - name: Axton Yao
   link: https://flyhigher.top/links
   description: 'Always Dream. Always Explore.'
-- name: 钟储兵博客
-  link: http://www.zcbboke.com/
-  description: '钟储兵博客'
+# - name: 钟储兵博客
+#   link: http://www.zcbboke.com/
+#   description: '钟储兵博客'
 - name: 李伟(Waylee)
   link: https://waylee.net/
   description: '不忘初心方得始终'
@@ -60,8 +60,8 @@
   link: https://togln.com/
   description: '戏子入画，一曲天涯。'
   avatar: https://togln.com/tx.jpg
-- name: Dorr的小站
-  link: https://www.javascriper.com/
+- name: jarmin客栈
+  link: https://blog.javascriper.com
   description: '前端路上的木木'
 - name: 水墨寒的博客
   link: https://smohan.net/
@@ -95,3 +95,7 @@
   link: http://www.sunq.xyz
   description: '新站初写成，但是会一直更新哒'
   avatar: http://www.sunq.xyz/favicon.ico
+- name: LeoLan's Blog
+  link: https://www.leolan.top
+  description: '有时候正是不报期望的人做出了人们不敢期望之事！'
+  avatar: https://secure.gravatar.com/avatar/447d461b02608d689da6ef67a24ef0f8?s=220&r=X&d=mm
