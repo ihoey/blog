@@ -70,6 +70,23 @@ body {
   cursor: url("../images/cursor.ico"), auto;
 }
 
+body {
+  background-image: linear-gradient(to right top, #ffcc00 50%, #fff 50%);
+  background-size: 100% calc(100% - 100vh + 3px);
+  background-repeat: no-repeat;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 3px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  z-index: -1;
+}
+
 ::selection {
   background: #d25462;
   color: #fff;
