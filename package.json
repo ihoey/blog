@@ -15,7 +15,8 @@
     "version": "3.7.1"
   },
   "scripts": {
-    "start": "hexo clean && hexo g && hexo d"
+    "start": "hexo clean && hexo g && hexo d",
+    "deploy": "hexo d"
   },
   "dependencies": {
     "hexo": "^3.7.1",
