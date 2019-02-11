@@ -10,7 +10,7 @@ author: Ihoey
 # language: zh-Hans
 language: zh-CN
 timezone: Asia/Shanghai
-avatar: https://cdn.dode.top/avatar.png?imageView2/0/format/webp/q/75|imageslim
+avatar: https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/webp/blur/1x0/quality/75|imageslim
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

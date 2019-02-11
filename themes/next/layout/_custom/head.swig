@@ -8,5 +8,5 @@ Custom head.
 {% elif theme.keywords %}
   <meta name="keywords" content="{{ theme.keywords }}" />
 {% endif %}
-
-<script src="/js/src/set.js"></script>
+<link rel="dns-prefetch" href="https://app-router.leancloud.cn/">
+<script defer async src="/js/src/set.js"></script>
