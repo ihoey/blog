@@ -935,8 +935,8 @@ vendors:
   # Or use direct links below:
   # pace: //cdn.bootcss.com/pace/1.0.2/pace.min.js
   # pace_css: //cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-flash.min.css
-  pace:
-  pace_css:
+  pace: false
+  pace_css: false
 
   # Internal version: 1.0.0
   # https://github.com/hustcc/canvas-nest.js
