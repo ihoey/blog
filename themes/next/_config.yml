@@ -882,7 +882,8 @@ vendors:
   _internal: lib
 
   # Internal version: 2.1.3
-  jquery: https://cdn.dode.top/index.js
+  jquery: https://code.jquery.com/jquery-3.3.1.slim.min.js
+  # jquery: https://cdn.dode.top/index.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
