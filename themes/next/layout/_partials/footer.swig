@@ -35,7 +35,7 @@
 </div>
 
 {% if theme.seo %}
-  {% set nofollow = ' rel="external nofollow"' %}
+  {% set nofollow = ' rel="external nofollow noopener noreferrer"' %}
 {% endif %}
 
 {% if theme.footer.powered.enable %}

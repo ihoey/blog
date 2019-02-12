@@ -38,7 +38,7 @@
     </li>
     <li>描述：{{ config.description }}</li>
     <li>图片：
-        <a href="{{ config.avatar }}" rel="noopener" target="_blank">{{ config.avatar }}</a>
+        <a href="{{ config.avatar }}" rel="noopener nofollow" target="_blank">{{ config.avatar }}</a>
     </li>
 </ul>
 <hr>

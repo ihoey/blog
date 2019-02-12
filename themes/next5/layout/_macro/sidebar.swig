@@ -72,7 +72,7 @@
           {% if theme.social %}
             {% for name, link in theme.social %}
               <span class="links-of-author-item">
-                <a href="{{ link }}" target="_blank" title="{{ name }}" rel="nofollow">
+                <a href="{{ link }}" target="_blank" title="{{ name }}" rel="nofollow noopener">
                   {% if theme.social_icons.enable %}
                     <i class="fa fa-fw fa-{{ theme.social_icons[name] | default('globe') | lower }}"></i>
                   {% endif %}
@@ -86,7 +86,7 @@
         {% set cc = {'by': 1, 'by-nc': 1, 'by-nc-nd': 1, 'by-nc-sa': 1, 'by-nd': 1, 'by-sa': 1, 'zero': 1} %}
         {% if theme.creative_commons in cc %}
           <div class="cc-license motion-element" itemprop="license">
-            <a href="https://creativecommons.org/{% if theme.creative_commons === 'zero' %}publicdomain/zero/1.0{% else %}licenses/{{ theme.creative_commons }}/4.0{% endif %}/" class="cc-opacity" target="_blank">
+            <a href="https://creativecommons.org/{% if theme.creative_commons === 'zero' %}publicdomain/zero/1.0{% else %}licenses/{{ theme.creative_commons }}/4.0{% endif %}/" class="cc-opacity" target="_blank" rel="nofollow noopener">
               <img src="{{ url_for(theme.images) }}/cc-{{ theme.creative_commons }}.svg" alt="Creative Commons" />
             </a>
           </div>
@@ -102,7 +102,7 @@
             <ul class="links-of-blogroll-list">
               {% for name, link in theme.links %}
                 <li class="links-of-blogroll-item">
-                  <a href="{{ link }}" title="{{ name }}" target="_blank">{{ name }}</a>
+                  <a href="{{ link }}" title="{{ name }}" target="_blank" rel="nofollow noopener">{{ name }}</a>
                 </li>
               {% endfor %}
             </ul>
@@ -135,7 +135,7 @@
       <!--/noindex-->
       {% endif %}
 <!--         <div>
-          <p style="text-align: center;"><object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.dode.top/hamster.swf" width="245" height="225" title="梦魇小栈"><param name="movie" value="https://cdn.dode.top/hamster.swf"><param name="AllowScriptAccess" value="always"><param name="wmode" value="transparent"></object></p>
+          <p style="text-align: center;"><object type="application/x-shockwave-flash" style="outline:none;" data="https://cdn.dode.top/hamster.swf" width="245" height="225" title="梦魇尝栈"><param name="movie" value="https://cdn.dode.top/hamster.swf"><param name="AllowScriptAccess" value="always"><param name="wmode" value="transparent"></object></p>
         </div> -->
     </div>
   </aside>
