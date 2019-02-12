@@ -2,7 +2,7 @@
  * @Author: ihoey
  * @Date: 2019-02-12 15:20:49
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-12 17:04:46
+ * @Last Modified time: 2019-02-12 19:00:43
  */
 
 var cacheName = 'bs-0-1-0'
@@ -55,6 +55,10 @@ self.addEventListener('fetch', (e) => {
     '/message.json'
   ]
 
+  var fetchInitParam = {
+    mode: 'cors'
+  }
+
   var currentUrl = e.request.url
   console.log('现在正在请求：' + currentUrl)
 
@@ -66,7 +70,7 @@ self.addEventListener('fetch', (e) => {
     // 使用fetch请求数据，并将请求结果clone一份缓存到cache
     // 此部分缓存后在browser中使用全局变量caches获取
     caches.open(apiCacheName).then((cache) => {
-      return fetch(e.request).then((response) => {
+      return fetch(e.request, fetchInitParam).then((response) => {
         cache.put(e.request.url, response.clone())
         return response
       })
@@ -76,10 +80,10 @@ self.addEventListener('fetch', (e) => {
     // 如果有cache则直接返回，否则通过fetch请求
     e.respondWith(
       caches.match(e.request).then((cache) => {
-        return cache || fetch(e.request)
+        return cache || fetch(e.request, fetchInitParam)
       }).catch((err) => {
         console.log(err)
-        return fetch(e.request)
+        return fetch(e.request, fetchInitParam)
       })
     )
   }
