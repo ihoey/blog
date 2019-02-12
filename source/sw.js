@@ -2,10 +2,10 @@
  * @Author: ihoey
  * @Date: 2019-02-12 15:20:49
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-12 19:12:47
+ * @Last Modified time: 2019-02-12 19:15:35
  */
 
-var cacheName = 'bs-0-1-0'
+var cacheName = 'bs-0-0-1'
 var apiCacheName = 'api-0-1-1'
 
 var cacheFiles = [
