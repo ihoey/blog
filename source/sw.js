@@ -2,13 +2,13 @@
  * @Author: ihoey
  * @Date: 2019-02-12 15:20:49
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-12 16:46:14
+ * @Last Modified time: 2019-02-12 16:56:41
  */
 
-var cacheName = 'bs-0-2-0'
+var cacheName = 'bs-0-1-0'
 var apiCacheName = 'api-0-1-1'
+
 var cacheFiles = [
-  '/',
   '/css/main.css',
   '/js/src/set.js',
   '/js/src/utils.js',
@@ -89,15 +89,15 @@ self.addEventListener('fetch', (e) => {
 /* ============== */
 // 添加service worker对push的监听
 
-// self.addEventListener('push', (e) => {
-//   var data = e.data
-//   if (e.data) {
-//     data = data.json()
-//     console.log('push的数据为：', data)
-//     self.registration.showNotification(data.text)
-//   } else {
-//     console.log('push没有任何数据')
-//   }
-// })
+self.addEventListener('push', (e) => {
+  var data = e.data
+  if (e.data) {
+    data = data.json()
+    console.log('push的数据为：', data)
+    self.registration.showNotification(data.text)
+  } else {
+    console.log('push没有任何数据')
+  }
+})
 
 /* ============== */
