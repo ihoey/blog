@@ -2,13 +2,14 @@
  * @Author: ihoey
  * @Date: 2019-02-12 15:20:49
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-12 16:56:41
+ * @Last Modified time: 2019-02-12 17:04:46
  */
 
 var cacheName = 'bs-0-1-0'
 var apiCacheName = 'api-0-1-1'
 
 var cacheFiles = [
+  '/',
   '/css/main.css',
   '/js/src/set.js',
   '/js/src/utils.js',
