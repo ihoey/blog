@@ -2,7 +2,7 @@
  * @Author: ihoey
  * @Date: 2019-02-12 15:20:49
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-12 19:17:57
+ * @Last Modified time: 2019-02-12 19:20:24
  */
 
 var cacheName = 'bs-0-0-1'
@@ -71,7 +71,7 @@ self.addEventListener('fetch', (e) => {
     // 使用fetch请求数据，并将请求结果clone一份缓存到cache
     // 此部分缓存后在browser中使用全局变量caches获取
     caches.open(apiCacheName).then((cache) => {
-      return fetch(e.request, fetchInitParam).then((response) => {
+      return fetch(e.request).then((response) => {
         cache.put(e.request.url, response.clone())
         return response
       })
@@ -84,7 +84,7 @@ self.addEventListener('fetch', (e) => {
         return cache || fetch(e.request, fetchInitParam)
       }).catch((err) => {
         console.log(err)
-        return fetch(e.request, fetchInitParam)
+        return fetch(e.request)
       })
     )
   }
