@@ -2,7 +2,7 @@
  * @Author: ihoey
  * @Date: 2019-02-12 15:20:49
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-12 19:20:24
+ * @Last Modified time: 2019-02-12 19:22:24
  */
 
 var cacheName = 'bs-0-0-1'
@@ -56,8 +56,8 @@ self.addEventListener('fetch', (e) => {
   ]
 
   var fetchInitParam = {
-    mode: 'cors',
-    // credentials: 'include'
+    // mode: 'cors',
+    credentials: 'include'
   }
 
   var currentUrl = e.request.url
