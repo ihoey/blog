@@ -2,7 +2,7 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-12 16:34:40
+ * @Last Modified time: 2019-02-13 17:41:52
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
@@ -61,9 +61,11 @@ console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c
 }(window, document);
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(function() {
-    console.log('Service Worker 注册成功');
-  });
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function() {
+      console.log('sw: success!')
+    })
+  })
 }
 
 console.log("\n %c 梦魇|专注于分享 QQ:1058221214 %c https://blog.ihoey.com/ \n\n", "color: #FF0000; background: #4bffba; padding:5px 0; border-radius: 5px 5px 5px 5px;", "background: #fadfa3; padding:5px 0; border-radius: 5px 5px 5px 5px;");
@@ -191,8 +193,6 @@ console.log('程序员B：打回车呀！');
     ],
   }
 
-  console.error('这个错误是特意为了吸引你来看console的！')
-
   function Alphabet(str) {
     var result = '\n';
     var strArr = str.split('\n');
@@ -210,23 +210,23 @@ console.log('程序员B：打回车呀！');
   global.Alphabet = Alphabet;
 })(window)
 
-console.log(Alphabet('HY1121'));
+console.log(Alphabet('HY1121'))
 
 // 标题变化
 window.onload = function() {
-  var OriginTitile = document.title;
-  var titleTime;
+  var OriginTitile = document.title
+  var titleTime
   document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-      $('[rel="icon"]').attr('href', "/images/fail.ico");
-      document.title = '╭(°A°`)╮ 页面崩溃啦 ~ 快回来看看~ | 梦魇小栈！';
-      clearTimeout(titleTime);
+      $('[rel="icon"]').attr('href', "/images/fail.ico")
+      document.title = '╭(°A°`)╮ 页面崩溃啦 ~ 快回来看看~ | 梦魇小栈！'
+      clearTimeout(titleTime)
     } else {
-      $('[rel="icon"]').attr('href', "/favicon.ico");
-      document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitile;
+      $('[rel="icon"]').attr('href', "/favicon.ico")
+      document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitile
       titleTime = setTimeout(function() {
-        document.title = OriginTitile;
-      }, 2000);
+        document.title = OriginTitile
+      }, 2000)
     }
   });
 
@@ -301,9 +301,41 @@ window.onload = function() {
     return '';
   };
 
-  $(document).on('copy', function() {
-    showMessage('你都复制了些什么呀，转载要记得加上出处哦~~', 5000);
-  });
+  $(document).on('copy', function(e) {
+    showMessage('<span style="color:red;">你都复制了些什么呀，转载要记得加上出处哦~~</span>', 5000);
+    var seletedText = window.getSelection()
+    if (seletedText.toString().length < 88) {
+      return
+    }
+    addCopyright(e)
+    e.preventDefault()
+  })
+
+  function addCopyright(e) {
+    var node = document.createElement('div')
+    node.appendChild(window.getSelection().getRangeAt(0).cloneContents())
+
+    var content = [
+      `<div>${node.innerHTML}<br />`,
+      '作者：Ihoey',
+      `链接：${location.href}`,
+      '来源：梦魇小栈',
+      '著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。',
+      '</div>'
+    ]
+
+    var html = content.join('<br />')
+    content[0] = `${window.getSelection().toString().replace('\n\n','\n')}\n`
+    delete content[content.length - 1]
+    var text = content.join('\n')
+
+    if (e.clipboardData) {
+      e.clipboardData.setData("text/html", html)
+      e.clipboardData.setData("text/plain", text)
+    } else if (window.clipboardData) {
+      return window.clipboardData.setData("text", text)
+    }
+  }
 
   function initTips() {
     $.ajax({
