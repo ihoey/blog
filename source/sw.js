@@ -2,7 +2,7 @@
  * @Author: ihoey
  * @Date: 2019-02-12 15:20:49
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-12 19:25:12
+ * @Last Modified time: 2019-02-13 12:41:21
  */
 
 var cacheName = 'bs-0-0-1'
@@ -10,13 +10,13 @@ var apiCacheName = 'api-0-1-1'
 
 var cacheFiles = [
   '/',
-  '/css/main.css',
+  '/favicon.ico',
+  '/css/main.css?',
   '/js/src/set.js',
   '/js/src/utils.js',
   '/js/src/motion.js',
   '/js/src/bootstrap.js',
   '/images/cursor.ico',
-  '/message.json',
   '/images/icons/icon_32.png',
   '/images/icons/icon_72.png',
   '/images/icons/icon_128.png',
@@ -50,21 +50,20 @@ self.addEventListener('activate', (e) => {
 })
 
 self.addEventListener('fetch', (e) => {
+  var currentUrl = e.request.url
+
+  if (new URL(currentUrl).hostname != location.hostname) {
+    return
+  }
+
   // 需要缓存的xhr请求
   var cacheRequestUrls = [
     '/message.json'
   ]
 
-  var fetchInitParam = {
-    mode: 'cors',
-    credentials: 'include'
-  }
-
-  var currentUrl = e.request.url
-  console.log('现在正在请求：' + currentUrl)
-
   // 判断当前请求是否需要缓存
-  var needCache = cacheRequestUrls.includes(currentUrl)
+
+  var needCache = cacheRequestUrls.includes(new URL(currentUrl).pathname)
 
   if (needCache) {
     // 需要缓存
@@ -81,9 +80,11 @@ self.addEventListener('fetch', (e) => {
     // 如果有cache则直接返回，否则通过fetch请求
     e.respondWith(
       caches.match(e.request).then((cache) => {
-        return cache || fetch(e.request, fetchInitParam)
+        // console.log('needCache1' + e.request);
+        return cache || fetch(e.request)
       }).catch((err) => {
         console.log(err)
+        // console.log('needCache2' + e.request);
         return fetch(e.request)
       })
     )
