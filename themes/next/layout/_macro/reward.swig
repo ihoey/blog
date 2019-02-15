@@ -2,7 +2,7 @@
   <div>{{ theme.reward.reward_comment }}</div>
   <div class="reward-content">
     	<a id="github" href="{{ theme.reward.Github }}" target="_blank" class="pos-a" title="Github"></a>
-      <a href="{{ theme.url }}" target="_blank" id="DonateText" title="ihoey.com">ihoey.com</a>
+      <a href="{{ config.url }}" target="_blank" id="DonateText" title="ihoey.com">ihoey.com</a>
       <ul id="donateBox" class="list pos-a">
         <li id="PayPal"><a href="{{ theme.reward.PayPalLink }}" target="_blank" title="PayPal">PayPal</a></li>
         <li id="QQ" data-img="{{ theme.reward.TencentQR }}" title="QQ">QQ</li>
