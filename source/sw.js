@@ -2,7 +2,7 @@
  * @Author: ihoey
  * @Date: 2019-02-12 15:20:49
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-19 18:53:02
+ * @Last Modified time: 2019-02-19 18:58:26
  */
 
 var cacheName = 'bs-0-0-2'
@@ -88,7 +88,7 @@ self.addEventListener('fetch', (e) => {
     // 不需要缓存，直接查询 cache
     // 如果有 cache 则直接返回，否则通过 fetch 请求
     e.respondWith(
-      caches.match(new URL(e.request).pathname)
+      caches.match(new URL(currentUrl).pathname)
       .then((cache) => {
         return cache || fetch(e.request)
       })
