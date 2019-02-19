@@ -158,8 +158,8 @@ navigator.serviceWorker.register('/sw.js', {
 
 #### 安装 Service Worker 服务
 
-install 事件绑定在 Service Worker 文件中，当安装成功后，install 事件就会被触发。
-一般我们会在 install 事件里面进行缓存的处理，用到之前提到的 Cahce API,它是一个 Service Worker 上的全局对象，可以缓存网络相应的资源，并根据他们的请求生成 key，这个 API 和浏览器标准的缓存工作原理相似，但是只是针对自己的 scope 域的，缓存会一直存在，知道手动清楚或者刷新。
+`install` 事件绑定在 `Service Worker` 文件中，当安装成功后，`install` 事件就会被触发。
+一般我们会在 `install` 事件里面进行缓存的处理，用到之前提到的 `Cahce API`，它是一个 `Service Worker` 上的全局对象，可以缓存网络相应的资源，并根据他们的请求生成 `key`，这个 `API` 和浏览器标准的缓存工作原理相似，但是只是针对自己的 `scope` 域的，缓存会一直存在，知道手动清楚或者刷新。
 
 ```javascript
 const cacheName = 'bs-0-0-1' // 缓存名称
