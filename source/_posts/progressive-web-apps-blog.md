@@ -268,3 +268,115 @@ self.addEventListener('fetch', e => {
 ```
 
 到这里，离线缓存动静态资源就完成了。
+
+![](https://cdn.dode.top/blog/Ihoey_2019-02-19_19-06-44.png?imageView2/0/format/webp/q/90|imageslim)
+
+## 使用 Lighthouse 测试我们的应用
+
+至此，我们完成了 `PWA` 的两大基本功能：`Web App Manifest` 和 `Service Worker` 的离线缓存。这两大功能可以很好地提升用户体验与应用性能。我们用 `Chrome` 中的 `Lighthouse` 来检测一下目前的应用：
+![](https://cdn.dode.top/blog/Ihoey_2019-02-18_19-47-05.png?imageView2/0/format/webp/q/90|imageslim)
+
+可以看到，在 `PWA` 评分上，我们的这个 `WebApp` 已经非常不错了。
+
+完整代码 -> [梦魇小栈 PWA 完整代码](https://blog.ihoey.com/sw.js)
+
+```javascript
+var cacheName = 'bs-0-0-2'
+var apiCacheName = 'api-0-0-2'
+
+var cacheFiles = [
+  '/',
+  '/favicon.ico?v=6.2.0',
+  '/css/main.css?v=6.2.0',
+  '/js/src/set.js',
+  '/js/src/utils.js',
+  '/js/src/motion.js',
+  '/js/src/bootstrap.js',
+  '/images/cursor.ico',
+  '/images/icons/icon_32.png',
+  '/images/icons/icon_72.png',
+  '/images/icons/icon_128.png',
+  '/images/icons/icon_192.png',
+  '/images/icons/icon_256.png',
+  '/images/icons/icon_512.png'
+]
+
+// 监听 install 事件，安装完成后，进行文件缓存
+self.addEventListener('install', e => {
+  console.log('sw: install')
+
+  e.waitUntil(
+    caches
+      .open(cacheName)
+      .then(cache => {
+        console.log('Opened cache')
+        return cache.addAll(cacheFiles)
+      })
+      .then(() => self.skipWaiting())
+  )
+})
+
+// 监听 activate 事件，激活后通过 cache 的 key 来判断是否更新 cache 中的静态资源
+self.addEventListener('activate', e => {
+  console.log('sw: activate')
+
+  e.waitUntil(
+    caches
+      .keys()
+      .then(keys => {
+        return Promise.all(
+          keys.map(key => {
+            if (key !== cacheName && key !== apiCacheName) {
+              return caches.delete(key)
+            }
+          })
+        )
+      })
+      // 更新客户端
+      .then(() => self.clients.claim())
+  )
+})
+
+self.addEventListener('fetch', e => {
+  var currentUrl = e.request.url
+
+  // 只处理同源
+  if (new URL(currentUrl).hostname != location.hostname) {
+    return
+  }
+
+  // 需要缓存的 xhr 请求
+  var cacheRequestUrls = ['/message.json', '/manifest.json']
+
+  // 判断当前请求是否需要缓存
+  var needCache = cacheRequestUrls.includes(new URL(currentUrl).pathname)
+
+  if (needCache) {
+    // 需要缓存
+    // 使用 fetch 请求数据，并将请求结果 clone 一份缓存到 cache
+    // 此部分缓存后在 browser 中使用全局变量 caches 获取
+    caches.open(apiCacheName).then(cache => {
+      return fetch(e.request).then(response => {
+        cache.put(e.request.url, response.clone())
+        return response
+      })
+    })
+  } else {
+    // 不需要缓存，直接查询 cache
+    // 如果有 cache 则直接返回，否则通过 fetch 请求
+    e.respondWith(
+      caches
+        .match(new URL(currentUrl).pathname)
+        .then(cache => {
+          return cache || fetch(e.request)
+        })
+        .catch(err => {
+          console.log('respondWithErr:', err)
+          return fetch(e.request)
+        })
+    )
+  }
+})
+```
+
+由于现在博客仅需 `Manifest`、`Service Worker` 后面的技术、`Push API` & `Notification API` 、`App Shell` & `App Skeleton` 等打算以后有时间在考虑场景加上~
