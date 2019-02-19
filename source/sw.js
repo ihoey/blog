@@ -2,11 +2,11 @@
  * @Author: ihoey
  * @Date: 2019-02-12 15:20:49
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-13 15:53:28
+ * @Last Modified time: 2019-02-19 18:53:02
  */
 
-var cacheName = 'bs-0-0-1'
-var apiCacheName = 'api-0-1-1'
+var cacheName = 'bs-0-0-2'
+var apiCacheName = 'api-0-0-2'
 
 var cacheFiles = [
   '/',
@@ -25,7 +25,7 @@ var cacheFiles = [
   '/images/icons/icon_512.png'
 ]
 
-// 监听install事件，安装完成后，进行文件缓存
+// 监听 install 事件，安装完成后，进行文件缓存
 self.addEventListener('install', (e) => {
   console.log('sw: install')
 
@@ -37,7 +37,7 @@ self.addEventListener('install', (e) => {
     .then(() => self.skipWaiting()))
 })
 
-// 监听activate事件，激活后通过cache的key来判断是否更新cache中的静态资源
+// 监听 activate 事件，激活后通过 cache 的 key 来判断是否更新 cache 中的静态资源
 self.addEventListener('activate', (e) => {
   console.log('sw: activate')
 
@@ -52,7 +52,7 @@ self.addEventListener('activate', (e) => {
         })
       )
     })
-    // 注意不能忽略这行代码，否则第一次加载会导致fetch事件不触发
+    // 更新客户端
     .then(() => self.clients.claim())
   )
 })
@@ -65,7 +65,7 @@ self.addEventListener('fetch', (e) => {
     return
   }
 
-  // 需要缓存的xhr请求
+  // 需要缓存的 xhr 请求
   var cacheRequestUrls = [
     '/message.json',
     '/manifest.json'
@@ -76,8 +76,8 @@ self.addEventListener('fetch', (e) => {
 
   if (needCache) {
     // 需要缓存
-    // 使用fetch请求数据，并将请求结果clone一份缓存到cache
-    // 此部分缓存后在browser中使用全局变量caches获取
+    // 使用 fetch 请求数据，并将请求结果 clone 一份缓存到 cache
+    // 此部分缓存后在 browser 中使用全局变量 caches 获取
     caches.open(apiCacheName).then((cache) => {
       return fetch(e.request).then((response) => {
         cache.put(e.request.url, response.clone())
@@ -85,10 +85,10 @@ self.addEventListener('fetch', (e) => {
       })
     })
   } else {
-    // 不需要缓存，直接查询cache
-    // 如果有cache则直接返回，否则通过fetch请求
+    // 不需要缓存，直接查询 cache
+    // 如果有 cache 则直接返回，否则通过 fetch 请求
     e.respondWith(
-      caches.match(e.request)
+      caches.match(new URL(e.request).pathname)
       .then((cache) => {
         return cache || fetch(e.request)
       })
@@ -98,21 +98,6 @@ self.addEventListener('fetch', (e) => {
       })
     )
   }
-})
-
-self.addEventListener('error', event => {
-  // 上报错误信息
-  // 常用的属性：
-  // event.message
-  // event.filename
-  // event.lineno
-  // event.colno
-  // event.error.stack
-})
-self.addEventListener('unhandledrejection', event => {
-  // 上报错误信息
-  // 常用的属性：
-  // event.reason
 })
 
 // 监听推送事件 然后显示通知
