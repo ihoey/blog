@@ -1,3 +1,7 @@
+- name: GodBMW
+  link: https://godbmw.com/
+  description: '目光露着温暖，心间藏着想念'
+  avatar: https://cn.gravatar.com/avatar/b20750c40cd911256ddbd76a7f7e724c
 - name: 杰杰无敌
   link: https://blog.liujiefront.com/links/
   description: '每天进步一点点,杰杰无敌,liujiefront,liujie,刘杰的个人blog'
@@ -14,16 +18,15 @@
 - name: 可乐没气的猫
   link: https://www.isthnew.com/links/
   description: '热爱科技，热爱生活，分享思维，吐槽不平'
-# -
-#   name: 萌小喵
-#   link: http://blog.awumiao.cn/
-#   description: "念念不忘，必有回响"
+- name: 萌小喵
+  link: http://blog.awumiao.cn/
+  description: '念念不忘，必有回响'
 - name: 火辣辣
-  link: http://huolalaweb.com/about/
+  link: http://huolalaweb.com/
   description: '个人前端博客'
-- name: jnduan's Blog
-  link: https://jnan.org/
-  description: 'How lucky you are, how hard you work.'
+# - name: jnduan's Blog
+#   link: https://jnan.org/
+#   description: 'How lucky you are, how hard you work.'
 - name: 来语直搜
   link: http://www.zhisou.cc/
   description: '来语直搜'
@@ -35,19 +38,19 @@
   link: https://oohyo.github.io/
   description: '吾念所归,无惧无退'
   avatar: https://avatars1.githubusercontent.com/u/20676204?s=460&v=4
-- name: 刘伟
-  link: https://darrenliuwei.com/
-  description: 'less is more'
+# - name: 刘伟
+#   link: https://darrenliuwei.com/
+#   description: 'less is more'
 - name: Axton Yao
   link: https://flyhigher.top/links
   description: 'Always Dream. Always Explore.'
 # - name: 钟储兵博客
 #   link: http://www.zcbboke.com/
 #   description: '钟储兵博客'
-- name: 李伟(Waylee)
-  link: https://waylee.net/
-  description: '不忘初心方得始终'
-  avatar: https://tx.diygu.com/avatar/96391810d42f9c28518866bb182f45aa-50
+# - name: 李伟(Waylee)
+#   link: https://waylee.net/
+#   description: '不忘初心方得始终'
+#   avatar: https://waylee.net/wp-content/themes/No.7_qzhai/img/default.jpg
 - name: 三秋
   link: https://sanqiu.org/
   description: '雨零耶，君将留？'
@@ -56,10 +59,10 @@
   link: https://lolili.cc/
   description: '只要你能幸福，我是谁，又有什么关系？记不记得住，又有什么关系啊！'
   avatar: https://lolili.cc/static/images/default/head.png
-- name: 同良小栈
-  link: https://togln.com/
-  description: '戏子入画，一曲天涯。'
-  avatar: https://togln.com/tx.jpg
+# - name: 同良小栈
+#   link: https://togln.com/
+#   description: '戏子入画，一曲天涯。'
+#   avatar: https://togln.com/tx.jpg
 - name: jarmin客栈
   link: https://blog.javascriper.com
   description: '前端路上的木木'
@@ -91,10 +94,10 @@
   link: https://jerryc.me/
   description: 'Never put off till tomorrow what you can do today'
   avatar: http://jerryc.me/img/avatar.png
-- name: sunq's blog
-  link: http://www.sunq.xyz
-  description: '新站初写成，但是会一直更新哒'
-  avatar: http://www.sunq.xyz/favicon.ico
+# - name: sunq's blog
+#   link: http://www.sunq.xyz
+#   description: '新站初写成，但是会一直更新哒'
+#   avatar: http://www.sunq.xyz/favicon.ico
 - name: LeoLan's Blog
   link: https://www.leolan.top
   description: '有时候正是不报期望的人做出了人们不敢期望之事！'
