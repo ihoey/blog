@@ -2,13 +2,13 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by: ihoey
- * @Last Modified time: 2018-07-30 22:41:10
+ * @Last Modified time: 2019-02-13 17:49:20
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
 
 // 点击爱心
-! function (e, t) {
+! function(e, t) {
   function n() {
     c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), o(), r()
   }
@@ -20,7 +20,7 @@ console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c
 
   function o() {
     var t = "function" == typeof e.onclick && e.onclick;
-    e.onclick = function (e) {
+    e.onclick = function(e) {
       t && t(), i(e)
     }
   }
@@ -53,13 +53,20 @@ console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c
   }
 
   var d = [];
-  e.requestAnimationFrame = function () {
-    return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {
+  e.requestAnimationFrame = function() {
+    return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function(e) {
       setTimeout(e, 1e3 / 60)
     }
   }(), n()
 }(window, document);
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function() {
+      console.log('sw: success!')
+    })
+  })
+}
 
 console.log("\n %c 梦魇|专注于分享 QQ:1058221214 %c https://blog.ihoey.com/ \n\n", "color: #FF0000; background: #4bffba; padding:5px 0; border-radius: 5px 5px 5px 5px;", "background: #fadfa3; padding:5px 0; border-radius: 5px 5px 5px 5px;");
 console.log('%c一颗红心向太阳,吼吼~', 'text-shadow: 3px 1px 1px grey');
@@ -84,7 +91,7 @@ console.log('程序员A：哎 太累了日子没法过了 怎么才能换行啊'
 console.log('程序员B：打回车呀！');
 
 // 控制台图案
-(function (global) {
+(function(global) {
   var character_planar = {
     H: [
       '|ˉ|ˉ|    |ˉ|ˉ|',
@@ -186,8 +193,6 @@ console.log('程序员B：打回车呀！');
     ],
   }
 
-  console.error('这个错误是特意为了吸引你来看console的！')
-
   function Alphabet(str) {
     var result = '\n';
     var strArr = str.split('\n');
@@ -205,37 +210,37 @@ console.log('程序员B：打回车呀！');
   global.Alphabet = Alphabet;
 })(window)
 
-console.log(Alphabet('HY1121'));
+console.log(Alphabet('HY1121'))
 
 // 标题变化
-window.onload = function () {
-  var OriginTitile = document.title;
-  var titleTime;
-  document.addEventListener('visibilitychange', function () {
+window.onload = function() {
+  var OriginTitile = document.title
+  var titleTime
+  document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-      $('[rel="icon"]').attr('href', "/images/fail.ico");
-      document.title = '╭(°A°`)╮ 页面崩溃啦 ~ 快回来看看~ | 梦魇小栈！';
-      clearTimeout(titleTime);
+      $('[rel="icon"]').attr('href', "/images/fail.ico")
+      document.title = '╭(°A°`)╮ 页面崩溃啦 ~ 快回来看看~ | 梦魇小栈！'
+      clearTimeout(titleTime)
     } else {
-      $('[rel="icon"]').attr('href', "/favicon.ico");
-      document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitile;
-      titleTime = setTimeout(function () {
-        document.title = OriginTitile;
-      }, 2000);
+      $('[rel="icon"]').attr('href', "/favicon.ico")
+      document.title = '(ฅ>ω<*ฅ) 噫又好了~' + OriginTitile
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile
+      }, 2000)
     }
   });
 
-  $('.post-title .post-title-link,.post-button .btn').hover(function () {
+  $('.post-title .post-title-link,.post-button .btn').hover(function() {
     $(this).stop().animate({
       'marginLeft': '10px'
     }, 200);
-  }, function () {
+  }, function() {
     $(this).stop().animate({
       'marginLeft': '0px'
     }, 400);
   });
 
-  $.getJSON('https://v1.hitokoto.cn/', function (s) {
+  $.getJSON('https://v1.hitokoto.cn/', function(s) {
     $('#hitokoto').text('' + s.hitokoto + '  来自于 ' + s.from)
   });
 
@@ -246,19 +251,19 @@ window.onload = function () {
   function showQR(QR) {
     if (QR) MainBox.css('background-image', 'url(' + QR + ')');
     $('#DonateText,#donateBox,#github').addClass('blur');
-    QRBox.fadeIn(300, function () {
+    QRBox.fadeIn(300, function() {
       MainBox.addClass('showQR');
     });
   }
 
-  $('#donateBox>li').click(function () {
+  $('#donateBox>li').click(function() {
     if ($(this).attr('data-img')) showQR($(this).attr('data-img'));
   });
 
-  MainBox.click(function () {
+  MainBox.click(function() {
     MainBox.removeClass('showQR').addClass('hideQR');
-    setTimeout(function () {
-      QRBox.fadeOut(300, function () {
+    setTimeout(function() {
+      QRBox.fadeOut(300, function() {
         MainBox.removeClass('hideQR');
       });
       $('#DonateText,#donateBox,#github').removeClass('blur');
@@ -269,7 +274,7 @@ window.onload = function () {
 
   function renderTip(template, context) {
     var tokenReg = /(\\)?\{([^\{\}\\]+)(\\)?\}/g;
-    return template.replace(tokenReg, function (word, slash1, token, slash2) {
+    return template.replace(tokenReg, function(word, slash1, token, slash2) {
       if (slash1 || slash2) {
         return word.replace('\\', '');
       }
@@ -285,29 +290,61 @@ window.onload = function () {
     });
   }
 
-  String.prototype.renderTip = function (context) {
+  String.prototype.renderTip = function(context) {
     return renderTip(this, context);
   };
 
   var re = /x/;
   console.log(re);
-  re.toString = function () {
+  re.toString = function() {
     showMessage('哈哈，你打开了控制台，是想要看看我的秘密吗？', 5000);
     return '';
   };
 
-  $(document).on('copy', function () {
-    showMessage('你都复制了些什么呀，转载要记得加上出处哦~~', 5000);
-  });
+  document.addEventListener('copy', function(e) {
+    showMessage('<span style="color:red;">你都复制了些什么呀，转载要记得加上出处哦~~</span>', 5000);
+    var seletedText = window.getSelection()
+    if (seletedText.toString().length < 88) {
+      return
+    }
+    addCopyright(e)
+    e.preventDefault()
+  })
+
+  function addCopyright(e) {
+    var node = document.createElement('div')
+    node.appendChild(window.getSelection().getRangeAt(0).cloneContents())
+
+    var content = [
+      `<div>${node.innerHTML}<br />`,
+      '作者：Ihoey',
+      `链接：${location.href}`,
+      '来源：梦魇小栈',
+      '著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。',
+      '</div>'
+    ]
+
+    var html = content.join('<br />')
+    content[0] = `${window.getSelection().toString().replace('\n\n','\n')}\n`
+    delete content[content.length - 1]
+    var text = content.join('\n')
+
+    if (e.clipboardData) {
+      e.clipboardData.setData("text/html", html)
+      e.clipboardData.setData("text/plain", text)
+    } else if (window.clipboardData) {
+      return window.clipboardData.setData("text", text)
+    }
+  }
 
   function initTips() {
     $.ajax({
       cache: true,
       url: `${location.origin}/message.json`,
       dataType: "json",
-      success: function (result) {
-        $.each(result.mouseover, function (index, tips) {
-          $(tips.selector).mouseover(function () {
+      success: function(result) {
+        $.each(result.mouseover, function(index, tips) {
+          $(tips.selector).mouseover(function() {
             var text = tips.text;
             if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
             text = text.renderTip({
@@ -316,8 +353,8 @@ window.onload = function () {
             showMessage(text, 3000);
           });
         });
-        $.each(result.click, function (index, tips) {
-          $(tips.selector).click(function () {
+        $.each(result.click, function(index, tips) {
+          $(tips.selector).click(function() {
             var text = tips.text;
             if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
             text = text.renderTip({
@@ -331,7 +368,7 @@ window.onload = function () {
   }
   initTips();
 
-  (function () {
+  (function() {
     var text;
     if (document.referrer !== '') {
       var referrer = document.createElement('a');
@@ -377,7 +414,7 @@ window.onload = function () {
   window.setInterval(showHitokoto, 30000);
 
   function showHitokoto() {
-    $.getJSON('https://v1.hitokoto.cn/', function (result) {
+    $.getJSON('https://v1.hitokoto.cn/', function(result) {
       showMessage(result.hitokoto, 5000);
     });
   }
