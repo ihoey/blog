@@ -2,14 +2,14 @@ var _exec = require('child_process').exec;
 require('shelljs/global');
 
 // new 后自动打开编辑器
-hexo.on('new', function (data) {
+hexo.on('new', function(data) {
   console.log('code ' + data.path);
   _exec('code ' + data.path);
 });
 
 //监听 当 deploy 完成后执行备份
 try {
-  hexo.on('deployAfter', function () { //当deploy完成后执行备份
+  hexo.on('deployAfter', function() { //当deploy完成后执行备份
     run();
   });
 } catch (e) {
@@ -22,7 +22,6 @@ function run() {
     exit(1);
   } else {
     echo("======================自动备份开始===========================");
-    // cd('F:\blog');    //此处修改为Hexo根目录路径
     console.log(__filename);
     if (exec('git add .').code !== 0) {
       echo('Error: Git add failed');
@@ -32,7 +31,11 @@ function run() {
       echo('Error: Git commit failed');
       exit(1);
     }
-    if (exec('git push origin hexo --force').code !== 0) {
+    if (exec('git pull origin hexo').code !== 0) {
+      echo('Error: Git pull failed');
+      exit(1);
+    }
+    if (exec('git push origin hexo').code !== 0) {
       echo('Error: Git push failed');
       exit(1);
     }
