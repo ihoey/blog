@@ -6,7 +6,7 @@ tags:
 categories: Linux
 ---
 
-![comment_ihoey](https://cdn.dode.top/comment_ihoey.png?imageView2/0/format/webp/q/75|imageslim)
+![comment_ihoey](https://cdn.dode.top/comment_ihoey.png?imageView2/0/format/png/q/75|imageslim)
 多说官方宣布 17 年 6 月 1 号停止维护，一个优秀的评论系统从此倒下了，令人唏嘘不已，还是要感谢多说团队多年的付出。眼下留给博主们的选择也就畅言和网易云跟帖了。经过综合考虑选择了网易跟帖，由于网易云跟帖没有提醒功能，所以今天就做了一个邮件提醒的功能。
 
 <!-- more -->

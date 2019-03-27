@@ -533,7 +533,7 @@ three
 
 是不是有点没看懂，我作个图你就看懂了。
 
-![](https://cdn.dode.top/blog/sed_demo_00.jpg?imageView2/0/format/webp/q/75|imageslim)
+![](https://cdn.dode.top/blog/sed_demo_00.jpg?imageView2/0/format/jpg/q/75|imageslim)
 
 第二个示例，反序了一个文件的行：
 
@@ -552,6 +552,6 @@ one
 
 这个执行序列很难理解，做个图如下大家就明白了：
 
-![](https://cdn.dode.top/blog/sed_demo.jpg?imageView2/0/format/webp/q/75|imageslim)
+![](https://cdn.dode.top/blog/sed_demo.jpg?imageView2/0/format/jpg/q/75|imageslim)
 
 就先说这么多吧，希望对大家有用。

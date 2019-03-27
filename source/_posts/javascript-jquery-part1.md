@@ -10,7 +10,7 @@ categories: javascript
 
 JQuery 模块分析及其实现第一部分!
 
-<img src="https://cdn.dode.top/20161119.png?imageView2/0/format/webp/q/75|imageslim" width="100%">
+<img src="https://cdn.dode.top/20161119.png?imageView2/0/format/png/q/75|imageslim" width="100%">
 
 <!-- more -->
 
@@ -274,12 +274,7 @@ itcast.fn.append = function(className) {}
       return !!obj && typeof obj === 'string'
     },
     isHTML: function(obj) {
-      return (
-        !!obj &&
-        obj.charAt(0) === '<' &&
-        obj.charAt(obj.length - 1) === '>' &&
-        obj.length >= 3
-      )
+      return !!obj && obj.charAt(0) === '<' && obj.charAt(obj.length - 1) === '>' && obj.length >= 3
     },
     isDOM: function(obj) {
       return !!obj && !!obj.nodeType
@@ -298,11 +293,7 @@ itcast.fn.append = function(className) {}
         length = !!obj && 'length' in obj && obj.length
       // 过滤 window对象和函数对象
       if (itcast.isFunction(obj) || itcast.isGlobal(obj)) return false
-      return (
-        _type === 'array' ||
-        length === 0 ||
-        (typeof length === 'number' && length > 0 && length - 1 in obj)
-      )
+      return _type === 'array' || length === 0 || (typeof length === 'number' && length > 0 && length - 1 in obj)
     }
   })
 

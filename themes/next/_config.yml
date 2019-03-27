@@ -193,7 +193,7 @@ links:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-avatar: https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/webp/blur/1x0/quality/75|imageslim
+avatar: https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim
 
 # Table Of Contents in the Sidebar
 toc:

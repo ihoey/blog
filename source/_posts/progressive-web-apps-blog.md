@@ -30,7 +30,7 @@ categories:
 
 `manifest` 是支持站点在主屏上创建图标的技术方案，并且定制 PWA 的启动画面的图标和颜色等，如下图：
 
-> ![](https://cdn.dode.top/blog/PWA.png?imageView2/0/format/webp/q/32|imageslim)
+> ![](https://cdn.dode.top/blog/PWA.png?imageView2/0/format/png/q/32|imageslim)
 > chrome > 桌面图标 > 启动样式 > 打开效果
 
 #### `manifest` 内容
@@ -124,7 +124,7 @@ categories:
 
 > 在开发者工具中的 Application Tab 左边有 Manifest 选项，你可以验证你的 manifest JSON 文件，并提供了 "Add to homescreen" .
 
-![](https://cdn.dode.top/blog/Ihoey_2019-02-19_14-39-39.png?imageView2/0/format/webp/q/75|imageslim)
+![](https://cdn.dode.top/blog/Ihoey_2019-02-19_14-39-39.png?imageView2/0/format/png/q/75|imageslim)
 
 ### Service Worker
 
@@ -154,7 +154,7 @@ navigator.serviceWorker.register('/sw.js', {
 
 注册成功后，您可以通过转至 `chrome://inspect/#service-workers` 并寻找您的网站来检查 `Service Worker` 是否已启用。
 
-![](https://cdn.dode.top/blog/Ihoey_2019-02-19_15-28-33.png?imageView2/0/format/webp/q/90|imageslim)
+![](https://cdn.dode.top/blog/Ihoey_2019-02-19_15-28-33.png?imageView2/0/format/png/q/90|imageslim)
 
 #### 安装 Service Worker 服务
 
@@ -269,12 +269,12 @@ self.addEventListener('fetch', e => {
 
 到这里，离线缓存动静态资源就完成了。
 
-![](https://cdn.dode.top/blog/Ihoey_2019-02-19_19-06-44.png?imageView2/0/format/webp/q/90|imageslim)
+![](https://cdn.dode.top/blog/Ihoey_2019-02-19_19-06-44.png?imageView2/0/format/png/q/90|imageslim)
 
 ## 使用 Lighthouse 测试我们的应用
 
 至此，我们完成了 `PWA` 的两大基本功能：`Web App Manifest` 和 `Service Worker` 的离线缓存。这两大功能可以很好地提升用户体验与应用性能。我们用 `Chrome` 中的 `Lighthouse` 来检测一下目前的应用：
-![](https://cdn.dode.top/blog/Ihoey_2019-02-18_19-47-05.png?imageView2/0/format/webp/q/90|imageslim)
+![](https://cdn.dode.top/blog/Ihoey_2019-02-18_19-47-05.png?imageView2/0/format/png/q/90|imageslim)
 
 可以看到，在 `PWA` 评分上，我们的这个 `WebApp` 已经非常不错了。
 
