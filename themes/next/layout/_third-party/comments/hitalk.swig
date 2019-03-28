@@ -14,14 +14,12 @@
     });
     new Hitalk({
         el: '#comments' ,
-        verify: {{ theme.hitalk.verify }},
-        notify: {{ theme.hitalk.notify }},
         appId: '{{ theme.hitalk.appid }}',
         appKey: '{{ theme.hitalk.appkey }}',
         placeholder: '{{ theme.hitalk.placeholder }}',
-        avatar:'{{ theme.hitalk.avatar }}',
-        guest_info:guest,
-        pageSize:'{{ theme.hitalk.pageSize }}' || 10,
+        avatar: '{{ theme.hitalk.avatar }}',
+        guest_info: guest,
+        pageSize: {{ theme.hitalk.pageSize }} || 10,
     });
   </script>
 {% endif %}
