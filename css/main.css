@@ -1813,7 +1813,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7f22ff;
+  background: #690a5c;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2680,6 +2680,23 @@ body {
 }
 .post:last-child .post-eof {
   display: none;
+}
+.Hitalk .vlist .vcard .vhead .vsys {
+  border-radius: 0.2rem;
+  margin-right: 0.3rem;
+  color: #808080;
+  padding: 1px 5px;
+  font-size: 12px;
+  line-height: 1.4;
+  border: none;
+}
+.Hitalk .vlist .vcard .vhead .vsys img {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  display: inline;
+  margin-top: -2px;
+  margin-right: 5px;
 }
 .message {
   width: 200px;
