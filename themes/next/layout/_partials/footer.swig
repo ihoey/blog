@@ -5,7 +5,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-{{ theme.footer.icon.name }}"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
+  <span class="author" itemprop="copyrightHolder">梦魇小栈</span>
 
   {% if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>
@@ -38,22 +38,17 @@
   {% set nofollow = ' rel="external nofollow noopener noreferrer"' %}
 {% endif %}
 
-{% if theme.footer.powered.enable %}
-  <div class="powered-by">{#
-  #}{{ __('footer.powered', '<a class="theme-link" target="_blank"' + nofollow + ' href="https://hexo.io">Hexo</a>') }}{% if theme.footer.powered.version %} v{{ hexo_env('version') }}{% endif %}{#
-#}</div>
+{% if theme.footer.theme %}
+  <div class="theme-info">京ICP备15058055号-1</div>
 {% endif %}
 
-{% if theme.footer.powered.enable and theme.footer.theme.enable %}
+{% if theme.footer.powered and theme.footer.theme %}
   <span class="post-meta-divider">|</span>
 {% endif %}
 
-{% if theme.footer.theme.enable %}
-  <div class="theme-info">{#
-  #}{{ __('footer.theme') }} &mdash; {#
-  #}<a class="theme-link" target="_blank"{{ nofollow }} href="https://github.com/theme-next/hexo-theme-next">{#
-    #}NexT.{{ theme.scheme }}{#
-  #}</a>{% if theme.footer.theme.version %} v{{ version }}{% endif %}{#
+{% if theme.footer.powered %}
+  <div class="powered-by">{#
+  #}{{ __('footer.powered', '<a class="theme-link" target="_blank"' + nofollow + ' href="https://github.com/ihoey">Ihoey</a>') }}{#
 #}</div>
 {% endif %}
 

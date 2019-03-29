@@ -65,25 +65,22 @@ footer:
   icon:
     # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons
     # `heart` is recommended with animation in red (#ff0000).
-    name: user
+    name: heart
     # If you want to animate the icon, set it to true.
     animated: false
     # Change the color of icon, using Hex Code.
-    color: '#808080'
+    color: '#FF4500'
 
   # If not defined, will be used `author` from Hexo main config.
   copyright: false
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
-  powered: false
-  theme:
-    # Theme & scheme info link (Theme - NexT.scheme).
-    enable: false
-    # Version info of NexT after scheme info (vX.X.X).
-    version: false
+  powered: true
+  theme: true
+
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  #custom_text: Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+  custom_text: <span>博客已萌萌哒运行<span id="time-to-now"></span> ●'◡'●)ﾉ♥</span>
 
 # ---------------------------------------------------------------
 # SEO Settings
