@@ -2,7 +2,7 @@
  * @Author: henry
  * @Date:   2016-11-10 22:42:07
  * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-13 17:49:20
+ * @Last Modified time: 2019-03-29 14:30:37
  */
 
 console.log("%c梦魇小栈，欢迎您", " text-shadow: 0 0 5px #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2),0 20px 20px rgba(0,0,0,.15);font-size:5em");
@@ -433,4 +433,72 @@ window.onload = function() {
     $('.message').delay(timeout).fadeTo(200, 0);
   }
 
+  function UA(_this) {
+    function _indexOf(name) {
+      return $(_this).text().indexOf(name) == 0
+    }
+
+    function _prepend(name) {
+      $(_this).prepend('<img class="' + name + '" src="https://cdn.dode.top/ua_icon/' + name + '.svg">')
+    }
+
+    if (_indexOf('Safari')) {
+      _prepend("Safari")
+    } else if (_indexOf('Mac') || _indexOf('iOS')) {
+      _prepend("Apple")
+    } else if (_indexOf('Chrome')) {
+      _prepend("Chrome")
+    } else if (_indexOf('Firefox')) {
+      _prepend("Firefox")
+    } else if (_indexOf('Windows 10')) {
+      _prepend("Windows10")
+    } else if (_indexOf('Windows') || _indexOf('Windows 7') || _indexOf('Windows 8') || _indexOf('Windows 9')) {
+      _prepend("Windows7")
+    } else if (_indexOf('Android')) {
+      _prepend("Android")
+    } else if (_indexOf('Ubuntu')) {
+      _prepend("Ubuntu")
+    } else if (_indexOf('Linux')) {
+      _prepend("Linux")
+    } else if (_indexOf('Microsoft Edge') || _indexOf('MSIE')) {
+      _prepend("IE")
+    } else if (_indexOf('Sogou')) {
+      _prepend("Sogou")
+    } else if (_indexOf('XiaoMi')) {
+      _prepend("Xiaomi")
+    }
+    addUBZime_g()
+  }
+
+  function isUA(_this) {
+    if ($(window).width() <= 520) {
+      $(_this).text($(_this).text().split(' ').shift())
+    }
+    UA(_this)
+  }
+  var addUVTime_g = setInterval(function() {
+    if ($('.vhead:first .vsys>img').length == 0) {
+      $('.vhead .vsys').each(function() { isUA(this) })
+    } else {
+      clearInterval(addUVTime_g)
+    }
+  }, 100)
+
+  function addUBZime_g() {
+    $('.vhead a[href*="ihoey.com"]:not(.bozhu)').addClass('bozhu').after('<span class = "bozhu vsys">博主</span>')
+  }
+
+  // 点击提交
+  $('.vsubmit.vbtn').on('click', function() {
+    var addUVTime = setInterval(function() {
+      if ($('.vhead:first .vsys>img').length == 0) { $('.vhead:first .vsys').each(function() { isUA(this) }) } else { clearInterval(addUVTime) }
+    }, 1000)
+  })
+
+  // 点击翻页
+  $(document).on('click', '.vpage .page-numbers', function() {
+    var addUVTime = setInterval(function() {
+      if ($('.vhead:last .vsys>img').length == 0) { $('.vhead .vsys').each(function() { if ($(this).html().indexOf('img') == -1) { isUA(this) } }) } else { clearInterval(addUVTime) }
+    }, 1000)
+  })
 }
