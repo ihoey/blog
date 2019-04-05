@@ -52,7 +52,7 @@
 #   description: '不忘初心方得始终'
 #   avatar: https://waylee.net/wp-content/themes/No.7_qzhai/img/default.jpg
 - name: 三秋
-  link: https://sanqiu.org/
+  link: http://sanqiu.org/
   description: '雨零耶，君将留？'
   avatar: https://sanqiu.org/s/tupian/sanqiu.gif
 - name: 洛哩哩~
@@ -91,7 +91,7 @@
   description: '有点小技，有点经验，有点幽默，有点情感，欢迎光临WQian五千。'
   avatar: https://wqian.net/images/avatar0.png
 - name: JerryC
-  link: https://jerryc.me/
+  link: http://jerryc.me/
   description: 'Never put off till tomorrow what you can do today'
   avatar: http://jerryc.me/img/avatar.png
 # - name: sunq's blog
@@ -106,15 +106,15 @@
   link: http://www.nicksonlvqq.cn
   description: 前端爱好者
   avatar: http://www.nicksonlvqq.cn/blog/images/head.png
-- name: 时间里的博客
-  link: https://guanchao.site
-  description: 时间里的个人博客
-  avatar: https://guanchao.site/uploads/website/5c093bf268185.png
+# - name: 时间里的博客
+#   link: https://guanchao.site
+#   description: 时间里的个人博客
+#   avatar: https://guanchao.site/uploads/website/5c093bf268185.png
 - name: 萧爽楼
   link: https://blog.ddlee.cn
   description: 计算机视觉/个人管理
   avatar: https://static.ddlee.cn/static/img/material-theme-img/avatar.png
-- name: lcddjm
-  link: https://www.lcddjm.com
-  description: 星空不问赶路人，时光不负有心人
-  avatar: https://image.lcddjm.com/avatar/b34681a0-4be0-11e8-94a9-75503d77c645.png
+# - name: lcddjm
+#   link: https://www.lcddjm.com
+#   description: 星空不问赶路人，时光不负有心人
+#   avatar: https://image.lcddjm.com/avatar/b34681a0-4be0-11e8-94a9-75503d77c645.png
