@@ -1,5 +1,5 @@
 {% if theme.hitalk.enable and theme.hitalk.appid and theme.hitalk.appkey %}
-  <script src="//avoscloud.com/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
   {% set hitalk_uri = '//unpkg.com/hitalk/dist/Hitalk.min.js' %}
   {% if theme.vendors.hitalk %}
     {% set hitalk_uri = theme.vendors.hitalk %}
