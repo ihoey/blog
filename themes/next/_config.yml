@@ -69,7 +69,7 @@ footer:
     # If you want to animate the icon, set it to true.
     animated: false
     # Change the color of icon, using Hex Code.
-    color: '#FF4500'
+    color: "#FF4500"
 
   # If not defined, will be used `author` from Hexo main config.
   copyright: false
@@ -341,7 +341,7 @@ post_edit:
 mobile_layout_economy: false
 
 # Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
-android_chrome_color: '#8a00f9'
+android_chrome_color: "#8a00f9"
 
 # Custom Logo.
 # !!Only available for Default Scheme currently.
@@ -493,7 +493,7 @@ hitalk:
   notify: false
   verify: false # Verification code
   placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
-  avatar: wavatar # gravatar style
+  avatar: monsterid # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
 
@@ -709,7 +709,7 @@ algolia_search:
   labels:
     input_placeholder: Search for Posts
     hits_empty: "We didn't find any results for the search: ${query}"
-    hits_stats: '${hits} results found in ${time} ms'
+    hits_stats: "${hits} results found in ${time} ms"
 
 # Local search
 # Dependencies: https://github.com/theme-next/hexo-generator-searchdb
@@ -771,7 +771,7 @@ tabs:
 # Dependencies: https://github.com/theme-next/theme-next-reading-progress
 reading_progress:
   enable: false
-  color: '#37c6c0'
+  color: "#37c6c0"
   height: 2px
 
 #! ---------------------------------------------------------------
