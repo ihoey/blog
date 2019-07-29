@@ -386,7 +386,7 @@ font:
   # Global font settings used for all elements in <body>.
   global:
     external: true
-    family: Hannotate SC,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,微软雅黑,STXihei,华文细黑,WenQuanYi Micro Hei,sans-serif
+    family: Hannotate SC
     size:
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
@@ -412,7 +412,7 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: Source Code Pro,Consolas,Menlo,Monaco,Courier New,monospace
+    family: Source Code Pro
     size:
 
 # ---------------------------------------------------------------
