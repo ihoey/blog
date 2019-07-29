@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+<!--
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG  By:- ihoey.com
+-->
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#8a00f9">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.dode.top/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Hannotate SC,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,微软雅黑,STXihei,华文细黑,WenQuanYi Micro Hei,sans-serif:300,300italic,400,400italic,700,700italic|Source Code Pro,Consolas,Menlo,Monaco,Courier New,monospace:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon_192.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon_32.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/icons/icon_512.png?v=6.2.0" color="#8a00f9">
+
+
+  <link rel="manifest" href="/manifest.json">
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+  <meta name="keywords" content="梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布" />
+
+
+<link rel="dns-prefetch" href="https://app-router.leancloud.cn/">
+
+<script defer async src="/js/src/set.js"></script>
+
+
+  <meta name="description" content="什么是 PWAPWA 全称 Progressive Web Apps(渐进式 Web 应用程序)，旨在使用现有的 Web 技术提供用户更优的使用体验。基本要求  可靠（Reliable） 一方面是指 PWA 的安全性，PWA 只能运行在 HTTPS 上；另一方面是指在网络不稳定或者没网情况下，PWA 依然可以访问。 快速响应（Fast） 快速响应用户的交互行为，并且具有平滑流畅的动画、加载速度、渲">
+<meta name="keywords" content="javascript,PWA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="将你的博客升级为 PWA 渐进式Web离线应用">
+<meta property="og:url" content="https://blog.ihoey.com/posts/javascript/PWA/2019-02-18-progressive-web-apps-blog.html">
+<meta property="og:site_name" content="梦魇小栈">
+<meta property="og:description" content="什么是 PWAPWA 全称 Progressive Web Apps(渐进式 Web 应用程序)，旨在使用现有的 Web 技术提供用户更优的使用体验。基本要求  可靠（Reliable） 一方面是指 PWA 的安全性，PWA 只能运行在 HTTPS 上；另一方面是指在网络不稳定或者没网情况下，PWA 依然可以访问。 快速响应（Fast） 快速响应用户的交互行为，并且具有平滑流畅的动画、加载速度、渲">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cdn.dode.top/blog/PWA.png?imageView2/0/format/png/q/32|imageslim">
+<meta property="og:image" content="https://cdn.dode.top/blog/Ihoey_2019-02-19_14-39-39.png?imageView2/0/format/png/q/75|imageslim">
+<meta property="og:image" content="https://cdn.dode.top/blog/Ihoey_2019-02-19_15-28-33.png?imageView2/0/format/png/q/90|imageslim">
+<meta property="og:image" content="https://cdn.dode.top/blog/Ihoey_2019-02-19_19-06-44.png?imageView2/0/format/png/q/90|imageslim">
+<meta property="og:image" content="https://cdn.dode.top/blog/Ihoey_2019-02-18_19-47-05.png?imageView2/0/format/png/q/90|imageslim">
+<meta property="og:updated_time" content="2019-03-27T02:54:40.267Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="将你的博客升级为 PWA 渐进式Web离线应用">
+<meta name="twitter:description" content="什么是 PWAPWA 全称 Progressive Web Apps(渐进式 Web 应用程序)，旨在使用现有的 Web 技术提供用户更优的使用体验。基本要求  可靠（Reliable） 一方面是指 PWA 的安全性，PWA 只能运行在 HTTPS 上；另一方面是指在网络不稳定或者没网情况下，PWA 依然可以访问。 快速响应（Fast） 快速响应用户的交互行为，并且具有平滑流畅的动画、加载速度、渲">
+<meta name="twitter:image" content="https://cdn.dode.top/blog/PWA.png?imageView2/0/format/png/q/32|imageslim">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦魇小栈" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://blog.ihoey.com/posts/javascript/PWA/2019-02-18-progressive-web-apps-blog.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>将你的博客升级为 PWA 渐进式Web离线应用 | 梦魇小栈</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87991666-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-87991666-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199400a900d7a62bfff2335224e096d8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">梦魇小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">专注于分享</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+    <a href="/links/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-link"></i> <br />友情链接</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-guestbook">
+    <a href="/guestbook/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />留言</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />我是谁˚∆˚</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">55</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">47</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+    <a href="/sitemap.xml" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+<div id="hitokoto" style="
+    text-align: center;
+    padding-top: 25px;
+"></div>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/javascript/PWA/2019-02-18-progressive-web-apps-blog.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ihoey">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦魇小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">将你的博客升级为 PWA 渐进式Web离线应用
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-18 19:30:21" itemprop="dateCreated datePublished" datetime="2019-02-18T19:30:21+08:00">2019-02-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-27 10:54:40" itemprop="dateModified" datetime="2019-03-27T10:54:40+08:00">2019-03-27</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/PWA/" itemprop="url" rel="index"><span itemprop="name">PWA</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/javascript/PWA/2019-02-18-progressive-web-apps-blog.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/javascript/PWA/2019-02-18-progressive-web-apps-blog.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是-PWA"><a href="#什么是-PWA" class="headerlink" title="什么是 PWA"></a>什么是 PWA</h2><p><code>PWA</code> 全称 <code>Progressive Web Apps</code>(渐进式 <code>Web</code> 应用程序)，旨在使用现有的 <code>Web</code> 技术提供用户更优的使用体验。<br>基本要求</p>
+<ul>
+<li><code>可靠（Reliable）</code> 一方面是指 <code>PWA</code> 的安全性，<code>PWA</code> 只能运行在 <code>HTTPS</code> 上；另一方面是指在网络不稳定或者没网情况下，<code>PWA</code> 依然可以访问。</li>
+<li><code>快速响应（Fast）</code> 快速响应用户的交互行为，并且具有平滑流畅的动画、加载速度、渲染速度和渲染性能等。</li>
+<li><code>粘性(Engaging)</code> 通过添加到桌面以及离线消息推送，能带来用户的第二次访问，并且依靠良好的用户体验吸引用户再次访问。</li>
+</ul>
+<p>官网链接：<a href="https://developers.google.com/web/progressive-web-apps/" target="_blank" rel="noopener">Progressive Web Apps</a></p>
+<a id="more"></a>
+<h2 id="PWA-的核心技术"><a href="#PWA-的核心技术" class="headerlink" title="PWA 的核心技术"></a>PWA 的核心技术</h2><p><code>PWA</code> 不是一项单独的技术，技术包括 <code>Manifest</code>、<code>Service Worker</code>、<code>Push API</code> &amp; <code>Notification API</code> 、<code>App Shell</code> &amp; <code>App Skeleton</code> 等等技术，接下来我们重点介绍几项技术以及相关问题的解决方法。</p>
+<h3 id="manifest"><a href="#manifest" class="headerlink" title="manifest"></a>manifest</h3><p><code>manifest</code> 是支持站点在主屏上创建图标的技术方案，并且定制 PWA 的启动画面的图标和颜色等，如下图：</p>
+<blockquote>
+<p><img src="https://cdn.dode.top/blog/PWA.png?imageView2/0/format/png/q/32|imageslim" alt=""><br>chrome &gt; 桌面图标 &gt; 启动样式 &gt; 打开效果</p>
+</blockquote>
+<h4 id="manifest-内容"><a href="#manifest-内容" class="headerlink" title="manifest 内容"></a><code>manifest</code> 内容</h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JSON"><figure class="iseeu highlight /json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"梦魇小栈-专注于分享"</span>,</span><br><span class="line">  <span class="attr">"short_name"</span>: <span class="string">"梦魇小栈"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"心，若没有栖息的地方，到哪里都是流浪......"</span>,</span><br><span class="line">  <span class="attr">"start_url"</span>: <span class="string">"/"</span>,</span><br><span class="line">  <span class="attr">"display"</span>: <span class="string">"standalone"</span>,</span><br><span class="line">  <span class="attr">"orientation"</span>: <span class="string">"any"</span>,</span><br><span class="line">  <span class="attr">"background_color"</span>: <span class="string">"#ffffff"</span>,</span><br><span class="line">  <span class="attr">"theme_color"</span>: <span class="string">"#8a00f9"</span>,</span><br><span class="line">  <span class="attr">"icons"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"src"</span>: <span class="string">"images/icons/icon_32.png"</span>,</span><br><span class="line">      <span class="attr">"sizes"</span>: <span class="string">"32x32"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"image/png"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"src"</span>: <span class="string">"images/icons/icon_72.png"</span>,</span><br><span class="line">      <span class="attr">"sizes"</span>: <span class="string">"72x72"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"image/png"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"src"</span>: <span class="string">"images/icons/icon_128.png"</span>,</span><br><span class="line">      <span class="attr">"sizes"</span>: <span class="string">"128x128"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"image/png"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"src"</span>: <span class="string">"images/icons/icon_144.png"</span>,</span><br><span class="line">      <span class="attr">"sizes"</span>: <span class="string">"144x144"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"image/png"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"src"</span>: <span class="string">"images/icons/icon_192.png"</span>,</span><br><span class="line">      <span class="attr">"sizes"</span>: <span class="string">"192x192"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"image/png"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"src"</span>: <span class="string">"images/icons/icon_256.png"</span>,</span><br><span class="line">      <span class="attr">"sizes"</span>: <span class="string">"256x256"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"image/png"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"src"</span>: <span class="string">"images/icons/icon_512.png"</span>,</span><br><span class="line">      <span class="attr">"sizes"</span>: <span class="string">"512x512"</span>,</span><br><span class="line">      <span class="attr">"type"</span>: <span class="string">"image/png"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h4 id="manifest-属性"><a href="#manifest-属性" class="headerlink" title="manifest 属性"></a><code>manifest</code> 属性</h4><ul>
+<li><code>name</code> — 网页显示给用户的完整名称;</li>
+<li><code>short_name</code> — 这是为了在没有足够空间显示 <code>Web</code> 应用程序的全名时使用;</li>
+<li><code>description</code> — 关于网站的详细描述;</li>
+<li><code>start_url</code> — 网页的初始相对 <code>URL</code> 比如 <code>/</code>）</li>
+<li><code>display</code> — 应用程序的首选显示模式;<ul>
+<li><code>fullscreen</code> - 全屏显示;</li>
+<li><code>standalone</code> - 应用程序将看起来像一个独立的应用程序;</li>
+<li><code>minimal-ui</code> - 应用程序将看起来像一个独立的应用程序，但会有浏览器地址栏;</li>
+<li><code>browser</code> - 该应用程序在传统的浏览器标签或新窗口中打开.</li>
+</ul>
+</li>
+<li><code>orientation</code> — 应用程序的首选显示方向;<ul>
+<li><code>any</code></li>
+<li><code>natural</code></li>
+<li><code>landscape</code></li>
+<li><code>landscape-primary</code></li>
+<li><code>landscape-secondary</code></li>
+<li><code>portrait</code></li>
+<li><code>portrait-primary</code></li>
+<li><code>portrait-secondary</code></li>
+</ul>
+</li>
+<li><code>background_color</code> — 启动屏的背景颜色;</li>
+<li><code>theme_color</code> — 网站的主题颜色;</li>
+<li><code>icons</code> — 定义了 <code>src</code>、<code>sizes</code> 和 <code>type</code> 的图片对象数组,各种环境中用作应用程序图标的图像对象数组.</li>
+</ul>
+<blockquote>
+<p><code>MDN</code> 提供了完整的 <code>manifest</code> 属性列表: <a href="https://developer.mozilla.org/zh-CN/docs/Web/Manifest" target="_blank" rel="noopener">Web App Manifest properties</a></p>
+</blockquote>
+<h4 id="manifest-使用"><a href="#manifest-使用" class="headerlink" title="manifest 使用"></a>manifest 使用</h4><blockquote>
+<p><code>manifest</code> 功能虽然强大，但是技术上并不难，就是一个外链的 <code>json</code> 文件，通过 <code>link</code> 来引入：</p>
+</blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在 html 页面中添加以下 link 标签 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"manifest"</span> <span class="attr">href</span>=<span class="string">"/manifest.json"</span> /&gt;</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="manifest-验证"><a href="#manifest-验证" class="headerlink" title="manifest 验证"></a>manifest 验证</h4><blockquote>
+<p>在开发者工具中的 Application Tab 左边有 Manifest 选项，你可以验证你的 manifest JSON 文件，并提供了 “Add to homescreen” .</p>
+</blockquote>
+<p><img src="https://cdn.dode.top/blog/Ihoey_2019-02-19_14-39-39.png?imageView2/0/format/png/q/75|imageslim" alt=""></p>
+<h3 id="Service-Worker"><a href="#Service-Worker" class="headerlink" title="Service Worker"></a>Service Worker</h3><p><code>Service Worker</code> 是 <code>PWA</code> 中最重要的概念之一，它是一个特殊的 <code>Web Worker</code>，独立于浏览器的主线程运行，特殊在它可以拦截用户的网络请求，并且操作缓存，还支持 <code>Push</code> 和后台同步等功能。</p>
+<h4 id="注册服务"><a href="#注册服务" class="headerlink" title="注册服务"></a>注册服务</h4><p>在 <code>install Service Worker</code> 之前，要在主进程 <code>JavaScript</code> 代码里面注册它，注册是为了告诉浏览器我们的 <code>Service Worker</code> 文件是哪个，然后在后台，<code>Service Worker</code> 就开始安装激活。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">'serviceWorker'</span> <span class="keyword">in</span> navigator) &#123;</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, () =&gt; &#123;</span><br><span class="line">    navigator.serviceWorker.register(<span class="string">'/sw.js'</span>).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'注册成功!'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>注册时，还可以指定可选参数 scope，scope 是 Service Worker 可以以访问到的作用域，或者说是目录。</p>
+</blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">navigator.serviceWorker.register(<span class="string">'/sw.js'</span>, &#123;</span><br><span class="line">  scope: <span class="string">'/app/'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<p>注册成功后，您可以通过转至 <code>chrome://inspect/#service-workers</code> 并寻找您的网站来检查 <code>Service Worker</code> 是否已启用。</p>
+<p><img src="https://cdn.dode.top/blog/Ihoey_2019-02-19_15-28-33.png?imageView2/0/format/png/q/90|imageslim" alt=""></p>
+<h4 id="安装-Service-Worker-服务"><a href="#安装-Service-Worker-服务" class="headerlink" title="安装 Service Worker 服务"></a>安装 Service Worker 服务</h4><p><code>install</code> 事件绑定在 <code>Service Worker</code> 文件中，当安装成功后，<code>install</code> 事件就会被触发。<br>一般我们会在 <code>install</code> 事件里面进行缓存的处理，用到之前提到的 <code>Cahce API</code>，它是一个 <code>Service Worker</code> 上的全局对象，可以缓存网络相应的资源，并根据他们的请求生成 <code>key</code>，这个 <code>API</code> 和浏览器标准的缓存工作原理相似，但是只是针对自己的 <code>scope</code> 域的，缓存会一直存在，知道手动清楚或者刷新。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cacheName = <span class="string">'bs-0-0-1'</span> <span class="comment">// 缓存名称</span></span><br><span class="line"><span class="keyword">const</span> cacheFiles = [<span class="string">'/'</span>, <span class="string">'/favicon.ico'</span>, <span class="string">'/images/icons/icon_32.png'</span>, <span class="string">'...'</span>] <span class="comment">// 需缓存的文件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听 install 事件，安装完成后，进行文件缓存</span></span><br><span class="line">self.addEventListener(<span class="string">'install'</span>, e =&gt; &#123;</span><br><span class="line">  e.waitUntil(</span><br><span class="line">    caches</span><br><span class="line">      .open(cacheName)</span><br><span class="line">      .then(<span class="function"><span class="params">cache</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Opened cache'</span>)</span><br><span class="line">        <span class="keyword">return</span> cache.addAll(cacheFiles)</span><br><span class="line">      &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> self.skipWaiting())</span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// e.waitUntil 确保 Service Worker 不会在 e.waitUntil() 执行完成之前安装完成。</span></span><br><span class="line"><span class="comment">// caches.open(cacheName) 创建一个 cacheName 的新缓存，返回一个缓存的 promise 对象，当它 resolved 时候，我们在 then 方法里面用 caches.addAll 来添加想要缓存的列表，列表是一个数组，里面的 URL 是相对于 origin 的。</span></span><br><span class="line"><span class="comment">// self.skipWaiting() 跳过 waiting 状态，下面更新第3条~</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="更新-Service-Worker-服务"><a href="#更新-Service-Worker-服务" class="headerlink" title="更新 Service Worker 服务"></a>更新 Service Worker 服务</h4><p>当你的 <code>Service Worker</code> 需要更新时， 需要经过以下步骤</p>
+<ol>
+<li>更新您的服务工作线程 <code>JavaScript</code> 文件。 用户导航至您的站点时，浏览器会尝试在后台重新下载定义 <code>Service Worker</code> 的脚本文件。 如果 <code>Service Worker</code> 文件与其当前所用文件存在字节差异，则将其视为<em>新 Service Worker</em>。</li>
+<li>新 <code>Service Worker</code> 将会启动，且将会触发 <code>install</code> 事件。</li>
+<li>此时，旧 <code>Service Worker</code> 仍控制着当前页面，因此新 <code>Service Worker</code> 将进入 <code>waiting</code> 状态。</li>
+<li>当网站上打开的页面关闭时，旧 <code>Service Worker</code> 将会被终止，新 <code>Service Worker</code> 将会取得控制权。</li>
+<li>新 <code>Service Worker</code> 取得控制权后，将会触发其 <code>activate</code> 事件。</li>
+</ol>
+<blockquote>
+<p>如果希望在有了新版本时，所有的页面都得到及时自动更新怎么办呢？可以在 install 事件中执行 self.skipWaiting() 方法跳过 waiting 状态，然后会直接进入 activate 阶段。接着在 activate 事件发生时，通过执行 self.clients.claim() 方法，更新所有客户端上的 Service Worker。</p>
+</blockquote>
+<p>当 <code>Service Worker</code> 安装完成后并进入激活状态，会触发 <code>activate</code> 事件。通过监听 <code>activate</code> 事件你可以做一些预处理，如对旧版本的更新、对无用缓存的清理等。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听 activate 事件，激活后通过cache的key来判断是否更新、删除 cache 中的静态资源</span></span><br><span class="line">self.addEventListener(<span class="string">'activate'</span>, e =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'sw: activate'</span>)</span><br><span class="line"></span><br><span class="line">  e.waitUntil(</span><br><span class="line">    caches</span><br><span class="line">      .keys()</span><br><span class="line">      .then(<span class="function"><span class="params">keys</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.all(</span><br><span class="line">          keys.map(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (key !== cacheName &amp;&amp; key !== apiCacheName) &#123;</span><br><span class="line">              <span class="keyword">return</span> caches.delete(key)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        )</span><br><span class="line">      &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> self.clients.claim()) <span class="comment">// 更新客户端</span></span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<h4 id="处理动态请求缓存"><a href="#处理动态请求缓存" class="headerlink" title="处理动态请求缓存"></a>处理动态请求缓存</h4><p>在 <code>Service Worker</code> 的作用域中，当有网络请求时发生时，<code>fetch</code> 事件将被触发。它调用 <code>respondWith()</code> 方法来劫持网络请求缓存并返回：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> apiCacheName = <span class="string">'api-0-1-1'</span></span><br><span class="line">self.addEventListener(<span class="string">'fetch'</span>, e =&gt; &#123;</span><br><span class="line">  <span class="keyword">var</span> currentUrl = e.request.url</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 只处理同源</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">new</span> URL(currentUrl).hostname != location.hostname) &#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 需要缓存的 xhr 请求</span></span><br><span class="line">  <span class="keyword">var</span> cacheRequestUrls = [<span class="string">'/message.json'</span>, <span class="string">'/manifest.json'</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断当前请求是否需要缓存</span></span><br><span class="line">  <span class="keyword">var</span> needCache = cacheRequestUrls.includes(<span class="keyword">new</span> URL(currentUrl).pathname)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (needCache) &#123;</span><br><span class="line">    <span class="comment">// 需要缓存</span></span><br><span class="line">    <span class="comment">// 使用 fetch 请求数据，并将请求结果 clone 一份缓存到 cache</span></span><br><span class="line">    <span class="comment">// 此部分缓存后在 browser 中使用全局变量 caches 获取</span></span><br><span class="line">    caches.open(apiCacheName).then(<span class="function"><span class="params">cache</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> fetch(e.request).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">        cache.put(e.request.url, response.clone())</span><br><span class="line">        <span class="keyword">return</span> response</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不需要缓存，直接查询 cache</span></span><br><span class="line">    <span class="comment">// 如果有 cache 则直接返回，否则通过 fetch 请求</span></span><br><span class="line">    e.respondWith(</span><br><span class="line">      caches</span><br><span class="line">        .match(e.request)</span><br><span class="line">        .then(<span class="function"><span class="params">cache</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> cache || fetch(e.request)</span><br><span class="line">        &#125;)</span><br><span class="line">        .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'respondWithErr:'</span>, err)</span><br><span class="line">          <span class="keyword">return</span> fetch(e.request)</span><br><span class="line">        &#125;)</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<p>到这里，离线缓存动静态资源就完成了。</p>
+<p><img src="https://cdn.dode.top/blog/Ihoey_2019-02-19_19-06-44.png?imageView2/0/format/png/q/90|imageslim" alt=""></p>
+<h2 id="使用-Lighthouse-测试我们的应用"><a href="#使用-Lighthouse-测试我们的应用" class="headerlink" title="使用 Lighthouse 测试我们的应用"></a>使用 Lighthouse 测试我们的应用</h2><p>至此，我们完成了 <code>PWA</code> 的两大基本功能：<code>Web App Manifest</code> 和 <code>Service Worker</code> 的离线缓存。这两大功能可以很好地提升用户体验与应用性能。我们用 <code>Chrome</code> 中的 <code>Lighthouse</code> 来检测一下目前的应用：<br><img src="https://cdn.dode.top/blog/Ihoey_2019-02-18_19-47-05.png?imageView2/0/format/png/q/90|imageslim" alt=""></p>
+<p>可以看到，在 <code>PWA</code> 评分上，我们的这个 <code>WebApp</code> 已经非常不错了。</p>
+<p>完整代码 -&gt; <a href="https://blog.ihoey.com/sw.js">梦魇小栈 PWA 完整代码</a></p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> cacheName = <span class="string">'bs-0-0-2'</span></span><br><span class="line"><span class="keyword">var</span> apiCacheName = <span class="string">'api-0-0-2'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cacheFiles = [</span><br><span class="line">  <span class="string">'/'</span>,</span><br><span class="line">  <span class="string">'/favicon.ico?v=6.2.0'</span>,</span><br><span class="line">  <span class="string">'/css/main.css?v=6.2.0'</span>,</span><br><span class="line">  <span class="string">'/js/src/set.js'</span>,</span><br><span class="line">  <span class="string">'/js/src/utils.js'</span>,</span><br><span class="line">  <span class="string">'/js/src/motion.js'</span>,</span><br><span class="line">  <span class="string">'/js/src/bootstrap.js'</span>,</span><br><span class="line">  <span class="string">'/images/cursor.ico'</span>,</span><br><span class="line">  <span class="string">'/images/icons/icon_32.png'</span>,</span><br><span class="line">  <span class="string">'/images/icons/icon_72.png'</span>,</span><br><span class="line">  <span class="string">'/images/icons/icon_128.png'</span>,</span><br><span class="line">  <span class="string">'/images/icons/icon_192.png'</span>,</span><br><span class="line">  <span class="string">'/images/icons/icon_256.png'</span>,</span><br><span class="line">  <span class="string">'/images/icons/icon_512.png'</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听 install 事件，安装完成后，进行文件缓存</span></span><br><span class="line">self.addEventListener(<span class="string">'install'</span>, e =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'sw: install'</span>)</span><br><span class="line"></span><br><span class="line">  e.waitUntil(</span><br><span class="line">    caches</span><br><span class="line">      .open(cacheName)</span><br><span class="line">      .then(<span class="function"><span class="params">cache</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Opened cache'</span>)</span><br><span class="line">        <span class="keyword">return</span> cache.addAll(cacheFiles)</span><br><span class="line">      &#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> self.skipWaiting())</span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听 activate 事件，激活后通过 cache 的 key 来判断是否更新 cache 中的静态资源</span></span><br><span class="line">self.addEventListener(<span class="string">'activate'</span>, e =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'sw: activate'</span>)</span><br><span class="line"></span><br><span class="line">  e.waitUntil(</span><br><span class="line">    caches</span><br><span class="line">      .keys()</span><br><span class="line">      .then(<span class="function"><span class="params">keys</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Promise</span>.all(</span><br><span class="line">          keys.map(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (key !== cacheName &amp;&amp; key !== apiCacheName) &#123;</span><br><span class="line">              <span class="keyword">return</span> caches.delete(key)</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;)</span><br><span class="line">        )</span><br><span class="line">      &#125;)</span><br><span class="line">      <span class="comment">// 更新客户端</span></span><br><span class="line">      .then(<span class="function"><span class="params">()</span> =&gt;</span> self.clients.claim())</span><br><span class="line">  )</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">self.addEventListener(<span class="string">'fetch'</span>, e =&gt; &#123;</span><br><span class="line">  <span class="keyword">var</span> currentUrl = e.request.url</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 只处理同源</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">new</span> URL(currentUrl).hostname != location.hostname) &#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 需要缓存的 xhr 请求</span></span><br><span class="line">  <span class="keyword">var</span> cacheRequestUrls = [<span class="string">'/message.json'</span>, <span class="string">'/manifest.json'</span>]</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 判断当前请求是否需要缓存</span></span><br><span class="line">  <span class="keyword">var</span> needCache = cacheRequestUrls.includes(<span class="keyword">new</span> URL(currentUrl).pathname)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (needCache) &#123;</span><br><span class="line">    <span class="comment">// 需要缓存</span></span><br><span class="line">    <span class="comment">// 使用 fetch 请求数据，并将请求结果 clone 一份缓存到 cache</span></span><br><span class="line">    <span class="comment">// 此部分缓存后在 browser 中使用全局变量 caches 获取</span></span><br><span class="line">    caches.open(apiCacheName).then(<span class="function"><span class="params">cache</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> fetch(e.request).then(<span class="function"><span class="params">response</span> =&gt;</span> &#123;</span><br><span class="line">        cache.put(e.request.url, response.clone())</span><br><span class="line">        <span class="keyword">return</span> response</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不需要缓存，直接查询 cache</span></span><br><span class="line">    <span class="comment">// 如果有 cache 则直接返回，否则通过 fetch 请求</span></span><br><span class="line">    e.respondWith(</span><br><span class="line">      caches</span><br><span class="line">        .match(<span class="keyword">new</span> URL(currentUrl).pathname)</span><br><span class="line">        .then(<span class="function"><span class="params">cache</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">return</span> cache || fetch(e.request)</span><br><span class="line">        &#125;)</span><br><span class="line">        .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(<span class="string">'respondWithErr:'</span>, err)</span><br><span class="line">          <span class="keyword">return</span> fetch(e.request)</span><br><span class="line">        &#125;)</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
+<p>由于现在博客仅需 <code>Manifest</code>、<code>Service Worker</code> 后面的技术、<code>Push API</code> &amp; <code>Notification API</code> 、<code>App Shell</code> &amp; <code>App Skeleton</code> 等打算以后有时间在考虑场景加上~</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      <div>
+          <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</div>
+  <div class="reward-content">
+    	<a id="github" href="https://github.com/houyi1121/Playing-reward" target="_blank" class="pos-a" title="Github"></a>
+      <a href="https://blog.ihoey.com" target="_blank" id="DonateText" title="ihoey.com">ihoey.com</a>
+      <ul id="donateBox" class="list pos-a">
+        <li id="PayPal"><a href="https://www.paypal.me/ihoey" target="_blank" title="PayPal">PayPal</a></li>
+        <li id="QQ" data-img="/qcode/tencent_qcode.png" title="QQ">QQ</li>
+        <li id="AliPay" data-img="/qcode/alipay_qcode.png" title="支付宝">支付宝</li>
+        <li id="WeChat" data-img="/qcode/wechat_qcode.png" title="微信支付">微信支付</li>
+      </ul>
+      <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
+      </div>
+  </div>
+</div>
+
+      </div>
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/PWA/" rel="tag"># PWA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/Node/2019-01-18-node-wechat-bill.html" rel="next" title="什么? 微信没有年度账单? 前端 nodejs 撸起来~ [接口实现]">
+                <i class="fa fa-chevron-left"></i> 什么? 微信没有年度账单? 前端 nodejs 撸起来~ [接口实现]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim"
+                alt="Ihoey" />
+            
+              <p class="site-author-name" itemprop="name">Ihoey</p>
+              <p class="site-description motion-element" itemprop="description">心，若没有栖息的地方，到哪里都是流浪......</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/index.html">
+                
+                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">47</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ihoey" target="_blank" title="GitHub" rel="external nofollow noopener"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/hy951121" target="_blank" title="微博" rel="external nofollow noopener"><i class="fa fa-fw fa-weibo"></i>微博</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes" target="_blank" title="QQ" rel="external nofollow noopener"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com" target="_blank" title="E-mail" rel="external nofollow noopener"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/100200711230702098272" target="_blank" title="Google" rel="external nofollow noopener"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/ihoeys" target="_blank" title="Twitter" rel="external nofollow noopener"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/profile.php?id=100008808609802" target="_blank" title="Facebook" rel="external nofollow noopener"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.mythsman.com/" title="mythsman" target="_blank" rel="noopener nofollow">mythsman</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.isthnew.com/links" title="可乐没气的猫" target="_blank" rel="noopener nofollow">可乐没气的猫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.bboysoul.com/" title="Bboysoul" target="_blank" rel="noopener nofollow">Bboysoul</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jnan.org/" title="jnduan's Blog" target="_blank" rel="noopener nofollow">jnduan's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ehlxr.me/" title="Ehlxr's Blog" target="_blank" rel="noopener nofollow">Ehlxr's Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-PWA"><span class="nav-number">1.</span> <span class="nav-text">什么是 PWA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PWA-的核心技术"><span class="nav-number">2.</span> <span class="nav-text">PWA 的核心技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#manifest"><span class="nav-number">2.1.</span> <span class="nav-text">manifest</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#manifest-内容"><span class="nav-number">2.1.1.</span> <span class="nav-text">manifest 内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manifest-属性"><span class="nav-number">2.1.2.</span> <span class="nav-text">manifest 属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manifest-使用"><span class="nav-number">2.1.3.</span> <span class="nav-text">manifest 使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manifest-验证"><span class="nav-number">2.1.4.</span> <span class="nav-text">manifest 验证</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Worker"><span class="nav-number">2.2.</span> <span class="nav-text">Service Worker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注册服务"><span class="nav-number">2.2.1.</span> <span class="nav-text">注册服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Service-Worker-服务"><span class="nav-number">2.2.2.</span> <span class="nav-text">安装 Service Worker 服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新-Service-Worker-服务"><span class="nav-number">2.2.3.</span> <span class="nav-text">更新 Service Worker 服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理动态请求缓存"><span class="nav-number">2.2.4.</span> <span class="nav-text">处理动态请求缓存</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Lighthouse-测试我们的应用"><span class="nav-number">3.</span> <span class="nav-text">使用 Lighthouse 测试我们的应用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">梦魇小栈</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="theme-info">京ICP备15058055号-1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/ihoey">Ihoey</a> 强力驱动</div>
+
+
+
+  <div class="footer-custom"><span>博客已萌萌哒运行<span id="time-to-now"></span> ●'◡'●)ﾉ♥</span></div>
+
+
+<div class="eevee">
+  <div class="message">嗨，你好啊~~</div>
+  <div class="body">
+    <div class="head">
+      <div class="ears">
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+      </div>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <div class="chest">
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+    </div>
+    <div class="legs">
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+    </div>
+    <div class="tail">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail -end"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"> 你是第</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>枚看到我的
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"> 访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=59541779";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/jquery.lazyload.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+  
+  
+    
+  
+  <script src="https://cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar: 'monsterid',
+        guest_info: guest,
+        pageSize: 10 || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

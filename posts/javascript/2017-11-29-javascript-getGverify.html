@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+<!--
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG  By:- ihoey.com
+-->
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#8a00f9">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.dode.top/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Hannotate SC,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,微软雅黑,STXihei,华文细黑,WenQuanYi Micro Hei,sans-serif:300,300italic,400,400italic,700,700italic|Source Code Pro,Consolas,Menlo,Monaco,Courier New,monospace:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon_192.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon_32.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/icons/icon_512.png?v=6.2.0" color="#8a00f9">
+
+
+  <link rel="manifest" href="/manifest.json">
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+  <meta name="keywords" content="梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布" />
+
+
+<link rel="dns-prefetch" href="https://app-router.leancloud.cn/">
+
+<script defer async src="/js/src/set.js"></script>
+
+
+  <meta name="description" content="本文实例为大家分享了 js 生成图形验证码的具体代码，供大家参考，具体内容如下">
+<meta name="keywords" content="javascript,原生Js,tools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVASCRIPT生成图形验证码">
+<meta property="og:url" content="https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html">
+<meta property="og:site_name" content="梦魇小栈">
+<meta property="og:description" content="本文实例为大家分享了 js 生成图形验证码的具体代码，供大家参考，具体内容如下">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-26T09:16:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVASCRIPT生成图形验证码">
+<meta name="twitter:description" content="本文实例为大家分享了 js 生成图形验证码的具体代码，供大家参考，具体内容如下">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦魇小栈" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>JAVASCRIPT生成图形验证码 | 梦魇小栈</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87991666-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-87991666-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199400a900d7a62bfff2335224e096d8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">梦魇小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">专注于分享</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+    <a href="/links/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-link"></i> <br />友情链接</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-guestbook">
+    <a href="/guestbook/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />留言</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />我是谁˚∆˚</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">55</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">47</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+    <a href="/sitemap.xml" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+<div id="hitokoto" style="
+    text-align: center;
+    padding-top: 25px;
+"></div>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ihoey">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦魇小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JAVASCRIPT生成图形验证码
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-29 19:49:01" itemprop="dateCreated datePublished" datetime="2017-11-29T19:49:01+08:00">2017-11-29</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-26 17:16:24" itemprop="dateModified" datetime="2018-06-26T17:16:24+08:00">2018-06-26</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/javascript/2017-11-29-javascript-getGverify.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/javascript/2017-11-29-javascript-getGverify.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文实例为大家分享了 <code>js</code> 生成图形验证码的具体代码，供大家参考，具体内容如下</p>
+<a id="more"></a>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br></pre></td><td class="code"><pre><span class="line">getGVerify: <span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">GVerify</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//创建一个图形验证码对象，接收options对象为参数</span></span><br><span class="line">    <span class="keyword">this</span>.options = &#123;</span><br><span class="line">      <span class="comment">//默认options参数值</span></span><br><span class="line">      id: <span class="string">''</span>, <span class="comment">//容器Id</span></span><br><span class="line">      canvasId: <span class="string">'verifyCanvas'</span>, <span class="comment">//canvas的ID</span></span><br><span class="line">      width: <span class="string">'100'</span>, <span class="comment">//默认canvas宽度</span></span><br><span class="line">      height: <span class="string">'30'</span>, <span class="comment">//默认canvas高度</span></span><br><span class="line">      type: <span class="string">'blend'</span>, <span class="comment">//图形验证码默认类型blend:数字字母混合类型、number:纯数字、letter:纯字母</span></span><br><span class="line">      code: <span class="string">''</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">Object</span>.prototype.toString.call(options) == <span class="string">'[object Object]'</span>) &#123;</span><br><span class="line">      <span class="comment">//判断传入参数类型</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> options) &#123;</span><br><span class="line">        <span class="comment">//根据传入的参数，修改默认参数值</span></span><br><span class="line">        <span class="keyword">this</span>.options[i] = options[i]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.options.id = options</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.options.numArr = <span class="string">'0,1,2,3,4,5,6,7,8,9'</span>.split(<span class="string">','</span>)</span><br><span class="line">    <span class="keyword">this</span>.options.letterArr = getAllLetter()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>._init()</span><br><span class="line">    <span class="keyword">this</span>.refresh()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  GVerify.prototype = &#123;</span><br><span class="line">    <span class="comment">/**版本号**/</span></span><br><span class="line">    version: <span class="string">'1.0.0'</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**初始化方法**/</span></span><br><span class="line">    _init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> con = <span class="built_in">document</span>.getElementById(<span class="keyword">this</span>.options.id)</span><br><span class="line">      <span class="keyword">var</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>)</span><br><span class="line">      <span class="comment">/*this.options.width = con.offsetWidth &gt; 0 ? con.offsetWidth : "100";</span></span><br><span class="line"><span class="comment">              this.options.height = con.offsetHeight &gt; 0 ? con.offsetHeight : "30";*/</span></span><br><span class="line">      canvas.id = <span class="keyword">this</span>.options.canvasId</span><br><span class="line">      canvas.width = <span class="keyword">this</span>.options.width</span><br><span class="line">      canvas.height = <span class="keyword">this</span>.options.height</span><br><span class="line">      canvas.style.cursor = <span class="string">'pointer'</span></span><br><span class="line">      canvas.innerHTML = <span class="string">'您的浏览器版本不支持canvas'</span></span><br><span class="line">      con.appendChild(canvas)</span><br><span class="line">      <span class="keyword">var</span> parent = <span class="keyword">this</span></span><br><span class="line">      canvas.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        parent.refresh()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**生成验证码**/</span></span><br><span class="line">    refresh: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.options.code = <span class="string">''</span></span><br><span class="line">      <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="keyword">this</span>.options.canvasId)</span><br><span class="line">      <span class="keyword">if</span> (canvas.getContext) &#123;</span><br><span class="line">        <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">'2d'</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      ctx.textBaseline = <span class="string">'middle'</span></span><br><span class="line"></span><br><span class="line">      ctx.fillStyle = randomColor(<span class="number">180</span>, <span class="number">240</span>)</span><br><span class="line">      ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="keyword">this</span>.options.width, <span class="keyword">this</span>.options.height)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.options.type == <span class="string">'blend'</span>) &#123;</span><br><span class="line">        <span class="comment">//判断验证码类型</span></span><br><span class="line">        <span class="keyword">var</span> txtArr = <span class="keyword">this</span>.options.numArr.concat(<span class="keyword">this</span>.options.letterArr)</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.options.type == <span class="string">'number'</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> txtArr = <span class="keyword">this</span>.options.numArr</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">var</span> txtArr = <span class="keyword">this</span>.options.letterArr</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">4</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> txt = txtArr[randomNum(<span class="number">0</span>, txtArr.length)]</span><br><span class="line">        <span class="keyword">this</span>.options.code += txt</span><br><span class="line">        ctx.font = <span class="string">'20px SimHei'</span></span><br><span class="line">        <span class="comment">//ctx.font = randomNum(this.options.height/2, this.options.height) + 'px SimHei'; //随机生成字体大小</span></span><br><span class="line">        ctx.fillStyle = randomColor(<span class="number">50</span>, <span class="number">160</span>) <span class="comment">//随机生成字体颜色</span></span><br><span class="line">        <span class="comment">/* ctx.shadowOffsetX = randomNum(-3, 3);</span></span><br><span class="line"><span class="comment">                  ctx.shadowOffsetY = randomNum(-3, 3);*/</span></span><br><span class="line">        ctx.shadowBlur = randomNum(<span class="number">-3</span>, <span class="number">3</span>)</span><br><span class="line">        ctx.shadowColor = <span class="string">'rgba(0, 0, 0, 0.3)'</span></span><br><span class="line">        <span class="keyword">var</span> x = (<span class="keyword">this</span>.options.width / <span class="number">5</span>) * i</span><br><span class="line">        <span class="keyword">var</span> y = <span class="keyword">this</span>.options.height / <span class="number">2</span></span><br><span class="line">        <span class="keyword">var</span> deg = randomNum(<span class="number">-30</span>, <span class="number">30</span>)</span><br><span class="line">        <span class="comment">/**设置旋转角度和坐标原点**/</span></span><br><span class="line">        ctx.translate(x, y)</span><br><span class="line">        ctx.rotate((deg * <span class="built_in">Math</span>.PI) / <span class="number">180</span>)</span><br><span class="line">        ctx.fillText(txt, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">        <span class="comment">/**恢复旋转角度和坐标原点**/</span></span><br><span class="line">        ctx.rotate((-deg * <span class="built_in">Math</span>.PI) / <span class="number">180</span>)</span><br><span class="line">        ctx.translate(-x, -y)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**绘制干扰线**/</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">        ctx.strokeStyle = randomColor(<span class="number">40</span>, <span class="number">180</span>)</span><br><span class="line">        ctx.beginPath()</span><br><span class="line">        ctx.moveTo(</span><br><span class="line">          randomNum(<span class="number">0</span>, <span class="keyword">this</span>.options.width / <span class="number">2</span>),</span><br><span class="line">          randomNum(<span class="number">0</span>, <span class="keyword">this</span>.options.height / <span class="number">2</span>)</span><br><span class="line">        )</span><br><span class="line">        ctx.lineTo(</span><br><span class="line">          randomNum(<span class="number">0</span>, <span class="keyword">this</span>.options.width / <span class="number">2</span>),</span><br><span class="line">          randomNum(<span class="number">0</span>, <span class="keyword">this</span>.options.height)</span><br><span class="line">        )</span><br><span class="line">        ctx.stroke()</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">/**绘制干扰点**/</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.options.width / <span class="number">4</span>; i++) &#123;</span><br><span class="line">        ctx.fillStyle = randomColor(<span class="number">0</span>, <span class="number">255</span>)</span><br><span class="line">        ctx.beginPath()</span><br><span class="line">        ctx.arc(</span><br><span class="line">          randomNum(<span class="number">0</span>, <span class="keyword">this</span>.options.width),</span><br><span class="line">          randomNum(<span class="number">0</span>, <span class="keyword">this</span>.options.height),</span><br><span class="line">          <span class="number">1</span>,</span><br><span class="line">          <span class="number">0</span>,</span><br><span class="line">          <span class="number">2</span> * <span class="built_in">Math</span>.PI</span><br><span class="line">        )</span><br><span class="line">        ctx.fill()</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**验证验证码**/</span></span><br><span class="line">    validate: <span class="function"><span class="keyword">function</span>(<span class="params">code</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> verifyCode = code.toLowerCase()</span><br><span class="line">      <span class="keyword">var</span> v_code = <span class="keyword">this</span>.options.code.toLowerCase()</span><br><span class="line">      <span class="keyword">if</span> (verifyCode == v_code) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**生成字母数组**/</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getAllLetter</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> letterStr =</span><br><span class="line">      <span class="string">'a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z'</span></span><br><span class="line">    <span class="keyword">return</span> letterStr.split(<span class="string">','</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/**生成一个随机数**/</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">randomNum</span>(<span class="params">min, max</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min) + min)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/**生成一个随机色**/</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">randomColor</span>(<span class="params">min, max</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> r = randomNum(min, max)</span><br><span class="line">    <span class="keyword">var</span> g = randomNum(min, max)</span><br><span class="line">    <span class="keyword">var</span> b = randomNum(min, max)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'rgb('</span> + r + <span class="string">','</span> + g + <span class="string">','</span> + b + <span class="string">')'</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> GVerify(id)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h2 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> verifyCode = <span class="keyword">new</span> GVerify(id)</span><br></pre></td></tr></table></figure></div>
+<h2 id="验证方法"><a href="#验证方法" class="headerlink" title="验证方法"></a>验证方法</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (verifyCode.validate(inputCode)) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      <div>
+          <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</div>
+  <div class="reward-content">
+    	<a id="github" href="https://github.com/houyi1121/Playing-reward" target="_blank" class="pos-a" title="Github"></a>
+      <a href="https://blog.ihoey.com" target="_blank" id="DonateText" title="ihoey.com">ihoey.com</a>
+      <ul id="donateBox" class="list pos-a">
+        <li id="PayPal"><a href="https://www.paypal.me/ihoey" target="_blank" title="PayPal">PayPal</a></li>
+        <li id="QQ" data-img="/qcode/tencent_qcode.png" title="QQ">QQ</li>
+        <li id="AliPay" data-img="/qcode/alipay_qcode.png" title="支付宝">支付宝</li>
+        <li id="WeChat" data-img="/qcode/wechat_qcode.png" title="微信支付">微信支付</li>
+      </ul>
+      <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
+      </div>
+  </div>
+</div>
+
+      </div>
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+            <a href="/tags/原生Js/" rel="tag"># 原生Js</a>
+          
+            <a href="/tags/tools/" rel="tag"># tools</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/Node/2017-11-24-npm-version.html" rel="next" title="笔记：NPM版本号自增，自动化发布NPM包">
+                <i class="fa fa-chevron-left"></i> 笔记：NPM版本号自增，自动化发布NPM包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/Node/2017-12-25-Merry-Christmas.html" rel="prev" title="Merry Christmas">
+                Merry Christmas <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim"
+                alt="Ihoey" />
+            
+              <p class="site-author-name" itemprop="name">Ihoey</p>
+              <p class="site-description motion-element" itemprop="description">心，若没有栖息的地方，到哪里都是流浪......</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/index.html">
+                
+                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">47</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ihoey" target="_blank" title="GitHub" rel="external nofollow noopener"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/hy951121" target="_blank" title="微博" rel="external nofollow noopener"><i class="fa fa-fw fa-weibo"></i>微博</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes" target="_blank" title="QQ" rel="external nofollow noopener"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com" target="_blank" title="E-mail" rel="external nofollow noopener"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/100200711230702098272" target="_blank" title="Google" rel="external nofollow noopener"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/ihoeys" target="_blank" title="Twitter" rel="external nofollow noopener"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/profile.php?id=100008808609802" target="_blank" title="Facebook" rel="external nofollow noopener"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.mythsman.com/" title="mythsman" target="_blank" rel="noopener nofollow">mythsman</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.isthnew.com/links" title="可乐没气的猫" target="_blank" rel="noopener nofollow">可乐没气的猫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.bboysoul.com/" title="Bboysoul" target="_blank" rel="noopener nofollow">Bboysoul</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jnan.org/" title="jnduan's Blog" target="_blank" rel="noopener nofollow">jnduan's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ehlxr.me/" title="Ehlxr's Blog" target="_blank" rel="noopener nofollow">Ehlxr's Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#调用方法"><span class="nav-number">1.</span> <span class="nav-text">调用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证方法"><span class="nav-number">2.</span> <span class="nav-text">验证方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">梦魇小栈</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="theme-info">京ICP备15058055号-1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/ihoey">Ihoey</a> 强力驱动</div>
+
+
+
+  <div class="footer-custom"><span>博客已萌萌哒运行<span id="time-to-now"></span> ●'◡'●)ﾉ♥</span></div>
+
+
+<div class="eevee">
+  <div class="message">嗨，你好啊~~</div>
+  <div class="body">
+    <div class="head">
+      <div class="ears">
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+      </div>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <div class="chest">
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+    </div>
+    <div class="legs">
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+    </div>
+    <div class="tail">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail -end"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"> 你是第</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>枚看到我的
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"> 访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=59541779";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/jquery.lazyload.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+  
+  
+    
+  
+  <script src="https://cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar: 'monsterid',
+        guest_info: guest,
+        pageSize: 10 || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
