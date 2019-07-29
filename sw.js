@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-02-19 19:20:47
  */
 
-var cacheName = 'bs-0-0-3'
+var cacheName = 'bs-0-0-4'
 var apiCacheName = 'api-0-0-2'
 
 var cacheFiles = [

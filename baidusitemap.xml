@@ -4,6 +4,7 @@
 
     
     
+    
   <url>
     <loc>https://blog.ihoey.com/posts/javascript/PWA/2019-02-18-progressive-web-apps-blog.html</loc>
     <lastmod>2019-03-27T02:54:40.267Z</lastmod>
@@ -138,7 +139,6 @@
     </data>
     </url>
 
-    
     
   <url>
     <loc>https://blog.ihoey.com/posts/Node/2019-01-18-node-wechat-bill.html</loc>
@@ -395,12 +395,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part3之属性模块功能及实现</title>
-        <pubTime>2016-11-20T03:51:28.000Z</pubTime>
+        <title>JQuery分析及实现part2之css部分功能及实现</title>
+        <pubTime>2016-11-19T11:02:01.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -419,12 +419,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part2之css部分功能及实现</title>
-        <pubTime>2016-11-19T11:02:01.000Z</pubTime>
+        <title>JQuery分析及实现part3之属性模块功能及实现</title>
+        <pubTime>2016-11-20T03:51:28.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -535,12 +535,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part6之动画模块功能及实现</title>
-        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
+        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
+        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -559,12 +559,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
-        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
+        <title>JQuery分析及实现part6之动画模块功能及实现</title>
+        <pubTime>2016-11-24T01:38:13.000Z</pubTime>
         
         <tag>原生Js</tag>
          
