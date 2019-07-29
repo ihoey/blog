@@ -114,14 +114,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -142,13 +142,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
-    
-    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
@@ -156,7 +149,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -164,6 +157,13 @@
   
   <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
+    
+    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
