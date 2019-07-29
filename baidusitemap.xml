@@ -327,16 +327,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之构造函数</title>
-        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
+        <title>js高级与面向对象之函数</title>
+        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
         
-        <tag>javascript</tag>
-         
-        <tag>js构造函数</tag>
+        <tag>Function</tag>
          
          
            
@@ -349,14 +347,16 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之函数</title>
-        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
+        <title>js高级与面向对象之构造函数</title>
+        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
         
-        <tag>Function</tag>
+        <tag>javascript</tag>
+         
+        <tag>js构造函数</tag>
          
          
            
@@ -1224,9 +1224,9 @@
         <title>重新介绍 JavaScript（JS全面系列教程）</title>
         <pubTime>2017-07-03T10:51:21.000Z</pubTime>
         
-        <tag>javascript</tag>
-         
         <tag>Function</tag>
+         
+        <tag>javascript</tag>
          
          
            
