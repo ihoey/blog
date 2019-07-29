@@ -373,7 +373,7 @@ cheers_enabled: true
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
   host:
@@ -386,7 +386,7 @@ font:
   # Global font settings used for all elements in <body>.
   global:
     external: true
-    family: Lato
+    family: "'Hannotate SC','lucida grande','lucida sans unicode',lucida,helvetica,'Hiragino Sans GB','Microsoft YaHei','微软雅黑',STXihei,'华文细黑','WenQuanYi Micro Hei',sans-serif"
     size:
 
   # Font settings for Headlines (H1, H2, H3, H4, H5, H6).
@@ -412,7 +412,7 @@ font:
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
+    family: '"Source Code Pro",Consolas,Menlo,Monaco,"Courier New",monospace'
     size:
 
 # ---------------------------------------------------------------
