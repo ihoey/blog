@@ -1,11 +1,12 @@
 /*
- * @Author: ihoey
+ * @Author: Ihoey
+ * @Email: mail@ihoey.com
  * @Date: 2019-02-12 15:20:49
- * @Last Modified by: ihoey
- * @Last Modified time: 2019-02-19 19:20:47
+ * @LastEditors: Ihoey
+ * @LastEditTime: 2019-07-29 12:13:37
  */
 
-var cacheName = 'bs-0-0-4'
+var cacheName = 'bs-0-0-5'
 var apiCacheName = 'api-0-0-2'
 
 var cacheFiles = [
