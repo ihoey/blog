@@ -1813,7 +1813,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #dfa2ff;
+  background: #91dfaf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3157,6 +3157,7 @@ body {
   left: 0;
   z-index: 1;
 }
+
 .link-all-page .ihoey-links {
   padding: 0;
   margin: 0;
@@ -3202,14 +3203,17 @@ body {
   color: #333;
   text-decoration: none;
   border: none;
+  overflow: hidden;
 }
 
 .link-all-page .ihoey-links .ihoey-links-item img {
   padding: 0;
   margin: 0;
+  width: 72px;
+  height: 100%;
   float: left;
   border: none;
-  pointer-events:none
+  pointer-events: none;
 }
 
 .link-all-page .ihoey-links .ihoey-links-item:hover {
