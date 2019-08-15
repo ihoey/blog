@@ -3,10 +3,10 @@
  * @Email: mail@ihoey.com
  * @Date: 2019-02-12 15:20:49
  * @LastEditors: Ihoey
- * @LastEditTime: 2019-07-29 12:13:37
+ * @LastEditTime: 2019-08-15 18:24:06
  */
 
-var cacheName = 'bs-0-0-5'
+var cacheName = 'bs-0-0-6'
 var apiCacheName = 'api-0-0-2'
 
 var cacheFiles = [
