@@ -253,25 +253,23 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Hexo/2015-08-28-hello-world.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>Hexo 最常用的几个命令</title>
-        <pubTime>2015-08-28T10:29:33.000Z</pubTime>
+        <title>Canvas知识整理part2</title>
+        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>Canvas</tag>
          
-        <tag>梦魇小栈</tag>
+        <tag>HTML5</tag>
          
-        <tag>梦魇</tag>
-         
-        <tag>houyi1121</tag>
+        <tag>画布</tag>
          
          
            
              
-              <breadCrumb title="Hexo" url="https://blog.ihoey.com/categories/Hexo/"/>
+              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
           
         </display>
     </data>
@@ -296,6 +294,32 @@
            
              
               <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://blog.ihoey.com/posts/Hexo/2015-08-28-hello-world.html</loc>
+    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 最常用的几个命令</title>
+        <pubTime>2015-08-28T10:29:33.000Z</pubTime>
+        
+        <tag>hexo</tag>
+         
+        <tag>梦魇小栈</tag>
+         
+        <tag>梦魇</tag>
+         
+        <tag>houyi1121</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="https://blog.ihoey.com/categories/Hexo/"/>
           
         </display>
     </data>
@@ -345,30 +369,6 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
-    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>Canvas知识整理part2</title>
-        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
-        
-        <tag>Canvas</tag>
-         
-        <tag>HTML5</tag>
-         
-        <tag>画布</tag>
-         
-         
-           
-             
-              <breadCrumb title="Canvas" url="https://blog.ihoey.com/categories/Canvas/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
@@ -395,12 +395,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part3之属性模块功能及实现</title>
-        <pubTime>2016-11-20T03:51:28.000Z</pubTime>
+        <title>JQuery分析及实现part2之css部分功能及实现</title>
+        <pubTime>2016-11-19T11:02:01.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -419,12 +419,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>JQuery分析及实现part2之css部分功能及实现</title>
-        <pubTime>2016-11-19T11:02:01.000Z</pubTime>
+        <title>JQuery分析及实现part3之属性模块功能及实现</title>
+        <pubTime>2016-11-20T03:51:28.000Z</pubTime>
         
         <tag>原生Js</tag>
          
@@ -491,18 +491,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之原型</title>
-        <pubTime>2016-06-04T05:41:47.000Z</pubTime>
+        <title>js高级与面向对象之原型链</title>
+        <pubTime>2016-07-09T11:41:47.000Z</pubTime>
         
-        <tag>javascript</tag>
-         
-        <tag>原型</tag>
-         
-        <tag>原型的基本概念</tag>
+        <tag>原型链</tag>
          
          
            
@@ -515,14 +511,18 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之原型链</title>
-        <pubTime>2016-07-09T11:41:47.000Z</pubTime>
+        <title>js高级与面向对象之原型</title>
+        <pubTime>2016-06-04T05:41:47.000Z</pubTime>
         
-        <tag>原型链</tag>
+        <tag>javascript</tag>
+         
+        <tag>原型</tag>
+         
+        <tag>原型的基本概念</tag>
          
          
            

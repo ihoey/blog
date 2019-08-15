@@ -86,7 +86,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/Hexo/2015-08-28-hello-world.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -94,6 +94,13 @@
   
   <url>
     <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
+    
+    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/posts/Hexo/2015-08-28-hello-world.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -114,13 +121,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
-    
-    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
@@ -128,14 +128,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-09-javascript-prototype-chain.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
