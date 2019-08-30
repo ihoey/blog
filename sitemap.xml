@@ -128,6 +128,13 @@
   </url>
   
   <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
+    
+    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
@@ -136,13 +143,6 @@
   
   <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
-    
-    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -268,14 +268,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html</loc>
+    <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-23-mongodb.html</loc>
     
     <lastmod>2018-05-04T10:02:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-23-mongodb.html</loc>
+    <loc>https://blog.ihoey.com/posts/MongoDB/2017-03-27-mongodb-ues.html</loc>
     
     <lastmod>2018-05-04T10:02:23.000Z</lastmod>
     
