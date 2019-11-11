@@ -81,8 +81,8 @@
 #   description: '戏子入画，一曲天涯。'
 #   avatar: https://togln.com/tx.jpg
 
-- name: jarmin客栈
-  link: https://blog.javascriper.com
+- name: 创意小屋
+  link: https://blog.idear.fun
   description: "前端路上的木木"
 
 - name: 水墨寒的博客
@@ -185,9 +185,9 @@
   avatar: https://alili.tech/images/logo2.png
 
 - name: 淺的小站
-  link: http://dive.tk
+  link: http://52chang.wang
   description: 深思、淺思、三思而行
-  avatar: http://dive.tk/images/avatar.jpg
+  avatar: http://52chang.wang/images/avatar.jpg
 
 - name: 星文 – Xstar News
   link: https://xstar.news/#/
