@@ -6,7 +6,7 @@
     <li class="ihoey-links-item">
         <a href="{{ i.link }}" class="group-picture" title="{{ i.name }}" target="_blank">
             {% if i.avatar %}
-              <img data-original="{{ i.avatar }}" alt="{{ i.name }}" title="{{ i.name }}" height="72px" width="72px" />
+              <img data-original="{{ i.avatar }}" loading="lazy" alt="{{ i.name }}" title="{{ i.name }}" height="72px" width="72px" />
               {% else %}
               <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-{{e+1}}" id="link"></use>
