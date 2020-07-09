@@ -128,13 +128,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
-    
-    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
@@ -142,7 +135,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-19-javascript-jquery-part2.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
@@ -156,14 +149,21 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    
+    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
     
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     
