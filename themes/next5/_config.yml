@@ -6,7 +6,7 @@
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: '梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布'
+keywords: "梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -381,7 +381,7 @@ algolia_search:
   labels:
     input_placeholder: Search for Posts
     hits_empty: "We didn't find any results for the search: ${query}"
-    hits_stats: '${hits} results found in ${time} ms'
+    hits_stats: "${hits} results found in ${time} ms"
 
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
@@ -434,7 +434,7 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: //cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css
+  fontawesome: https://cdn.dode.top/font-awesome/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com

@@ -899,7 +899,7 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css
+  fontawesome: https://cdn.dode.top/font-awesome/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
