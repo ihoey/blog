@@ -419,6 +419,30 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
+    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>JQuery分析及实现part5之事件模块功能及实现</title>
+        <pubTime>2016-11-23T02:27:16.000Z</pubTime>
+        
+        <tag>原生Js</tag>
+         
+        <tag>Js框架</tag>
+         
+        <tag>JQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
@@ -449,30 +473,6 @@
         <display>
         <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
         <pubTime>2016-11-21T11:08:10.000Z</pubTime>
-        
-        <tag>原生Js</tag>
-         
-        <tag>Js框架</tag>
-         
-        <tag>JQuery</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
-    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>JQuery分析及实现part5之事件模块功能及实现</title>
-        <pubTime>2016-11-23T02:27:16.000Z</pubTime>
         
         <tag>原生Js</tag>
          
