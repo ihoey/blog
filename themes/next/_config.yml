@@ -870,7 +870,7 @@ vendors:
 
   # Internal version: 2.1.3
   # jquery: https://code.jquery.com/jquery-3.3.1.min.js
-  jquery: https://cdn.dode.top/index.js
+  jquery: https://cdn.dode.top/jquery-2.1.3.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
@@ -899,7 +899,7 @@ vendors:
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: https://cdn.dode.top/font-awesome/font-awesome.min.css
+  fontawesome: https://cdn.dode.top/font-awesome/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
