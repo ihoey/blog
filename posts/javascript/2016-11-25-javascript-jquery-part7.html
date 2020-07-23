@@ -174,17 +174,19 @@
 
 
   <meta name="description" content="JQuery模块分析及其实现第七部分 Ajax 部分功能及实现,接第六部分!">
-<meta name="keywords" content="原生Js,Js框架,JQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JQuery分析及实现part7之 Ajax 模块功能及实现">
 <meta property="og:url" content="https://blog.ihoey.com/posts/javascript/2016-11-25-javascript-jquery-part7.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="JQuery模块分析及其实现第七部分 Ajax 部分功能及实现,接第六部分!">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T08:45:23.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-11-25T13:31:12.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.171Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="原生Js">
+<meta property="article:tag" content="Js框架">
+<meta property="article:tag" content="JQuery">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JQuery分析及实现part7之 Ajax 模块功能及实现">
-<meta name="twitter:description" content="JQuery模块分析及其实现第七部分 Ajax 部分功能及实现,接第六部分!">
 
 
 
@@ -255,7 +257,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-10 16:45:23" itemprop="dateModified" datetime="2018-05-10T16:45:23+08:00">2018-05-10</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,10 +540,12 @@
       
         <p>JQuery模块分析及其实现第七部分 Ajax 部分功能及实现,接第六部分!</p>
 <a id="more"></a>
+
 <h2 id="Ajax-请求流程"><a href="#Ajax-请求流程" class="headerlink" title="Ajax 请求流程"></a>Ajax 请求流程</h2><ol>
 <li>创建一个请求对象</li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createRequest</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">window</span>.XMLHttpRequest ? <span class="keyword">new</span> <span class="built_in">window</span>.XMLHttpRequest() :</span><br><span class="line">		<span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xhr = createRequest();</span><br><span class="line"><span class="built_in">console</span>.log(xhr);</span><br></pre></td></tr></table></figure></div>
+
 <ol start="2">
 <li>格式化数据<ul>
 <li>将格式化后的数据,参数与值都要重新编码</li>
@@ -549,6 +553,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">formatData</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ret = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> data)&#123;</span><br><span class="line">        ret.push(<span class="built_in">window</span>.encodeURIComponent(k) + <span class="string">'='</span> + <span class="built_in">window</span>.encodeURIComponent(data[k]));</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="comment">// 如果不想从服务器缓存中读取数据</span></span><br><span class="line">	ret.push((<span class="string">'_='</span> + <span class="built_in">Math</span>.random()).replace(<span class="string">'.'</span>, <span class="string">''</span>));</span><br><span class="line">    <span class="keyword">return</span> ret.join(<span class="string">'&amp;'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> data = &#123;<span class="attr">name</span>: <span class="string">'梦魇小栈'</span>,<span class="attr">age</span>: <span class="number">2</span>,<span class="attr">url</span>:<span class="string">'http://blog.ihoey.com'</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(formatData(data));<span class="comment">//name=%E6%A2%A6%E9%AD%87%E5%B0%8F%E6%A0%88&amp;age=2&amp;url=http%3A%2F%2Fblog.ihoey.com</span></span><br></pre></td></tr></table></figure></div>
+
 <ol start="3">
 <li>与服务器建立连接</li>
 <li>监听请求状态</li>
@@ -582,7 +587,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -616,9 +621,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/原生Js/" rel="tag"># 原生Js</a>
+            <a href="/tags/%E5%8E%9F%E7%94%9FJs/" rel="tag"># 原生Js</a>
           
-            <a href="/tags/Js框架/" rel="tag"># Js框架</a>
+            <a href="/tags/Js%E6%A1%86%E6%9E%B6/" rel="tag"># Js框架</a>
           
             <a href="/tags/JQuery/" rel="tag"># JQuery</a>
           
@@ -724,7 +729,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

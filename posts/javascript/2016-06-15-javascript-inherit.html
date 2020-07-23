@@ -174,17 +174,20 @@
 
 
   <meta name="description" content="一个对象没有某些属性和方法，另一个对象有，拿过来使用，就是继承">
-<meta name="keywords" content="javascript,js面向对象,继承,继承的实现方式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js高级与面向对象之继承">
 <meta property="og:url" content="https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="一个对象没有某些属性和方法，另一个对象有，拿过来使用，就是继承">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T08:45:23.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-06-15T05:43:28.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.167Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="js面向对象">
+<meta property="article:tag" content="继承">
+<meta property="article:tag" content="继承的实现方式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js高级与面向对象之继承">
-<meta name="twitter:description" content="一个对象没有某些属性和方法，另一个对象有，拿过来使用，就是继承">
 
 
 
@@ -255,7 +258,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-10 16:45:23" itemprop="dateModified" datetime="2018-05-10T16:45:23+08:00">2018-05-10</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,23 +541,29 @@
       
         <p>一个对象没有某些属性和方法，另一个对象有，拿过来使用，就是继承</p>
 <a id="more"></a>
+
 <h2 id="继承的实现方式"><a href="#继承的实现方式" class="headerlink" title="继承的实现方式"></a>继承的实现方式</h2><h3 id="混入式继承"><a href="#混入式继承" class="headerlink" title="混入式继承"></a>混入式继承</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;</span><br><span class="line">    money : <span class="number">10000000</span>,</span><br><span class="line">    car : <span class="number">100</span>,</span><br><span class="line">    brand: <span class="string">"布加迪威航"</span>,</span><br><span class="line">    huaqian: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"不差钱，随便花"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj1)&#123;</span><br><span class="line">    <span class="comment">//money</span></span><br><span class="line">    <span class="comment">//car</span></span><br><span class="line">    <span class="comment">//brand</span></span><br><span class="line">    <span class="comment">//huaqian</span></span><br><span class="line">    obj[k] = obj1[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><ul>
 <li>通过修改原型实现的继承 就是原型继承<br>  通过构造函数创建出来的对象继承自构造函数的原型对象</li>
 </ul>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> human = &#123;</span><br><span class="line">    gender:<span class="string">"female"</span>,</span><br><span class="line">    height: <span class="number">170</span>,</span><br><span class="line">    weight: <span class="number">50</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Person.prototype.name = "王莉莉";</span></span><br></pre></td></tr></table></figure></div>
+
 <h4 id="原型继承的方式"><a href="#原型继承的方式" class="headerlink" title="原型继承的方式"></a>原型继承的方式</h4><ol>
 <li>通过混入的方式给原型添加属性和方法</li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Person.prototype</span></span><br><span class="line"><span class="keyword">var</span> human = &#123;</span><br><span class="line">    gender:<span class="string">"female"</span>,</span><br><span class="line">    height: <span class="number">170</span>,</span><br><span class="line">    weight: <span class="number">50</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name = <span class="string">"王莉莉"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> human)&#123;</span><br><span class="line">    Person.prototype[k] = human[k];</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p.name,p.gender,p.height,p.weight);</span><br></pre></td></tr></table></figure></div>
+
 <ol start="2">
 <li>修改原型对象</li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype.maimeng = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"感觉自己萌萌哒"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p.maimeng();</span><br></pre></td></tr></table></figure></div>
+
 <ol start="3">
 <li>替换原型对象</li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype = human;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(p.gender);</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="经典继承"><a href="#经典继承" class="headerlink" title="经典继承"></a>经典继承</h3><p>《JavaScript语言精粹》</p>
 <ul>
 <li>调用一个方法，就能实现继承<br><code>var obj1 = Object.create(obj)</code></li>
@@ -563,7 +572,9 @@
 <li>ES5才支持的这个方法 需要考虑兼容性问题</li>
 </ul>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> human = &#123;</span><br><span class="line">    name: <span class="string">"王莉莉"</span>,</span><br><span class="line">    gender: <span class="string">"female"</span>,</span><br><span class="line">    dance :<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"二人转，转转转"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(human);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj);</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="处理经典继承的兼容性问题"><a href="#处理经典继承的兼容性问题" class="headerlink" title="处理经典继承的兼容性问题"></a>处理经典继承的兼容性问题</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="built_in">Object</span>.create)&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="built_in">Object</span>.create(&#123;<span class="attr">name</span>:<span class="string">"李狗二"</span>,<span class="attr">age</span>:<span class="number">18</span>&#125;);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">Object</span>.create = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">//在这个函数中要实现的功能</span></span><br><span class="line">		<span class="comment">//就是，创建一个对象，将obj设置为该对象的原型</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//要设置原型，只能通过两种方式，</span></span><br><span class="line">		<span class="comment">// 一种是 对象.__proto__  另外一种是 构造函数.prototype</span></span><br><span class="line">		<span class="comment">//由于__proto__这个属性有兼容性问题，所以不使用</span></span><br><span class="line">		<span class="comment">//就只能使用 构造函数.prototype 去替换原型对象了</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">        F.prototype = obj;</span><br><span class="line">        <span class="keyword">var</span> result = <span class="keyword">new</span> F();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//不推荐直接修改内置对象，因为在多人开发的时候，会产生冲突</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.creat = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我是李二狗，我的create方法就是用来输出这句话的，哈哈哈"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hanyingxinCreate</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Object</span>.create)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.creat(obj);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">        F.prototype = obj;</span><br><span class="line">        <span class="keyword">var</span> result = <span class="keyword">new</span> F();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="继承的实际应用"><a href="#继承的实际应用" class="headerlink" title="继承的实际应用"></a>继承的实际应用</h2><ul>
 <li><p>扩展内置对象</p>
 </li>
@@ -584,7 +595,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -620,11 +631,11 @@
           
             <a href="/tags/javascript/" rel="tag"># javascript</a>
           
-            <a href="/tags/js面向对象/" rel="tag"># js面向对象</a>
+            <a href="/tags/js%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" rel="tag"># js面向对象</a>
           
-            <a href="/tags/继承/" rel="tag"># 继承</a>
+            <a href="/tags/%E7%BB%A7%E6%89%BF/" rel="tag"># 继承</a>
           
-            <a href="/tags/继承的实现方式/" rel="tag"># 继承的实现方式</a>
+            <a href="/tags/%E7%BB%A7%E6%89%BF%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/" rel="tag"># 继承的实现方式</a>
           
         </div>
       
@@ -728,7 +739,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

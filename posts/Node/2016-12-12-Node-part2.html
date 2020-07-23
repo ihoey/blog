@@ -173,18 +173,19 @@
 <script defer async src="/js/src/set.js"></script>
 
 
-  <meta name="description" content="为了让 NodeJs 的文件可以相互调用，NodeJs 提供了一个简单的模块系统。模块是 NodeJs 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 NodeJs 文件就是一个模块，这个文件可能是 JavaScript 代码、JSON 或者编译过的 C/C++ 扩展。">
-<meta name="keywords" content="Node,NodeJs">
+  <meta name="description" content="为了让 NodeJs 的文件可以相互调用，NodeJs 提供了一个简单的模块系统。模块是 NodeJs 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 NodeJs 文件就是一个模块，这个文件可能是 JavaScript 代码、JSON 或者编译过的 C&#x2F;C++ 扩展。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node第二部分-模块及工具">
 <meta property="og:url" content="https://blog.ihoey.com/posts/Node/2016-12-12-Node-part2.html">
 <meta property="og:site_name" content="梦魇小栈">
-<meta property="og:description" content="为了让 NodeJs 的文件可以相互调用，NodeJs 提供了一个简单的模块系统。模块是 NodeJs 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 NodeJs 文件就是一个模块，这个文件可能是 JavaScript 代码、JSON 或者编译过的 C/C++ 扩展。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-04T10:02:27.000Z">
+<meta property="og:description" content="为了让 NodeJs 的文件可以相互调用，NodeJs 提供了一个简单的模块系统。模块是 NodeJs 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 NodeJs 文件就是一个模块，这个文件可能是 JavaScript 代码、JSON 或者编译过的 C&#x2F;C++ 扩展。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-12-12T01:12:32.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.159Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="Node">
+<meta property="article:tag" content="NodeJs">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node第二部分-模块及工具">
-<meta name="twitter:description" content="为了让 NodeJs 的文件可以相互调用，NodeJs 提供了一个简单的模块系统。模块是 NodeJs 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 NodeJs 文件就是一个模块，这个文件可能是 JavaScript 代码、JSON 或者编译过的 C/C++ 扩展。">
 
 
 
@@ -255,7 +256,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +468,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-04 18:02:27" itemprop="dateModified" datetime="2018-05-04T18:02:27+08:00">2018-05-04</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,6 +539,7 @@
       
         <p>为了让 <code>NodeJs</code> 的文件可以相互调用，<code>NodeJs</code> 提供了一个简单的模块系统。<br>模块是 <code>NodeJs</code> 应用程序的基本组成部分，文件和模块是一一对应的。换言之，一个 <code>NodeJs</code> 文件就是一个模块，这个文件可能是 <code>JavaScript</code> 代码、<code>JSON</code> 或者编译过的 <code>C/C++</code> 扩展。</p>
 <a id="more"></a>
+
 <h2 id="NodeJs的模块"><a href="#NodeJs的模块" class="headerlink" title="NodeJs的模块"></a>NodeJs的模块</h2><ul>
 <li>核心模块(只要安装了node就会有的模块,已经被打包到了node.exe文件)</li>
 <li>自定义模块(我们自己写的js模块)</li>
@@ -555,7 +557,8 @@
 <li>url.parse(request.url,true)</li>
 </ul>
 <h2 id="fs文件操作模块"><a href="#fs文件操作模块" class="headerlink" title="fs文件操作模块"></a>fs文件操作模块</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JAVASCRIPT"><figure class="iseeu highlight /javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"><span class="comment">// 读取文件:</span></span><br><span class="line"><span class="comment">// 参数1：文件路径</span></span><br><span class="line"><span class="comment">// 参数2： 文件编码</span></span><br><span class="line"><span class="comment">// 返回值： 文件内容</span></span><br><span class="line"><span class="keyword">var</span> data = fs.readFileSync(<span class="string">'./index.html'</span>,<span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 写入文件</span></span><br><span class="line"><span class="comment">// 第一个参数：是要写入的文件目录,</span></span><br><span class="line"><span class="comment">// 第二个参数:是要写入的内容!</span></span><br><span class="line"><span class="comment">// 这个方法执行时会【覆盖】之前的文件内容!</span></span><br><span class="line">fs.writeFileSync(<span class="string">'./tmp.txt'</span>,<span class="string">'我是中国人，我爱自己的祖国!'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 追加文件</span></span><br><span class="line">fs.appendFileSync(<span class="string">'./xx.js'</span>,<span class="string">'我是小明，我在哪里?\r\n'</span>)</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 创建目录</span></span><br><span class="line">    <span class="comment">// 判断目录是否存在，如果不存在，则创建</span></span><br><span class="line">    <span class="keyword">var</span> result = fs.existsSync(<span class="string">'data'</span>) <span class="comment">// 判断当前目录是否存在data目录</span></span><br><span class="line">    <span class="keyword">if</span>(!result)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result)</span><br><span class="line">    <span class="comment">// 创建目录</span></span><br><span class="line">    fs.mkdirSync(<span class="string">'data'</span>)<span class="comment">// 在当前目录创建data目录</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
-<h2 id="dirname和firename"><a href="#dirname和firename" class="headerlink" title="dirname和firename"></a><strong>dirname和</strong>firename</h2><p>1, <strong>dirname 可在任意文件中直接使用,值表示当前文件所在路径字符串<br>2, </strong>firname 也可以在任意文件中使用,值表示当前文件的包含文件名的完整路径!</p>
+
+<h2 id="dirname和-firename"><a href="#dirname和-firename" class="headerlink" title="__dirname和__firename"></a>__dirname和__firename</h2><p>1, __dirname 可在任意文件中直接使用,值表示当前文件所在路径字符串<br>2, __firname 也可以在任意文件中使用,值表示当前文件的包含文件名的完整路径!</p>
 <h2 id="按顺序执行就是同步"><a href="#按顺序执行就是同步" class="headerlink" title="按顺序执行就是同步"></a>按顺序执行就是同步</h2><h2 id="form表单，提交get请求，会把请求参数添加到url中"><a href="#form表单，提交get请求，会把请求参数添加到url中" class="headerlink" title="form表单，提交get请求，会把请求参数添加到url中"></a>form表单，提交get请求，会把请求参数添加到url中</h2><h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向!"></a>重定向!</h2><ul>
 <li>在响应头里加上 Location:’新地址’,并设置状态为302</li>
 <li><code>res.setHeader(&#39;key&#39;,&#39;value&#39;)</code>// 设置响应头</li>
@@ -598,7 +601,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -738,7 +741,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>
@@ -1004,7 +1007,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NodeJs的模块"><span class="nav-number">1.</span> <span class="nav-text">NodeJs的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心模块"><span class="nav-number">2.</span> <span class="nav-text">核心模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#http-模块"><span class="nav-number">2.1.</span> <span class="nav-text">http 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url-模块"><span class="nav-number">2.2.</span> <span class="nav-text">url 模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fs文件操作模块"><span class="nav-number">3.</span> <span class="nav-text">fs文件操作模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dirname和firename"><span class="nav-number">4.</span> <span class="nav-text">dirname和firename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按顺序执行就是同步"><span class="nav-number">5.</span> <span class="nav-text">按顺序执行就是同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#form表单，提交get请求，会把请求参数添加到url中"><span class="nav-number">6.</span> <span class="nav-text">form表单，提交get请求，会把请求参数添加到url中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重定向"><span class="nav-number">7.</span> <span class="nav-text">重定向!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm"><span class="nav-number">8.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装包"><span class="nav-number">8.1.</span> <span class="nav-text">安装包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展"><span class="nav-number">9.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线文档阅读器"><span class="nav-number">10.</span> <span class="nav-text">离线文档阅读器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#es6-es2015-每天一点点"><span class="nav-number">11.</span> <span class="nav-text">es6/es2015 每天一点点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提交效率"><span class="nav-number">11.1.</span> <span class="nav-text">提交效率</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#NodeJs的模块"><span class="nav-number">1.</span> <span class="nav-text">NodeJs的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心模块"><span class="nav-number">2.</span> <span class="nav-text">核心模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#http-模块"><span class="nav-number">2.1.</span> <span class="nav-text">http 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url-模块"><span class="nav-number">2.2.</span> <span class="nav-text">url 模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fs文件操作模块"><span class="nav-number">3.</span> <span class="nav-text">fs文件操作模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dirname和-firename"><span class="nav-number">4.</span> <span class="nav-text">__dirname和__firename</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#按顺序执行就是同步"><span class="nav-number">5.</span> <span class="nav-text">按顺序执行就是同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#form表单，提交get请求，会把请求参数添加到url中"><span class="nav-number">6.</span> <span class="nav-text">form表单，提交get请求，会把请求参数添加到url中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重定向"><span class="nav-number">7.</span> <span class="nav-text">重定向!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm"><span class="nav-number">8.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装包"><span class="nav-number">8.1.</span> <span class="nav-text">安装包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展"><span class="nav-number">9.</span> <span class="nav-text">扩展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离线文档阅读器"><span class="nav-number">10.</span> <span class="nav-text">离线文档阅读器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#es6-es2015-每天一点点"><span class="nav-number">11.</span> <span class="nav-text">es6&#x2F;es2015 每天一点点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提交效率"><span class="nav-number">11.1.</span> <span class="nav-text">提交效率</span></a></li></ol></li></ol></div>
             
 
           </div>

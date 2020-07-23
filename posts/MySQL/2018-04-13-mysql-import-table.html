@@ -174,17 +174,20 @@
 
 
   <meta name="description" content="记录一下数据库导入文件方法~">
-<meta name="keywords" content="Ubuntu,shell,NoSQL,MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用 MySQL 导入 SQL 文件">
 <meta property="og:url" content="https://blog.ihoey.com/posts/MySQL/2018-04-13-mysql-import-table.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="记录一下数据库导入文件方法~">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-04T10:02:25.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2018-04-13T05:07:19.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.177Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="shell">
+<meta property="article:tag" content="NoSQL">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用 MySQL 导入 SQL 文件">
-<meta name="twitter:description" content="记录一下数据库导入文件方法~">
 
 
 
@@ -255,7 +258,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-04 18:02:25" itemprop="dateModified" datetime="2018-05-04T18:02:25+08:00">2018-05-04</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,16 +541,24 @@
       
         <p>记录一下数据库导入文件方法~</p>
 <a id="more"></a>
+
 <blockquote>
 <p>方案一</p>
 </blockquote>
 <h2 id="登录数据库"><a href="#登录数据库" class="headerlink" title="登录数据库"></a>登录数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p123</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="检查已经存在的数据库"><a href="#检查已经存在的数据库" class="headerlink" title="检查已经存在的数据库"></a>检查已经存在的数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="创建新的数据库"><a href="#创建新的数据库" class="headerlink" title="创建新的数据库"></a>创建新的数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database <span class="built_in">test</span>;</span><br><span class="line"><span class="comment"># 查看已经存在的是为了避免重复创建</span></span><br></pre></td></tr></table></figure></div>
+
 <h2 id="选择你所创建的数据库"><a href="#选择你所创建的数据库" class="headerlink" title="选择你所创建的数据库"></a>选择你所创建的数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use <span class="built_in">test</span>;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="导入sql文件"><a href="#导入sql文件" class="headerlink" title="导入sql文件"></a>导入sql文件</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> db-test.sql;</span><br><span class="line"><span class="comment">#注意sql文件的路径</span></span><br></pre></td></tr></table></figure></div>
+
 <h2 id="查看导入结果"><a href="#查看导入结果" class="headerlink" title="查看导入结果"></a>查看导入结果</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="退出数据库"><a href="#退出数据库" class="headerlink" title="退出数据库"></a>退出数据库</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span>;</span><br></pre></td></tr></table></figure></div>
+
 <blockquote>
 <p>方案二</p>
 </blockquote>
@@ -565,7 +576,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -709,7 +720,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

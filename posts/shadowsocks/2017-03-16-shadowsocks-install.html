@@ -174,17 +174,18 @@
 
 
   <meta name="description" content="轻松搭建shadowsocks,及相关配置说明">
-<meta name="keywords" content="科学上网,shadowsocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="科学上网之shadowsocks 服务端安装">
 <meta property="og:url" content="https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="轻松搭建shadowsocks,及相关配置说明">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-04T10:02:33.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-03-16T10:38:46.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.180Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="科学上网">
+<meta property="article:tag" content="shadowsocks">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="科学上网之shadowsocks 服务端安装">
-<meta name="twitter:description" content="轻松搭建shadowsocks,及相关配置说明">
 
 
 
@@ -255,7 +256,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +468,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-04 18:02:33" itemprop="dateModified" datetime="2018-05-04T18:02:33+08:00">2018-05-04</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,6 +539,7 @@
       
         <p>轻松搭建<code>shadowsocks</code>,及相关配置说明</p>
 <a id="more"></a>
+
 <h2 id="安装shadowsocks依赖-我的服务器系统是ubuntu"><a href="#安装shadowsocks依赖-我的服务器系统是ubuntu" class="headerlink" title="安装shadowsocks依赖(我的服务器系统是ubuntu)"></a>安装shadowsocks依赖(我的服务器系统是ubuntu)</h2><ul>
 <li><code>sudo -s</code> // 获取超级管理员权限</li>
 <li><code>apt-get update</code> // 更新apt-get</li>
@@ -547,11 +549,13 @@
 <h2 id="配置shadowsocks"><a href="#配置shadowsocks" class="headerlink" title="配置shadowsocks"></a>配置shadowsocks</h2><ul>
 <li><code>vi /etc/shadowsocks.json</code></li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//单一端口</span><br><span class="line">&#123;</span><br><span class="line">    "server":"0.0.0.0",//服务器 ip地址 (IPv4/IPv6)</span><br><span class="line">    "server_port":1121,//服务器监听的端口,注意不要设为使用中的端口</span><br><span class="line">    "local_address":"127.0.0.1",//默认即可</span><br><span class="line">    "local_port":1080,</span><br><span class="line">    "password":"password",//密码</span><br><span class="line">    "timeout":300,//超时时间（秒）</span><br><span class="line">    "method":"aes-256-cfb",//加密方式</span><br><span class="line">    "fast_open":false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//多端口</span><br><span class="line">  &#123;</span><br><span class="line">   "server":"my_server_ip",  //填入你的IP地址</span><br><span class="line">   "local_address": "127.0.0.1",</span><br><span class="line">   "local_port":1080,</span><br><span class="line">    "port_password": &#123;</span><br><span class="line">        "8381": "foobar1",    //端口号，密码</span><br><span class="line">        "8382": "foobar2",</span><br><span class="line">        "8383": "foobar3",</span><br><span class="line">        "8384": "foobar4"</span><br><span class="line">   &#125;,</span><br><span class="line">   "timeout":300,</span><br><span class="line">   "method":"aes-256-cfb",</span><br><span class="line">   "fast_open": false</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JSON"><figure class="iseeu highlight /json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单一端口</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,<span class="comment">//服务器 ip地址 (IPv4/IPv6)</span></span><br><span class="line">    <span class="attr">"server_port"</span>:<span class="number">1121</span>,<span class="comment">//服务器监听的端口,注意不要设为使用中的端口</span></span><br><span class="line">    <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,<span class="comment">//默认即可</span></span><br><span class="line">    <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"password"</span>:<span class="string">"password"</span>,<span class="comment">//密码</span></span><br><span class="line">    <span class="attr">"timeout"</span>:<span class="number">300</span>,<span class="comment">//超时时间（秒）</span></span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,<span class="comment">//加密方式</span></span><br><span class="line">    <span class="attr">"fast_open"</span>:<span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//多端口</span></span><br><span class="line">  &#123;</span><br><span class="line">   <span class="attr">"server"</span>:<span class="string">"my_server_ip"</span>,  <span class="comment">//填入你的IP地址</span></span><br><span class="line">   <span class="attr">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">   <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="attr">"port_password"</span>: &#123;</span><br><span class="line">        <span class="attr">"8381"</span>: <span class="string">"foobar1"</span>,    <span class="comment">//端口号，密码</span></span><br><span class="line">        <span class="attr">"8382"</span>: <span class="string">"foobar2"</span>,</span><br><span class="line">        <span class="attr">"8383"</span>: <span class="string">"foobar3"</span>,</span><br><span class="line">        <span class="attr">"8384"</span>: <span class="string">"foobar4"</span></span><br><span class="line">   &#125;,</span><br><span class="line">   <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">   <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">   <span class="attr">"fast_open"</span>: <span class="literal">false</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="优化shadowsocks服务"><a href="#优化shadowsocks服务" class="headerlink" title="优化shadowsocks服务"></a>优化shadowsocks服务</h2><ul>
 <li>在终端输入 <code>vi /etc/sysctl.d/local.conf</code></li>
 </ul>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># max open files</span><br><span class="line">fs.file-max = 1024000</span><br><span class="line"># max read buffer</span><br><span class="line">net.core.rmem_max = 67108864</span><br><span class="line"># max write buffer</span><br><span class="line">net.core.wmem_max = 67108864</span><br><span class="line"># default read buffer</span><br><span class="line">net.core.rmem_default = 65536</span><br><span class="line"># default write buffer</span><br><span class="line">net.core.wmem_default = 65536</span><br><span class="line"># max processor input queue</span><br><span class="line">net.core.netdev_max_backlog = 4096</span><br><span class="line"># max backlog</span><br><span class="line">net.core.somaxconn = 4096</span><br><span class="line"></span><br><span class="line"># resist SYN flood attacks</span><br><span class="line">net.ipv4.tcp_syncookies = 1</span><br><span class="line"># reuse timewait sockets when safe</span><br><span class="line">net.ipv4.tcp_tw_reuse = 1</span><br><span class="line"># turn off fast timewait sockets recycling</span><br><span class="line">net.ipv4.tcp_tw_recycle = 0</span><br><span class="line"># short FIN timeout</span><br><span class="line">net.ipv4.tcp_fin_timeout = 30</span><br><span class="line"># short keepalive time</span><br><span class="line">net.ipv4.tcp_keepalive_time = 1200</span><br><span class="line"># outbound port range</span><br><span class="line">net.ipv4.ip_local_port_range = 10000 65000</span><br><span class="line"># max SYN backlog</span><br><span class="line">net.ipv4.tcp_max_syn_backlog = 4096</span><br><span class="line"># max timewait sockets held by system simultaneously</span><br><span class="line">net.ipv4.tcp_max_tw_buckets = 5000</span><br><span class="line"># TCP receive buffer</span><br><span class="line">net.ipv4.tcp_rmem = 4096 87380 67108864</span><br><span class="line"># TCP write buffer</span><br><span class="line">net.ipv4.tcp_wmem = 4096 65536 67108864</span><br><span class="line"># turn on path MTU discovery</span><br><span class="line">net.ipv4.tcp_mtu_probing = 1</span><br><span class="line"></span><br><span class="line"># for high-latency network</span><br><span class="line">net.ipv4.tcp_congestion_control = hybla</span><br><span class="line"># forward ivp4</span><br><span class="line">net.ipv4.ip_forward = 1</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>配置生效：<code>sysctl --system</code></li>
 </ul>
@@ -589,7 +593,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -623,7 +627,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/科学上网/" rel="tag"># 科学上网</a>
+            <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" rel="tag"># 科学上网</a>
           
             <a href="/tags/shadowsocks/" rel="tag"># shadowsocks</a>
           
@@ -729,7 +733,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

@@ -174,17 +174,18 @@
 
 
   <meta name="description" content="熟悉前端的人都会听过css的伪类与伪元素，然而大多数的人都会将这两者混淆(包括我)。那今天就让我们来看看伪类和伪元素的区别吧!">
-<meta name="keywords" content="伪类,伪元素">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重新认识伪类和伪元素">
 <meta property="og:url" content="https://blog.ihoey.com/posts/CSS3/2017-04-28-pseudo-elements-and-pseudo-classes.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="熟悉前端的人都会听过css的伪类与伪元素，然而大多数的人都会将这两者混淆(包括我)。那今天就让我们来看看伪类和伪元素的区别吧!">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-04T10:02:32.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2017-04-28T08:35:10.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.180Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="伪类">
+<meta property="article:tag" content="伪元素">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="重新认识伪类和伪元素">
-<meta name="twitter:description" content="熟悉前端的人都会听过css的伪类与伪元素，然而大多数的人都会将这两者混淆(包括我)。那今天就让我们来看看伪类和伪元素的区别吧!">
 
 
 
@@ -255,7 +256,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +468,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-04 18:02:32" itemprop="dateModified" datetime="2018-05-04T18:02:32+08:00">2018-05-04</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,6 +539,7 @@
       
         <p>熟悉前端的人都会听过<code>css</code>的伪类与伪元素，然而大多数的人都会将这两者混淆(包括我)。那今天就让我们来看看伪类和伪元素的区别吧!</p>
 <a id="more"></a>
+
 <h2 id="伪类与伪元素"><a href="#伪类与伪元素" class="headerlink" title="伪类与伪元素"></a>伪类与伪元素</h2><p>先说一说为什么<code>css</code>要引入伪元素和伪类，以下是<code>css2.1 Selectors</code>章节中对伪类与伪元素的描述：</p>
 <p><code>CSS introduces the concepts of pseudo-elements and pseudo-classes  to permit formatting based on information that lies outside the document tree.</code></p>
 <ul>
@@ -580,18 +582,21 @@
 <li>该伪元素不是<code>CSS</code>的标准，它的实现可能在将来会有所改变，所以要决定使用时必须谨慎。<br>在一些浏览器中（<code>IE10</code>和<code>Firefox18</code>及其以下版本）会使用单冒号的形式。</li>
 <li>对于伪元素 <code>:before</code> 和 <code>:after</code> 而言，属性 <code>content</code> 是必须设置的，我们知道属性的值可以为字符串，也可以有其它形式，比如指向一张图片的 <code>URL:</code></li>
 </ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content: url(&apos;img/icon.png&apos;)</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">content: url(&#39;img&#x2F;icon.png&#39;)</span><br></pre></td></tr></table></figure></div>
+
 <ul>
 <li>配合伪类使用<ul>
 <li>伪元素 <code>:before</code> 还可以配合伪类使用，这里举经常与 <code>:before</code> 配合使用的伪类 <code>:hover</code> 为例：</li>
 </ul>
 </li>
 </ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.before:hover:before&#123;content:&apos;you before&apos;; color:red;&#125;</span><br><span class="line">&lt;div class=&quot;before&quot;&gt; me&lt;/div&gt;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.before:hover:before&#123;content:&#39;you before&#39;; color:red;&#125;</span><br><span class="line">&lt;div class&#x3D;&quot;before&quot;&gt; me&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure></div>
+
 <ul>
 <li>配合取值函数 <code>attr()</code> 使用</li>
 </ul>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a::before&#123;content: attr(title)&#125;</span><br><span class="line">&lt;a href=&quot;https://blog.ihoey.com&quot; title=&quot;梦魇小栈&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">效果</span><br><span class="line">&lt;a href=&quot;https://blog.ihoey.com&quot; title=&quot;梦魇小栈&quot;&gt;梦魇小栈&lt;/a&gt;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a::before&#123;content: attr(title)&#125;</span><br><span class="line">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;blog.ihoey.com&quot; title&#x3D;&quot;梦魇小栈&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line"></span><br><span class="line">效果</span><br><span class="line">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;blog.ihoey.com&quot; title&#x3D;&quot;梦魇小栈&quot;&gt;梦魇小栈&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
 <li>伪元素和伪类之所以这么容易混淆，是因为他们的效果类似而且写法相仿，但实际上 <code>css3</code> 为了区分两者，已经明确规定了伪类用一个冒号来表示，而伪元素则用两个冒号来表示。</li>
 <li>伪类的效果可以通过添加一个实际的类来达到，而伪元素的效果则需要通过添加一个实际的元素才能达到，这也是为什么他们一个称为伪类，一个称为伪元素的原因。</li>
@@ -609,7 +614,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -643,9 +648,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/伪类/" rel="tag"># 伪类</a>
+            <a href="/tags/%E4%BC%AA%E7%B1%BB/" rel="tag"># 伪类</a>
           
-            <a href="/tags/伪元素/" rel="tag"># 伪元素</a>
+            <a href="/tags/%E4%BC%AA%E5%85%83%E7%B4%A0/" rel="tag"># 伪元素</a>
           
         </div>
       
@@ -749,7 +754,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

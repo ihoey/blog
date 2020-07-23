@@ -174,19 +174,20 @@
 
 
   <meta name="description" content="OS X 的终端下通用很多 Unix 的工具和脚本。如果从 Linux 迁移到 OS X 会发现很多熟悉的命令和脚本工具，其实并没有任何区别。 但是 OS X 也提供了很多其他系统所没有的特别的命令行工具。我们推荐 8 个这类的工具，希望有助于提高在 Mac 的命令行环境下的效率。">
-<meta name="keywords" content="Mac,Mac OS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="不可不知的Mac OS X专用命令行工具(持续更新中)">
 <meta property="og:url" content="https://blog.ihoey.com/posts/Mac/2017-11-21-Mac-OS-X-command-line-tool.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="OS X 的终端下通用很多 Unix 的工具和脚本。如果从 Linux 迁移到 OS X 会发现很多熟悉的命令和脚本工具，其实并没有任何区别。 但是 OS X 也提供了很多其他系统所没有的特别的命令行工具。我们推荐 8 个这类的工具，希望有助于提高在 Mac 的命令行环境下的效率。">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://cdn.dode.top/item2.png?imageView2/0/format/png/q/75|imageslim">
-<meta property="og:updated_time" content="2019-03-27T02:53:23.593Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.dode.top/item2.png?imageView2/0/format/png/q/75%7Cimageslim">
+<meta property="article:published_time" content="2017-11-21T05:45:05.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.157Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="Mac">
+<meta property="article:tag" content="Mac OS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="不可不知的Mac OS X专用命令行工具(持续更新中)">
-<meta name="twitter:description" content="OS X 的终端下通用很多 Unix 的工具和脚本。如果从 Linux 迁移到 OS X 会发现很多熟悉的命令和脚本工具，其实并没有任何区别。 但是 OS X 也提供了很多其他系统所没有的特别的命令行工具。我们推荐 8 个这类的工具，希望有助于提高在 Mac 的命令行环境下的效率。">
-<meta name="twitter:image" content="https://cdn.dode.top/item2.png?imageView2/0/format/png/q/75|imageslim">
+<meta name="twitter:image" content="https://cdn.dode.top/item2.png?imageView2/0/format/png/q/75%7Cimageslim">
 
 
 
@@ -257,7 +258,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -469,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-27 10:53:23" itemprop="dateModified" datetime="2019-03-27T10:53:23+08:00">2019-03-27</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -541,46 +542,62 @@
         <p><code>OS X</code> 的终端下通用很多 <code>Unix</code> 的工具和脚本。如果从 <code>Linux</code> 迁移到 <code>OS X</code> 会发现很多熟悉的命令和脚本工具，其实并没有任何区别。</p>
 <p>但是 <code>OS X</code> 也提供了很多其他系统所没有的特别的命令行工具。我们推荐 <code>8</code> 个这类的工具，希望有助于提高在 <code>Mac</code> 的命令行环境下的效率。</p>
 <a id="more"></a>
+
 <h2 id="open"><a href="#open" class="headerlink" title="open"></a>open</h2><p><code>open</code> 命令用于打开文件、目录或执行程序。就等同于在命令行模式下，重复图形界面“双击”的动作。例如这个命令与在 <code>Finder</code> 中双击 <code>Safari</code> 是一样的：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`open /Applications/Safari.app/`</span><br></pre></td></tr></table></figure></div>
+
 <p>如果 <code>open</code> 一个文件，则会使用关联的程序打开之。例如 <code>open screenshot.png</code> 会在 <code>Preview</code> 中查看图片。</p>
 <p>可以使用 <code>-a</code> 选项要求自行选择打开的程序，或使用 <code>-e</code> 强制在 <code>TextEdit</code> 中编辑此文件。</p>
 <p><code>open</code> 一个目录会在 <code>Finder</code> 窗口中打开此目录。一个很有用的技巧是 <code>open .</code> 打开当前目录。</p>
 <p><code>Finder</code> 和终端的交互是双向的——把文件从 <code>Finder</code> 中拖入终端，就等同于把文件的完整路径粘贴到命令行中。</p>
 <h2 id="pbcopy-和-pbpaste"><a href="#pbcopy-和-pbpaste" class="headerlink" title="pbcopy 和 pbpaste"></a>pbcopy 和 pbpaste</h2><p>这两个工具可以打通命令行和剪贴板。当然用鼠标操作复制粘贴也可以——但这两个工具的真正威力，发挥在将其用作 Unix 工具的时候。意思就是说：可以将这两个工具用作管道、IO 重定向以及和其他命令的整合。例如：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls ~ | pbcopy</span><br></pre></td></tr></table></figure></div>
+
 <p>可以将主目录的文件列表复制到剪贴板。</p>
 <p>也可以把任意文件的内容读入剪贴板：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pbcopy &lt; blogpost.txt</span><br></pre></td></tr></table></figure></div>
+
 <p>做点更疯狂的尝试：获取最新 Google 纪念徽标（doodle）的 URL 并复制到剪贴板：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://www.google.com/doodles<span class="comment">#oodles/archive | grep -A5 'latest-doodle on' | grep 'img src' | sed s/.*'&lt;img src="\/\/'/''/ | sed s/'" alt=".*'/''/ | pbcopy</span></span><br></pre></td></tr></table></figure></div>
+
 <p>使用管道语法配合 <code>pbcopy</code> 工具可以简单的抓取命令的输出，而不必向上滚动翻阅终端窗口。可以用于和他人分享命令行的标准和错误输出。 <code>pbcopy</code> 和 <code>pbpaste</code> 也可以用于自动化或加速执行一些事情。例如把一些邮件的主题存为任务列表，就可以先从 <code>Mail.app</code> 中复制主题，再运行：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pbpaste &gt;&gt; tasklist.txt</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="mdfind"><a href="#mdfind" class="headerlink" title="mdfind"></a>mdfind</h2><p>许多 <code>Linux</code> 用户都发现 <code>Linux</code> 下查找文件的方法在 <code>OS X</code> 上不好用。当然经典的 <code>Unix find</code> 命令总是可以，但既然 <code>OS X</code> 有杀手级搜索工具 <code>Spotlight</code> ，为什么不在命令行上也使用一下呢？</p>
 <p>这就是 mdfind 命令了。 <code>Spotlight</code> 能做的查找， <code>mdfind</code> 也能做。包括搜索文件的内容和元数据（<code>metadata</code>）。</p>
 <p><code>mdfind</code>还提供更多的搜索选项。例如<code>-onlyin</code>选项可以约束搜索范围为一个目录：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdfind -onlyin ~/Documents essay</span><br></pre></td></tr></table></figure></div>
+
 <p><code>mdfind</code> 的索引数据库在后台自动更新，不过你也可以使用 <code>mdutil</code> 工具诊断数据库的问题，诊断 <code>mdfind</code> 的问题也等同于诊断 <code>Spotlight</code> 。如果 <code>Spotlight</code> 的工作不正确，<code>mdutil -E</code>命令可以强制重建索引数据库。也可以用 <code>mdutil -i</code> 彻底关闭文件索引。</p>
 <h2 id="screencapture"><a href="#screencapture" class="headerlink" title="screencapture"></a>screencapture</h2><p><code>screencapture</code> 命令可以截图。和 <code>Grab.app</code> 与 <code>cmd + shift + 3</code> 或 <code>cmd + shift + 4</code> 热键相似，但更加的灵活。</p>
 <p>抓取包含鼠标光标的全屏幕，并以 <code>image.png</code> 插入到新邮件的附件中：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screencapture -C -M image.png</span><br></pre></td></tr></table></figure></div>
+
 <p>用鼠标选择抓取窗口（及阴影）并复制到剪贴板：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screencapture -c -W</span><br></pre></td></tr></table></figure></div>
+
 <p>延时 10 秒后抓屏，并在 Preview 中打开之：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screencapture -T 10 -P image.png</span><br></pre></td></tr></table></figure></div>
+
 <p>用鼠标截取一个矩形区域，抓取后存为 pdf 文件：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screencapture -s -t pdf image.pdf</span><br></pre></td></tr></table></figure></div>
+
 <p>更多用法请参阅 <code>screencapture --help</code> 。</p>
 <h2 id="launchctl"><a href="#launchctl" class="headerlink" title="launchctl"></a>launchctl</h2><p><code>launchctl</code> 管理 <code>OS X</code> 的启动脚本，控制启动计算机时需要开启的服务。也可以设置定时执行特定任务的脚本，就像 <code>Linux cron</code> 一样。</p>
 <p>例如，开机时自动启动 <code>Apache</code> 服务器：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist</span><br></pre></td></tr></table></figure></div>
+
 <p>运行 <code>launchctl list</code> 显示当前的启动脚本。 <code>sudo launchctl unload [path/to/script]</code> 停止正在运行的启动脚本，再加上 <code>-w</code> 选项即可去除开机启动。用这个方法可以一次去除 <code>Adobe</code> 或 <code>Microsoft Office</code> 所附带的所有“自动更新”后台程序。</p>
 <p><code>Launchd</code> 脚本存储在以下位置：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">~/Library/LaunchAgents</span><br><span class="line">/Library/LaunchAgents</span><br><span class="line">/Library/LaunchDaemons</span><br><span class="line">/System/Library/LaunchAgents</span><br><span class="line">/System/Library/LaunchDaemons</span><br></pre></td></tr></table></figure></div>
+
 <!-- 启动脚本的格式可以参考这篇blog，或苹果开发者中心的文章。你也可以使用Lingon应用来完全取代命令行。 -->
+
 <h2 id="say"><a href="#say" class="headerlink" title="say"></a>say</h2><p><code>say</code> 是一个文本转语音（<code>TTS</code>）的有趣的工具，引擎和 <code>OS X</code> 使用的一样也是 <code>VoiceOver</code> 。如果不加其他选项，则会简单的语音朗读你给定的字符串：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">say <span class="string">"Never trust a computer you can't lift."</span></span><br><span class="line">用-f选项朗读特定文本文件，-o选项将朗读结果存为音频文件而不是播放：</span><br></pre></td></tr></table></figure></div>
+
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">say -f mynovel.txt -o myaudiobook.aiff</span><br></pre></td></tr></table></figure></div>
+
 <p><code>say</code> 命令可以用于在脚本中播放警告或提示。例如你可以设置 <code>Automator</code> 或 <code>Hazel</code> 脚本处理文件，并在任务完成时用 <code>say</code> 命令语音提示。</p>
 <p>最好玩（不过也负罪感十足）的用法是：通过 <code>SSH</code> 连接到朋友或同事的计算机，然后用 <code>say</code> 命令给他们一个大大大惊喜……</p>
 <p>可以在系统设置 <code>（System Preferences）</code> 的字典和语音 <code>（Dictation &amp; Speech）</code> 选项中调整系统的语音选项甚至是语音的语言。</p>
@@ -589,10 +606,11 @@
 <h2 id="brew"><a href="#brew" class="headerlink" title="brew"></a>brew</h2><p><code>Homebrew</code> 程序提供的 <code>brew</code> ，严格来讲不是一个 <code>OS X</code> 的原生命令，但任何一个 <code>OS X</code> 的专业用户都不会错过它。“ <code>OS X</code> 缺少的包管理器”这个评价是恰如其分的。如果你曾经在 <code>Linux</code> 上使用过 <code>apt-get</code> （或其他包管理器——译者注），你就会发现 <code>Homebrew</code> 基本上是一样的。</p>
 <p>使用 <code>brew</code> 可以简单的获取数千种开源工具和函数库。例如 <code>brew install imagemagick</code> 就可以安装 <code>ImageMagick</code> （几乎可以处理任何图像问题，转换任何格式的图像工具）， <code>brew install node</code> 可以安装 <code>Node.js</code> （当前大热的服务器端 <code>JavaScript</code> 编程工具）。</p>
 <p>也可以通过 <code>Homebrew</code> 做有趣的事情： <code>brew install archey</code> 会安装 <code>Archey</code> （在启动命令行时显示苹果 <code>LOGO</code> 和计算机硬件参数的小工具）。</p>
-<p><img src="https://cdn.dode.top/item2.png?imageView2/0/format/png/q/75|imageslim" alt="item2"></p>
+<p><img src="https://cdn.dode.top/item2.png?imageView2/0/format/png/q/75%7Cimageslim" alt="item2"></p>
 <p><code>Homebrew</code> 能安装的工具数量庞大，并且一直保持更新。<code>Homebrew</code> 最棒的一点是：所有的文件都被约束在 <code>/usr/local/</code> 一个位置之下。也就是说可以通过 <code>Homebrew</code> 安装新版软件的同时，保持系统内置的依赖库或其他软件不变。同时如果想彻底删除 <code>Homebrew</code> ，也变得非常简单。</p>
 <p>（注：删除 <code>Homebrew</code> 最好还是不要直接删除 <code>/usr/local/</code> 。应当用这个卸载脚本点击预览。）</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment"># Just copy and paste the lines below (all at once, it won't work line by line!)</span></span><br><span class="line"><span class="comment"># MAKE SURE YOU ARE HAPPY WITH WHAT IT DOES FIRST! THERE IS NO WARRANTY!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> abort &#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">"<span class="variable">$1</span>"</span></span><br><span class="line">  <span class="built_in">exit</span> 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> -e</span><br><span class="line"></span><br><span class="line">/usr/bin/<span class="built_in">which</span> -s git || abort <span class="string">"brew install git first!"</span></span><br><span class="line"><span class="built_in">test</span> -d /usr/<span class="built_in">local</span>/.git || abort <span class="string">"brew update first!"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> `brew --prefix`</span><br><span class="line">git checkout master</span><br><span class="line">git ls-files -z | pbcopy</span><br><span class="line">rm -rf Cellar</span><br><span class="line">bin/brew prune</span><br><span class="line">pbpaste | xargs -0 rm</span><br><span class="line">rm -r Library/Homebrew Library/Aliases Library/Formula Library/Contributions</span><br><span class="line"><span class="built_in">test</span> -d Library/LinkedKegs &amp;&amp; rm -r Library/LinkedKegs</span><br><span class="line">rmdir -p bin Library share/man/man1 2&gt; /dev/null</span><br><span class="line">rm -rf .git</span><br><span class="line">rm -rf ~/Library/Caches/Homebrew</span><br><span class="line">rm -rf ~/Library/Logs/Homebrew</span><br><span class="line">rm -rf /Library/Caches/Homebrew</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="在-访达-中预览-webp-格式图片"><a href="#在-访达-中预览-webp-格式图片" class="headerlink" title="在 访达 中预览 webp 格式图片"></a>在 访达 中预览 webp 格式图片</h2><p><code>WebP</code>文件的快速查看插件</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="BASH"><figure class="iseeu highlight /bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://raw.github.com/emin/WebPQuickLook/master/install.sh | sh</span><br></pre></td></tr></table></figure></div>
 
@@ -608,7 +626,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -748,7 +766,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

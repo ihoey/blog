@@ -173,18 +173,18 @@
 <script defer async src="/js/src/set.js"></script>
 
 
-  <meta name="description" content="函数声明123456789function func()&amp;#123;    //函数体&amp;#125;//2.函数表达式var func1 = function()&amp;#123;&amp;#125;//3.通过Function构造函数来创建var func2 = new Function();">
-<meta name="keywords" content="Function">
+  <meta name="description" content="函数声明123456789function func()&amp;#123;    &#x2F;&#x2F;函数体&amp;#125;&#x2F;&#x2F;2.函数表达式var func1 &#x3D; function()&amp;#123;&amp;#125;&#x2F;&#x2F;3.通过Function构造函数来创建var func2 &#x3D; new Function();">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js高级与面向对象之函数">
 <meta property="og:url" content="https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html">
 <meta property="og:site_name" content="梦魇小栈">
-<meta property="og:description" content="函数声明123456789function func()&amp;#123;    //函数体&amp;#125;//2.函数表达式var func1 = function()&amp;#123;&amp;#125;//3.通过Function构造函数来创建var func2 = new Function();">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T08:45:23.000Z">
+<meta property="og:description" content="函数声明123456789function func()&amp;#123;    &#x2F;&#x2F;函数体&amp;#125;&#x2F;&#x2F;2.函数表达式var func1 &#x3D; function()&amp;#123;&amp;#125;&#x2F;&#x2F;3.通过Function构造函数来创建var func2 &#x3D; new Function();">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-07-22T11:40:39.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.166Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="Function">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js高级与面向对象之函数">
-<meta name="twitter:description" content="函数声明123456789function func()&amp;#123;    //函数体&amp;#125;//2.函数表达式var func1 = function()&amp;#123;&amp;#125;//3.通过Function构造函数来创建var func2 = new Function();">
 
 
 
@@ -255,7 +255,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +467,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-10 16:45:23" itemprop="dateModified" datetime="2018-05-10T16:45:23+08:00">2018-05-10</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,12 +538,18 @@
       
         <h2 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h2><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//函数体</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//2.函数表达式</span></span><br><span class="line"><span class="keyword">var</span> func1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//3.通过Function构造函数来创建</span></span><br><span class="line"><span class="keyword">var</span> func2 = <span class="keyword">new</span> <span class="built_in">Function</span>();</span><br></pre></td></tr></table></figure></div>
 <a id="more"></a>
+
 <h3 id="函数的name属性"><a href="#函数的name属性" class="headerlink" title="函数的name属性"></a>函数的name属性</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="comment">//p.constructor</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> p);  <span class="comment">//object</span></span><br><span class="line"><span class="built_in">console</span>.log(p.constructor.toString());</span><br><span class="line"><span class="built_in">console</span>.log(Person.name);</span><br><span class="line"><span class="built_in">console</span>.log(p.constructor.name);</span><br></pre></td></tr></table></figure></div>
+
 <p>函数都会有一个 <code>name</code> 属性，所以我们可以通过对象先找到构造函数，然后直接访问构造函数的 <code>name</code> ，就拿到了具体类型</p>
 <h2 id="Function的使用"><a href="#Function的使用" class="headerlink" title="Function的使用"></a>Function的使用</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Function函数所有的参数全都是字符串</span></span><br><span class="line"><span class="comment">//Function函数的作用就是将所有的参数组合起来，变成一个函数</span></span><br><span class="line"><span class="comment">//1、如果只传一个参数，那么这个函数必然是函数体</span></span><br><span class="line"><span class="comment">//2、如果传多个参数，那么最后一个参数表示函数体，前面的参数代表将要创建的函数的参数</span></span><br><span class="line"><span class="comment">//3、如果不传参数，表示创建一个空函数</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Function</span>(arg1, arg2, arg3, ..., argN, body);</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="创建一个打印一句话的函数"><a href="#创建一个打印一句话的函数" class="headerlink" title="创建一个打印一句话的函数"></a>创建一个打印一句话的函数</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传统的方式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"你好"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用Function</span></span><br><span class="line"><span class="keyword">var</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"console.log('你好');"</span>);</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="创建一个空函数"><a href="#创建一个空函数" class="headerlink" title="创建一个空函数"></a>创建一个空函数</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传统的方式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Function</span></span><br><span class="line"><span class="keyword">var</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>();</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="创建一个有参数的函数"><a href="#创建一个有参数的函数" class="headerlink" title="创建一个有参数的函数"></a>创建一个有参数的函数</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//传统的方式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = <span class="keyword">new</span> <span class="built_in">Function</span>()&#123;<span class="string">"num"</span>, <span class="string">"console.log(num);"</span>&#125;;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="静态成员与实例成员的概念"><a href="#静态成员与实例成员的概念" class="headerlink" title="静态成员与实例成员的概念"></a>静态成员与实例成员的概念</h2><p>静态成员和实例成员这两个概念其实也是从面相对象的编程语言中引入的，对应到 <code>JavaScript</code> 中的理解为：</p>
 <h3 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h3><ul>
 <li>静态成员是指静态属性和静态方法，所谓静态，就是有构造函数提供的。</li>
@@ -568,7 +574,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -706,7 +712,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

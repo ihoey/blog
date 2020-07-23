@@ -174,17 +174,19 @@
 
 
   <meta name="description" content="JQuery模块分析及其实现第四部分属性部分功能及实现,接第三部分!">
-<meta name="keywords" content="原生Js,Js框架,JQuery">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JQuery分析及实现part4之DOM操作模块功能及实现">
 <meta property="og:url" content="https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="JQuery模块分析及其实现第四部分属性部分功能及实现,接第三部分!">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T08:45:23.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-11-21T11:08:10.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.170Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="原生Js">
+<meta property="article:tag" content="Js框架">
+<meta property="article:tag" content="JQuery">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JQuery分析及实现part4之DOM操作模块功能及实现">
-<meta name="twitter:description" content="JQuery模块分析及其实现第四部分属性部分功能及实现,接第三部分!">
 
 
 
@@ -255,7 +257,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-10 16:45:23" itemprop="dateModified" datetime="2018-05-10T16:45:23+08:00">2018-05-10</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,6 +540,7 @@
       
         <p>JQuery模块分析及其实现第四部分属性部分功能及实现,接第三部分!</p>
 <a id="more"></a>
+
 <h2 id="appendTo-方法"><a href="#appendTo-方法" class="headerlink" title="appendTo 方法"></a>appendTo 方法</h2><ol>
 <li>功能:将结果集中的元素 追加到指定的 <code>dom</code> 元素上.</li>
 <li>语法:<code>&lt;target对象&gt;.appendTo(target)</code></li>
@@ -560,6 +563,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">appendTo: <span class="function"><span class="keyword">function</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> node,</span><br><span class="line">		ret = [];</span><br><span class="line">	<span class="comment">// 统一target类型 为itcast对象（为了方便操作）</span></span><br><span class="line">	target = itcast(target);</span><br><span class="line">	<span class="comment">// 遍历this上的每一个dom元素</span></span><br><span class="line">	<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">		<span class="comment">// 在遍历目标dom元素</span></span><br><span class="line">		target.each(<span class="function"><span class="keyword">function</span>(<span class="params">t, i</span>) </span>&#123;</span><br><span class="line">			<span class="comment">// 如果当前dom元素为 目标上的第一个.不拷贝节点</span></span><br><span class="line">			<span class="comment">// 否则拷贝节点</span></span><br><span class="line">			node = i === <span class="number">0</span> ? v : v.cloneNode(<span class="literal">true</span>);</span><br><span class="line">			<span class="comment">// 将被追加的节点,添加到ret内</span></span><br><span class="line">			ret.push(node);</span><br><span class="line">			<span class="comment">// 将节点追加到指定的目标dom元素上.</span></span><br><span class="line">			t.appendChild(node);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="comment">// 将每一个添加的dom元素,转换成itcast对象返回,实现链式编程</span></span><br><span class="line">	<span class="comment">// 原因:在添加样式时,如果不这样做的话,只会给没克隆的节点添加样式.</span></span><br><span class="line">	<span class="keyword">return</span> itcast(ret);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="append-方法"><a href="#append-方法" class="headerlink" title="append 方法"></a>append 方法</h2><ol>
 <li>语法: <code>&lt;itcast对象&gt;.append(source)</code> ;</li>
 <li>功能: 将 <code>source</code> 上的所有 <code>dom</code> 元素,追加到 <code>itcast</code> 对象上</li>
@@ -571,6 +575,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">append: <span class="function"><span class="keyword">function</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//统一source类型,为itcast对象</span></span><br><span class="line">	source = itcast(source);</span><br><span class="line">	source.appendTo(<span class="keyword">this</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="prependTo-方法"><a href="#prependTo-方法" class="headerlink" title="prependTo 方法"></a>prependTo 方法</h2><ol>
 <li>语法: <code>&lt;itcast对象&gt;.prependTo(target);</code></li>
 <li>功能:将 <code>itcast</code> 对象上的每一个 <code>dom</code> 元素,追加到 <code>target</code> 最前边 <code>insertBefore</code></li>
@@ -590,6 +595,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">prependTo: <span class="function"><span class="keyword">function</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//定义变量node,临时存储被追加的节点</span></span><br><span class="line">	<span class="keyword">var</span> node,</span><br><span class="line">	<span class="comment">//定义变量firstChild,临时存储当前dom元素的第一个子节点</span></span><br><span class="line">		firstChild,</span><br><span class="line">		self = <span class="keyword">this</span>,</span><br><span class="line">		<span class="comment">//定义ret数组,存储所有被追加的节点</span></span><br><span class="line">		ret = [];</span><br><span class="line">   <span class="comment">//统一类型为itcast对象</span></span><br><span class="line">	target = itcast(target);</span><br><span class="line">	<span class="comment">//遍历target上的每一个dom元素</span></span><br><span class="line">	target.each(<span class="function"><span class="keyword">function</span>(<span class="params">elem, i</span>) </span>&#123;</span><br><span class="line">		<span class="comment">// 缓存当前目标dom元素的第一个子节点</span></span><br><span class="line">		firstChild = elem.firstChild;</span><br><span class="line">		<span class="comment">//遍历this上的每一个dom元素</span></span><br><span class="line">		self.each(<span class="function"><span class="keyword">function</span>(<span class="params">dom</span>) </span>&#123;</span><br><span class="line">			<span class="comment">//判断当前遍历的dom是否为target上的每一个dom元素</span></span><br><span class="line">			<span class="comment">//若为真,则不需要克隆节点,否则,要深克隆节点</span></span><br><span class="line">			<span class="comment">// 将得到的节点赋值给node</span></span><br><span class="line">			node = i === <span class="number">0</span> ? dom : dom.cloneNode(<span class="literal">true</span>);</span><br><span class="line">			<span class="comment">//将节点push到ret内</span></span><br><span class="line">			ret.push(node);</span><br><span class="line">			<span class="comment">//调用insertBefore方法,追加节点(追加的新节点,firstChild)</span></span><br><span class="line">			elem.insertBefore(node, firstChild);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">    <span class="comment">//将ret作为itcast对象,并且返回</span></span><br><span class="line">	<span class="keyword">return</span> itcast(ret);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="prepend-方法"><a href="#prepend-方法" class="headerlink" title="prepend 方法"></a>prepend 方法</h2><ol>
 <li>语法: <code>&lt;itcast对象&gt;.prepend(source);</code></li>
 <li>功能:把 <code>source</code> 上的所有的 <code>dom</code> 元素,添加到 <code>this</code> 上的最前边</li>
@@ -601,6 +607,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">prepend: <span class="function"><span class="keyword">function</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">	source = itcast(source);</span><br><span class="line">	source.prependTo(<span class="keyword">this</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="next-方法"><a href="#next-方法" class="headerlink" title="next 方法"></a>next 方法</h2><ol>
 <li>功能:获取 <code>itcast</code> 对象上所有 <code>dom</code> 元素的下一个兄弟元素 <code>(nextSiling)</code></li>
 <li>语法: <code>&lt;itcast对象&gt;.next();</code> 返回值类型, <code>itcast</code> 对象</li>
@@ -613,6 +620,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">next: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 存储所用dom的下一个兄弟元素</span></span><br><span class="line">	<span class="keyword">var</span> ret = [];</span><br><span class="line">	<span class="comment">// 遍历this上的所有dom元素</span></span><br><span class="line">	<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">// 在遍历当前dom元素下面所有的兄弟元素</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> node = <span class="keyword">this</span>.nextSibling; node ; node = node.nextSibling)&#123;</span><br><span class="line">			<span class="comment">// 如果当前兄弟节点,为元素节点</span></span><br><span class="line">			<span class="comment">// 即为结果,将其添加ret内,并结束循环</span></span><br><span class="line">			<span class="keyword">if</span>(node.nodeType === <span class="number">1</span>)&#123;</span><br><span class="line">				ret.push(node);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="comment">// 将ret转换成itcast对象,返回</span></span><br><span class="line">	<span class="keyword">return</span> itcast(ret);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="nextAll"><a href="#nextAll" class="headerlink" title="nextAll"></a>nextAll</h2><ol>
 <li>功能:获取 <code>itcast</code> 对象上所有 <code>dom</code> 元素下面的所有兄弟元素 <code>(nextSiling)</code></li>
 <li>语法: <code>&lt;itcast对象&gt;.nextAll();</code> 返回值类型, <code>itcast</code> 对象</li>
@@ -625,6 +633,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">nextAll: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> ret = [],</span><br><span class="line">		node;</span><br><span class="line">	<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(node = <span class="keyword">this</span>.nextSibling; node ; node = node.nextSibling)&#123;</span><br><span class="line">			<span class="keyword">if</span>(node.nodeType === <span class="number">1</span>) ret.push(node);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> itcast(itcast.unique(ret));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="before-方法"><a href="#before-方法" class="headerlink" title="before 方法"></a>before 方法</h2><ol>
 <li>功能:</li>
 <li>语法: <code>&lt;itcast对象&gt;.before(source)</code></li>
@@ -642,6 +651,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">before: <span class="function"><span class="keyword">function</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> node;</span><br><span class="line">	source = itcast(source);</span><br><span class="line">	<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">dom, i</span>) </span>&#123;</span><br><span class="line">		source.each(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>) </span>&#123;</span><br><span class="line">			node = i === <span class="number">0</span> ? elem : elem.cloneNode(<span class="literal">true</span>);</span><br><span class="line">			<span class="comment">// 获取dom的父节点，调用insertBefore方法在dom前添加新的子节点node</span></span><br><span class="line">			dom.parentNode.insertBefore(node, dom);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="after-方法"><a href="#after-方法" class="headerlink" title="after 方法"></a>after 方法</h2><ol>
 <li>功能:</li>
 <li>语法: <code>&lt;itcast对象&gt;.after(source)</code></li>
@@ -660,6 +670,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">after: <span class="function"><span class="keyword">function</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> node,</span><br><span class="line">		nextSibling;</span><br><span class="line">	source = itcast(source);</span><br><span class="line">	<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">dom, i</span>) </span>&#123;</span><br><span class="line">		nextSibling = dom.nextSibling;</span><br><span class="line">		source.each(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>) </span>&#123;</span><br><span class="line">			node = i === <span class="number">0</span> ? elem : elem.cloneNode(<span class="literal">true</span>);</span><br><span class="line">			<span class="comment">// 获取dom的父节点，调用insertBefore方法在dom前添加新的子节点node</span></span><br><span class="line">			dom.parentNode.insertBefore(node, nextSibling);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="unique-方法"><a href="#unique-方法" class="headerlink" title="unique 方法"></a>unique 方法</h2><ol>
 <li>功能:实现数组元素去重</li>
 <li>语法: <code>var newRet = itcast.unique(arr);</code></li>
@@ -680,9 +691,11 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">unique: <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 存储去重后的结果</span></span><br><span class="line">	<span class="keyword">var</span> ret = [];</span><br><span class="line">	<span class="comment">// 遍历原数组arr</span></span><br><span class="line">	itcast.each(arr, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		<span class="comment">// 判断ret是否存在当前遍历到的元素</span></span><br><span class="line">		<span class="comment">// 如果不存在将其添加到ret中</span></span><br><span class="line">		<span class="keyword">if</span>(ret.indexOf(<span class="keyword">this</span>) === <span class="number">-1</span>) ret.push(<span class="keyword">this</span>);</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="comment">// 将ret返回</span></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p id="code">兼容 <code>IE8</code> <code>indexof</code> 方法</p>
+
+<p id="code">兼容 `IE8` `indexof` 方法</p>
 
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 兼容数组对象的indexOf方法</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 如果浏览器不支持indexOf方法</span></span><br><span class="line">	<span class="comment">// 那么就给数组对象的原型添加indexOf方法</span></span><br><span class="line">	<span class="keyword">if</span>(!<span class="built_in">Array</span>.prototype.indexOf)&#123;</span><br><span class="line">		<span class="built_in">Array</span>.prototype.indexOf = <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">			<span class="comment">// 遍历this</span></span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,l = <span class="keyword">this</span>.length; i &lt; l; i++)&#123;</span><br><span class="line">				<span class="comment">// 如果遍历到的当前元素和val相同，返回其索引值</span></span><br><span class="line">				<span class="keyword">if</span>(<span class="keyword">this</span>[i] == val) <span class="keyword">return</span> i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">// 那么表示不存在指定参数值就返回 -1</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="prev-方法"><a href="#prev-方法" class="headerlink" title="prev 方法"></a>prev 方法</h2><ol>
 <li>功能: 获取 <code>itcast</code> 对象上所有 <code>dom</code> 元素的前一个兄弟元素 <code>(previousSibling)</code></li>
 <li>语法: <code>&lt;itcast对象&gt;.prev();</code> 返回值类型: <code>itcast对象</code></li>
@@ -695,6 +708,7 @@
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">prev:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="comment">//存储所有dom的前一个兄弟元素</span></span><br><span class="line">	<span class="keyword">var</span> ret=[];</span><br><span class="line">	<span class="comment">//遍历this上的所有dom元素</span></span><br><span class="line">	<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="comment">//在遍历当前dom元素之前所有的兄弟元素</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> node=<span class="keyword">this</span>.previousSibling;node;node=node.previousSibling)&#123;</span><br><span class="line">			<span class="comment">//如果当前兄弟节点为元素节点</span></span><br><span class="line">			<span class="comment">//即为结果,将其添加到ret内,并结束循环</span></span><br><span class="line">			<span class="keyword">if</span>(node.nodeType===<span class="number">1</span>)&#123;</span><br><span class="line">				ret.push(node);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="comment">//将ret转换成itcast对象,返回</span></span><br><span class="line">	<span class="keyword">return</span> itcast(ret);</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="prevAll-方法"><a href="#prevAll-方法" class="headerlink" title="prevAll 方法"></a>prevAll 方法</h2><ol>
 <li>功能: 获取 <code>itcast</code> 对象上所有 <code>dom</code> 元素的之前的所有兄弟元素 <code>(nextSibling)</code></li>
 <li>语法: <code>&lt;itcast对象&gt;.nextAll();</code> 返回值类型: <code>itcast对象</code></li>
@@ -720,7 +734,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -754,9 +768,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/原生Js/" rel="tag"># 原生Js</a>
+            <a href="/tags/%E5%8E%9F%E7%94%9FJs/" rel="tag"># 原生Js</a>
           
-            <a href="/tags/Js框架/" rel="tag"># Js框架</a>
+            <a href="/tags/Js%E6%A1%86%E6%9E%B6/" rel="tag"># Js框架</a>
           
             <a href="/tags/JQuery/" rel="tag"># JQuery</a>
           
@@ -862,7 +876,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

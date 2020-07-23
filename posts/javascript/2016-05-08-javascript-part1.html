@@ -174,17 +174,17 @@
 
 
   <meta name="description" content="javascript高级与面向对象笔记整理，第一篇！！">
-<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript高级篇之part1">
 <meta property="og:url" content="https://blog.ihoey.com/posts/javascript/2016-05-08-javascript-part1.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="javascript高级与面向对象笔记整理，第一篇！！">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-04T10:02:09.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-05-08T09:31:48.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.171Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript高级篇之part1">
-<meta name="twitter:description" content="javascript高级与面向对象笔记整理，第一篇！！">
 
 
 
@@ -255,7 +255,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +467,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-04 18:02:09" itemprop="dateModified" datetime="2018-05-04T18:02:09+08:00">2018-05-04</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,6 +538,7 @@
       
         <p>javascript高级与面向对象笔记整理，第一篇！！</p>
 <a id="more"></a>
+
 <h2 id="JavaScript基础知识复习"><a href="#JavaScript基础知识复习" class="headerlink" title="JavaScript基础知识复习"></a>JavaScript基础知识复习</h2><h3 id="JavaScript的基本组成"><a href="#JavaScript的基本组成" class="headerlink" title="JavaScript的基本组成"></a>JavaScript的基本组成</h3><ul>
 <li><code>ECMAScript</code>     规定了 <code>JavaScript</code> 的语法规范</li>
 <li><code>DOM</code>            提供了访问页面元素的 <code>API</code></li>
@@ -562,6 +563,7 @@
 <li><code>null(特殊的)</code></li>
 </ul>
 <h4 id="获取类型的关键字-typeof"><a href="#获取类型的关键字-typeof" class="headerlink" title="获取类型的关键字 typeof"></a>获取类型的关键字 <code>typeof</code></h4><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> 变量名（表达式）</span><br><span class="line"><span class="comment">//返回值为字符串类型</span></span><br></pre></td></tr></table></figure></div>
+
 <h4 id="引用类型-值类型"><a href="#引用类型-值类型" class="headerlink" title="引用类型 值类型"></a>引用类型 值类型</h4><h5 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h5><p>存储的是数据的地址的数据就是引用类型的数据</p>
 <h5 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h5><p>存储的数据本身的数据就是值类型的数据</p>
 <h5 id="赋值特征"><a href="#赋值特征" class="headerlink" title="赋值特征"></a>赋值特征</h5><ul>
@@ -570,8 +572,10 @@
 </ul>
 <h3 id="in-关键字"><a href="#in-关键字" class="headerlink" title="in 关键字"></a><code>in</code> 关键字</h3><h4 id="for-in"><a href="#for-in" class="headerlink" title="for-in"></a><code>for-in</code></h4><p>用来遍历对象的属性的，每次遍历到的属性是字符串类型的</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj)&#123;</span><br><span class="line">	<span class="comment">//这里的k就是每个键</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <h4 id="in"><a href="#in" class="headerlink" title="in"></a><code>in</code></h4><p>检测对象中是否存在某个属性</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">属性名 <span class="keyword">in</span> 对象名</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="逻辑中断"><a href="#逻辑中断" class="headerlink" title="逻辑中断"></a>逻辑中断</h3><h4 id=""><a href="#" class="headerlink" title="||"></a>||</h4><p> <code>表达式1 || 表达式2</code><br>如果表达式 <code>1</code> 为真，就返回表达式 <code>1</code> ，如果表达式 <code>1</code> 位假，则返回表达式 <code>2</code></p>
 <h4 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h4><p> <code>表达式1 &amp;&amp; 表达式2</code><br>如果表达式 <code>1</code> 为真，就返回表达式 <code>2</code> ，如果表达式 <code>1</code> 为假，则返回表达式 <code>1</code></p>
 <h3 id="delete关键字"><a href="#delete关键字" class="headerlink" title="delete关键字"></a>delete关键字</h3><ul>
@@ -580,7 +584,7 @@
 <li><code>window</code> 有自带的属性 <code>name</code></li>
 </ul>
 <h3 id="continue-和-break"><a href="#continue-和-break" class="headerlink" title="continue 和 break"></a><code>continue</code> 和 <code>break</code></h3><ul>
-<li><code>continue</code> 跳出本次循环，继续下次循环</li>
+<li><code>continue </code> 跳出本次循环，继续下次循环</li>
 <li><code>break</code> 跳出整个循环，继续执行循环之后的代码</li>
 </ul>
 <h3 id="对象的动态特性"><a href="#对象的动态特性" class="headerlink" title="对象的动态特性"></a>对象的动态特性</h3><p>对象在创建出来之后，可以随时的新增成员（方法和属性），这就是对象的动态特性</p>
@@ -592,6 +596,7 @@
 <li><code>Sources</code>  所有的资源文件都在这里，最重要的就是可以在这里对 <code>js</code>代码进行断点调试</li>
 </ul>
 <h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="comment">//可能出现异常的代码</span></span><br><span class="line">&#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">    <span class="comment">//e 异常对象，异常信息</span></span><br><span class="line">    <span class="comment">//捕获异常后的处理代码</span></span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    <span class="comment">//不论是否发生异常，都会执行的代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="面向对象简单介绍"><a href="#面向对象简单介绍" class="headerlink" title="面向对象简单介绍"></a>面向对象简单介绍</h2><h3 id="面向对象的基本概念"><a href="#面向对象的基本概念" class="headerlink" title="面向对象的基本概念"></a>面向对象的基本概念</h3><p>面向对象是一种思维方式，他是将解决问题的关注点放到了解决问题所需要的一些列对象身上</p>
 <h3 id="面向过程的基本概念"><a href="#面向过程的基本概念" class="headerlink" title="面向过程的基本概念"></a>面向过程的基本概念</h3><p>面向过程是一种思维方式，他是将解决问题的关注点放到了解决问题的每一个详细的步骤上</p>
 <h3 id="面向对象就是对面向过程的封装"><a href="#面向对象就是对面向过程的封装" class="headerlink" title="面向对象就是对面向过程的封装"></a>面向对象就是对面向过程的封装</h3>
@@ -607,7 +612,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -745,7 +750,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

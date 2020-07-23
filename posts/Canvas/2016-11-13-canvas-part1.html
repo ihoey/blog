@@ -174,17 +174,19 @@
 
 
   <meta name="description" content="canvas 是 HTML5 提供的一个用于展示绘图效果的标签. canvas 原意画布, 帆布. 在 HTML 页面中用于展示绘图效果. 最早 canvas 是苹果提出的一个方案, 今天已经在大多数浏览器中实现.">
-<meta name="keywords" content="Canvas,HTML5,画布">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Canvas知识整理part1">
 <meta property="og:url" content="https://blog.ihoey.com/posts/Canvas/2016-11-13-canvas-part1.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="canvas 是 HTML5 提供的一个用于展示绘图效果的标签. canvas 原意画布, 帆布. 在 HTML 页面中用于展示绘图效果. 最早 canvas 是苹果提出的一个方案, 今天已经在大多数浏览器中实现.">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-10T08:38:05.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-11-13T11:39:33.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.161Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="Canvas">
+<meta property="article:tag" content="HTML5">
+<meta property="article:tag" content="画布">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Canvas知识整理part1">
-<meta name="twitter:description" content="canvas 是 HTML5 提供的一个用于展示绘图效果的标签. canvas 原意画布, 帆布. 在 HTML 页面中用于展示绘图效果. 最早 canvas 是苹果提出的一个方案, 今天已经在大多数浏览器中实现.">
 
 
 
@@ -255,7 +257,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-10 16:38:05" itemprop="dateModified" datetime="2018-05-10T16:38:05+08:00">2018-05-10</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,8 +540,9 @@
       
         <p>canvas 是 HTML5 提供的一个用于展示绘图效果的标签. canvas 原意画布, 帆布. 在 HTML 页面中用于展示绘图效果. 最早 canvas 是苹果提出的一个方案, 今天已经在大多数浏览器中实现.</p>
 <a id="more"></a>
-<pre><code>canvas 英 [&apos;kænvəs]  美 [&apos;kænvəs]   帆布 画布
-</code></pre><p>默认的宽高为：<code>300 * 150</code></p>
+
+<pre><code>canvas 英 [&#39;kænvəs]  美 [&#39;kænvəs]   帆布 画布</code></pre>
+<p>默认的宽高为：<code>300 * 150</code></p>
 <h2 id="Canvas-使用注意："><a href="#Canvas-使用注意：" class="headerlink" title="Canvas 使用注意："></a>Canvas 使用注意：</h2><ul>
 <li>设置 <code>canvas</code> 宽高 <code>canvas</code> 只是一个画布，不能直接自己绘图，绘图需要使用工具</li>
 <li>设置 <code>canvas</code> 宽和高的时候不推荐使用 <code>css</code> 样式去设置，因为会有拉伸的效果</li>
@@ -564,7 +567,7 @@
 <li>创建一个 <code>Canvas</code> 标签</li>
 <li>获取到该 <code>DOM</code> 对象</li>
 <li><code>Canvas</code> 只是一个画布，不能自己画画，需要画图工具</li>
-<li>每个 <code>Canvas</code> 对应一个画图工具，通过 <code>canvas</code> 对象 <code>.getContext(&quot;2d&quot;)</code> 参数有 <code>2d</code> 和 <code>webgl</code> 两种 <code>2d</code> 获取到一个 <code>CanvasRenderingContext2D</code> 类型的对象,使用 <code>webgl</code> 返回 <code>WebGLRenderingContext</code> 类型的对象.</li>
+<li>每个 <code>Canvas</code> 对应一个画图工具，通过 <code>canvas</code> 对象 <code>.getContext(&quot;2d&quot;)</code> 参数有 <code>2d</code> 和 <code>webgl</code> 两种 <code>2d</code> 获取到一个 <code> CanvasRenderingContext2D</code> 类型的对象,使用 <code>webgl</code> 返回 <code>WebGLRenderingContext</code> 类型的对象.</li>
 </ol>
 <h2 id="如何画直线"><a href="#如何画直线" class="headerlink" title="如何画直线"></a>如何画直线</h2><ol>
 <li>先确定在何处下笔，画图工具 <code>.moveTo(x, y)</code></li>
@@ -572,9 +575,11 @@
 <li>上面两步之后，线并没有画出来，而是描点，需要最后一步进行画线  画图工具 <code>.stroke();</code></li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.createElement( <span class="string">'canvas'</span> );</span><br><span class="line">canvas.width = <span class="number">500</span>;</span><br><span class="line">canvas.height = <span class="number">400</span>;</span><br><span class="line">canvas.style.border = <span class="string">'1px dashed red'</span>;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild( canvas );</span><br><span class="line"><span class="comment">// 获得 CanvasRenderingContext2D 对象</span></span><br><span class="line"><span class="keyword">var</span> context = canvas.getContext( <span class="string">'2d'</span> );</span><br><span class="line"><span class="comment">// 设置 起点</span></span><br><span class="line">context.moveTo( <span class="number">0</span>, <span class="number">0</span> );</span><br><span class="line"><span class="comment">// 绘制直线</span></span><br><span class="line">context.lineTo( <span class="number">500</span>, <span class="number">400</span> );</span><br><span class="line"><span class="comment">// 设置 起点</span></span><br><span class="line">context.moveTo( <span class="number">0</span>, <span class="number">400</span> );</span><br><span class="line"><span class="comment">// 绘制直线</span></span><br><span class="line">context.lineTo( <span class="number">500</span>, <span class="number">0</span> );</span><br><span class="line"><span class="comment">// 描边显示效果</span></span><br><span class="line">context.stroke();</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="lineTo的特性"><a href="#lineTo的特性" class="headerlink" title="lineTo的特性"></a>lineTo的特性</h2><p>每次 <code>lineTo</code> 之后都会记录最后的 <code>lineTo</code> 的点，下次 <code>lineTo</code> 的时候就接着这个 <code>canvas</code> 只是一个画布，不能直接自己绘图，绘图需要使用工具sssss点继续画</p>
 <h2 id="closePath"><a href="#closePath" class="headerlink" title="closePath"></a>closePath</h2><p>将最后一次 <code>lineTo</code> 的点 和最后一次 <code>moveTo</code> 的点连起来的<br>两条线的交界处，如果使用的是 <code>closePath</code> 会补全缺口</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ctx.moveTo( <span class="number">100</span>, <span class="number">100</span> );</span><br><span class="line">ctx.lineTo( <span class="number">300</span>, <span class="number">100</span> );</span><br><span class="line">ctx.lineTo( <span class="number">300</span>, <span class="number">200</span> );</span><br><span class="line">ctx.closePath();</span><br><span class="line">ctx.stroke();</span><br></pre></td></tr></table></figure></div>
+
 <h2 id="fill"><a href="#fill" class="headerlink" title="fill"></a>fill</h2><p>可以将闭合的图形进行填充</p>
 <h2 id="非零填充原则"><a href="#非零填充原则" class="headerlink" title="非零填充原则"></a>非零填充原则</h2><p>从一个闭合空间引出一条直线，如果该直线两边的箭头数量不相等，则要填充，如果相等则不填充</p>
 <p>一边有一个箭头就+1<br>另一边有一个箭头就-1</p>
@@ -585,37 +590,35 @@
 <h2 id="线型相关属性"><a href="#线型相关属性" class="headerlink" title="线型相关属性"></a>线型相关属性</h2><table>
 <thead>
 <tr>
-<th style="text-align:center">名称</th>
-<th style="text-align:center">描述</th>
+<th align="center">名称</th>
+<th align="center">描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">lineWidth</td>
-<td style="text-align:center">画线的时候的线的宽度</td>
+<tbody><tr>
+<td align="center">lineWidth</td>
+<td align="center">画线的时候的线的宽度</td>
 </tr>
 <tr>
-<td style="text-align:center">setLineDash()</td>
-<td style="text-align:center">设置虚线各个线段的长度,参数是一个数组，会将数组中的数字循环使用</td>
+<td align="center">setLineDash()</td>
+<td align="center">设置虚线各个线段的长度,参数是一个数组，会将数组中的数字循环使用</td>
 </tr>
 <tr>
-<td style="text-align:center">getLineDash()</td>
-<td style="text-align:center">获取虚线各个线段的长度，如果是实线，获取到的是空数组</td>
+<td align="center">getLineDash()</td>
+<td align="center">获取虚线各个线段的长度，如果是实线，获取到的是空数组</td>
 </tr>
 <tr>
-<td style="text-align:center">lineDashOffset</td>
-<td style="text-align:center">设置虚线的偏移量，正值往左，负值往右</td>
+<td align="center">lineDashOffset</td>
+<td align="center">设置虚线的偏移量，正值往左，负值往右</td>
 </tr>
 <tr>
-<td style="text-align:center">strokeStyle</td>
-<td style="text-align:center">设置描边的，画线的颜色，颜色值可以为css中任意一种</td>
+<td align="center">strokeStyle</td>
+<td align="center">设置描边的，画线的颜色，颜色值可以为css中任意一种</td>
 </tr>
 <tr>
-<td style="text-align:center">fillStyle</td>
-<td style="text-align:center">设置填充颜色，颜色值可以为css中任意一种</td>
+<td align="center">fillStyle</td>
+<td align="center">设置填充颜色，颜色值可以为css中任意一种</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="渐变色"><a href="#渐变色" class="headerlink" title="渐变色"></a>渐变色</h2><p>将线划分为 <code>256</code> 份，每一份为一个颜色，新画一条线，依次递增，就形成了一个颜色渐变的线段</p>
 
       
@@ -630,7 +633,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -668,7 +671,7 @@
           
             <a href="/tags/HTML5/" rel="tag"># HTML5</a>
           
-            <a href="/tags/画布/" rel="tag"># 画布</a>
+            <a href="/tags/%E7%94%BB%E5%B8%83/" rel="tag"># 画布</a>
           
         </div>
       
@@ -772,7 +775,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>

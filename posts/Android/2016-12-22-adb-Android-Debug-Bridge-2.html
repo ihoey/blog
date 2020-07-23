@@ -174,17 +174,19 @@
 
 
   <meta name="description" content="ADB很强大，记住一些ADB命令有助于提高工作效率。通过ADB命令查看wifi密码、MAC地址、设备信息、操作文件、查看文件、日志信息、卸载、启动和安装APK等">
-<meta name="keywords" content="adb,Android,adb命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="adb设备信息查询修改刷机等命令">
 <meta property="og:url" content="https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html">
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="ADB很强大，记住一些ADB命令有助于提高工作效率。通过ADB命令查看wifi密码、MAC地址、设备信息、操作文件、查看文件、日志信息、卸载、启动和安装APK等">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-04T10:01:45.000Z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2016-12-22T10:51:53.000Z">
+<meta property="article:modified_time" content="2020-07-23T06:36:21.160Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="adb">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="adb命令">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="adb设备信息查询修改刷机等命令">
-<meta name="twitter:description" content="ADB很强大，记住一些ADB命令有助于提高工作效率。通过ADB命令查看wifi密码、MAC地址、设备信息、操作文件、查看文件、日志信息、卸载、启动和安装APK等">
 
 
 
@@ -255,7 +257,7 @@
   </style>
 </noscript>
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
@@ -467,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-05-04 18:01:45" itemprop="dateModified" datetime="2018-05-04T18:01:45+08:00">2018-05-04</time>
+                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
               
             
           </span>
@@ -538,6 +540,7 @@
       
         <p>ADB很强大，记住一些ADB命令有助于提高工作效率。<br>通过ADB命令查看wifi密码、MAC地址、设备信息、操作文件、查看文件、日志信息、卸载、启动和安装APK等</p>
 <a id="more"></a>
+
 <h2 id="查看设备信息"><a href="#查看设备信息" class="headerlink" title="查看设备信息"></a>查看设备信息</h2><ul>
 <li><code>adb logcat</code> – 查看日志</li>
 <li><code>adb shell dumpsys battery</code> – 电池状况<br>其中 scale 代表最大电量，level 代表当前电量。上面的输出表示还剩下 44% 的电量</li>
@@ -558,200 +561,205 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">属性名</th>
-<th style="text-align:center">含义</th>
+<th align="center">属性名</th>
+<th align="center">含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">ro.build.version.sdk</td>
-<td style="text-align:center">SDK 版本</td>
+<tbody><tr>
+<td align="center">ro.build.version.sdk</td>
+<td align="center">SDK 版本</td>
 </tr>
 <tr>
-<td style="text-align:center">ro.build.version.release</td>
-<td style="text-align:center">Android 系统版本</td>
+<td align="center">ro.build.version.release</td>
+<td align="center">Android 系统版本</td>
 </tr>
 <tr>
-<td style="text-align:center">ro.build.version.security_patch</td>
-<td style="text-align:center">Android 安全补丁程序级别</td>
+<td align="center">ro.build.version.security_patch</td>
+<td align="center">Android 安全补丁程序级别</td>
 </tr>
 <tr>
-<td style="text-align:center">ro.product.model</td>
-<td style="text-align:center">型号</td>
+<td align="center">ro.product.model</td>
+<td align="center">型号</td>
 </tr>
 <tr>
-<td style="text-align:center">ro.product.brand</td>
-<td style="text-align:center">品牌</td>
+<td align="center">ro.product.brand</td>
+<td align="center">品牌</td>
 </tr>
 <tr>
-<td style="text-align:center">ro.product.name</td>
-<td style="text-align:center">设备名</td>
+<td align="center">ro.product.name</td>
+<td align="center">设备名</td>
 </tr>
 <tr>
-<td style="text-align:center">ro.product.board</td>
-<td style="text-align:center">处理器型号</td>
+<td align="center">ro.product.board</td>
+<td align="center">处理器型号</td>
 </tr>
 <tr>
-<td style="text-align:center">ro.product.cpu.abilist</td>
-<td style="text-align:center">CPU 支持的 abi 列表</td>
+<td align="center">ro.product.cpu.abilist</td>
+<td align="center">CPU 支持的 abi 列表</td>
 </tr>
 <tr>
-<td style="text-align:center">persist.sys.isUsbOtgEnabled</td>
-<td style="text-align:center">是否支持 OTG</td>
+<td align="center">persist.sys.isUsbOtgEnabled</td>
+<td align="center">是否支持 OTG</td>
 </tr>
 <tr>
-<td style="text-align:center">dalvik.vm.heapsize</td>
-<td style="text-align:center">每个应用程序的内存上限</td>
+<td align="center">dalvik.vm.heapsize</td>
+<td align="center">每个应用程序的内存上限</td>
 </tr>
 <tr>
-<td style="text-align:center">ro.sf.lcd_density</td>
-<td style="text-align:center">屏幕密度</td>
+<td align="center">ro.sf.lcd_density</td>
+<td align="center">屏幕密度</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="修改设置"><a href="#修改设置" class="headerlink" title="修改设置"></a>修改设置</h2><p><strong>注：</strong>修改设置之后，运行恢复命令有可能显示仍然不太正常，可以运行 <code>adb reboot</code> 重启设备，或手动重启。</p>
 <p>修改设置的原理主要是通过 settings 命令修改 /data/data/com.android.providers.settings/databases/settings.db 里存放的设置值。</p>
 <h3 id="分辨率"><a href="#分辨率" class="headerlink" title="分辨率"></a>分辨率</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm size 480x1024</span><br></pre></td></tr></table></figure></div>
+
 <p>表示将分辨率修改为 480px * 1024px。</p>
 <p>恢复原分辨率命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm size reset</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="屏幕密度"><a href="#屏幕密度" class="headerlink" title="屏幕密度"></a>屏幕密度</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm density 160</span><br></pre></td></tr></table></figure></div>
+
 <p>表示将屏幕密度修改为 160dpi。</p>
 <p>恢复原屏幕密度命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm density reset</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="显示区域"><a href="#显示区域" class="headerlink" title="显示区域"></a>显示区域</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm overscan 0,0,0,200</span><br></pre></td></tr></table></figure></div>
+
 <p>四个数字分别表示距离左、上、右、下边缘的留白像素，以上命令表示将屏幕底部 200px 留白。</p>
 <p>恢复原显示区域命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell wm overscan reset</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="关闭-USB-调试模式"><a href="#关闭-USB-调试模式" class="headerlink" title="关闭 USB 调试模式"></a>关闭 USB 调试模式</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global adb_enabled 0</span><br></pre></td></tr></table></figure></div>
+
 <p>恢复：</p>
 <p>用命令恢复不了了，毕竟关闭了 USB 调试 adb 就连接不上 Android 设备了。</p>
 <p>去设备上手动恢复吧：「设置」-「开发者选项」-「Android 调试」。</p>
 <h3 id="状态栏和导航栏的显示隐藏"><a href="#状态栏和导航栏的显示隐藏" class="headerlink" title="状态栏和导航栏的显示隐藏"></a>状态栏和导航栏的显示隐藏</h3><p>本节所说的相关设置对应 Cyanogenmod 里的「扩展桌面」。</p>
 <p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global policy_control &lt;key-values&gt;</span><br></pre></td></tr></table></figure></div>
+
 <p><code>&lt;key-values&gt;</code> 可由如下几种键及其对应的值组成，格式为 <code>&lt;key1&gt;=&lt;value1&gt;:&lt;key2&gt;=&lt;value2&gt;</code>。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">key</th>
-<th style="text-align:center">含义</th>
+<th align="center">key</th>
+<th align="center">含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">immersive.full</td>
-<td style="text-align:center">同时隐藏</td>
+<tbody><tr>
+<td align="center">immersive.full</td>
+<td align="center">同时隐藏</td>
 </tr>
 <tr>
-<td style="text-align:center">immersive.status</td>
-<td style="text-align:center">隐藏状态栏</td>
+<td align="center">immersive.status</td>
+<td align="center">隐藏状态栏</td>
 </tr>
 <tr>
-<td style="text-align:center">immersive.navigation</td>
-<td style="text-align:center">隐藏导航栏</td>
+<td align="center">immersive.navigation</td>
+<td align="center">隐藏导航栏</td>
 </tr>
 <tr>
-<td style="text-align:center">immersive.preconfirms</td>
-<td style="text-align:center">?</td>
+<td align="center">immersive.preconfirms</td>
+<td align="center">?</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>这些键对应的值可则如下值用逗号组合：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">value</th>
-<th style="text-align:center">含义</th>
+<th align="center">value</th>
+<th align="center">含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>apps</code></td>
-<td style="text-align:center">所有应用</td>
+<tbody><tr>
+<td align="center"><code>apps</code></td>
+<td align="center">所有应用</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>*</code></td>
-<td style="text-align:center">所有界面</td>
+<td align="center"><code>*</code></td>
+<td align="center">所有界面</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>packagename</code></td>
-<td style="text-align:center">指定应用</td>
+<td align="center"><code>packagename</code></td>
+<td align="center">指定应用</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>-packagename</code></td>
-<td style="text-align:center">排除指定应用</td>
+<td align="center"><code>-packagename</code></td>
+<td align="center">排除指定应用</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>例如：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global policy_control immersive.full=*</span><br></pre></td></tr></table></figure></div>
+
 <p>表示设置在所有界面下都同时隐藏状态栏和导航栏。</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell settings put global policy_control immersive.status=com.package1,com.package2:immersive.navigation=apps,-com.package3</span><br></pre></td></tr></table></figure></div>
+
 <p>表示设置在包名为 <code>com.package1</code> 和 <code>com.package2</code> 的应用里隐藏状态栏，在除了包名为 <code>com.package3</code> 的所有应用里隐藏导航栏。</p>
 <h2 id="实用功能"><a href="#实用功能" class="headerlink" title="实用功能"></a>实用功能</h2><h3 id="屏幕截图"><a href="#屏幕截图" class="headerlink" title="屏幕截图"></a>屏幕截图</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell screencap -p /sdcard/sc.png</span><br></pre></td></tr></table></figure></div>
+
 <p>然后将 png 文件导出到电脑：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull /sdcard/sc.png</span><br></pre></td></tr></table></figure></div>
+
 <p>可以使用 <code>adb shell screencap -h</code> 查看 <code>screencap</code> 命令的帮助信息，下面是两个有意义的参数及含义：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">参数</th>
-<th style="text-align:center">含义</th>
+<th align="center">参数</th>
+<th align="center">含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">-p</td>
-<td style="text-align:center">指定保存文件为 png 格式</td>
+<tbody><tr>
+<td align="center">-p</td>
+<td align="center">指定保存文件为 png 格式</td>
 </tr>
 <tr>
-<td style="text-align:center">-d display-id</td>
-<td style="text-align:center">指定截图的显示屏编号（有多显示屏的情况下）</td>
+<td align="center">-d display-id</td>
+<td align="center">指定截图的显示屏编号（有多显示屏的情况下）</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>实测如果指定文件名以 <code>.png</code> 结尾时可以省略 -p 参数；否则需要使用 -p 参数。如果不指定文件名，截图文件的内容将直接输出到 stdout。</p>
 <p>直接一行命令截图并保存到电脑的方法：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell screencap -p | sed <span class="string">"s/\r$//"</span> &gt; sc.png</span><br></pre></td></tr></table></figure></div>
+
 <p>这个方法需要用到 sed 命令，在 Linux 和 Mac 下直接就有，在 Windows 下 Git 安装目录的 bin 文件夹下也有。如果确实找不到该命令，可以下载 <a href="http://gnuwin32.sourceforge.net/packages/sed.htm" target="_blank" rel="noopener">sed for Windows</a> 并将 sed.exe 所在文件夹添加到 PATH 环境变量里。</p>
 <h3 id="录制屏幕"><a href="#录制屏幕" class="headerlink" title="录制屏幕"></a>录制屏幕</h3><p>录制屏幕以 mp4 格式保存到 /sdcard：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell screenrecord /sdcard/filename.mp4</span><br></pre></td></tr></table></figure></div>
+
 <p>需要停止时按 <kbd>Ctrl-C</kbd>，默认录制时间和最长录制时间都是 180 秒。</p>
 <p>如果需要导出到电脑：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull /sdcard/filename.mp4</span><br></pre></td></tr></table></figure></div>
+
 <p>可以使用 <code>adb shell screenrecord --help</code> 查看 <code>screenrecord</code> 命令的帮助信息，下面是常见参数及含义：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">参数</th>
-<th style="text-align:center">含义</th>
+<th align="center">参数</th>
+<th align="center">含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">–size WIDTHxHEIGHT</td>
-<td style="text-align:center">视频的尺寸，比如 <code>1280x720</code>，默认是屏幕分辨率。</td>
+<tbody><tr>
+<td align="center">–size WIDTHxHEIGHT</td>
+<td align="center">视频的尺寸，比如 <code>1280x720</code>，默认是屏幕分辨率。</td>
 </tr>
 <tr>
-<td style="text-align:center">–bit-rate RATE</td>
-<td style="text-align:center">视频的比特率，默认是 4Mbps。</td>
+<td align="center">–bit-rate RATE</td>
+<td align="center">视频的比特率，默认是 4Mbps。</td>
 </tr>
 <tr>
-<td style="text-align:center">–time-limit TIME</td>
-<td style="text-align:center">录制时长，单位秒。</td>
+<td align="center">–time-limit TIME</td>
+<td align="center">录制时长，单位秒。</td>
 </tr>
 <tr>
-<td style="text-align:center">–verbose</td>
-<td style="text-align:center">输出更多信息。</td>
+<td align="center">–verbose</td>
+<td align="center">输出更多信息。</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="重新挂载-system-分区为可写"><a href="#重新挂载-system-分区为可写" class="headerlink" title="重新挂载 system 分区为可写"></a>重新挂载 system 分区为可写</h3><p><strong>注：需要 root 权限。</strong></p>
 <p>/system 分区默认挂载为只读，但有些操作比如给 Android 系统添加命令、删除自带应用等需要对 /system 进行写操作，所以需要重新挂载它为可读写。</p>
 <p>步骤：</p>
@@ -763,14 +771,17 @@
 <li><p>查看当前分区挂载情况。</p>
 <p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount</span><br></pre></td></tr></table></figure></div>
+
 <p>输出示例：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">rootfs / rootfs ro,relatime 0 0</span><br><span class="line">tmpfs /dev tmpfs rw,seclabel,nosuid,relatime,mode=755 0 0</span><br><span class="line">devpts /dev/pts devpts rw,seclabel,relatime,mode=600 0 0</span><br><span class="line">proc /proc proc rw,relatime 0 0</span><br><span class="line">sysfs /sys sysfs rw,seclabel,relatime 0 0</span><br><span class="line">selinuxfs /sys/fs/selinux selinuxfs rw,relatime 0 0</span><br><span class="line">debugfs /sys/kernel/debug debugfs rw,relatime 0 0</span><br><span class="line">none /var tmpfs rw,seclabel,relatime,mode=770,gid=1000 0 0</span><br><span class="line">none /acct cgroup rw,relatime,cpuacct 0 0</span><br><span class="line">none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0</span><br><span class="line">none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0</span><br><span class="line">tmpfs /mnt/asec tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0</span><br><span class="line">tmpfs /mnt/obb tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0</span><br><span class="line">none /dev/memcg cgroup rw,relatime,memory 0 0</span><br><span class="line">none /dev/cpuctl cgroup rw,relatime,cpu 0 0</span><br><span class="line">none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0</span><br><span class="line">none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0</span><br><span class="line">none /sys/fs/cgroup/freezer cgroup rw,relatime,freezer 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/system /system ext4 ro,seclabel,relatime,data=ordered 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/userdata /data ext4 rw,seclabel,nosuid,nodev,relatime,noauto_da_alloc,data=ordered 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/cache /cache ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/persist /persist ext4 rw,seclabel,nosuid,nodev,relatime,data=ordered 0 0</span><br><span class="line">/dev/block/platform/msm_sdcc.1/by-name/modem /firmware vfat ro,context=u:object_r:firmware_file:s0,relatime,uid=1000,gid=1000,fmask=0337,dmask=0227,codepage=cp437,iocharset=iso8859-1,shortname=lower,errors=remount-ro 0 0</span><br><span class="line">/dev/fuse /mnt/shell/emulated fuse rw,nosuid,nodev,relatime,user_id=1023,group_id=1023,default_permissions,allow_other 0 0</span><br><span class="line">/dev/fuse /mnt/shell/emulated/0 fuse rw,nosuid,nodev,relatime,user_id=1023,group_id=1023,default_permissions,allow_other 0 0</span><br></pre></td></tr></table></figure></div>
+
 <p>找到其中我们关注的带 /system 的那一行：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/dev/block/platform/msm_sdcc.1/by-name/system /system ext4 ro,seclabel,relatime,data=ordered 0 0</span><br></pre></td></tr></table></figure></div>
 </li>
 <li><p>重新挂载。</p>
 <p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount -o remount,rw -t yaffs2 /dev/block/platform/msm_sdcc.1/by-name/system /system</span><br></pre></td></tr></table></figure></div>
+
 <p>这里的 <code>/dev/block/platform/msm_sdcc.1/by-name/system</code> 就是我们从上一步的输出里得到的文件路径。</p>
 </li>
 </ol>
@@ -778,36 +789,47 @@
 <h3 id="查看连接过的-WiFi-密码"><a href="#查看连接过的-WiFi-密码" class="headerlink" title="查看连接过的 WiFi 密码"></a>查看连接过的 WiFi 密码</h3><p><strong>注：需要 root 权限。</strong></p>
 <p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">su</span><br><span class="line">cat /data/misc/wifi/*.conf</span><br></pre></td></tr></table></figure></div>
+
 <p>输出示例：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">network=&#123;</span><br><span class="line">    ssid=<span class="string">"TP-LINK_9DFC"</span></span><br><span class="line">    scan_ssid=1</span><br><span class="line">    psk=<span class="string">"123456789"</span></span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    group=CCMP TKIP</span><br><span class="line">    auth_alg=OPEN</span><br><span class="line">    sim_num=1</span><br><span class="line">    priority=13893</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">network=&#123;</span><br><span class="line">    ssid=<span class="string">"TP-LINK_F11E"</span></span><br><span class="line">    psk=<span class="string">"987654321"</span></span><br><span class="line">    key_mgmt=WPA-PSK</span><br><span class="line">    sim_num=1</span><br><span class="line">    priority=17293</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
 <p><code>ssid</code> 即为我们在 WLAN 设置里看到的名称，<code>psk</code> 为密码，<code>key_mgmt</code> 为安全加密方式。</p>
 <h3 id="设置系统日期和时间"><a href="#设置系统日期和时间" class="headerlink" title="设置系统日期和时间"></a>设置系统日期和时间</h3><p><strong>注：需要 root 权限。</strong></p>
 <p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">su</span><br><span class="line">date -s 20160823.131500</span><br></pre></td></tr></table></figure></div>
+
 <p>表示将系统日期和时间更改为 2016 年 08 月 23 日 13 点 15 分 00 秒。</p>
 <h3 id="重启手机"><a href="#重启手机" class="headerlink" title="重启手机"></a>重启手机</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="检测设备是否已-root"><a href="#检测设备是否已-root" class="headerlink" title="检测设备是否已 root"></a>检测设备是否已 root</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">su</span><br></pre></td></tr></table></figure></div>
+
 <p>此时命令行提示符是 <code>$</code> 则表示没有 root 权限，是 <code>#</code> 则表示已 root。</p>
 <h3 id="使用-Monkey-进行压力测试"><a href="#使用-Monkey-进行压力测试" class="headerlink" title="使用 Monkey 进行压力测试"></a>使用 Monkey 进行压力测试</h3><p>Monkey 可以生成伪随机用户事件来模拟单击、触摸、手势等操作，可以对正在开发中的程序进行随机压力测试。</p>
 <p>简单用法：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell monkey -p &lt;packagename&gt; -v 500</span><br></pre></td></tr></table></figure></div>
+
 <p>表示向 <code>&lt;packagename&gt;</code> 指定的应用程序发送 500 个伪随机事件。</p>
 <p>Monkey 的详细用法参考 <a href="https://developer.android.com/studio/test/monkey.html" target="_blank" rel="noopener">官方文档</a>。</p>
 <h3 id="开启-关闭-WiFi"><a href="#开启-关闭-WiFi" class="headerlink" title="开启/关闭 WiFi"></a>开启/关闭 WiFi</h3><p><strong>注：需要 root 权限。</strong></p>
 <p>有时需要控制设备的 WiFi 状态，可以用以下指令完成。</p>
 <p>开启 WiFi：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb root</span><br><span class="line">adb shell svc wifi <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></div>
+
 <p>关闭 WiFi：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adb root</span><br><span class="line">adb shell svc wifi <span class="built_in">disable</span></span><br></pre></td></tr></table></figure></div>
+
 <p>若执行成功，输出为空；若未取得 root 权限执行此命令，将执行失败，输出 <code>Killed</code>。</p>
 <h2 id="刷机相关命令"><a href="#刷机相关命令" class="headerlink" title="刷机相关命令"></a>刷机相关命令</h2><h3 id="重启到-Recovery-模式"><a href="#重启到-Recovery-模式" class="headerlink" title="重启到 Recovery 模式"></a>重启到 Recovery 模式</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot recovery</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="从-Recovery-重启到-Android"><a href="#从-Recovery-重启到-Android" class="headerlink" title="从 Recovery 重启到 Android"></a>从 Recovery 重启到 Android</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="重启到-Fastboot-模式"><a href="#重启到-Fastboot-模式" class="headerlink" title="重启到 Fastboot 模式"></a>重启到 Fastboot 模式</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="通过-sideload-更新系统"><a href="#通过-sideload-更新系统" class="headerlink" title="通过 sideload 更新系统"></a>通过 sideload 更新系统</h3><p>如果我们下载了 Android 设备对应的系统更新包到电脑上，那么也可以通过 adb 来完成更新。</p>
 <p>以 Recovery 模式下更新为例：</p>
 <ol>
@@ -821,165 +843,169 @@
 <li><p>通过 adb 上传和更新系统。</p>
 <p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb sideload &lt;path-to-update.zip&gt;</span><br></pre></td></tr></table></figure></div>
+
 </li>
 </ol>
 <h2 id="更多-adb-shell-命令"><a href="#更多-adb-shell-命令" class="headerlink" title="更多 adb shell 命令"></a>更多 adb shell 命令</h2><p>Android 系统是基于 Linux 内核的，所以 Linux 里的很多命令在 Android 里也有相同或类似的实现，在 <code>adb shell</code> 里可以调用。本文档前面的部分内容已经用到了 <code>adb shell</code> 命令。</p>
 <h3 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell ps</span><br></pre></td></tr></table></figure></div>
+
 <p>输出示例：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">USER     PID   PPID  VSIZE  RSS     WCHAN    PC        NAME</span><br><span class="line">root      1     0     8904   788   ffffffff 00000000 S /init</span><br><span class="line">root      2     0     0      0     ffffffff 00000000 S kthreadd</span><br><span class="line">...</span><br><span class="line">u0_a71    7779  5926  1538748 48896 ffffffff 00000000 S com.sohu.inputmethod.sogou:classic</span><br><span class="line">u0_a58    7963  5926  1561916 59568 ffffffff 00000000 S org.mazhuang.boottimemeasure</span><br><span class="line">...</span><br><span class="line">shell     8750  217   10640  740   00000000 b6f28340 R ps</span><br></pre></td></tr></table></figure></div>
+
 <p>各列含义：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">列名</th>
-<th style="text-align:center">含义</th>
+<th align="center">列名</th>
+<th align="center">含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">USER</td>
-<td style="text-align:center">所属用户</td>
+<tbody><tr>
+<td align="center">USER</td>
+<td align="center">所属用户</td>
 </tr>
 <tr>
-<td style="text-align:center">PID</td>
-<td style="text-align:center">进程 ID</td>
+<td align="center">PID</td>
+<td align="center">进程 ID</td>
 </tr>
 <tr>
-<td style="text-align:center">PPID</td>
-<td style="text-align:center">父进程 ID</td>
+<td align="center">PPID</td>
+<td align="center">父进程 ID</td>
 </tr>
 <tr>
-<td style="text-align:center">NAME</td>
-<td style="text-align:center">进程名</td>
+<td align="center">NAME</td>
+<td align="center">进程名</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="查看实时资源占用情况"><a href="#查看实时资源占用情况" class="headerlink" title="查看实时资源占用情况"></a>查看实时资源占用情况</h3><p>命令：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell top</span><br></pre></td></tr></table></figure></div>
+
 <p>输出示例：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">User 0%, System 6%, IOW 0%, IRQ 0%</span><br><span class="line">User 3 + Nice 0 + Sys 21 + Idle 280 + IOW 0 + IRQ 0 + SIRQ 3 = 307</span><br><span class="line"></span><br><span class="line">  PID PR CPU% S  <span class="comment">#THR     VSS     RSS PCY UID      Name</span></span><br><span class="line"> 8763  0   3% R     1  10640K   1064K  <span class="built_in">fg</span> shell    top</span><br><span class="line">  131  0   3% S     1      0K      0K  <span class="built_in">fg</span> root     dhd_dpc</span><br><span class="line"> 6144  0   0% S   115 1682004K 115916K  <span class="built_in">fg</span> system   system_server</span><br><span class="line">  132  0   0% S     1      0K      0K  <span class="built_in">fg</span> root     dhd_rxf</span><br><span class="line"> 1731  0   0% S     6  20288K    788K  <span class="built_in">fg</span> root     /system/bin/mpdecision</span><br><span class="line">  217  0   0% S     6  18008K    356K  <span class="built_in">fg</span> shell    /sbin/adbd</span><br><span class="line"> ...</span><br><span class="line"> 7779  2   0% S    19 1538748K  48896K  <span class="built_in">bg</span> u0_a71   com.sohu.inputmethod.sogou:classic</span><br><span class="line"> 7963  0   0% S    18 1561916K  59568K  <span class="built_in">fg</span> u0_a58   org.mazhuang.boottimemeasure</span><br><span class="line"> ...</span><br></pre></td></tr></table></figure></div>
+
 <p>各列含义：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">列名</th>
-<th style="text-align:center">含义</th>
+<th align="center">列名</th>
+<th align="center">含义</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">PID</td>
-<td style="text-align:center">进程 ID</td>
+<tbody><tr>
+<td align="center">PID</td>
+<td align="center">进程 ID</td>
 </tr>
 <tr>
-<td style="text-align:center">PR</td>
-<td style="text-align:center">优先级</td>
+<td align="center">PR</td>
+<td align="center">优先级</td>
 </tr>
 <tr>
-<td style="text-align:center">CPU%</td>
-<td style="text-align:center">当前瞬间占用 CPU 百分比</td>
+<td align="center">CPU%</td>
+<td align="center">当前瞬间占用 CPU 百分比</td>
 </tr>
 <tr>
-<td style="text-align:center">S</td>
-<td style="text-align:center">进程状态（R=运行，S=睡眠，T=跟踪/停止，Z=僵尸进程）</td>
+<td align="center">S</td>
+<td align="center">进程状态（R=运行，S=睡眠，T=跟踪/停止，Z=僵尸进程）</td>
 </tr>
 <tr>
-<td style="text-align:center">#THR</td>
-<td style="text-align:center">线程数</td>
+<td align="center">#THR</td>
+<td align="center">线程数</td>
 </tr>
 <tr>
-<td style="text-align:center">VSS</td>
-<td style="text-align:center">Virtual Set Size 虚拟耗用内存（包含共享库占用的内存）</td>
+<td align="center">VSS</td>
+<td align="center">Virtual Set Size 虚拟耗用内存（包含共享库占用的内存）</td>
 </tr>
 <tr>
-<td style="text-align:center">RSS</td>
-<td style="text-align:center">Resident Set Size 实际使用物理内存（包含共享库占用的内存）</td>
+<td align="center">RSS</td>
+<td align="center">Resident Set Size 实际使用物理内存（包含共享库占用的内存）</td>
 </tr>
 <tr>
-<td style="text-align:center">PCY</td>
-<td style="text-align:center">调度策略优先级，SP_BACKGROUND/SPFOREGROUND</td>
+<td align="center">PCY</td>
+<td align="center">调度策略优先级，SP_BACKGROUND/SPFOREGROUND</td>
 </tr>
 <tr>
-<td style="text-align:center">UID</td>
-<td style="text-align:center">进程所有者的用户 ID</td>
+<td align="center">UID</td>
+<td align="center">进程所有者的用户 ID</td>
 </tr>
 <tr>
-<td style="text-align:center">NAME</td>
-<td style="text-align:center">进程名</td>
+<td align="center">NAME</td>
+<td align="center">进程名</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p><code>top</code> 命令还支持一些命令行参数，详细用法如下：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Usage: top [ -m max_procs ] [ -n iterations ] [ -d delay ] [ -s sort_column ] [ -t ] [ -h ]</span><br><span class="line">    -m num  最多显示多少个进程</span><br><span class="line">    -n num  刷新多少次后退出</span><br><span class="line">    -d num  刷新时间间隔（单位秒，默认值 5）</span><br><span class="line">    -s col  按某列排序（可用 col 值：cpu, vss, rss, thr）</span><br><span class="line">    -t      显示线程信息</span><br><span class="line">    -h      显示帮助文档</span><br></pre></td></tr></table></figure></div>
+
 <h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><p>如下是其它常用命令的简单描述，前文已经专门讲过的命令不再额外说明：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">命令</th>
-<th style="text-align:center">功能</th>
+<th align="center">命令</th>
+<th align="center">功能</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">cat</td>
-<td style="text-align:center">显示文件内容</td>
+<tbody><tr>
+<td align="center">cat</td>
+<td align="center">显示文件内容</td>
 </tr>
 <tr>
-<td style="text-align:center">cd</td>
-<td style="text-align:center">切换目录</td>
+<td align="center">cd</td>
+<td align="center">切换目录</td>
 </tr>
 <tr>
-<td style="text-align:center">chmod</td>
-<td style="text-align:center">改变文件的存取模式/访问权限</td>
+<td align="center">chmod</td>
+<td align="center">改变文件的存取模式/访问权限</td>
 </tr>
 <tr>
-<td style="text-align:center">df</td>
-<td style="text-align:center">查看磁盘空间使用情况</td>
+<td align="center">df</td>
+<td align="center">查看磁盘空间使用情况</td>
 </tr>
 <tr>
-<td style="text-align:center">grep</td>
-<td style="text-align:center">过滤输出</td>
+<td align="center">grep</td>
+<td align="center">过滤输出</td>
 </tr>
 <tr>
-<td style="text-align:center">kill</td>
-<td style="text-align:center">杀死指定 PID 的进程</td>
+<td align="center">kill</td>
+<td align="center">杀死指定 PID 的进程</td>
 </tr>
 <tr>
-<td style="text-align:center">ls</td>
-<td style="text-align:center">列举目录内容</td>
+<td align="center">ls</td>
+<td align="center">列举目录内容</td>
 </tr>
 <tr>
-<td style="text-align:center">mount</td>
-<td style="text-align:center">挂载目录的查看和管理</td>
+<td align="center">mount</td>
+<td align="center">挂载目录的查看和管理</td>
 </tr>
 <tr>
-<td style="text-align:center">mv</td>
-<td style="text-align:center">移动或重命名文件</td>
+<td align="center">mv</td>
+<td align="center">移动或重命名文件</td>
 </tr>
 <tr>
-<td style="text-align:center">ps</td>
-<td style="text-align:center">查看正在运行的进程</td>
+<td align="center">ps</td>
+<td align="center">查看正在运行的进程</td>
 </tr>
 <tr>
-<td style="text-align:center">rm</td>
-<td style="text-align:center">删除文件</td>
+<td align="center">rm</td>
+<td align="center">删除文件</td>
 </tr>
 <tr>
-<td style="text-align:center">top</td>
-<td style="text-align:center">查看进程的资源占用情况</td>
+<td align="center">top</td>
+<td align="center">查看进程的资源占用情况</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="启动-adb-server-失败"><a href="#启动-adb-server-失败" class="headerlink" title="启动 adb server 失败"></a>启动 adb server 失败</h3><p><strong>出错提示</strong></p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: protocol fault (couldn\<span class="string">'t read status): No error</span></span><br></pre></td></tr></table></figure></div>
+
+
 <p><strong>可能原因</strong></p>
 <p>adb server 进程想使用的 5037 端口被占用。</p>
 <p><strong>解决方案</strong></p>
 <p>找到占用 5037 端口的进程，然后终止它。以 Windows 下为例：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr LISTENING</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">TCP    0.0.0.0:5037           0.0.0.0:0              LISTENING       1548</span><br><span class="line">...</span><br></pre></td></tr></table></figure></div>
+
 <p>这里 1548 即为进程 ID，用命令结束该进程：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SH"><figure class="iseeu highlight /sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /PID 1548</span><br></pre></td></tr></table></figure></div>
+
 <p>然后再启动 adb 就没问题了。</p>
 
       
@@ -994,7 +1020,7 @@
     
       <div>
           <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" rel="nofollow" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
 
       </div>
     
@@ -1032,7 +1058,7 @@
           
             <a href="/tags/Android/" rel="tag"># Android</a>
           
-            <a href="/tags/adb命令/" rel="tag"># adb命令</a>
+            <a href="/tags/adb%E5%91%BD%E4%BB%A4/" rel="tag"># adb命令</a>
           
         </div>
       
@@ -1136,7 +1162,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/archives/index.html">
+                  <a href="/archives/index.html%20%7C%7C%20archive">
                 
                     <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>
@@ -1402,7 +1428,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看设备信息"><span class="nav-number">1.</span> <span class="nav-text">查看设备信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改设置"><span class="nav-number">2.</span> <span class="nav-text">修改设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分辨率"><span class="nav-number">2.1.</span> <span class="nav-text">分辨率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕密度"><span class="nav-number">2.2.</span> <span class="nav-text">屏幕密度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示区域"><span class="nav-number">2.3.</span> <span class="nav-text">显示区域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭-USB-调试模式"><span class="nav-number">2.4.</span> <span class="nav-text">关闭 USB 调试模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态栏和导航栏的显示隐藏"><span class="nav-number">2.5.</span> <span class="nav-text">状态栏和导航栏的显示隐藏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实用功能"><span class="nav-number">3.</span> <span class="nav-text">实用功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕截图"><span class="nav-number">3.1.</span> <span class="nav-text">屏幕截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#录制屏幕"><span class="nav-number">3.2.</span> <span class="nav-text">录制屏幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新挂载-system-分区为可写"><span class="nav-number">3.3.</span> <span class="nav-text">重新挂载 system 分区为可写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看连接过的-WiFi-密码"><span class="nav-number">3.4.</span> <span class="nav-text">查看连接过的 WiFi 密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置系统日期和时间"><span class="nav-number">3.5.</span> <span class="nav-text">设置系统日期和时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启手机"><span class="nav-number">3.6.</span> <span class="nav-text">重启手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测设备是否已-root"><span class="nav-number">3.7.</span> <span class="nav-text">检测设备是否已 root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-Monkey-进行压力测试"><span class="nav-number">3.8.</span> <span class="nav-text">使用 Monkey 进行压力测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启-关闭-WiFi"><span class="nav-number">3.9.</span> <span class="nav-text">开启/关闭 WiFi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#刷机相关命令"><span class="nav-number">4.</span> <span class="nav-text">刷机相关命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重启到-Recovery-模式"><span class="nav-number">4.1.</span> <span class="nav-text">重启到 Recovery 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从-Recovery-重启到-Android"><span class="nav-number">4.2.</span> <span class="nav-text">从 Recovery 重启到 Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启到-Fastboot-模式"><span class="nav-number">4.3.</span> <span class="nav-text">重启到 Fastboot 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-sideload-更新系统"><span class="nav-number">4.4.</span> <span class="nav-text">通过 sideload 更新系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多-adb-shell-命令"><span class="nav-number">5.</span> <span class="nav-text">更多 adb shell 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看进程"><span class="nav-number">5.1.</span> <span class="nav-text">查看进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看实时资源占用情况"><span class="nav-number">5.2.</span> <span class="nav-text">查看实时资源占用情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它"><span class="nav-number">5.3.</span> <span class="nav-text">其它</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">6.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-adb-server-失败"><span class="nav-number">6.1.</span> <span class="nav-text">启动 adb server 失败</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看设备信息"><span class="nav-number">1.</span> <span class="nav-text">查看设备信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改设置"><span class="nav-number">2.</span> <span class="nav-text">修改设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分辨率"><span class="nav-number">2.1.</span> <span class="nav-text">分辨率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕密度"><span class="nav-number">2.2.</span> <span class="nav-text">屏幕密度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示区域"><span class="nav-number">2.3.</span> <span class="nav-text">显示区域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭-USB-调试模式"><span class="nav-number">2.4.</span> <span class="nav-text">关闭 USB 调试模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态栏和导航栏的显示隐藏"><span class="nav-number">2.5.</span> <span class="nav-text">状态栏和导航栏的显示隐藏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实用功能"><span class="nav-number">3.</span> <span class="nav-text">实用功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#屏幕截图"><span class="nav-number">3.1.</span> <span class="nav-text">屏幕截图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#录制屏幕"><span class="nav-number">3.2.</span> <span class="nav-text">录制屏幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新挂载-system-分区为可写"><span class="nav-number">3.3.</span> <span class="nav-text">重新挂载 system 分区为可写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看连接过的-WiFi-密码"><span class="nav-number">3.4.</span> <span class="nav-text">查看连接过的 WiFi 密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置系统日期和时间"><span class="nav-number">3.5.</span> <span class="nav-text">设置系统日期和时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启手机"><span class="nav-number">3.6.</span> <span class="nav-text">重启手机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测设备是否已-root"><span class="nav-number">3.7.</span> <span class="nav-text">检测设备是否已 root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-Monkey-进行压力测试"><span class="nav-number">3.8.</span> <span class="nav-text">使用 Monkey 进行压力测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启-关闭-WiFi"><span class="nav-number">3.9.</span> <span class="nav-text">开启&#x2F;关闭 WiFi</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#刷机相关命令"><span class="nav-number">4.</span> <span class="nav-text">刷机相关命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重启到-Recovery-模式"><span class="nav-number">4.1.</span> <span class="nav-text">重启到 Recovery 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从-Recovery-重启到-Android"><span class="nav-number">4.2.</span> <span class="nav-text">从 Recovery 重启到 Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重启到-Fastboot-模式"><span class="nav-number">4.3.</span> <span class="nav-text">重启到 Fastboot 模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-sideload-更新系统"><span class="nav-number">4.4.</span> <span class="nav-text">通过 sideload 更新系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多-adb-shell-命令"><span class="nav-number">5.</span> <span class="nav-text">更多 adb shell 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看进程"><span class="nav-number">5.1.</span> <span class="nav-text">查看进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看实时资源占用情况"><span class="nav-number">5.2.</span> <span class="nav-text">查看实时资源占用情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它"><span class="nav-number">5.3.</span> <span class="nav-text">其它</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常见问题"><span class="nav-number">6.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-adb-server-失败"><span class="nav-number">6.1.</span> <span class="nav-text">启动 adb server 失败</span></a></li></ol></li></ol></div>
             
 
           </div>
