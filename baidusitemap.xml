@@ -253,12 +253,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>Canvas知识整理part2</title>
-        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
+        <title>Canvas部分知识总结</title>
+        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
         
         <tag>Canvas</tag>
          
@@ -277,12 +277,12 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>Canvas部分知识总结</title>
-        <pubTime>2016-11-15T12:38:26.000Z</pubTime>
+        <title>Canvas知识整理part2</title>
+        <pubTime>2016-11-14T11:42:44.000Z</pubTime>
         
         <tag>Canvas</tag>
          
@@ -327,16 +327,14 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之构造函数</title>
-        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
+        <title>js高级与面向对象之函数</title>
+        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
         
-        <tag>javascript</tag>
-         
-        <tag>js构造函数</tag>
+        <tag>Function</tag>
          
          
            
@@ -349,14 +347,16 @@
 
     
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-07-22-javascript-Function.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-20-javascript-constructor.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
         <display>
-        <title>js高级与面向对象之函数</title>
-        <pubTime>2016-07-22T11:40:39.000Z</pubTime>
+        <title>js高级与面向对象之构造函数</title>
+        <pubTime>2016-05-20T05:39:33.000Z</pubTime>
         
-        <tag>Function</tag>
+        <tag>javascript</tag>
+         
+        <tag>js构造函数</tag>
          
          
            
@@ -443,6 +443,30 @@
 
     
   <url>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
+    <data>
+        <display>
+        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
+        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
+        
+        <tag>原生Js</tag>
+         
+        <tag>Js框架</tag>
+         
+        <tag>JQuery</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
     <lastmod>2018-05-10T08:45:23.000Z</lastmod>
     <data>
@@ -473,30 +497,6 @@
         <display>
         <title>JQuery分析及实现part7之 Ajax 模块功能及实现</title>
         <pubTime>2016-11-25T13:31:12.000Z</pubTime>
-        
-        <tag>原生Js</tag>
-         
-        <tag>Js框架</tag>
-         
-        <tag>JQuery</tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="https://blog.ihoey.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
-    <lastmod>2018-05-10T08:45:23.000Z</lastmod>
-    <data>
-        <display>
-        <title>JQuery分析及实现part4之DOM操作模块功能及实现</title>
-        <pubTime>2016-11-21T11:08:10.000Z</pubTime>
         
         <tag>原生Js</tag>
          
