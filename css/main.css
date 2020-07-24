@@ -1555,54 +1555,50 @@ pre .javascript .function {
   font-size: 13px;
 }
 .post-nav {
-  display: table;
-  margin-top: 15px;
-  width: 100%;
   border-top: 1px solid #eee;
-}
-.post-nav-divider {
-  display: table-cell;
-  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 10px;
 }
 .post-nav-item {
-  display: table-cell;
-  padding: 10px 0 0 0;
-  width: 45%;
-  vertical-align: top;
+  flex: 1;
 }
 .post-nav-item a {
-  position: relative;
-  display: block;
-  line-height: 25px;
-  font-size: 14px;
-  color: #555;
   border-bottom: none;
+  display: block;
+  font-size: 12px;
+  line-height: 1.6;
+  position: relative;
 }
 .post-nav-item a:hover {
-  color: #222;
   border-bottom: none;
+  color: #222;
 }
 .post-nav-item a:active {
   top: 2px;
 }
 .post-nav-item .fa {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  font-size: 12px;
+  font-size: $font-size-smallest;
 }
-.post-nav-next a {
-  padding-left: 15px;
+.post-nav-item:first-child {
+  margin-right: 15px;
 }
-.post-nav-prev {
+.post-nav-item:first-child a {
+  padding-left: 5px;
+}
+.post-nav-item:first-child .fa {
+  margin-right: 5px;
+}
+.post-nav-item:last-child {
+  margin-left: 15px;
   text-align: right;
 }
-.post-nav-prev a {
-  padding-right: 15px;
+.post-nav-item:last-child a {
+  padding-right: 5px;
 }
-.post-nav-prev .fa {
-  right: 0;
-  left: auto;
+.post-nav-item:last-child .fa {
+  margin-left: 5px;
 }
 .post-gallery {
   display: table;
@@ -1813,7 +1809,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff086;
+  background: #ff32ad;
 }
 .links-of-blogroll {
   font-size: 13px;
