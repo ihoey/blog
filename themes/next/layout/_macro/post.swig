@@ -396,66 +396,7 @@
         </div>
       {% endif %}
 
-      {% if not is_index %}
-      {% if theme.rating.enable or (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) or (theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable) %}
-        <div class="post-widgets">
-        {% if theme.rating.enable %}
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        {% endif %}
-
-        {% if (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-          <div class="social-like">
-            {% if theme.vkontakte_api.enable and theme.vkontakte_api.like %}
-              <div class="vk_like">
-                <span id="vk_like"></span>
-              </div>
-            {% endif %}
-
-            {% if theme.facebook_sdk.enable and theme.facebook_sdk.like_button %}
-              <div class="fb_like">
-                <div class="fb-like" data-layout="button_count" data-share="true"></div>
-              </div>
-            {% endif %}
-          </div>
-        {% endif %}
-
-        {% if theme.needmoreshare2.enable and theme.needmoreshare2.postbottom.enable %}
-          {% if (theme.vkontakte_api.enable and theme.vkontakte_api.like) or (theme.facebook_sdk.enable and theme.facebook_sdk.like_button) %}
-            <span class="post-meta-divider">|</span>
-          {% endif %}
-          <div id="needsharebutton-postbottom">
-            <span class="btn">
-              <i class="fa fa-share-alt" aria-hidden="true"></i>
-            </span>
-          </div>
-        {% endif %}
-        </div>
-      {% endif %}
-      {% endif %}
-
-      {% if not is_index and (post.prev or post.next) %}
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            {% if post.next %}
-              <a href="{{ url_for(post.next.path) }}" rel="next" title="{{ post.next.title }}">
-                <i class="fa fa-chevron-left"></i> {{ post.next.title }}
-              </a>
-            {% endif %}
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            {% if post.prev %}
-              <a href="{{ url_for(post.prev.path) }}" rel="prev" title="{{ post.prev.title }}">
-                {{ post.prev.title }} <i class="fa fa-chevron-right"></i>
-              </a>
-            {% endif %}
-          </div>
-        </div>
-      {% endif %}
+      {{ post_nav(post) }}
 
       {% set isLast = loop.index % page.per_page === 0 %}
       {% if is_index and not isLast %}

@@ -333,6 +333,10 @@ post_edit:
   url: https://github.com/theme-next/theme-next.org/_posts/tree/master/ # Link for view source.
 # url: https://github.com/theme-next/theme-next.org/_posts/edit/master/ # Link for fork & edit.
 
+# Show previous post and next post in post footer if exists
+# Available values: left | right | false
+post_navigation: left
+
 # ---------------------------------------------------------------
 # Misc Theme Settings
 # ---------------------------------------------------------------
