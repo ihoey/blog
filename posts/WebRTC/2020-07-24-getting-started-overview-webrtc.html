@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+<!--
+                           _ooOoo_
+                          o8888888o
+                          88" . "88
+                          (| -_- |)
+                          O\  =  /O
+                       ____/`---'\____
+                     .'  \\|     |//  `.
+                    /  \\|||  :  |||//  \
+                   /  _||||| -:- |||||-  \
+                   |   | \\\  -  /// |   |
+                   | \_|  ''\---/''  |   |
+                   \  .-\__  `-`  ___/-. /
+                 ___`. .'  /--.--\  `. . __
+              ."" '<  `.___\_<|>_/___.'  >'"".
+             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+             \  \ `-.   \_ __\ /__ _/   .-` /  /
+        ======`-.____`-.___\_____/___.-`____.-'======
+                           `=---='
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                 佛祖保佑       永无BUG  By:- ihoey.com
+-->
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#8a00f9">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="https://cdn.dode.top/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Hannotate SC:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="https://cdn.dode.top/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon_192.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon_32.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/icons/icon_512.png?v=6.2.0" color="#8a00f9">
+
+
+  <link rel="manifest" href="/manifest.json">
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+  <meta name="keywords" content="梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布" />
+
+
+<link rel="dns-prefetch" href="https://app-router.leancloud.cn/">
+
+<script defer async src="/js/src/set.js"></script>
+
+
+  <meta name="description" content="WebRTC (Web Real-Time Communications) 是由谷歌开源并推进纳入 W3C 标准的一项实时通讯技术，它允许网络应用或者站点，在不借助中间媒介的情况下，建立浏览器之间点对点（Peer-to-Peer）的连接，实现视频流和（或）音频流或者其他任意数据的传输。WebRTC 包含的这些标准使用户在无需安装任何插件或者第三方的软件的情况下，创建点对点（Peer-to-Peer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WebRTC 入门指南">
+<meta property="og:url" content="https://blog.ihoey.com/posts/WebRTC/2020-07-24-getting-started-overview-webrtc.html">
+<meta property="og:site_name" content="梦魇小栈">
+<meta property="og:description" content="WebRTC (Web Real-Time Communications) 是由谷歌开源并推进纳入 W3C 标准的一项实时通讯技术，它允许网络应用或者站点，在不借助中间媒介的情况下，建立浏览器之间点对点（Peer-to-Peer）的连接，实现视频流和（或）音频流或者其他任意数据的传输。WebRTC 包含的这些标准使用户在无需安装任何插件或者第三方的软件的情况下，创建点对点（Peer-to-Peer">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-24T06:32:14.000Z">
+<meta property="article:modified_time" content="2020-07-24T09:40:47.368Z">
+<meta property="article:author" content="Ihoey">
+<meta property="article:tag" content="WebRTC">
+<meta name="twitter:card" content="summary">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦魇小栈" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="https://blog.ihoey.com/posts/WebRTC/2020-07-24-getting-started-overview-webrtc.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>WebRTC 入门指南 | 梦魇小栈</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87991666-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-87991666-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?199400a900d7a62bfff2335224e096d8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+  </style>
+</noscript>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">梦魇小栈</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">专注于分享</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-links">
+    <a href="/links/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-link"></i> <br />友情链接</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-guestbook">
+    <a href="/guestbook/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />留言</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />我是谁˚∆˚</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">56</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/index.html" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">48</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-sitemap">
+    <a href="/sitemap.xml" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+<div id="hitokoto" style="
+    text-align: center;
+    padding-top: 25px;
+"></div>
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/WebRTC/2020-07-24-getting-started-overview-webrtc.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ihoey">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦魇小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">WebRTC 入门指南
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-07-24 14:32:14 / 修改时间：17:40:47" itemprop="dateCreated datePublished" datetime="2020-07-24T14:32:14+08:00">2020-07-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/WebRTC/" itemprop="url" rel="index"><span itemprop="name">WebRTC</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/WebRTC/2020-07-24-getting-started-overview-webrtc.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/WebRTC/2020-07-24-getting-started-overview-webrtc.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>WebRTC (Web Real-Time Communications)</strong> 是由谷歌开源并推进纳入 <code>W3C</code> 标准的一项实时通讯技术，它允许网络应用或者站点，在不借助中间媒介的情况下，建立浏览器之间点对点<code>（Peer-to-Peer）</code>的连接，实现视频流和（或）音频流或者其他任意数据的传输。<code>WebRTC</code> 包含的这些标准使用户在无需安装任何插件或者第三方的软件的情况下，创建点对点<code>（Peer-to-Peer）</code>的数据分享和电话会议成为可能。</p>
+<blockquote>
+<p>与 <code>Web</code> 世界经典的 <code>B/S</code> 架构最大的不同是，<code>WebRTC</code> 的通信不经过服务器，而直接与客户端连接，在节省服务器资源的同时，提高通信效率。为了做到这点，一个典型的 <code>WebRTC</code> 通信过程，包含四个步骤：<code>找到对方</code>-&gt;<code>进行协商</code>-&gt;<code>建立连接</code>-&gt;<code>开始通讯</code>。下面将分别阐述这四个步骤。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="找到对方"><a href="#找到对方" class="headerlink" title="找到对方"></a>找到对方</h2><blockquote>
+<p>虽然不需要经过服务器进行通信，但是在开始通信之前，必须知道对方的存在，这个时候就需要信令服务器。</p>
+</blockquote>
+<h3 id="信令服务器"><a href="#信令服务器" class="headerlink" title="信令服务器"></a>信令服务器</h3><blockquote>
+<p>所谓信令<code>（signaling）</code>服务器，是一个帮助双方建立连接的「中间人」，<code>WebRTC</code> 并没有规定信令服务器的标准，意味着开发者可以用任何技术来实现，如 <code>WebSocket</code> 或 <code>AJAX</code>。</p>
+</blockquote>
+<p>发起 <code>WebRTC</code> 通信的两端被称为对等端<code>（Peer）</code>，成功建立的连接被称为 <code>PeerConnection</code>，一次 <code>WebRTC</code> 通信可包含多个 <code>PeerConnection</code>。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pc2 = <span class="keyword">new</span> RTCPeerConnection([configuration]);</span><br></pre></td></tr></table></figure></div>
+
+<p>在寻找对等端阶段，信令服务器的工作一般是标识与验证参与者的身份，浏览器连接信令服务器并发送会话必须的信息，如房间号、账号信息等，由信令服务器找到可以通信的对等端并开始尝试通信。</p>
+<p>其实在整个 <code>WebRTC</code> 通信过程中，信令服务器都是一个非常重要的角色，除了上述作用，<code>SDP</code> 交换、<code>ICE</code> 连接等都离不开信令，后文将会提到。</p>
+<h2 id="进行协商"><a href="#进行协商" class="headerlink" title="进行协商"></a>进行协商</h2><blockquote>
+<p>协商过程主要指 <code>SDP</code> 协议交换。</p>
+</blockquote>
+<h3 id="SDP"><a href="#SDP" class="headerlink" title="SDP"></a>SDP</h3><blockquote>
+<p><code>SDP（Session Description Protocol）</code>指会话描述协议，是一种通用的协议，使用范围不仅限于 <code>WebRTC</code>。主要用来描述多媒体会话，用途包括会话声明、会话邀请、会话初始化等。</p>
+</blockquote>
+<p>在 <code>WebRTC</code> 中，<code>SDP</code> 协议主要用来描述：</p>
+<ul>
+<li>设备支持的媒体能力，包括编解码器等</li>
+<li><code>ICE</code> 候选地址</li>
+<li>流媒体传输协议</li>
+</ul>
+<p><code>SDP</code> 协议基于文本，格式非常简单，它由多个行组成，每一行都为以下格式：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type&#x3D;value;</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>其中，<code>type</code> 表示属性名，<code>value</code> 表示属性值，具体格式与 <code>type</code> 有关。下面是一份典型的 <code>SDP</code> 协议样例：</p>
+</blockquote>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">v&#x3D;0</span><br><span class="line">o&#x3D;alice 2890844526 2890844526 IN IP4 host.anywhere.com</span><br><span class="line">s&#x3D;</span><br><span class="line">c&#x3D;IN IP4 host.anywhere.com</span><br><span class="line">t&#x3D;0 0</span><br><span class="line">m&#x3D;audio 49170 RTP&#x2F;AVP 0</span><br><span class="line">a&#x3D;rtpmap:0 PCMU&#x2F;8000</span><br><span class="line">m&#x3D;video 51372 RTP&#x2F;AVP 31</span><br><span class="line">a&#x3D;rtpmap:31 H261&#x2F;90000</span><br><span class="line">m&#x3D;video 53000 RTP&#x2F;AVP 32</span><br><span class="line">a&#x3D;rtpmap:32 MPV&#x2F;90000</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>其中：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>v</td>
+<td>代表协议版本号</td>
+</tr>
+<tr>
+<td>o</td>
+<td>代表会话发起者，包括 <code>username、sessionId</code> 等</td>
+</tr>
+<tr>
+<td>s</td>
+<td>代表 <code>session</code> 名称，为唯一字段</td>
+</tr>
+<tr>
+<td>c</td>
+<td>代表连接信息，包括网络类型、地址类型、地址等</td>
+</tr>
+<tr>
+<td>c</td>
+<td>代表会话时间，包括开始/结束时间，均为 <code>0</code> 表示持久会话</td>
+</tr>
+<tr>
+<td>m</td>
+<td>代表媒体描述，包括媒体类型、端口、传输协议、媒体格式等</td>
+</tr>
+<tr>
+<td>a</td>
+<td>代表附加属性，此处用于对媒体协议进行扩展</td>
+</tr>
+</tbody></table>
+<h3 id="Plan-B-VS-Unified-Plan"><a href="#Plan-B-VS-Unified-Plan" class="headerlink" title="Plan B VS Unified Plan"></a>Plan B VS Unified Plan</h3><blockquote>
+<p>在 <code>WebRTC</code> 发展过程中，<code>SDP</code> 格式 <code>（semantics）</code> 也发生了多次改变，目前使用最多的是 <code>Plan B</code> 和 <code>Unified Plan</code> 两种。两者均可在一个 <code>PeerConnection</code> 中表示多路媒体流，区别在于：</p>
+</blockquote>
+<ul>
+<li><code>Plan B</code>: 所有视频流和所有音频流各自放在一个 <code>m=值</code> 里，用 <code>ssrc</code> 区分</li>
+<li><code>Unified Plan</code>: 每路流各自用一个 <code>m=值</code></li>
+</ul>
+<p>目前最新发布的 <code>WebRTC 1.0</code> 采用的是 <code>Unified Plan</code>，已被主流浏览器支持并默认开启。<code>Chrome</code> 浏览器支持通过以下 <code>API</code> 获取当前使用的 <code>semantics</code>:</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Chrome</span></span><br><span class="line">RTCPeerConnection.getConfiguration().sdpSemantics; <span class="comment">// 'unified-plan' or 'plan b'</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="协商过程"><a href="#协商过程" class="headerlink" title="协商过程"></a>协商过程</h3><blockquote>
+<p>协商过程并不复杂，如下图所示:</p>
+</blockquote>
+<p>会话发起者通过 <code>createOffer</code> 创建一个 <code>offer</code>，经过信令服务器发送到接收方，接收方调用 <code>createAnswer</code> 创建 <code>answer</code> 并返回给发送方，完成交换。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 发送方，sendOffer/onReveiveAnswer 为伪方法</span></span><br><span class="line"><span class="keyword">const</span> pc1 = <span class="keyword">new</span> RTCPeerConnection();</span><br><span class="line"><span class="keyword">const</span> offer = <span class="keyword">await</span> pc1.createOffer();</span><br><span class="line"></span><br><span class="line">pc1.setLocalDescription(offer);</span><br><span class="line"></span><br><span class="line">sendOffer(offer);</span><br><span class="line"></span><br><span class="line">onReveiveAnswer(<span class="function">(<span class="params">answer</span>) =&gt;</span> &#123;</span><br><span class="line">  pc1.setRemoteDescription(answer);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 接收方，sendAnswer/onReveiveOffer 为伪方法</span></span><br><span class="line"><span class="keyword">const</span> pc2 = <span class="keyword">new</span> RTCPeerConnection();</span><br><span class="line"></span><br><span class="line">onReveiveOffer(<span class="function">(<span class="params">offer</span>) =&gt;</span> &#123;</span><br><span class="line">  pc2.setRemoteDescription(answer);</span><br><span class="line">  <span class="keyword">const</span> answer = <span class="keyword">await</span> pc2.createAnswer();</span><br><span class="line">  pc2.setLocalDescription(answer);</span><br><span class="line">  sendAnswer(answer);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<p>需要注意的是，随着通信过程中双方相关信息的变化，SDP 交换可能会进行多次。</p>
+<h2 id="建立连接"><a href="#建立连接" class="headerlink" title="建立连接"></a>建立连接</h2><blockquote>
+<p>现代互联网环境非常复杂，我们的设备通常隐藏在层层网关后面，因此，要建立直接的连接，还需要知道双方可用的连接地址，这个过程被称为 <code>NAT</code> 穿越，主要由 <code>ICE</code> 服务器完成，所以也称为 <code>ICE</code> 打洞。</p>
+</blockquote>
+<h3 id="ICE"><a href="#ICE" class="headerlink" title="ICE"></a>ICE</h3><blockquote>
+<p><code>ICE（Interactive Connectivity Establishment）</code> 服务器是独立于通信双方外的第三方服务器，其主要作用，是获取设备的可用地址，供对等端进行连接，由 <code>STUN（Session Traversal Utilities for NAT）</code> 服务器来完成。每一个可用地址，都被称为一个 <code>ICE</code> 候选项 <code>（ICE Candidate）</code>，浏览器将从候选项中选出最合适的使用。其中，候选项的类型及优先级如下：</p>
+</blockquote>
+<ul>
+<li>主机候选项: 通过设备网卡获取，通常是内网地址，优先级最高</li>
+<li>反射地址候选项: 由 <code>ICE</code> 服务器获取，属于设备在外网的地址，获取过程比较复杂，可以简单理解为：浏览器向服务器发送多个检测请求，根据服务器的返回情况，来综合判断并获知自身在公网中的地址</li>
+<li>中继候选项: 由 <code>ICE</code> 中继服务器提供，前两者都行不通之后的兜底选择，优先级最低</li>
+</ul>
+<p>新建 <code>PeerConnection</code> 时可指定 <code>ICE</code> 服务器地址，每次 <code>WebRTC</code> 找到一个可用的候选项，都会触发一次 <code>icecandidate</code> 事件，此时可调用 <code>addIceCandidate</code> 方法来将候选项添加到通信中：</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pc = <span class="keyword">new</span> RTCPeerConnection(&#123;</span><br><span class="line">  iceServers: [</span><br><span class="line">    &#123; <span class="attr">url</span>: <span class="string">"stun:stun.l.google.com:19302"</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">url</span>: <span class="string">"turn:user@turnserver.com"</span>, <span class="attr">credential</span>: <span class="string">"pass"</span> &#125;,</span><br><span class="line">  ], <span class="comment">// 配置 ICE 服务器</span></span><br><span class="line">&#125;);</span><br><span class="line">pc.addEventListener(<span class="string">"icecandidate"</span>, (e) =&gt; &#123;</span><br><span class="line">  pc.addIceCandidate(event.candidate);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+
+<blockquote>
+<p>通过候选项建立的 <code>ICE</code> 连接，可以大致分为下图两种情况：</p>
+</blockquote>
+<ol>
+<li>直接 <code>P2P</code> 的连接，为上述 <code>1&amp;2</code> 两种候选项的情况;</li>
+<li>通过 <code>TURN（Traversal Using Relays around NAT）</code>中继服务器的连接，为上述第三种情况。</li>
+</ol>
+<p>同样的，由于网络变动等原因，通信过程中的 <code>ICE</code> 打洞，同样可能发生多次。</p>
+<h2 id="进行通信"><a href="#进行通信" class="headerlink" title="进行通信"></a>进行通信</h2><blockquote>
+<p><code>WebRTC</code> 选择了 <code>UDP</code> 作为底层传输协议。为什么不选择可靠性更强的 <code>TCP</code>？原因主要有三个：</p>
+</blockquote>
+<ul>
+<li><code>UDP</code> 协议无连接，资源消耗小，速度快</li>
+<li>传输过程中少量的数据损失影响不大</li>
+<li><code>TCP</code> 协议的超时重连机制会造成非常明显的延迟</li>
+</ul>
+<blockquote>
+<p>而在 <code>UDP</code> 之上，<code>WebRTC</code> 使用了再封装的 <code>RTP</code> 与 <code>RTCP</code> 两个协议：</p>
+</blockquote>
+<ul>
+<li><code>RTP（Realtime Transport Protocol）</code>: 实时传输协议，主要用来传输对实时性要求比较高的数据，比如音视频数据</li>
+<li><code>RTCP（RTP Trasport Control Protocol）</code>: <code>RTP</code> 传输控制协议，顾名思义，主要用来监控数据传输的质量，并给予数据发送方反馈。</li>
+</ul>
+<p>在实际通信过程中，两种协议的数据收发会同时进行。</p>
+<h3 id="关键-API"><a href="#关键-API" class="headerlink" title="关键 API"></a>关键 API</h3><blockquote>
+<p>下面将以一个 <code>demo</code> 及其代码，来展示前端 <code>WebRTC</code> 的能力及其使用的 <code>API</code>:</p>
+</blockquote>
+<div>
+  <div id="container">
+    <video id="localVideo" playsinline autoplay muted style="width:300px;height:200px;"></video>
+    <video id="remoteVideo" playsinline autoplay style="width:300px;height:200px;"></video>
+    <div class="box">
+      <button id="startButton">Start</button>
+      <button id="callButton">Call</button>
+    </div>
+  </div>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script>
+    const startButton = document.getElementById("startButton");
+    const callButton = document.getElementById("callButton");
+    const localVideo = document.getElementById("localVideo");
+    const remoteVideo = document.getElementById("remoteVideo");
+    callButton.disabled = true;
+    startButton.addEventListener("click", start);
+    callButton.addEventListener("click", call);
+    let localStream;
+    let pc1;
+    let pc2;
+    const offerOptions = {
+      offerToReceiveAudio: 1,
+      offerToReceiveVideo: 1
+    };
+    async function start() {
+      startButton.disabled = true;
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: true
+      });
+      localVideo.srcObject = stream;
+      localStream = stream;
+      callButton.disabled = false;
+    }
+    function gotRemoteStream(e) {
+      if (remoteVideo.srcObject !== e.streams[0]) {
+        remoteVideo.srcObject = e.streams[0];
+        console.log("pc2 received remote stream");
+        setTimeout(() => {
+          pc1.getStats(null).then(stats => console.log(stats));
+        }, 2000);
+      }
+    }
+    function getName(pc) {
+      return pc === pc1 ? "pc1" : "pc2";
+    }
+    function getOtherPc(pc) {
+      return pc === pc1 ? pc2 : pc1;
+    }
+    async function call() {
+      pc1 = new RTCPeerConnection();
+      //  {
+      //   sdpSemantics: "unified-plan", // 指定使用 unified plan
+      //   iceServers:
+      //   [
+      //      { url: "stun:stun.l.google.com:19302" },
+      //      { url: "turn:user@turnserver.com", credential: "pass" }
+      //   ] // 配置 ICE 服务器
+      // }
+      pc1.addEventListener("icecandidate", e => onIceCandidate(pc1, e)); // 监听 ice 候选项事件
+      pc2 = new RTCPeerConnection();
+      pc2.addEventListener("icecandidate", e => onIceCandidate(pc2, e));
+      pc2.addEventListener("track", gotRemoteStream);
+      localStream.getTracks().forEach(track => pc1.addTrack(track, localStream));
+      const offer = await pc1.createOffer(offerOptions); // 创建 offer
+      await onCreateOfferSuccess(offer);
+      callButton.disabled = true;
+    }
+    async function onCreateOfferSuccess(desc) {
+      await pc1.setLocalDescription(desc);
+      await pc2.setRemoteDescription(desc);
+      const answer = await pc2.createAnswer(); // 创建 answer
+      await onCreateAnswerSuccess(answer);
+    }
+    async function onCreateAnswerSuccess(desc) {
+      await pc2.setLocalDescription(desc);
+      await pc1.setRemoteDescription(desc);
+    }
+    async function onIceCandidate(pc, event) {
+      try {
+        await getOtherPc(pc).addIceCandidate(event.candidate); // 设置 ice 候选项
+        onAddIceCandidateSuccess(pc);
+      } catch (e) {
+        onAddIceCandidateError(pc, e);
+      }
+      console.log(
+        `${getName(pc)} ICE candidate:\n${
+          event.candidate ? event.candidate.candidate : "(null)"
+        }`
+      );
+    }
+    function onAddIceCandidateSuccess(pc) {
+      console.log(`${getName(pc)} addIceCandidate success`);
+    }
+    function onAddIceCandidateError(pc, error) {
+      console.log(
+        `${getName(pc)} failed to add ICE Candidate: ${error.toString()}`
+      );
+    }
+  </script>
+</div>
+
+<p><a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/peerconnection/pc1" target="_blank" rel="noopener">View source on GitHub</a></p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>作为「指南」，本文从比较浅的层次介绍了 <code>WebRTC</code> 技术，很多细节及原理性的内容，限于篇幅未作深入阐述。笔者也是刚接触几个月，如有谬误，还请告知。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+      <div>
+          <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
+------ 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
+
+      </div>
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</div>
+  <div class="reward-content">
+    	<a id="github" href="https://github.com/houyi1121/Playing-reward" target="_blank" class="pos-a" title="Github"></a>
+      <a href="https://blog.ihoey.com" target="_blank" id="DonateText" title="ihoey.com">ihoey.com</a>
+      <ul id="donateBox" class="list pos-a">
+        <li id="PayPal"><a href="https://www.paypal.me/ihoey" target="_blank" title="PayPal">PayPal</a></li>
+        <li id="QQ" data-img="/qcode/tencent_qcode.png" title="QQ">QQ</li>
+        <li id="AliPay" data-img="/qcode/alipay_qcode.png" title="支付宝">支付宝</li>
+        <li id="WeChat" data-img="/qcode/wechat_qcode.png" title="微信支付">微信支付</li>
+      </ul>
+      <div id="QRBox" class="pos-f left-100">
+        <div id="MainBox"></div>
+      </div>
+  </div>
+</div>
+
+      </div>
+    
+
+    
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/WebRTC/" rel="tag"># WebRTC</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/javascript/PWA/2019-02-18-progressive-web-apps-blog.html" rel="next" title="将你的博客升级为 PWA 渐进式Web离线应用">
+                <i class="fa fa-chevron-left"></i> 将你的博客升级为 PWA 渐进式Web离线应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim"
+                alt="Ihoey" />
+            
+              <p class="site-author-name" itemprop="name">Ihoey</p>
+              <p class="site-description motion-element" itemprop="description">心，若没有栖息的地方，到哪里都是流浪......</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/index.html%20%7C%7C%20archive">
+                
+                    <span class="site-state-item-count">56</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ihoey" target="_blank" title="GitHub" rel="external nofollow noopener"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://weibo.com/hy951121" target="_blank" title="微博" rel="external nofollow noopener"><i class="fa fa-fw fa-weibo"></i>微博</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes" target="_blank" title="QQ" rel="external nofollow noopener"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com" target="_blank" title="E-mail" rel="external nofollow noopener"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/100200711230702098272" target="_blank" title="Google" rel="external nofollow noopener"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/ihoeys" target="_blank" title="Twitter" rel="external nofollow noopener"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/profile.php?id=100008808609802" target="_blank" title="Facebook" rel="external nofollow noopener"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.mythsman.com/" title="mythsman" target="_blank" rel="noopener nofollow">mythsman</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.isthnew.com/links" title="可乐没气的猫" target="_blank" rel="noopener nofollow">可乐没气的猫</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.bboysoul.com/" title="Bboysoul" target="_blank" rel="noopener nofollow">Bboysoul</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://jnan.org/" title="jnduan's Blog" target="_blank" rel="noopener nofollow">jnduan's Blog</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ehlxr.me/" title="Ehlxr's Blog" target="_blank" rel="noopener nofollow">Ehlxr's Blog</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#找到对方"><span class="nav-number">1.</span> <span class="nav-text">找到对方</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信令服务器"><span class="nav-number">1.1.</span> <span class="nav-text">信令服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进行协商"><span class="nav-number">2.</span> <span class="nav-text">进行协商</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SDP"><span class="nav-number">2.1.</span> <span class="nav-text">SDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plan-B-VS-Unified-Plan"><span class="nav-number">2.2.</span> <span class="nav-text">Plan B VS Unified Plan</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协商过程"><span class="nav-number">2.3.</span> <span class="nav-text">协商过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立连接"><span class="nav-number">3.</span> <span class="nav-text">建立连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ICE"><span class="nav-number">3.1.</span> <span class="nav-text">ICE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进行通信"><span class="nav-number">4.</span> <span class="nav-text">进行通信</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关键-API"><span class="nav-number">4.1.</span> <span class="nav-text">关键 API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最后"><span class="nav-number">5.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">梦魇小栈</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="theme-info">京ICP备15058055号-1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/ihoey">Ihoey</a> 强力驱动</div>
+
+
+
+  <div class="footer-custom"><span>博客已萌萌哒运行<span id="time-to-now"></span> ●'◡'●)ﾉ♥</span></div>
+
+
+<div class="eevee">
+  <div class="message">嗨，你好啊~~</div>
+  <div class="body">
+    <div class="head">
+      <div class="ears">
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+        <div class="ear">
+          <div class="lobe"></div>
+        </div>
+      </div>
+      <div class="face">
+        <div class="eyes">
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+          <div class="eye">
+            <div class="eyelid"></div>
+          </div>
+        </div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+    </div>
+    <div class="chest">
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+      <div class="fur">
+        <div class="patch"></div>
+      </div>
+    </div>
+    <div class="legs">
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+      <div class="leg">
+        <div class="inner-leg"></div>
+      </div>
+    </div>
+    <div class="tail">
+      <div class="tail">
+        <div class="tail">
+          <div class="tail">
+            <div class="tail">
+              <div class="tail -end"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"> 你是第</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>枚看到我的
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"> 访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=59541779";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/jquery-2.1.3.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/jquery.lazyload.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="https://cdn.dode.top/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+  
+  
+    
+  
+  <script src="https://cdn.dode.top/Hitalk.min.js"></script>
+
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Hitalk({
+        el: '#comments' ,
+        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
+        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar: 'monsterid',
+        guest_info: guest,
+        pageSize: 10 || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
