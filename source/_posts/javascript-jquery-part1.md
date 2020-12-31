@@ -10,7 +10,7 @@ categories: javascript
 
 JQuery 模块分析及其实现第一部分!
 
-<img src="https://cdn.dode.top/20161119.png?imageView2/0/format/png/q/75|imageslim" width="100%">
+<img src="https://cdn.ihoey.com/20161119.png?imageView2/0/format/png/q/75|imageslim" width="100%">
 
 <!-- more -->
 
@@ -33,21 +33,21 @@ JQuery 模块分析及其实现第一部分!
 function getChildren(parent) {
   // 存储结果集
   var ret = [],
-    nodes
+    nodes;
   // 获取parent所有子节点
-  nodes = parent.childNodes
+  nodes = parent.childNodes;
 
   // 遍历nodes
   for (var i = 0, l = nodes.length; i < l; i++) {
     // 如果遍历到当前子节点类型为元素，即为所要结果。存储在ret内。
     if (nodes[i].nodeType === 1) {
-      ret.push(nodes[i])
+      ret.push(nodes[i]);
     }
   }
   // 返回结果
-  return ret
+  return ret;
 }
-console.log(getChildren(document.getElementById('dv')))
+console.log(getChildren(document.getElementById("dv")));
 ```
 
 - 第二种方式：`firstChild nextSibling（推荐）`
@@ -56,31 +56,31 @@ console.log(getChildren(document.getElementById('dv')))
 //使用while方式
 function getChildren(parent) {
   var ret = [],
-    elem = parent.firstChild
+    elem = parent.firstChild;
   // 遍历parent所有子节点
   // 如果有子节点
   while (elem) {
     // 并且节点类型为元素。存储在ret内
-    if (elem.nodeType === 1) ret.push(elem)
+    if (elem.nodeType === 1) ret.push(elem);
     // 更新循环标量
     // 赋值为下一个兄弟节点
-    elem = elem.nextSibling
+    elem = elem.nextSibling;
   }
   // 返回结果
-  return ret
+  return ret;
 }
 
 //使用for循环
 function getChildren(parent) {
   var ret = [],
-    elem = parent.firstChild
+    elem = parent.firstChild;
   for (; elem; elem = elem.nextSibling) {
-    if (elem.nodeType === 1) ret.push(elem)
+    if (elem.nodeType === 1) ret.push(elem);
   }
-  return ret
+  return ret;
 }
 
-console.log(getChildren(document.getElementById('dv')))
+console.log(getChildren(document.getElementById("dv")));
 ```
 
 ## 框架结构
@@ -104,46 +104,46 @@ console.log(getChildren(document.getElementById('dv')))
 6.  由于暴露给用户 的 是 `itcast` 和 其原型。所以在扩展成员时，只能在这两个对象上扩展。而在函数对象上扩展的成员 为 静态成员。可以直接通过函数名字来访问。但是，在原型上的成员，必须创建实例来访问。因此为了实现 `init` 对象可以访问 `itcast` 原型上的成员，就基于原型来实现继承。
 
 ```js
-;(function(global) {
-  var init
+(function (global) {
+  var init;
   // 核心函数（工厂函数）
-  var itcast = function(selector) {
-    return new itcast.fn.init(selector)
-  }
+  var itcast = function (selector) {
+    return new itcast.fn.init(selector);
+  };
 
   // 核心原型
   itcast.fn = itcast.prototype = {
-    constructor: itcast
-  }
+    constructor: itcast,
+  };
 
   // 构造函数
-  init = itcast.fn.init = function(selector) {}
+  init = itcast.fn.init = function (selector) {};
   // 实现init对象继承自itcast原型
-  init.prototype = itcast.fn
+  init.prototype = itcast.fn;
 
   // 可扩展方法
   // 如果target为undefined值，那么就是给this扩展成员
   // 否则就是给target对象扩展。
-  itcast.extend = itcast.fn.extend = function(source, target) {
-    var k
+  itcast.extend = itcast.fn.extend = function (source, target) {
+    var k;
     // 如果target为undefined值，就赋值为this
     // 给this扩展成员
     if (target == undefined) {
-      target = this
+      target = this;
     }
 
     // target = target || this;
 
     for (k in source) {
-      target[k] = source[k]
+      target[k] = source[k];
     }
-  }
+  };
   // 暴露给用户
-  global.$ = global.itcast = itcast
-})(window)
+  global.$ = global.itcast = itcast;
+})(window);
 
-itcast.fn.addClass = function(className) {}
-itcast.fn.append = function(className) {}
+itcast.fn.addClass = function (className) {};
+itcast.fn.append = function (className) {};
 ```
 
 7.  完善`init`构造函数
@@ -178,42 +178,42 @@ itcast.fn.append = function(className) {}
 10. 全局对象 `window` 特性：有一个 `window` 属性 引用 自身。
 
 ```js
-;(function(global) {
+(function (global) {
   var init,
-    document = global.document
+    document = global.document;
 
-  var itcast = function(selector) {
-    return new itcast.fn.init(selector)
-  }
+  var itcast = function (selector) {
+    return new itcast.fn.init(selector);
+  };
 
   itcast.fn = itcast.prototype = {
     constructor: itcast,
-    length: 0
-  }
-  init = itcast.fn.init = function(selector) {
+    length: 0,
+  };
+  init = itcast.fn.init = function (selector) {
     // handle: null undefined '' false
-    if (!selector) return this
+    if (!selector) return this;
     // handle: string
     else if (itcast.isString(selector)) {
       // handle: html string '<p>123</p>'
       if (itcast.isHTML(selector)) {
         // 怎么存储 以伪数组对象形式存储 dom元素
-        Array.prototype.push.apply(this, itcast.parseHTML(selector))
+        Array.prototype.push.apply(this, itcast.parseHTML(selector));
       }
       // handle: selector
       else {
         // 根据选择器获取dom元素
-        var nodelist = document.querySelectorAll(selector)
+        var nodelist = document.querySelectorAll(selector);
         // 将结果伪数组对象 变成 真数组
-        var ret = Array.prototype.slice.call(nodelist)
+        var ret = Array.prototype.slice.call(nodelist);
         // 借调数组对象的slice方法将数组中的所有元素 以伪数组形式存储在this上
-        Array.prototype.push.apply(this, ret)
+        Array.prototype.push.apply(this, ret);
       }
     }
     // handle: dom node
     else if (itcast.isDOM(selector)) {
-      this[0] = selector
-      this.length = 1
+      this[0] = selector;
+      this.length = 1;
     }
     // handle: dom array(伪数组对象)
     else if (itcast.isArrayLike(selector)) {
@@ -221,84 +221,93 @@ itcast.fn.append = function(className) {}
       var _type = Object.prototype.toString
         .call(selector)
         .slice(8, -1)
-        .toLowerCase()
+        .toLowerCase();
       // 如果不是数组类型,就 将其转换 为 真数组类型
-      if (_type !== 'array') selector = Array.prototype.slice.call(selector)
-      Array.prototype.push.apply(this, selector)
+      if (_type !== "array") selector = Array.prototype.slice.call(selector);
+      Array.prototype.push.apply(this, selector);
     }
     // handle: function
     else if (itcast.isFunction(selector)) {
       if (itcast.isReady) {
-        selector()
+        selector();
       } else {
-        doucment.addEventListener('DOMContentLoaded', function() {
-          selector()
-          itcast.isReady = true
-        })
+        doucment.addEventListener("DOMContentLoaded", function () {
+          selector();
+          itcast.isReady = true;
+        });
       }
     }
-  }
-  init.prototype = itcast.fn
+  };
+  init.prototype = itcast.fn;
 
-  itcast.extend = itcast.fn.extend = function(source, target) {
-    var k
+  itcast.extend = itcast.fn.extend = function (source, target) {
+    var k;
 
-    target = target || this
+    target = target || this;
 
     for (k in source) {
-      target[k] = source[k]
+      target[k] = source[k];
     }
-  }
+  };
 
   // 添加工具类方法
   itcast.extend({
     isReady: false,
-    paseHTML: function(html) {
-      var div = document.createElement('div'),
-        ret = []
-      div.innerHTML = html
+    paseHTML: function (html) {
+      var div = document.createElement("div"),
+        ret = [];
+      div.innerHTML = html;
 
       for (var elem = div.firstChild; elem; elem = elem.nextSibling) {
-        if (elem.nodeType === 1) ret.push(elem)
+        if (elem.nodeType === 1) ret.push(elem);
       }
 
-      return ret
-    }
-  })
+      return ret;
+    },
+  });
   // 类型判断方法
   itcast.extend({
     // 判断是否为字符串类型
-    isString: function(obj) {
+    isString: function (obj) {
       // 如果为null或undefined，返回false
       // 如果typeof值为string，返回true否则返回false。
-      return !!obj && typeof obj === 'string'
+      return !!obj && typeof obj === "string";
     },
-    isHTML: function(obj) {
-      return !!obj && obj.charAt(0) === '<' && obj.charAt(obj.length - 1) === '>' && obj.length >= 3
+    isHTML: function (obj) {
+      return (
+        !!obj &&
+        obj.charAt(0) === "<" &&
+        obj.charAt(obj.length - 1) === ">" &&
+        obj.length >= 3
+      );
     },
-    isDOM: function(obj) {
-      return !!obj && !!obj.nodeType
+    isDOM: function (obj) {
+      return !!obj && !!obj.nodeType;
     },
-    isFunction: function(obj) {
-      return !!obj && typeof obj === 'function'
+    isFunction: function (obj) {
+      return !!obj && typeof obj === "function";
     },
-    isGlobal: function(obj) {
-      return !!obj && obj.window === obj
+    isGlobal: function (obj) {
+      return !!obj && obj.window === obj;
     },
-    isArrayLike: function(obj) {
+    isArrayLike: function (obj) {
       var _type = Object.prototype.toString
           .call(obj)
           .slice(8, -1)
           .toLowerCase(),
-        length = !!obj && 'length' in obj && obj.length
+        length = !!obj && "length" in obj && obj.length;
       // 过滤 window对象和函数对象
-      if (itcast.isFunction(obj) || itcast.isGlobal(obj)) return false
-      return _type === 'array' || length === 0 || (typeof length === 'number' && length > 0 && length - 1 in obj)
-    }
-  })
+      if (itcast.isFunction(obj) || itcast.isGlobal(obj)) return false;
+      return (
+        _type === "array" ||
+        length === 0 ||
+        (typeof length === "number" && length > 0 && length - 1 in obj)
+      );
+    },
+  });
 
-  global.$ = global.itcast = itcast
-})(window)
+  global.$ = global.itcast = itcast;
+})(window);
 ```
 
 到此,一个完整的 `init` 框架结构就好了!

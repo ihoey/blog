@@ -150,7 +150,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim
+avatar: https://cdn.ihoey.com/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim
 
 # Table Of Contents in the Sidebar
 toc:
@@ -405,36 +405,36 @@ vendors:
   _internal: lib
 
   # Internal version: 2.1.3
-  jquery: https://cdn.dode.top/index.js
+  jquery: https://cdn.ihoey.com/index.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  fancybox: https://cdn.dode.top/jquery.fancybox.pack.js
-  fancybox_css: https://cdn.dode.top/jquery.fancybox.css
+  fancybox: https://cdn.ihoey.com/jquery.fancybox.pack.js
+  fancybox_css: https://cdn.ihoey.com/jquery.fancybox.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
-  fastclick: https://cdn.dode.top/fastclick.min.js
+  fastclick: https://cdn.ihoey.com/fastclick.min.js
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
-  lazyload: https://cdn.dode.top/jquery.lazyload.js
+  lazyload: https://cdn.ihoey.com/jquery.lazyload.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity: https://cdn.dode.top/velocity.min.js
+  velocity: https://cdn.ihoey.com/velocity.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity_ui: https://cdn.dode.top/velocity.ui.min.js
+  velocity_ui: https://cdn.ihoey.com/velocity.ui.min.js
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser: https://cdn.dode.top/ua-parser.pack.js
+  ua_parser: https://cdn.ihoey.com/ua-parser.pack.js
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome: https://cdn.dode.top/font-awesome/font-awesome.min.css
+  fontawesome: https://cdn.ihoey.com/font-awesome/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
