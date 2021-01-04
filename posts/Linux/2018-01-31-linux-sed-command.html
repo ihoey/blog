@@ -5,8 +5,6 @@
 
 
 
-  
-
 <!--
                            _ooOoo_
                           o8888888o
@@ -29,7 +27,7 @@
         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
                  佛祖保佑       永无BUG  By:- ihoey.com
 -->
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next muse" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -71,7 +69,7 @@
   
     
   
-  <link href="https://cdn.dode.top/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.ihoey.com/jquery.fancybox.css" rel="stylesheet" type="text/css" />
 
 
 
@@ -113,7 +111,7 @@
 
   
 
-<link href="https://cdn.dode.top/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.ihoey.com/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
 <link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
 
@@ -150,7 +148,7 @@
     fastclick: false,
     lazyload: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -180,16 +178,16 @@
 <meta property="og:site_name" content="梦魇小栈">
 <meta property="og:description" content="awk于 1977 年出生，今年 36 岁本命年，sed比awk大 2-3 岁，awk就像林妹妹，sed 就是宝玉哥哥了。所以 林妹妹跳了个Topless，他的哥哥sed坐不住了，也一定要出来抖一抖。 sed全名叫stream editor，流编辑器，用程序的方式来编辑文本，相当的hacker啊。sed基本上就是玩正则模式匹配，所以，玩sed的人，正则表达式一般都比较强。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.dode.top/blog/sed_demo_00.jpg?imageView2/0/format/jpg/q/75%7Cimageslim">
-<meta property="og:image" content="https://cdn.dode.top/blog/sed_demo.jpg?imageView2/0/format/jpg/q/75%7Cimageslim">
+<meta property="og:image" content="https://cdn.ihoey.com/blog/sed_demo_00.jpg?imageView2/0/format/jpg/q/75%7Cimageslim">
+<meta property="og:image" content="https://cdn.ihoey.com/blog/sed_demo.jpg?imageView2/0/format/jpg/q/75%7Cimageslim">
 <meta property="article:published_time" content="2018-01-31T11:03:52.000Z">
-<meta property="article:modified_time" content="2020-07-23T06:36:21.175Z">
+<meta property="article:modified_time" content="2021-01-04T03:21:14.285Z">
 <meta property="article:author" content="Ihoey">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="shell">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.dode.top/blog/sed_demo_00.jpg?imageView2/0/format/jpg/q/75%7Cimageslim">
+<meta name="twitter:image" content="https://cdn.ihoey.com/blog/sed_demo_00.jpg?imageView2/0/format/jpg/q/75%7Cimageslim">
 
 
 
@@ -418,7 +416,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ihoey">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim">
+      <meta itemprop="image" content="https://cdn.ihoey.com/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -472,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
+                <time title="修改时间：2021-01-04 11:21:14" itemprop="dateModified" datetime="2021-01-04T11:21:14+08:00">2021-01-04</time>
               
             
           </span>
@@ -576,7 +574,7 @@
 <li><code>[ ]</code> 字符集合。 如：<code>[abc]</code> 表示匹配 a 或 b 或 c，还有 <code>[a-zA-Z]</code> 表示匹配所有的<code>26</code>个字符。如果其中有<code>^</code>表示反，如 <code>[^a]</code> 表示非 a 的字符</li>
 </ul>
 <p>正规则表达式是一些很牛的事，比如我们要去掉某<code>html</code>中的<code>tags</code>：</p>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>This<span class="tag">&lt;/<span class="name">b</span>&gt;</span> is what <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"text-decoration: underline;"</span>&gt;</span>I<span class="tag">&lt;/<span class="name">span</span>&gt;</span> meant. Understand?</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="HTML"><figure class="iseeu highlight /html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">b</span>&gt;</span>This<span class="tag">&lt;/<span class="name">b</span>&gt;</span> is what <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"text-decoration: underline;"</span>&gt;</span>I<span class="tag">&lt;/<span class="name">span</span>&gt;</span> meant.</span><br><span class="line">Understand?</span><br></pre></td></tr></table></figure></div>
 
 <p>看看我们的<code>sed</code>命令</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 如果你这样搞的话，就会有问题</span></span><br><span class="line">sed 's/&lt;.*&gt;//g' html.txt</span><br><span class="line">" Understand?"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 要解决上面的那个问题，就得像下面这样。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 其中的<span class="string">'[^&gt;]'</span> 指定了除了&gt;的字符重复0次或多次。</span></span><br><span class="line">sed 's/&lt;[^&gt;]*&gt;//g' html.txt</span><br><span class="line">"This is what I meant. Understand?"</span><br></pre></td></tr></table></figure></div>
@@ -678,7 +676,7 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sed 'H;g' t.txt</span><br><span class="line">one</span><br><span class="line"></span><br><span class="line">one</span><br><span class="line">two</span><br><span class="line"></span><br><span class="line">one</span><br><span class="line">two</span><br><span class="line">three</span><br></pre></td></tr></table></figure></div>
 
 <p>是不是有点没看懂，我作个图你就看懂了。</p>
-<p><img src="https://cdn.dode.top/blog/sed_demo_00.jpg?imageView2/0/format/jpg/q/75%7Cimageslim"></p>
+<p><img src="https://cdn.ihoey.com/blog/sed_demo_00.jpg?imageView2/0/format/jpg/q/75%7Cimageslim"></p>
 <p>第二个示例，反序了一个文件的行：</p>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="SHELL"><figure class="iseeu highlight /shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sed '1!G;h;$!d' t.txt</span><br><span class="line">three</span><br><span class="line">two</span><br><span class="line">one</span><br></pre></td></tr></table></figure></div>
 
@@ -689,7 +687,7 @@
 <li><code>$!d</code> —— 除了最后一行不执行<code>d</code>命令，其它行都执行<code>d</code>命令，删除当前行</li>
 </ul>
 <p>这个执行序列很难理解，做个图如下大家就明白了：</p>
-<p><img src="https://cdn.dode.top/blog/sed_demo.jpg?imageView2/0/format/jpg/q/75%7Cimageslim"></p>
+<p><img src="https://cdn.ihoey.com/blog/sed_demo.jpg?imageView2/0/format/jpg/q/75%7Cimageslim"></p>
 <p>就先说这么多吧，希望对大家有用。</p>
 
       
@@ -834,7 +832,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <img class="site-author-image" itemprop="image"
-                src="https://cdn.dode.top/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim"
+                src="https://cdn.ihoey.com/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim"
                 alt="Ihoey" />
             
               <p class="site-author-name" itemprop="name">Ihoey</p>
@@ -1136,7 +1134,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1322,27 +1320,27 @@
 
   
   
-    <script type="text/javascript" src="https://cdn.dode.top/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="https://cdn.ihoey.com/jquery-2.1.3.js"></script>
   
 
   
   
-    <script type="text/javascript" src="https://cdn.dode.top/jquery.lazyload.js"></script>
+    <script type="text/javascript" src="https://cdn.ihoey.com/jquery.lazyload.js"></script>
   
 
   
   
-    <script type="text/javascript" src="https://cdn.dode.top/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdn.ihoey.com/velocity.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="https://cdn.dode.top/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdn.ihoey.com/velocity.ui.min.js"></script>
   
 
   
   
-    <script type="text/javascript" src="https://cdn.dode.top/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="https://cdn.ihoey.com/jquery.fancybox.pack.js"></script>
   
 
 
@@ -1401,7 +1399,7 @@
   
     
   
-  <script src="https://cdn.dode.top/Hitalk.min.js"></script>
+  <script src="https://cdn.ihoey.com/Hitalk.min.js"></script>
 
   <script type="text/javascript">
     var GUEST = ['nick','mail','link'];
