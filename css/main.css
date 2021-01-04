@@ -1809,7 +1809,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #40787d;
+  background: #5c85da;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2627,7 +2627,7 @@ code {
 }
 .header {
   background-size: cover;
-  background: url("https://cdn.dode.top/header_background.jpg?imageView2/0/format/jpg/q/75|imageslim") no-repeat;
+  background: url("https://cdn.ihoey.com/header_background.jpg?imageView2/0/format/jpg/q/75|imageslim") no-repeat;
 }
 .header-inner {
   padding-top: 310px;
