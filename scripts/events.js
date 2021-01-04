@@ -1,4 +1,4 @@
-var _exec = require("child_process").exec;
+var _exec = require("child_process").execSync;
 require("shelljs/global");
 
 // new 后自动打开编辑器
@@ -46,6 +46,6 @@ function run() {
 }
 
 function deployServer() {
-  exec("scp -r .deploy_git* 360:/data/www/hexo");
+  _exec("scp -r .deploy_git* 360:/data/www/hexo", { stdio: [0, 1, 2] });
   echo("部署服务器完成");
 }
