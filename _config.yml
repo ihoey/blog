@@ -77,8 +77,8 @@ deploy:
   - type: git
     repo: git@github.com:ihoey/blog.git,master
   - type: git
-    repo: git@ihoey.com:/data/repo/blog.git,master
-  - type: baidu_url_submitter
+  #   repo: git@ihoey.com:/data/repo/blog.git,master
+  # - type: baidu_url_submitter
 
 #百度分享
 baidu_analytics: 199400a900d7a62bfff2335224e096d8
