@@ -11,8 +11,8 @@ hexo.on("new", function (data) {
 try {
   hexo.on("deployAfter", function () {
     //当deploy完成后执行备份
-    run();
     deployServer();
+    run();
   });
 } catch (e) {
   console.log("产生了一个错误<(￣3￣)> !，错误详情为：" + e.toString());
