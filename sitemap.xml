@@ -79,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/categories/index.html</loc>
-    
-    <lastmod>2020-07-23T06:36:21.183Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.ihoey.com/about/index.html</loc>
     
     <lastmod>2020-07-23T06:36:21.183Z</lastmod>
@@ -93,14 +86,21 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html</loc>
+    <loc>https://blog.ihoey.com/categories/index.html</loc>
+    
+    <lastmod>2020-07-23T06:36:21.183Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
     
     <lastmod>2020-07-23T06:36:21.181Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html</loc>
     
     <lastmod>2020-07-23T06:36:21.181Z</lastmod>
     
@@ -191,14 +191,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-12-javascript-summary.html</loc>
     
     <lastmod>2020-07-23T06:36:21.174Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-12-javascript-summary.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-04-javascript-prototype.html</loc>
     
     <lastmod>2020-07-23T06:36:21.174Z</lastmod>
     
@@ -275,14 +275,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
     
     <lastmod>2020-07-23T06:36:21.170Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-23-javascript-jquery-part5.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-21-javascript-jquery-part4.html</loc>
     
     <lastmod>2020-07-23T06:36:21.170Z</lastmod>
     
@@ -324,14 +324,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/Hexo/2015-08-28-hello-world.html</loc>
+    <loc>https://blog.ihoey.com/posts/Hexo/2018-05-27-hexo-code-block.html</loc>
     
     <lastmod>2020-07-23T06:36:21.165Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/Hexo/2018-05-27-hexo-code-block.html</loc>
+    <loc>https://blog.ihoey.com/posts/Hexo/2015-08-28-hello-world.html</loc>
     
     <lastmod>2020-07-23T06:36:21.165Z</lastmod>
     
@@ -422,14 +422,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/Cron/2017-04-22-Cron.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2017-07-03-A_re-introduction_to_JavaScript.html</loc>
     
     <lastmod>2020-07-23T06:36:21.156Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2017-07-03-A_re-introduction_to_JavaScript.html</loc>
+    <loc>https://blog.ihoey.com/posts/Cron/2017-04-22-Cron.html</loc>
     
     <lastmod>2020-07-23T06:36:21.156Z</lastmod>
     
