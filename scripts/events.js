@@ -46,6 +46,6 @@ function run() {
 }
 
 function deployServer() {
-  _exec("scp -r .deploy_git* 360:/data/www/hexo", { stdio: [0, 1, 2] });
+  _exec("scp -r ./public/* 360:/data/www/hexo/", { stdio: [0, 1, 2] });
   echo("部署服务器完成");
 }
