@@ -1,7 +1,7 @@
-- name: GodBMW
-  link: https://godbmw.com/
-  description: "目光露着温暖，心间藏着想念"
-  avatar: https://cn.gravatar.com/avatar/b20750c40cd911256ddbd76a7f7e724c
+# - name: GodBMW
+#   link: https://godbmw.com/
+#   description: "目光露着温暖，心间藏着想念"
+#   avatar: https://cn.gravatar.com/avatar/b20750c40cd911256ddbd76a7f7e724c
 
 - name: 杰杰无敌
   link: https://blog.liujiefront.com/links/
@@ -19,25 +19,25 @@
   description: "一位孤独的旅人"
   avatar: https://tp.corli.cn/data/f_37774230.jpg
 
-- name: 可乐没气的猫
-  link: https://www.isthnew.com/links/
-  description: "热爱科技，热爱生活，分享思维，吐槽不平"
+# - name: 可乐没气的猫
+#   link: https://www.isthnew.com/links/
+#   description: "热爱科技，热爱生活，分享思维，吐槽不平"
 
 - name: 啊呜喵
   link: http://blog.awumiao.cn/
   description: "一花一世界，一叶一追寻。一曲一场叹，一生为一人。"
 
-- name: 火辣辣
-  link: http://huolalaweb.com/
-  description: "个人前端博客"
+# - name: 火辣辣
+#   link: http://huolalaweb.com/
+#   description: "个人前端博客"
 
 # - name: jnduan's Blog
 #   link: https://jnan.org/
 #   description: 'How lucky you are, how hard you work.'
 
-- name: 来语直搜
-  link: http://www.zhisou.cc/
-  description: "来语直搜"
+# - name: 来语直搜
+#   link: http://www.zhisou.cc/
+#   description: "来语直搜"
 
 - name: 阿斗
   link: https://www.lijinghua.club/
@@ -66,10 +66,10 @@
 #   description: '不忘初心方得始终'
 #   avatar: https://waylee.net/wp-content/themes/No.7_qzhai/img/default.jpg
 
-- name: 三秋
-  link: http://sanqiu.org/
-  description: "雨零耶，君将留？"
-  avatar: https://sanqiu.org/s/tupian/sanqiu.gif
+# - name: 三秋
+#   link: http://sanqiu.org/
+#   description: "雨零耶，君将留？"
+#   avatar: https://sanqiu.org/s/tupian/sanqiu.gif
 
 - name: 洛哩哩~
   link: https://lolili.cc/
@@ -81,18 +81,18 @@
 #   description: '戏子入画，一曲天涯。'
 #   avatar: https://togln.com/tx.jpg
 
-- name: 创意小屋
-  link: https://blog.idear.fun
-  description: "前端路上的木木"
+# - name: 创意小屋
+#   link: https://blog.idear.fun
+#   description: "前端路上的木木"
 
-- name: 水墨寒的博客
-  link: https://smohan.net/
-  description: "水墨寒，90后双鱼座普通男青年！WEB前端工程师。喜欢敲代码的感觉，相信编程是一门艺术，自诩为游弋在代码里的人生。"
-  avatar: https://secure.gravatar.com/avatar/85356416ea5399c0dc1ea9fd354b1c8e?s=100
+# - name: 水墨寒的博客
+#   link: https://smohan.net/
+#   description: "水墨寒，90后双鱼座普通男青年！WEB前端工程师。喜欢敲代码的感觉，相信编程是一门艺术，自诩为游弋在代码里的人生。"
+#   avatar: https://secure.gravatar.com/avatar/85356416ea5399c0dc1ea9fd354b1c8e?s=100
 
-- name: persilee’s blog
-  link: https://lishaoy.net
-  description: "李少颖的博客"
+# - name: persilee’s blog
+#   link: https://lishaoy.net
+#   description: "李少颖的博客"
 
 # - name: LIZCBLOG博客
 #   link: https://www.lizc.me/
@@ -106,20 +106,20 @@
   link: https://blog.isoyu.com/
   description: "姬长信,主要iPhone开发,iOS开发,iPad开发,Mac开发.现致力为所有移动开发者提供资讯服务、问答服务、代码下载、工具库及服务。"
 
-- name: 奈何
-  link: http://www.naihes.cn/
-  description: "生亦何欢，死亦何苦！"
-  avatar: https://cdn.ihoey.com/www.naihes.cn.gif?imageView2/0/format/gif/q/75|imageslim
+# - name: 奈何
+#   link: http://www.naihes.cn/
+#   description: "生亦何欢，死亦何苦！"
+#   avatar: https://cdn.ihoey.com/www.naihes.cn.gif?imageView2/0/format/gif/q/75|imageslim
 
 - name: WQian五千
   link: https://wqian.net
   description: "有点小技，有点经验，有点幽默，有点情感，欢迎光临WQian五千。"
   avatar: https://wqian.net/images/avatar0.png
 
-- name: JerryC
-  link: http://jerryc.me/
-  description: "Never put off till tomorrow what you can do today"
-  avatar: http://jerryc.me/img/avatar.png
+- name: MYW
+  link: https://crazywong.com/
+  description: "今日事,今日畢"
+  avatar: https://crazywong.com/img/avatar.png
 
 # - name: sunq's blog
 #   link: http://www.sunq.xyz
@@ -141,57 +141,57 @@
 #   description: 时间里的个人博客
 #   avatar: https://guanchao.site/uploads/website/5c093bf268185.png
 
-- name: 萧爽楼
-  link: https://blog.ddlee.cn
-  description: 计算机视觉/个人管理
-  avatar: https://static.ddlee.cn/static/img/material-theme-img/avatar.png
+# - name: 萧爽楼
+#   link: https://blog.ddlee.cn
+#   description: 计算机视觉/个人管理
+#   avatar: https://static.ddlee.cn/static/img/material-theme-img/avatar.png
 
-- name: lcddjm
-  link: https://www.lcddjm.com
-  description: 星空不问赶路人，时光不负有心人
-  avatar: https://image.lcddjm.com/avatar/b34681a0-4be0-11e8-94a9-75503d77c645.png
+# - name: lcddjm
+#   link: https://www.lcddjm.com
+#   description: 星空不问赶路人，时光不负有心人
+#   avatar: https://image.lcddjm.com/avatar/b34681a0-4be0-11e8-94a9-75503d77c645.png
 
-- name: Krryblog
-  link: https://ainyi.com
-  description: 你的美好，我都记得
-  avatar: https://raw.githubusercontent.com/Krryxa/WORK-LEARNING/master/images/ico.jpg
+# - name: Krryblog
+#   link: https://ainyi.com
+#   description: 你的美好，我都记得
+#   avatar: https://raw.githubusercontent.com/Krryxa/WORK-LEARNING/master/images/ico.jpg
 
-- name: wizzie
-  link: http://wizzie.top/
+# - name: wizzie
+#   link: http://wizzie.top/
 
-- name: 西秦月影的记忆空间
-  link: http://www.wenhd.com
-  avatar: http://www.wenhd.com/images/xqblog_logo_140.png
-  description: 忆我所想，畅我所言...
+# - name: 西秦月影的记忆空间
+#   link: http://www.wenhd.com
+#   avatar: http://www.wenhd.com/images/xqblog_logo_140.png
+#   description: 忆我所想，畅我所言...
 
-- name: TGeek
-  link: http://www.tgeek.tech
-  description: 机气人...计算机错觉...个人博客...
-  avatar: http://www.tgeek.tech/wp-content/uploads/2019/08/head-1.jpg
+# - name: TGeek
+#   link: http://www.tgeek.tech
+#   description: 机气人...计算机错觉...个人博客...
+#   avatar: http://www.tgeek.tech/wp-content/uploads/2019/08/head-1.jpg
 
-- name: 羽忆江南
-  link: https://yyjn.org
-  description: 烟雨红尘的寻觅,诗画江南的惦记。
-  avatar: https://gravatar.loli.net/avatar/71a56f7b05ea5490837d3fbc084de3ba?s=230&r=G&d=mm
+# - name: 羽忆江南
+#   link: https://yyjn.org
+#   description: 烟雨红尘的寻觅,诗画江南的惦记。
+#   avatar: https://gravatar.loli.net/avatar/71a56f7b05ea5490837d3fbc084de3ba?s=230&r=G&d=mm
 
-- name: 人生地里的地瓜
-  link: https://www.l-zhe.com/
-  description: 念念不忘,必有回响
-  avatar: https://www.l-zhe.com/images/avatar.jpg
+# - name: 人生地里的地瓜
+#   link: https://www.l-zhe.com/
+#   description: 念念不忘,必有回响
+#   avatar: https://www.l-zhe.com/images/avatar.jpg
 
 - name: 前端大爆炸！
   link: https://alili.tech
   description: WEB BANG! BANG!! BANG!!!
   avatar: https://alili.tech/images/logo2.png
 
-- name: 淺的小站
-  link: http://52chang.wang
-  description: 深思、淺思、三思而行
-  avatar: http://52chang.wang/images/avatar.jpg
+# - name: 淺的小站
+#   link: http://52chang.wang
+#   description: 深思、淺思、三思而行
+#   avatar: http://52chang.wang/images/avatar.jpg
 
-- name: 星文 – Xstar News
-  link: https://xstar.news/#/
-  avatar: https://xstar.news/img/icons/favicon-32x32.png
+# - name: 星文 – Xstar News
+#   link: https://xstar.news/#/
+#   avatar: https://xstar.news/img/icons/favicon-32x32.png
 
 - name: 辣椒の酱
   link: https://removeif.github.io
@@ -202,13 +202,12 @@
   link: https://lemonadorable.gitee.io/
   avatar: https://lemonadorable.gitee.io/img/avatar.png
   description: 愿美梦成真
+# - name: 松林羊
+#   link: http://www.andus.top
+#   avatar: http://www.andus.top/images/head-nav.png
+#   description: 面朝大海，春暖花开
 
-- name: 松林羊
-  link: http://www.andus.top
-  avatar: http://www.andus.top/images/head-nav.png
-  description: 面朝大海，春暖花开
-
-- name: 宇宙湾
-  link: https://yuzhouwan.com/
-  avatar: https://picture.yuzhouwan.com/yuzhouwan_logo_128x128.ico
-  description: 主要是大数据和人工智能的原创文章。
+# - name: 宇宙湾
+#   link: https://yuzhouwan.com/
+#   avatar: https://picture.yuzhouwan.com/yuzhouwan_logo_128x128.ico
+#   description: 主要是大数据和人工智能的原创文章。
