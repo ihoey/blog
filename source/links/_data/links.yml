@@ -202,6 +202,7 @@
   link: https://lemonadorable.gitee.io/
   avatar: https://lemonadorable.gitee.io/img/avatar.png
   description: 愿美梦成真
+
 # - name: 松林羊
 #   link: http://www.andus.top
 #   avatar: http://www.andus.top/images/head-nav.png
@@ -211,3 +212,9 @@
 #   link: https://yuzhouwan.com/
 #   avatar: https://picture.yuzhouwan.com/yuzhouwan_logo_128x128.ico
 #   description: 主要是大数据和人工智能的原创文章。
+
+- name: Tokisaki Galaxy
+  link: https://tokisaki.top
+  avatar: https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/avatar.jpg
+  description: 爱你所爱,行你所行。听从你心,无问西东。
+
