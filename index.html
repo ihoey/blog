@@ -344,7 +344,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/index.html" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">56</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">57</span></a>
   </li>
         
         
@@ -352,7 +352,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/index.html" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">48</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">49</span></a>
   </li>
         
         
@@ -398,6 +398,182 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/rust/2022-09-17-rust-wechat-game-ylgy.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ihoey">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.ihoey.com/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梦魇小栈">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/rust/2022-09-17-rust-wechat-game-ylgy.html" itemprop="url">
+                  《羊了个羊》程序员过关攻略
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2022-09-17 10:38:46 / 修改时间：13:50:44" itemprop="dateCreated datePublished" datetime="2022-09-17T10:38:46+08:00">2022-09-17</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/rust/" itemprop="url" rel="index"><span itemprop="name">rust</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/rust/2022-09-17-rust-wechat-game-ylgy.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/rust/2022-09-17-rust-wechat-game-ylgy.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>热搜第一羊了个羊</strong>微信小游戏程序员过关攻略。</p>
+<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="RUST"><figure class="iseeu highlight /rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> std::&#123;sync::Arc, time::Duration&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> anyhow::&#123;anyhow, <span class="built_in">Result</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> reqwest::Client;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> USER_AGENT:&amp;<span class="built_in">str</span> = <span class="string">"Mozilla/5.0 (iPhone; CPU iPhone OS 16_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E158 MicroMessenger/8.0.26(0x18002b36) NetType/5G Language/zh_CN"</span>;</span><br><span class="line"><span class="keyword">const</span> TOKEN:&amp;<span class="built_in">str</span> = <span class="string">"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTQ0MDkwNzMsIm5iZiI6MTY2MzMwNjg3MywiaWF0IjoxNjYzMzA1MDczLCJqdGkiOiJDTTpjYXRfbWF0Y2g6bHQxMjM0NTYiLCJvcGVuX2lkIjoiIiwidWlkIjo3NTY0NzI5NywiZGVidWciOiIiLCJsYW5nIjoiIn0.mPe9Y3ghiyXY1gNczgAyS4J9HC_jSu_5RitG4MVPSM4"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 完成关卡</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">fn</span> <span class="title">finish_game</span></span>(rank_time: Arc&lt;<span class="built_in">u32</span>&gt;) -&gt; <span class="built_in">Result</span>&lt;()&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> url = <span class="built_in">format!</span>(<span class="string">"https://cat-match.easygame2021.com/sheep/v1/game/game_over?rank_score=1&amp;rank_state=1&amp;rank_time=&#123;&#125;&amp;rank_role=1&amp;skin=1"</span>, rank_time);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> data = Client::builder()</span><br><span class="line">        .user_agent(USER_AGENT)</span><br><span class="line">        .timeout(Duration::from_secs(<span class="number">1</span>))</span><br><span class="line">        .build()?</span><br><span class="line">        .get(url)</span><br><span class="line">        .header(<span class="string">"t"</span>, TOKEN.to_string())</span><br><span class="line">        .header(<span class="string">"Content-Type"</span>, <span class="string">"application/json"</span>)</span><br><span class="line">        .header(<span class="string">"host"</span>, <span class="string">"cat-match.easygame2021.com"</span>)</span><br><span class="line">        .send()</span><br><span class="line">        .<span class="keyword">await</span>?</span><br><span class="line">        .json::&lt;serde_json::Value&gt;()</span><br><span class="line">        .<span class="keyword">await</span>?;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> data.get(<span class="string">"err_code"</span>).is_some() &amp;&amp; data.get(<span class="string">"err_code"</span>).unwrap().as_u64().unwrap() == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="literal">Ok</span>(())</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="literal">Err</span>(anyhow!(<span class="string">"请检查配置项t."</span>))</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#[tokio::main]</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() -&gt; <span class="built_in">Result</span>&lt;()&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> secs = Arc::new(<span class="number">10</span>);</span><br><span class="line">    <span class="keyword">let</span> times = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="number">0</span>..times &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> <span class="literal">Err</span>(e) = finish_game(secs.clone()).<span class="keyword">await</span> &#123;</span><br><span class="line">            <span class="built_in">println!</span>(<span class="string">"闯关失败, &#123;:?&#125;"</span>, e);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">println!</span>(<span class="string">"成功完成一次闯关!"</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="literal">Ok</span>(())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<ul>
+<li>本代码仅供学习交流，严禁用作商业行为！</li>
+<li>因他人私自不正当使用造成的违法违规行为与本人无关！</li>
+<li>如有任何问题可联系本人删除！</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"><hr></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1144,191 +1320,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/Node/2018-05-13-pm2-study.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ihoey">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.ihoey.com/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梦魇小栈">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/Node/2018-05-13-pm2-study.html" itemprop="url">
-                  记一下 pm2 常用配置及命令
-                </a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-05-13 16:45:46" itemprop="dateCreated datePublished" datetime="2018-05-13T16:45:46+08:00">2018-05-13</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Node/" itemprop="url" rel="index"><span itemprop="name">Node</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/Node/2018-05-13-pm2-study.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/Node/2018-05-13-pm2-study.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><code>PM2</code> 是 <code>node</code> 进程管理工具，可以利用它来简化很多 <code>node</code> 应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。本文就 <code>PM2</code> 进行入门性的介绍，基本涵盖了 <code>PM2</code> 的常用的功能和配置。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/Node/2018-05-13-pm2-study.html" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"><hr></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1380,7 +1371,7 @@
                 
                   <a href="/archives/index.html%20%7C%7C%20archive">
                 
-                    <span class="site-state-item-count">56</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1427,7 +1418,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1536,7 +1529,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">48</span>
+                      
+                    
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

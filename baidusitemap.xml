@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.ihoey.com/posts/rust/2022-09-17-rust-wechat-game-ylgy.html</loc>
+    <lastmod>2022-09-17</lastmod>
+  </url>
+  <url>
     <loc>https://blog.ihoey.com/posts/javascript/PWA/2019-02-18-progressive-web-apps-blog.html</loc>
     <lastmod>2021-01-04</lastmod>
   </url>
@@ -29,11 +33,11 @@
     <lastmod>2020-07-24</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html</loc>
+    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/Markdown/2016-11-27-use-tools-part1-markdown.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2018-01-29-use-javascript-to-achieve-simple-drag-and-drop.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
@@ -41,11 +45,11 @@
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/Linux/2018-03-15-ubuntu-zh-CN-UTF-8.html</loc>
+    <loc>https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/shadowsocks/2017-03-16-shadowsocks-install.html</loc>
+    <loc>https://blog.ihoey.com/posts/Linux/2018-03-15-ubuntu-zh-CN-UTF-8.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
@@ -61,15 +65,15 @@
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html</loc>
-    <lastmod>2020-07-23</lastmod>
-  </url>
-  <url>
     <loc>https://blog.ihoey.com/posts/MySQL/2018-04-13-mysql-import-table.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
     <loc>https://blog.ihoey.com/posts/Node/2019-01-18-node-wechat-bill.html</loc>
+    <lastmod>2020-07-23</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.ihoey.com/posts/Node/2017-11-24-npm-version.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
@@ -105,7 +109,7 @@
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-08-javascript-part3.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-18-javascript-part2.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
@@ -113,11 +117,11 @@
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-18-javascript-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-08-javascript-part3.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-05-08-javascript-part1.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
@@ -125,7 +129,7 @@
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-11-24-javascript-jquery-part6.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-05-08-javascript-part1.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
@@ -145,11 +149,11 @@
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/javascript/2016-06-15-javascript-inherit.html</loc>
+    <loc>https://blog.ihoey.com/posts/javascript/2017-11-29-javascript-getGverify.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
@@ -177,11 +181,11 @@
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-15-canvas-summary.html</loc>
+    <loc>https://blog.ihoey.com/posts/Canvas/2016-11-14-canvas-part2.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
@@ -189,11 +193,11 @@
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
-    <loc>https://blog.ihoey.com/posts/Android/2016-12-18-adb-Android-Debug-Bridge.html</loc>
+    <loc>https://blog.ihoey.com/posts/Android/2016-12-22-adb-Android-Debug-Bridge-2.html</loc>
     <lastmod>2020-07-23</lastmod>
   </url>
   <url>
