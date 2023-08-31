@@ -179,7 +179,7 @@
 <meta property="og:description" content="原型链是什么？只要是对象就会有原型，那么所有的原型就会形成一个链式的结构，这个结构就称为原型链">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2016-07-09T11:41:47.000Z">
-<meta property="article:modified_time" content="2020-07-23T06:36:21.173Z">
+<meta property="article:modified_time" content="2023-07-22T08:35:58.379Z">
 <meta property="article:author" content="Ihoey">
 <meta property="article:tag" content="原型链">
 <meta name="twitter:card" content="summary">
@@ -465,7 +465,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-07-23 14:36:21" itemprop="dateModified" datetime="2020-07-23T14:36:21+08:00">2020-07-23</time>
+                <time title="修改时间：2023-07-22 16:35:58" itemprop="dateModified" datetime="2023-07-22T16:35:58+08:00">2023-07-22</time>
               
             
           </span>
@@ -576,17 +576,17 @@
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//p----&gt;Person.prototype----&gt;Object.prototype----&gt;null</span></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> Person);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</span><br></pre></td></tr></table></figure></div>
 
 <h2 id="Object-prototype成员"><a href="#Object-prototype成员" class="headerlink" title="Object.prototype成员"></a>Object.prototype成员</h2><ol>
-<li><p><code>constructor</code>  指向原型相关的构造函数</p>
+<li><p> <code>constructor</code>  指向原型相关的构造函数</p>
 </li>
-<li><p><code>hasOwnProperty</code> 判断对象本身是否拥有指定的属性  不包含原型中的成员<br><code>对象.hasOwnProperty(属性名)</code></p>
+<li><p><code>hasOwnProperty</code> 判断对象本身是否拥有指定的属性  不包含原型中的成员<br> <code>对象.hasOwnProperty(属性名)</code></p>
 </li>
-<li><p><code>isPrototypeOf</code> 判断一个对象是否某个对象的原型<br><code>对象.isPrototypeOf(另外一个对象)</code></p>
+<li><p><code>isPrototypeOf</code> 判断一个对象是否某个对象的原型<br> <code>对象.isPrototypeOf(另外一个对象)</code></p>
 </li>
-<li><p><code>propertyIsEnumerable</code>  判断对象自己的属性是不是可以被遍历 <code>（for-in）</code> 如果不是自己的或者不能被遍历都会返回 <code>false</code><br><code>对象.propertyIsEnumerable(属性名)</code><br><code>Object.defineProperty(对象，属性名，对象（描述信息）)</code></p>
+<li><p><code>propertyIsEnumerable</code>  判断对象自己的属性是不是可以被遍历 <code>（for-in）</code> 如果不是自己的或者不能被遍历都会返回 <code>false</code><br> <code>对象.propertyIsEnumerable(属性名)</code><br> <code>Object.defineProperty(对象，属性名，对象（描述信息）)</code></p>
 </li>
-<li><p><code>toLocaleString</code>  <code>toString</code>   都是将对象转换为字符串的方法<br><code>tolocalString</code> 打印本地格式的字符串  本地格式是获取的系统设置<br><code>toString</code> 直接转换成字符串</p>
+<li><p><code>toLocaleString</code>  <code>toString</code>   都是将对象转换为字符串的方法<br> <code>tolocalString</code> 打印本地格式的字符串  本地格式是获取的系统设置<br> <code>toString</code> 直接转换成字符串</p>
 </li>
-<li><p><code>valueOf</code> 方法<br>当对象参与运算的时候，会首先调用对象的 <code>valuOf</code> 方法获取对象的值<br>如果获取到的这个值可以参与运算，就直接拿来使用<br>如果不能参与运算，就会去调用该对象的 <code>toString</code> 方法</p>
+<li><p><code>valueOf</code> 方法<br> 当对象参与运算的时候，会首先调用对象的 <code>valuOf</code> 方法获取对象的值<br> 如果获取到的这个值可以参与运算，就直接拿来使用<br> 如果不能参与运算，就会去调用该对象的 <code>toString</code> 方法</p>
 </li>
 </ol>
 <div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    valueOf :<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    toString:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"我叫李二狗"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//console.log(obj.valueOf());</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.toString());</span><br><span class="line"><span class="built_in">console</span>.log( obj + <span class="number">1</span>);</span><br></pre></td></tr></table></figure></div>
