@@ -678,7 +678,7 @@ busuanzi_count:
   post_views_icon: eye
 
 # Tencent analytics ID
-tencent_analytics: 59541779
+# tencent_analytics: 59541779
 
 # Tencent MTA ID
 # tencent_mta:
