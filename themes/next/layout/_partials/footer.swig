@@ -7,7 +7,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">梦魇小栈</span>
   {% if theme.hitalk.enable and theme.hitalk.server %}
-    <span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="点亮小星星" title="点亮小星星">☆</button></span>
+    <span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span>
   {% endif %}
 
   {% if config.symbols_count_time.total_symbols %}
