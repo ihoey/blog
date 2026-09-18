@@ -118,6 +118,11 @@
 <link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
 
 
+  <link href="/lib/hitalk/3.0.0/hitalk.bf2a7d44bbf9.css" rel="stylesheet" />
+  <link href="/css/hitalk-host.css?v=3.0.0" rel="stylesheet" />
+
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon_192.png?v=6.2.0">
 
 
@@ -502,7 +507,7 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/posts/javascript/2016-11-21-javascript-jquery-part4.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/javascript/2016-11-21-javascript-jquery-part4.html" itemprop="commentCount"></span>
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/javascript/2016-11-21-javascript-jquery-part4.html" itemprop="commentCount">—</span>
                 </a>
               </span>
             
@@ -824,7 +829,11 @@
           
 
   
-    <div class="comments" id="comments">
+    <div class="comments" id="comments"
+         data-hitalk-path="/posts/javascript/2016-11-21-javascript-jquery-part4.html"
+         data-hitalk-title="JQuery分析及实现part4之DOM操作模块功能及实现">
+      <p role="status">评论加载中…</p>
+      <noscript>请启用 JavaScript 查看和发表留言。</noscript>
     </div>
   
 
@@ -1170,7 +1179,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2025</span>
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2026</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -1421,29 +1430,12 @@
 
 
 
-  <script src="//cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
-  
-  
-    
-  
-  <script src="https://cdn.ihoey.com/Hitalk.min.js"></script>
-
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(function (item) {
-      return GUEST.indexOf(item)>-1;
-    });
-    new Hitalk({
-        el: '#comments' ,
-        appId: 'Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz',
-        appKey: 'SnlgtrRYvxJimSYDRw2GBr6H',
-        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-        avatar: 'monsterid',
-        guest_info: guest,
-        pageSize: 10 || 10,
-    });
-  </script>
+  <script defer src="/lib/hitalk/3.0.0/hitalk.5e051c23a342.js"></script>
+  <script defer src="/js/src/hitalk.js?v=3.0.0"
+          data-hitalk-server="https://hitalk-next-api.ihoey.com/api"
+          data-hitalk-placeholder="ヾﾉ≧∀≦)o来啊，快活啊!"
+          data-hitalk-avatar="monsterid"
+          data-hitalk-page-size="10"></script>
 
 
 

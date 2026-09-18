@@ -1,0 +1,13 @@
+/* Keep NexT's page layout; isolate its global link/image rules from the SDK. */
+.comments.Hitalk {
+  font-family: inherit;
+  text-align: left;
+}
+
+.Hitalk a {
+  border-bottom: 0;
+}
+
+.Hitalk .vimg {
+  margin: 0;
+}
