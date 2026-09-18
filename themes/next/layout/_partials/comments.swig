@@ -55,8 +55,12 @@
       {% endif %}
     </div>
 
-  {% elseif theme.hitalk.enable and theme.hitalk.appid and theme.hitalk.appkey %}
-    <div class="comments" id="comments">
+  {% elseif theme.hitalk.enable and theme.hitalk.server %}
+    <div class="comments" id="comments"
+         data-hitalk-path="{{ url_for(page.path) | escape }}"
+         data-hitalk-title="{{ (page.title || config.title) | escape }}">
+      <p role="status">评论加载中…</p>
+      <noscript>请启用 JavaScript 查看和发表留言。</noscript>
     </div>
   {% elseif theme.wildfire.enable %}
       <div class="wildfire_thread"></div>

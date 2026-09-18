@@ -8,6 +8,7 @@ node_modules/
 
 # Ignore optional external libraries
 source/lib/*
+!source/lib/hitalk/
 
 # Track internal libraries & Ignore unused verdors files
 source/lib/font-awesome/less/

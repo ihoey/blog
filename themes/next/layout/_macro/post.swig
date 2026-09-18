@@ -207,14 +207,14 @@
                   <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count gitment-comments-count" data-xid="{{ url_for(post.path) }}" itemprop="commentsCount"></span>
                 </a>
               </span>
-            {% elseif theme.hitalk.enable and theme.hitalk.appid and theme.hitalk.appkey %}
+            {% elseif theme.hitalk.enable and theme.hitalk.server %}
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="{{ url_for(post.path) }}#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count hitalk-comment-count" data-xid="{{ url_for(post.path) }}" itemprop="commentCount"></span>
+                  <span class="post-meta-item-text">{{ __('post.comments_count') + __('symbol.colon') }}</span> <span class="post-comments-count hitalk-comment-count" data-xid="{{ url_for(post.path) | escape }}" itemprop="commentCount">—</span>
                 </a>
               </span>
             {% endif %}

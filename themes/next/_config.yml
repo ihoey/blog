@@ -487,19 +487,15 @@ changyan:
   appid:
   appkey:
 
-# Hitalk.
-# You can get your appid and appkey from https://leancloud.cn
-# more info please open https://Hitalk.js.org
+# Hitalk v3: local SDK assets and the production Worker API.
 hitalk:
   enable: true
-  appid: Ir6SE0GwBzFxczMqXXVpCF8d-gzGzoHsz
-  appkey: SnlgtrRYvxJimSYDRw2GBr6H
-  notify: false
-  verify: false # Verification code
+  server: https://hitalk-next-api.ihoey.com/api
+  js: /lib/hitalk/3.0.0/hitalk.5e051c23a342.js
+  css: /lib/hitalk/3.0.0/hitalk.bf2a7d44bbf9.css
   placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
-  avatar: monsterid # gravatar style
-  guest_info: nick,mail,link # custom comment header
-  pageSize: 10 # pagination size
+  avatar: monsterid
+  pageSize: 10
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
@@ -965,9 +961,6 @@ vendors:
   # Example: https://cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1.1/reading_progress.min.js
   reading_progress:
 
-  # hitalk comment
-  # Example: https://cdn.jsdelivr.net/npm/hitalk@1.1.8/dist/hitalk.min.js
-  hitalk: https://cdn.ihoey.com/Hitalk.min.js
 
 # 文章末尾添加“本文结束”标记
 passage_end_tag:
