@@ -18,6 +18,12 @@ SDK 的 CSS 在 `<head>` 中直接加载，两个脚本通过 `defer` 按顺序�
 
 SDK 来源、提交号和文件校验值记录在 `themes/next/source/lib/hitalk/3.0.0/manifest.json`。这些文件已允许提交到 Git。升级时在 `hitalk-next` 仓库运行 `pnpm run build:sdk`，复制新的 IIFE JS 和 CSS，以新内容摘要命名，同时更新 manifest 和主题 `hitalk.js` / `hitalk.css` 配置。无需发布 npm 包；不要复制环境配置或服务端凭据。
 
+## 小动画与页脚彩蛋
+
+第一批效果已加入本地接入，待用户视觉验收后发布：点赞成功时飘出三颗小爱心，提交成功后发送按钮的纸飞机短暂飞出；失败和取消点赞不播放动画，系统减少动态效果时保留正常状态更新。
+
+页脚小星星在每次间隔不超过 1.8 秒的连续三次点击后唤出小猫，3.2 秒后自动收起；再次点击或 Escape 也可收起。使用原生按钮支持键盘操作，焦点保持不变，无声音或背景循环动画。组件独立于 SDK，来源为 hitalk-next 的 extras/secret-cat.js 和 CSS，通过主题 hitalk.secret_js / secret_css 引入，同样采用本地内容摘要文件名，来源记录在 manifest.extras。
+
 ## 验证和发布
 
 ```sh

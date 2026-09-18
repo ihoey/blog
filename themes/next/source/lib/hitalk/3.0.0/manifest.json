@@ -2,15 +2,25 @@
   "package": "@hitalk/sdk",
   "version": "3.0.0",
   "source": "https://github.com/DreamStacks/hitalk-next",
-  "commit": "a522c909a2d98e4e78a44dddeb2b789136a67a53",
+  "commit": "715dc030fcfe36c510fcd5ab3d4ee6c6805f0b24",
   "assets": {
     "js": {
-      "path": "/lib/hitalk/3.0.0/hitalk.5e051c23a342.js",
-      "sha256": "5e051c23a342426c59f4a59275508b194d0f10cd3c1f68349940f7560212449f"
+      "path": "/lib/hitalk/3.0.0/hitalk.14791b569b7c.js",
+      "sha256": "14791b569b7c472af6ab09e15073aa94434bb6699b8ab401756bc1ea4cfe517f"
     },
     "css": {
-      "path": "/lib/hitalk/3.0.0/hitalk.bf2a7d44bbf9.css",
-      "sha256": "bf2a7d44bbf9d879d370586e6ca2800865962cd9a2676622eda8aaf7afc1551b"
+      "path": "/lib/hitalk/3.0.0/hitalk.845a956822ac.css",
+      "sha256": "845a956822ac540d7f71c1b21a0663e41a01b37ea41b346d2e573d64b9406e23"
+    }
+  },
+  "extras": {
+    "js": {
+      "path": "/lib/hitalk/3.0.0/secret-cat.15111843f86b.js",
+      "sha256": "15111843f86b7134bdf9ceb8e0cfe6f1084a2776fe1fea410ccf2865d4373899"
+    },
+    "css": {
+      "path": "/lib/hitalk/3.0.0/secret-cat.87c780a024e9.css",
+      "sha256": "87c780a024e9e1fc08a9f7ecca41dae3aa287c86a0c803b3572022d146343ad6"
     }
   }
 }

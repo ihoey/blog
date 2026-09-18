@@ -6,6 +6,9 @@
     <i class="fa fa-{{ theme.footer.icon.name }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">梦魇小栈</span>
+  {% if theme.hitalk.enable and theme.hitalk.server %}
+    <span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="点亮小星星" title="点亮小星星">☆</button></span>
+  {% endif %}
 
   {% if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>

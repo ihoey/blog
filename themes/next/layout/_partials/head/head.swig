@@ -84,6 +84,7 @@
 
 {% if theme.hitalk.enable and theme.hitalk.server %}
   <link href="{{ url_for(theme.hitalk.css) }}" rel="stylesheet" />
+  <link href="{{ url_for(theme.hitalk.secret_css) }}" rel="stylesheet" />
   <link href="{{ url_for('/css/hitalk-host.css') }}?v=3.0.0" rel="stylesheet" />
 {% endif %}
 

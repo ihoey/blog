@@ -491,8 +491,10 @@ changyan:
 hitalk:
   enable: true
   server: https://hitalk-next-api.ihoey.com/api
-  js: /lib/hitalk/3.0.0/hitalk.5e051c23a342.js
-  css: /lib/hitalk/3.0.0/hitalk.bf2a7d44bbf9.css
+  secret_css: /lib/hitalk/3.0.0/secret-cat.87c780a024e9.css
+  secret_js: /lib/hitalk/3.0.0/secret-cat.15111843f86b.js
+  js: /lib/hitalk/3.0.0/hitalk.14791b569b7c.js
+  css: /lib/hitalk/3.0.0/hitalk.845a956822ac.css
   placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
   avatar: monsterid
   pageSize: 10
