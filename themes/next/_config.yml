@@ -493,8 +493,8 @@ hitalk:
   server: https://hitalk-next-api.ihoey.com/api
   secret_css: /lib/hitalk/3.0.0/secret-cat.9107f720cc5f.css
   secret_js: /lib/hitalk/3.0.0/secret-cat.a2815fc1af05.js
-  js: /lib/hitalk/3.0.0/hitalk.14791b569b7c.js
-  css: /lib/hitalk/3.0.0/hitalk.845a956822ac.css
+  js: /lib/hitalk/3.0.0/hitalk.68b2aa7c6d13.js
+  css: /lib/hitalk/3.0.0/hitalk.aab370555dfe.css
   placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
   avatar: monsterid
   pageSize: 10

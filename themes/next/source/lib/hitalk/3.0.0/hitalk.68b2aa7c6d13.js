@@ -119,7 +119,9 @@ function Le(e,t,n){let r=e[`~run`]({value:t},/* @__PURE__ */ De(n));return{typed
               ?disabled=${this.submitting}
               @click=${()=>{this.emojiOpen=!this.emojiOpen,this.render()}}
             >
-              😊</button
+              <span class="vemoji-face" aria-hidden="true"
+                >(｡•ᴗ•｡)</span
+              ></button
             >${this.emojiOpen?Ye(this.emojiCategory,e=>{this.emojiCategory=e,this.render()},e=>{let t=this.container.querySelector(`.veditor`);t.value+=` ${e} `,t.focus(),this.emojiOpen=!1,this.render()}):b}
           </div>
           ${this.guestFields.includes(`email`)?v`<label><input type="checkbox" name="notify" class="vnotify" ?disabled=${this.submitting} />有回复时邮件通知</label>`:b}
@@ -248,3 +250,4 @@ let $e=(e,t,n)=>{let r=/* @__PURE__ */ new Map;for(let i=t;i<=n;i++)r.set(e[i],i
         >
           加载更多评论
         </button>`,this.view))}destroy(){this.destroyed||(this.saveDraft(),this.destroyed=!0,this.sequence++,this.api.destroy(),this.events.abort(),this.unsubscribe(),this.editor.destroy(),this.commentList.destroy(),this.receiptList.destroy(),D(b,this.view).setConnected(!1),this.view.remove(),this.container.classList.remove(`Hitalk`),$.delete(this.container))}};function pt(e,t){return new ft(e,t)}return e.Hitalk=ft,e.fillCommentCounts=dt,e.getCommentCounts=ut,e.mount=pt,e.normalizePagePath=J,e})({});
+//# sourceMappingURL=hitalk.js.map
