@@ -1,5 +1,7 @@
 # Hitalk 评论接入
 
+> Astro 迁移分支说明（2026-09-22）：以下内容保留为 Hexo 上线历史。当前分支使用 `src/lib/comments.ts` 与 `src/components/Comments.astro`，资源放在 `static/lib/hitalk/3.0.0/`。本地运行 `pnpm build` / `pnpm preview`，不要执行下文的旧 Hexo 命令；参见 `docs/migration/development.md`。
+
 当前主题 `themes/next` 使用 Hitalk SDK 3.0.0，API 为 `https://hitalk-next-api.ihoey.com/api`。配置集中在主题 `_config.yml` 的 `hitalk` 段，不再使用 LeanCloud 评论凭据和旧版 Hitalk CDN。
 
 2026-09-18 上线验收已完成：接入源码 e73dfac8、生产静态版本 70a0f2e8 已推送，Vercel 发布成功。用户确认页面接入正常，并确认真实邮件验证通过；没有推定其具体邮件测试场景。首页、留言板、文章页和静态资源已通过线上检查。

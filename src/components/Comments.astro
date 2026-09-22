@@ -1,0 +1,16 @@
+---
+import { normalizeCommentPath } from '../lib/paths.mjs';
+interface Props { path: string; title: string }
+const { path, title } = Astro.props;
+---
+<section class="comments-section" aria-labelledby="comments-title">
+  <h2 id="comments-title">聊一聊</h2>
+  <div id="comments" data-comment-path={normalizeCommentPath(path)} data-comment-title={title}>
+    <p class="comment-status" role="status">评论正在加载。也可以通过 <a href="mailto:mail@ihoey.com">邮件</a> 联系我。</p>
+  </div>
+  <noscript>评论需要 JavaScript。文章阅读不受影响。</noscript>
+</section>
+<script>
+  import { mountComments } from '../lib/comments';
+  mountComments();
+</script>

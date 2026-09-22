@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+interface Props { title?: string; description?: string; canonical?: string; article?: boolean; date?: Date; updated?: Date }
+const { title, description = '心，若没有栖息的地方，到哪里都是流浪……', canonical = Astro.url.pathname, article = false, date, updated } = Astro.props;
+const fullTitle = title ? `${title} · 梦魇小栈` : '梦魇小栈 · 专注于分享';
+const canonicalURL = new URL(canonical, Astro.site).href;
+const path = Astro.url.pathname;
+const nav = [['/', '文章'], ['/archives/', '归档'], ['/tags/', '标签'], ['/links/', '友链'], ['/guestbook/', '留言'], ['/about/', '关于']];
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" type="application/atom+xml" title="梦魇小栈" href="/atom.xml" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={new URL('/avatar.png', Astro.site).href} />
+    {date && <meta property="article:published_time" content={date.toISOString()} />}
+    {updated && <meta property="article:modified_time" content={updated.toISOString()} />}
+    <link rel="stylesheet" href="/lib/hitalk/3.0.0/secret-cat.9107f720cc5f.css" />
+    {article && <link rel="stylesheet" href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css" />}
+    <title>{fullTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到正文</a>
+    <header class="site-header">
+      <a class="site-name" href="/" aria-label="梦魇小栈首页"><span class="brand-dot" aria-hidden="true"></span>梦魇小栈<span class="site-byline">Ihoey</span></a>
+      <nav class="main-nav" aria-label="主导航">
+        {nav.map(([href, label]) => <a href={href} aria-current={(href === '/' ? path === '/' || path.startsWith('/page/') : path.startsWith(href)) ? 'page' : undefined}>{label}</a>)}
+      </nav>
+    </header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="site-footer">
+      <div class="footer-top"><a class="footer-name" href="/">梦魇小栈</a><span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span><a href="/atom.xml">订阅 RSS ↗</a></div>
+      <p>心，若没有栖息的地方，到哪里都是流浪……</p>
+      <div class="footer-bottom"><span>© 2015–{new Date().getFullYear()} Ihoey</span><a href="https://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">京ICP备15058055号-1</a><a href="https://github.com/ihoey" rel="noopener noreferrer" target="_blank">GitHub ↗</a></div>
+    </footer>
+    <script is:inline defer src="/lib/hitalk/3.0.0/secret-cat.a2815fc1af05.js"></script>
+    <script>
+      // Finish upgrading visitors who still have the Hexo worker controlling this origin.
+      if (location.hostname === 'blog.ihoey.com' && 'serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+          for (const registration of registrations) {
+            const worker = registration.active || registration.waiting || registration.installing;
+            if (worker && new URL(worker.scriptURL).pathname === '/sw.js') registration.update();
+          }
+        }).catch(() => {});
+      }
+      document.querySelectorAll<HTMLElement>('.prose pre').forEach(pre => {
+        const code = pre.querySelector('code');
+        if (!code) return;
+        const button = document.createElement('button'); button.type = 'button';
+        button.className = 'copy-code'; button.textContent = '复制'; button.setAttribute('aria-label', '复制代码');
+        button.addEventListener('click', async () => {
+          try { await navigator.clipboard.writeText(code.textContent || ''); button.textContent = '已复制'; }
+          catch { button.textContent = '请手动复制'; }
+          window.setTimeout(() => { button.textContent = '复制'; }, 1800);
+        });
+        const wrapper = document.createElement('div'); wrapper.className = 'code-block';
+        pre.replaceWith(wrapper); wrapper.append(button, pre);
+      });
+    </script>
+  </body>
+</html>

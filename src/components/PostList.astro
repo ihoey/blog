@@ -1,0 +1,20 @@
+---
+import { categoryPath, type Post } from '../lib/posts';
+interface Props { posts: Post[]; compact?: boolean }
+const { posts, compact = false } = Astro.props;
+---
+<div class:list={['post-list', { compact }]}>
+  {posts.map(post => <article class="post-row">
+    <div class="post-date"><time datetime={post.date.toISOString()}>{post.day}</time></div>
+    <div class="post-summary">
+      <a class="post-category" href={categoryPath(post.data.categories)}>{post.data.categories.join(' / ')}</a>
+      <h2><a href={post.path}>{post.data.title}</a></h2>
+      {!compact && <p>{post.description}</p>}
+      {!compact && <div class="post-actions"><a class="read-link" href={post.path}>读这篇文章 <span aria-hidden="true">↗</span></a><a class="discussion-link" href={`${post.path}#comments`}><span class="hitalk-comment-count" data-xid={post.path}></span> 参与讨论</a></div>}
+    </div>
+  </article>)}
+</div>
+<script>
+  import { loadCommentCounts } from '../lib/comments';
+  loadCommentCounts();
+</script>

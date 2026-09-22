@@ -1,3 +1,7 @@
+> 当前分支为 **Astro 迁移分支**，旧站仍在 `hexo` 分支维护。先读 [迁移进度](docs/astro-migration.md) 和 [开发预览说明](docs/migration/development.md)。
+>
+> 使用 Node 22.23.2 / pnpm 10.28.2，执行 `pnpm install --frozen-lockfile` 后运行 `pnpm dev`。构建检查：`pnpm build && pnpm verify && pnpm test && pnpm check`。这些命令不会发布网站。
+
 <blockquote class="blockquote-center">愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。</blockquote>
 
 [![Build Status](https://travis-ci.org/ihoey/blog.svg?branch=hexo)](https://travis-ci.org/ihoey/blog)

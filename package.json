@@ -1,39 +1,29 @@
 {
-  "name": "ihoey_blog",
-  "version": "6.2.0",
+  "name": "ihoey-blog",
+  "version": "1.0.0",
   "private": true,
-  "author": "ihoey <mail@ihoey.com> (https://blog.ihoey.com/)",
-  "contributors": [
-    {
-      "name": "ihoey",
-      "email": "mail@ihoey.com"
-    }
-  ],
-  "license": "MIT",
-  "description": "心，若没有栖息的地方，到哪里都是流浪......",
-  "hexo": {
-    "version": "4.2.1"
+  "type": "module",
+  "packageManager": "pnpm@10.28.2",
+  "engines": {
+    "node": ">=22.12.0"
   },
   "scripts": {
-    "start": "hexo clean && hexo g && hexo d",
-    "deploy": "hexo clean && hexo d"
+    "dev": "astro dev --host 127.0.0.1",
+    "start": "astro dev --host 127.0.0.1",
+    "build": "astro sync --force && astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "node scripts/migration/verify-build.mjs"
   },
   "dependencies": {
-    "hexo": "^4.2.1",
-    "hexo-baidu-url-submit": "0.0.6",
-    "hexo-deployer-git": "^2.1.0",
-    "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-baidu-sitemap": "^0.1.9",
-    "hexo-generator-category": "^1.0.0",
-    "hexo-generator-feed": "^2.2.0",
-    "hexo-generator-index": "^1.0.0",
-    "hexo-generator-sitemap": "^2.0.0",
-    "hexo-generator-tag": "^1.0.0",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^3.0.0",
-    "hexo-renderer-stylus": "^1.1.0",
-    "hexo-server": "^1.0.0",
-    "shelljs": "^0.8.4",
-    "uglify-js": "^3.10.0"
+    "@astrojs/markdown-remark": "7.3.1",
+    "astro": "7.3.3",
+    "yaml": "2.9.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@types/node": "^22.20.4",
+    "typescript": "5.9.3"
   }
 }

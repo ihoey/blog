@@ -1,0 +1,39 @@
+{
+  "name": "ihoey_blog",
+  "version": "6.2.0",
+  "private": true,
+  "author": "ihoey <mail@ihoey.com> (https://blog.ihoey.com/)",
+  "contributors": [
+    {
+      "name": "ihoey",
+      "email": "mail@ihoey.com"
+    }
+  ],
+  "license": "MIT",
+  "description": "心，若没有栖息的地方，到哪里都是流浪......",
+  "hexo": {
+    "version": "4.2.1"
+  },
+  "scripts": {
+    "start": "hexo clean && hexo g && hexo d",
+    "deploy": "hexo clean && hexo d"
+  },
+  "dependencies": {
+    "hexo": "^4.2.1",
+    "hexo-baidu-url-submit": "0.0.6",
+    "hexo-deployer-git": "^2.1.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-baidu-sitemap": "^0.1.9",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-feed": "^2.2.0",
+    "hexo-generator-index": "^1.0.0",
+    "hexo-generator-sitemap": "^2.0.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-renderer-ejs": "^1.0.0",
+    "hexo-renderer-marked": "^3.0.0",
+    "hexo-renderer-stylus": "^1.1.0",
+    "hexo-server": "^1.0.0",
+    "shelljs": "^0.8.4",
+    "uglify-js": "^3.10.0"
+  }
+}
