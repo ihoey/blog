@@ -9,7 +9,7 @@ export default defineConfig({
   build: { format: 'preserve' },
   trailingSlash: 'ignore',
   markdown: {
-    shikiConfig: { theme: 'github-light', wrap: false },
+    shikiConfig: { themes: { light: 'github-light', dark: 'github-dark' }, wrap: false },
     processor: unified({ rehypePlugins: [legacyHeadings] }),
   },
   devToolbar: { enabled: false },

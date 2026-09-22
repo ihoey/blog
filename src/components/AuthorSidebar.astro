@@ -1,0 +1,17 @@
+---
+import Eevee from './Eevee.astro';
+import { getPosts, taxonomy } from '../lib/posts';
+const posts = await getPosts();
+const categories = taxonomy(posts, 'categories');
+const tags = taxonomy(posts, 'tags');
+---
+<aside class="author-sidebar" aria-label="关于作者">
+  <div class="author-profile">
+    <a class="avatar-link" href="/about/" aria-label="认识 Ihoey"><img src="/avatar.png" width="88" height="88" alt="Ihoey 的头像" /></a>
+    <h2>Ihoey</h2><p class="author-motto">心，若没有栖息的地方，<br />到哪里都是流浪……</p>
+    <div class="author-stats"><a href="/archives/"><b>{posts.length}</b>文章</a><a href="/categories/"><b>{categories.length}</b>分类</a><a href="/tags/"><b>{tags.length}</b>标签</a></div>
+    <div class="author-social"><a href="https://github.com/ihoey" target="_blank" rel="noopener noreferrer"><i class="icon icon-github" aria-hidden="true"></i> GitHub</a><a href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> RSS</a></div>
+  </div>
+  <div class="sidebar-topics"><h3>随处逛逛</h3>{categories.slice(0,5).map(c => <a href={c.path}><span>{c.name}</span><span>{c.count}</span></a>)}</div>
+  <div class="companion"><p class="companion-message" aria-live="polite">嗨，欢迎来到我的小栈。</p><button class="pet-button" type="button" aria-label="和伊布打招呼"><Eevee /></button><span class="companion-caption">有伊布作伴，慢慢看。</span></div>
+</aside>

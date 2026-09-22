@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import Eevee from '../components/Eevee.astro';
+import AuthorSidebar from '../components/AuthorSidebar.astro';
 import PostList from '../components/PostList.astro';
 import Pagination from '../components/Pagination.astro';
 import { getPosts, taxonomy } from '../lib/posts';
@@ -8,14 +8,12 @@ const posts = await getPosts();
 const categories = taxonomy(posts, 'categories').slice(0, 6);
 ---
 <Base canonical="/">
-  <section class="intro">
-    <div class="intro-copy"><p class="intro-hello">你好，我是 Ihoey <span aria-hidden="true">✳</span></p><h1>保持好奇，<br />慢慢记录。</h1><p class="intro-description">这里是梦魇小栈。<br />写代码，学新东西，也留下一些折腾的痕迹。</p><a class="about-link" href="/about/">多认识我一点 <span aria-hidden="true">↗</span></a></div>
-    <div class="intro-companion"><Eevee /><p>有伊布作伴。</p></div>
-  </section>
+  <div class="home-layout"><AuthorSidebar />
   <section class="home-articles" aria-labelledby="articles-heading">
     <div class="section-heading"><h2 id="articles-heading">文章与笔记 <span>{posts.length}</span></h2><a href="/archives/">全部归档 ↗</a></div>
     <div class="topic-links"><a class="selected" href="/" aria-current="page">全部</a>{categories.map(c => <a href={c.path}>{c.name}</a>)}<a href="/categories/" aria-label="查看所有分类">更多 →</a></div>
     <PostList posts={posts.slice(0, 5)} />
     <Pagination page={1} totalPages={Math.ceil(posts.length / 5)} base="/" />
   </section>
+  </div>
 </Base>
