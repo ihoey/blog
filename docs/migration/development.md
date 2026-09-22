@@ -1,6 +1,7 @@
 # Astro 开发与预览
 
-工作目录：`/Users/ihoey/personal/project/blog-astro`  
+工作目录：`/Users/ihoey/personal/project/blog-astro`
+
 分支：`feat/astro-migration`
 
 ## 常用命令

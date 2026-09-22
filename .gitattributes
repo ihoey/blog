@@ -1,0 +1,3 @@
+# Vendored SDK files are verified byte-for-byte against their upstream manifest.
+# Whitespace inside minified template literals must not be reformatted.
+static/lib/hitalk/** -whitespace
