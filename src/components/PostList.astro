@@ -9,7 +9,7 @@ const { posts, compact = false } = Astro.props;
       <h2><a href={post.path}>{post.data.title}</a></h2>
       <div class="post-meta"><time datetime={post.date.toISOString()}><i class="icon icon-calendar" aria-hidden="true"></i> {post.day}</time><span aria-hidden="true">·</span><a class="post-category" href={categoryPath(post.data.categories)}>{post.data.categories.join(' / ')}</a></div>
       {!compact && <p>{post.description}</p>}
-      {!compact && <div class="post-actions"><a class="read-link" href={post.path}>读这篇文章 <span aria-hidden="true">↗</span></a><a class="discussion-link" href={`${post.path}#comments`}><span class="hitalk-comment-count" data-xid={post.path}></span> 参与讨论</a></div>}
+      {!compact && <div class="post-actions"><a class="read-link" href={post.path}>阅读全文 <span aria-hidden="true">→</span></a><a class="discussion-link" href={`${post.path}#comments`}><span class="hitalk-comment-count" data-xid={post.path}></span> 参与讨论</a></div>}
     </div>
     {!compact && <div class="scissor-divider" aria-hidden="true"><span class="scissor-track"><i class="icon icon-scissors"></i></span></div>}
   </article>)}

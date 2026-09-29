@@ -43,9 +43,9 @@ const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/ta
     <a class="skip-link" href="#main">跳到正文</a>
     <header class:list={['site-header', { 'home-header': home }]}>
       <div class="canopy" aria-hidden="true"></div>
-      <div class="header-tools">
+      <div class="header-tools" role="group" aria-label="阅读偏好">
         <button class="theme-toggle" type="button" aria-label="切换昼夜主题" title="切换昼夜主题"><i class="icon icon-moon" aria-hidden="true"></i></button>
-        <button class="effects-toggle" type="button" aria-pressed="true" title="开关个性效果"><i class="icon icon-magic" aria-hidden="true"></i><span>个性效果</span></button>
+        <button class="effects-toggle" type="button" aria-pressed="true" aria-label="个性效果" title="关闭个性效果"><i class="icon icon-magic" aria-hidden="true"></i></button>
       </div>
       <div class="site-brand">{home ? <h1><a class="site-name" href="/" aria-label="梦魇小栈首页">梦魇小栈</a></h1> : <a class="site-name" href="/" aria-label="梦魇小栈首页">梦魇小栈</a>}<p>专注于分享</p></div>
       <nav class="main-nav" aria-label="主导航">

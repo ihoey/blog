@@ -17,14 +17,14 @@ const toc = headings.filter(h => h.depth === 2 || h.depth === 3);
     <div class:list={['article-grid', { 'without-toc': toc.length === 0 }]}>
       <div class="article-main">
         <div class="prose"><Content /></div>
-        <div class="article-end"><span aria-hidden="true">✳</span><p>谢谢你读到这里。</p><a href="/atom.xml">订阅接下来的文章 ↗</a></div>
+        <div class="article-end"><p>谢谢你读到这里。</p><a href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a></div>
         <nav class="adjacent-posts" aria-label="相邻文章">
-          {newer && <a href={newer.path}><span>较新的文章</span>{newer.data.title}</a>}
-          {older && <a href={older.path}><span>较早的文章</span>{older.data.title}</a>}
+          {newer && <a class="adjacent-newer" rel="prev" href={newer.path}><span><b aria-hidden="true">←</b> 上一篇</span><strong>{newer.data.title}</strong></a>}
+          {older && <a class="adjacent-older" rel="next" href={older.path}><span>下一篇 <b aria-hidden="true">→</b></span><strong>{older.data.title}</strong></a>}
         </nav>
         <Comments path={post.path} title={post.data.title} />
       </div>
-      {toc.length > 0 && <aside class="article-toc"><details open><summary>这篇文章</summary><nav aria-label="文章目录">{toc.map(h => <a class:list={{ subheading: h.depth === 3 }} href={`#${h.slug}`}>{h.text}</a>)}</nav></details></aside>}
+      {toc.length > 0 && <aside class="article-toc"><details open><summary>目录</summary><nav aria-label="文章目录">{toc.map(h => <a class:list={{ subheading: h.depth === 3 }} href={`#${h.slug}`}>{h.text}</a>)}</nav></details></aside>}
     </div>
   </article>
 </Base>

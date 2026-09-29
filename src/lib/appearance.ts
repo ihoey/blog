@@ -8,7 +8,9 @@ const updateControls = () => {
   themeButton?.setAttribute('aria-label', dark ? '切换到日间主题' : '切换到夜间主题');
   themeButton?.querySelector('.icon')?.classList.toggle('icon-sun', dark);
   themeButton?.setAttribute('title', dark ? '切换到日间主题' : '切换到夜间主题');
-  effectsButton?.setAttribute('aria-pressed', String(root.dataset.effects !== 'off'));
+  const effectsEnabled = root.dataset.effects !== 'off';
+  effectsButton?.setAttribute('aria-pressed', String(effectsEnabled));
+  effectsButton?.setAttribute('title', effectsEnabled ? '关闭个性效果' : '开启个性效果');
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#151c29' : '#fcfafb');
 };
 updateControls();
