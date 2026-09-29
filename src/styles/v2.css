@@ -11,7 +11,7 @@ body{background:var(--bg)}
 .home-header .canopy{opacity:1;background-size:cover;mask-image:linear-gradient(#000 20%,#0009 58%,transparent 100%)}
 [data-theme=dark] .canopy{opacity:.24;filter:saturate(.8)}
 [data-theme=dark] .home-header .canopy{opacity:.46;filter:saturate(.7);mix-blend-mode:screen;mask-image:linear-gradient(#000 0%,transparent 90%)}
-.site-brand{text-align:center}.site-name{display:inline-block;background:oklch(.23 .009 55);color:white;padding:4px 28px;font-family:'Kaiti SC',STKaiti,KaiTi,serif;font-size:28px;font-weight:500;letter-spacing:.14em;line-height:1.6}
+.site-brand{text-align:center}.site-name{display:inline-block;background:oklch(.23 .009 55);color:white;padding:4px 28px;font-family:var(--font-reading);font-size:28px;font-weight:500;letter-spacing:.14em;line-height:1.6}
 .site-name:hover{color:var(--accent-ink);background:var(--accent)}
 .site-brand>p{font-size:12px;letter-spacing:.25em;margin-top:9px;color:var(--muted)}
 .header-tools{position:absolute;top:19px;right:max(24px,calc((100vw - 1140px)/2));display:flex;align-items:center;gap:2px;padding:2px;border-radius:6px;background:color-mix(in oklch,var(--reading) 85%,transparent)}
@@ -23,7 +23,7 @@ body{background:var(--bg)}
 .main-nav .icon{font-size:12px;color:var(--muted)}
 .main-nav a::after{content:'';position:absolute;height:1px;width:100%;bottom:0;left:0;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .22s ease-out}
 .main-nav a:hover::after,.main-nav a[aria-current]::after{transform:scaleX(1);width:100%;height:1px;left:0;bottom:0;border-radius:0}
-.home-quote{margin-top:25px;color:var(--muted);font-family:'Kaiti SC',STKaiti,KaiTi,serif;font-size:15px;letter-spacing:.04em}
+.home-quote{margin-top:25px;color:var(--muted);font-family:var(--font-reading);font-size:15px;letter-spacing:.04em}
 #main,.site-footer{width:min(1080px,calc(100% - 64px))}
 .home-layout{display:grid;grid-template-columns:218px minmax(0,1fr);gap:58px;padding-top:24px}
 .author-sidebar{text-align:center;min-width:0;padding-top:16px}.author-profile{padding-bottom:25px;border-bottom:1px solid var(--line)}
@@ -52,7 +52,7 @@ body{background:var(--bg)}
 .prose{font-size:16px;line-height:2}.prose h2{font-size:24px}.prose pre{border:0;border-radius:6px;font-size:13px}.code-block{border:1px solid #44475a;border-radius:7px;overflow:hidden;background:#282a36;color:#f8f8f2;color-scheme:dark}.code-block:before{content:'';position:absolute;top:17px;left:16px;width:8px;height:8px;background:#e87070;border-radius:50%;box-shadow:14px 0 #dfb75c,28px 0 #76ad83}.code-block pre{padding:48px 20px 20px}.code-language{position:absolute;top:8px;left:70px;font:10px/25px var(--mono);color:#b6b8cf;text-transform:uppercase}.code-block .copy-code{z-index:1;border:0;padding:4px 9px;background:#44475a;color:#f8f8f2}.code-block .copy-code:hover{background:#44475a;color:#bd93f9}
 .reading-track{position:fixed;z-index:3;top:0;left:0;width:100%;height:3px;pointer-events:none}.reading-track span{display:block;width:100%;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
 .back-top{position:fixed;right:18px;bottom:24px;display:flex;align-items:center;flex-direction:column;gap:3px;border:1px solid var(--line);border-radius:5px;background:var(--reading);color:var(--muted);padding:8px;font-size:10px;z-index:2}.back-top .icon{font-size:17px}.back-top[hidden]{display:none}
-.site-footer{margin-top:58px;padding:28px 0 32px}.site-uptime{font-variant-numeric:tabular-nums}.footer-top{justify-content:center}.footer-top>a:last-child{margin-left:0}.site-footer>p,.footer-bottom{justify-content:center;text-align:center}.footer-name{font-family:'Kaiti SC',STKaiti,KaiTi,serif;font-weight:500;font-size:20px}
+.site-footer{margin-top:58px;padding:28px 0 32px}.site-uptime{font-variant-numeric:tabular-nums}.footer-top{justify-content:center}.footer-top>a:last-child{margin-left:0}.site-footer>p,.footer-bottom{justify-content:center;text-align:center}.footer-name{font-family:var(--font-reading);font-weight:500;font-size:20px}
 .listing-shell{margin:0 auto}.listing-header{padding-top:30px}.page-prose{margin-inline:auto}
 .click-heart{position:fixed;z-index:4;color:var(--accent);pointer-events:none;font-size:17px;animation:heart-away .85s ease-out forwards}@keyframes heart-away{to{transform:translateY(-55px) rotate(15deg);opacity:0}}
 [data-effects=off] .eevee,[data-effects=off] .eevee *,[data-effects=off] .eevee *:before,[data-effects=off] .eevee *:after{animation-play-state:paused!important}

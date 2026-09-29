@@ -12,10 +12,11 @@
     --bg: oklch(1 0 0); --ink: oklch(.25 .012 354); --muted: oklch(.47 .014 354);
     --accent: oklch(.52 .115 55); --accent-soft: oklch(.965 .021 65);
     --line: oklch(.90 .006 354); --surface: oklch(.975 .003 354);
+    --font-reading: "LXGW WenKai", "Kaiti SC", STKaiti, KaiTi, serif;
     --mono: Menlo, Consolas, monospace;
   }
   html { scroll-behavior: smooth; scroll-padding-top: 30px; }
-  body { background: var(--bg); color: var(--ink); font: 16px/1.8 -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; -webkit-font-smoothing: antialiased; }
+  body { background: var(--bg); color: var(--ink); font: 16px/1.8 var(--font-reading); -webkit-font-smoothing: antialiased; }
   ::selection { background: var(--accent-soft); color: var(--accent); }
   a { text-decoration: none; text-underline-offset: .25em; }
   a:hover { color: var(--accent); }
