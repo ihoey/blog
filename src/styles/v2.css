@@ -249,3 +249,11 @@ body{background:var(--bg)}
   .footer-status{text-align:left}.footer-status .site-traffic{justify-content:flex-start}
   .site-footer .footer-bottom{justify-content:flex-start;gap:8px 18px}
 }
+
+/* Three quiet ridgelines connect the reading sky to the footer ground. */
+.site-footer{--ridge-far:color-mix(in oklch,var(--bg) 97%,var(--accent));--ridge-middle:color-mix(in oklch,var(--bg) 93%,var(--accent));--ridge-near:color-mix(in oklch,var(--bg) 88%,var(--accent));width:100%;margin-top:38px;padding:0;border:0;background:var(--ridge-near)}
+.footer-landscape{display:block;width:100%;height:clamp(72px,10vw,140px);background:var(--bg);pointer-events:none}
+.ridge-far{fill:var(--ridge-far)}.ridge-middle{fill:var(--ridge-middle)}.ridge-near{fill:var(--ridge-near)}
+.footer-content{width:min(1080px,calc(100% - 64px));margin-inline:auto;padding:26px 0 24px}
+.site-footer .footer-bottom{border:0;margin-top:24px;padding-top:16px}
+@media(max-width:700px){.footer-content{width:calc(100% - 40px);padding-top:20px}.site-footer{margin-top:24px}}

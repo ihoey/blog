@@ -4,6 +4,7 @@ import 'lxgw-wenkai-webfont/lxgwwenkai-bold.css';
 import '../styles/global.css';
 import '../styles/v2.css';
 import Companion from '../components/Companion.astro';
+import FooterLandscape from '../components/FooterLandscape.astro';
 interface Props { title?: string; description?: string; canonical?: string; article?: boolean; date?: Date; updated?: Date }
 const { title, description = '心，若没有栖息的地方，到哪里都是流浪……', canonical = Astro.url.pathname, article = false, date, updated } = Astro.props;
 const fullTitle = title ? `${title} · 梦魇小栈` : '梦魇小栈 · 专注于分享';
@@ -60,6 +61,8 @@ const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/ta
     <main id="main" tabindex="-1"><slot /></main>
     <Companion title={title} />
     <footer class="site-footer">
+      <FooterLandscape />
+      <div class="footer-content">
       <div class="footer-main">
         <div class="footer-identity">
           <div class="footer-brand"><a class="footer-name" href="/">梦魇小栈</a><span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span></div>
@@ -76,6 +79,7 @@ const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/ta
         </div>
       </div>
       <div class="footer-bottom"><span>© 2015–{new Date().getFullYear()} <span class="footer-heart" aria-hidden="true">♥</span> 梦魇小栈</span><a href="https://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">京ICP备15058055号-1</a><span>由 <a href="https://github.com/ihoey" rel="noopener noreferrer" target="_blank">Ihoey</a> 用心维护</span></div>
+      </div>
     </footer>
     <button class="back-top" type="button" aria-label="返回顶部" title="返回顶部" hidden><i class="icon icon-up" aria-hidden="true"></i></button>
     <script>import "../lib/appearance";</script>

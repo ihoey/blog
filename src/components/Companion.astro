@@ -20,7 +20,7 @@ const { title } = Astro.props;
   .global-companion{position:fixed;left:12px;bottom:20px;z-index:2;width:140px;margin:0;pointer-events:none}
   .global-companion .pet-button{pointer-events:auto}
   .global-companion .companion-message{position:absolute;bottom:100%;width:100%;margin-bottom:6px;pointer-events:none}
-  :global(#main),:global(.site-footer){width:min(1080px,calc(100% - 222px));margin-left:max(190px,calc((100% - 1080px)/2));margin-right:32px}
+  :global(#main),:global(.footer-content){width:min(1080px,calc(100% - 222px));margin-left:max(190px,calc((100% - 1080px)/2));margin-right:32px}
 }
 @media(max-width:1100px){.global-companion{min-height:242px}.global-companion .companion-message[hidden]{display:grid;visibility:hidden}}
 :global([data-effects=off]) .pet-button:hover,:global([data-effects=off]) .pet-button:focus-visible{transform:none}
