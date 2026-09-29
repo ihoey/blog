@@ -74,8 +74,8 @@
   }
 }
 
-.eevee-scene{position:relative;width:180px;height:170px;flex-shrink:0;overflow:visible;isolation:isolate;}
-.eevee-scene .eevee{position:absolute;width:360px;height:320px;top:-15px;left:-48px;bottom:auto;right:auto;transform:scale(.65);transform-origin:top left;pointer-events:none;}
+.eevee-scene{position:relative;width:var(--eevee-width,180px);height:var(--eevee-height,170px);flex-shrink:0;overflow:visible;isolation:isolate;}
+.eevee-scene .eevee{position:absolute;width:360px;height:320px;top:var(--eevee-top,-15px);left:var(--eevee-left,-48px);bottom:auto;right:auto;transform:scale(var(--eevee-scale,.65));transform-origin:top left;pointer-events:none;}
 @media(prefers-reduced-motion:reduce){.eevee,.eevee *,.eevee *:before,.eevee *:after{animation:none!important}}
 @media(max-width:600px){.eevee-scene{display:none}}
 

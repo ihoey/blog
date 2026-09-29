@@ -1,5 +1,4 @@
 ---
-import Eevee from './Eevee.astro';
 import { getPosts, taxonomy } from '../lib/posts';
 const posts = await getPosts();
 const categories = taxonomy(posts, 'categories');
@@ -13,5 +12,4 @@ const tags = taxonomy(posts, 'tags');
     <div class="author-social"><a href="https://github.com/ihoey" target="_blank" rel="noopener noreferrer"><i class="icon icon-github" aria-hidden="true"></i> GitHub</a><a href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> RSS</a></div>
   </div>
   <div class="sidebar-topics"><h3>随处逛逛</h3>{categories.slice(0,5).map(c => <a href={c.path}><span>{c.name}</span><span>{c.count}</span></a>)}</div>
-  <div class="companion"><p class="companion-message" aria-live="polite">嗨，欢迎来到我的小栈。</p><button class="pet-button" type="button" aria-label="和伊布打招呼"><Eevee /></button><span class="companion-caption">有伊布作伴，慢慢看。</span></div>
 </aside>

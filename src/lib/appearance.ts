@@ -20,17 +20,7 @@ themeButton?.addEventListener('click', () => {
     void transition.finished.catch(() => {}).finally(() => { themeButton.disabled = false; });
   } else apply();
 });
-effectsButton?.addEventListener('click', () => { root.dataset.effects = root.dataset.effects === 'off' ? 'on' : 'off'; save('blog-effects', root.dataset.effects); updateControls(); });
-const bubble = document.querySelector<HTMLElement>('.companion-message');
-let greeting = 0;
-let bubbleTimer: ReturnType<typeof setTimeout>;
-const say = (text: string) => {
-  if (!bubble || root.dataset.effects === 'off') return;
-  clearTimeout(bubbleTimer); bubble.textContent = text;
-  bubbleTimer = setTimeout(() => { bubble.textContent = '有伊布作伴，慢慢看。'; }, 4500);
-};
-document.querySelector('.pet-button')?.addEventListener('click', () => { const lines = ['嗨，你好啊～', '今天也要保持好奇呀。', '看累了，就起来走走吧。']; say(lines[greeting++ % lines.length]); });
-document.querySelectorAll('.home-articles .post-summary h2 a').forEach(link => link.addEventListener('mouseenter', () => say('发现一篇想读的文章了吗？')));
+effectsButton?.addEventListener('click', () => { root.dataset.effects = root.dataset.effects === 'off' ? 'on' : 'off'; save('blog-effects', root.dataset.effects); updateControls(); window.dispatchEvent(new Event('blog:effectschange')); });
 const uptime = document.querySelector<HTMLElement>('[data-uptime]');
 if (uptime) { const days = Math.max(0, Math.floor((Date.now() - Date.parse('2015-12-21T00:00:00+08:00')) / 86400000)); uptime.textContent = `${days.toLocaleString('zh-CN')} 天`; }
 const topButton = document.querySelector<HTMLButtonElement>('.back-top');

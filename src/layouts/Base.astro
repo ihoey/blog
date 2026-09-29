@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/v2.css';
+import Companion from '../components/Companion.astro';
 interface Props { title?: string; description?: string; canonical?: string; article?: boolean; date?: Date; updated?: Date }
 const { title, description = '心，若没有栖息的地方，到哪里都是流浪……', canonical = Astro.url.pathname, article = false, date, updated } = Astro.props;
 const fullTitle = title ? `${title} · 梦魇小栈` : '梦魇小栈 · 专注于分享';
@@ -54,6 +55,7 @@ const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/ta
     </header>
     {article && <div class="reading-track" aria-hidden="true"><span id="reading-progress"></span></div>}
     <main id="main" tabindex="-1"><slot /></main>
+    <Companion title={title} />
     <footer class="site-footer">
       <div class="footer-top"><a class="footer-name" href="/">梦魇小栈</a><span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span><a href="/atom.xml">订阅 RSS ↗</a></div>
       <p>心，若没有栖息的地方，到哪里都是流浪……</p>
@@ -79,7 +81,7 @@ const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/ta
         const button = document.createElement('button'); button.type = 'button';
         button.className = 'copy-code'; button.textContent = '复制'; button.setAttribute('aria-label', '复制代码');
         button.addEventListener('click', async () => {
-          try { await navigator.clipboard.writeText(code.textContent || ''); button.textContent = '已复制'; }
+          try { await navigator.clipboard.writeText(code.textContent || ''); button.textContent = '已复制'; window.dispatchEvent(new Event('blog:copied'));  }
           catch { button.textContent = '请手动复制'; }
           window.setTimeout(() => { button.textContent = '复制'; }, 1800);
         });

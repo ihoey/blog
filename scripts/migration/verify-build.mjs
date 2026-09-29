@@ -34,6 +34,7 @@ const files = (await walk(dist)).filter(f => f.endsWith('.html'));
 for (const file of files) {
   const html = await readFile(file, 'utf-8');
   const pagePath = '/' + file.slice(dist.length + 1);
+  if ((html.match(/data-global-companion(?:[\s=>])/g) || []).length !== 1) errors.push(`Expected exactly one global Eevee: ${pagePath}`);
   for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
     const href = decode(match[1]);
     if (/^(mailto:|tel:|javascript:|data:)/.test(href)) continue;
