@@ -10,7 +10,7 @@
   :root {
     color-scheme: light;
     --bg: oklch(1 0 0); --ink: oklch(.25 .012 354); --muted: oklch(.47 .014 354);
-    --accent: oklch(.49 .17 8); --accent-soft: oklch(.965 .016 8);
+    --accent: oklch(.48 .085 180); --accent-soft: oklch(.955 .021 180);
     --line: oklch(.90 .006 354); --surface: oklch(.975 .003 354);
     --mono: Menlo, Consolas, monospace;
   }

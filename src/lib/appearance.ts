@@ -11,7 +11,7 @@ const updateControls = () => {
   const effectsEnabled = root.dataset.effects !== 'off';
   effectsButton?.setAttribute('aria-pressed', String(effectsEnabled));
   effectsButton?.setAttribute('title', effectsEnabled ? '关闭个性效果' : '开启个性效果');
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#151c29' : '#fcfafb');
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#12171f' : '#f9fafb');
 };
 updateControls();
 themeButton?.addEventListener('click', () => {

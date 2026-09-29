@@ -223,3 +223,13 @@
 - 验证：构建 182 页及 Astro check 通过（0 错误 / 警告 / 提示），迁移校验通过（57 篇、182 旧地址、576 锚点，无断链）；另核对全部 57 篇的前后文章目标与首尾边界。
 - 浏览器仅检查桌面首页和长文章，日夜配色、效果开关状态 / 暂停动画 / 刷新记忆均通过，首页无横向溢出。保留既有窄屏布局，未重复手机或全量测试。截图在工作区 `outputs/blog-v2/polished-home.png`、`polished-article-end.png`。
 - 下一步：继续根据用户反馈调整；作者栏与伊布造成的整体偏右、重复签名和分类入口仍可单独讨论，不在本轮改动中。发布前仍需 SW 真实升级与部署 / 回退验证，当前未推送或上线。
+
+## 青绿强调色与 Bounce Sidebar 评估（2026-09-29）
+
+- 用户希望替换旧粉红强调色，明确选择青绿方案。日间 accent / accent-soft 改为 `oklch(.48 .085 180)` / `oklch(.955 .021 180)`（约 #086d5f / #e2f5f1）；夜间为 `oklch(.77 .10 178)` / `oklch(.3 .034 180)`（约 #65c9b4 / #19332e）。日间背景、分隔线和文字中性底色去掉粉调，Dracula 代码块保持原配色。
+- 新增 accent-ink 用于站牌 hover 反色，避免夜间浅强调色上的白字低对比；浏览器 theme-color 同步新背景。按 OKLCH 转线性 sRGB 计算 accent 在 accent-soft 上对比为日间 5.52:1、夜间 6.77:1。
+- 构建 182 页、Astro check 通过（0 错误 / 警告 / 提示）；桌面文章日夜模式实际检查通过，截图为工作区 `outputs/blog-v2/teal-light.png` / `teal-dark.png`。未重复手机与全量测试。
+- 用户提供 https://www.rareui.com/components/bouncesidebar 。已查看演示并点击项目、阅读官方组件源码：https://github.com/swamimalode07/rare-ui/blob/main/components/ui/bounce-sidebar.tsx 。这是目录选中圆点沿弧线跳转的效果，适合文章右侧目录；不是作者侧栏展开 / 收起效果。
+- 官方原组件依赖 React / Next Link / Motion；建议在 Astro 内使用原生动画实现同类交互，圆点使用新 accent，点击时短弧线过渡、滚动时轻量跟随，关闭个性效果 / reduced-motion 时直接定位。此项仅完成评估，尚未接入动画或引入依赖。
+- 2026-09-29 查看官方 LICENSE：MIT + Commons Clause + Attribution；允许用于网站，若采用源码需保留版权并提供 Rare UI 署名链接，不得把组件本身重新打包分发。来源：https://github.com/swamimalode07/rare-ui/blob/main/LICENSE 。本轮未复制其组件代码。
+- 下一步：根据用户对青绿预览和目录动效建议的反馈继续；部署与 SW 真实升级验收仍是独立阶段。未推送或上线。
