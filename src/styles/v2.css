@@ -47,7 +47,22 @@ body{background:var(--bg)}
 .scissor-divider .icon{position:absolute;top:50%;left:0;transform:translateY(-50%);width:30px;background:var(--reading);color:var(--muted);font-size:13px;line-height:20px}
 @media(hover:hover) and (pointer:fine){.scissor-divider:hover .scissor-track{transform:translateX(100%)}}
 .post-row:last-child .scissor-divider{display:none}.compact .post-row{border-bottom:1px solid var(--line)}.compact .post-summary h2,.compact .post-meta{text-align:left;justify-content:flex-start}.compact .post-meta{margin-top:8px;margin-bottom:0}
-.article-shell{padding-top:18px}.article-header{grid-column:1;max-width:none;width:100%;margin:0;padding:24px 12px 38px;text-align:center}.article-meta,.article-tags{justify-content:center}.article-meta{margin-top:24px}.article-header h1{font-size:clamp(27px,3vw,35px);font-weight:550}.article-tags{margin-top:16px}
+.article-shell{padding-top:18px}.article-header{grid-column:1;max-width:none;width:100%;margin:0;padding:24px 12px;text-align:center}
+.article-header .back-link{display:flex;align-items:center;gap:7px;width:fit-content;padding:4px 0;margin-bottom:24px}
+.article-header .back-link:is(:hover,:focus-visible){text-decoration:underline;text-underline-offset:5px}
+.article-header h1{font-size:clamp(27px,3vw,35px);font-weight:700;line-height:1.5;margin:0 0 20px;text-wrap:balance}
+.article-meta,.article-reading-meta,.article-tags{justify-content:center}
+.article-meta,.article-reading-meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;line-height:1.8;color:var(--muted)}
+.article-meta{margin-top:0}.article-reading-meta{margin-top:10px}
+.article-meta>span,.article-reading-meta>span,.article-reading-meta>a{display:inline-flex;align-items:baseline;gap:6px}
+.article-meta>span:not(.article-categories){white-space:nowrap}
+.article-categories{flex-wrap:wrap;justify-content:center;min-width:0;overflow-wrap:anywhere}
+.article-meta a:is(:hover,:focus-visible),.article-reading-meta a:is(:hover,:focus-visible){color:var(--accent);text-decoration:underline;text-underline-offset:4px}
+.article-tags{margin-top:18px;gap:8px}
+.article-tags a{display:inline-flex;gap:3px;padding:2px 8px;border-radius:4px;background:var(--surface);transition:color .18s,background-color .18s}
+.article-tags a:is(:hover,:focus-visible){background:var(--accent-soft);color:var(--accent)}
+[data-effects=off] .article-tags a{transition:none}
+.article-main>.prose>:first-child{margin-top:0}
 .article-grid{width:100%;max-width:calc(var(--article-width) + 212px);margin-inline:auto;grid-template-columns:minmax(0,var(--article-width)) minmax(140px,1fr);gap:0 32px;border:0;padding-top:0}.article-main{grid-column:1;background:var(--reading);border-radius:8px;padding:36px var(--article-inset)}.article-grid.without-toc{grid-template-columns:minmax(0,var(--article-width));justify-content:center}
 .article-main .comments-section{max-width:none}
 .article-toc{grid-column:2;grid-row:2;min-width:0;padding-top:27px}.article-toc details{top:28px}.article-toc a{font-size:12px;padding:5px 11px;margin-bottom:4px;border-left:2px solid transparent;border-radius:0;transition:color .18s,border-color .18s}.article-toc a.active{border-left-color:var(--accent);color:var(--accent)}.article-toc summary{padding:0 9px}
@@ -99,20 +114,26 @@ body{background:var(--bg)}
 .article-end p{margin:0;font-size:13px;color:var(--muted)}
 .article-end a{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
 .article-end a:hover{color:var(--accent)}
-.adjacent-posts{gap:28px;padding:22px 0;font-size:14px}
-.adjacent-posts a{min-width:0;display:flex;flex-direction:column;gap:7px;padding:3px 0;overflow-wrap:anywhere}
+.adjacent-posts{gap:20px;padding:12px 0;border:0;font-size:16px}
+.adjacent-posts a{min-width:0;display:flex;flex-direction:column;gap:9px;padding:18px;border-radius:6px;overflow-wrap:anywhere;transition:color .18s,background-color .18s}
+.adjacent-posts a:is(:hover,:focus-visible){background:var(--accent-soft);color:var(--accent)}
+.adjacent-posts a:is(:hover,:focus-visible)>span{color:var(--accent)}
+.adjacent-posts a:only-child{grid-column:1 / -1;width:min(100%,420px)}
+.adjacent-posts .adjacent-older:only-child{justify-self:end}
 .adjacent-posts span{margin:0;font-size:12px;display:flex;align-items:center;gap:8px}
 .adjacent-posts strong{font-size:inherit;line-height:1.7;font-weight:500;text-wrap:pretty}
 .adjacent-posts b{font-weight:400;transition:transform .18s ease-out}
-.adjacent-newer:hover b{transform:translateX(-3px)}
+.adjacent-newer:is(:hover,:focus-visible) b{transform:translateX(-3px)}
 .adjacent-older{text-align:right;align-items:flex-end}
-.adjacent-older:hover b{transform:translateX(3px)}
+.adjacent-older:is(:hover,:focus-visible) b{transform:translateX(3px)}
 @media(min-width:701px){.adjacent-older{grid-column:2}}
 .comments-section{margin:36px 0 24px}
 .comments-section>h2{font-size:20px;margin-bottom:16px}
 .read-link{font-size:12px;gap:9px;padding:4px 0;border:0;border-radius:0;border-bottom:1px solid var(--ink)}
 .read-link:hover{background:transparent;border-color:var(--accent)}
 .discussion-link,.section-heading>a{font-size:12px}
+[data-effects=off] .adjacent-posts :is(a,b){transition:none;transform:none!important}
+@media(prefers-reduced-motion:reduce){.adjacent-posts b{transform:none!important}}
 
 /* Keep the marker in its own gutter, including during the short arc. */
 .article-toc nav.has-marker{position:relative;padding-left:10px}
