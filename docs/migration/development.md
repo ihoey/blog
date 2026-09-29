@@ -15,6 +15,8 @@ pnpm dev --port 4321
 
 Astro 7 的开发服务可能以后台进程运行。使用 `pnpm exec astro dev status` 查看，`pnpm exec astro dev stop` 停止。
 
+`pnpm dev` / `pnpm start` 带 `--force`，启动时刷新内容缓存，避免文章沿用旧的 Markdown 高亮结果。修改高亮主题或渲染插件后若页面未更新，先停止开发服务，再用原端口重新启动，例如 `pnpm dev --port 4322`；单独刷新浏览器无法清除服务端内容缓存。
+
 生产产物预览：
 
 ```sh
