@@ -1,13 +1,13 @@
 ---
 import { categoryPath, type Post } from '../lib/posts';
-interface Props { posts: Post[]; compact?: boolean }
-const { posts, compact = false } = Astro.props;
+interface Props { posts: Post[]; compact?: boolean; headingLevel?: 'h2' | 'h3' }
+const { posts, compact = false, headingLevel: Heading = 'h2' } = Astro.props;
 ---
 <div class:list={['post-list', { compact }]}>
   {posts.map(post => <article class="post-row">
     <div class="post-summary">
       <header class="post-list-header">
-        <h2><a href={post.path}>{post.data.title}</a></h2>
+        <Heading><a href={post.path}>{post.data.title}</a></Heading>
         <div class="post-meta">
           <span><i class="icon icon-calendar" aria-hidden="true"></i> 发布于 <time datetime={post.date.toISOString()}>{post.day}</time></span>
           {!compact && post.updatedDay !== post.day && <span><i class="icon icon-updated" aria-hidden="true"></i> 更新于 <time datetime={post.updated.toISOString()}>{post.updatedDay}</time></span>}

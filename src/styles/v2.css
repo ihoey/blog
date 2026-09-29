@@ -266,6 +266,12 @@ body{background:var(--bg)}
 .compact .post-row+.post-row{margin-top:8px}
 .compact .post-row:has(a:hover),.compact .post-row:focus-within{background:var(--accent-soft)}
 .compact .post-list-header h2 a:is(:hover,:focus-visible){background-color:transparent;transform:none}
+.archive-year-group+.archive-year-group{margin-top:40px}
+.archive-year-heading{margin:0 12px 8px;font-size:28px;font-weight:700;line-height:1.5}
+.archive-year-heading span{margin-left:8px;font-size:14px;font-weight:400;color:var(--muted)}
+.archive-year-heading a:is(:hover,:focus-visible){color:var(--accent)}
+.archive-year-group .post-list-header h3{margin:5px 0 0;font-size:19px;font-weight:500;line-height:1.55;text-wrap:balance}
+.archive-year-group .post-list-header h3 a:is(:hover,:focus-visible){color:var(--accent);text-decoration:underline;text-underline-offset:5px}
 .taxonomy-list{gap:8px 24px;margin-top:8px}
 .taxonomy-list a{border:0;padding:14px 16px;border-radius:6px;align-items:center;transition:background-color .18s,color .18s}
 .taxonomy-list a>span:first-child{min-width:0;overflow-wrap:anywhere}
