@@ -1,3 +1,5 @@
+import { launchRocket } from './rocket-launch';
+
 const root = document.documentElement;
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
 const save = (key: string, value: string) => { try { localStorage.setItem(key, value); } catch {} };
@@ -54,7 +56,27 @@ function updateScroll() {
 }
 addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); } }, { passive: true });
 addEventListener('resize', updateScroll); updateScroll();
-topButton?.addEventListener('click', () => scrollTo({ top: 0, behavior: motion.matches || root.dataset.effects === 'off' ? 'instant' : 'smooth' }));
+let finishLaunch: (() => void) | undefined;
+topButton?.addEventListener('click', () => {
+  if (finishLaunch) return;
+  const animate = !motion.matches && root.dataset.effects !== 'off';
+  if (animate) {
+    const cleanup = launchRocket(topButton);
+    const timer = window.setTimeout(() => finishLaunch?.(), 1500);
+    finishLaunch = () => {
+      clearTimeout(timer);
+      cleanup();
+      finishLaunch = undefined;
+      updateScroll();
+    };
+  }
+  scrollTo({ top: 0, behavior: animate ? 'smooth' : 'instant' });
+});
+const cancelLaunch = () => finishLaunch?.();
+window.addEventListener('blog:effectschange', cancelLaunch);
+motion.addEventListener('change', cancelLaunch);
+window.addEventListener('pagehide', cancelLaunch);
+document.addEventListener('visibilitychange', () => { if (document.hidden) cancelLaunch(); });
 let hearts = 0;
 document.addEventListener('click', event => {
   if (root.dataset.effects === 'off' || motion.matches || event.detail === 0 || hearts >= 8) return;
