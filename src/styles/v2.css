@@ -259,3 +259,30 @@ body{background:var(--bg)}
 /* Keep selected text distinct on both page themes; code blocks retain Dracula. */
 ::selection{background:hsl(202deg 68% 86%);color:hsl(202deg 45% 20%)}
 .code-block ::selection,.excerpt-code ::selection{background:#44475a;color:#f8f8f2}
+
+/* Index pages use spacing and interaction feedback rather than ruled rows. */
+.listing-header{border-bottom:0;padding-bottom:40px}
+.compact .post-row{border:0;padding:20px 12px;border-radius:6px;transition:background-color .18s}
+.compact .post-row+.post-row{margin-top:8px}
+.compact .post-row:has(a:hover),.compact .post-row:focus-within{background:var(--accent-soft)}
+.compact .post-list-header h2 a:is(:hover,:focus-visible){background-color:transparent;transform:none}
+.taxonomy-list{gap:8px 24px;margin-top:8px}
+.taxonomy-list a{border:0;padding:14px 16px;border-radius:6px;align-items:center;transition:background-color .18s,color .18s}
+.taxonomy-list a>span:first-child{min-width:0;overflow-wrap:anywhere}
+.taxonomy-list a:is(:hover,:focus-visible){background:var(--accent-soft);color:var(--accent)}
+.taxonomy-list a:is(:hover,:focus-visible)>span:last-child{color:inherit}
+.friend-list{gap:12px 24px;margin-top:8px}
+.friend-list li{border:0;min-width:0}
+.friend-list a{height:100%;padding:18px 16px;border-radius:6px;overflow-wrap:anywhere;transition:background-color .18s,color .18s}
+.friend-list a:is(:hover,:focus-visible){background:var(--accent-soft)}
+.friend-list a:is(:hover,:focus-visible) h2{color:var(--accent)}
+.friend-list h2 span{transition:transform .18s}
+.friend-list a:is(:hover,:focus-visible) h2 span{transform:translate(2px,-2px)}
+.reading-page .page-prose hr{border:0;width:36px;height:4px;margin:40px auto;background:radial-gradient(circle,var(--muted) 1.5px,transparent 2px) center/12px 4px repeat-x}
+.reading-page .page-prose table{display:table;width:100%;table-layout:fixed}
+.reading-page .page-prose :is(th,td){border:0;padding:12px clamp(8px,1.5vw,16px)}
+.reading-page .page-prose th{background:var(--accent-soft);color:var(--ink)}
+.reading-page .page-prose tbody tr:nth-child(even){background:var(--surface)}
+.reading-page .comments-section{margin-top:48px}
+[data-effects=off] :is(.compact .post-row,.taxonomy-list a,.friend-list a,.friend-list h2 span){transition:none;transform:none}
+@media(prefers-reduced-motion:reduce){.friend-list a:is(:hover,:focus-visible) h2 span{transform:none}}
