@@ -115,3 +115,10 @@ body{background:var(--bg)}
 .read-link{font-size:12px;gap:9px;padding:4px 0;border:0;border-radius:0;border-bottom:1px solid var(--ink)}
 .read-link:hover{background:transparent;border-color:var(--accent)}
 .discussion-link,.section-heading>a{font-size:12px}
+
+/* Keep the marker in its own gutter, including during the short arc. */
+.article-toc nav.has-marker{position:relative;padding-left:10px}
+.article-toc nav.has-marker a.active{border-left-color:transparent}
+.toc-marker{position:absolute;left:8px;top:0;width:6px;height:6px;border-radius:50%;background:var(--accent);pointer-events:none}
+.toc-marker[hidden]{display:none}
+[data-effects=off]{scroll-behavior:auto}

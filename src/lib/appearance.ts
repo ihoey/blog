@@ -38,18 +38,6 @@ function updateScroll() {
 addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); } }, { passive: true });
 addEventListener('resize', updateScroll); updateScroll();
 topButton?.addEventListener('click', () => scrollTo({ top: 0, behavior: motion.matches ? 'instant' : 'smooth' }));
-const toc = document.querySelector<HTMLDetailsElement>('.article-toc details');
-if (toc && matchMedia('(max-width:700px)').matches) toc.open = false;
-const tocLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.article-toc a'));
-const targets = tocLinks.map(a => document.getElementById(decodeURIComponent(a.hash.slice(1)))).filter((el): el is HTMLElement => !!el);
-if (targets.length && 'IntersectionObserver' in window) {
-  const observer = new IntersectionObserver(entries => {
-    const visible = entries.find(entry => entry.isIntersecting);
-    if (!visible) return;
-    for (const link of tocLinks) { const active = decodeURIComponent(link.hash.slice(1)) === visible.target.id; link.classList.toggle('active', active); if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); }
-  }, { rootMargin: '-5% 0px -70% 0px' });
-  targets.forEach(el => observer.observe(el));
-}
 let hearts = 0;
 document.addEventListener('click', event => {
   if (root.dataset.effects === 'off' || motion.matches || event.detail === 0 || hearts >= 8) return;
