@@ -350,5 +350,54 @@ body{background:var(--bg)}
 .reading-page .page-prose th{background:var(--accent-soft);color:var(--ink)}
 .reading-page .page-prose tbody tr:nth-child(even){background:var(--surface)}
 .reading-page .comments-section{margin-top:48px}
+
+/* Personal pages keep the original Markdown, with layout scoped to each page. */
+.listing-heading-group>div>p{font-size:14px;color:var(--muted)}
+.about-page .listing-heading-group{display:flex;align-items:center;gap:24px}
+.about-portrait{flex:none;width:76px;height:76px;object-fit:cover;border-radius:50%}
+:is(.about-page,.guestbook-page) .page-prose{padding-top:0}
+:is(.about-page,.guestbook-page) .page-prose>.blockquote-center{margin:0 0 30px;padding:0;background:none;border-radius:0;font-size:15px;line-height:2;text-align:center;color:var(--muted)}
+.about-page .page-prose>center{display:block;text-align:left}
+.about-page .page-prose>center:first-of-type{margin:0 0 28px;font-size:18px}
+.about-page .page-prose>blockquote:not(.blockquote-center){margin:28px 0 16px;padding:0;background:none;color:var(--ink);font-size:22px;font-weight:700}
+.about-page .page-prose>blockquote:not(.blockquote-center) p{margin:0!important;text-indent:0!important}
+.about-page .page-prose>p{white-space:pre-line;margin-block:20px}
+.about-page .page-prose>center h2{margin:0 0 22px;font-size:23px}
+.about-page .page-prose>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;padding:0;margin:0;list-style:none}
+.about-page .page-prose>ul>li{min-width:0;margin:0;padding:12px 14px;border-radius:6px;font-size:13px;color:var(--muted);transition:background-color .18s}
+.about-page .page-prose>ul>li a{display:block;width:fit-content;max-width:100%;margin-top:4px;font-size:17px;color:var(--ink);overflow-wrap:anywhere;text-decoration:none}
+.about-page .page-prose>ul>li:has(a:is(:hover,:focus-visible)){background:var(--accent-soft)}
+.about-page .page-prose>ul>li a:is(:hover,:focus-visible){color:var(--accent);text-decoration:underline;text-underline-offset:5px}
+.about-page .page-prose>ul>li a:empty{display:none}
+.about-page .page-prose>.blockquote-center+hr+p{padding:20px 24px;background:var(--surface);border-radius:6px}
+.about-page .page-prose>br{display:none}
+.about-page .page-prose table{margin-top:0;font-size:14px}
+.about-page .page-prose th:first-child{width:24%}
+.about-page .page-prose th:nth-child(2){width:46%}
+.about-page .page-prose th:last-child{width:30%}
+.about-page .page-prose td{overflow-wrap:anywhere}
+.about-page .page-prose td:last-child{white-space:nowrap;color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.about-page .page-prose>p:last-of-type{font-size:14px;color:var(--muted);line-height:2}
+.guestbook-jump{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:6px 12px;border-radius:4px;background:var(--accent-soft);color:var(--accent);font-size:14px;transition:color .18s,background-color .18s}
+.guestbook-jump:is(:hover,:focus-visible){background:var(--accent);color:var(--accent-ink)}
+.guestbook-page .page-prose{display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:24px 36px;align-items:start}
+.guestbook-page .page-prose>.blockquote-center{grid-column:1 / -1;margin-bottom:8px}
+.guestbook-page .page-prose>center{text-align:left;line-height:2.15}
+.guestbook-page .page-prose>center b{display:block;margin-top:14px;color:var(--accent);font-weight:700}
+.guestbook-page .page-prose>div{margin:0!important;font-size:12px;color:var(--muted)}
+.guestbook-page .page-prose>div>a{display:block;padding:10px;background:#fff;border-radius:8px}
+.guestbook-page .page-prose>div img{display:block;width:140px!important;max-width:100%;margin:0;border-radius:0}
+.guestbook-page .page-prose>div>div{margin-top:8px}
+.guestbook-page .page-prose>hr{display:none}
+.guestbook-page .comments-section{margin-top:36px}
+:is(.about-page,.guestbook-page) .comments-section>h2{font-size:23px;margin-bottom:18px}
+[data-effects=off] :is(.about-page .page-prose>ul>li,.guestbook-jump){transition:none}
+@media(max-width:600px){
+  .about-page .listing-heading-group{gap:18px}.about-portrait{width:64px;height:64px}
+  .about-page .page-prose>ul{grid-template-columns:1fr;gap:6px}
+  .about-page .page-prose table{font-size:12px}.about-page .page-prose td:last-child{font-size:12px}
+  .guestbook-page .page-prose{grid-template-columns:1fr;gap:20px}
+  .guestbook-page .page-prose>div{max-width:160px;justify-self:center}
+}
 [data-effects=off] :is(.compact .post-row,.taxonomy-list a,.friend-list a,.friend-avatar,.friend-arrow,.friend-copy){transition:none;transform:none!important}
 @media(prefers-reduced-motion:reduce){.friend-list a:is(:hover,:focus-visible) .friend-arrow{transform:none}}
