@@ -4,7 +4,7 @@ const posts = await getPosts();
 const categories = taxonomy(posts, 'categories');
 const tags = taxonomy(posts, 'tags');
 ---
-<aside class="author-sidebar" aria-label="关于作者">
+<aside id="author-sidebar" class="author-sidebar" aria-label="关于作者">
   <div class="author-profile">
     <a class="avatar-link" href="/about/" aria-label="认识 Ihoey"><img src="/avatar.png" width="88" height="88" alt="Ihoey 的头像" /></a>
     <h2>Ihoey</h2><p class="author-motto">心，若没有栖息的地方，<br />到哪里都是流浪……</p>

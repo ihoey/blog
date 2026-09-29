@@ -39,7 +39,12 @@ body{background:var(--bg)}
 .post-row{display:block;padding:28px 0 0;border:0}.post-summary h2{text-align:center;font-size:23px;font-weight:500;margin:5px 0 12px;line-height:1.55}.post-summary h2 a{display:inline-block;transition:transform .22s ease-out}.post-summary h2 a:hover{transform:translateY(-2px)}
 .post-meta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;color:var(--muted);font-size:11px;margin-bottom:23px}.post-category{font-size:11px;color:var(--muted)}.post-summary p{color:var(--ink);font-size:14px;line-height:2;max-width:none}
 .post-actions{justify-content:center;gap:24px;margin-top:18px}.read-link{padding:4px 12px;border:1px solid var(--line);border-radius:3px;margin-top:0;font-size:11px;transition:background .2s}.read-link:hover{background:var(--accent-soft);border-color:var(--accent)}.discussion-link{font-size:11px}
-.scissor-divider{position:relative;height:1px;border-top:1px dashed var(--line);margin:37px 0 4px}.scissor-divider .icon{position:absolute;top:-7px;left:8%;padding:0 7px;box-sizing:content-box;background:var(--reading);color:var(--muted);font-size:13px;transition:transform .9s ease-out}.post-row:hover .scissor-divider .icon{transform:translateX(200px)}
+/* A generous hover strip surrounds the rule; travel follows the available width. */
+.scissor-divider{position:relative;height:32px;margin:21px 0 4px;overflow:clip}
+.scissor-divider:before{content:'';position:absolute;left:0;right:0;top:50%;border-top:1px dashed var(--line)}
+.scissor-track{position:absolute;left:5%;width:calc(90% - 30px);height:100%;pointer-events:none;transition:transform .9s ease-in-out}
+.scissor-divider .icon{position:absolute;top:50%;left:0;transform:translateY(-50%);width:30px;background:var(--reading);color:var(--muted);font-size:13px;line-height:20px}
+@media(hover:hover) and (pointer:fine){.scissor-divider:hover .scissor-track{transform:translateX(100%)}}
 .post-row:last-child .scissor-divider{display:none}.compact .post-row{border-bottom:1px solid var(--line)}.compact .post-summary h2,.compact .post-meta{text-align:left;justify-content:flex-start}.compact .post-meta{margin-top:8px;margin-bottom:0}
 .article-shell{padding-top:18px}.article-header{max-width:780px;margin:0 auto;padding:24px 12px 38px;text-align:center}.article-meta,.article-tags{justify-content:center}.article-meta{margin-top:24px}.article-header h1{font-size:clamp(27px,3vw,35px);font-weight:550}.article-tags{margin-top:16px}
 .article-grid{grid-template-columns:minmax(0,760px) minmax(160px,1fr);gap:48px;border:0;padding-top:0}.article-main{background:var(--reading);border-radius:8px;padding:36px}.article-grid.without-toc{grid-template-columns:minmax(0,800px);justify-content:center}
@@ -52,16 +57,16 @@ body{background:var(--bg)}
 .listing-shell{margin:0 auto}.listing-header{padding-top:30px}.page-prose{margin-inline:auto}
 .click-heart{position:fixed;z-index:4;color:var(--accent);pointer-events:none;font-size:17px;animation:heart-away .85s ease-out forwards}@keyframes heart-away{to{transform:translateY(-55px) rotate(15deg);opacity:0}}
 [data-effects=off] .eevee,[data-effects=off] .eevee *,[data-effects=off] .eevee *:before,[data-effects=off] .eevee *:after{animation-play-state:paused!important}
-[data-effects=off] .avatar-link:hover img,[data-effects=off] .post-row:hover .scissor-divider .icon{transform:none}
+[data-effects=off] .avatar-link:hover img, [data-effects=off] .scissor-divider:hover .scissor-track{transform:none}
 @media(pointer:fine){[data-effects=on] body{cursor:url('/design/cursor.ico'),auto}}
 @media(min-width:701px){.home-header .site-brand{animation:brand-arrive .6s ease-out}@keyframes brand-arrive{from{transform:translateY(8px)}to{transform:translateY(0)}}}
 @media(max-width:1000px){.home-layout{gap:30px;grid-template-columns:190px minmax(0,1fr)}.home-articles{padding-inline:25px}.article-grid{gap:25px}.article-main{padding:25px}}
 @media(max-width:700px){
   .site-header{width:100%;padding:68px 18px 23px;gap:0}.home-header{min-height:305px;padding-top:102px;padding-bottom:22px}.canopy,.home-header .canopy{background-size:auto 310px}.site-name{font-size:25px}.header-tools{top:14px;right:16px}.header-tools button{font-size:11px;min-height:34px;padding:6px 8px}.main-nav{width:auto;gap:22px;font-size:12px;margin-top:21px}.main-nav a{flex-direction:column;gap:7px}.home-quote{font-size:12px;margin-top:23px}
-  #main,.site-footer{width:calc(100% - 32px)}.home-layout{display:flex;flex-direction:column;gap:22px;padding-top:5px}.author-sidebar{display:contents}.author-profile{display:none}.sidebar-topics{display:none}.companion{order:2;margin:0 auto}.home-articles{order:1;padding:22px 20px 4px;width:100%}.post-summary h2{font-size:20px}.post-summary p{font-size:14px}.post-meta{gap:7px;font-size:10px;margin-bottom:18px}.topic-links{gap:4px 15px;font-size:11px}.post-row{padding-top:26px}.section-heading h2{font-size:15px}.section-heading>a{font-size:10px}.scissor-divider{margin-top:30px}.post-row:hover .scissor-divider .icon{transform:translateX(120px)}
+  #main,.site-footer{width:calc(100% - 32px)}.home-layout{display:flex;flex-direction:column;gap:22px;padding-top:5px}.author-sidebar{display:contents}.author-profile{display:none}.sidebar-topics{display:none}.companion{order:2;margin:0 auto}.home-articles{order:1;padding:22px 20px 4px;width:100%}.post-summary h2{font-size:20px}.post-summary p{font-size:14px}.post-meta{gap:7px;font-size:10px;margin-bottom:18px}.topic-links{gap:4px 15px;font-size:11px}.post-row{padding-top:26px}.section-heading h2{font-size:15px}.section-heading>a{font-size:10px}.scissor-divider{margin-top:14px}
   .article-shell{padding-top:0}.article-header{padding:22px 6px 27px}.article-header h1{font-size:27px}.article-grid{display:flex;gap:20px}.article-main{padding:23px 18px;width:100%}.article-toc{padding:16px 12px 12px;background:var(--surface);border-radius:6px;border:0}.article-toc details{max-height:230px}.article-toc summary{margin-bottom:0}.article-toc details[open] summary{margin-bottom:12px}.article-meta{font-size:11px}.prose{font-size:15px}.prose h2{font-size:22px}.code-block pre{font-size:12px;padding-inline:15px}.back-top{right:7px;bottom:12px;font-size:9px;padding:6px}.site-footer{margin-top:35px}.footer-bottom{gap:12px;font-size:10px}.footer-top{gap:15px}.footer-top>a:last-child{font-size:11px}
 }
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.post-row:hover .scissor-divider .icon,.avatar-link:hover img{transform:none}.click-heart{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.scissor-divider:hover .scissor-track,.avatar-link:hover img{transform:none}.click-heart{display:none}}
 
 .icon-sun:before{content:'\f185'}
 .site-header:not(.home-header){padding-top:42px;padding-bottom:18px}
@@ -72,3 +77,16 @@ body{background:var(--bg)}
 [data-effects=off] .hitalk-secret *,[data-effects=off] .hitalk-secret *:before,[data-effects=off] .hitalk-secret *:after{animation-play-state:paused!important}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}
 @media(max-width:700px){.site-header:not(.home-header){padding-top:66px}}
+
+.home-toolbar{display:flex;justify-content:flex-start;padding-top:12px}
+.sidebar-toggle{background:var(--reading);border:1px solid var(--line);border-radius:4px;padding:7px 12px;font-size:12px;color:var(--muted);min-height:36px}
+.sidebar-toggle:hover{color:var(--accent);border-color:var(--accent)}
+.sidebar-toggle[hidden],.author-sidebar[hidden]{display:none!important}
+.home-layout[data-sidebar-collapsed=true]{grid-template-columns:minmax(0,1fr)}
+.home-layout[data-sidebar-collapsed=true] .home-articles{width:100%;max-width:920px;justify-self:center}
+@media(max-width:700px){
+  .home-toolbar{padding:4px 0 14px}
+  .author-sidebar:not([hidden]){display:block;width:100%;padding:20px;background:var(--reading);border-radius:8px}
+  .author-sidebar:not([hidden]) .author-profile,.author-sidebar:not([hidden]) .sidebar-topics{display:block}
+  .author-sidebar:not([hidden]) .sidebar-topics{padding-bottom:0}
+}

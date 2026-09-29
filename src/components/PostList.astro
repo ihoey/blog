@@ -11,7 +11,7 @@ const { posts, compact = false } = Astro.props;
       {!compact && <p>{post.description}</p>}
       {!compact && <div class="post-actions"><a class="read-link" href={post.path}>读这篇文章 <span aria-hidden="true">↗</span></a><a class="discussion-link" href={`${post.path}#comments`}><span class="hitalk-comment-count" data-xid={post.path}></span> 参与讨论</a></div>}
     </div>
-    {!compact && <div class="scissor-divider" aria-hidden="true"><i class="icon icon-scissors"></i></div>}
+    {!compact && <div class="scissor-divider" aria-hidden="true"><span class="scissor-track"><i class="icon icon-scissors"></i></span></div>}
   </article>)}
 </div>
 <script>
