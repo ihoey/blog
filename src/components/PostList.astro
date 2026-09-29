@@ -6,10 +6,21 @@ const { posts, compact = false } = Astro.props;
 <div class:list={['post-list', { compact }]}>
   {posts.map(post => <article class="post-row">
     <div class="post-summary">
-      <h2><a href={post.path}>{post.data.title}</a></h2>
-      <div class="post-meta"><time datetime={post.date.toISOString()}><i class="icon icon-calendar" aria-hidden="true"></i> {post.day}</time><span aria-hidden="true">·</span><a class="post-category" href={categoryPath(post.data.categories)}>{post.data.categories.join(' / ')}</a></div>
-      {!compact && <p>{post.description}</p>}
-      {!compact && <div class="post-actions"><a class="read-link" href={post.path}>阅读全文 <span aria-hidden="true">→</span></a><a class="discussion-link" href={`${post.path}#comments`}><span class="hitalk-comment-count" data-xid={post.path}></span> 参与讨论</a></div>}
+      <header class="post-list-header">
+        <h2><a href={post.path}>{post.data.title}</a></h2>
+        <div class="post-meta">
+          <span><i class="icon icon-calendar" aria-hidden="true"></i> 发布于 <time datetime={post.date.toISOString()}>{post.day}</time></span>
+          {!compact && post.updatedDay !== post.day && <span><i class="icon icon-updated" aria-hidden="true"></i> 更新于 <time datetime={post.updated.toISOString()}>{post.updatedDay}</time></span>}
+          <span><i class="icon icon-folder" aria-hidden="true"></i> {post.data.categories.map((name, i) => <>{i > 0 && <span aria-hidden="true"> / </span>}<a class="post-category" href={categoryPath(post.data.categories.slice(0, i + 1))}>{name}</a></>)}</span>
+        </div>
+        {!compact && <div class="post-reading-meta">
+          <span title="正文字符数，含代码，不含空白和 Markdown 标记"><i class="icon icon-file-text" aria-hidden="true"></i> {post.preview.wordCount.toLocaleString('zh-CN')} 字</span>
+          <span title="按正文长度和代码行数估算"><i class="icon icon-clock" aria-hidden="true"></i> 约 {post.preview.readingMinutes} 分钟</span>
+          <a class="discussion-link" href={`${post.path}#comments`}><i class="icon icon-comment" aria-hidden="true"></i> 评论<span class="hitalk-comment-count" data-xid={post.path}></span></a>
+        </div>}
+      </header>
+      {!compact && <div class="post-excerpt" set:html={post.preview.html} />}
+      {!compact && <div class="post-actions"><a class="read-link" href={post.path}>阅读全文 <span aria-hidden="true">→</span></a></div>}
     </div>
     {!compact && <div class="scissor-divider" aria-hidden="true"><span class="scissor-track"><i class="icon icon-scissors"></i></span></div>}
   </article>)}

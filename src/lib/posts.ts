@@ -1,6 +1,7 @@
 import { getCollection } from 'astro:content';
 import baseline from '../../docs/migration/legacy-baseline.json';
 import { articlePath, dateInShanghai, localDay } from './paths.mjs';
+import { getPostPreview } from './post-preview.mjs';
 
 export function summary(body: string, max = 135) {
   const intro = body.split(/<!--\s*more\s*-->|```/i)[0];
@@ -12,16 +13,19 @@ export function summary(body: string, max = 135) {
 
 export async function getPosts() {
   const entries = await getCollection('posts', p => !p.data.draft);
-  return entries.map(entry => {
+  const posts = await Promise.all(entries.map(async entry => {
     const old = baseline.posts.find(p => p.id === entry.id);
     const date = old ? new Date(old.date) : dateInShanghai(entry.data.date);
+    const path = old?.path ?? articlePath(entry.id, entry.data.categories, date);
+    const updated = old?.updated ? new Date(old.updated) : date;
     return {
       ...entry, date, day: localDay(date),
-      path: old?.path ?? articlePath(entry.id, entry.data.categories, date),
-      updated: old?.updated ? new Date(old.updated) : date,
+      path, updated, updatedDay: localDay(updated),
+      preview: await getPostPreview(entry.body || '', path, entry.data.description),
       description: entry.data.description || summary(entry.body || ''),
     };
-  }).sort((a, b) => b.date.getTime() - a.date.getTime() || a.id.localeCompare(b.id));
+  }));
+  return posts.sort((a, b) => b.date.getTime() - a.date.getTime() || a.id.localeCompare(b.id));
 }
 
 export type Post = Awaited<ReturnType<typeof getPosts>>[number];
