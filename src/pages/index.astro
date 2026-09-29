@@ -7,11 +7,12 @@ import { getPosts } from '../lib/posts';
 const posts = await getPosts();
 ---
 <Base canonical="/">
-  <div class="home-layout"><AuthorSidebar />
+  <div class="home-layout">
   <section class="home-articles" aria-label="最新文章">
     <PostList posts={posts.slice(0, 5)} />
     <Pagination page={1} totalPages={Math.ceil(posts.length / 5)} base="/" />
   </section>
+  <AuthorSidebar />
   </div>
 </Base>
 

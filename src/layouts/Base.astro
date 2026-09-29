@@ -60,12 +60,20 @@ const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/ta
     <main id="main" tabindex="-1"><slot /></main>
     <Companion title={title} />
     <footer class="site-footer">
-      <div class="footer-top"><a class="footer-name" href="/">梦魇小栈</a><span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span><a href="/atom.xml">订阅 RSS ↗</a></div>
-      <p>心，若没有栖息的地方，到哪里都是流浪……</p>
-      <p class="site-uptime">博客已萌萌哒运行 <span data-uptime>从 2015 年至今</span> <span class="uptime-face">●'◡'●)ﾉ♥</span></p>
-      <div class="site-traffic" aria-label="访问统计">
-        <span id="busuanzi_container_site_uv"><i class="icon icon-user" aria-hidden="true"></i> 你是第 <span id="busuanzi_value_site_uv">—</span> 枚看到我的</span>
-        <span id="busuanzi_container_site_pv"><i class="icon icon-eye" aria-hidden="true"></i> 访问量 <span id="busuanzi_value_site_pv">—</span> 次</span>
+      <div class="footer-main">
+        <div class="footer-identity">
+          <div class="footer-brand"><a class="footer-name" href="/">梦魇小栈</a><span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span></div>
+          <p class="footer-motto">心，若没有栖息的地方，到哪里都是流浪……</p>
+          <nav class="footer-links" aria-label="小栈链接"><a href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a><a href="https://github.com/ihoey" target="_blank" rel="noopener noreferrer"><i class="icon icon-github" aria-hidden="true"></i> GitHub</a><a href="/guestbook/">留个言 <span aria-hidden="true">↗</span></a></nav>
+        </div>
+        <div class="footer-status">
+          <p class="uptime-label">博客已萌萌哒运行 <span class="uptime-face">●'◡'●)ﾉ♥</span></p>
+          <p class="site-uptime"><span data-uptime>从 2015 年至今</span></p>
+          <div class="site-traffic" aria-label="访问统计">
+            <span id="busuanzi_container_site_uv"><i class="icon icon-user" aria-hidden="true"></i> 访客 <span id="busuanzi_value_site_uv">—</span></span>
+            <span id="busuanzi_container_site_pv"><i class="icon icon-eye" aria-hidden="true"></i> 访问 <span id="busuanzi_value_site_pv">—</span> 次</span>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom"><span>© 2015–{new Date().getFullYear()} <span class="footer-heart" aria-hidden="true">♥</span> 梦魇小栈</span><a href="https://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">京ICP备15058055号-1</a><span>由 <a href="https://github.com/ihoey" rel="noopener noreferrer" target="_blank">Ihoey</a> 用心维护</span></div>
     </footer>
