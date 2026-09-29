@@ -25,13 +25,11 @@ const uptime = document.querySelector<HTMLElement>('[data-uptime]');
 if (uptime) { const days = Math.max(0, Math.floor((Date.now() - Date.parse('2015-12-21T00:00:00+08:00')) / 86400000)); uptime.textContent = `${days.toLocaleString('zh-CN')} 天`; }
 const topButton = document.querySelector<HTMLButtonElement>('.back-top');
 const progress = document.querySelector<HTMLElement>('#reading-progress');
-const progressLabel = document.querySelector<HTMLElement>('[data-scroll-label]');
 let scheduled = false;
 function updateScroll() {
   const max = document.documentElement.scrollHeight - innerHeight;
   const fraction = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
   if (progress) progress.style.transform = `scaleX(${fraction})`;
-  if (progressLabel) progressLabel.textContent = `${Math.round(fraction * 100)}%`;
   if (topButton) topButton.hidden = scrollY < 250;
   scheduled = false;
 }

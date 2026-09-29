@@ -78,15 +78,21 @@ body{background:var(--bg)}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}
 @media(max-width:700px){.site-header:not(.home-header){padding-top:66px}}
 
-.home-toolbar{display:flex;justify-content:flex-start;padding-top:12px}
-.sidebar-toggle{background:var(--reading);border:1px solid var(--line);border-radius:4px;padding:7px 12px;font-size:12px;color:var(--muted);min-height:36px}
-.sidebar-toggle:hover{color:var(--accent);border-color:var(--accent)}
+.section-heading-title{display:flex;align-items:center;gap:10px;min-width:0}
+.icon-columns:before{content:'\f0db'}
+.sidebar-toggle{display:inline-grid;place-items:center;width:30px;height:30px;flex-shrink:0;padding:0;background:transparent;border:0;border-radius:4px;color:var(--muted);font-size:14px;transition:background .18s,color .18s}
+.sidebar-toggle:hover,.sidebar-toggle:focus-visible{background:var(--surface);color:var(--accent)}
 .sidebar-toggle[hidden],.author-sidebar[hidden]{display:none!important}
 .home-layout[data-sidebar-collapsed=true]{grid-template-columns:minmax(0,1fr)}
 .home-layout[data-sidebar-collapsed=true] .home-articles{width:100%;max-width:920px;justify-self:center}
 @media(max-width:700px){
-  .home-toolbar{padding:4px 0 14px}
   .author-sidebar:not([hidden]){display:block;width:100%;padding:20px;background:var(--reading);border-radius:8px}
   .author-sidebar:not([hidden]) .author-profile,.author-sidebar:not([hidden]) .sidebar-topics{display:block}
   .author-sidebar:not([hidden]) .sidebar-topics{padding-bottom:0}
 }
+
+/* Reading progress and navigation are separate, quiet affordances. */
+.reading-track{height:2px;opacity:.7}
+.back-top{width:34px;height:34px;display:grid;place-items:center;border:0;padding:0;background:transparent;color:var(--muted);border-radius:4px;transition:background .18s,color .18s}
+.back-top .icon{font-size:21px}
+.back-top:hover,.back-top:focus-visible{background:var(--surface);color:var(--accent)}

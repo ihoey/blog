@@ -8,10 +8,9 @@ const posts = await getPosts();
 const categories = taxonomy(posts, 'categories').slice(0, 6);
 ---
 <Base canonical="/">
-  <div class="home-toolbar"><button class="sidebar-toggle" type="button" aria-controls="author-sidebar" aria-expanded="true" hidden>收起作者侧栏</button></div>
   <div class="home-layout"><AuthorSidebar />
   <section class="home-articles" aria-labelledby="articles-heading">
-    <div class="section-heading"><h2 id="articles-heading">文章与笔记 <span>{posts.length}</span></h2><a href="/archives/">全部归档 ↗</a></div>
+    <div class="section-heading"><div class="section-heading-title"><button class="sidebar-toggle" type="button" aria-controls="author-sidebar" aria-expanded="true" aria-label="收起作者侧栏" title="收起作者侧栏" hidden><i class="icon icon-columns" aria-hidden="true"></i></button><h2 id="articles-heading">文章与笔记 <span>{posts.length}</span></h2></div><a href="/archives/">全部归档 ↗</a></div>
     <div class="topic-links"><a class="selected" href="/" aria-current="page">全部</a>{categories.map(c => <a href={c.path}>{c.name}</a>)}<a href="/categories/" aria-label="查看所有分类">更多 →</a></div>
     <PostList posts={posts.slice(0, 5)} />
     <Pagination page={1} totalPages={Math.ceil(posts.length / 5)} base="/" />
@@ -30,7 +29,9 @@ const categories = taxonomy(posts, 'categories').slice(0, 6);
       sidebar.hidden = !expanded;
       layout.dataset.sidebarCollapsed = String(!expanded);
       button.setAttribute('aria-expanded', String(expanded));
-      button.textContent = expanded ? '收起作者侧栏' : '展开作者侧栏';
+      const label = expanded ? '收起作者侧栏' : '展开作者侧栏';
+      button.setAttribute('aria-label', label);
+      button.title = label;
     };
     apply(); button.hidden = false;
     button.addEventListener('click', () => {
