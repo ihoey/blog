@@ -8,10 +8,30 @@ const weight = (count: number) => maxCount === minCount ? 0.5 :
   (Math.log(count) - Math.log(minCount)) / (Math.log(maxCount) - Math.log(minCount));
 ---
 <ul class="tag-cloud" aria-label="按文章数量显示大小的标签云">
-  {tags.map(tag => <li>
+  {tags.map((tag, index) => <li style={`--tag-delay:${tags.length > 1 ? index * 240 / (tags.length - 1) : 0}ms`}>
     <a href={tag.path} aria-label={`${tag.name}，${tag.count} 篇文章`}
       style={`--tag-size:${16 + 18 * weight(tag.count)}px;--tag-tone:${35 + 65 * weight(tag.count)}%;--tag-weight:${weight(tag.count) >= 0.5 ? 700 : 400}`}>
       <span>{tag.name}</span><sup aria-hidden="true">{tag.count}</sup>
     </a>
   </li>)}
 </ul>
+<script>
+  const cloud = document.querySelector<HTMLElement>('.tag-cloud');
+  if (cloud && 'IntersectionObserver' in window) {
+    const motion = matchMedia('(prefers-reduced-motion: reduce)');
+    const stop = () => cloud.classList.remove('is-revealing');
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      observer.disconnect();
+      if (motion.matches || document.hidden || document.documentElement.dataset.effects === 'off') return;
+      cloud.classList.add('is-revealing');
+      cloud.lastElementChild?.addEventListener('animationend', stop, { once: true });
+    }, { threshold: 0.1 });
+    observer.observe(cloud);
+    window.addEventListener('blog:effectschange', () => {
+      if (document.documentElement.dataset.effects === 'off') stop();
+    });
+    motion.addEventListener('change', event => { if (event.matches) stop(); });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); });
+  }
+</script>
