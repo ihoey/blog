@@ -10,19 +10,15 @@ const { title } = Astro.props;
 </aside>
 <script>import '../lib/companion';</script>
 <style>
-.global-companion{width:190px;margin:35px auto 0;--eevee-scale:.32;--eevee-width:120px;--eevee-height:106px;--eevee-left:-4px;--eevee-top:0px}
+.global-companion{position:fixed;left:12px;bottom:20px;z-index:2;width:140px;margin:0;pointer-events:none;--eevee-scale:.32;--eevee-width:120px;--eevee-height:106px;--eevee-left:-4px;--eevee-top:0px}
 .global-companion .companion-message{min-height:42px;margin:0;font-size:12px;line-height:1.7;padding:9px 12px;overflow-wrap:anywhere;box-shadow:0 2px 6px #0000000a}
 .global-companion .companion-message[hidden]{display:none}
 .global-companion .pet-button{margin:8px auto 0;min-width:44px;min-height:44px;border-radius:8px;transition:transform .2s ease-out}
 .global-companion .pet-button:hover,.global-companion .pet-button:focus-visible{transform:translateY(-3px)}
 .global-companion .companion-caption{display:block}
-@media(min-width:1101px){
-  .global-companion{position:fixed;left:12px;bottom:20px;z-index:2;width:140px;margin:0;pointer-events:none}
-  .global-companion .pet-button{pointer-events:auto}
-  .global-companion .companion-message{position:absolute;bottom:100%;width:100%;margin-bottom:6px;pointer-events:none}
-  :global(#main),:global(.footer-content){width:min(1080px,calc(100% - 222px));margin-left:max(190px,calc((100% - 1080px)/2));margin-right:32px}
-}
-@media(max-width:1100px){.global-companion{min-height:242px}.global-companion .companion-message[hidden]{display:grid;visibility:hidden}}
+.global-companion .pet-button{pointer-events:auto}
+.global-companion .companion-message{position:absolute;bottom:100%;width:100%;margin-bottom:6px;pointer-events:none}
+@media(max-width:700px){.global-companion{left:6px;bottom:12px;width:100px;--eevee-scale:.25;--eevee-width:94px;--eevee-height:83px}.global-companion .companion-caption{display:none}.global-companion .companion-message{width:140px}}
 :global([data-effects=off]) .pet-button:hover,:global([data-effects=off]) .pet-button:focus-visible{transform:none}
 @media(prefers-reduced-motion:reduce){.global-companion .pet-button{transition:none}.global-companion .pet-button:hover,.global-companion .pet-button:focus-visible{transform:none}}
 </style>

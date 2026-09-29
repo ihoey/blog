@@ -13,8 +13,8 @@ const toc = headings.filter(h => h.depth === 2 || h.depth === 3);
 ---
 <Base title={post.data.title} description={post.description} canonical={post.path} article date={post.date} updated={post.updated}>
   <article class="article-shell">
-    <header class="article-header"><a class="back-link" href="/archives/">← 所有文章</a><div class="article-meta"><a href={categoryPath(post.data.categories)}>{post.data.categories.join(' / ')}</a><span aria-hidden="true">·</span><time datetime={post.date.toISOString()}>{post.day}</time></div><h1>{post.data.title}</h1><div class="article-tags">{post.data.tags.map(tag => <a href={tagPath(tag)}>#{tag}</a>)}</div></header>
     <div class:list={['article-grid', { 'without-toc': toc.length === 0 }]}>
+      <header class="article-header"><a class="back-link" href="/archives/">← 所有文章</a><div class="article-meta"><a href={categoryPath(post.data.categories)}>{post.data.categories.join(' / ')}</a><span aria-hidden="true">·</span><time datetime={post.date.toISOString()}>{post.day}</time></div><h1>{post.data.title}</h1><div class="article-tags">{post.data.tags.map(tag => <a href={tagPath(tag)}>#{tag}</a>)}</div></header>
       <div class="article-main">
         <div class="prose"><Content /></div>
         <div class="article-end"><p>谢谢你读到这里。</p><a href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a></div>
