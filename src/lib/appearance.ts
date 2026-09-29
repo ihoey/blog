@@ -24,7 +24,25 @@ themeButton?.addEventListener('click', () => {
 });
 effectsButton?.addEventListener('click', () => { root.dataset.effects = root.dataset.effects === 'off' ? 'on' : 'off'; save('blog-effects', root.dataset.effects); updateControls(); window.dispatchEvent(new Event('blog:effectschange')); });
 const uptime = document.querySelector<HTMLElement>('[data-uptime]');
-if (uptime) { const days = Math.max(0, Math.floor((Date.now() - Date.parse('2015-12-21T00:00:00+08:00')) / 86400000)); uptime.textContent = `${days.toLocaleString('zh-CN')} 天`; }
+if (uptime) {
+  const updateUptime = () => {
+    const seconds = Math.max(0, Math.floor((Date.now() - Date.parse('2015-12-21T00:00:00+08:00')) / 1000));
+    const days = Math.floor(seconds / 86400).toLocaleString('zh-CN');
+    const hours = Math.floor(seconds % 86400 / 3600);
+    const minutes = Math.floor(seconds % 3600 / 60);
+    uptime.textContent = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds % 60} 秒`;
+  };
+  updateUptime();
+  setInterval(() => { if (!document.hidden) updateUptime(); }, 1000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) updateUptime(); });
+}
+// Restore the existing site's counter only on its production origin.
+if (location.hostname === 'blog.ihoey.com') {
+  const counter = document.createElement('script');
+  counter.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+  counter.async = true;
+  document.head.append(counter);
+}
 const topButton = document.querySelector<HTMLButtonElement>('.back-top');
 const progress = document.querySelector<HTMLElement>('#reading-progress');
 let scheduled = false;
