@@ -6,6 +6,7 @@ import Base from '../../layouts/Base.astro';
 import PostList from '../../components/PostList.astro';
 import ArchiveList from '../../components/ArchiveList.astro';
 import TagCloud from '../../components/TagCloud.astro';
+import FriendDirectory from '../../components/FriendDirectory.astro';
 import Pagination from '../../components/Pagination.astro';
 import Comments from '../../components/Comments.astro';
 import { getPosts, taxonomy } from '../../lib/posts';
@@ -19,7 +20,7 @@ const posts = await getPosts();
 const entry = listing.pageId ? await getEntry('pages', listing.pageId) : undefined;
 const rendered = entry ? await render(entry) : undefined;
 const Content = rendered?.Content;
-const links: {name: string; link: string; description: string}[] = listing.pageId === 'links' ? parse(await readFile(new URL('../../../source/links/_data/links.yml', import.meta.url), 'utf-8')) : [];
+const links: {name: string; link: string; description: string; avatar?: string}[] = listing.pageId === 'links' ? parse(await readFile(new URL('../../../source/links/_data/links.yml', import.meta.url), 'utf-8')) : [];
 const terms = listing.kind === 'tags' || listing.kind === 'categories' ? taxonomy(posts, listing.kind) : [];
 ---
 <Base title={listing.title} description={listing.description} canonical={listing.path} article={listing.kind === 'page'}>
@@ -28,8 +29,8 @@ const terms = listing.kind === 'tags' || listing.kind === 'categories' ? taxonom
     {listing.kind === 'articles' && <>{listing.base.startsWith('/archives/') ? <ArchiveList posts={listing.posts} /> : <PostList posts={listing.posts} />}<Pagination page={listing.page} totalPages={listing.totalPages} base={listing.base} /></>}
     {terms.length > 0 && (listing.kind === 'tags' ? <TagCloud terms={terms} /> : <div class="taxonomy-list">{terms.map(term => <a href={term.path}><span>{term.name}</span><span>{term.count} 篇 <span aria-hidden="true">↗</span></span></a>)}</div>)}
     {Content && entry?.body?.trim() && <div class="prose page-prose"><Content /></div>}
-    {links.length > 0 && <ul class="friend-list">{links.map(link => <li><a href={link.link} target="_blank" rel="noopener noreferrer"><h2>{link.name}<span aria-hidden="true">↗</span></h2><p>{link.description}</p></a></li>)}</ul>}
-    {entry?.data.addNotes && <section class="prose page-prose"><h2>友链说明</h2><ul>{entry.data.addNotes.map(note => <li>{note}</li>)}</ul>{entry.data.declare?.map(note => <p>{note}</p>)}{entry.data.quotes && <blockquote>{entry.data.quotes}</blockquote>}</section>}
+    {links.length > 0 && <FriendDirectory links={links} notes={entry?.data.addNotes} declarations={entry?.data.declare} quote={entry?.data.quotes} />}
+    {links.length === 0 && entry?.data.addNotes && <section class="prose page-prose"><h2>友链说明</h2><ul>{entry.data.addNotes.map(note => <li>{note}</li>)}</ul>{entry.data.declare?.map(note => <p>{note}</p>)}{entry.data.quotes && <blockquote>{entry.data.quotes}</blockquote>}</section>}
     {listing.kind === 'page' && <Comments path={listing.path} title={listing.title} />}
   </section>
 </Base>
