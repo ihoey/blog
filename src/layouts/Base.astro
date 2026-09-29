@@ -44,7 +44,7 @@ const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/ta
   </head>
   <body>
     <a class="skip-link" href="#main">跳到正文</a>
-    <header class:list={['site-header', { 'home-header': home }]}>
+    <header class:list={['site-header', 'scenic-header', { 'home-header': home }]}>
       <div class="canopy" aria-hidden="true"></div>
       <div class="header-tools" role="group" aria-label="阅读偏好">
         {home && <button class="sidebar-toggle" type="button" aria-controls="author-sidebar" aria-expanded="true" aria-label="收起作者与分类侧栏" title="收起作者与分类侧栏" hidden><i class="icon icon-columns" aria-hidden="true"></i></button>}
@@ -55,7 +55,7 @@ const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/ta
       <nav class="main-nav" aria-label="主导航">
         {nav.map(([href, label, icon]) => <a href={href} aria-current={(href === '/' ? path === '/' || path.startsWith('/page/') : path.startsWith(href)) ? 'page' : undefined}><i class={`icon icon-${icon}`} aria-hidden="true"></i>{label}</a>)}
       </nav>
-      {home && <p class="home-quote">心，若没有栖息的地方，到哪里都是流浪……</p>}
+      <p class="home-quote">心，若没有栖息的地方，到哪里都是流浪……</p>
     </header>
     {article && <div class="reading-track" aria-hidden="true"><span id="reading-progress"></span></div>}
     <main id="main" tabindex="-1"><slot /></main>
