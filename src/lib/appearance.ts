@@ -6,7 +6,6 @@ const effectsButton = document.querySelector<HTMLButtonElement>('.effects-toggle
 const updateControls = () => {
   const dark = root.dataset.theme === 'dark';
   themeButton?.setAttribute('aria-label', dark ? '切换到日间主题' : '切换到夜间主题');
-  themeButton?.querySelector('.icon')?.classList.toggle('icon-sun', dark);
   themeButton?.setAttribute('title', dark ? '切换到日间主题' : '切换到夜间主题');
   const effectsEnabled = root.dataset.effects !== 'off';
   effectsButton?.setAttribute('aria-pressed', String(effectsEnabled));
@@ -55,7 +54,7 @@ function updateScroll() {
 }
 addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); } }, { passive: true });
 addEventListener('resize', updateScroll); updateScroll();
-topButton?.addEventListener('click', () => scrollTo({ top: 0, behavior: motion.matches ? 'instant' : 'smooth' }));
+topButton?.addEventListener('click', () => scrollTo({ top: 0, behavior: motion.matches || root.dataset.effects === 'off' ? 'instant' : 'smooth' }));
 let hearts = 0;
 document.addEventListener('click', event => {
   if (root.dataset.effects === 'off' || motion.matches || event.detail === 0 || hearts >= 8) return;
