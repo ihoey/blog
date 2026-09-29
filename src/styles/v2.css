@@ -266,8 +266,17 @@ body{background:var(--bg)}
 .compact .post-row+.post-row{margin-top:8px}
 .compact .post-row:has(a:hover),.compact .post-row:focus-within{background:var(--accent-soft)}
 .compact .post-list-header h2 a:is(:hover,:focus-visible){background-color:transparent;transform:none}
+.archive-years{position:relative;padding-left:32px}
+.archive-years:before{content:'';position:absolute;left:8px;top:21px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--line) 0%,var(--line) calc(100% - 48px),transparent);pointer-events:none}
 .archive-year-group+.archive-year-group{margin-top:40px}
-.archive-year-heading{margin:0 12px 8px;font-size:28px;font-weight:700;line-height:1.5}
+.archive-year-heading{position:relative;margin:0 12px 8px;font-size:28px;font-weight:700;line-height:1.5}
+.archive-year-heading:before{content:'';position:absolute;left:-41px;top:15px;width:12px;height:12px;border:2px solid var(--accent);border-radius:50%;background:var(--bg);box-shadow:0 0 0 5px var(--bg);pointer-events:none}
+.archive-years .post-row{position:relative}
+.archive-years .post-row:before{content:'';position:absolute;left:-27px;top:36px;width:8px;height:8px;border-radius:50%;background:color-mix(in srgb,var(--accent) 55%,var(--bg));box-shadow:0 0 0 4px var(--bg);transition:background-color .2s,box-shadow .2s,transform .2s ease-out;pointer-events:none}
+.archive-years .post-row:has(a:hover):before,.archive-years .post-row:focus-within:before{background:var(--accent);box-shadow:0 0 0 5px var(--accent-soft);transform:scale(1.25)}
+.archive-year-heading:has(a:hover):before,.archive-year-heading:focus-within:before{background:var(--accent)}
+[data-effects=off] .archive-years .post-row:before{transition:none;transform:none!important}
+@media(prefers-reduced-motion:reduce){.archive-years .post-row:before{transition:none;transform:none!important}}
 .archive-year-heading span{margin-left:8px;font-size:14px;font-weight:400;color:var(--muted)}
 .archive-year-heading a:is(:hover,:focus-visible){color:var(--accent)}
 .archive-year-group .post-list-header h3{margin:5px 0 0;font-size:19px;font-weight:500;line-height:1.55;text-wrap:balance}
