@@ -9,7 +9,7 @@ date: 2018-05-27 14:24:29
 
 最近有人问我博客的代码块是怎么做的，如下面的代码块，然后好久没有写文章了，趁着周末有时间就水一篇吧~
 
-```JavaScript
+```javascript
 var arr = 'abcdaabc';
 
 var info = arr
@@ -23,7 +23,7 @@ console.log(info); //{ a: 3, b: 2, c: 2, d: 1 }
 
 `hexo` 会有各种生命周期和事件，平时可能不会用到，但是能很好的利用的话，可以提高不少效率。比如文章多到一定程度之后，每次创建新文章都会被淹没在文件夹里面，在博客根目录下创建一个 `scripts` 文件夹，放一个 `events.js` 文件。这样每次通过`hexo new post` 创建新文章就会自动用 `code` 打开了~
 
-```JavaScript
+```javascript
 var exec = require('child_process').exec;
 
 // new 后自动打开编辑器
@@ -35,7 +35,7 @@ hexo.on('new', function (data) {
 
 又或者是在 `hexo deploy` 之后想做一些事情的时候也可以用到
 
-```JavaScript
+```javascript
 try {
   hexo.on('deployAfter', function () { //当deploy完成后执行备份
     doSomething();
@@ -47,7 +47,7 @@ try {
 
 代码块也是利用了 `hexo` 的 `api`，是在主题目录下面的 `scripts` 文件夹，我创建了一个 `codeblock.js` 文件。监听 `after_post_render` 事件，(这个事件并不是每次都触发，`hexo` 会做缓存，在没有缓存的情况下才会执行。)通过事件回调替换文章渲染出来的内容。
 
-```JavaScript
+```javascript
 var attributes = [
   'autocomplete="off"',
   'autocorrect="off"',

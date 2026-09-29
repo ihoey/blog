@@ -36,7 +36,7 @@ yarn.lock
 
 我们这里选 `koa` 框架吧，毕竟自己还是蛮喜欢的~
 
-```JavaScript
+```javascript
 // Koa 框架
 const Koa = require('koa')
 // 实例化
@@ -48,7 +48,7 @@ console.log(`the server is start at port ${config.port}`)
 
 然后我们来添加路由
 
-```JavaScript
+```javascript
 // index.js
 const Koa = require('koa')
 const KoaRouter = require('koa-router')
@@ -76,7 +76,7 @@ console.log(`the server is start at port ${config.port}`)
 
 完整入口文件
 
-```JavaScript
+```javascript
 // index.js
 const Koa = require('koa')
 const KoaRouter = require('koa-router')
@@ -115,7 +115,7 @@ console.log(`the server is start at port ${config.port}`)
 
 由于代码太多这里就贴出核心的部分吧，完整版可以看下 `github` 的文件，请点击传送门-> [传送门](https://github.com/ihoey/node-wechat-bill/blob/master/src/controllers/wechatBill.js)
 
-```JavaScript
+```javascript
 while (Loop) {
 
     if (lastResp.last_create_time < 1514736000) {

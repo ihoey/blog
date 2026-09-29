@@ -1,0 +1,48 @@
+[
+  {
+    "source": "source/_posts/getting-started-overview-webrtc.md",
+    "sha256": "4bb025ef1eadbf41fc1b1af1bec841a05060b315925bb94f9ab7a993fdcb6368",
+    "date": "2026-09-29",
+    "reason": "用户授权修正不支持的代码语言：第 50、56 行的 s 改为 text，两个 SDP 协议示例内容不变。"
+  },
+  {
+    "source": "source/_posts/use-tools-part1-markdown.md",
+    "sha256": "a29127543eefea89dd5a56947404f2cac332686d77ad7d39dda288f1a7822427",
+    "date": "2026-09-29",
+    "reason": "用户授权修正 Shiki 不支持的大小写语言标记，代码内容不变。",
+    "changes": [
+      "69: ```Markdown → ```markdown",
+      "86: ```Markdown → ```markdown",
+      "99: ```Markdown → ```markdown",
+      "109: ```Markdown → ```markdown",
+      "139: ```Markdown → ```markdown",
+      "146: ```Markdown → ```markdown",
+      "166: ```Markdown → ```markdown",
+      "173: ```Markdown → ```markdown"
+    ]
+  },
+  {
+    "source": "source/_posts/node-wechat-bill.md",
+    "sha256": "3bbec51742b409cf8a3d4dda7f923322da95287d343fa50c0204b2b4a3823267",
+    "date": "2026-09-29",
+    "reason": "用户授权修正 Shiki 不支持的大小写语言标记，代码内容不变。",
+    "changes": [
+      "39: ```JavaScript → ```javascript",
+      "51: ```JavaScript → ```javascript",
+      "79: ```JavaScript → ```javascript",
+      "118: ```JavaScript → ```javascript"
+    ]
+  },
+  {
+    "source": "source/_posts/hexo-code-block.md",
+    "sha256": "f5dd77e3da2295f440366ad5c5512f62506676d439e75b9345c0b7397651e45d",
+    "date": "2026-09-29",
+    "reason": "用户授权修正 Shiki 不支持的大小写语言标记，代码内容不变。",
+    "changes": [
+      "12: ```JavaScript → ```javascript",
+      "26: ```JavaScript → ```javascript",
+      "38: ```JavaScript → ```javascript",
+      "50: ```JavaScript → ```javascript"
+    ]
+  }
+]

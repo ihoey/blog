@@ -47,13 +47,13 @@ const pc2 = new RTCPeerConnection([configuration]);
 
 `SDP` 协议基于文本，格式非常简单，它由多个行组成，每一行都为以下格式：
 
-```s
+```text
 type=value;
 ```
 
 > 其中，`type` 表示属性名，`value` 表示属性值，具体格式与 `type` 有关。下面是一份典型的 `SDP` 协议样例：
 
-```s
+```text
 v=0
 o=alice 2890844526 2890844526 IN IP4 host.anywhere.com
 s=

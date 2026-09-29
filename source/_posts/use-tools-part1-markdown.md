@@ -66,7 +66,7 @@ categories: Markdown
 
 ## Markdown 标题书写
 
-```Markdown
+```markdown
 # 一级标题
 ## 二级标题
 ### 三级标题
@@ -83,7 +83,7 @@ categories: Markdown
     + 二级列表建议使用 `+`
         * 三级列表建议使用 `*`
 
-```Markdown
+```markdown
 - 一级标题
     + 二级标题
         * 三级列表
@@ -96,7 +96,7 @@ categories: Markdown
   - 有序列表中嵌套无需列表
         + 有序列表中嵌套无需列表
 
-```Markdown
+```markdown
 2. 有序列表嵌套无序列表
   - 有序列表嵌套无序列表
         + 有序列表嵌套无序列表
@@ -106,7 +106,7 @@ categories: Markdown
     1. 有序列表嵌套有序列表
         1. 有序列表嵌套有序列表
 
-```Markdown
+```markdown
 3. 有序列表嵌套有序列表
     1. 有序列表嵌套有序列表
         1. 有序列表嵌套有序列表
@@ -136,14 +136,14 @@ categories: Markdown
 
 - `Markdown` 的粗体和斜体也非常简单，用两个 `*` 包含一段文本就是粗体的语法，用一个 `*` 包含一段文本就是斜体的语法
 
-```Markdown
+```markdown
 **这里是粗体**
 *这里是斜体*
 ```
 
 ## 表格
 
-```Markdown
+```markdown
 | 表头           | 表头            | 表头   |
 | :------------- | :-------------: | -----: |
 | 左对齐         | 居中对齐        | 右对齐 |
@@ -163,14 +163,14 @@ categories: Markdown
 
 ## 锚点
 
-```Markdown
+```markdown
 ## 0. 目录{#index}
 跳转到[目录](#index)
 ```
 
 ## 分隔线
 
-```Markdown
+```markdown
 * * *
 ***
 *****

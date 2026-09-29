@@ -5,6 +5,8 @@ import { normalizeCommentPath, routeFile } from '../../src/lib/paths.mjs';
 
 const root = resolve(new URL('../../', import.meta.url).pathname);
 const baseline = JSON.parse(await readFile(join(root, 'docs/migration/legacy-baseline.json'), 'utf-8'));
+// Explicit editorial revisions have their own hashes; keep the Hexo baseline intact.
+const sourceEdits = JSON.parse(await readFile(join(root, 'docs/migration/source-edits.json'), 'utf-8'));
 const errors = []; const legacyLinkWarnings = []; let headings = 0;
 const decode = value => value.replace(/&#x([\da-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16))).replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>');
 const exists = async path => { try { await access(path); return true; } catch { return false; } };
@@ -14,7 +16,8 @@ const expected = [...baseline.posts.map(p => p.path), ...baseline.listingPaths, 
 for (const path of expected) if (!await exists(join(dist, routeFile(path)))) errors.push(`Missing old route: ${path}`);
 for (const post of baseline.posts) {
   const source = await readFile(join(root, post.source));
-  if (createHash('sha256').update(source).digest('hex') !== post.sha256) errors.push(`Article source changed: ${post.source}`);
+  const expectedHash = sourceEdits.find(edit => edit.source === post.source)?.sha256 ?? post.sha256;
+  if (createHash('sha256').update(source).digest('hex') !== expectedHash) errors.push(`Article source changed: ${post.source}`);
   if (!await exists(join(dist, post.path))) continue;
   const html = await htmlFor(post.path);
   if (!html.includes(`href="${baseline.site}${post.path}"`)) errors.push(`Wrong canonical: ${post.path}`);
