@@ -1,0 +1,17 @@
+---
+interface Props { terms: { name: string; path: string; count: number }[] }
+const { terms } = Astro.props;
+const minCount = Math.min(...terms.map(term => term.count));
+const maxCount = Math.max(...terms.map(term => term.count));
+const tags = [...terms].sort((a, b) => a.name.localeCompare(b.name, 'zh-CN', { sensitivity: 'base' }));
+const weight = (count: number) => maxCount === minCount ? 0.5 :
+  (Math.log(count) - Math.log(minCount)) / (Math.log(maxCount) - Math.log(minCount));
+---
+<ul class="tag-cloud" aria-label="按文章数量显示大小的标签云">
+  {tags.map(tag => <li>
+    <a href={tag.path} aria-label={`${tag.name}，${tag.count} 篇文章`}
+      style={`--tag-size:${16 + 18 * weight(tag.count)}px;--tag-tone:${35 + 65 * weight(tag.count)}%;--tag-weight:${weight(tag.count) >= 0.5 ? 700 : 400}`}>
+      <span>{tag.name}</span><sup aria-hidden="true">{tag.count}</sup>
+    </a>
+  </li>)}
+</ul>
