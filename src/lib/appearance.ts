@@ -46,12 +46,14 @@ if (location.hostname === 'blog.ihoey.com') {
 }
 const topButton = document.querySelector<HTMLButtonElement>('.back-top');
 const progress = document.querySelector<HTMLElement>('#reading-progress');
+const topbar = document.querySelector<HTMLElement>('.site-topbar');
 let scheduled = false;
 function updateScroll() {
   const max = document.documentElement.scrollHeight - innerHeight;
   const fraction = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
   if (progress) progress.style.transform = `scaleX(${fraction})`;
   if (topButton) topButton.hidden = scrollY < 250;
+  topbar?.classList.toggle('is-scrolled', scrollY > 24);
   scheduled = false;
 }
 addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); } }, { passive: true });
