@@ -1,0 +1,107 @@
+/* Inline SVG brushwork. Cloned backgrounds follow each wrapped line, without
+   wrappers, absolute overlays, or changes to the original Markdown content. */
+:root {
+  --pen-blue: url('/design/marks/brush-blue.svg');
+  --pen-gold: url('/design/marks/brush-gold.svg');
+  --pen-wave: url('/design/marks/wave-blue.svg');
+  --pen-strike: url('/design/marks/strike.svg');
+}
+:root[data-theme=dark] {
+  --pen-blue: url('/design/marks/brush-blue-dark.svg');
+  --pen-gold: url('/design/marks/brush-gold-dark.svg');
+  --pen-wave: url('/design/marks/wave-blue-dark.svg');
+  --pen-strike: url('/design/marks/strike-dark.svg');
+}
+
+/* Keep headings, code, icons and links in their own visual language. */
+:where(.prose, .post-excerpt) :is(strong, b, mark, u, del, s):not(:where(
+  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon
+)) {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-repeat: no-repeat;
+}
+:where(.prose, .post-excerpt) :is(strong, b, mark):not(:where(
+  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon
+)) {
+  --pen-stroke: var(--pen-blue);
+  --pen-height: .48em;
+  background-image: var(--pen-stroke), var(--pen-stroke);
+  background-position: left 90%, left 90%;
+  background-size: 0 var(--pen-height), 100% var(--pen-height);
+}
+:where(.prose, .post-excerpt) :is(strong, b) { font-weight: 700; }
+:where(.prose, .post-excerpt) mark:not(:where(pre *, code *, a *)) {
+  --pen-stroke: var(--pen-gold);
+  --pen-height: 1.08em;
+  color: var(--ink);
+  background-color: transparent;
+  background-position: left 65%, left 65%;
+}
+:where(.prose, .post-excerpt) :is(em, i):not(:where(
+  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon
+)) { color: var(--rose-ink); }
+:where(.prose, .post-excerpt) u:not(:where(
+  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *
+)) {
+  text-decoration: none;
+  background-image: var(--pen-wave);
+  background-repeat: repeat-x;
+  background-size: 20px 6px;
+  background-position: left bottom;
+  padding-bottom: .22em;
+}
+:where(.prose, .post-excerpt) :is(del, s):not(:where(
+  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *
+)) {
+  text-decoration: none;
+  background-image: var(--pen-strike);
+  background-size: 100% .3em;
+  background-position: center 55%;
+}
+
+/* One ornament per phrase; preserve emphasis semantics and the link affordance. */
+:where(.prose, .post-excerpt) :is(strong, b, mark, u, del, s) :is(strong, b, mark, u, del, s, em, i) {
+  background: none;
+  color: inherit;
+  padding-bottom: 0;
+  animation: none;
+}
+:where(.prose, .post-excerpt) :is(strong, b, mark, u, del, s):has(a, code) {
+  background: none;
+  animation: none;
+}
+:where(.prose, .post-excerpt) a mark { color: inherit; background: none; }
+:where(.prose, .post-excerpt) :is(del, s) :is(del, s),
+:where(.prose, .post-excerpt) :is(strong, b, mark, u) :is(del, s),
+:where(.prose, .post-excerpt) :is(del, s):has(a, code) { text-decoration: line-through; }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  :where(.prose, .post-excerpt) :is(strong, b, mark):hover:not(:where(
+    pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *,
+    strong *, b *, mark *, u *, del *, s *
+  )):not(:has(a, code)) {
+    animation: pen-retrace 350ms cubic-bezier(.22, 1, .36, 1) both;
+  }
+  :where(.prose, .post-excerpt) u:hover:not(:where(
+    pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *,
+    strong *, b *, mark *, u *, del *, s *
+  )):not(:has(a, code)) { animation: pen-ripple 350ms ease-out; }
+}
+@keyframes pen-retrace {
+  from { background-size: 0 var(--pen-height), 100% var(--pen-height); }
+  to { background-size: 100% var(--pen-height), 100% var(--pen-height); }
+}
+@keyframes pen-ripple {
+  from { background-position-x: -20px; }
+  to { background-position-x: 0; }
+}
+@media print, (forced-colors: active) {
+  :where(.prose, .post-excerpt) :is(strong, b, mark, u, del, s, em, i):not(.icon) {
+    background-image: none;
+    color: inherit;
+    animation: none;
+  }
+  :where(.prose, .post-excerpt) :is(u, mark) { text-decoration: underline; }
+  :where(.prose, .post-excerpt) :is(del, s) { text-decoration: line-through; }
+}
