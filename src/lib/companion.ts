@@ -31,7 +31,6 @@ const tips: Tip[] = [
   { selector: '.copy-code', text: '点一下就能复制代码啦。' },
   { selector: '[data-hitalk-secret] button', text: '嘘，叫小猫出来陪你玩吧。' },
   { selector: '.theme-toggle', text: '换个光线，继续慢慢看。' },
-  { selector: '.effects-toggle', text: '想安静阅读的话，可以在这里关掉个性效果。' },
   { selector: '#comments input[name="nick"]', text: '敢问客官尊姓大名～' },
   { selector: '#comments input[name="email"], #comments input[name="mail"]', text: '邮箱可以选填；想收到回复提醒，记得勾选邮件通知。' },
   { selector: '#comments input[name="website"], #comments input[name="link"]', text: '客官的博客在哪儿呢？我要去看看。' },

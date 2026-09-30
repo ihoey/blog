@@ -42,10 +42,10 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
     {article && <link rel="stylesheet" href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css" />}
     <title>{fullTitle}</title>
     <script is:inline>
+      document.documentElement.dataset.effects = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'off' : 'on';
       try {
         const saved = localStorage.getItem('blog-theme');
         document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.dataset.effects = localStorage.getItem('blog-effects') || 'on';
       } catch {}
     </script>
   </head>
@@ -57,17 +57,17 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
         <nav class="main-nav" aria-label="主导航">
           {nav.map(([href, label, icon]) => <a href={href} aria-current={navCurrent(href)}><i class={`icon icon-${icon}`} aria-hidden="true"></i>{label}</a>)}
         </nav>
-        <div class="header-tools" role="group" aria-label="阅读偏好">
+        <div class="header-tools" role="group" aria-label="订阅与阅读偏好">
           {article && <span class="reading-track" aria-hidden="true"><span id="reading-progress"></span></span>}
+          <a class="rss-subscribe" href="/atom.xml" aria-label="订阅 RSS" title="订阅 RSS">
+            <svg class="tool-icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="rss-dot" cx="6" cy="18" r="1.5"/><path class="rss-wave rss-wave-near" d="M5 11a8 8 0 0 1 8 8"/><path class="rss-wave rss-wave-far" d="M5 5a14 14 0 0 1 14 14"/></svg>
+          </a>
           {home && <button class="sidebar-toggle" type="button" aria-controls="author-sidebar" aria-expanded="true" aria-label="收起作者与分类侧栏" title="收起作者与分类侧栏" hidden>
             <svg class="tool-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M15 4v16"/><path class="panel-indicator" d="M18 8v8"/></svg>
           </button>}
           <button class="theme-toggle" type="button" aria-label="切换昼夜主题" title="切换昼夜主题">
             <svg class="tool-icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/><path class="moon-star" d="M18 3v4m-2-2h4"/></svg>
             <svg class="tool-icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
-          </button>
-          <button class="effects-toggle" type="button" aria-pressed="true" aria-label="个性效果" title="关闭个性效果">
-            <svg class="tool-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 4 2.2 5.8L18 12l-5.8 2.2L10 20l-2.2-5.8L2 12l5.8-2.2Z"/><path class="effect-spark" d="M19 2v6m-3-3h6m-2 12v4m-2-2h4"/></svg>
           </button>
         </div>
       </div>

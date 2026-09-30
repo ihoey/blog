@@ -412,20 +412,25 @@ body{background:var(--bg)}
 
 /* Reading controls: one quiet tray, consistent SVG strokes and explicit states. */
 .header-tools{position:absolute;top:18px;right:max(24px,calc((100vw - 1140px)/2));display:flex;align-items:center;gap:3px;padding:4px;border-radius:28px;background:color-mix(in oklch,var(--reading) 94%,transparent);box-shadow:0 2px 8px #00000012}
-.header-tools button{position:relative;display:grid;place-items:center;flex-shrink:0;width:38px;height:38px;min-height:38px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--muted);transition:background .2s,color .2s}
-.header-tools button:is(:hover,:focus-visible){background:var(--accent-soft);color:var(--accent)}
-.header-tools button:active{background:var(--accent);color:var(--accent-ink)}
+.header-tools :is(button,a){position:relative;display:grid;place-items:center;flex-shrink:0;width:38px;height:38px;min-height:38px;padding:0;border:0;border-radius:50%;background:transparent;color:var(--muted);transition:background .2s,color .2s}
+.header-tools :is(button,a):is(:hover,:focus-visible){background:var(--accent-soft);color:var(--accent)}
+.header-tools :is(button,a):active{background:var(--accent);color:var(--accent-ink)}
 .header-tools .tool-icon{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s cubic-bezier(.22,1,.36,1)}
 .header-tools .theme-sun{display:none}
 [data-theme=dark] .header-tools .theme-sun{display:block}
 [data-theme=dark] .header-tools .theme-moon{display:none}
 .theme-toggle:is(:hover,:focus-visible) .tool-icon{transform:rotate(-18deg)}
-.sidebar-toggle[aria-expanded=true],.effects-toggle[aria-pressed=true]{color:var(--accent)}
+.rss-dot{fill:currentColor;stroke:none}
+.rss-wave{transform-origin:5px 19px}
+.rss-subscribe:is(:hover,:focus-visible) .tool-icon{transform:scale(1.08)}
+.rss-subscribe:is(:hover,:focus-visible) .rss-wave{animation:rss-signal .65s cubic-bezier(.22,1,.36,1) both}
+.rss-subscribe:is(:hover,:focus-visible) .rss-wave-far{animation-delay:.12s}
+@keyframes rss-signal{0%{opacity:.25;transform:scale(.78)}100%{opacity:1;transform:scale(1)}}
+[data-effects=off] .rss-wave{animation:none!important}
+@media(prefers-reduced-motion:reduce){.rss-wave{animation:none!important}}
+.sidebar-toggle[aria-expanded=true]{color:var(--accent)}
 .panel-indicator{stroke-width:2.5;opacity:0;transition:opacity .2s}
 [aria-expanded=true] .panel-indicator{opacity:1}
-.effect-spark{opacity:.3;transition:opacity .2s}
-[aria-pressed=true] .effect-spark{opacity:1}
-.effects-toggle:is(:hover,:focus-visible) .tool-icon{transform:rotate(-8deg) scale(1.1)}
 /* A small rocket stays still until invited; the label also appears on keyboard focus. */
 .back-top{position:fixed;right:22px;bottom:24px;z-index:2;display:grid;place-items:center;width:48px;height:56px;padding:5px;border:0;border-radius:24px;background:var(--accent-soft);color:var(--accent);box-shadow:0 2px 8px #00000012;transition:background .2s,color .2s}
 .back-top[hidden]{display:none}
@@ -438,9 +443,9 @@ body{background:var(--bg)}
 .back-top:is(:hover,:focus-visible) .rocket-body{transform:translateY(-3px)}
 .back-top:is(:hover,:focus-visible) .rocket-flame{opacity:1;transform:none}
 .back-top:is(:hover,:focus-visible) .back-top-label{opacity:1;transform:none}
-[data-effects=off] :is(.header-tools button,.tool-icon,.panel-indicator,.effect-spark,.back-top,.rocket-body,.rocket-flame,.back-top-label){transform:none!important;transition:none}
+[data-effects=off] :is(.header-tools :is(button,a),.tool-icon,.rss-wave,.panel-indicator,.back-top,.rocket-body,.rocket-flame,.back-top-label){transform:none!important;transition:none}
 @media(prefers-reduced-motion:reduce){
-  :is(.header-tools button,.tool-icon,.panel-indicator,.effect-spark,.back-top,.rocket-body,.rocket-flame,.back-top-label){transform:none!important;transition:none}
+  :is(.header-tools :is(button,a),.tool-icon,.rss-wave,.panel-indicator,.back-top,.rocket-body,.rocket-flame,.back-top-label){transform:none!important;transition:none}
 }
 @media(max-width:700px){
   .header-tools{top:14px;right:16px}
@@ -514,10 +519,10 @@ html{scroll-padding-top:var(--anchor-clearance)}
 /* Keep the glass controls crisp, then use a quieter full-width reading bar. */
 .site-topbar{--nav-ink:hsl(215deg 32% 14%)}
 [data-theme=dark] .site-topbar{--nav-ink:hsl(210deg 25% 96%)}
-.site-topbar .main-nav,.site-topbar .topbar-brand,.site-topbar .header-tools button{color:var(--nav-ink)}
+.site-topbar .main-nav,.site-topbar .topbar-brand,.site-topbar .header-tools :is(button,a){color:var(--nav-ink)}
 .site-topbar .main-nav .icon{color:inherit}
 .site-topbar .main-nav a[aria-current]{color:var(--nav-ink);font-weight:700}
-.site-topbar .main-nav a:is(:hover,:focus-visible),.site-topbar .header-tools button:is(:hover,:focus-visible){color:var(--nav-ink);background:color-mix(in oklch,var(--nav-ink) 8%,transparent)}
+.site-topbar .main-nav a:is(:hover,:focus-visible),.site-topbar .header-tools :is(button,a):is(:hover,:focus-visible){color:var(--nav-ink);background:color-mix(in oklch,var(--nav-ink) 8%,transparent)}
 .site-topbar .main-nav[data-glass-hover]{position:relative;isolation:isolate}
 .site-topbar .main-nav[data-glass-hover] a{z-index:1}
 .site-topbar .main-nav[data-glass-hover] a:is(:hover,:focus-visible){background:transparent}
@@ -531,7 +536,7 @@ html{scroll-padding-top:var(--anchor-clearance)}
 [data-effects=off] .site-topbar .main-nav a .icon{transform:none;transition:none}
 @media(prefers-reduced-motion:reduce){.nav-hover{transition:none}.site-topbar .main-nav a .icon{transform:none!important;transition:none}}
 @media(prefers-reduced-transparency:reduce){.nav-hover,[data-theme=dark] .nav-hover{background:var(--accent-soft);box-shadow:none}}
-.site-topbar .header-tools button:active{background:var(--accent);color:var(--accent-ink)}
+.site-topbar .header-tools :is(button,a):active{background:var(--accent);color:var(--accent-ink)}
 .site-topbar.is-docked{width:100%;height:56px;transform:translateY(0);border-radius:0;box-shadow:0 2px 8px #00000009}
 .site-topbar.is-docked::before{opacity:0}
 .site-topbar.is-docked::after{opacity:1}

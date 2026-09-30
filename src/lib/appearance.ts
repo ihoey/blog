@@ -7,14 +7,14 @@ const root = document.documentElement;
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
 const save = (key: string, value: string) => { try { localStorage.setItem(key, value); } catch {} };
 const themeButton = document.querySelector<HTMLButtonElement>('.theme-toggle');
-const effectsButton = document.querySelector<HTMLButtonElement>('.effects-toggle');
+motion.addEventListener('change', () => {
+  root.dataset.effects = motion.matches ? 'off' : 'on';
+  window.dispatchEvent(new Event('blog:effectschange'));
+});
 const updateControls = () => {
   const dark = root.dataset.theme === 'dark';
   themeButton?.setAttribute('aria-label', dark ? '切换到日间主题' : '切换到夜间主题');
   themeButton?.setAttribute('title', dark ? '切换到日间主题' : '切换到夜间主题');
-  const effectsEnabled = root.dataset.effects !== 'off';
-  effectsButton?.setAttribute('aria-pressed', String(effectsEnabled));
-  effectsButton?.setAttribute('title', effectsEnabled ? '关闭个性效果' : '开启个性效果');
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? 'hsl(210deg 15% 6%)' : 'hsl(0deg 0% 100%)');
 };
 updateControls();
@@ -26,7 +26,6 @@ themeButton?.addEventListener('click', () => {
     void transition.finished.catch(() => {}).finally(() => { themeButton.disabled = false; });
   } else apply();
 });
-effectsButton?.addEventListener('click', () => { root.dataset.effects = root.dataset.effects === 'off' ? 'on' : 'off'; save('blog-effects', root.dataset.effects); updateControls(); window.dispatchEvent(new Event('blog:effectschange')); });
 const uptime = document.querySelector<HTMLElement>('[data-uptime]');
 if (uptime) {
   const updateUptime = () => {
