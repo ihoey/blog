@@ -1,4 +1,7 @@
 import { launchRocket } from './rocket-launch';
+import { initNavHover } from './nav-hover';
+
+initNavHover();
 
 const root = document.documentElement;
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
