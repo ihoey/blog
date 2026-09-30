@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Comments from '../../components/Comments.astro';
 import ArticleHeader from '../../components/ArticleHeader.astro';
 import Reward from '../../components/Reward.astro';
+import ArticleDiscussion from '../../components/ArticleDiscussion.astro';
 import { getPosts } from '../../lib/posts';
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -19,6 +20,7 @@ const toc = headings.filter(h => h.depth === 2 || h.depth === 3);
       <ArticleHeader post={post} />
       <div class="article-main">
         <div class="prose"><Content /></div>
+        <ArticleDiscussion />
         <Reward />
         <div class="article-end"><p>谢谢你读到这里。</p><a href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a></div>
         <nav class="adjacent-posts" aria-label="相邻文章">
