@@ -419,7 +419,21 @@ body{background:var(--bg)}
 .header-tools .theme-sun{display:none}
 [data-theme=dark] .header-tools .theme-sun{display:block}
 [data-theme=dark] .header-tools .theme-moon{display:none}
-.theme-toggle:is(:hover,:focus-visible) .tool-icon{transform:rotate(-18deg)}
+.theme-toggle:is(:hover,:focus-visible) .tool-icon,.sidebar-toggle:is(:hover,:focus-visible) .tool-icon{transform:scale(1.08)}
+.sun-rays,.sun-core,.moon-body{transform-origin:12px 12px;transition:transform .65s cubic-bezier(.22,1,.36,1)}
+.theme-toggle:is(:hover,:focus-visible) .sun-rays{transform:rotate(45deg) scale(1.08)}
+.theme-toggle:is(:hover,:focus-visible) .sun-core{transform:scale(.88)}
+.theme-toggle:is(:hover,:focus-visible) .moon-body{transform:rotate(-12deg)}
+.moon-star{transform-origin:18px 5px}
+.theme-toggle:is(:hover,:focus-visible) .moon-star{animation:moon-twinkle .65s ease-out both}
+@keyframes moon-twinkle{0%{opacity:.35;transform:scale(.65) rotate(-30deg)}65%{opacity:1;transform:scale(1.22) rotate(0)}100%{opacity:1;transform:scale(1)}}
+.panel-divider,.panel-glass{transition:transform .45s cubic-bezier(.22,1,.36,1),opacity .3s}
+.panel-glass{fill:currentColor;stroke:none;opacity:0;transform:scaleX(.15);transform-origin:20px 12px}
+.sidebar-toggle[aria-expanded=true] .panel-glass{opacity:.16;transform:scaleX(1)}
+.sidebar-toggle[aria-expanded=true]:is(:hover,:focus-visible) .panel-divider{transform:translateX(2px)}
+.sidebar-toggle[aria-expanded=true]:is(:hover,:focus-visible) .panel-glass{opacity:.28;transform:scaleX(.6)}
+.sidebar-toggle[aria-expanded=false]:is(:hover,:focus-visible) .panel-divider{transform:translateX(-2px)}
+.sidebar-toggle[aria-expanded=false]:is(:hover,:focus-visible) .panel-glass{opacity:.24;transform:scaleX(1.4)}
 .rss-dot{fill:currentColor;stroke:none}
 .rss-wave{transform-origin:5px 19px}
 .rss-subscribe:is(:hover,:focus-visible) .tool-icon{transform:scale(1.08)}
@@ -428,6 +442,8 @@ body{background:var(--bg)}
 @keyframes rss-signal{0%{opacity:.25;transform:scale(.78)}100%{opacity:1;transform:scale(1)}}
 [data-effects=off] .rss-wave{animation:none!important}
 @media(prefers-reduced-motion:reduce){.rss-wave{animation:none!important}}
+[data-effects=off] :is(.sun-rays,.sun-core,.moon-body,.moon-star,.panel-divider,.panel-glass){animation:none!important;transform:none!important;transition:none}
+@media(prefers-reduced-motion:reduce){:is(.sun-rays,.sun-core,.moon-body,.moon-star,.panel-divider,.panel-glass){animation:none!important;transform:none!important;transition:none}}
 .sidebar-toggle[aria-expanded=true]{color:var(--accent)}
 .panel-indicator{stroke-width:2.5;opacity:0;transition:opacity .2s}
 [aria-expanded=true] .panel-indicator{opacity:1}
