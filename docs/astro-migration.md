@@ -521,3 +521,12 @@
 - 用户反馈出现时先显示正面再反翻转。定位到 showQR 立即 opacity:1、动画延迟 .3s 且只 forwards 填充，延迟内露出未变换图片。改为 animation-delay:0、fill-mode:both，背景与翻转同时开始；移除 MainBox 的 transition:all，等待 image.decode 后才显示，载入期间防重复点击，失败时给出重试提示。保留原 3 秒翻转回弹和旋转收起。
 - 构建 182 页、Astro check（33 文件，0 错误 / 警告 / 提示）、迁移验证（57 文章 / 182 旧路由 / 576 锚点，0 错误 / 链接警告）通过。浏览器日夜检查原版支付条，支付宝 / 微信 / QQ 三张图片自然尺寸分别 256 / 256 / 400，均加载成功；确认 0s 延迟、both 填充、transition:none、进入时直接处于 matrix3d 翻转姿态。Esc 与点击收起、回到发起链接焦点正常，无横向溢出。未执行付款，未重复手机检查。
 - 已恢复夜间并关闭临时页。下一步：用户刷新比较二维码展开的首帧连贯性。本轮仅本地提交，未推送或上线。
+
+## 对齐 Playing-reward main 源码（2026-09-30）
+
+- 用户提供 https://github.com/ihoey/Playing-reward/tree/main。直接读取该分支 5d92abc 后确认：先前移植的是 themes/next 内的旧 Hexo 副本；main 的 README 也区分了博客 hexo 分支。已按 main 的 style.css / script.js 对齐主要视觉和时序，仓库下载仅用于读取对比，未运行远程脚本。
+- 恢复 main 的圆牌相对中心 -120px / -60px 定位、纯 -15deg 倾斜，原支付条灰度默认态与 hover 彩色 / 底色；图标使用 main 的 5 个 SVG 和 QQPay.png（SVG 只清理行尾空白），移除旧版内嵌 QQ 图标。组件 GitHub 链接改为 ihoey/Playing-reward。三张收款码与 main 图片逐字节相同，无支付信息变更。
+- 展开恢复 main 的 300ms 隐藏等待、3 秒回弹与 300ms 遮罩淡入；showQR 不提前设置 opacity:1，保留 both 填充与 image.decode，浏览器实测等待时 opacity=0 / rotateX(90deg)，避免旧 Hexo 版先闪图。关闭按 main 在 600ms 清理，移除我们额外加的 300ms 淡出和可见帮助文案。
+- 保留必要嵌入适配：独立页 fixed 定位改为文章内 240px 容器的 absolute 定位、命名空间、深色局部遮罩、键盘操作 / 焦点返回、减少动态与图片失败反馈。未改变原站其他布局。
+- 构建 182 页、Astro check（33 文件，0 错误 / 警告 / 提示）、迁移验证（57 文章、182 路由、576 锚点，0 错误 / 链接警告）通过。浏览器验证圆牌位置、grayscale(1)→grayscale(0)、正确 GitHub 地址、0.3s / both / 初始透明状态、收起后遮罩隐藏 / blur 移除 / 焦点返回。恢复原夜间偏好并关闭临时页，未重复手机检查。
+- 下一步：用户刷新对照 main 版本体验。本轮仅本地提交，未推送或上线。

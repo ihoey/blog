@@ -1,4 +1,4 @@
-// Port the original showQR / hideQR interaction without loading the old site's jQuery bundle.
+// Adapt Playing-reward main (5d92abc): preserve its timing and add decode / keyboard support.
 export function initRewards() {
   document.querySelectorAll<HTMLElement>('[data-reward]').forEach(container => {
     const links = container.querySelector<HTMLElement>('.reward-links')!;
@@ -9,15 +9,13 @@ export function initRewards() {
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
     let origin: HTMLAnchorElement | null = null;
     let timer: ReturnType<typeof setTimeout> | undefined;
-    let blurTimer: ReturnType<typeof setTimeout> | undefined;
     let loading = false;
     const finish = () => {
       clearTimeout(timer);
-      clearTimeout(blurTimer);
       overlay.hidden = true;
-      overlay.classList.remove('is-open', 'is-closing');
+      overlay.classList.remove('fadeIn', 'is-closing');
       card.classList.remove('showQR', 'hideQR');
-      links.classList.remove('blur');
+      container.classList.remove('blur');
       links.inert = false;
       if (origin) {
         origin.setAttribute('aria-expanded', 'false');
@@ -29,8 +27,7 @@ export function initRewards() {
       if (motion.matches) { finish(); return; }
       card.classList.replace('showQR', 'hideQR');
       overlay.classList.add('is-closing');
-      blurTimer = setTimeout(() => links.classList.remove('blur'), 600);
-      timer = setTimeout(finish, 900);
+      timer = setTimeout(finish, 600);
     };
     container.querySelectorAll<HTMLAnchorElement>('[data-reward-code]').forEach(link => {
       link.setAttribute('aria-controls', 'QRBox');
@@ -58,8 +55,8 @@ export function initRewards() {
         card.setAttribute('aria-label', `${link.dataset.rewardCode}收款码，点击关闭`);
         link.setAttribute('aria-expanded', 'true');
         overlay.hidden = false;
-        overlay.classList.add('is-open');
-        links.classList.add('blur');
+        overlay.classList.add('fadeIn');
+        container.classList.add('blur');
         links.inert = true;
         card.classList.add('showQR');
         card.focus({ preventScroll: true });
