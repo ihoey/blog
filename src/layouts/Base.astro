@@ -12,6 +12,13 @@ const canonicalURL = new URL(canonical, Astro.site).href;
 const path = Astro.url.pathname;
 const home = path === '/';
 const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/tags/', '标签', 'tag'], ['/links/', '友链', 'link'], ['/guestbook/', '留言', 'comment'], ['/about/', '关于', 'user']];
+const navPath = `${path.replace(/\/$/, '')}/`;
+function navCurrent(href: string): 'page' | 'location' | undefined {
+  if (navPath === href) return 'page';
+  // Pagination and nested listings belong to their section, not its exact page.
+  if (href === '/' ? /^\/page\/\d+\/$/.test(navPath) : navPath.startsWith(href)) return 'location';
+  return undefined;
+}
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -48,7 +55,7 @@ const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/ta
       <div class="topbar-inner">
         <a class="topbar-brand" href="/">梦魇小栈</a>
         <nav class="main-nav" aria-label="主导航">
-          {nav.map(([href, label, icon]) => <a href={href} aria-current={(href === '/' ? path === '/' || path.startsWith('/page/') : path.startsWith(href)) ? 'page' : undefined}><i class={`icon icon-${icon}`} aria-hidden="true"></i>{label}</a>)}
+          {nav.map(([href, label, icon]) => <a href={href} aria-current={navCurrent(href)}><i class={`icon icon-${icon}`} aria-hidden="true"></i>{label}</a>)}
         </nav>
         <div class="header-tools" role="group" aria-label="阅读偏好">
           {article && <span class="reading-track" aria-hidden="true"><span id="reading-progress"></span></span>}

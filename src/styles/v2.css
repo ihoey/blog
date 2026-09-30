@@ -490,8 +490,8 @@ html{scroll-padding-top:var(--anchor-clearance)}
 .site-topbar .main-nav{width:auto;margin:0;justify-content:flex-start;gap:4px;font-size:13px;white-space:nowrap}
 .site-topbar .main-nav a{min-height:38px;padding:8px 10px;flex-direction:row;gap:7px}
 .site-topbar .main-nav a:is(:hover,:focus-visible){transform:none}
-.site-topbar .main-nav a::after,.site-topbar .main-nav a:is(:hover,:focus-visible)::after,.site-topbar .main-nav a[aria-current]::after{left:12px;width:calc(100% - 24px);bottom:1px;height:2px}
-.site-topbar .main-nav a[aria-current]{color:var(--accent)}
+.site-topbar .main-nav a::after,.site-topbar .main-nav a:is(:hover,:focus-visible)::after,.site-topbar .main-nav a[aria-current]::after{left:calc(50% - 12px);width:24px;bottom:2px;height:2px;border-radius:2px;transform:scaleX(0);transform-origin:center}
+.site-topbar .main-nav a[aria-current]::after{transform:scaleX(1)}
 .site-topbar .tool-icon{width:19px;height:19px}
 .site-topbar .header-tools{position:static;flex-shrink:0;padding:0;gap:4px;border-radius:0;background:none;box-shadow:none}
 .scenic-header{justify-content:flex-start}
@@ -506,7 +506,6 @@ html{scroll-padding-top:var(--anchor-clearance)}
   .site-topbar .main-nav{order:3;flex:0 0 100%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:2px;font-size:13px}
   .site-topbar .main-nav a{justify-content:center;padding:7px 0;min-height:38px}
   .site-topbar .main-nav .icon{display:none}
-  .site-topbar .main-nav a::after,.site-topbar .main-nav a:is(:hover,:focus-visible)::after,.site-topbar .main-nav a[aria-current]::after{left:25%;width:50%}
   .scenic-header{padding-top:155px}
   .scenic-header .home-quote{margin-top:32px}
   .article-toc details{max-height:240px}
