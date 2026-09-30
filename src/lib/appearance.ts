@@ -46,16 +46,35 @@ if (location.hostname === 'blog.ihoey.com') {
 }
 const topButton = document.querySelector<HTMLButtonElement>('.back-top');
 const progress = document.querySelector<HTMLElement>('#reading-progress');
+const topbar = document.querySelector<HTMLElement>('.site-topbar');
+const scenicHeader = document.querySelector<HTMLElement>('.scenic-header');
+let dockAt = Infinity;
+let navDocked = false;
 let scheduled = false;
 function updateScroll() {
   const max = document.documentElement.scrollHeight - innerHeight;
   const fraction = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
   if (progress) progress.style.transform = `scaleX(${fraction})`;
   if (topButton) topButton.hidden = scrollY < 250;
+  // A small return threshold prevents jitter around the end of the canopy.
+  const shouldDock = scrollY >= dockAt - (navDocked ? 24 : 0);
+  if (shouldDock !== navDocked) {
+    navDocked = shouldDock;
+    topbar?.classList.toggle('is-docked', navDocked);
+  }
   scheduled = false;
 }
 addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); } }, { passive: true });
-addEventListener('resize', updateScroll); updateScroll();
+function measureDockThreshold() {
+  if (scenicHeader) {
+    const clearance = Number.parseFloat(getComputedStyle(root).scrollPaddingTop) || 88;
+    dockAt = Math.max(0, scenicHeader.offsetTop + scenicHeader.offsetHeight - clearance);
+  }
+  updateScroll();
+}
+addEventListener('resize', measureDockThreshold);
+if (scenicHeader) new ResizeObserver(measureDockThreshold).observe(scenicHeader);
+measureDockThreshold();
 let finishLaunch: (() => void) | undefined;
 topButton?.addEventListener('click', () => {
   if (finishLaunch) return;

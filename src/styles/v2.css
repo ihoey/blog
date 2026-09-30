@@ -470,7 +470,7 @@ body{background:var(--bg)}
 /* A compact floating navigation leaves the canopy visible on both sides. */
 :root{--topbar-height:48px;--topbar-offset:16px;--anchor-clearance:calc(var(--topbar-offset) + var(--topbar-height) + 24px)}
 html{scroll-padding-top:var(--anchor-clearance)}
-.site-topbar{position:fixed;inset:var(--topbar-offset) 0 auto;z-index:4;width:min(640px,calc(100% - 32px));height:var(--topbar-height);margin-inline:auto;border-radius:24px;background:var(--reading);box-shadow:0 2px 8px #00000012}
+.site-topbar{position:fixed;inset:0 0 auto;transform:translateY(var(--topbar-offset));z-index:4;width:min(640px,calc(100% - 32px));height:var(--topbar-height);margin-inline:auto;border-radius:24px;background:var(--reading);box-shadow:0 2px 8px #00000012;transition:width .28s cubic-bezier(.22,1,.36,1),height .28s cubic-bezier(.22,1,.36,1),transform .28s cubic-bezier(.22,1,.36,1),border-radius .28s cubic-bezier(.22,1,.36,1)}
 /* The solid base remains the fallback when backdrop filtering is unavailable. */
 @supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
   .site-topbar{--glass-tint:color-mix(in oklch,var(--reading) 38%,transparent);--glass-edge:#fffffff0;--glass-rim:#ffffff66;--glass-sheen:#ffffff66;background:linear-gradient(125deg,var(--glass-sheen),transparent 36%,#ffffff0d 72%,var(--glass-rim)),var(--glass-tint);-webkit-backdrop-filter:blur(14px) saturate(1.65);backdrop-filter:blur(14px) saturate(1.65);box-shadow:inset 0 1px 0 var(--glass-edge),inset 1px 0 0 var(--glass-rim),inset 0 -1px 0 var(--glass-rim),inset -1px 0 0 var(--glass-rim),0 2px 8px #00000012}
@@ -480,7 +480,7 @@ html{scroll-padding-top:var(--anchor-clearance)}
 .reading-track{display:block;flex-shrink:0;width:48px;height:2px;margin-right:10px;background:var(--line);border-radius:2px;overflow:hidden;opacity:.7;pointer-events:none}
 .reading-track span{display:block;width:100%;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
 @media(max-width:900px){.reading-track{width:30px;margin-right:6px}}
-.topbar-inner{width:100%;height:100%;padding-inline:8px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.topbar-inner{width:100%;height:100%;margin-inline:auto;padding-inline:8px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .topbar-brand{display:none}
 .site-topbar .main-nav{width:auto;margin:0;justify-content:flex-start;gap:4px;font-size:13px;white-space:nowrap}
 .site-topbar .main-nav a{min-height:38px;padding:8px 10px;flex-direction:row;gap:7px}
@@ -506,3 +506,21 @@ html{scroll-padding-top:var(--anchor-clearance)}
   .scenic-header .home-quote{margin-top:32px}
   .article-toc details{max-height:240px}
 }
+
+/* Keep the glass controls crisp, then use a quieter full-width reading bar. */
+.site-topbar{--nav-ink:hsl(215deg 32% 14%)}
+[data-theme=dark] .site-topbar{--nav-ink:hsl(210deg 25% 96%)}
+.site-topbar .main-nav,.site-topbar .topbar-brand,.site-topbar .header-tools button{color:var(--nav-ink)}
+.site-topbar .main-nav .icon{color:inherit}
+.site-topbar .main-nav a[aria-current]{color:var(--nav-ink);font-weight:700}
+.site-topbar .main-nav a:is(:hover,:focus-visible),.site-topbar .header-tools button:is(:hover,:focus-visible){color:var(--accent);background:var(--accent-soft)}
+.site-topbar .header-tools button:active{background:var(--accent);color:var(--accent-ink)}
+.site-topbar.is-docked{width:100%;height:56px;transform:translateY(0);border-radius:0;background:var(--reading);box-shadow:0 2px 8px #00000009}
+.site-topbar.is-docked .topbar-inner{max-width:1112px;padding-inline:16px}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .site-topbar.is-docked{background:color-mix(in oklch,var(--reading) 96%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.1);backdrop-filter:blur(18px) saturate(1.1)}
+}
+@media(max-width:700px){.site-topbar.is-docked{height:var(--topbar-height)}.site-topbar.is-docked .topbar-inner{padding-inline:20px}}
+[data-effects=off] .site-topbar{transition:none}
+@media(prefers-reduced-motion:reduce){.site-topbar{transition:none}}
+@media(prefers-reduced-transparency:reduce){.site-topbar,.site-topbar.is-docked{background:var(--reading);-webkit-backdrop-filter:none;backdrop-filter:none}}
