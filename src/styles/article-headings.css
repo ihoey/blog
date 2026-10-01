@@ -1,5 +1,6 @@
 /* Body headings only: preserve page titles, original h1–h6 semantics and IDs. */
-.article-main > .prose { counter-reset: article-section; }
+:root { --heading-ink: oklch(.46 .125 305); --heading-accent: oklch(.63 .17 305); }
+:root[data-theme=dark] { --heading-ink: oklch(.80 .095 305); --heading-accent: oklch(.73 .14 305); }
 .article-main > .prose :is(h1, h2, h3, h4, h5, h6) {
   position: relative;
   max-width: 100%;
@@ -18,25 +19,21 @@
   margin-block: 64px 26px;
 }
 .article-main > .prose h2 {
-  counter-increment: article-section;
   font-size: clamp(24px, 2.2vw, 27px);
   margin-block: 52px 24px;
-  padding-inline-start: 50px;
+  padding-inline-start: 26px;
+  color: var(--heading-ink);
 }
 .article-main > .prose h2::before {
-  /* The number is visual navigation, not part of the heading's accessible name. */
-  content: counter(article-section, decimal-leading-zero) / '';
+  content: '';
   position: absolute;
   inset-inline-start: 0;
-  top: .28em;
-  min-width: 32px;
-  padding: 2px 4px;
-  border-radius: 5px 5px 5px 0;
-  background: var(--ink);
-  color: var(--bg);
-  font: 700 13px/24px var(--mono);
-  text-align: center;
-  font-variant-numeric: tabular-nums;
+  top: .3em;
+  width: 11px;
+  height: 25px;
+  border-radius: 3px 3px 0 0;
+  background: var(--heading-accent);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
   pointer-events: none;
 }
 .article-main > .prose h3 {
@@ -48,11 +45,12 @@
   content: '';
   position: absolute;
   inset-inline-start: 4px;
-  top: .43em;
-  width: 9px;
-  height: 11px;
-  border-inline-start: 2px solid var(--muted);
-  border-bottom: 2px solid var(--muted);
+  top: .35em;
+  width: 7px;
+  height: .85em;
+  border-inline-start: 2px solid var(--heading-accent);
+  border-block: 2px solid var(--heading-accent);
+  border-radius: 4px 0 0 4px;
   pointer-events: none;
 }
 .article-main > .prose h4 { font-size: 20px; margin-block: 30px 14px; }
