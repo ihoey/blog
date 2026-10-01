@@ -376,18 +376,9 @@ body{background:var(--bg)}
 .about-page .listing-heading-group{display:flex;align-items:center;gap:24px}
 .about-portrait{flex:none;width:76px;height:76px;object-fit:cover;border-radius:50%}
 :is(.about-page,.guestbook-page) .page-prose{padding-top:0}
-:is(.about-page,.guestbook-page) .page-prose>.blockquote-center{margin:0 0 30px;padding:0;background:none;border-radius:0;font-size:15px;line-height:2;text-align:center;color:var(--muted)}
 .about-page .page-prose>center{display:block;text-align:left}
 .about-page .page-prose>center:first-of-type{margin:0 0 28px;font-size:18px}
-.about-page .page-prose>blockquote:not(.blockquote-center){margin:28px 0 16px;padding:0;background:none;color:var(--ink);font-size:22px;font-weight:700}
 .about-page .page-prose>blockquote:not(.blockquote-center) p{margin:0!important;text-indent:0!important}
-/* Personal mottos read like handwritten notes, separate from article excerpts. */
-.about-page .page-prose>.blockquote-center{max-width:620px;margin:8px auto 42px;padding:18px clamp(12px,4vw,34px);font-size:clamp(16px,2vw,19px);line-height:2.1;color:var(--ink);text-wrap:balance}
-.about-page .page-prose>.blockquote-center::before{content:'';display:block;width:26px;height:26px;margin:0 auto 14px;background:var(--rose-ink);-webkit-mask:url('/design/marks/quote.svg') center/contain no-repeat;mask:url('/design/marks/quote.svg') center/contain no-repeat;pointer-events:none}
-.about-page .page-prose>.blockquote-center::after{content:'';display:block;width:88px;height:15px;margin:18px auto 0;background:var(--honey-ink);-webkit-mask:url('/design/marks/signoff.svg') center/contain no-repeat;mask:url('/design/marks/signoff.svg') center/contain no-repeat;pointer-events:none}
-.about-page .page-prose>.blockquote-center>p{margin:0}
-.about-page .page-prose>blockquote:not(.blockquote-center){width:fit-content;max-width:100%;padding-inline:4px;background:var(--pen-emphasis) left 88%/100% .6em no-repeat;border-radius:0}
-@media print,(forced-colors:active){.about-page .page-prose>.blockquote-center::before,.about-page .page-prose>.blockquote-center::after{display:none}.about-page .page-prose>blockquote:not(.blockquote-center){background:none}}
 .about-page .page-prose>p{white-space:pre-line;margin-block:20px}
 .about-page .page-prose>center h2{margin:0 0 22px;font-size:23px}
 .about-page .page-prose>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px;padding:0;margin:0;list-style:none}

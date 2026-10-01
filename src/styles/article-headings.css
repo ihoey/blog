@@ -1,4 +1,5 @@
 /* Body headings only: preserve page titles, original h1–h6 semantics and IDs. */
+.article-main > .prose { counter-reset: article-section; }
 .article-main > .prose :is(h1, h2, h3, h4, h5, h6) {
   position: relative;
   max-width: 100%;
@@ -17,39 +18,45 @@
   margin-block: 64px 26px;
 }
 .article-main > .prose h2 {
+  counter-increment: article-section;
   font-size: clamp(24px, 2.2vw, 27px);
   margin-block: 52px 24px;
-  padding-bottom: 13px;
+  padding-inline-start: 50px;
 }
-.article-main > .prose h2::after {
-  content: '';
+.article-main > .prose h2::before {
+  /* The number is visual navigation, not part of the heading's accessible name. */
+  content: counter(article-section, decimal-leading-zero) / '';
   position: absolute;
   inset-inline-start: 0;
-  bottom: 0;
-  width: min(76px, 100%);
-  height: 8px;
-  background: var(--pen-emphasis) left center / 100% 100% no-repeat;
+  top: .28em;
+  min-width: 32px;
+  padding: 2px 4px;
+  border-radius: 5px 5px 5px 0;
+  background: var(--ink);
+  color: var(--bg);
+  font: 700 13px/24px var(--mono);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
   pointer-events: none;
 }
 .article-main > .prose h3 {
   font-size: clamp(21px, 1.8vw, 23px);
   margin-block: 38px 18px;
-  padding-inline-start: 18px;
+  padding-inline-start: 24px;
 }
 .article-main > .prose h3::before {
   content: '';
   position: absolute;
-  inset-inline-start: 2px;
-  top: .63em;
-  width: 6px;
-  height: 6px;
-  border-radius: 2px;
-  transform: rotate(-18deg);
-  background: var(--rose-ink);
+  inset-inline-start: 4px;
+  top: .43em;
+  width: 9px;
+  height: 11px;
+  border-inline-start: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
   pointer-events: none;
 }
 .article-main > .prose h4 { font-size: 20px; margin-block: 30px 14px; }
-.article-main > .prose h5 { font-size: 18px; margin-block: 26px 12px; color: var(--honey-ink); }
+.article-main > .prose h5 { font-size: 18px; margin-block: 26px 12px; }
 .article-main > .prose h6 { font-size: 16px; margin-block: 24px 10px; color: var(--muted); letter-spacing: .04em; }
 .article-main > .prose :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) { margin-top: 20px; }
 .article-main > .prose > :is(h1, h2, h3, h4, h5, h6):first-child { margin-top: 0; }
@@ -62,7 +69,7 @@
 }
 @media print, (forced-colors: active) {
   .article-main > .prose :is(h1, h2, h3, h4, h5, h6) { color: inherit; break-after: avoid; }
-  .article-main > .prose h2 { padding-bottom: 0; }
+  .article-main > .prose h2 { padding-inline-start: 0; }
   .article-main > .prose h3 { padding-inline-start: 0; }
-  .article-main > .prose h2::after, .article-main > .prose h3::before { display: none; }
+  .article-main > .prose h2::before, .article-main > .prose h3::before { display: none; }
 }
