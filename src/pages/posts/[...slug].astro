@@ -22,7 +22,7 @@ const toc = headings.filter(h => h.depth === 2 || h.depth === 3);
         <div class="prose"><Content /></div>
         <ArticleDiscussion />
         <Reward />
-        <div class="article-end"><p>谢谢你读到这里。</p><a href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a></div>
+        <div class="article-end"><p>谢谢你读到这里。</p><a class="text-link" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a></div>
         <nav class="adjacent-posts" aria-label="相邻文章">
           {newer && <a class="adjacent-newer" rel="prev" href={newer.path}><span><b aria-hidden="true">←</b> 上一篇</span><strong>{newer.data.title}</strong></a>}
           {older && <a class="adjacent-older" rel="next" href={older.path}><span>下一篇 <b aria-hidden="true">→</b></span><strong>{older.data.title}</strong></a>}

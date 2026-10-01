@@ -4,7 +4,7 @@ interface Props { post: Post }
 const { post } = Astro.props;
 ---
 <header class="article-header">
-  <a class="back-link" href="/archives/"><span aria-hidden="true">←</span> 所有文章</a>
+  <a class="back-link text-link text-link-back" href="/archives/"><span aria-hidden="true">←</span> 所有文章</a>
   <h1>{post.data.title}</h1>
   <div class="article-meta">
     <span><i class="icon icon-calendar" aria-hidden="true"></i> 发布于 <time datetime={post.date.toISOString()}>{post.day}</time></span>

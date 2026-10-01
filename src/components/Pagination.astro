@@ -4,7 +4,7 @@ const { page, totalPages, base } = Astro.props;
 const href = (n: number) => n === 1 ? base : `${base}page/${n}/`;
 ---
 {totalPages > 1 && <nav class="pagination" aria-label="文章分页">
-  {page > 1 ? <a rel="prev" href={href(page - 1)}>← 上一页</a> : <span />}
+  {page > 1 ? <a class="text-link text-link-back" rel="prev" href={href(page - 1)}>← 上一页</a> : <span />}
   <span>第 {page} / {totalPages} 页</span>
-  {page < totalPages ? <a rel="next" href={href(page + 1)}>下一页 →</a> : <span />}
+  {page < totalPages ? <a class="text-link" rel="next" href={href(page + 1)}>下一页 →</a> : <span />}
 </nav>}

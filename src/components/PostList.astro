@@ -7,7 +7,7 @@ const { posts, compact = false, headingLevel: Heading = 'h2' } = Astro.props;
   {posts.map(post => <article class="post-row">
     <div class="post-summary">
       <header class="post-list-header">
-        <Heading><a href={post.path}>{post.data.title}</a></Heading>
+        <Heading><a class:list={[{ 'text-link': Heading === 'h2' }]} href={post.path}>{post.data.title}</a></Heading>
         <div class="post-meta">
           <span><i class="icon icon-calendar" aria-hidden="true"></i> 发布于 <time datetime={post.date.toISOString()}>{post.day}</time></span>
           {!compact && post.updatedDay !== post.day && <span><i class="icon icon-updated" aria-hidden="true"></i> 更新于 <time datetime={post.updated.toISOString()}>{post.updatedDay}</time></span>}
@@ -20,7 +20,7 @@ const { posts, compact = false, headingLevel: Heading = 'h2' } = Astro.props;
         </div>}
       </header>
       {!compact && <div class="post-excerpt" set:html={post.preview.html} />}
-      {!compact && <div class="post-actions"><a class="read-link" href={post.path}>阅读全文 <span aria-hidden="true">→</span></a></div>}
+      {!compact && <div class="post-actions"><a class="read-link text-link" href={post.path}>阅读全文 <span aria-hidden="true">→</span></a></div>}
     </div>
     {!compact && <div class="scissor-divider" aria-hidden="true"><span class="scissor-track"><i class="icon icon-scissors"></i></span></div>}
   </article>)}
