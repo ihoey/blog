@@ -78,7 +78,7 @@
 }
 
 /* Opt-in motto treatment, reusable in articles, pages and excerpts. */
-:is(.prose, .post-excerpt) .blockquote-center {
+blockquote.blockquote-center {
   max-width: 620px;
   margin: 8px auto 42px;
   padding: 18px clamp(12px, 4vw, 34px);
@@ -91,7 +91,7 @@
   text-align: center;
   text-wrap: balance;
 }
-:is(.prose, .post-excerpt) .blockquote-center::before {
+blockquote.blockquote-center::before {
   content: '';
   display: block;
   width: 26px;
@@ -102,7 +102,7 @@
   mask: url('/design/marks/quote.svg') center / contain no-repeat;
   pointer-events: none;
 }
-:is(.prose, .post-excerpt) .blockquote-center::after {
+blockquote.blockquote-center::after {
   content: '';
   display: block;
   width: 88px;
@@ -113,10 +113,10 @@
   mask: url('/design/marks/signoff.svg') center / contain no-repeat;
   pointer-events: none;
 }
-:is(.prose, .post-excerpt) .blockquote-center > p { margin: 0; }
+blockquote.blockquote-center > p { margin: 0; }
 @media print, (forced-colors: active) {
-  :is(.prose, .post-excerpt) .blockquote-center::before,
-  :is(.prose, .post-excerpt) .blockquote-center::after { display: none; }
+  blockquote.blockquote-center::before,
+  blockquote.blockquote-center::after { display: none; }
 }
 
 /* Keep headings, code, icons and links in their own visual language. */

@@ -12,7 +12,7 @@ const config = parse(await readFile('_config.yml', 'utf-8'));
 const site = { name: String(config.title), url: String(config.url), description: String(config.description), avatar: String(config.avatar) };
 const info = `名称：${site.name}\n地址：${site.url}\n描述：${site.description}\n图片：${site.avatar}`;
 ---
-{quote && <blockquote class="friends-quote">{quote}</blockquote>}
+{quote && <blockquote class="blockquote-center">{quote}</blockquote>}
 <div class="friends-toolbar">
   <div><h2>Blog friends</h2><span>{links.length} 个站点</span></div>
   <a href="#friend-exchange">申请友链 <span aria-hidden="true">↓</span></a>

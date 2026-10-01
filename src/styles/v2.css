@@ -320,7 +320,6 @@ body{background:var(--bg)}
 [data-effects=off] .tag-cloud li{animation:none}
 [data-effects=off] .tag-cloud :is(a,sup),[data-effects=off] .tag-cloud a:before{transition:none;transform:none!important}
 @media(prefers-reduced-motion:reduce){.tag-cloud li{animation:none!important}.tag-cloud :is(a,sup),.tag-cloud a:before{transition:none;transform:none!important}}
-.friends-quote{max-width:640px;margin:0 auto 44px;text-align:center;font-size:15px;line-height:2;color:var(--muted);text-wrap:pretty}
 .friends-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:0 0 20px;font-size:13px;color:var(--muted)}
 .friends-toolbar>div{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px}
 .friends-toolbar h2{font-size:22px;font-weight:700;color:var(--ink)}
