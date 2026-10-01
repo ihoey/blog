@@ -1,4 +1,4 @@
-// The legacy themes/next/source/message.json is the source for these contextual replies.
+// Contextual replies ported from themes/next/source/message.json in the hexo branch.
 // Delegate events so late-mounted comment controls work without polling or rebinding.
 const companion = document.querySelector<HTMLElement>('[data-global-companion]');
 const bubble = companion?.querySelector<HTMLElement>('.companion-message');

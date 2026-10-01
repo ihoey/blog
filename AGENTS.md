@@ -7,7 +7,7 @@
 - 每完成一个阶段、做出关键决定或遇到阻塞，更新迁移文档；记录实际验证结果，区分计划、已实现和已验证。结束一轮工作前留下可直接执行的下一步。
 - 在当前独立 worktree 和 `feat/astro-migration` 分支中开发。原工作目录 `/Users/ihoey/personal/project/blog` 的 `hexo` 分支用于维护旧站。
 - 保留文章正文、发布日期、分类层级、标签、原有 URL 和 Hitalk 页面标识。不要把教程代码块中的模板语法当作待转换指令。
-- 根 `package.json` 已改为纯 Astro 命令：`pnpm dev`、`pnpm build`、`pnpm preview`。保留在 `scripts/events.js` 的旧 Hexo 钩子和归档的 Hexo `start` / `deploy` 有发布副作用，不要运行。
+- 根 `package.json` 已改为纯 Astro 命令：`pnpm dev`、`pnpm build`、`pnpm preview`。旧主题、Hexo 配置和发布脚本已清理；历史代码可在 `hexo` 分支查看，归档命令不可用于本分支开发或部署。
 - 本地评论检查使用只读请求或模拟数据，不发送真实评论、邮件或点赞。发布前核对旧 Service Worker 的更新/退役方案。
 - 当前阶段是本地迁移与验证；上线切换是独立阶段，范围和状态以迁移文档及用户最新指令为准。
 - 不把凭据、令牌或完整环境配置复制到进度文档、日志或前端产物中。

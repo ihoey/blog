@@ -1,6 +1,5 @@
 ---
-import { readFile } from 'node:fs/promises';
-import { parse } from 'yaml';
+import { site } from '../data/site';
 interface Props {
   links: { name: string; link: string; description: string; avatar?: string }[];
   notes?: string[];
@@ -8,8 +7,6 @@ interface Props {
   quote?: string;
 }
 const { links, notes = [], declarations = [], quote } = Astro.props;
-const config = parse(await readFile('_config.yml', 'utf-8'));
-const site = { name: String(config.title), url: String(config.url), description: String(config.description), avatar: String(config.avatar) };
 const info = `名称：${site.name}\n地址：${site.url}\n描述：${site.description}\n图片：${site.avatar}`;
 ---
 {quote && <blockquote class="blockquote-center">{quote}</blockquote>}

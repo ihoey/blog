@@ -1,48 +1,44 @@
-> 当前分支为 **Astro 迁移分支**，旧站仍在 `hexo` 分支维护。先读 [迁移进度](docs/astro-migration.md) 和 [开发预览说明](docs/migration/development.md)。
->
-> 使用 Node 22.23.2 / pnpm 10.28.2，执行 `pnpm install --frozen-lockfile` 后运行 `pnpm dev`。构建检查：`pnpm build && pnpm verify && pnpm test && pnpm check`。这些命令不会发布网站。
+# 梦魇小栈
 
-<blockquote class="blockquote-center">愿多年以后，我可以酌一杯清酒，烂醉如泥，梦中回到我们的曾经。</blockquote>
+基于 Astro 的个人博客，沿用原站 57 篇文章、永久链接和 Hitalk 历史评论标识，保留 NexT 风格与伊布等个性元素。
 
-[![Build Status](https://travis-ci.org/ihoey/blog.svg?branch=hexo)](https://travis-ci.org/ihoey/blog)
+当前为 `feat/astro-migration` 本地迁移分支，尚未上线。旧站源码在 `hexo` 分支，正式静态产物在 `master` 分支。
 
-<center>首先梦魇小栈欢迎您的到来!</center>
+## 开发
 
-> <p style="text-indent: .5em; margin-bottom: 10px;">关于我</p>
+使用 Node 22.23.2（`.nvmrc`）和 pnpm 10.28.2：
 
-90 后,技术宅?恩或许是,现居于北京,然后喜爱折腾,好奇新事物
-欢迎各位小伙伴与我互换友链，详情请戳 上面的 <a href="/links"><b>链接</b></a> 页面 。
-关于这个站呢,就是记录下平时记不太住的还有一些自己感兴趣喜欢的一些东西
-顺便也分享给大家吧!
-就酱紫,联系方式在下面
+```sh
+pnpm install --frozen-lockfile
+pnpm dev --port 4321
+```
 
----
+打开 `http://127.0.0.1:4321/`。生产产物可用 `pnpm build`、`pnpm preview --port 4321` 预览；开发服务和产物预览不要占用同一端口。
 
-<center> <h2>联系方式</h2> </center>
+## 检查
 
-- Email：<a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com">mail@ihoey.com</a>
-- Q Q：<a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes">1058221214</a>
-- 微博：<a href="http://weibo.com/hy951121">ihoeys</a>
+```sh
+pnpm build && pnpm verify && pnpm test && pnpm check
+```
 
----
+以上命令均不发布网站。本地不挂载可写入生产数据的评论组件。
 
-[2016-10-25] 站点从 SinaAppEngine(SAE)迁移到 Coding/GitHub, 国内用户默认解析至 Coding, 海外则解析至 GitHub, 互为备份, 改善了访问速度与稳定性
+## 内容与资源
 
----
+- `source/_posts/`：文章 Markdown。
+- `source/about/`、`source/guestbook/`、`source/links/`：独立页正文与友链数据。
+- `src/`：Astro 页面、组件、样式及交互；`src/data/site.ts` 保存友链交换资料。
+- `static/`：直接发布的字体、图片、评论 SDK、二维码等资源。
+- `docs/migration/`：历史 URL / 锚点基线、内容修订记录及迁移说明。
+- `static/sw.js`：旧缓存退役脚本，发布时继续保留原地址。
 
-<center> <h2>打赏记录</h2> </center><br>
+旧 Hexo 主题、配置和发布脚本已从本分支移除，可从 Git 历史恢复。原作者介绍、联系方式及打赏记录继续保存在关于页正文中。
 
-|     打赏人      |            打赏留言            |  打赏时间  |
-| :-------------: | :----------------------------: | :--------: |
-|   159\*\*0212   |     小站不错，支持一下啦！     | 2015-11-02 |
-|   138\*\*4533   |        我来啦，占前排！        | 2015-11-02 |
-|   188\*\*5838   |          网站不错哦！          | 2015-12-14 |
-|   175\*\*1534   |          新年快乐!！           | 2016-2-11  |
-|   131\*\*7309   | 很漂亮的网站,我的零钱都给你啦! | 2016-3-15  |
-| 1121\*\*@qq.com |       谢谢帮助,祝你 888!       | 2016-6-20  |
-| lw\*\*@163.com  |     那我就给你来个 666 吧!     | 2016-6-21  |
+## 文档
 
-<br>
-
-啦啦啦，感谢你们啦，我会做的更好的呢
-2016-6-25:感谢你们的赞助了.虽然人不多,但我还是很感动的.
+- [开发、写作与预览](docs/migration/development.md)
+- [迁移进度和上线待办](docs/astro-migration.md)
+- [旧项目清理记录](docs/migration/cleanup.md)
+- [当前 Hitalk 接入](docs/hitalk.md)
+- [正文排版标记](docs/migration/reading-marks.md)
+- [产品与视觉约定](PRODUCT.md)

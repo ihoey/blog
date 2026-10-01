@@ -48,7 +48,9 @@ pnpm build && pnpm verify && pnpm test && pnpm check
 - `src/components/Eevee.astro`：作用域隔离的原伊布。
 - `static/`：随站发布的图标、Hitalk、小猫及旧 SW 退役文件。
 - `dist/`：构建产物，已忽略，不手工编辑。
-- `themes/`、`_config.yml`、旧 `scripts/*.js`：保留作迁移对照，Astro 不加载这些 Hexo 钩子。
+- `src/data/site.ts`：友链交换所用的公开站点资料。
+- 旧主题、Hexo 配置、脚手架与部署钩子已移除；需要对照时查看 `hexo` 分支或清理前提交 `76048657`，不再将旧运行代码保留在当前目录。
+- 清理范围与保留项见 [清理记录](cleanup.md)。
 
 ## 写新文章
 
