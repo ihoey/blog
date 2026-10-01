@@ -1,16 +1,80 @@
 /* Inline SVG brushwork. Cloned backgrounds follow each wrapped line, without
    wrappers, absolute overlays, or changes to the original Markdown content. */
 :root {
+  --quote-surface: oklch(.974 .015 65);
+  --quote-accent: oklch(.64 .145 48);
   --pen-emphasis: url('/design/marks/brush-emphasis.svg');
   --pen-gold: url('/design/marks/brush-gold.svg');
   --pen-wave: url('/design/marks/wave-rose.svg');
   --pen-strike: url('/design/marks/strike.svg');
 }
 :root[data-theme=dark] {
+  --quote-surface: oklch(.205 .018 55);
+  --quote-accent: oklch(.78 .12 55);
   --pen-emphasis: url('/design/marks/brush-emphasis-dark.svg');
   --pen-gold: url('/design/marks/brush-gold-dark.svg');
   --pen-wave: url('/design/marks/wave-rose-dark.svg');
   --pen-strike: url('/design/marks/strike-dark.svg');
+}
+
+/* Article quotations share an inset, warm margin note treatment. Personal
+   introductions on About / Guestbook retain their existing centered layout. */
+:is(.article-main > .prose, .post-excerpt) blockquote {
+  position: relative;
+  margin: 26px 0;
+  padding: 22px 26px 22px 60px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--quote-surface);
+  color: var(--ink);
+  font-size: inherit;
+  line-height: 2;
+  overflow-wrap: anywhere;
+}
+:is(.article-main > .prose, .post-excerpt) blockquote::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: 21px;
+  width: 22px;
+  height: 22px;
+  background: var(--quote-accent);
+  -webkit-mask: url('/design/marks/quote.svg') center / contain no-repeat;
+  mask: url('/design/marks/quote.svg') center / contain no-repeat;
+  pointer-events: none;
+}
+:is(.article-main > .prose, .post-excerpt) blockquote > p { margin-block: .7em; color: inherit; }
+:is(.article-main > .prose, .post-excerpt) blockquote > :first-child { margin-top: 0; }
+:is(.article-main > .prose, .post-excerpt) blockquote > :last-child { margin-bottom: 0; }
+:is(.article-main > .prose, .post-excerpt) blockquote blockquote {
+  margin-block: 16px;
+  padding: 10px 0 10px 28px;
+  border-radius: 0;
+  background: none;
+}
+:is(.article-main > .prose, .post-excerpt) blockquote blockquote::before {
+  top: 15px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  opacity: .7;
+}
+:is(.article-main > .prose, .post-excerpt) blockquote > :is(cite, footer) {
+  display: block;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: .875em;
+  font-style: normal;
+}
+@media (max-width: 600px) {
+  :is(.article-main > .prose, .post-excerpt) blockquote { padding: 18px 18px 18px 44px; }
+  :is(.article-main > .prose, .post-excerpt) blockquote::before { top: 23px; left: 14px; width: 18px; height: 18px; }
+  :is(.article-main > .prose, .post-excerpt) blockquote blockquote { padding: 8px 0 8px 22px; }
+  :is(.article-main > .prose, .post-excerpt) blockquote blockquote::before { top: 14px; left: 0; width: 12px; height: 12px; }
+}
+@media print, (forced-colors: active) {
+  :is(.article-main > .prose, .post-excerpt) blockquote { background: none; border-inline-start: 2px solid currentColor; padding-inline: 18px; }
+  :is(.article-main > .prose, .post-excerpt) blockquote::before { display: none; }
 }
 
 /* Keep headings, code, icons and links in their own visual language. */
