@@ -1,15 +1,15 @@
 /* Inline SVG brushwork. Cloned backgrounds follow each wrapped line, without
    wrappers, absolute overlays, or changes to the original Markdown content. */
 :root {
-  --pen-blue: url('/design/marks/brush-blue.svg');
+  --pen-emphasis: url('/design/marks/brush-emphasis.svg');
   --pen-gold: url('/design/marks/brush-gold.svg');
-  --pen-wave: url('/design/marks/wave-blue.svg');
+  --pen-wave: url('/design/marks/wave-rose.svg');
   --pen-strike: url('/design/marks/strike.svg');
 }
 :root[data-theme=dark] {
-  --pen-blue: url('/design/marks/brush-blue-dark.svg');
+  --pen-emphasis: url('/design/marks/brush-emphasis-dark.svg');
   --pen-gold: url('/design/marks/brush-gold-dark.svg');
-  --pen-wave: url('/design/marks/wave-blue-dark.svg');
+  --pen-wave: url('/design/marks/wave-rose-dark.svg');
   --pen-strike: url('/design/marks/strike-dark.svg');
 }
 
@@ -24,8 +24,8 @@
 :where(.prose, .post-excerpt) :is(strong, b, mark):not(:where(
   pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon
 )) {
-  --pen-stroke: var(--pen-blue);
-  --pen-height: .48em;
+  --pen-stroke: var(--pen-emphasis);
+  --pen-height: .58em;
   background-image: var(--pen-stroke), var(--pen-stroke);
   background-position: left 90%, left 90%;
   background-size: 0 var(--pen-height), 100% var(--pen-height);
