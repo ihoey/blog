@@ -202,10 +202,10 @@ body{background:var(--bg)}
 .sidebar-topics>a:is(:hover,:focus-visible) span:last-child{color:inherit}
 .post-list-header h2 a{padding:3px 8px;margin-inline:-8px;border-radius:3px;background-size:0 2px;transition:color .2s,background-color .2s,background-size .25s,transform .25s cubic-bezier(.22,1,.36,1)}
 .post-list-header h2 a:is(:hover,:focus-visible){color:var(--accent);background-color:var(--accent-soft);background-size:100% 2px;transform:translateY(-2px)}
-.post-actions .read-link{padding:8px 16px;border-radius:4px 4px 0 0;font-size:13px;transition:color .2s,background .2s,border-color .2s,transform .25s cubic-bezier(.22,1,.36,1)}
-.post-actions .read-link:is(:hover,:focus-visible){background:var(--accent);color:var(--accent-ink);border-color:var(--accent);transform:translateY(-2px)}
-.post-actions .read-link span{transition:transform .25s cubic-bezier(.22,1,.36,1)}
-.post-actions .read-link:is(:hover,:focus-visible) span{transform:translateX(5px)}
+.post-actions .read-link{padding:6px 2px;border-radius:0;font-size:13px;background:transparent;border-bottom-color:color-mix(in oklch,var(--ink) 35%,transparent);transition:color .18s,border-color .2s}
+.post-actions .read-link:is(:hover,:focus-visible){background:transparent;color:var(--accent);border-color:var(--accent)}
+.post-actions .read-link span{transition:transform .2s cubic-bezier(.22,1,.36,1)}
+.post-actions .read-link:is(:hover,:focus-visible) span{transform:translateX(3px)}
 .site-traffic{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;margin-top:12px;color:var(--muted);font-size:12px}
 .site-traffic .icon{margin-right:4px}.icon-eye:before{content:'\f06e'}
 .footer-heart{display:inline-block;width:18px;height:18px;vertical-align:-4px;margin-inline:5px;transform:rotate(-8deg);transition:transform .35s cubic-bezier(.22,1,.36,1)}

@@ -608,3 +608,9 @@
 - 按用户要求，FriendDirectory 的 friends-quote 改为 blockquote-center，删除旧 friends-quote CSS。公共签笺选择器改为 blockquote.blockquote-center，使友链等位于 .prose 外的引用也可直接使用，无需额外正文容器。
 - 构建 182 页、git diff --check 通过。产物确认友链页使用新类且无旧类；4322 浏览器确认居中、公共引号 / 收笔 SVG 生效，无横向溢出。临时页已关闭。本轮未重复手机 / 类型检查。
 - 下一步：用户刷新友链页查看统一签笺。本轮仅本地提交，未推送或上线。
+
+## 阅读全文 hover 减轻（2026-10-01）
+
+- 用户反馈阅读全文 hover 过重。去掉深蓝整块填充、反白与上浮；改为透明背景，文字 / 细下划线变蓝，箭头位移从 5px 收至 3px。内边距由 8px 16px 改为 6px 2px，默认下划线减淡，仍保留键盘 focus-visible 与减少动态规则。
+- 构建 182 页、git diff --check 通过。4322 首页检查同一 hover / 焦点规则，浏览器确认透明背景、链接 transform:none、箭头 translateX(3px)、焦点可见。临时页已关闭，本轮未重复手机 / 类型检查。
+- 下一步：用户刷新悬停阅读全文体验。本轮仅本地提交，未推送或上线。
