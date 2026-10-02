@@ -2,7 +2,7 @@
 
 工作目录：`/Users/ihoey/personal/project/blog-astro`
 
-分支：`feat/astro-migration`
+分支：`main`（原 `feat/astro-migration`）。`master` 保存部署产物，`hexo` 保留旧版源码，详见 [分支约定](../branches.md)。
 
 ## 常用命令
 
@@ -87,7 +87,7 @@ draft: true
 
 ## 发布状态
 
-Astro 已于 2026-10-02 发布，当前正式站由 `master` 的 `8fed6f94` 静态产物提供（含 WebP 优化），源码来自 `feat/astro-migration` 的 `18d1d41c`。后续仍使用独立发布工作区同步 dist，详见 [发布记录与回退](../release/astro-rollout.md)。
+Astro 已于 2026-10-02 发布。当前源码维护使用 `main`，生产部署继续监听 `master` 的静态产物；最新发布 SHA、验证结果和回退点以 [发布记录与回退](../release/astro-rollout.md) 为准。日常发布由 `.github/workflows/deploy.yml` 自动构建并更新静态产物；不要将 Astro 源码直接合并到静态产物分支。
 
 发布前先确认用户预览结果、Vercel 的实际项目与分支配置、旧 Worker 升级结果和可回退的正式版本。若沿用静态分支发布，应使用独立部署工作区同步 `dist/`，普通提交和推送；不使用历史 SCP 钩子，不强制推送。不在本地预览阶段直接执行发布。
 

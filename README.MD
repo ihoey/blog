@@ -2,7 +2,15 @@
 
 基于 Astro 的个人博客，沿用原站 57 篇文章、永久链接和 Hitalk 历史评论标识，保留 NexT 风格与伊布等个性元素。
 
-当前为 `feat/astro-migration` 本地迁移分支，尚未上线。旧站源码在 `hexo` 分支，正式静态产物在 `master` 分支。
+正式站为 https://blog.ihoey.com/，已使用 Astro。
+
+| 分支 | 用途 |
+| --- | --- |
+| `main` | 当前 Astro 源码，日常开发与内容维护 |
+| `master` | 构建后的静态产物，Vercel 正式部署来源 |
+| `hexo` | 旧 Hexo / NexT 源码归档 |
+
+开发从 `main` 开始。推送代码到 `main` 后，GitHub Actions 自动安装锁定依赖、检查、测试、构建并验证，再将静态产物普通快进提交到 `master`，由 Vercel 发布。仅修改 docs、README、AGENTS 或 PRODUCT 不触发部署；检查失败不会更新 `master`。分支清理状态见 [分支约定](docs/branches.md)，发布与回退见 [部署记录](docs/release/astro-rollout.md)。
 
 ## 开发
 
@@ -37,7 +45,8 @@ pnpm build && pnpm verify && pnpm test && pnpm check
 ## 文档
 
 - [开发、写作与预览](docs/migration/development.md)
-- [迁移进度和上线待办](docs/astro-migration.md)
+- [迁移与维护进度](docs/astro-migration.md)
+- [分支约定与清理记录](docs/branches.md)
 - [旧项目清理记录](docs/migration/cleanup.md)
 - [当前 Hitalk 接入](docs/hitalk.md)
 - [正文排版标记](docs/migration/reading-marks.md)

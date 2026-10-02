@@ -1,6 +1,6 @@
 # 梦魇小栈：Hexo → Astro 迁移记录
 
-更新日期：2026-10-02（Asia/Shanghai）
+更新日期：2026-10-03（Asia/Shanghai）
 
 本文件是迁移的持续进度记录。恢复工作先读本文件，再检查 Git 状态；不要仅凭对话回忆推定任务已经完成。
 
@@ -15,12 +15,20 @@
 | 原工作目录 | `/Users/ihoey/personal/project/blog` |
 | 原源码分支 | `hexo` |
 | 迁移工作目录 | `/Users/ihoey/personal/project/blog-astro` |
-| 迁移分支 | `feat/astro-migration` |
+| 当前源码分支 | `main`（原 `feat/astro-migration`） |
 | 起点提交 | `57828763`，docs: record animation rollout and production verification |
 | 分支创建方式 | 从本地干净的 `hexo` 分支创建 Git worktree |
 | 发布分支 | `master`，存放静态产物；不能用作源码迁移起点 |
 
 用户已同意 Astro 方向、独立分支和独立工作目录，并要求用文档记录进度。本地迁移、预览、验证及上线切换均已完成。
+
+## 2026-10-03 自动构建发布与分支整理（待首次远端验证）
+
+- 用户要求 main 保存 Astro 源码、master 用于部署，并更正旧版名称继续保留 hexo。main 已从优化源码 d412f606 创建；临时 next 与 hexo 完全相同，列入清理。
+- 用户进一步要求改用 GitHub Actions 自动构建。新增 main 推送触发的检查 / 构建 / 验证 / 静态产物快进发布流程，替代本地逐文件上传；原上传尚未切换 master。缓存依赖和生成字体，只给工作流 contents 写权限。
+- 首次工作流完成发布后清理 feat/astro-migration、next、两个已合并的 2018 年 PR 分支；仅删除头 SHA 与审阅记录相同的分支。旧 PR 文件已归档，hexo 保留。
+- 默认分支目前仍是 master，切换到 main 需要仓库管理入口。Actions 成功与 Vercel 正式上线分开记录；当前尚未确认远端首次运行或正式发布成功。
+- 下一步：提交工作流，检查第一轮 Actions 和 Vercel，核对正式域名，更新发布记录与分支状态。
 
 ## 2026-10-02 文楷加载与缓存优化（源码修改，未发布）
 
