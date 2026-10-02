@@ -28,6 +28,6 @@
 pnpm build && pnpm verify && pnpm test && pnpm check
 ```
 
-`pnpm verify` 对发布目录里的 SDK 和小猫资源执行摘要校验，并核对文章评论路径。上线阶段还需检查生产读取结果；当前 Astro 分支尚未发布。
+`pnpm verify` 对发布目录里的 SDK 和小猫资源执行摘要校验，并核对文章评论路径。2026-10-02 已上线并核对正式读取：留言板 114 条、PWA 文章 34 条历史评论正常显示，未写入测试评论。
 
 旧 Hexo 上线版本、验收结果与小动画说明见 [历史接入记录](migration/hitalk-hexo-history.md)。其中的主题路径和 Hexo 命令只描述当时的实现，不适用于当前分支。

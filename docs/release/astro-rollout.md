@@ -1,8 +1,28 @@
 # Astro 上线准备与回退
 
-日期：2026-10-02。状态：**功能核对完成，发布方案已准备；静态发布提交和线上切换尚未执行**。
+日期：2026-10-02。状态：**已上线，Vercel Production success；正式域名验收通过**。
 
-## 已确认的发布来源
+## 2026-10-02 实际发布记录
+
+- 用户明确授权执行上线；北京时间 17:10:04 Vercel 报告 Production success。
+- 构建源码：`25c62b4ea4ea5a7a1304e1bcdcaa8b5d1874d704`，已推送 `feat/astro-migration`；后续文档提交不改变此次线上产物。
+- 发布提交：`8bbde7c4b9d7b4c38760147f71af24c0dcd9db7a`，从旧 master 普通快进推送，无强推。
+- 发布工作区：`/Users/ihoey/personal/project/blog-release-20261002`，本地分支 `release/astro-2026-10-02`。434 个文件与 dist 逐字节一致。
+- Production deployment：`6805117372`，地址 `https://blog-2zk62g19w-ihoeys-projects.vercel.app`。正式域名保持 `https://blog.ihoey.com/`。
+- 回退基线仍为 `88b1c01b7eb6e2b4fb0b85a9e0ccd963bab6653a`，对应旧部署 `6521818058`；旧 hexo 工作区未修改。
+
+### 正式验收结果
+
+- 发布前 build 183 页；verify 182 个历史地址 / 576 个锚点；22 项测试通过；check 44 文件零诊断。
+- 正式域名检查 225 个页面 / 资源 URL，包括历史地址、目录形式入口、RSS / sitemap / robots / manifest、全部 JS / CSS / SVG，均 200 且响应字节与本地 dist 一致。两个临时 TLS 连接错误重试后通过；未知地址为真实 404。
+- `/sw.js` 与退役脚本一致，Content-Type 为 `application/javascript; charset=utf-8`，Cache-Control 为 `no-cache, no-store, must-revalidate`。
+- 上线前打开的旧正式站标签页在刷新后短暂显示旧 HTML，随后自动切为 Astro；本轮浏览器接口无法读取 SW 注册数，注册 / 缓存清除细节仍以此前独立 origin 专项结果为依据。
+- 留言板 `/guestbook/index.html` 正确选中导航，使用 `/guestbook/` 身份并显示 114 条历史留言；PWA 多级旧文章显示 34 条历史评论。
+- 浏览器验证图片放大 / 关闭、打赏二维码展开与图片加载、代码复制（剪贴板与原代码逐字一致）、页脚小猫展开；文章页未捕获 JavaScript error。
+- 随机一言显示成功；百度 / 不蒜子脚本已插入正式页。统计后台计数未验收，不将脚本接入等同于后台入账。
+- 未提交测试评论、点赞、邮件或支付。详细 HTTP 检查记录保存在本地忽略目录 `work/production-verification.json`。
+
+## 已确认的发布来源（上线前基线）
 
 - GitHub `ihoey/blog`：`hexo` 保存旧源码，`master` 保存静态产物。迁移源码在 `feat/astro-migration`，产物为 `dist/`。
 - 正式域名 `https://blog.ihoey.com/` 当前 Server=Vercel；首页原始字节与 master 完全一致。
@@ -19,7 +39,7 @@
 4. 从最新 master 创建临时发布 worktree / 分支，把 **dist 内容**同步到发布 worktree 根目录。保留 `.git`，清除不再使用的旧主题产物；包含 `sw.js`、`vercel.json`、站长验证文件、所有图标、字体、SDK 与二维码。不运行旧 Hexo deploy、SCP 或自动推送脚本。
 5. 复核发布 diff、关键文件数量和摘要，产出可审阅的发布提交及回退基线。源码和产物分支分别记录，不强推历史。
 6. 若需要 Vercel Preview，先在发布窗口明确预览分支安排；本地评论依然禁止生产写入。未创建 Preview 部署不能写成已验证。
-7. 最后执行 master 的普通快进推送，等待 Production deployment success。本轮尚未执行此步骤。
+7. 最后执行 master 的普通快进推送，等待 Production deployment success。2026-10-02 已完成。
 
 ## 切换后的验证
 
