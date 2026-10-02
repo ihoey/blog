@@ -34,7 +34,7 @@ pnpm preview --port 4321
 pnpm build && pnpm verify && pnpm test && pnpm check
 ```
 
-所有这些命令都不会发布网站。`pnpm start` 现在等价于本地开发；根 package.json 不再提供旧 `deploy` 命令。原 Hexo package.json 已归档至 `docs/migration/hexo-package.json`。
+所有这些命令都不会发布网站。`pnpm start` 现在等价于本地开发；根 package.json 不再提供旧 `deploy` 命令。原 Hexo package.json 已归档至 `docs/archive/hexo-package.json`。
 
 `pnpm build` 先执行 `astro sync --force` 清理内容渲染缓存，再构建，并运行 `scripts/optimize-fonts.mjs`，按生成后的页面文字制作常规 / 粗体文楷子集。首次字体压缩需要数分钟；后续使用 `.astro/reading-font-cache/` 缓存，字体源或处理脚本变化时自动失效。不要直接以 `astro build` 代替发布构建，否则会跳过字体优化。开发模式仍使用完整字体。
 
@@ -89,7 +89,7 @@ draft: true
 
 Astro 已于 2026-10-02 发布。当前源码维护使用 `main`，生产部署继续监听 `master` 的静态产物；最新发布 SHA、验证结果和回退点以 [发布记录与回退](../release/astro-rollout.md) 为准。日常发布由 `.github/workflows/deploy.yml` 自动构建并更新静态产物；不要将 Astro 源码直接合并到静态产物分支。
 
-发布前先确认用户预览结果、Vercel 的实际项目与分支配置、旧 Worker 升级结果和可回退的正式版本。若沿用静态分支发布，应使用独立部署工作区同步 `dist/`，普通提交和推送；不使用历史 SCP 钩子，不强制推送。不在本地预览阶段直接执行发布。
+发布代码到 `main` 后，在 Actions 页面确认检查、构建、字体与旧链接校验通过；工作流自动同步产物并普通快进更新 `master`。产物没有变化时不产生发布提交。随后确认对应 master 提交的 Vercel 检查和正式域名；不再需要本地创建发布 worktree 或手动上传 dist。详细流程与回退见发布记录。
 
 ## 参考
 

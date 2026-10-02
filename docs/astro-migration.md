@@ -22,6 +22,14 @@
 
 用户已同意 Astro 方向、独立分支和独立工作目录，并要求用文档记录进度。本地迁移、预览、验证及上线切换均已完成。
 
+## 2026-10-03 main 旧方案整理
+
+- 用户要求检查 main 中仍需清理的旧方案。旧主题 / Hexo 配置 / Travis / SCP 钩子已经在迁移时移除，本轮没有发现仍在参与运行的旧构建依赖。
+- 移除首轮已成功完成的 Actions 分支删除步骤；归档只用于迁移的一次性 Hexo 导出工具、依赖快照及历史 Hitalk 主题记录；清理不存在的旧路径配置。
+- 当前开发 / 发布文档统一以 Actions 自动发布为准，移除仍在指导本地 worktree 手动发布的段落；历史验收和发布事实保留。
+- 旧链接与标题锚点校验、原文保护、SW 退役文件、动态字体 fallback、评论 SDK 与授权文件仍在使用，继续保留。详见 docs/migration/cleanup.md 与 docs/archive/README.md。
+- 本地验证：32 项测试通过、Astro check 46 文件零诊断；工作流语法和归档工具入口通过。待远端 Actions 构建确认；后续在 main 维护，不运行归档里的旧方案。
+
 ## 2026-10-03 自动构建发布与分支整理（已上线）
 
 - 用户要求 main 保存 Astro 源码、master 用于部署，旧版继续叫 hexo。main 完整继承优化源码 d412f606 的历史。首次 Actions 成功后已删除 feat/astro-migration、next、两个已合并的 2018 年 PR 分支；远端仅保留 main、master、hexo，旧 PR 文件快照保存在 docs/archive/。

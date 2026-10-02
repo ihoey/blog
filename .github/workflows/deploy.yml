@@ -88,22 +88,3 @@ jobs:
           git -C release push origin HEAD:master
           published=$(git -C release rev-parse HEAD)
           echo "Published source $SOURCE_SHA as master $published. Vercel deployment is verified separately." >> "$GITHUB_STEP_SUMMARY"
-
-      # One-time cleanup for this branch migration; future pushes do not run it.
-      - name: Remove verified duplicate and merged branches
-        if: github.event_name == 'push' && github.event.before == 'd412f606b45dc2c4b2fbf5ba7f56ba83a19e9dd6'
-        run: |
-          while read -r branch expected; do
-            current=$(git -C release ls-remote --heads origin "refs/heads/$branch" | cut -f1)
-            if [ -z "$current" ]; then continue; fi
-            if [ "$current" != "$expected" ]; then
-              echo "::notice::Keeping $branch because its head changed after review."
-              continue
-            fi
-            git -C release push origin --delete "$branch"
-          done <<'BRANCHES'
-          feat/astro-migration d412f606b45dc2c4b2fbf5ba7f56ba83a19e9dd6
-          next 57828763b8ef90ba74ad837cc42cbfa0c88e1530
-          add-license-1 2d93dd8e01af7e9692d5e0c082770d0763375dc7
-          add-code-of-conduct-1 1b165aef54d57f32b55d6696db42af87532121fb
-          BRANCHES

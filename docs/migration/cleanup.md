@@ -1,4 +1,16 @@
-# 旧项目清理（2026-10-01）
+# 旧方案清理记录
+
+## 2026-10-03 main 维护方案整理
+
+- 核查 main 当前已无 Hexo 主题、Hexo 根配置、Travis、SCP 钩子或旧依赖运行入口。
+- 移除已经执行完成的 Actions 分支删除步骤；日常工作流仅检查、构建、验证并发布静态产物。
+- 一次性 Hexo 基线导出工具、旧 package.json 快照和 Hitalk 主题运维记录移到 docs/archive/，同步当前文档入口；仍在使用的基线和校验脚本保留。
+- 清理旧 db.json / public / .deploy 忽略规则，以及 tsconfig 中已不存在的 themes 排除项。
+- 开发与发布文档统一到 main → Actions → master → Vercel，移除当前流程中的手动 worktree / 逐文件发布指导；历史发布事实仍保留。
+- 保留文章与旧 URL / 评论身份兼容、SW 退役脚本、manifest / 图标 / 二维码、完整字体 fallback 及许可证；这些仍由当前站点引用或用于历史客户端升级。
+- 本地验证：32 项测试通过，Astro check 46 文件零诊断；工作流 YAML / Shell 语法、归档工具 --help 与 diff 空白检查通过。待远端 Actions 构建验证；没有修改文章正文或页面运行代码。
+
+## 2026-10-01 初次旧项目清理（历史记录）
 
 范围为 `/Users/ihoey/personal/project/blog-astro` 的 `feat/astro-migration` 分支。原 `/Users/ihoey/personal/project/blog` 工作目录和 `hexo` 分支均不修改。清理前版本为 `76048657`，移除的文件可从该提交或旧分支查看、恢复，不另复制一套旧运行代码。
 

@@ -65,15 +65,13 @@
 - 旧源码远端基线：`57828763b8ef90ba74ad837cc42cbfa0c88e1530`。
 - 本轮没有登录 Vercel 控制台核对内部项目设置。为减少切换面，继续使用已存在的 master 静态发布通道，不同时切换托管平台、构建预设或仓库来源。
 
-## 发布前执行
+## 当前发布流程（GitHub Actions）
 
-1. 保持迁移工作区干净，记录迁移源码提交。运行 `pnpm build && pnpm verify && pnpm test && pnpm check`。
-2. 复查用户最新预览反馈；随机一言恢复，离线功能明确暂缓。百度 / 不蒜子沿用，Google 旧 UA 不加载；若本次需要 GA4，先取得有效公开 G- ID 再验证。
-3. 再查询远端 master SHA；如果已经变化，先检查新变更，不能覆盖其他发布。
-4. 从最新 master 创建临时发布 worktree / 分支，把 **dist 内容**同步到发布 worktree 根目录。保留 `.git`，清除不再使用的旧主题产物；包含 `sw.js`、`vercel.json`、站长验证文件、所有图标、字体、SDK 与二维码。不运行旧 Hexo deploy、SCP 或自动推送脚本。
-5. 复核发布 diff、关键文件数量和摘要，产出可审阅的发布提交及回退基线。源码和产物分支分别记录，不强推历史。
-6. 若需要 Vercel Preview，先在发布窗口明确预览分支安排；本地评论依然禁止生产写入。未创建 Preview 部署不能写成已验证。
-7. 最后执行 master 的普通快进推送，等待 Production deployment success。2026-10-02 已完成。
+1. 在 `main` 维护源码，按需使用 `pnpm dev` 或 `pnpm build && pnpm preview` 本地预览；日常发布不要求本地生成产物。
+2. 提交并推送代码到 `main`。`.github/workflows/deploy.yml` 使用锁定依赖执行 check、test、build、verify；文档修改不触发发布，失败时不更新 master。
+3. Actions 在独立 master checkout 同步 `dist/`，清理过期产物并排除 `.prerender`，普通快进推送；相同产物不产生重复提交。不要把 main 源码直接合并进 master，也不要手动逐文件上传产物。
+4. 从 Actions 运行摘要记录源码 / master SHA；确认相应 master 提交的 Vercel 检查成功，再检查正式域名。Actions success 与 Vercel 上线分别确认。
+5. 默认分支切到 main 后，也可以在 Actions 页面手动运行该工作流。本地构建只用于预览与排障，历史 Hexo / SCP 钩子和手动 worktree 发布均不作为当前维护流程。
 
 ## 切换后的验证
 
@@ -87,7 +85,7 @@
 ## 回退
 
 1. 最快办法是在 Vercel 将已验证的旧生产部署重新提升为 Production；执行前重新确认上述部署仍存在。
-2. Git 回退保留历史：若线上提交就是本次发布，撤销该发布提交后普通推送；若有后续提交，先审查差异，不直接 reset / force-push。
+2. 先暂停自动发布或同时撤销 main 中对应的源码变更，避免下一次推送覆盖回退。Git 回退保留历史：若线上提交就是本次发布，撤销该发布提交后普通推送；若有后续提交，先审查差异，不直接 reset / force-push。
 3. 回退到旧 HTML 后，其原脚本会重新注册旧 `/sw.js`；提前删除的旧缓存不会使文章丢失，只会重新从网络加载。
 4. 回退后重复检查首页、旧文章、评论读取和 RSS，并记录生产提交。旧 `hexo` 工作目录一直保留，本轮没有改动。
 
