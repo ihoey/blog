@@ -44,7 +44,7 @@ comments: true
 <li><time datetime="2018-03">2018-03</time><div><h3>打赏与代码块有了自己的样子</h3><p>加入定制打赏组件，并单独设计代码块样式，让阅读和互动都多一点小栈的个性。</p></div></li>
 <li><time datetime="2017-12-24">2017-12-24</time><div><h3>换上 Wildfire 评论</h3><p>从萌评切换到 Wildfire，继续折腾博客的评论体验。</p></div></li>
 <li><time datetime="2017-08-13">2017-08-13</time><div><h3>尝试萌评</h3><p>接入萌评，为文章和留言页更换评论入口。</p></div></li>
-<li><time datetime="2017-06-05">2017-06-05</time><div><h3>从多说换到网易云跟帖</h3><p>今天早上发现多说突然就废了,然后就紧急的换成了网易云跟帖,评论系统样式不是很好看,主要的是以前多说的数据导入过来有好多都不显示,唉……伤心！</p></div></li>
+<li><time datetime="2017-06-05">2017-06-05</time><div><h3>从多说换到网易云跟帖</h3><p>多说停止服务后，紧急切换到网易云跟帖；旧评论的数据导入并不顺利。</p></div></li>
 <li><time datetime="2017-04-21">2017-04-21</time><div><h3>加入自动构建</h3><p>接入 Travis CI，让博客的构建和发布开始自动化。</p></div></li>
 <li><time datetime="2016-12-06">2016-12-06</time><div><h3>伊布住进小栈</h3><p>在页脚加入用 HTML 和 CSS 实现的伊布。从那时起，它就陪着大家一起看文章。</p></div></li>
 <li><time datetime="2016-10-25">2016-10-25</time><div><h3>从 SAE 迁往 Coding / GitHub</h3><p>站点从SinaAppEngine(SAE)迁移到Coding/GitHub, 国内用户默认解析至Coding, 海外则解析至GitHub, 互为备份, 改善了访问速度与稳定性</p></div></li>
@@ -69,5 +69,7 @@ comments: true
 
 啦啦啦，感谢你们啦，我会做的更好的呢
 2016-6-25:感谢你们的赞助了.虽然人不多,但我还是很感动的.
+2017-6-5:今天早上发现多说突然就废了,然后就紧急的换成了网易云跟帖,评论系统样式不是很好看,主要的是以前多说的数据导入过来有好多都不显示,唉……伤心！
+2026-9-18:LeanCloud [宣布将于 2027 年 1 月 12 日停止服务](https://docs.leancloud.app/sdk/announcements/sunset-announcement/)，小栈的评论已迁出 LeanCloud，换上 Hitalk v3，历史评论和留言也一起保留下来了。
 
 ***
