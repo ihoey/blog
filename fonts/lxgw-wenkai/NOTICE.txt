@@ -1,0 +1,8 @@
+LXGW WenKai / 霞鹜文楷
+Typeface: https://github.com/lxgw/LxgwWenKai
+Webfont packaging: https://github.com/chawyehsu/lxgw-wenkai-webfont
+Package: lxgw-wenkai-webfont 1.7.0
+Typeface license: SIL Open Font License 1.1 (OFL.txt)
+Webfont packaging license: MIT (webfont-LICENSE.txt)
+Regular (400) and Bold (700), unmodified WOFF2 unicode-range subsets.
+Font assets are emitted by Astro under /_astro/.

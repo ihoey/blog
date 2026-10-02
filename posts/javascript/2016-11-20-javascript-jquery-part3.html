@@ -1,556 +1,18 @@
-<!DOCTYPE html>
-
-
-
-
-
-
-<!--
-                           _ooOoo_
-                          o8888888o
-                          88" . "88
-                          (| -_- |)
-                          O\  =  /O
-                       ____/`---'\____
-                     .'  \\|     |//  `.
-                    /  \\|||  :  |||//  \
-                   /  _||||| -:- |||||-  \
-                   |   | \\\  -  /// |   |
-                   | \_|  ''\---/''  |   |
-                   \  .-\__  `-`  ___/-. /
-                 ___`. .'  /--.--\  `. . __
-              ."" '<  `.___\_<|>_/___.'  >'"".
-             | | :  `- \`.;`\ _ /`;.`/ - ` : | |
-             \  \ `-.   \_ __\ /__ _/   .-` /  /
-        ======`-.____`-.___\_____/___.-`____.-'======
-                           `=---='
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                 佛祖保佑       永无BUG  By:- ihoey.com
--->
-<html class="theme-next muse" lang="zh-CN">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#8a00f9">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-  <meta name="google-site-verification" content="eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg" />
-
-
-
-
-
-
-
-
-  <meta name="baidu-site-verification" content="HR5eYsvhwq" />
-
-
-
-
-
-
-
-  
-  
-    
-  
-  <link href="https://cdn.ihoey.com/jquery.fancybox.css" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Hannotate SC:300,300italic,400,400italic,700,700italic|Source Code Pro:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-  
-
-<link href="https://cdn.ihoey.com/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
-
-
-  <link href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css" rel="stylesheet" />
-  <link href="/lib/hitalk/3.0.0/secret-cat.9107f720cc5f.css" rel="stylesheet" />
-  <link href="/css/hitalk-host.css?v=3.0.0" rel="stylesheet" />
-
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon_192.png?v=6.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon_32.png?v=6.2.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=6.2.0">
-
-
-  <link rel="mask-icon" href="/images/icons/icon_512.png?v=6.2.0" color="#8a00f9">
-
-
-  <link rel="manifest" href="/manifest.json">
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.2.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    fastclick: false,
-    lazyload: true,
-    tabs: true,
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-  <meta name="keywords" content="梦魇小栈,houyi1121,梦魇博客,梦魇Only,梦魇官网,侯毅,侯毅的博客,ihoey,可爱的伊布,伊布" />
-
-
-<link rel="dns-prefetch" href="https://app-router.leancloud.cn/">
-
-<script defer async src="/js/src/set.js"></script>
-
-
-  <meta name="description" content="JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JQuery分析及实现part3之属性模块功能及实现">
-<meta property="og:url" content="https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html">
-<meta property="og:site_name" content="梦魇小栈">
-<meta property="og:description" content="JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2016-11-20T03:51:28.000Z">
-<meta property="article:modified_time" content="2023-07-22T08:35:58.371Z">
-<meta property="article:author" content="Ihoey">
-<meta property="article:tag" content="原生Js">
-<meta property="article:tag" content="Js框架">
-<meta property="article:tag" content="JQuery">
-<meta name="twitter:card" content="summary">
-
-
-
-  <link rel="alternate" href="/atom.xml" title="梦魇小栈" type="application/atom+xml" />
-
-
-
-
-  <link rel="canonical" href="https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>JQuery分析及实现part3之属性模块功能及实现 | 梦魇小栈</title>
-  
-
-
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-87991666-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-87991666-1');
-</script>
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?199400a900d7a62bfff2335224e096d8";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-  </style>
-</noscript>
-
-<meta name="generator" content="Hexo 4.2.1"></head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">梦魇小栈</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <h1 class="site-subtitle" itemprop="description">专注于分享</h1>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-links">
-    <a href="/links/index.html" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-link"></i> <br />友情链接</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-guestbook">
-    <a href="/guestbook/index.html" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-comment"></i> <br />留言</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/index.html" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />我是谁˚∆˚</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/index.html" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">57</span></a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/index.html" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">49</span></a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-sitemap">
-    <a href="/sitemap.xml" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />站点地图</a>
-  </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-</nav>
-
-
-
-  
-
-<div id="hitokoto" style="
-    text-align: center;
-    padding-top: 25px;
-"></div>
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ihoey">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.ihoey.com/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="梦魇小栈">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">JQuery分析及实现part3之属性模块功能及实现
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2016-11-20 11:51:28" itemprop="dateCreated datePublished" datetime="2016-11-20T11:51:28+08:00">2016-11-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2023-07-22 16:35:58" itemprop="dateModified" datetime="2023-07-22T16:35:58+08:00">2023-07-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">javascript</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/javascript/2016-11-20-javascript-jquery-part3.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hitalk-comment-count" data-xid="/posts/javascript/2016-11-20-javascript-jquery-part3.html" itemprop="commentCount">—</span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon"
-            >
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!</p>
-<a id="more"></a>
-
-<h2 id="知识点复习"><a href="#知识点复习" class="headerlink" title="知识点复习"></a>知识点复习</h2><ol>
-<li><p><code>css</code> 方法</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!"><meta name="theme-color" content="#ffffff"><meta name="google-site-verification" content="eRUMkOLjm5pMqXIKrBhzB4YD_gNj9CN4iUMT_1i1Plg"><meta name="baidu-site-verification" content="HR5eYsvhwq"><link rel="manifest" href="/manifest.json"><link rel="apple-touch-icon" href="/images/icons/icon_192.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="canonical" href="https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html"><link rel="alternate" type="application/atom+xml" title="梦魇小栈" href="/atom.xml"><meta property="og:site_name" content="梦魇小栈"><meta name="twitter:card" content="summary"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="og:title" content="JQuery分析及实现part3之属性模块功能及实现 · 梦魇小栈"><meta property="og:description" content="JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!"><meta property="og:url" content="https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html"><meta property="og:image" content="https://blog.ihoey.com/avatar.png"><meta property="article:published_time" content="2016-11-20T03:51:28.000Z"><meta property="article:modified_time" content="2023-07-22T08:35:58.371Z"><link rel="stylesheet" href="/lib/hitalk/3.0.0/secret-cat.9107f720cc5f.css"><link rel="stylesheet" href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css"><title>JQuery分析及实现part3之属性模块功能及实现 · 梦魇小栈</title><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"JQuery分析及实现part3之属性模块功能及实现","description":"JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!","url":"https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html","mainEntityOfPage":"https://blog.ihoey.com/posts/javascript/2016-11-20-javascript-jquery-part3.html","datePublished":"2016-11-20T03:51:28.000Z","dateModified":"2023-07-22T08:35:58.371Z","image":"https://blog.ihoey.com/avatar.png","author":{"@type":"Person","name":"Ihoey","url":"https://blog.ihoey.com/about/"},"publisher":{"@type":"Organization","name":"梦魇小栈"}}</script><script>
+      document.documentElement.dataset.effects = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'off' : 'on';
+      try {
+        const saved = localStorage.getItem('blog-theme');
+        document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      } catch {}
+    </script><link rel="stylesheet" href="/_astro/Base.Dv5yZBUW.css"><link rel="stylesheet" href="/_astro/_..DAvEfLEo.css"></head><body><a class="skip-link" href="#main">跳到正文</a><div class="site-topbar"><div class="topbar-inner"><a class="topbar-brand" href="/">梦魇小栈</a><nav class="main-nav" aria-label="主导航"><a href="/"><i class="icon icon-home" aria-hidden="true"></i>首页</a><a href="/archives/index.html"><i class="icon icon-archive" aria-hidden="true"></i>归档</a><a href="/tags/index.html"><i class="icon icon-tag" aria-hidden="true"></i>标签</a><a href="/links/index.html"><i class="icon icon-link" aria-hidden="true"></i>友链</a><a href="/guestbook/index.html"><i class="icon icon-comment" aria-hidden="true"></i>留言</a><a href="/about/index.html"><i class="icon icon-user" aria-hidden="true"></i>关于</a></nav><div class="header-tools" role="group" aria-label="订阅与阅读偏好"><span class="reading-track" aria-hidden="true"><span id="reading-progress"></span></span><a class="rss-subscribe" href="/atom.xml" aria-label="订阅 RSS" title="订阅 RSS"><svg class="tool-icon" viewBox="0 0 24 24" aria-hidden="true"><circle class="rss-dot" cx="6" cy="18" r="1.5"></circle><path class="rss-wave rss-wave-near" d="M5 11a8 8 0 0 1 8 8"></path><path class="rss-wave rss-wave-far" d="M5 5a14 14 0 0 1 14 14"></path></svg></a><button class="sidebar-toggle" type="button" popovertarget="author-sidebar" aria-controls="author-sidebar" aria-expanded="false" aria-label="展开作者与分类侧栏" title="展开作者与分类侧栏" hidden><svg class="tool-icon" viewBox="0 0 24 24" aria-hidden="true"><rect class="panel-glass" x="15" y="5" width="5" height="14" rx="1"></rect><rect x="3" y="4" width="18" height="16" rx="3"></rect><path class="panel-divider" d="M15 4v16"></path><path class="panel-indicator" d="M18 8v8"></path></svg></button><button class="theme-toggle" type="button" aria-label="切换昼夜主题" title="切换昼夜主题"><svg class="tool-icon theme-moon" viewBox="0 0 24 24" aria-hidden="true"><path class="moon-body" d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"></path><path class="moon-star" d="M18 3v4m-2-2h4"></path></svg><svg class="tool-icon theme-sun" viewBox="0 0 24 24" aria-hidden="true"><circle class="sun-core" cx="12" cy="12" r="4"></circle><path class="sun-rays" d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"></path></svg></button></div></div></div><header class="site-header scenic-header"><div class="canopy" aria-hidden="true"></div><div class="site-brand"><div><a class="site-name" href="/" aria-label="梦魇小栈首页"><span class="site-name-letter" style="--letter-index:0" aria-hidden="true">梦</span><span class="site-name-letter" style="--letter-index:1" aria-hidden="true">魇</span><span class="site-name-letter" style="--letter-index:2" aria-hidden="true">小</span><span class="site-name-letter" style="--letter-index:3" aria-hidden="true">栈</span></a></div><p>专注于分享</p></div><p class="home-quote">心，若没有栖息的地方，到哪里都是流浪……</p></header><main id="main" tabindex="-1"><article class="article-shell"><div class="article-grid"><header class="article-header"><h1>JQuery分析及实现part3之属性模块功能及实现</h1><div class="article-meta"><span><i class="icon icon-calendar" aria-hidden="true"></i> 发布于 <time datetime="2016-11-20T03:51:28.000Z">2016-11-20</time></span><span><i class="icon icon-updated" aria-hidden="true"></i> 更新于 <time datetime="2023-07-22T08:35:58.371Z">2023-07-22</time></span><span class="article-categories"><i class="icon icon-folder" aria-hidden="true"></i> <a href="/categories/javascript/">javascript</a></span></div><div class="article-reading-meta"><a href="/about/index.html" rel="author"><i class="icon icon-user" aria-hidden="true"></i> Ihoey</a><span title="正文字符数，含代码，不含空白和 Markdown 标记"><i class="icon icon-file-text" aria-hidden="true"></i> 3,276 字</span><span title="按正文长度和代码行数估算"><i class="icon icon-clock" aria-hidden="true"></i> 约 11 分钟</span><span id="busuanzi_container_page_pv"><i class="icon icon-eye" aria-hidden="true"></i> 阅读 <span id="busuanzi_value_page_pv">—</span></span><a href="#comments"><i class="icon icon-comment" aria-hidden="true"></i> 评论 <span class="hitalk-comment-count" data-xid="/posts/javascript/2016-11-20-javascript-jquery-part3.html">—</span></a></div><nav class="article-tags" aria-label="文章标签"><a href="/tags/%E5%8E%9F%E7%94%9FJs/"><span aria-hidden="true">#</span>原生Js</a><a href="/tags/Js%E6%A1%86%E6%9E%B6/"><span aria-hidden="true">#</span>Js框架</a><a href="/tags/JQuery/"><span aria-hidden="true">#</span>JQuery</a></nav></header><script type="module" src="/_astro/ArticleHeader.astro_astro_type_script_index_0_lang.CeHUMYIE.js"></script><div class="article-main"><div class="prose"><p>JQuery模块分析及其实现第三部分属性模块功能及实现,接第二部分!</p>
+<!-- more -->
+<h2 id="知识点复习">知识点复习</h2>
+<ol>
+<li>
+<p><code>css</code> 方法</p>
 <ul>
-<li>如果只传入一个参数<ul>
+<li>如果只传入一个参数
+<ul>
 <li>如果参数类型为对象,表示同时设置多个样式</li>
 <li>如果参数类型为字符串,表示获取指定的样式值</li>
 </ul>
@@ -558,18 +20,22 @@
 <li>如果传入的两个参数,表示设置单个样式值</li>
 </ul>
 </li>
-<li><p><code>itcast.each</code> 方法: 遍历数组或伪数组</p>
+<li>
+<p><code>itcast.each</code> 方法: 遍历数组或伪数组</p>
 <ul>
 <li>第一个参数,指定遍历的对象</li>
 <li>第二个参数,指定的回调函数,对遍历到的每一个元素,进行相关处理</li>
 </ul>
 </li>
 </ol>
-<h2 id="attr方法-setAttribute-和-getAttribute"><a href="#attr方法-setAttribute-和-getAttribute" class="headerlink" title="attr方法( setAttribute 和 getAttribute )"></a>attr方法( setAttribute 和 getAttribute )</h2><ol>
+<h2 id="attr方法-setAttribute-和-getAttribute">attr方法( setAttribute 和 getAttribute )</h2>
+<ol>
 <li>功能: 获取(设置)属性节点值</li>
-<li>实现思路<ul>
+<li>实现思路
+<ul>
 <li>给原型添加 <code>attr</code> 方法,定义两个参数:属性节点名字 <code>name</code> 以及属性节点值</li>
-<li>如果只传入一个参数<ul>
+<li>如果只传入一个参数
+<ul>
 <li>如果参数类型为对象,表示设置多个节点值</li>
 <li>否则获取指定的属性节点值(默认获取第一个 <code>dom</code> 元素的属性节点值)</li>
 </ul>
@@ -578,36 +44,75 @@
 </ul>
 </li>
 </ol>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">attr: <span class="function"><span class="keyword">function</span>(<span class="params">name,value</span>)</span>&#123;</span><br><span class="line">	<span class="comment">//只传入一个参数</span></span><br><span class="line">	<span class="keyword">if</span>(value == <span class="literal">undefined</span>)&#123;</span><br><span class="line">		<span class="comment">//如果类型为对象,表示设置多个属性</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">typeof</span> name ===<span class="string">'object'</span>)&#123;</span><br><span class="line">			<span class="comment">//遍历itcast上的每一个dom元素,并设置属性节点值</span></span><br><span class="line">			<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">				<span class="comment">//枚举name对象上的每一个属性</span></span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> name)&#123;</span><br><span class="line">					v.setAttribute(k, name[k]);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123; <span class="comment">//如果类型为字符串,获取属性节点值</span></span><br><span class="line">			<span class="keyword">if</span>(!<span class="keyword">this</span>[<span class="number">0</span>]) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>].getAttribute(name);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;<span class="keyword">else</span> &#123; <span class="comment">//传入两个参数,表示设置单个属性节点值</span></span><br><span class="line">		<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">			v.setAttribute(name, value)</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="html方法"><a href="#html方法" class="headerlink" title="html方法"></a>html方法</h2><ol>
-<li>功能:<ul>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F8F8F2">attr: </span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">name</span><span style="color:#F8F8F2">,</span><span style="color:#FFB86C;font-style:italic">value</span><span style="color:#F8F8F2">){</span></span>
+<span class="line"><span style="color:#6272A4">	//只传入一个参数</span></span>
+<span class="line"><span style="color:#FF79C6">	if</span><span style="color:#F8F8F2">(value </span><span style="color:#FF79C6">==</span><span style="color:#BD93F9"> undefined</span><span style="color:#F8F8F2">){</span></span>
+<span class="line"><span style="color:#6272A4">		//如果类型为对象,表示设置多个属性</span></span>
+<span class="line"><span style="color:#FF79C6">		if</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">typeof</span><span style="color:#F8F8F2"> name </span><span style="color:#FF79C6">===</span><span style="color:#E9F284">'</span><span style="color:#F1FA8C">object</span><span style="color:#E9F284">'</span><span style="color:#F8F8F2">){</span></span>
+<span class="line"><span style="color:#6272A4">			//遍历itcast上的每一个dom元素,并设置属性节点值</span></span>
+<span class="line"><span style="color:#BD93F9;font-style:italic">			this</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">each</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">v</span><span style="color:#F8F8F2">){</span></span>
+<span class="line"><span style="color:#6272A4">				//枚举name对象上的每一个属性</span></span>
+<span class="line"><span style="color:#FF79C6">				for</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">var</span><span style="color:#F8F8F2"> k </span><span style="color:#FF79C6">in</span><span style="color:#F8F8F2"> name){</span></span>
+<span class="line"><span style="color:#F8F8F2">					v.</span><span style="color:#50FA7B">setAttribute</span><span style="color:#F8F8F2">(k, name[k]);</span></span>
+<span class="line"><span style="color:#F8F8F2">				}</span></span>
+<span class="line"><span style="color:#F8F8F2">			});</span></span>
+<span class="line"><span style="color:#F8F8F2">		} </span><span style="color:#FF79C6">else</span><span style="color:#F8F8F2"> { </span><span style="color:#6272A4">//如果类型为字符串,获取属性节点值</span></span>
+<span class="line"><span style="color:#FF79C6">			if</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">!</span><span style="color:#BD93F9;font-style:italic">this</span><span style="color:#F8F8F2">[</span><span style="color:#BD93F9">0</span><span style="color:#F8F8F2">]) </span><span style="color:#FF79C6">return</span><span style="color:#BD93F9"> null</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#FF79C6">			return</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">[</span><span style="color:#BD93F9">0</span><span style="color:#F8F8F2">].</span><span style="color:#50FA7B">getAttribute</span><span style="color:#F8F8F2">(name);</span></span>
+<span class="line"><span style="color:#F8F8F2">		}</span></span>
+<span class="line"><span style="color:#F8F8F2">	}</span><span style="color:#FF79C6">else</span><span style="color:#F8F8F2"> { </span><span style="color:#6272A4">//传入两个参数,表示设置单个属性节点值</span></span>
+<span class="line"><span style="color:#BD93F9;font-style:italic">		this</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">each</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">v</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#F8F8F2">			v.</span><span style="color:#50FA7B">setAttribute</span><span style="color:#F8F8F2">(name, value)</span></span>
+<span class="line"><span style="color:#F8F8F2">		});</span></span>
+<span class="line"><span style="color:#F8F8F2">	}</span></span>
+<span class="line"><span style="color:#FF79C6">	return</span><span style="color:#BD93F9;font-style:italic"> this</span></span>
+<span class="line"><span style="color:#F8F8F2">},</span></span></code></pre>
+<h2 id="html方法">html方法</h2>
+<ol>
+<li>功能:
+<ul>
 <li>不传参数,表示获取指定 <code>dom</code> 元素的 <code>innerHTML</code> 属性值</li>
 <li>否则,表示设置指定 <code>dom</code> 元素的 <code>innerHTML</code> 属性</li>
 </ul>
 </li>
-<li>实行思路<ul>
+<li>实行思路
+<ul>
 <li>判断是否传入参数</li>
 <li>如果没穿,获取 <code>itcast</code> 对象上的第一个 <code>dom</code> 元素的 <code>innerHTML</code> 属性值</li>
 <li>否则,给 <code>itcast</code> 对象上的每一个 <code>dom</code> 元素设置 <code>innerHTML</code> 属性</li>
 </ul>
 </li>
 </ol>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">html: <span class="function"><span class="keyword">function</span>(<span class="params">html</span>) </span>&#123;</span><br><span class="line">	<span class="comment">//如果没有给html传值,表示获取</span></span><br><span class="line">	<span class="keyword">if</span>(html==<span class="literal">undefined</span>)&#123;</span><br><span class="line">		<span class="comment">//如果icast没有任何dom元素,就返回一个期望值,即空字符串</span></span><br><span class="line">		<span class="comment">//如果有的话,就返回一个dom元素的innerHTML属性值</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>] ? <span class="keyword">this</span>[<span class="number">0</span>].innerHTML : <span class="string">''</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;<span class="comment">//如果给html船只,给itcast对象上的每一个dom元素设置innerHTML属性</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">			v.innerHTML = html;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="text方法"><a href="#text方法" class="headerlink" title="text方法"></a>text方法</h2><ol>
-<li>功能<ul>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F8F8F2">html: </span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">html</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#6272A4">	//如果没有给html传值,表示获取</span></span>
+<span class="line"><span style="color:#FF79C6">	if</span><span style="color:#F8F8F2">(html</span><span style="color:#FF79C6">==</span><span style="color:#BD93F9">undefined</span><span style="color:#F8F8F2">){</span></span>
+<span class="line"><span style="color:#6272A4">		//如果icast没有任何dom元素,就返回一个期望值,即空字符串</span></span>
+<span class="line"><span style="color:#6272A4">		//如果有的话,就返回一个dom元素的innerHTML属性值</span></span>
+<span class="line"><span style="color:#FF79C6">		return</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">[</span><span style="color:#BD93F9">0</span><span style="color:#F8F8F2">] </span><span style="color:#FF79C6">?</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">[</span><span style="color:#BD93F9">0</span><span style="color:#F8F8F2">].innerHTML </span><span style="color:#FF79C6">:</span><span style="color:#E9F284"> ''</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#F8F8F2">	}</span><span style="color:#FF79C6">else</span><span style="color:#F8F8F2">{</span><span style="color:#6272A4">//如果给html船只,给itcast对象上的每一个dom元素设置innerHTML属性</span></span>
+<span class="line"><span style="color:#FF79C6">		return</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">each</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">v</span><span style="color:#F8F8F2">){</span></span>
+<span class="line"><span style="color:#F8F8F2">			v.innerHTML </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> html;</span></span>
+<span class="line"><span style="color:#F8F8F2">		});</span></span>
+<span class="line"><span style="color:#F8F8F2">	}</span></span>
+<span class="line"><span style="color:#F8F8F2">},</span></span></code></pre>
+<h2 id="text方法">text方法</h2>
+<ol>
+<li>功能
+<ul>
 <li>不传值,表示获取文本节点(返回的是后代中所有文本节点值)</li>
 <li>传值,设置指定 <code>dom</code> 元素文本值</li>
 </ul>
 </li>
-<li>实现思路<ul>
-<li>如果不传值,优先考虑浏览器是否支持 <code>textContent</code> 属性<ul>
+<li>实现思路
+<ul>
+<li>如果不传值,优先考虑浏览器是否支持 <code>textContent</code> 属性
+<ul>
 <li>如果支持,就使用 <code>textContent</code> 返回结果集中每一个 <code>dom</code> 元素的文本节点值</li>
 <li>否则,就是用 <code>innerText</code> 返回结果集中每一个 <code>dom</code> 元素的文本节点值</li>
 </ul>
 </li>
-<li>如果传值,给 <code>itcast</code> 对象上的每一个 <code>dom</code> 元素设置文本节点值.<ul>
+<li>如果传值,给 <code>itcast</code> 对象上的每一个 <code>dom</code> 元素设置文本节点值.
+<ul>
 <li>如果支持 <code>textContent</code> 属性,就是用该属性设置文本</li>
 <li>否则,就是用 <code>innerText</code> 来设置文本.</li>
 </ul>
@@ -615,36 +120,77 @@
 </ul>
 </li>
 </ol>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">text: <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 如果没有传值，表示获取文本值</span></span><br><span class="line">	<span class="keyword">if</span>(text == <span class="literal">undefined</span>)&#123;</span><br><span class="line">		<span class="comment">// 定义结果变量，存储每个dom元素的文本</span></span><br><span class="line">		<span class="keyword">var</span> ret = <span class="string">''</span>;</span><br><span class="line">		<span class="comment">// 遍历每一个dom元素</span></span><br><span class="line">		<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">			<span class="comment">// 如果支持textContent，使用其获取文本，累加到ret上</span></span><br><span class="line">			ret += <span class="string">'textContent'</span> <span class="keyword">in</span> <span class="built_in">document</span> ?</span><br><span class="line">				v.textContent :</span><br><span class="line">				v.innerText.replace(<span class="regexp">/\r\n/g</span>, <span class="string">''</span>);</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="comment">// 返回所有文本</span></span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果传值了，表示为每个dom设置文本</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">			<span class="comment">// 如果支持textContent，就使用该属性为当前dom元素设置文本节点值</span></span><br><span class="line">			<span class="comment">// 否则，使用innerText设置文本节点值。</span></span><br><span class="line">			<span class="keyword">if</span>(<span class="string">'textContent'</span> <span class="keyword">in</span> <span class="built_in">document</span>)&#123;</span><br><span class="line">				v.textContent = text;</span><br><span class="line">			&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">				v.innerText = text;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure></div>
-
-<h2 id="val方法"><a href="#val方法" class="headerlink" title="val方法"></a>val方法</h2><ol>
-<li>功能( <code>value</code> 属性)<ul>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F8F8F2">text: </span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">text</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#6272A4">	// 如果没有传值，表示获取文本值</span></span>
+<span class="line"><span style="color:#FF79C6">	if</span><span style="color:#F8F8F2">(text </span><span style="color:#FF79C6">==</span><span style="color:#BD93F9"> undefined</span><span style="color:#F8F8F2">){</span></span>
+<span class="line"><span style="color:#6272A4">		// 定义结果变量，存储每个dom元素的文本</span></span>
+<span class="line"><span style="color:#FF79C6">		var</span><span style="color:#F8F8F2"> ret </span><span style="color:#FF79C6">=</span><span style="color:#E9F284"> ''</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#6272A4">		// 遍历每一个dom元素</span></span>
+<span class="line"><span style="color:#BD93F9;font-style:italic">		this</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">each</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">v</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#6272A4">			// 如果支持textContent，使用其获取文本，累加到ret上</span></span>
+<span class="line"><span style="color:#F8F8F2">			ret </span><span style="color:#FF79C6">+=</span><span style="color:#E9F284"> '</span><span style="color:#F1FA8C">textContent</span><span style="color:#E9F284">'</span><span style="color:#FF79C6"> in</span><span style="color:#F8F8F2"> document </span><span style="color:#FF79C6">?</span></span>
+<span class="line"><span style="color:#F8F8F2">				v.textContent </span><span style="color:#FF79C6">:</span></span>
+<span class="line"><span style="color:#F8F8F2">				v.innerText.</span><span style="color:#50FA7B">replace</span><span style="color:#F8F8F2">(</span><span style="color:#FF5555">/</span><span style="color:#BD93F9">\r\n</span><span style="color:#FF5555">/</span><span style="color:#FF79C6">g</span><span style="color:#F8F8F2">, </span><span style="color:#E9F284">''</span><span style="color:#F8F8F2">);</span></span>
+<span class="line"><span style="color:#F8F8F2">		});</span></span>
+<span class="line"><span style="color:#6272A4">		// 返回所有文本</span></span>
+<span class="line"><span style="color:#FF79C6">		return</span><span style="color:#F8F8F2"> ret;</span></span>
+<span class="line"><span style="color:#F8F8F2">	} </span><span style="color:#FF79C6">else</span><span style="color:#F8F8F2"> { </span><span style="color:#6272A4">// 如果传值了，表示为每个dom设置文本</span></span>
+<span class="line"><span style="color:#FF79C6">		return</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">each</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">v</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#6272A4">			// 如果支持textContent，就使用该属性为当前dom元素设置文本节点值</span></span>
+<span class="line"><span style="color:#6272A4">			// 否则，使用innerText设置文本节点值。</span></span>
+<span class="line"><span style="color:#FF79C6">			if</span><span style="color:#F8F8F2">(</span><span style="color:#E9F284">'</span><span style="color:#F1FA8C">textContent</span><span style="color:#E9F284">'</span><span style="color:#FF79C6"> in</span><span style="color:#F8F8F2"> document){</span></span>
+<span class="line"><span style="color:#F8F8F2">				v.textContent </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> text;</span></span>
+<span class="line"><span style="color:#F8F8F2">			} </span><span style="color:#FF79C6">else</span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#F8F8F2">				v.innerText </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> text;</span></span>
+<span class="line"><span style="color:#F8F8F2">			}</span></span>
+<span class="line"><span style="color:#F8F8F2">		});</span></span>
+<span class="line"><span style="color:#F8F8F2">	}</span></span>
+<span class="line"><span style="color:#F8F8F2">},</span></span></code></pre>
+<h2 id="val方法">val方法</h2>
+<ol>
+<li>功能( <code>value</code> 属性)
+<ul>
 <li>如果不传值,表示获取输入框的文本值</li>
 <li>如果传值, 表示给输入框 设置文本</li>
 </ul>
 </li>
-<li>实现思路<ul>
+<li>实现思路
+<ul>
 <li>如果不传值，表示获取输入框的文本值（获取第一个文本框值）</li>
-<li>如果传值，表示给输入框 设置文本<ul>
-<li>遍历每一个输入框，同时给其设置文本<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">val: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 如果没有传值，表示获取第一个dom元素的value属性值</span></span><br><span class="line">	<span class="comment">// 如果itcast对象上没有任何dom元素，返回空字符串</span></span><br><span class="line">	<span class="keyword">if</span>(value == <span class="literal">undefined</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>[<span class="number">0</span>] ? <span class="keyword">this</span>[<span class="number">0</span>].value : <span class="string">''</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;<span class="comment">// 否则，为每一个dom元素设置value属性值</span></span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">this</span>.value = value;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-</li>
+<li>如果传值，表示给输入框 设置文本
+<ul>
+<li>遍历每一个输入框，同时给其设置文本</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
-<h2 id="prop方法"><a href="#prop方法" class="headerlink" title="prop方法"></a>prop方法</h2><ol>
-<li>功能:和 <code>attr</code> 相似<ul>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#F8F8F2">val: </span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">value</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#6272A4">	// 如果没有传值，表示获取第一个dom元素的value属性值</span></span>
+<span class="line"><span style="color:#6272A4">	// 如果itcast对象上没有任何dom元素，返回空字符串</span></span>
+<span class="line"><span style="color:#FF79C6">	if</span><span style="color:#F8F8F2">(value </span><span style="color:#FF79C6">==</span><span style="color:#BD93F9"> undefined</span><span style="color:#F8F8F2">){</span></span>
+<span class="line"><span style="color:#FF79C6">		return</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">[</span><span style="color:#BD93F9">0</span><span style="color:#F8F8F2">] </span><span style="color:#FF79C6">?</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">[</span><span style="color:#BD93F9">0</span><span style="color:#F8F8F2">].value </span><span style="color:#FF79C6">:</span><span style="color:#E9F284"> ''</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#F8F8F2">	} </span><span style="color:#FF79C6">else</span><span style="color:#F8F8F2"> {</span><span style="color:#6272A4">// 否则，为每一个dom元素设置value属性值</span></span>
+<span class="line"><span style="color:#FF79C6">		return</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">each</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">() {</span></span>
+<span class="line"><span style="color:#BD93F9;font-style:italic">			this</span><span style="color:#F8F8F2">.value </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> value;</span></span>
+<span class="line"><span style="color:#F8F8F2">		});</span></span>
+<span class="line"><span style="color:#F8F8F2">	}</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span></code></pre>
+<h2 id="prop方法">prop方法</h2>
+<ol>
+<li>功能:和 <code>attr</code> 相似
+<ul>
 <li>注意: 有些属性名称,比如 <code>for</code> , <code>class</code> 是保留字或关键字不能作为对象属性名称,所以要创建一个对象,需要转换这类的属性</li>
 <li>定义 <code>propFix</code> 对象,存储上述属性到这属性名称的映射关系</li>
-<li>如果只传入一个参数<ul>
+<li>如果只传入一个参数
+<ul>
 <li>类型为对象,同时给  <code>dom</code> 对象添加属性</li>
 <li>类型为字符串,获取 <code>itcast</code> 对象上的第一个 <code>dom</code> 对象的指定属性值</li>
 </ul>
 </li>
 <li>如果传入的参数,给所有的 <code>dom</code> 对象添加单个属性</li>
-<li>细节: 无论是设置还是获取属性,在操作之前,先要从 <code>propFix</code> 对象拿到映射后的属性名称<ul>
+<li>细节: 无论是设置还是获取属性,在操作之前,先要从 <code>propFix</code> 对象拿到映射后的属性名称
+<ul>
 <li>如果拿到的心的属性名称不为 <code>undefined</code> ,就用映射后的属性名来操作 <code>dom</code> 对象</li>
 <li>否则,那么久使用旧的属性名称来操作 <code>dom</code> 对象.</li>
 </ul>
@@ -652,765 +198,51 @@
 </ul>
 </li>
 </ol>
-<div class="highlight-wrap"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="JS"><figure class="iseeu highlight /js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性模块</span></span><br><span class="line">itcast.propFix = &#123;</span><br><span class="line">	<span class="string">'for'</span>: <span class="string">'htmlFor'</span>,</span><br><span class="line">	<span class="string">'class'</span>: <span class="string">'className'</span></span><br><span class="line">&#125;;</span><br><span class="line">itcast.each([</span><br><span class="line">	<span class="string">"tabIndex"</span>,</span><br><span class="line">	<span class="string">"readOnly"</span>,</span><br><span class="line">	<span class="string">"maxLength"</span>,</span><br><span class="line">	<span class="string">"cellSpacing"</span>,</span><br><span class="line">	<span class="string">"cellPadding"</span>,</span><br><span class="line">	<span class="string">"rowSpan"</span>,</span><br><span class="line">	<span class="string">"colSpan"</span>,</span><br><span class="line">	<span class="string">"useMap"</span>,</span><br><span class="line">	<span class="string">"frameBorder"</span>,</span><br><span class="line">	<span class="string">"contentEditable"</span></span><br><span class="line">], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	itcast.propFix[<span class="keyword">this</span>.toLowerCase()] = <span class="keyword">this</span>;</span><br><span class="line">&#125;);</span><br><span class="line">prop: <span class="function"><span class="keyword">function</span>(<span class="params">name, value</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// 如果没有给value传值</span></span><br><span class="line">	<span class="keyword">var</span> prop;</span><br><span class="line">	<span class="keyword">if</span> (value == <span class="literal">undefined</span>) &#123;</span><br><span class="line">		<span class="comment">// 并且name的类型为 对象，表示给每一个dom对象添加多个属性</span></span><br><span class="line">		<span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'object'</span>) &#123;</span><br><span class="line">			<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> name) &#123;</span><br><span class="line">					<span class="comment">// 首先从propFix对象上获取属性名字</span></span><br><span class="line">					<span class="comment">// 如果有，就使用新的属性名字</span></span><br><span class="line">					<span class="comment">// 如果没有，就使用原来的属性名字</span></span><br><span class="line">					prop = itcast.propFix[k] ? itcast.propFix[k] : k;</span><br><span class="line">					<span class="keyword">this</span>[prop] = name[k];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果name的类型 为字符串，表示获取第一个dom对象的指定属性值</span></span><br><span class="line">			prop = itcast.propFix[name] ? itcast.propFix[name]: name;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.length &gt; <span class="number">0</span> ? <span class="keyword">this</span>[<span class="number">0</span>][prop] : <span class="literal">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果传入两个参数，表示给每一个dom对象添加单个属性</span></span><br><span class="line">		<span class="comment">// 遍历itcast上的每一个dom对象，添加属性</span></span><br><span class="line">		prop = itcast.propFix[name] ? itcast.propFix[name]: name;</span><br><span class="line">		<span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">			<span class="keyword">this</span>[prop] = value;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 实现链式编程</span></span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-      <div>
-          <div style="text-align:center;color: #009688;font-size:14px;padding: 10px 0;">
------- 有问题请 <a href="https://blog.ihoey.com/guestbook/index.html" style="text-align:center;color: #ff0000;">留言给我哦！</a> 也欢迎入群讨论！ <a href="//shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="nofollow noopener" style="text-align:center;color: #00c4ff;">点我呀！</a> ------</div>
-
-      </div>
-    
-
-    
-
-    
-      <div>
-        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-  <div>满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</div>
-  <div class="reward-content">
-    	<a id="github" href="https://github.com/houyi1121/Playing-reward" target="_blank" class="pos-a" title="Github"></a>
-      <a href="https://blog.ihoey.com" target="_blank" id="DonateText" title="ihoey.com">ihoey.com</a>
-      <ul id="donateBox" class="list pos-a">
-        <li id="PayPal"><a href="https://www.paypal.me/ihoey" target="_blank" title="PayPal">PayPal</a></li>
-        <li id="QQ" data-img="/qcode/tencent_qcode.png" title="QQ">QQ</li>
-        <li id="AliPay" data-img="/qcode/alipay_qcode.png" title="支付宝">支付宝</li>
-        <li id="WeChat" data-img="/qcode/wechat_qcode.png" title="微信支付">微信支付</li>
-      </ul>
-      <div id="QRBox" class="pos-f left-100">
-        <div id="MainBox"></div>
-      </div>
-  </div>
-</div>
-
-      </div>
-    
-
-    
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/%E5%8E%9F%E7%94%9FJs/" rel="tag"># 原生Js</a>
-          
-            <a href="/tags/Js%E6%A1%86%E6%9E%B6/" rel="tag"># Js框架</a>
-          
-            <a href="/tags/JQuery/" rel="tag"># JQuery</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/posts/javascript/2016-11-19-javascript-jquery-part2.html" rel="next" title="JQuery分析及实现part2之css部分功能及实现">
-                <i class="fa fa-chevron-left"></i> JQuery分析及实现part2之css部分功能及实现
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/javascript/2016-11-21-javascript-jquery-part4.html" rel="prev" title="JQuery分析及实现part4之DOM操作模块功能及实现">
-                JQuery分析及实现part4之DOM操作模块功能及实现 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments"
-         data-hitalk-path="/posts/javascript/2016-11-20-javascript-jquery-part3.html"
-         data-hitalk-title="JQuery分析及实现part3之属性模块功能及实现">
-      <p role="status">评论加载中…</p>
-      <noscript>请启用 JavaScript 查看和发表留言。</noscript>
-    </div>
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="https://cdn.ihoey.com/avatar.png?imageMogr2/thumbnail/200x200/format/png/blur/1x0/quality/75|imageslim"
-                alt="Ihoey" />
-            
-              <p class="site-author-name" itemprop="name">Ihoey</p>
-              <p class="site-description motion-element" itemprop="description">心，若没有栖息的地方，到哪里都是流浪......</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/index.html%20%7C%7C%20archive">
-                
-                    <span class="site-state-item-count">57</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">18</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">49</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/ihoey" target="_blank" title="GitHub" rel="external nofollow noopener"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="http://weibo.com/hy951121" target="_blank" title="微博" rel="external nofollow noopener"><i class="fa fa-fw fa-weibo"></i>微博</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes" target="_blank" title="QQ" rel="external nofollow noopener"><i class="fa fa-fw fa-qq"></i>QQ</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@ihoey.com" target="_blank" title="E-mail" rel="external nofollow noopener"><i class="fa fa-fw fa-envelope"></i>E-mail</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://plus.google.com/100200711230702098272" target="_blank" title="Google" rel="external nofollow noopener"><i class="fa fa-fw fa-google"></i>Google</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://twitter.com/ihoeys" target="_blank" title="Twitter" rel="external nofollow noopener"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/profile.php?id=100008808609802" target="_blank" title="Facebook" rel="external nofollow noopener"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-              <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-globe"></i>
-                Links
-              </div>
-              <ul class="links-of-blogroll-list">
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://blog.mythsman.com/" title="mythsman" target="_blank" rel="noopener nofollow">mythsman</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://www.isthnew.com/links" title="可乐没气的猫" target="_blank" rel="noopener nofollow">可乐没气的猫</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://www.bboysoul.com/" title="Bboysoul" target="_blank" rel="noopener nofollow">Bboysoul</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://jnan.org/" title="jnduan's Blog" target="_blank" rel="noopener nofollow">jnduan's Blog</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://ehlxr.me/" title="Ehlxr's Blog" target="_blank" rel="noopener nofollow">Ehlxr's Blog</a>
-                  </li>
-                
-              </ul>
-            </div>
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点复习"><span class="nav-number">1.</span> <span class="nav-text">知识点复习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#attr方法-setAttribute-和-getAttribute"><span class="nav-number">2.</span> <span class="nav-text">attr方法( setAttribute 和 getAttribute )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html方法"><span class="nav-number">3.</span> <span class="nav-text">html方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#text方法"><span class="nav-number">4.</span> <span class="nav-text">text方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#val方法"><span class="nav-number">5.</span> <span class="nav-text">val方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#prop方法"><span class="nav-number">6.</span> <span class="nav-text">prop方法</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2026</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">梦魇小栈</span>
-  
-    <span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span>
-  
-
-  
-
-  
-</div>
-
-
-  
-
-
-
-  <div class="theme-info">京ICP备15058055号-1</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/ihoey">Ihoey</a> 强力驱动</div>
-
-
-
-  <div class="footer-custom"><span>博客已萌萌哒运行<span id="time-to-now"></span> ●'◡'●)ﾉ♥</span></div>
-
-
-<div class="eevee">
-  <div class="message">嗨，你好啊~~</div>
-  <div class="body">
-    <div class="head">
-      <div class="ears">
-        <div class="ear">
-          <div class="lobe"></div>
-        </div>
-        <div class="ear">
-          <div class="lobe"></div>
-        </div>
-      </div>
-      <div class="face">
-        <div class="eyes">
-          <div class="eye">
-            <div class="eyelid"></div>
-          </div>
-          <div class="eye">
-            <div class="eyelid"></div>
-          </div>
-        </div>
-        <div class="nose"></div>
-        <div class="mouth"></div>
-      </div>
-    </div>
-    <div class="chest">
-      <div class="fur">
-        <div class="patch"></div>
-      </div>
-      <div class="fur">
-        <div class="patch"></div>
-      </div>
-      <div class="fur">
-        <div class="patch"></div>
-      </div>
-    </div>
-    <div class="legs">
-      <div class="leg">
-        <div class="inner-leg"></div>
-      </div>
-      <div class="leg">
-        <div class="inner-leg"></div>
-      </div>
-      <div class="leg">
-        <div class="inner-leg"></div>
-      </div>
-      <div class="leg">
-        <div class="inner-leg"></div>
-      </div>
-    </div>
-    <div class="tail">
-      <div class="tail">
-        <div class="tail">
-          <div class="tail">
-            <div class="tail">
-              <div class="tail -end"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-        
-<div class="busuanzi-count">
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv" title="总访客量">
-      <i class="fa fa-user"> 你是第</i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>枚看到我的
-    </span>
-  
-
-  
-    <span class="site-pv" title="总访问量">
-      <i class="fa fa-eye"> 访问量</i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="https://cdn.ihoey.com/jquery-2.1.3.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://cdn.ihoey.com/jquery.lazyload.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://cdn.ihoey.com/velocity.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://cdn.ihoey.com/velocity.ui.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="https://cdn.ihoey.com/jquery.fancybox.pack.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-  <script defer src="/lib/hitalk/3.0.0/secret-cat.a2815fc1af05.js"></script>
-  <script defer src="/lib/hitalk/3.0.0/hitalk.68b2aa7c6d13.js"></script>
-  <script defer src="/js/src/hitalk.js?v=3.0.0"
-          data-hitalk-server="https://hitalk-next-api.ihoey.com/api"
-          data-hitalk-placeholder="ヾﾉ≧∀≦)o来啊，快活啊!"
-          data-hitalk-avatar="monsterid"
-          data-hitalk-page-size="10"></script>
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-</body>
-</html>
+<pre class="astro-code dracula" style="background-color:#282A36;color:#F8F8F2; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6272A4">// 属性模块</span></span>
+<span class="line"><span style="color:#F8F8F2">itcast.propFix </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> {</span></span>
+<span class="line"><span style="color:#E9F284">	'</span><span style="color:#F1FA8C">for</span><span style="color:#E9F284">'</span><span style="color:#FF79C6">:</span><span style="color:#E9F284"> '</span><span style="color:#F1FA8C">htmlFor</span><span style="color:#E9F284">'</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	'</span><span style="color:#F1FA8C">class</span><span style="color:#E9F284">'</span><span style="color:#FF79C6">:</span><span style="color:#E9F284"> '</span><span style="color:#F1FA8C">className</span><span style="color:#E9F284">'</span></span>
+<span class="line"><span style="color:#F8F8F2">};</span></span>
+<span class="line"><span style="color:#F8F8F2">itcast.</span><span style="color:#50FA7B">each</span><span style="color:#F8F8F2">([</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">tabIndex</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">readOnly</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">maxLength</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">cellSpacing</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">cellPadding</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">rowSpan</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">colSpan</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">useMap</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">frameBorder</span><span style="color:#E9F284">"</span><span style="color:#F8F8F2">,</span></span>
+<span class="line"><span style="color:#E9F284">	"</span><span style="color:#F1FA8C">contentEditable</span><span style="color:#E9F284">"</span></span>
+<span class="line"><span style="color:#F8F8F2">], </span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">() {</span></span>
+<span class="line"><span style="color:#F8F8F2">	itcast.propFix[</span><span style="color:#BD93F9;font-style:italic">this</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">toLowerCase</span><span style="color:#F8F8F2">()] </span><span style="color:#FF79C6">=</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#F8F8F2">});</span></span>
+<span class="line"><span style="color:#F8F8F2">prop: </span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">(</span><span style="color:#FFB86C;font-style:italic">name</span><span style="color:#F8F8F2">, </span><span style="color:#FFB86C;font-style:italic">value</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#6272A4">	// 如果没有给value传值</span></span>
+<span class="line"><span style="color:#FF79C6">	var</span><span style="color:#F8F8F2"> prop;</span></span>
+<span class="line"><span style="color:#FF79C6">	if</span><span style="color:#F8F8F2"> (value </span><span style="color:#FF79C6">==</span><span style="color:#BD93F9"> undefined</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#6272A4">		// 并且name的类型为 对象，表示给每一个dom对象添加多个属性</span></span>
+<span class="line"><span style="color:#FF79C6">		if</span><span style="color:#F8F8F2"> (</span><span style="color:#FF79C6">typeof</span><span style="color:#F8F8F2"> name </span><span style="color:#FF79C6">===</span><span style="color:#E9F284"> '</span><span style="color:#F1FA8C">object</span><span style="color:#E9F284">'</span><span style="color:#F8F8F2">) {</span></span>
+<span class="line"><span style="color:#BD93F9;font-style:italic">			this</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">each</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">() {</span></span>
+<span class="line"><span style="color:#FF79C6">				for</span><span style="color:#F8F8F2"> (</span><span style="color:#FF79C6">var</span><span style="color:#F8F8F2"> k </span><span style="color:#FF79C6">in</span><span style="color:#F8F8F2"> name) {</span></span>
+<span class="line"><span style="color:#6272A4">					// 首先从propFix对象上获取属性名字</span></span>
+<span class="line"><span style="color:#6272A4">					// 如果有，就使用新的属性名字</span></span>
+<span class="line"><span style="color:#6272A4">					// 如果没有，就使用原来的属性名字</span></span>
+<span class="line"><span style="color:#F8F8F2">					prop </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> itcast.propFix[k] </span><span style="color:#FF79C6">?</span><span style="color:#F8F8F2"> itcast.propFix[k] </span><span style="color:#FF79C6">:</span><span style="color:#F8F8F2"> k;</span></span>
+<span class="line"><span style="color:#BD93F9;font-style:italic">					this</span><span style="color:#F8F8F2">[prop] </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> name[k];</span></span>
+<span class="line"><span style="color:#F8F8F2">				}</span></span>
+<span class="line"><span style="color:#F8F8F2">			});</span></span>
+<span class="line"><span style="color:#F8F8F2">		} </span><span style="color:#FF79C6">else</span><span style="color:#F8F8F2"> { </span><span style="color:#6272A4">// 如果name的类型 为字符串，表示获取第一个dom对象的指定属性值</span></span>
+<span class="line"><span style="color:#F8F8F2">			prop </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> itcast.propFix[name] </span><span style="color:#FF79C6">?</span><span style="color:#F8F8F2"> itcast.propFix[name]</span><span style="color:#FF79C6">:</span><span style="color:#F8F8F2"> name;</span></span>
+<span class="line"><span style="color:#FF79C6">			return</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">.length </span><span style="color:#FF79C6">></span><span style="color:#BD93F9"> 0</span><span style="color:#FF79C6"> ?</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">[</span><span style="color:#BD93F9">0</span><span style="color:#F8F8F2">][prop] </span><span style="color:#FF79C6">:</span><span style="color:#BD93F9"> null</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#F8F8F2">		}</span></span>
+<span class="line"><span style="color:#F8F8F2">	} </span><span style="color:#FF79C6">else</span><span style="color:#F8F8F2"> { </span><span style="color:#6272A4">// 如果传入两个参数，表示给每一个dom对象添加单个属性</span></span>
+<span class="line"><span style="color:#6272A4">		// 遍历itcast上的每一个dom对象，添加属性</span></span>
+<span class="line"><span style="color:#F8F8F2">		prop </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> itcast.propFix[name] </span><span style="color:#FF79C6">?</span><span style="color:#F8F8F2"> itcast.propFix[name]</span><span style="color:#FF79C6">:</span><span style="color:#F8F8F2"> name;</span></span>
+<span class="line"><span style="color:#BD93F9;font-style:italic">		this</span><span style="color:#F8F8F2">.</span><span style="color:#50FA7B">each</span><span style="color:#F8F8F2">(</span><span style="color:#FF79C6">function</span><span style="color:#F8F8F2">() {</span></span>
+<span class="line"><span style="color:#BD93F9;font-style:italic">			this</span><span style="color:#F8F8F2">[prop] </span><span style="color:#FF79C6">=</span><span style="color:#F8F8F2"> value;</span></span>
+<span class="line"><span style="color:#F8F8F2">		});</span></span>
+<span class="line"><span style="color:#F8F8F2">	}</span></span>
+<span class="line"><span style="color:#6272A4">	// 实现链式编程</span></span>
+<span class="line"><span style="color:#FF79C6">	return</span><span style="color:#BD93F9;font-style:italic"> this</span><span style="color:#F8F8F2">;</span></span>
+<span class="line"><span style="color:#F8F8F2">}</span></span></code></pre></div><aside class="article-discussion" aria-label="文章交流" data-astro-cid-hvp2333a><p class="discussion-message" data-astro-cid-hvp2333a><i class="icon icon-comment" aria-hidden="true" data-astro-cid-hvp2333a></i><span data-astro-cid-hvp2333a>有问题请</span><a href="/guestbook/index.html" data-astro-cid-hvp2333a>留言给我哦！<span class="discussion-arrow" aria-hidden="true" data-astro-cid-hvp2333a>→</span></a></p><p class="discussion-group" data-astro-cid-hvp2333a><i class="icon icon-qq" aria-hidden="true" data-astro-cid-hvp2333a></i><span data-astro-cid-hvp2333a>也欢迎入群讨论！</span><a href="https://shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="noopener noreferrer nofollow" aria-label="点我呀！加入 QQ 群讨论（新窗口打开）" data-astro-cid-hvp2333a>点我呀！<span class="discussion-arrow" aria-hidden="true" data-astro-cid-hvp2333a>↗</span></a></p></aside><section class="legacy-reward" data-reward aria-label="支持作者"><p class="reward-comment">满分是10分的话，这篇文章你给几分，您的支持将鼓励我继续创作！</p><p class="reward-status" role="status" hidden></p><div class="reward-content"><div class="reward-links"><a id="github" href="https://github.com/ihoey/Playing-reward" target="_blank" rel="noopener noreferrer" class="pos-f tr3" title="打赏组件 GitHub" aria-label="打赏组件 GitHub"></a><a href="https://blog.ihoey.com/" id="DonateText" class="tr3" title="梦魇小栈">ihoey.com</a><ul id="donateBox" class="list pos-f tr3" aria-label="打赏方式"><li id="PayPal"><a href="https://www.paypal.me/ihoey" target="_blank" rel="noopener noreferrer" title="PayPal" aria-label="通过 PayPal 打赏">PayPal</a></li><li id="QQPay"><a href="/qcode/tencent_qcode.png" data-reward-code="QQ" title="QQ" aria-label="查看 QQ 收款码">QQ</a></li><li id="AliPay"><a href="/qcode/alipay_qcode.png" data-reward-code="支付宝" title="支付宝" aria-label="查看支付宝收款码">支付宝</a></li><li id="WeChat"><a href="/qcode/wechat_qcode.png" data-reward-code="微信" title="微信" aria-label="查看微信收款码">微信</a></li></ul></div><div id="QRBox" hidden><button id="MainBox" type="button" aria-label="关闭收款码"><img width="190" height="190" alt=""></button></div></div></section><script type="module">function e(){document.querySelectorAll(`[data-reward]`).forEach(e=>{let t=e.querySelector(`.reward-links`),n=e.querySelector(`#QRBox`),r=e.querySelector(`#MainBox`),i=r.querySelector(`img`),a=e.querySelector(`.reward-status`),o=matchMedia(`(prefers-reduced-motion: reduce)`),s=null,c,l=!1,u=()=>{clearTimeout(c),n.hidden=!0,n.classList.remove(`fadeIn`,`is-closing`),r.classList.remove(`showQR`,`hideQR`),e.classList.remove(`blur`),t.inert=!1,s&&(s.setAttribute(`aria-expanded`,`false`),s.focus({preventScroll:!0}))},d=()=>{if(!(n.hidden||n.classList.contains(`is-closing`))){if(o.matches){u();return}r.classList.replace(`showQR`,`hideQR`),n.classList.add(`is-closing`),c=setTimeout(u,600)}};e.querySelectorAll(`[data-reward-code]`).forEach(o=>{o.setAttribute(`aria-controls`,`QRBox`),o.setAttribute(`aria-expanded`,`false`),o.addEventListener(`click`,async c=>{if(c.preventDefault(),n.hidden&&!l){l=!0,o.setAttribute(`aria-busy`,`true`),a.hidden=!0,s=o,i.src=o.href,i.alt=`${o.dataset.rewardCode}打赏收款二维码`;try{await i.decode()}catch{a.textContent=`收款码暂时没加载成功，请再试一次。`,a.hidden=!1;return}finally{l=!1,o.removeAttribute(`aria-busy`)}r.setAttribute(`aria-label`,`${o.dataset.rewardCode}收款码，点击关闭`),o.setAttribute(`aria-expanded`,`true`),n.hidden=!1,n.classList.add(`fadeIn`),e.classList.add(`blur`),t.inert=!0,r.classList.add(`showQR`),r.focus({preventScroll:!0})}})}),r.addEventListener(`click`,d),n.addEventListener(`click`,e=>{e.target===n&&d()}),e.addEventListener(`keydown`,e=>{e.key===`Escape`&&!n.hidden&&(e.preventDefault(),d())}),o.addEventListener(`change`,()=>{n.classList.contains(`is-closing`)&&u()})})}e();</script><div class="article-end"><p>谢谢你读到这里。</p><a class="text-link" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a></div><nav class="adjacent-posts" aria-label="相邻文章"><a class="adjacent-newer" rel="prev" href="/posts/javascript/2016-11-21-javascript-jquery-part4.html"><span><b aria-hidden="true">←</b> 上一篇</span><strong>JQuery分析及实现part4之DOM操作模块功能及实现</strong></a><a class="adjacent-older" rel="next" href="/posts/javascript/2016-11-19-javascript-jquery-part2.html"><span>下一篇 <b aria-hidden="true">→</b></span><strong>JQuery分析及实现part2之css部分功能及实现</strong></a></nav><section class="comments-section" aria-labelledby="comments-title"><h2 id="comments-title">聊一聊</h2><div id="comments" data-comment-path="/posts/javascript/2016-11-20-javascript-jquery-part3.html" data-comment-title="JQuery分析及实现part3之属性模块功能及实现"><p class="comment-status" role="status">评论正在加载。也可以通过 <a href="mailto:mail@ihoey.com">邮件</a> 联系我。</p></div><noscript>评论需要 JavaScript。文章阅读不受影响。</noscript></section><script type="module" src="/_astro/Comments.astro_astro_type_script_index_0_lang.MspX2Enu.js"></script></div><aside class="article-toc"><details open><summary>目录</summary><nav aria-label="文章目录"><a style="--toc-depth:0" href="#知识点复习">知识点复习</a><a style="--toc-depth:0" href="#attr方法-setAttribute-和-getAttribute">attr方法( setAttribute 和 getAttribute )</a><a style="--toc-depth:0" href="#html方法">html方法</a><a style="--toc-depth:0" href="#text方法">text方法</a><a style="--toc-depth:0" href="#val方法">val方法</a><a style="--toc-depth:0" href="#prop方法">prop方法</a></nav></details></aside></div></article></main><aside id="author-sidebar" class="author-sidebar" aria-label="作者与分类" popover="auto"><div class="sidebar-heading"><span>小栈导航</span><button class="sidebar-close" type="button" popovertarget="author-sidebar" popovertargetaction="hide" aria-label="关闭作者与分类侧栏" title="收起侧栏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 7 7-7 7"></path></svg></button></div><div class="author-profile"><a class="avatar-link" href="/about/index.html" aria-label="认识 Ihoey"><img src="/avatar.png" width="88" height="88" alt="Ihoey 的头像"></a><h2>Ihoey</h2><p class="author-motto">心，若没有栖息的地方，<br>到哪里都是流浪……</p><div class="author-stats"><a href="/archives/index.html"><b>57</b>文章</a><a href="/categories/index.html"><b>18</b>分类</a><a href="/tags/index.html"><b>49</b>标签</a></div><nav class="author-social" aria-label="联系作者"><a href="https://github.com/ihoey" target="_blank" rel="noopener noreferrer"><i class="icon icon-github" aria-hidden="true"></i><span>GitHub</span></a><a href="http://weibo.com/hy951121" target="_blank" rel="noopener noreferrer"><i class="icon icon-weibo" aria-hidden="true"></i><span>微博</span></a><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1058221214&amp;site=qq&amp;menu=yes" target="_blank" rel="noopener noreferrer"><i class="icon icon-qq" aria-hidden="true"></i><span>QQ</span></a><a href="mailto:mail@ihoey.com" rel="noopener noreferrer"><i class="icon icon-envelope" aria-hidden="true"></i><span>E-mail</span></a><a href="https://twitter.com/ihoeys" target="_blank" rel="noopener noreferrer"><i class="icon icon-twitter" aria-hidden="true"></i><span>Twitter</span></a><a href="https://www.facebook.com/profile.php?id=100008808609802" target="_blank" rel="noopener noreferrer"><i class="icon icon-facebook" aria-hidden="true"></i><span>Facebook</span></a></nav><a class="author-feed" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS <span aria-hidden="true">↗</span></a></div><nav class="sidebar-topics" aria-label="文章分类"><h3>分类</h3><a href="/"><span>全部文章</span><span>57</span></a><a href="/categories/javascript/" aria-current="location"><span>javascript</span><span>23</span></a><a href="/categories/Node/"><span>Node</span><span>8</span></a><a href="/categories/Linux/"><span>Linux</span><span>7</span></a><a href="/categories/Canvas/"><span>Canvas</span><span>3</span></a><a href="/categories/Android/"><span>Android</span><span>2</span></a><a href="/categories/Hexo/"><span>Hexo</span><span>2</span></a><a href="/categories/index.html"><span>所有分类</span><span aria-hidden="true">→</span></a></nav><nav class="sidebar-friends" aria-label="友情链接"><h3>友邻</h3><a href="https://blog.mythsman.com/" target="_blank" rel="noopener noreferrer"><span>mythsman</span><span aria-hidden="true">↗</span></a><a href="https://www.isthnew.com/links" target="_blank" rel="noopener noreferrer"><span>可乐没气的猫</span><span aria-hidden="true">↗</span></a><a href="http://www.bboysoul.com/" target="_blank" rel="noopener noreferrer"><span>Bboysoul</span><span aria-hidden="true">↗</span></a><a href="https://jnan.org/" target="_blank" rel="noopener noreferrer"><span>jnduan&#39;s Blog</span><span aria-hidden="true">↗</span></a><a href="https://ehlxr.me/" target="_blank" rel="noopener noreferrer"><span>Ehlxr&#39;s Blog</span><span aria-hidden="true">↗</span></a><a class="all-friends" href="/links/index.html"><span>所有友链</span><span aria-hidden="true">→</span></a></nav></aside><script type="module">var e=document.querySelector(`#author-sidebar`),t=document.querySelector(`.sidebar-toggle`);e&&t&&`showPopover`in e&&(t.hidden=!1,e.addEventListener(`beforetoggle`,e=>{let n=e.newState===`open`;t.setAttribute(`aria-expanded`,String(n));let r=n?`收起作者与分类侧栏`:`展开作者与分类侧栏`;t.setAttribute(`aria-label`,r),t.title=r}));</script><aside class="companion global-companion" data-global-companion data-page-title="JQuery分析及实现part3之属性模块功能及实现" aria-label="伊布陪伴" data-astro-cid-d2trybt3><p class="companion-message" role="status" aria-live="polite" aria-atomic="true" data-astro-cid-d2trybt3>欢迎阅读「JQuery分析及实现part3之属性模块功能及实现」</p><button class="pet-button" type="button" aria-label="和伊布打招呼" data-astro-cid-d2trybt3><div class="eevee-scene" data-mood="idle" data-astro-cid-nlnf5ucx><div class="eevee" aria-hidden="true" data-astro-cid-nlnf5ucx><div class="body" data-astro-cid-nlnf5ucx><div class="head" data-astro-cid-nlnf5ucx><div class="ears" data-astro-cid-nlnf5ucx><div class="ear" data-astro-cid-nlnf5ucx><div class="lobe" data-astro-cid-nlnf5ucx></div></div><div class="ear" data-astro-cid-nlnf5ucx><div class="lobe" data-astro-cid-nlnf5ucx></div></div></div><div class="face" data-astro-cid-nlnf5ucx><div class="eyes" data-astro-cid-nlnf5ucx><div class="eye" data-astro-cid-nlnf5ucx><div class="eyelid" data-astro-cid-nlnf5ucx></div></div><div class="eye" data-astro-cid-nlnf5ucx><div class="eyelid" data-astro-cid-nlnf5ucx></div></div></div><div class="nose" data-astro-cid-nlnf5ucx></div><div class="mouth" data-astro-cid-nlnf5ucx></div></div></div><div class="chest" data-astro-cid-nlnf5ucx><div class="fur" data-astro-cid-nlnf5ucx><div class="patch" data-astro-cid-nlnf5ucx></div></div><div class="fur" data-astro-cid-nlnf5ucx><div class="patch" data-astro-cid-nlnf5ucx></div></div><div class="fur" data-astro-cid-nlnf5ucx><div class="patch" data-astro-cid-nlnf5ucx></div></div></div><div class="legs" data-astro-cid-nlnf5ucx><div class="leg" data-astro-cid-nlnf5ucx><div class="inner-leg" data-astro-cid-nlnf5ucx></div></div><div class="leg" data-astro-cid-nlnf5ucx><div class="inner-leg" data-astro-cid-nlnf5ucx></div></div><div class="leg" data-astro-cid-nlnf5ucx><div class="inner-leg" data-astro-cid-nlnf5ucx></div></div><div class="leg" data-astro-cid-nlnf5ucx><div class="inner-leg" data-astro-cid-nlnf5ucx></div></div></div><div class="tail" data-astro-cid-nlnf5ucx><div class="tail" data-astro-cid-nlnf5ucx><div class="tail" data-astro-cid-nlnf5ucx><div class="tail" data-astro-cid-nlnf5ucx><div class="tail" data-astro-cid-nlnf5ucx><div class="tail -end" data-astro-cid-nlnf5ucx></div></div></div></div></div></div></div></div><span class="eevee-sleep" aria-hidden="true" data-astro-cid-nlnf5ucx>z<span data-astro-cid-nlnf5ucx>z</span></span></div></button><span class="companion-caption" data-astro-cid-d2trybt3>有伊布作伴，慢慢看。</span></aside><script type="module" src="/_astro/Companion.astro_astro_type_script_index_0_lang.BCIBkMoI.js"></script><dialog class="image-viewer" aria-label="图片预览"><div class="image-viewer-toolbar"><span class="image-viewer-count" aria-live="polite"></span><a class="image-viewer-original" target="_blank" rel="noopener noreferrer">查看原图 ↗</a><button type="button" data-image-close aria-label="关闭图片预览" autofocus>×</button></div><figure><img class="image-viewer-image" alt=""><figcaption></figcaption></figure><button type="button" class="image-viewer-prev" aria-label="上一张图片">‹</button><button type="button" class="image-viewer-next" aria-label="下一张图片">›</button></dialog><script type="module">function e(e,t){return e.trim().length<88?``:`作者：Ihoey\n链接：${t}\n来源：梦魇小栈\n著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。`}var t=document.querySelector(`.image-viewer`);if(t&&typeof t.showModal==`function`){let e=t,n=e.querySelector(`.image-viewer-image`),r=e.querySelector(`figcaption`),i=e.querySelector(`.image-viewer-count`),a=e.querySelector(`.image-viewer-original`),o=e.querySelector(`.image-viewer-prev`),s=e.querySelector(`.image-viewer-next`),c=[...document.querySelectorAll(`.prose img,.post-excerpt img`)].filter(e=>{let t=e.closest(`a`);return!e.hidden&&(!t||/\.(?:png|jpe?g|gif|webp|avif|svg)(?:[?#]|$)/i.test(t.href))}),l=0,u;function d(t){l=t;let u=c[t],d=u.closest(`a`);n.src=d?.href||u.currentSrc||u.src,n.alt=u.alt,r.textContent=u.title||u.alt,i.textContent=`${t+1} / ${c.length}`,a.href=n.src,o.disabled=t===0,s.disabled=t===c.length-1,e.open||e.showModal()}c.forEach((e,t)=>{let n=e.closest(`a`)||e;n===e&&(e.tabIndex=0,e.setAttribute(`role`,`button`)),n.classList.add(`image-zoom`),n.setAttribute(`aria-label`,`放大图片：${e.alt||e.title||`文章配图`}`),n.setAttribute(`aria-haspopup`,`dialog`),n.addEventListener(`click`,e=>{e instanceof MouseEvent&&(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0)||(e.preventDefault(),u=n,d(t))}),n===e&&n.addEventListener(`keydown`,e=>{(e.key===`Enter`||e.key===` `)&&(e.preventDefault(),u=n,d(t))})}),o.addEventListener(`click`,()=>{l>0&&d(l-1)}),s.addEventListener(`click`,()=>{l<c.length-1&&d(l+1)}),e.querySelector(`[data-image-close]`)?.addEventListener(`click`,()=>e.close()),e.addEventListener(`click`,t=>{t.target===e&&e.close()}),e.addEventListener(`keydown`,e=>{e.key===`ArrowLeft`&&l>0&&(e.preventDefault(),d(l-1)),e.key===`ArrowRight`&&l<c.length-1&&(e.preventDefault(),d(l+1))}),e.addEventListener(`close`,()=>u?.focus({preventScroll:!0}))}document.addEventListener(`copy`,t=>{if(!t.clipboardData||t.defaultPrevented)return;let n=getSelection();if(!n?.rangeCount)return;let r=n.getRangeAt(0),i=e=>e instanceof Element?e:e.parentElement,a=i(r.startContainer),o=i(r.endContainer),s=a?.closest(`.prose`);if(!s||o?.closest(`.prose`)!==s||a?.closest(`pre,input,textarea,[contenteditable]`)||o?.closest(`pre,input,textarea,[contenteditable]`))return;let c=r.cloneContents();if(c.querySelector(`pre,input,textarea,[contenteditable]`))return;let l=n.toString(),u=e(l,document.querySelector(`link[rel="canonical"]`)?.href||location.href);if(!u)return;let d=document.createElement(`div`);d.append(c);let f=document.createElement(`p`);f.textContent=u,f.style.whiteSpace=`pre-line`,d.append(f),t.clipboardData.setData(`text/plain`,`${l}\n\n${u}`),t.clipboardData.setData(`text/html`,d.innerHTML),t.preventDefault()});</script><footer class="site-footer"><svg class="footer-landscape" viewBox="0 0 1600 140" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="ridge-far" d="M0 86L88 62L166 74L285 25L350 47L435 37L555 83L674 54L750 66L888 17L974 44L1055 32L1180 73L1305 40L1384 59L1510 28L1600 61V140H0Z"></path><path class="ridge-middle" d="M0 111L120 82L218 98L366 58L452 72L552 57L699 100L831 74L939 91L1076 49L1184 66L1260 58L1385 96L1503 69L1600 86V140H0Z"></path><path class="ridge-near" d="M0 128L150 103L257 118L406 91L520 111L651 89L805 117L932 103L1065 119L1210 86L1300 102L1429 91L1530 116L1600 104V140H0Z"></path></svg><div class="footer-content"><div class="footer-main"><div class="footer-identity"><div class="footer-brand"><a class="footer-name" href="/">梦魇小栈</a><span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span></div><p class="footer-motto">心，若没有栖息的地方，到哪里都是流浪……</p><nav class="footer-links" aria-label="小栈链接"><a class="footer-rss" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a><a href="/sitemap.xml">站点地图</a><a href="https://github.com/ihoey" target="_blank" rel="noopener noreferrer"><i class="icon icon-github" aria-hidden="true"></i> GitHub</a><a class="footer-guestbook" href="/guestbook/index.html"><i class="icon icon-comment" aria-hidden="true"></i> 留个言 <span aria-hidden="true">↗</span></a></nav></div><div class="footer-status"><p class="uptime-label">博客已萌萌哒运行 <span class="uptime-face">●'◡'●)ﾉ♥</span></p><p class="site-uptime"><span data-uptime>从 2015 年至今</span></p><div class="site-traffic" aria-label="访问统计"><span id="busuanzi_container_site_uv"><i class="icon icon-user" aria-hidden="true"></i> 访客 <span id="busuanzi_value_site_uv">—</span></span><span id="busuanzi_container_site_pv"><i class="icon icon-eye" aria-hidden="true"></i> 访问 <span id="busuanzi_value_site_pv">—</span> 次</span></div></div></div><div class="footer-bottom"><span>© 2015–2026 <img class="footer-heart" src="/design/reward/like.svg" width="18" height="18" alt="" aria-hidden="true"> 梦魇小栈</span><a href="https://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">京ICP备15058055号-1</a><span>由 <a href="https://github.com/ihoey" rel="noopener noreferrer" target="_blank">Ihoey</a> 用心维护</span></div></div></footer><button class="back-top" type="button" aria-label="返回顶部" hidden><span class="back-top-label" aria-hidden="true">回到顶部</span><svg class="back-top-rocket" viewBox="0 0 32 44" fill="none" aria-hidden="true"><g class="rocket-flame"><path d="M12 31q0 7 4 10 4-3 4-10"></path><path d="M16 32v4"></path></g><g class="rocket-body"><path class="rocket-fins" d="m10 20-5 6v7l7-4m10-9 5 6v7l-7-4"></path><path d="M10 29C7 16 11 7 16 3c5 4 9 13 6 26Z"></path><path d="M11 29h10l-1 3h-8Z"></path><circle cx="16" cy="16" r="3"></circle></g></svg></button><script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.UH0B4Mok.js"></script><script defer src="/lib/hitalk/3.0.0/secret-cat.a2815fc1af05.js"></script><script type="module">location.hostname===`blog.ihoey.com`&&`serviceWorker`in navigator&&navigator.serviceWorker.getRegistrations().then(e=>{for(let t of e){let e=t.active||t.waiting||t.installing;e&&new URL(e.scriptURL).pathname===`/sw.js`&&t.update().catch(()=>{})}}).catch(()=>{}),document.querySelectorAll(`.prose pre`).forEach(e=>{let t=e.querySelector(`code`);if(!t)return;let n=document.createElement(`button`);n.type=`button`,n.className=`copy-code`,n.textContent=`复制`,n.setAttribute(`aria-label`,`复制代码`),n.addEventListener(`click`,async()=>{try{await navigator.clipboard.writeText(t.textContent||``),n.textContent=`已复制`,window.dispatchEvent(new Event(`blog:copied`))}catch{n.textContent=`请手动复制`}window.setTimeout(()=>{n.textContent=`复制`},1800)});let r=document.createElement(`div`);r.className=`code-block`;let i=document.createElement(`span`);i.className=`code-language`,i.textContent=e.dataset.language||t.className.replace(`language-`,``)||`CODE`,e.replaceWith(r),r.append(i,n,e)});</script></body></html><script type="module">var e=document.querySelector(`.article-toc details`),t=e?.querySelector(`nav`),n=matchMedia(`(prefers-reduced-motion: reduce)`);if(e&&t){matchMedia(`(max-width:700px)`).matches&&(e.open=!1);let r=Array.from(t.querySelectorAll(`a`)).flatMap(e=>{let t=document.getElementById(decodeURIComponent(e.hash.slice(1)));return t?[{link:e,heading:t}]:[]});if(r.length){let i=document.createElement(`span`);i.className=`toc-marker`,i.setAttribute(`aria-hidden`,`true`),t.prepend(i),t.classList.add(`has-marker`);let a=-1,o=!1,s,c=!1,l,u=0,d=()=>!n.matches&&document.documentElement.dataset.effects!==`off`;function f(n=!0,c=!1){if(i.hidden=!e.open,!e.open||a<0)return;let l=r[a].link.getBoundingClientRect(),u=l.top-t.getBoundingClientRect().top+l.height/2-3,f=new DOMMatrixReadOnly(getComputedStyle(i).transform);if(s?.cancel(),i.style.transform=`translate(0px, ${u}px)`,o&&n&&d()&&Math.abs(u-f.m42)>.5){let e=u-f.m42,t=Math.min(c?8:4,Math.abs(e)*.15);s=i.animate([{transform:`translate(${f.m41}px, ${f.m42}px)`},{transform:`translate(${-t}px, ${f.m42+e*.5}px)`,offset:.45},{transform:`translate(${-t*.25}px, ${f.m42+e*.92}px)`,offset:.8},{transform:`translate(0px, ${u}px)`}],{duration:c?300:220,easing:`cubic-bezier(.2,.65,.3,1)`})}o=!0}function p(e,t=!0,n=!1){e!==a&&(a=e,r.forEach(({link:t},n)=>{t.classList.toggle(`active`,n===e),n===e?t.setAttribute(`aria-current`,`location`):t.removeAttribute(`aria-current`)}),f(t,n))}function m(e=!0){if(c)return;let t=Math.min(innerHeight*.22,160),n=0;r.forEach(({heading:e},r)=>{e.getBoundingClientRect().top<=t&&(n=r)}),p(n,e)}function h(){u||=requestAnimationFrame(()=>{u=0,m()})}function g(){clearTimeout(l),c=!1,h()}r.forEach(({link:e},t)=>{e.addEventListener(`click`,e=>{e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||(c=!0,clearTimeout(l),p(t,!0,!0),l=setTimeout(g,1200))})}),addEventListener(`scroll`,h,{passive:!0}),addEventListener(`scrollend`,g),addEventListener(`wheel`,g,{passive:!0}),addEventListener(`touchmove`,g,{passive:!0}),addEventListener(`keydown`,e=>{[`ArrowUp`,`ArrowDown`,`PageUp`,`PageDown`,`Home`,`End`,` `].includes(e.key)&&g()}),addEventListener(`hashchange`,h),addEventListener(`resize`,()=>{m(!1),f(!1)}),e.addEventListener(`toggle`,()=>f(!1));let _=()=>f(!1);addEventListener(`blog:effectschange`,_),n.addEventListener(`change`,_),new ResizeObserver(_).observe(t),document.fonts.ready.then(_),m(!1)}}</script>
