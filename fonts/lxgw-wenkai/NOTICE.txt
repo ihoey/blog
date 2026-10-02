@@ -4,5 +4,8 @@ Webfont packaging: https://github.com/chawyehsu/lxgw-wenkai-webfont
 Package: lxgw-wenkai-webfont 1.7.0
 Typeface license: SIL Open Font License 1.1 (OFL.txt)
 Webfont packaging license: MIT (webfont-LICENSE.txt)
-Regular (400) and Bold (700), unmodified WOFF2 unicode-range subsets.
-Font assets are emitted by Astro under /_astro/.
+Regular (400) and Bold (700), original WOFF2 unicode-range subsets.
+Production builds also derive per-page WOFF2 subsets named WenKai Blog Subset.
+Original outlines and advance widths are preserved; code remains monospace.
+Original fonts remain available for dynamic text not present in a page subset.
+Font assets are emitted under /_astro/; derivation: scripts/optimize-fonts.mjs.
