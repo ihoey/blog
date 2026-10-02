@@ -6,7 +6,7 @@
 
 ## 当前状态
 
-**Astro 已于 2026-10-02 上线。源码 25c62b4e，正式 master 8bbde7c4，Vercel Production 6805117372 success。225 个正式页面 / 资源 URL 与构建产物一致；历史留言、文章评论及主要交互验收通过。后续进入日常维护，发布与回退见 docs/release/astro-rollout.md。**
+**Astro 与 WebP 优化均已上线。当前源码 18d1d41c，正式 master 8fed6f94，Vercel Production 6805612187 success。本次回退点为首版 Astro 8bbde7c4；历史 Hexo 版本继续保留。发布与回退见 docs/release/astro-rollout.md。**
 
 | 项目 | 值 |
 | --- | --- |
@@ -22,9 +22,9 @@
 
 用户已同意 Astro 方向、独立分支和独立工作目录，并要求用文档记录进度。本地迁移、预览、验证及上线切换均已完成。
 
-## 2026-10-02 WebP 图片优化（待发布）
+## 2026-10-02 WebP 图片优化（已发布）
 
-树叶背景、适配尺寸的头像和 12 张文章图片已转换并接入；正文保留原图放大，原 Markdown 不变。头像按需加载，首屏背景 preload。构建 / 旧地址验证 / 25 项测试 / check 全部通过，浏览器验证原图及头像加载正常。详见 [图片优化记录](release/webp-optimization.md)。当前线上仍为 8bbde7c4，本次没有部署；下一步发布后按相同环境复测 Lighthouse。
+树叶背景、适配尺寸的头像和 12 张文章图片已转换并接入；正文保留原图放大，原 Markdown 不变。头像按需加载，首屏背景 preload。构建 / 旧地址验证 / 25 项测试 / check 全部通过，浏览器验证原图及头像加载正常。详见 [图片优化记录](release/webp-optimization.md)。已发布为 8fed6f94，正式页图片 / 原图放大 / 头像 / 历史评论已验收；性能复测记录见图片优化文档。
 
 ## 2026-10-02 上线后性能基线
 

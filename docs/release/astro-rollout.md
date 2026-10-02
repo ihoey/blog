@@ -2,6 +2,17 @@
 
 日期：2026-10-02。状态：**已上线，Vercel Production success；正式域名验收通过**。
 
+## 2026-10-02 WebP 优化发布
+
+- 本次用户明确授权发布 WebP 改动；源码 `18d1d41cdf04c9200e82482f7bce80316e425bf9` 已推送 feat/astro-migration。
+- master 从 `8bbde7c4` 普通快进至 `8fed6f947ba4304c5c8a48e773ef8f1142a8a2ae`；448 个文件与 dist 逐字节一致。
+- Vercel Production deployment `6805612187` 于北京时间 17:39:26 success；部署地址 `https://blog-kt1v7flo3-ihoeys-projects.vercel.app`。
+- 本次直接回退点为 `8bbde7c4b9d7b4c38760147f71af24c0dcd9db7a`（首版 Astro），旧 Hexo 基线仍保留。
+- 发布前：183 页构建、182 旧地址 / 576 锚点、25 项测试通过，check 45 文件零诊断。
+- 正式浏览器：PWA 五张图使用本地 WebP，放大首图加载 CDN 4320px 原图，历史评论 34 条正常；展开侧栏后头像以 WebP 加载，宽 176px。
+- 正式域名 239 个页面 / 资源 URL 全部校验通过，未知地址 404；移动 Lighthouse 复测首页 75、PWA 文章 81，报告无运行警告。
+- 详细图片变化与上线后性能复测见 [WebP 优化记录](webp-optimization.md)。
+
 ## 2026-10-02 实际发布记录
 
 - 用户明确授权执行上线；北京时间 17:10:04 Vercel 报告 Production success。

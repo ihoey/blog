@@ -85,7 +85,7 @@ draft: true
 
 ## 发布状态
 
-Astro 已于 2026-10-02 发布，当前正式站由 `master` 的 `8bbde7c4` 静态产物提供，源码来自 `feat/astro-migration` 的 `25c62b4e`。后续仍使用独立发布工作区同步 dist，详见 [发布记录与回退](../release/astro-rollout.md)。
+Astro 已于 2026-10-02 发布，当前正式站由 `master` 的 `8fed6f94` 静态产物提供（含 WebP 优化），源码来自 `feat/astro-migration` 的 `18d1d41c`。后续仍使用独立发布工作区同步 dist，详见 [发布记录与回退](../release/astro-rollout.md)。
 
 发布前先确认用户预览结果、Vercel 的实际项目与分支配置、旧 Worker 升级结果和可回退的正式版本。若沿用静态分支发布，应使用独立部署工作区同步 `dist/`，普通提交和推送；不使用历史 SCP 钩子，不强制推送。不在本地预览阶段直接执行发布。
 
