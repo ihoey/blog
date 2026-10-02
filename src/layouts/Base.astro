@@ -47,7 +47,13 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
     {article && <link rel="stylesheet" href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css" />}
     <title>{fullTitle}</title>
     <script is:inline>
-      document.documentElement.dataset.effects = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'off' : 'on';
+      const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+      const applyMotionPreference = () => {
+        document.documentElement.dataset.effects = motionPreference.matches ? 'off' : 'on';
+        window.dispatchEvent(new Event('blog:effectschange'));
+      };
+      applyMotionPreference();
+      motionPreference.addEventListener('change', applyMotionPreference);
       try {
         const saved = localStorage.getItem('blog-theme');
         document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');

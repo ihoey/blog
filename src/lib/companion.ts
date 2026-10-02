@@ -1,3 +1,4 @@
+import { mountEevee } from './eevee-behavior';
 // Contextual replies ported from themes/next/source/message.json in the hexo branch.
 // Delegate events so late-mounted comment controls work without polling or rebinding.
 const companion = document.querySelector<HTMLElement>('[data-global-companion]');
@@ -15,7 +16,7 @@ function say(text: string, duration = 4500) {
 const label = (el: Element) => (el.textContent?.trim() || el.getAttribute('aria-label') || '').replace(/\s+/g, ' ').slice(0, 60);
 type Tip = { selector: string; text: string | ((el: Element) => string) };
 const tips: Tip[] = [
-  { selector: '.pet-button', text: '鼠…鼠标放错地方了！快来和我打个招呼吧～' },
+  { selector: '.pet-button', text: '你来啦，要摸摸耳朵吗？' },
   { selector: '.main-nav a, .post-summary h2 a', text: el => `要看看「${label(el)}」么？` },
   { selector: '.site-name, .footer-name', text: '要返回主页嘛？' },
   { selector: '.avatar-link', text: '那不要乱玩噢～这是主人的头像。' },
@@ -55,7 +56,7 @@ function showContext(event: Event) {
 document.addEventListener('pointerover', event => { if (event.pointerType !== 'touch') showContext(event); });
 document.addEventListener('focusin', showContext);
 companion?.querySelector('.pet-button')?.addEventListener('click', () => {
-  const lines = ['干嘛呢你，快把手拿开～', '再摸的话，我可要挠你啦！⌇●﹏●⌇', '好啦好啦，陪你一起看文章。'];
+  const lines = ['嘿嘿，再摸一下～', '耳朵竖起来啦，今天也要元气满满！', '好啦好啦，陪你一起看文章。'];
   say(lines[petReply++ % lines.length]);
 });
 window.addEventListener('blog:copied', () => say('代码复制好啦，祝你折腾顺利！'));
@@ -72,3 +73,5 @@ window.addEventListener('blog:effectschange', () => {
   else if (bubble) bubble.hidden = true;
 });
 if (enabled()) welcome(); else if (bubble) bubble.hidden = true;
+
+if (companion) mountEevee(companion, () => say('唔……我醒啦，继续陪你。', 3000));
