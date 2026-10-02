@@ -7,6 +7,8 @@
 - 用户授权上线并要求改用 GitHub Actions。源码 `804ddf65acc53274e5a5dcc7363b478fabf928ef` 在 main，首次 [Actions 运行](https://github.com/ihoey/blog/actions/runs/37056641053) success；master 普通快进至 `ac8d3a26f827aecb2203ad455ef68640e22084ac`，保留发布历史。
 - Vercel [生产部署检查](https://vercel.com/ihoeys-projects/blog/98WK7cvc4YkXboXRPp99Z8wk4aMR) success；正式首页 https://blog.ihoey.com/ 返回 200，Server=Vercel。此次包含文楷按页字体子集、评论接近视口挂载、评论 / 小猫 CSS 非阻塞与内容哈希资源缓存优化。
 - 发布前远端 check 46 文件零诊断、32 项测试通过；183 页构建、182 旧地址 / 576 锚点、298 字体子集与 142,899 字形轮廓 / 宽度校验通过。首页字体 198,704 B，首次生成未命中缓存；已写入缓存供后续运行使用。
+- 第二轮 [Actions 运行](https://github.com/ihoey/blog/actions/runs/37057328767) success，全部 298 个字体子集命中缓存；构建与字体处理约 16 秒，作业约 80 秒。产物与 master 一致，未产生重复发布提交。后续纯文档提交也未触发新的构建。
+- 正式域名抽查 22 个页面 / 资源，包括首页、Rust 旧文章地址、独立入口、RSS / sitemap、首页 JS / CSS / 两个字体和 SW，全部返回 200 且 Git blob 摘要与 master 相同；未知地址返回真实 404。抽查记录为 work/actions-production-smoke.json（2026-10-03 04:40:07 Asia/Shanghai），本轮未完成全部 747 个可访问文件的全量线上核对。
 - master 只包含静态产物，共 748 文件；内部 `.prerender` 文件排除，不复制 Astro 源码。构建或检查失败不会推送产物，过期静态文件会清理，不强推。
 - 首次运行已删除四个审阅通过且头 SHA 未改变的旧分支，远端仅保留 main / master / hexo。默认分支仍是 master，切换默认分支需要仓库管理入口；不影响 main 推送自动发布。
 - 本轮直接回退点 `ba7a5f2b15abe8e46bbcd780700b21464ddd74b6`。回退要先暂停自动发布或同时撤销 main 中的对应修改，再用普通回退提交或 Vercel 提升已验证部署，避免下次 main 推送重新覆盖回退。
