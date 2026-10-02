@@ -15,12 +15,12 @@ const info = `名称：${site.name}\n地址：${site.url}\n描述：${site.descr
   <a href="#friend-exchange">申请友链 <span aria-hidden="true">↓</span></a>
 </div>
 <ul class="friend-list" aria-label="朋友们的站点">
-  {links.map(link => <li>
-    <a href={link.link} target="_blank" rel="noopener noreferrer" aria-label={`${link.name}（新窗口打开）`}>
+  {links.map((link, index) => <li>
+    <a href={link.link} target="_blank" rel="noopener noreferrer" aria-label={`${link.name}（新窗口打开）`} aria-describedby={`friend-description-${index}`}>
       <span class="friend-avatar" aria-hidden="true"><span>{[...link.name][0].toLocaleUpperCase()}</span>{link.avatar && <img src={link.avatar} alt="" width="48" height="48" loading="lazy" decoding="async" referrerpolicy="no-referrer" />}</span>
-      <div class="friend-identity"><h3>{link.name}</h3><span class="friend-domain">{new URL(link.link).hostname.replace(/^www\./, '')}</span></div>
+      <div class="friend-identity"><h3 title={link.name}>{link.name}</h3><span class="friend-domain">{new URL(link.link).hostname.replace(/^www\./, '')}</span></div>
       <span class="friend-arrow" aria-hidden="true">↗</span>
-      <p>{link.description}</p>
+      <p id={`friend-description-${index}`} title={link.description}>{link.description}</p>
     </a>
   </li>)}
 </ul>
