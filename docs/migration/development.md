@@ -17,6 +17,8 @@ Astro 7 的开发服务可能以后台进程运行。使用 `pnpm exec astro dev
 
 `pnpm dev` / `pnpm start` 带 `--force`，启动时刷新内容缓存，避免文章沿用旧的 Markdown 高亮结果。修改高亮主题或渲染插件后若页面未更新，先停止开发服务，再用原端口重新启动，例如 `pnpm dev --port 4322`；单独刷新浏览器无法清除服务端内容缓存。
 
+2026-10-02 补充：本机 Astro 7 的开发缓存位于 `.astro/data-store.json`，而 sync / build 使用 `node_modules/.astro/data-store.json`。如果 `sync --force` 后 dev 仍输出旧 Markdown，先停止 dev，将 `.astro/data-store.json` 移到 `work/` 备份，再启动 dev 重建缓存；只处理该生成文件，不改正文。
+
 生产产物预览：
 
 ```sh
