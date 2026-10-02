@@ -55,8 +55,8 @@ const nav = [['/', '首页', 'home'], ['/archives/index.html', '归档', 'archiv
     <meta property="og:image" content={new URL('/avatar.png', Astro.site).href} />
     {date && <meta property="article:published_time" content={date.toISOString()} />}
     {updated && <meta property="article:modified_time" content={updated.toISOString()} />}
-    <link rel="stylesheet" href="/lib/hitalk/3.0.0/secret-cat.9107f720cc5f.css" />
-    {(article || comments) && <link rel="stylesheet" href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css" />}
+    <link rel="stylesheet" href="/lib/hitalk/3.0.0/secret-cat.9107f720cc5f.css" media="print" onload="this.media='all'" />
+    {(article || comments) && <link rel="stylesheet" href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css" media="print" onload="this.media='all'" />}
     <title>{fullTitle}</title>
     {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData).replaceAll('<', '\\u003c')} />}
     <script is:inline>

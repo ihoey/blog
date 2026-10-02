@@ -36,7 +36,9 @@ pnpm build && pnpm verify && pnpm test && pnpm check
 
 所有这些命令都不会发布网站。`pnpm start` 现在等价于本地开发；根 package.json 不再提供旧 `deploy` 命令。原 Hexo package.json 已归档至 `docs/migration/hexo-package.json`。
 
-`pnpm build` 先执行 `astro sync --force` 清理内容渲染缓存，再构建。57 篇文章规模下耗时很小，可确保迁移插件的变更不会被旧 Markdown 缓存遮蔽。
+`pnpm build` 先执行 `astro sync --force` 清理内容渲染缓存，再构建，并运行 `scripts/optimize-fonts.mjs`，按生成后的页面文字制作常规 / 粗体文楷子集。首次字体压缩需要数分钟；后续使用 `.astro/reading-font-cache/` 缓存，字体源或处理脚本变化时自动失效。不要直接以 `astro build` 代替发布构建，否则会跳过字体优化。开发模式仍使用完整字体。
+
+页面优先使用子集字体，异步加载原有 unicode-range 字体声明，为任意评论和动态文字补字。`pnpm verify` 同时检查页面文字覆盖与子集字形轮廓 / 宽度；原文楷字体和授权文件保留。连续构建会排除并清理旧的派生字体资源，避免重复声明和发布目录堆积。
 
 ## 文件布局
 

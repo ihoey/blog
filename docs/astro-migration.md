@@ -22,6 +22,15 @@
 
 用户已同意 Astro 方向、独立分支和独立工作目录，并要求用文档记录进度。本地迁移、预览、验证及上线切换均已完成。
 
+## 2026-10-02 文楷加载与缓存优化（源码修改，未发布）
+
+- 用户要求检查正式站性能，并在 ihoey/blog 的 Astro 源码分支修改提交。远端对应分支为 `feat/astro-migration`；本轮基于 `685cc4ef` 创建独立优化分支 `perf/astro-font-loading`。
+- Google PageSpeed Insights 正式站基线：首页移动 56、FCP 9.3s、LCP 11.7s，桌面 87；Rust 羊了个羊文章移动 58、FCP 7.5s、LCP 9.5s，桌面 92。首页原始网络记录 33 个文楷分片约 1.57 MiB。具体报告：[首页](https://pagespeed.web.dev/analysis/https-blog-ihoey-com/f98hmu4pid?form_factor=mobile)、[文章](https://pagespeed.web.dev/analysis/https-blog-ihoey-com-posts-rust-2022-09-17-rust-wechat-game-ylgy-html/ugt1ytw6yb?form_factor=mobile)。
+- 保留文楷常规 / 粗体和原字形，构建后为 183 页生成 298 个可复用字体子集；首页两个字体合计 198,704 B（约 194 KiB），比原记录减少约 88%。关键 CSS 从 302,101 B 降至 118,472 B，完整字体声明 183,649 B 改为非阻塞 fallback。这里是文件体积对比，尚未部署或获得优化后的线上 Lighthouse 分数；动态评论仍可能按需加载原分片。
+- 评论在接近视口时挂载，评论 / 小猫 CSS 非阻塞加载；内容哈希资源配置一年 immutable 浏览器缓存，SW 退役脚本仍禁止缓存。图片预览原图入口补入初始 href。
+- 最终验证：build 183 页，连续第二次构建命中全部 298 个字体缓存，没有重复声明或遗留派生 CSS；verify 检查 57 篇文章、182 个旧路由 / 576 个锚点、页面文字覆盖及 142,899 个字形轮廓 / 宽度；29 项测试通过，Astro check 46 文件零诊断。当前环境阻止本地预览 URL，尚未进行本轮浏览器视觉验收。
+- 续接会话用户明确要求提交，已找回本地优化提交 `97921d1`，核对远端 `feat/astro-migration` 仍为其父提交 `685cc4ef`。首次写入返回 403，原因是 ChatGPT Codex Connector 仅完成账号授权、未安装到仓库所属账号；用户随后安装到 ihoey 并授权 blog，实际 Git blob 写入验证成功。本轮通过 GitHub 写入连接提交优化源码及本条进度记录，按本地完整文件核对 Git blob / tree 摘要，仅更新源码分支，不部署。下一步：按发布流程部署后，用同一 PageSpeed 配置复测首页 / 文章并检查评论、小猫、日夜模式和动态补字。
+
 ## 2026-10-02 本轮正式发布完成
 
 用户确认部署后，补回打赏记录下的 2017 年原感想及 LeanCloud / Hitalk 迁移说明；补入 2021 / 2022 / 2023 / 2025 年维护记录，历程共 18 条。与前轮 SVG 一并上线为 ba7a5f2b，Vercel success，240 个正式页面 / 资源与产物一致。详见 docs/release/astro-rollout.md。本轮后续文档提交不改变线上产物。

@@ -46,3 +46,20 @@ export async function mountComments() {
     status.textContent = '评论暂时无法加载，请稍后刷新重试。'; container.replaceChildren(status);
   }
 }
+
+// Historical comments can contain characters outside the authored page subset.
+// Wait until readers approach the discussion before loading its text and fonts.
+export function mountCommentsWhenVisible() {
+  const container = document.querySelector<HTMLElement>('#comments[data-comment-path]');
+  if (!container) return;
+  if (location.hostname !== 'blog.ihoey.com' || typeof IntersectionObserver === 'undefined') {
+    void mountComments();
+    return;
+  }
+  const observer = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    observer.disconnect();
+    void mountComments();
+  }, { rootMargin: '300px' });
+  observer.observe(container);
+}

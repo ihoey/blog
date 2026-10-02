@@ -11,6 +11,6 @@ const { path, title } = Astro.props;
   <noscript>评论需要 JavaScript。文章阅读不受影响。</noscript>
 </section>
 <script>
-  import { mountComments } from '../lib/comments';
-  mountComments();
+  import { mountCommentsWhenVisible } from '../lib/comments';
+  mountCommentsWhenVisible();
 </script>

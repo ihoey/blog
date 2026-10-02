@@ -8,11 +8,11 @@ const compiled = ts.transpileModule(readFileSync(new URL('../src/lib/comments.ts
   compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
 }).outputText;
 
-function fixture(hostname, sdk) {
+function fixture(hostname, sdk, observer) {
   const children = []; const scripts = []; const exports = {};
   const element = { dataset: { commentPath: '/guestbook/', commentTitle: '留言板' }, replaceChildren: (...nodes) => { children.splice(0, children.length, ...nodes); } };
   vm.runInNewContext(compiled, {
-    exports, location: { hostname }, window: { Hitalk: sdk },
+    exports, location: { hostname }, window: { Hitalk: sdk }, IntersectionObserver: observer,
     document: { querySelector: () => element, createElement: () => ({ setAttribute() {} }), head: { append: script => scripts.push(script) } },
   });
   return { exports, element, children, scripts };
@@ -40,4 +40,26 @@ test('SDK failures leave readable fallback content', async () => {
   const f = fixture('blog.ihoey.com', { mount() { throw new Error('test error'); } });
   await f.exports.mountComments();
   assert.match(f.children[0].textContent, /暂时无法加载/);
+});
+
+test('production discussion waits for the viewport and disconnects before mounting', () => {
+  let callback, observed, disconnected = 0, calls = 0;
+  const f = fixture('blog.ihoey.com', { mount() { calls++; } }, class {
+    constructor(run, options) { callback = run; assert.equal(options.rootMargin, '300px'); }
+    observe(element) { observed = element; }
+    disconnect() { disconnected++; }
+  });
+  f.exports.mountCommentsWhenVisible();
+  assert.equal(observed, f.element); assert.equal(calls, 0);
+  callback([{ isIntersecting: false }]); assert.equal(calls, 0);
+  callback([{ isIntersecting: true }]); assert.equal(disconnected, 1);
+  return new Promise(resolve => setImmediate(() => { assert.equal(calls, 1); resolve(); }));
+});
+
+test('browsers without IntersectionObserver still mount the discussion', async () => {
+  let calls = 0;
+  const f = fixture('blog.ihoey.com', { mount() { calls++; } });
+  f.exports.mountCommentsWhenVisible();
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(calls, 1);
 });
