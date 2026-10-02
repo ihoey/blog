@@ -1,7 +1,6 @@
-/* NexT-inspired identity. Font Awesome 4 icons retain the original theme's icon language (SIL OFL 1.1). */
-@font-face{font-family:BlogIcons;src:url('/fonts/fontawesome-webfont.woff2') format('woff2');font-display:block}
-.icon{font-family:BlogIcons!important;font-style:normal;font-weight:normal;display:inline-block;width:1.2em;text-align:center;line-height:1}
-.icon-home:before{content:'\f015'}.icon-archive:before{content:'\f187'}.icon-tag:before{content:'\f02c'}.icon-link:before{content:'\f0c1'}.icon-comment:before{content:'\f0e5'}.icon-user:before{content:'\f007'}.icon-moon:before{content:'\f186'}.icon-magic:before{content:'\f0d0'}.icon-github:before{content:'\f09b'}.icon-rss:before{content:'\f09e'}.icon-calendar:before{content:'\f073'}.icon-scissors:before{content:'\f0c4'}.icon-up:before{content:'\f106'}
+/* Same NexT icon outlines, served as a small shared SVG sprite. */
+.icon{display:inline-block;width:1.2em;height:1em;flex-shrink:0;vertical-align:-.143em;fill:currentColor}
+
 :root{--bg:hsl(0deg 0% 100%);--surface:hsl(202deg 35% 97%);--ink:hsl(222deg 22% 5%);--muted:hsl(210deg 9% 43%);--line:hsl(202deg 24% 84%);--accent:hsl(202deg 60% 32%);--accent-soft:hsl(202deg 68% 92%);--accent-ink:white;--reading:var(--bg);--inline-ink:hsl(202deg 45% 27%)}
 :root[data-theme=dark]{color-scheme:dark;--bg:hsl(210deg 15% 6%);--surface:hsl(210deg 16% 14%);--ink:hsl(210deg 10% 90%);--muted:hsl(210deg 12% 68%);--line:hsl(202deg 20% 25%);--accent:hsl(202deg 65% 74%);--accent-soft:hsl(202deg 30% 18%);--accent-ink:hsl(202deg 45% 15%);--reading:var(--bg);--inline-ink:hsl(202deg 60% 83%)}
 :root{--layout-width:1080px;--listing-width:var(--reading-width);--reading-width:760px;--article-inset:12px;--article-width:calc(var(--reading-width) + 2 * var(--article-inset));--page-gutter:32px;--preview-inset:36px}
@@ -44,7 +43,7 @@ body{background:var(--bg)}
 .scissor-divider{position:relative;height:32px;margin:21px 0 4px;overflow:clip}
 .scissor-divider:before{content:'';position:absolute;left:0;right:0;top:50%;border-top:1px dashed var(--line)}
 .scissor-track{position:absolute;left:5%;width:calc(90% - 30px);height:100%;pointer-events:none;transition:transform .9s ease-in-out}
-.scissor-divider .icon{position:absolute;top:50%;left:0;transform:translateY(-50%);width:30px;background:var(--reading);color:var(--muted);font-size:13px;line-height:20px}
+.scissor-divider .icon{position:absolute;top:50%;left:0;transform:translateY(-50%);width:30px;background:var(--reading);color:var(--muted);font-size:13px;height:20px;padding-block:3.5px}
 @media(hover:hover) and (pointer:fine){.scissor-divider:hover .scissor-track{transform:translateX(100%)}}
 .post-row:last-child .scissor-divider{display:none}.compact .post-row{border-bottom:1px solid var(--line)}.compact .post-summary h2,.compact .post-meta{text-align:left;justify-content:flex-start}.compact .post-meta{margin-top:8px;margin-bottom:0}
 .article-shell{padding-top:18px}.article-header{grid-column:1;max-width:none;width:100%;margin:0;padding:24px 12px;text-align:center}
@@ -80,14 +79,13 @@ body{background:var(--bg)}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.scissor-divider:hover .scissor-track,.avatar-link:hover img{transform:none}.click-heart{display:none}}
 
-.icon-sun:before{content:'\f185'}
 .site-brand h1{font-size:inherit;line-height:inherit;font-weight:inherit}
 [data-effects=off] .home-header .site-brand{animation:none}
 [data-effects=off] .hitalk-secret *,[data-effects=off] .hitalk-secret *:before,[data-effects=off] .hitalk-secret *:after{animation-play-state:paused!important}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.25s}
 
 .section-heading-title{display:flex;align-items:center;gap:10px;min-width:0}
-.icon-columns:before{content:'\f0db'}
+
 .sidebar-toggle{display:inline-grid;place-items:center;width:30px;height:30px;flex-shrink:0;padding:0;background:transparent;border:0;border-radius:4px;color:var(--muted);font-size:14px;transition:background .18s,color .18s}
 .sidebar-toggle:hover,.sidebar-toggle:focus-visible{background:var(--surface);color:var(--accent)}
 .sidebar-toggle[hidden]{display:none!important}
@@ -134,7 +132,6 @@ body{background:var(--bg)}
 .author-stats a:is(:hover,:focus-visible) b{color:inherit}
 
 /* NexT-style article previews retain the author's introduction and its formatting. */
-.icon-updated:before{content:'\f274'}.icon-folder:before{content:'\f114'}.icon-file-text:before{content:'\f0f6'}.icon-clock:before{content:'\f017'}
 .post-list:not(.compact) .post-row{padding-top:40px}
 .post-list-header{margin-bottom:28px}
 .post-list:not(.compact) .post-list-header h2{font-size:clamp(24px,2.6vw,29px);font-weight:700;line-height:1.5;margin:0 0 15px;text-wrap:balance}
@@ -198,7 +195,7 @@ a.text-link-back{--link-travel:-3px}
 .post-actions .read-link{display:inline-flex}
 .pagination a.text-link{align-self:center;padding:4px 0}
 .site-traffic{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 24px;margin-top:12px;color:var(--muted);font-size:12px}
-.site-traffic .icon{margin-right:4px}.icon-eye:before{content:'\f06e'}
+.site-traffic .icon{margin-right:4px}
 .footer-heart{display:inline-block;width:18px;height:18px;vertical-align:-4px;margin-inline:5px;transform:rotate(-8deg);transition:transform .35s cubic-bezier(.22,1,.36,1)}
 .footer-bottom>span:first-child:hover .footer-heart{transform:rotate(8deg) scale(1.14)}
 .uptime-face{white-space:nowrap;margin-left:4px}
@@ -217,7 +214,6 @@ a.text-link-back{--link-travel:-3px}
 }
 
 /* Author details sit beside the reading column; footer roles are grouped separately. */
-.icon-weibo:before{content:'\f18a'}.icon-qq:before{content:'\f1d6'}.icon-envelope:before{content:'\f0e0'}.icon-twitter:before{content:'\f099'}.icon-facebook:before{content:'\f09a'}
 .author-social{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px;text-align:left;margin-top:22px}
 .author-social a{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:4px;font-size:12px;transition:background .2s,color .2s}
 .author-social .icon{margin:0;color:var(--muted)}

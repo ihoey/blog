@@ -1,0 +1,8 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import sprite from '../assets/ui-icons.svg?url';
+export type IconName = 'home' | 'archive' | 'tag' | 'link' | 'comment' | 'user' | 'github' | 'rss' | 'calendar' | 'scissors' | 'updated' | 'folder' | 'file-text' | 'clock' | 'eye' | 'weibo' | 'qq' | 'envelope' | 'twitter' | 'facebook';
+type Props = Omit<HTMLAttributes<'svg'>, 'name'> & { name: IconName };
+const { name, class: className, ...attributes } = Astro.props;
+---
+<svg {...attributes} class:list={['icon', `icon-${name}`, className]} width="1.2em" height="1em" fill="currentColor" aria-hidden="true" focusable="false"><use href={`${sprite}#${name}`} /></svg>

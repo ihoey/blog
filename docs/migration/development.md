@@ -95,3 +95,10 @@ Astro 已于 2026-10-02 发布，当前正式站由 `master` 的 `8fed6f94` 静�
 - [Astro 内容集合](https://docs.astro.build/en/guides/content-collections/)
 - [构建输出格式](https://docs.astro.build/en/reference/configuration-reference/#buildformat)
 - [修复旧文章 Dash 链接的官方来源](https://kapeli.com/dash)
+
+## SVG 界面图标
+
+- 公共组件：`src/components/Icon.astro`，用法 `<Icon name="calendar" />`。图标均为装饰，aria-hidden / focusable=false；入口名称由旁边文字或按钮 aria-label 提供。
+- 图形：`src/assets/ui-icons.svg`，只含本站使用的 20 个 Font Awesome 4.6.3 图形，构建时生成哈希 URL，可跨页面缓存。不要重新引入整套字体或浏览器端图标库。
+- 尺寸与颜色：保留 `.icon` 及 `.icon-*`，统一 currentColor，既有父级 hover / 日夜样式继续生效。组件传递额外属性以保留 Astro 局部样式作用域。
+- 扩展图标时同步 SVG symbol 与组件 IconName 类型；来源与许可证见 `static/icons/NOTICE.txt`、`static/icons/OFL.txt`。

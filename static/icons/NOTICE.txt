@@ -1,0 +1,7 @@
+Blog UI Icons — selected SVG outlines derived from Font Awesome 4.6.3.
+Original font copyright (c) Dave Gandy, https://fontawesome.io
+Source: https://github.com/FortAwesome/Font-Awesome/blob/v4.6.3/fonts/fontawesome-webfont.svg
+License: SIL Open Font License 1.1 (see OFL.txt in this directory).
+Modifications: retain only the 20 icons used by this blog; wrap unchanged glyph
+outlines in SVG symbols and flip the font coordinate system for SVG rendering.
+The resulting sprite is not an installable font and is named Blog UI Icons.

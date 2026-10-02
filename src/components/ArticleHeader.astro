@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 import { categoryPath, tagPath, type Post } from '../lib/posts';
 interface Props { post: Post }
 const { post } = Astro.props;
@@ -6,16 +7,16 @@ const { post } = Astro.props;
 <header class="article-header">
   <h1>{post.data.title}</h1>
   <div class="article-meta">
-    <span><i class="icon icon-calendar" aria-hidden="true"></i> 发布于 <time datetime={post.date.toISOString()}>{post.day}</time></span>
-    {post.updatedDay !== post.day && <span><i class="icon icon-updated" aria-hidden="true"></i> 更新于 <time datetime={post.updated.toISOString()}>{post.updatedDay}</time></span>}
-    {post.data.categories.length > 0 && <span class="article-categories"><i class="icon icon-folder" aria-hidden="true"></i> {post.data.categories.map((name, index) => <>{index > 0 && <span aria-hidden="true">/</span>}<a href={categoryPath(post.data.categories.slice(0, index + 1))}>{name}</a></>)}</span>}
+    <span><Icon name="calendar" /> 发布于 <time datetime={post.date.toISOString()}>{post.day}</time></span>
+    {post.updatedDay !== post.day && <span><Icon name="updated" /> 更新于 <time datetime={post.updated.toISOString()}>{post.updatedDay}</time></span>}
+    {post.data.categories.length > 0 && <span class="article-categories"><Icon name="folder" /> {post.data.categories.map((name, index) => <>{index > 0 && <span aria-hidden="true">/</span>}<a href={categoryPath(post.data.categories.slice(0, index + 1))}>{name}</a></>)}</span>}
   </div>
   <div class="article-reading-meta">
-    <a href="/about/index.html" rel="author"><i class="icon icon-user" aria-hidden="true"></i> Ihoey</a>
-    <span title="正文字符数，含代码，不含空白和 Markdown 标记"><i class="icon icon-file-text" aria-hidden="true"></i> {post.preview.wordCount.toLocaleString('zh-CN')} 字</span>
-    <span title="按正文长度和代码行数估算"><i class="icon icon-clock" aria-hidden="true"></i> 约 {post.preview.readingMinutes} 分钟</span>
-    <span id="busuanzi_container_page_pv"><i class="icon icon-eye" aria-hidden="true"></i> 阅读 <span id="busuanzi_value_page_pv">—</span></span>
-    <a href="#comments"><i class="icon icon-comment" aria-hidden="true"></i> 评论 <span class="hitalk-comment-count" data-xid={post.path}>—</span></a>
+    <a href="/about/index.html" rel="author"><Icon name="user" /> Ihoey</a>
+    <span title="正文字符数，含代码，不含空白和 Markdown 标记"><Icon name="file-text" /> {post.preview.wordCount.toLocaleString('zh-CN')} 字</span>
+    <span title="按正文长度和代码行数估算"><Icon name="clock" /> 约 {post.preview.readingMinutes} 分钟</span>
+    <span id="busuanzi_container_page_pv"><Icon name="eye" /> 阅读 <span id="busuanzi_value_page_pv">—</span></span>
+    <a href="#comments"><Icon name="comment" /> 评论 <span class="hitalk-comment-count" data-xid={post.path}>—</span></a>
   </div>
   {post.data.tags.length > 0 && <nav class="article-tags" aria-label="文章标签">{post.data.tags.map(tag => <a href={tagPath(tag)}><span aria-hidden="true">#</span>{tag}</a>)}</nav>}
 </header>
