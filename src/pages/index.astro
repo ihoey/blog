@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import AuthorSidebar from '../components/AuthorSidebar.astro';
 import PostList from '../components/PostList.astro';
 import Pagination from '../components/Pagination.astro';
 import { getPosts } from '../lib/posts';
@@ -12,29 +11,5 @@ const posts = await getPosts();
     <PostList posts={posts.slice(0, 5)} />
     <Pagination page={1} totalPages={Math.ceil(posts.length / 5)} base="/" />
   </section>
-  <AuthorSidebar />
   </div>
 </Base>
-
-<script>
-  const button = document.querySelector<HTMLButtonElement>('.sidebar-toggle');
-  const sidebar = document.querySelector<HTMLElement>('#author-sidebar');
-  const layout = document.querySelector<HTMLElement>('.home-layout');
-  if (button && sidebar && layout) {
-    let expanded = !matchMedia('(max-width:700px)').matches;
-    try { const saved = localStorage.getItem('blog-sidebar'); if (saved) expanded = saved === 'expanded'; } catch {}
-    const apply = () => {
-      sidebar.hidden = !expanded;
-      layout.dataset.sidebarCollapsed = String(!expanded);
-      button.setAttribute('aria-expanded', String(expanded));
-      const label = expanded ? '收起作者与分类侧栏' : '展开作者与分类侧栏';
-      button.setAttribute('aria-label', label);
-      button.title = label;
-    };
-    apply(); button.hidden = false;
-    button.addEventListener('click', () => {
-      expanded = !expanded; apply();
-      try { localStorage.setItem('blog-sidebar', expanded ? 'expanded' : 'collapsed'); } catch {}
-    });
-  }
-</script>

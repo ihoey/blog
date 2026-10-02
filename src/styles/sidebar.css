@@ -1,0 +1,64 @@
+/* One shared, light-dismiss panel. Opening it never resizes the reading column. */
+#author-sidebar {
+  position: fixed;
+  inset: 80px 20px 20px auto;
+  width: min(308px, calc(100vw - 32px));
+  max-height: calc(100dvh - 100px);
+  margin: 0;
+  padding: 0 24px 20px;
+  border: 0;
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 12px 40px color-mix(in oklch, var(--ink) 14%, transparent);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity .24s ease-out, transform .36s cubic-bezier(.22,1,.36,1), display .36s allow-discrete, overlay .36s allow-discrete;
+}
+#author-sidebar:popover-open { opacity: 1; transform: translateX(0); }
+@starting-style {
+  #author-sidebar:popover-open { opacity: 0; transform: translateX(28px); }
+}
+#author-sidebar::backdrop {
+  background: color-mix(in oklch, var(--bg) 24%, transparent);
+  opacity: 0;
+  transition: opacity .24s ease-out, display .36s allow-discrete, overlay .36s allow-discrete;
+}
+#author-sidebar:popover-open::backdrop { opacity: 1; }
+@starting-style { #author-sidebar:popover-open::backdrop { opacity: 0; } }
+.sidebar-heading {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0 12px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+}
+.sidebar-close { display: grid; place-items: center; width: 30px; height: 30px; border: 0; border-radius: 50%; background: transparent; color: var(--muted); transition: color .18s, background .18s; }
+.sidebar-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s ease-out; }
+.sidebar-close:is(:hover,:focus-visible) { color: var(--accent); background: var(--accent-soft); }
+.sidebar-close:is(:hover,:focus-visible) svg { transform: translateX(2px); }
+#author-sidebar .author-profile { padding-top: 4px; }
+#author-sidebar .sidebar-topics, #author-sidebar .sidebar-friends { padding-inline: 0; }
+@media (max-width: 700px) {
+  #author-sidebar { inset: 116px 12px 12px auto; width: min(308px, calc(100vw - 24px)); max-height: calc(100dvh - 128px); }
+}
+[data-effects=off] #author-sidebar, [data-effects=off] #author-sidebar::backdrop, [data-effects=off] .sidebar-close svg { transition: none; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  #author-sidebar, #author-sidebar::backdrop, .sidebar-close svg { transition: none; transform: none!important; }
+}
+@media print { #author-sidebar { display: none!important; } }
+/* Keep the first category links within reach without losing author details. */
+#author-sidebar .avatar-link img { width: 64px; height: 64px; }
+#author-sidebar .author-motto { margin-top: 8px; }
+#author-sidebar .author-stats { margin-top: 16px; }
+#author-sidebar .author-social { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2px; margin-top: 16px; }
+#author-sidebar .author-social a { padding-inline: 2px; font-size: 11px; }
+#author-sidebar .author-feed { margin-top: 8px; }
