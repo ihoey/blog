@@ -11,7 +11,7 @@ const { post } = Astro.props;
     {post.data.categories.length > 0 && <span class="article-categories"><i class="icon icon-folder" aria-hidden="true"></i> {post.data.categories.map((name, index) => <>{index > 0 && <span aria-hidden="true">/</span>}<a href={categoryPath(post.data.categories.slice(0, index + 1))}>{name}</a></>)}</span>}
   </div>
   <div class="article-reading-meta">
-    <a href="/about/" rel="author"><i class="icon icon-user" aria-hidden="true"></i> Ihoey</a>
+    <a href="/about/index.html" rel="author"><i class="icon icon-user" aria-hidden="true"></i> Ihoey</a>
     <span title="正文字符数，含代码，不含空白和 Markdown 标记"><i class="icon icon-file-text" aria-hidden="true"></i> {post.preview.wordCount.toLocaleString('zh-CN')} 字</span>
     <span title="按正文长度和代码行数估算"><i class="icon icon-clock" aria-hidden="true"></i> 约 {post.preview.readingMinutes} 分钟</span>
     <span id="busuanzi_container_page_pv"><i class="icon icon-eye" aria-hidden="true"></i> 阅读 <span id="busuanzi_value_page_pv">—</span></span>

@@ -1,3 +1,14 @@
+/** @returns {'page' | 'location' | undefined} */
+export function navigationCurrent(path, href) {
+  // Directory URLs and the original Hexo index.html links name the same page.
+  const normalize = value => normalizeCommentPath(value).replace(/\/?$/, '/');
+  const current = normalize(path);
+  const target = normalize(href);
+  if (current === target) return 'page';
+  if (target === '/' ? /^\/page\/\d+\/$/.test(current) : current.startsWith(target)) return 'location';
+  return undefined;
+}
+
 export function normalizeCommentPath(path) {
   return new URL(path, 'https://blog.ihoey.com').pathname.replace(/\/index\.html$/, '/');
 }

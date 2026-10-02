@@ -30,14 +30,14 @@ const friends = [
 <aside id="author-sidebar" class="author-sidebar" aria-label="作者与分类" popover="auto">
   <div class="sidebar-heading"><span>小栈导航</span><button class="sidebar-close" type="button" popovertarget="author-sidebar" popovertargetaction="hide" aria-label="关闭作者与分类侧栏" title="收起侧栏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 7 7-7 7" /></svg></button></div>
   <div class="author-profile">
-    <a class="avatar-link" href="/about/" aria-label="认识 Ihoey"><img src="/avatar.png" width="88" height="88" alt="Ihoey 的头像" /></a>
+    <a class="avatar-link" href="/about/index.html" aria-label="认识 Ihoey"><img src="/avatar.png" width="88" height="88" alt="Ihoey 的头像" /></a>
     <h2>Ihoey</h2><p class="author-motto">心，若没有栖息的地方，<br />到哪里都是流浪……</p>
-    <div class="author-stats"><a href="/archives/"><b>{posts.length}</b>文章</a><a href="/categories/" aria-current={path === '/categories/' ? 'page' : undefined}><b>{categories.length}</b>分类</a><a href="/tags/"><b>{tags.length}</b>标签</a></div>
+    <div class="author-stats"><a href="/archives/index.html"><b>{posts.length}</b>文章</a><a href="/categories/index.html" aria-current={path === '/categories/' ? 'page' : undefined}><b>{categories.length}</b>分类</a><a href="/tags/index.html"><b>{tags.length}</b>标签</a></div>
     <nav class="author-social" aria-label="联系作者">{social.map(link => <a href={link.href} target={link.href.startsWith('mailto:') ? undefined : '_blank'} rel="noopener noreferrer"><i class={`icon icon-${link.icon}`} aria-hidden="true"></i><span>{link.name}</span></a>)}</nav>
     <a class="author-feed" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS <span aria-hidden="true">↗</span></a>
   </div>
-  <nav class="sidebar-topics" aria-label="文章分类"><h3>分类</h3><a href="/" aria-current={path === '/' ? 'page' : /^\/page\/\d+\/$/.test(path) ? 'location' : undefined}><span>全部文章</span><span>{posts.length}</span></a>{visibleCategories.map(c => <a href={c.path} aria-current={c === activeCategory ? path === decodeURI(c.path) ? 'page' : 'location' : undefined}><span>{c.name}</span><span>{c.count}</span></a>)}<a href="/categories/" aria-current={path === '/categories/' ? 'page' : undefined}><span>所有分类</span><span aria-hidden="true">→</span></a></nav>
-  <nav class="sidebar-friends" aria-label="友情链接"><h3>友邻</h3>{friends.map(link => <a href={link.href} target="_blank" rel="noopener noreferrer"><span>{link.name}</span><span aria-hidden="true">↗</span></a>)}<a class="all-friends" href="/links/"><span>所有友链</span><span aria-hidden="true">→</span></a></nav>
+  <nav class="sidebar-topics" aria-label="文章分类"><h3>分类</h3><a href="/" aria-current={path === '/' ? 'page' : /^\/page\/\d+\/$/.test(path) ? 'location' : undefined}><span>全部文章</span><span>{posts.length}</span></a>{visibleCategories.map(c => <a href={c.path} aria-current={c === activeCategory ? path === decodeURI(c.path) ? 'page' : 'location' : undefined}><span>{c.name}</span><span>{c.count}</span></a>)}<a href="/categories/index.html" aria-current={path === '/categories/' ? 'page' : undefined}><span>所有分类</span><span aria-hidden="true">→</span></a></nav>
+  <nav class="sidebar-friends" aria-label="友情链接"><h3>友邻</h3>{friends.map(link => <a href={link.href} target="_blank" rel="noopener noreferrer"><span>{link.name}</span><span aria-hidden="true">↗</span></a>)}<a class="all-friends" href="/links/index.html"><span>所有友链</span><span aria-hidden="true">→</span></a></nav>
 </aside>
 <script>
   const panel = document.querySelector<HTMLElement>('#author-sidebar');

@@ -7,12 +7,13 @@ import '../styles/sidebar.css';
 import AuthorSidebar from '../components/AuthorSidebar.astro';
 import '../styles/reading-marks.css';
 import '../styles/article-headings.css';
+import { navigationCurrent } from '../lib/paths.mjs';
 import { legacyPublic } from '../data/legacy-public';
 import ImageViewer from '../components/ImageViewer.astro';
 import Companion from '../components/Companion.astro';
 import FooterLandscape from '../components/FooterLandscape.astro';
-interface Props { title?: string; description?: string; canonical?: string; article?: boolean; date?: Date; updated?: Date }
-const { title, description = '心，若没有栖息的地方，到哪里都是流浪……', canonical = Astro.url.pathname, article = false, date, updated } = Astro.props;
+interface Props { title?: string; description?: string; canonical?: string; article?: boolean; comments?: boolean; date?: Date; updated?: Date }
+const { title, description = '心，若没有栖息的地方，到哪里都是流浪……', canonical = Astro.url.pathname, article = false, comments = false, date, updated } = Astro.props;
 const fullTitle = title ? `${title} · 梦魇小栈` : '梦魇小栈 · 专注于分享';
 const canonicalURL = new URL(canonical, Astro.site).href;
 const structuredData = date ? {
@@ -25,14 +26,8 @@ const structuredData = date ? {
 const path = Astro.url.pathname;
 const home = path === '/';
 const BrandHeading = home ? 'h1' : 'div';
-const nav = [['/', '首页', 'home'], ['/archives/', '归档', 'archive'], ['/tags/', '标签', 'tag'], ['/links/', '友链', 'link'], ['/guestbook/', '留言', 'comment'], ['/about/', '关于', 'user']];
-const navPath = `${path.replace(/\/$/, '')}/`;
-function navCurrent(href: string): 'page' | 'location' | undefined {
-  if (navPath === href) return 'page';
-  // Pagination and nested listings belong to their section, not its exact page.
-  if (href === '/' ? /^\/page\/\d+\/$/.test(navPath) : navPath.startsWith(href)) return 'location';
-  return undefined;
-}
+const nav = [['/', '首页', 'home'], ['/archives/index.html', '归档', 'archive'], ['/tags/index.html', '标签', 'tag'], ['/links/index.html', '友链', 'link'], ['/guestbook/index.html', '留言', 'comment'], ['/about/index.html', '关于', 'user']];
+
 ---
 <!doctype html>
 <html lang="zh-CN">
@@ -59,7 +54,7 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
     {date && <meta property="article:published_time" content={date.toISOString()} />}
     {updated && <meta property="article:modified_time" content={updated.toISOString()} />}
     <link rel="stylesheet" href="/lib/hitalk/3.0.0/secret-cat.9107f720cc5f.css" />
-    {article && <link rel="stylesheet" href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css" />}
+    {(article || comments) && <link rel="stylesheet" href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css" />}
     <title>{fullTitle}</title>
     {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData).replaceAll('<', '\\u003c')} />}
     <script is:inline>
@@ -76,7 +71,7 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
       <div class="topbar-inner">
         <a class="topbar-brand" href="/">梦魇小栈</a>
         <nav class="main-nav" aria-label="主导航">
-          {nav.map(([href, label, icon]) => <a href={href} aria-current={navCurrent(href)}><i class={`icon icon-${icon}`} aria-hidden="true"></i>{label}</a>)}
+          {nav.map(([href, label, icon]) => <a href={href} aria-current={navigationCurrent(path, href)}><i class={`icon icon-${icon}`} aria-hidden="true"></i>{label}</a>)}
         </nav>
         <div class="header-tools" role="group" aria-label="订阅与阅读偏好">
           {article && <span class="reading-track" aria-hidden="true"><span id="reading-progress"></span></span>}
@@ -109,7 +104,7 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
         <div class="footer-identity">
           <div class="footer-brand"><a class="footer-name" href="/">梦魇小栈</a><span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span></div>
           <p class="footer-motto">心，若没有栖息的地方，到哪里都是流浪……</p>
-          <nav class="footer-links" aria-label="小栈链接"><a class="footer-rss" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a><a href="/sitemap.xml">站点地图</a><a href="https://github.com/ihoey" target="_blank" rel="noopener noreferrer"><i class="icon icon-github" aria-hidden="true"></i> GitHub</a><a class="footer-guestbook" href="/guestbook/"><i class="icon icon-comment" aria-hidden="true"></i> 留个言 <span aria-hidden="true">↗</span></a></nav>
+          <nav class="footer-links" aria-label="小栈链接"><a class="footer-rss" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a><a href="/sitemap.xml">站点地图</a><a href="https://github.com/ihoey" target="_blank" rel="noopener noreferrer"><i class="icon icon-github" aria-hidden="true"></i> GitHub</a><a class="footer-guestbook" href="/guestbook/index.html"><i class="icon icon-comment" aria-hidden="true"></i> 留个言 <span aria-hidden="true">↗</span></a></nav>
         </div>
         <div class="footer-status">
           <p class="uptime-label">博客已萌萌哒运行 <span class="uptime-face">●'◡'●)ﾉ♥</span></p>

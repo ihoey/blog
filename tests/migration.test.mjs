@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
-import { dateInShanghai, localDay, articlePath, normalizeCommentPath } from '../src/lib/paths.mjs';
+import { dateInShanghai, localDay, articlePath, normalizeCommentPath, navigationCurrent } from '../src/lib/paths.mjs';
 const baseline = JSON.parse(readFileSync(new URL('../docs/migration/legacy-baseline.json', import.meta.url)));
 
 test('all 57 existing article paths match the old Hexo output, including case and nested category', () => {
@@ -45,4 +45,20 @@ test('worker retirement deletes only Hexo cache names, claims clients, and unreg
   await pending;
   assert.deepEqual(actions, ['skip', 'bs-0-0-7', 'api-0-0-3', 'claim', 'unregister', 'https://blog.ihoey.com/?source=pwa#main']);
   assert.equal(listeners.fetch, undefined);
+});
+
+
+test('navigation selects legacy index aliases and directory URLs consistently', () => {
+  for (const root of ['archives', 'tags', 'links', 'guestbook', 'about']) {
+    for (const href of [`/${root}/`, `/${root}/index.html`]) {
+      assert.equal(navigationCurrent(`/${root}/index.html?from=nav#comments`, href), 'page');
+      assert.equal(navigationCurrent(`/${root}/`, href), 'page');
+      assert.equal(navigationCurrent(`/${root}/child/index.html`, href), 'location');
+      assert.equal(navigationCurrent(`/${root}-other/`, href), undefined);
+    }
+  }
+  assert.equal(navigationCurrent('/page/2/index.html', '/'), 'location');
+  assert.equal(navigationCurrent('/index.html', '/'), 'page');
+  assert.equal(navigationCurrent('/posts/rust/example.html', '/archives/index.html'), undefined);
+  assert.equal(navigationCurrent('/guestbook/', '/'), undefined);
 });

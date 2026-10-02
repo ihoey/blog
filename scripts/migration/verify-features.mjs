@@ -23,3 +23,14 @@ const deployment = JSON.parse(read('vercel.json'));
 assert.equal(deployment.headers[0].source, '/sw.js');
 assert.match(deployment.headers[0].headers[0].value, /no-cache/);
 console.log('Feature parity: 57 article shells; 20 full RSS entries; 57 Baidu sitemap entries; verification, manifest and worker cache headers present.');
+
+for (const root of ['archives', 'tags', 'categories', 'about', 'links', 'guestbook']) {
+  const html = read(`${root}/index.html`);
+  assert.ok(html.includes(`rel="canonical" href="https://blog.ihoey.com/${root}/"`));
+  if (root !== 'archives') {
+    assert.ok(html.includes(`data-comment-path="/${root}/"`), `Missing historical comments for ${root}`);
+    assert.ok(html.includes('/lib/hitalk/3.0.0/hitalk.aab370555dfe.css'));
+  }
+  if (root !== 'categories') assert.ok(html.includes(`href="/${root}/index.html" aria-current="page"`));
+}
+console.log('Legacy section index.html URLs, canonical paths, navigation states and five page comment identities verified.');
