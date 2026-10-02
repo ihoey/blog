@@ -101,7 +101,7 @@ document.addEventListener('visibilitychange', () => { if (document.hidden) cance
 let hearts = 0;
 document.addEventListener('click', event => {
   if (root.dataset.effects === 'off' || motion.matches || event.detail === 0 || hearts >= 8) return;
-  if (!(event.target instanceof Element) || event.target.closest('a,button,input,textarea,select,pre,code,[contenteditable]') || getSelection()?.toString()) return;
+  if (!(event.target instanceof Element) || event.target.closest('a,button,[role=button],input,textarea,select,pre,code,[contenteditable]') || getSelection()?.toString()) return;
   const heart = document.createElement('span'); heart.textContent = '♥'; heart.className = 'click-heart'; heart.setAttribute('aria-hidden','true'); heart.style.left = `${event.clientX - 8}px`; heart.style.top = `${event.clientY - 8}px`; document.body.append(heart); hearts++;
   setTimeout(() => { heart.remove(); hearts--; }, 900);
 });

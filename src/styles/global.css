@@ -186,3 +186,7 @@
     *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   }
 }
+
+/* Legacy line numbers, independent of Dracula colors and copied code text. */
+.prose pre code { counter-reset:code-line; }
+.prose pre code > .line::before { counter-increment:code-line; content:counter(code-line); display:inline-block; min-width:3ch; margin-right:1.6ch; text-align:right; color:#9b9db0; user-select:none; font-style:normal; }

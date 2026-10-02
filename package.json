@@ -14,7 +14,7 @@
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
     "test": "node --test tests/*.test.mjs",
-    "verify": "node scripts/migration/verify-build.mjs"
+    "verify": "node scripts/migration/verify-build.mjs && node scripts/migration/verify-features.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "7.3.1",

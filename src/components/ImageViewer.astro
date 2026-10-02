@@ -1,0 +1,33 @@
+<dialog class="image-viewer" aria-label="图片预览">
+  <div class="image-viewer-toolbar">
+    <span class="image-viewer-count" aria-live="polite"></span>
+    <a class="image-viewer-original" target="_blank" rel="noopener noreferrer">查看原图 ↗</a>
+    <button type="button" data-image-close aria-label="关闭图片预览" autofocus>×</button>
+  </div>
+  <figure><img class="image-viewer-image" alt="" /><figcaption></figcaption></figure>
+  <button type="button" class="image-viewer-prev" aria-label="上一张图片">‹</button>
+  <button type="button" class="image-viewer-next" aria-label="下一张图片">›</button>
+</dialog>
+<script>import '../lib/reading-tools';</script>
+<style is:global>
+.image-zoom { cursor:zoom-in; }
+.image-zoom:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-radius:4px; }
+.image-viewer { inset:0; width:100%; height:100%; max-width:none; max-height:none; margin:0; padding:70px 58px 32px; border:0; background:transparent; color:#fff; overflow:auto; }
+.image-viewer::backdrop { background:#0b1118ed; backdrop-filter:blur(12px); }
+.image-viewer[open] { display:grid; place-items:center; animation:image-reveal .2s ease-out; }
+.image-viewer figure { margin:0; text-align:center; }
+.image-viewer-image { display:block; margin:auto; max-width:100%; max-height:calc(100dvh - 160px); object-fit:contain; border-radius:6px; }
+.image-viewer figcaption { margin:14px auto 0; max-width:760px; color:#dbe7ed; font-size:14px; }
+.image-viewer-toolbar { position:absolute; inset:14px 20px auto; display:flex; align-items:center; gap:20px; font-size:14px; }
+.image-viewer-count { margin-right:auto; }
+.image-viewer a { color:#fff; text-decoration:underline; text-underline-offset:4px; }
+.image-viewer button { display:grid; place-items:center; width:44px; height:44px; padding:0; border:0; border-radius:50%; color:#fff; background:#ffffff18; font:30px/1 sans-serif; cursor:pointer; }
+.image-viewer button:hover { background:#ffffff38; }
+.image-viewer button:disabled { opacity:.25; cursor:default; }
+.image-viewer-prev,.image-viewer-next { position:absolute; top:50%; }
+.image-viewer-prev { left:8px; }.image-viewer-next { right:8px; }
+html:has(.image-viewer[open]) { overflow:hidden; }
+@keyframes image-reveal { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+@media(max-width:700px) { .image-viewer { padding-inline:48px; }.image-viewer-toolbar { inset-inline:12px; } }
+@media(prefers-reduced-motion:reduce) { .image-viewer[open] { animation:none; } }
+</style>

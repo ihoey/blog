@@ -38,7 +38,7 @@ export async function mountComments() {
     container.replaceChildren();
     window.Hitalk.mount(container, {
       server, path: container.dataset.commentPath, title: container.dataset.commentTitle,
-      placeholder: '说点什么吧…', pageSize: 10,
+      placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!', avatar: 'monsterid', pageSize: 10,
     });
   } catch {
     const status = document.createElement('p');

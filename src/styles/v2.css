@@ -563,3 +563,5 @@ html{scroll-padding-top:var(--anchor-clearance)}
 [data-effects=off] .site-topbar,[data-effects=off] .site-topbar::before,[data-effects=off] .site-topbar::after,[data-effects=off] .topbar-inner{transition:none}
 @media(prefers-reduced-motion:reduce){.site-topbar,.site-topbar::before,.site-topbar::after,.topbar-inner{transition:none}}
 @media(prefers-reduced-transparency:reduce){.site-topbar,.site-topbar.is-docked{background:var(--reading);-webkit-backdrop-filter:none;backdrop-filter:none}.site-topbar::before,.site-topbar::after{background:var(--reading)}}
+
+.article-toc a { padding-inline-start:calc(11px + var(--toc-depth,0) * 9px); }

@@ -35,7 +35,7 @@ test('worker retirement deletes only Hexo cache names, claims clients, and unreg
     self: {
       addEventListener: (name, fn) => { listeners[name] = fn; },
       skipWaiting: () => actions.push('skip'),
-      clients: { claim: async () => actions.push('claim') },
+      clients: { claim: async () => actions.push('claim'), matchAll: async () => [{ url: 'https://blog.ihoey.com/?source=pwa#main', navigate: async url => actions.push(url) }] },
       registration: { unregister: async () => actions.push('unregister') },
     },
     caches: { keys: async () => ['bs-0-0-7', 'api-0-0-3', 'unrelated-cache'], delete: async key => actions.push(key) },
@@ -43,6 +43,6 @@ test('worker retirement deletes only Hexo cache names, claims clients, and unreg
   listeners.install();
   listeners.activate({ waitUntil: p => { pending = p; } });
   await pending;
-  assert.deepEqual(actions, ['skip', 'bs-0-0-7', 'api-0-0-3', 'claim', 'unregister']);
+  assert.deepEqual(actions, ['skip', 'bs-0-0-7', 'api-0-0-3', 'claim', 'unregister', 'https://blog.ihoey.com/?source=pwa#main']);
   assert.equal(listeners.fetch, undefined);
 });

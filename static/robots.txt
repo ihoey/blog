@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://blog.ihoey.com/sitemap.xml
+Sitemap: https://blog.ihoey.com/baidusitemap.xml

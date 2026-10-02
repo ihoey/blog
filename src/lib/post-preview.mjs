@@ -1,3 +1,4 @@
+import { readingCompatibility } from './reading-compatibility.mjs';
 import { createMarkdownProcessor } from '@astrojs/markdown-remark';
 
 const more = /^<!--\s*more\s*-->$/i;
@@ -94,7 +95,7 @@ function stylePreview() {
 
 const renderer = createMarkdownProcessor({
   shikiConfig: { theme: 'dracula', wrap: false },
-  remarkPlugins: [selectPreview], rehypePlugins: [stylePreview], smartypants: false,
+  remarkPlugins: [selectPreview], rehypePlugins: [stylePreview, readingCompatibility], smartypants: false,
 });
 
 export async function getPostPreview(body, path, description = '') {

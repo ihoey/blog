@@ -20,6 +20,8 @@ const tips: Tip[] = [
   { selector: '.main-nav a, .post-summary h2 a', text: el => `要看看「${label(el)}」么？` },
   { selector: '.site-name, .footer-name', text: '要返回主页嘛？' },
   { selector: '.avatar-link', text: '那不要乱玩噢～这是主人的头像。' },
+  { selector: '.image-zoom', text: '点击图片可以放大噢～' },
+  { selector: '.legacy-reward', text: '客官大人，是要准备给主人打赏吗？谢谢啦～' },
   { selector: '.prose img', text: '文章特色配图好看嘛？' },
   { selector: '.read-link', text: '想要了解更多，那就再深入点吧～' },
   { selector: '.friend-list a', text: '这是主人的好伙伴噢～' },

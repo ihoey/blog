@@ -7,12 +7,21 @@ import '../styles/sidebar.css';
 import AuthorSidebar from '../components/AuthorSidebar.astro';
 import '../styles/reading-marks.css';
 import '../styles/article-headings.css';
+import { legacyPublic } from '../data/legacy-public';
+import ImageViewer from '../components/ImageViewer.astro';
 import Companion from '../components/Companion.astro';
 import FooterLandscape from '../components/FooterLandscape.astro';
 interface Props { title?: string; description?: string; canonical?: string; article?: boolean; date?: Date; updated?: Date }
 const { title, description = '心，若没有栖息的地方，到哪里都是流浪……', canonical = Astro.url.pathname, article = false, date, updated } = Astro.props;
 const fullTitle = title ? `${title} · 梦魇小栈` : '梦魇小栈 · 专注于分享';
 const canonicalURL = new URL(canonical, Astro.site).href;
+const structuredData = date ? {
+  '@context': 'https://schema.org', '@type': 'BlogPosting', headline: title, description,
+  url: canonicalURL, mainEntityOfPage: canonicalURL, datePublished: date.toISOString(),
+  dateModified: (updated || date).toISOString(), image: new URL('/avatar.png', Astro.site).href,
+  author: { '@type': 'Person', name: 'Ihoey', url: new URL('/about/', Astro.site).href },
+  publisher: { '@type': 'Organization', name: '梦魇小栈' },
+} : undefined;
 const path = Astro.url.pathname;
 const home = path === '/';
 const BrandHeading = home ? 'h1' : 'div';
@@ -32,11 +41,17 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#ffffff" />
+    <meta name="google-site-verification" content={legacyPublic.googleVerification} />
+    <meta name="baidu-site-verification" content={legacyPublic.baiduVerification} />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/images/icons/icon_192.png" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" type="application/atom+xml" title="梦魇小栈" href="/atom.xml" />
+    <meta property="og:site_name" content="梦魇小栈" />
+    <meta name="twitter:card" content="summary" />
     <meta property="og:locale" content="zh_CN" />
-    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:type" content={article && date ? 'article' : 'website'} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
@@ -46,14 +61,9 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
     <link rel="stylesheet" href="/lib/hitalk/3.0.0/secret-cat.9107f720cc5f.css" />
     {article && <link rel="stylesheet" href="/lib/hitalk/3.0.0/hitalk.aab370555dfe.css" />}
     <title>{fullTitle}</title>
+    {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData).replaceAll('<', '\\u003c')} />}
     <script is:inline>
-      const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
-      const applyMotionPreference = () => {
-        document.documentElement.dataset.effects = motionPreference.matches ? 'off' : 'on';
-        window.dispatchEvent(new Event('blog:effectschange'));
-      };
-      applyMotionPreference();
-      motionPreference.addEventListener('change', applyMotionPreference);
+      document.documentElement.dataset.effects = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'off' : 'on';
       try {
         const saved = localStorage.getItem('blog-theme');
         document.documentElement.dataset.theme = saved || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -91,6 +101,7 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
     <main id="main" tabindex="-1"><slot /></main>
     <AuthorSidebar path={canonical} />
     <Companion title={title} />
+    <ImageViewer />
     <footer class="site-footer">
       <FooterLandscape />
       <div class="footer-content">
@@ -98,7 +109,7 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
         <div class="footer-identity">
           <div class="footer-brand"><a class="footer-name" href="/">梦魇小栈</a><span class="hitalk-secret" data-hitalk-secret><button type="button" aria-label="叫小猫出来" title="叫小猫出来"></button></span></div>
           <p class="footer-motto">心，若没有栖息的地方，到哪里都是流浪……</p>
-          <nav class="footer-links" aria-label="小栈链接"><a class="footer-rss" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a><a href="https://github.com/ihoey" target="_blank" rel="noopener noreferrer"><i class="icon icon-github" aria-hidden="true"></i> GitHub</a><a class="footer-guestbook" href="/guestbook/"><i class="icon icon-comment" aria-hidden="true"></i> 留个言 <span aria-hidden="true">↗</span></a></nav>
+          <nav class="footer-links" aria-label="小栈链接"><a class="footer-rss" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a><a href="/sitemap.xml">站点地图</a><a href="https://github.com/ihoey" target="_blank" rel="noopener noreferrer"><i class="icon icon-github" aria-hidden="true"></i> GitHub</a><a class="footer-guestbook" href="/guestbook/"><i class="icon icon-comment" aria-hidden="true"></i> 留个言 <span aria-hidden="true">↗</span></a></nav>
         </div>
         <div class="footer-status">
           <p class="uptime-label">博客已萌萌哒运行 <span class="uptime-face">●'◡'●)ﾉ♥</span></p>
@@ -119,7 +130,7 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
         <g class="rocket-body"><path class="rocket-fins" d="m10 20-5 6v7l7-4m10-9 5 6v7l-7-4"/><path d="M10 29C7 16 11 7 16 3c5 4 9 13 6 26Z"/><path d="M11 29h10l-1 3h-8Z"/><circle cx="16" cy="16" r="3"/></g>
       </svg>
     </button>
-    <script>import "../lib/appearance";</script>
+    <script>import "../lib/appearance"; import "../lib/site-services";</script>
     <script is:inline defer src="/lib/hitalk/3.0.0/secret-cat.a2815fc1af05.js"></script>
     <script>
       // Finish upgrading visitors who still have the Hexo worker controlling this origin.
@@ -127,7 +138,7 @@ function navCurrent(href: string): 'page' | 'location' | undefined {
         navigator.serviceWorker.getRegistrations().then(registrations => {
           for (const registration of registrations) {
             const worker = registration.active || registration.waiting || registration.installing;
-            if (worker && new URL(worker.scriptURL).pathname === '/sw.js') registration.update();
+            if (worker && new URL(worker.scriptURL).pathname === '/sw.js') void registration.update().catch(() => {});
           }
         }).catch(() => {});
       }

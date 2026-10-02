@@ -6,8 +6,9 @@
   "display": "standalone",
   "orientation": "any",
   "background_color": "#ffffff",
-  "theme_color": "#8a00f9",
-  "icons": [{
+  "theme_color": "hsl(202deg 68% 92%)",
+  "icons": [
+    {
       "src": "images/icons/icon_32.png",
       "sizes": "32x32",
       "type": "image/png"

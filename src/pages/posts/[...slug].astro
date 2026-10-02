@@ -12,7 +12,8 @@ export async function getStaticPaths() {
 }
 const { post, newer, older } = Astro.props;
 const { Content, headings } = await render(post);
-const toc = headings.filter(h => h.depth === 2 || h.depth === 3);
+const toc = headings;
+const tocBase = Math.min(...toc.map(h => h.depth));
 ---
 <Base title={post.data.title} description={post.description} canonical={post.path} article date={post.date} updated={post.updated}>
   <article class="article-shell">
@@ -29,7 +30,7 @@ const toc = headings.filter(h => h.depth === 2 || h.depth === 3);
         </nav>
         <Comments path={post.path} title={post.data.title} />
       </div>
-      {toc.length > 0 && <aside class="article-toc"><details open><summary>目录</summary><nav aria-label="文章目录">{toc.map(h => <a class:list={{ subheading: h.depth === 3 }} href={`#${h.slug}`}>{h.text}</a>)}</nav></details></aside>}
+      {toc.length > 0 && <aside class="article-toc"><details open><summary>目录</summary><nav aria-label="文章目录">{toc.map(h => <a style={`--toc-depth:${h.depth - tocBase}`} href={`#${h.slug}`}>{h.text}</a>)}</nav></details></aside>}
     </div>
   </article>
 </Base>

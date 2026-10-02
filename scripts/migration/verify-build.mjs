@@ -33,7 +33,7 @@ async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   return (await Promise.all(entries.map(e => e.isDirectory() ? walk(join(dir, e.name)) : [join(dir, e.name)]))).flat();
 }
-const files = (await walk(dist)).filter(f => f.endsWith('.html'));
+const files = (await walk(dist)).filter(f => f.endsWith('.html') && !f.endsWith('/baidu_verify_HR5eYsvhwq.html'));
 for (const file of files) {
   const html = await readFile(file, 'utf-8');
   const pagePath = '/' + file.slice(dist.length + 1);
@@ -58,7 +58,7 @@ for (const file of files) {
     }
   }
 }
-for (const path of ['/atom.xml', '/sitemap.xml', '/robots.txt', '/sw.js', '/favicon.ico']) {
+for (const path of ['/atom.xml', '/sitemap.xml', '/robots.txt', '/sw.js', '/favicon.ico', '/baidusitemap.xml', '/manifest.json', '/baidu_verify_HR5eYsvhwq.html']) {
   if (!await exists(join(dist, path))) errors.push(`Missing public file: ${path}`);
 }
 const wildfire = baseline.posts.find(p => p.id === 'Hexo-NexT-Wildfire');
