@@ -20,7 +20,7 @@ if (viewer && typeof viewer.showModal === 'function') {
     active = index;
     const source = images[index];
     const anchor = source.closest('a');
-    image.src = anchor?.href || source.currentSrc || source.src;
+    image.src = anchor?.href || source.dataset.originalSrc || source.currentSrc || source.src;
     image.alt = source.alt;
     caption.textContent = source.title || source.alt;
     count.textContent = `${index + 1} / ${images.length}`;

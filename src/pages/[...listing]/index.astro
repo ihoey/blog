@@ -29,7 +29,7 @@ const terms = listing.kind === 'tags' || listing.kind === 'categories' ? taxonom
     <header class="listing-header">
       <p class="breadcrumb"><a href="/">梦魇小栈</a><span aria-hidden="true"> / </span>{listing.title}</p>
       <div class="listing-heading-group">
-        {listing.pageId === 'about' && <img class="about-portrait" src="/avatar.png" width="76" height="76" alt="Ihoey 的头像" />}
+        {listing.pageId === 'about' && <img class="about-portrait" src="/avatar.webp" width="76" height="76" alt="Ihoey 的头像" />}
         <div><h1>{listing.title}</h1><p>{listing.description}{listing.total > 0 && <span class="listing-count">共 {listing.total} {terms.length ? '个' : '篇'}</span>}</p></div>
       </div>
       {listing.pageId === 'guestbook' && <a class="guestbook-jump" href="#comments">去留言 <span aria-hidden="true">↓</span></a>}

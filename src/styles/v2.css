@@ -10,7 +10,7 @@
 :root[data-theme=dark]{--rose-ink:oklch(.80 .11 8);--rose-soft:oklch(.24 .035 8);--honey-ink:oklch(.83 .119 82);--honey-soft:oklch(.245 .033 70);--pop-contrast:oklch(.19 .012 8)}
 body{background:var(--bg)}
 .site-header{position:relative;isolation:isolate;width:100%;display:flex;flex-direction:column;gap:0;padding:72px 24px 22px;border:0;overflow:hidden}
-.canopy{position:absolute;z-index:-2;inset:0;background:url('/design/canopy.jpg') center top / cover no-repeat;opacity:.65;mask-image:linear-gradient(#000 15%,transparent 100%)}
+.canopy{position:absolute;z-index:-2;inset:0;background:url('/design/canopy.webp') center top / cover no-repeat;opacity:.65;mask-image:linear-gradient(#000 15%,transparent 100%)}
 .scenic-header{padding-top:133px;padding-bottom:28px;min-height:354px}
 .scenic-header .canopy{opacity:1;background-size:cover;mask-image:linear-gradient(#000 20%,#0009 58%,transparent 100%)}
 [data-theme=dark] .canopy{opacity:.24;filter:saturate(.8)}

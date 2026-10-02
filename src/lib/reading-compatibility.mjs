@@ -1,3 +1,4 @@
+import { optimizeImageProperties, optimizeImageTag } from './optimized-images.mjs';
 const site = 'https://blog.ihoey.com';
 const external = href => {
   try { return /^(?:https?:)?\/\//i.test(href) && new URL(href, site).origin !== site; } catch { return false; }
@@ -5,7 +6,7 @@ const external = href => {
 export function readingCompatibility() {
   return tree => {
     function visit(node) {
-      if (node.tagName === 'img') node.properties = { loading: 'lazy', decoding: 'async', ...node.properties };
+      if (node.tagName === 'img') node.properties = optimizeImageProperties({ loading: 'lazy', decoding: 'async', ...node.properties });
       if (node.tagName === 'a' && external(String(node.properties?.href || ''))) {
         node.properties.target = '_blank';
         node.properties.rel = [...new Set([...(Array.isArray(node.properties.rel) ? node.properties.rel : []), 'noopener', 'noreferrer'])];
@@ -20,7 +21,7 @@ export function readingCompatibility() {
           const values = [...new Set([...(rel?.[2].split(/\s+/) || []), 'noopener', 'noreferrer'])].join(' ');
           return rel ? tag.replace(rel[0], `rel="${values}"`) : tag.replace(/>$/, ` rel="${values}">`);
         });
-        node.value = node.value.replace(/<img\b[^>]*>/gi, tag => tag.replace(/\s*\/?>$/, end => `${/\bloading\s*=/i.test(tag) ? '' : ' loading="lazy"'}${/\bdecoding\s*=/i.test(tag) ? '' : ' decoding="async"'}${end}`));
+        node.value = node.value.replace(/<img\b[^>]*>/gi, tag => optimizeImageTag(tag).replace(/\s*\/?>$/, end => `${/\bloading\s*=/i.test(tag) ? '' : ' loading="lazy"'}${/\bdecoding\s*=/i.test(tag) ? '' : ' decoding="async"'}${end}`));
       }
       node.children?.forEach(visit);
     }
