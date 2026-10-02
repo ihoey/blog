@@ -6,7 +6,7 @@
 
 ## 当前状态
 
-**Astro、WebP、SVG 图标、友链等高与关于页历程均已上线。本次构建源码 2a376c12，正式 master ba7a5f2b，Vercel Production 6806159473 success；直接回退点 8fed6f94。旧 GitHub Pages 自动部署因 master:/docs 不存在而失败，不影响 Vercel 正式站。发布与回退见 docs/release/astro-rollout.md。**
+**字体加载优化已通过 GitHub Actions 上线。Astro 源码在 main，master ac8d3a26 保存自动构建产物，Vercel success；正式首页返回 200。仅保留 main、master、hexo，旧版继续叫 hexo。后续代码推送 main 自动构建并发布；本轮直接回退点 ba7a5f2b。发布与回退见 docs/release/astro-rollout.md。**
 
 | 项目 | 值 |
 | --- | --- |
@@ -22,13 +22,15 @@
 
 用户已同意 Astro 方向、独立分支和独立工作目录，并要求用文档记录进度。本地迁移、预览、验证及上线切换均已完成。
 
-## 2026-10-03 自动构建发布与分支整理（待首次远端验证）
+## 2026-10-03 自动构建发布与分支整理（已上线）
 
-- 用户要求 main 保存 Astro 源码、master 用于部署，并更正旧版名称继续保留 hexo。main 已从优化源码 d412f606 创建；临时 next 与 hexo 完全相同，列入清理。
-- 用户进一步要求改用 GitHub Actions 自动构建。新增 main 推送触发的检查 / 构建 / 验证 / 静态产物快进发布流程，替代本地逐文件上传；原上传尚未切换 master。缓存依赖和生成字体，只给工作流 contents 写权限。
-- 首次工作流完成发布后清理 feat/astro-migration、next、两个已合并的 2018 年 PR 分支；仅删除头 SHA 与审阅记录相同的分支。旧 PR 文件已归档，hexo 保留。
-- 默认分支目前仍是 master，切换到 main 需要仓库管理入口。Actions 成功与 Vercel 正式上线分开记录；当前尚未确认远端首次运行或正式发布成功。
-- 下一步：提交工作流，检查第一轮 Actions 和 Vercel，核对正式域名，更新发布记录与分支状态。
+- 用户要求 main 保存 Astro 源码、master 用于部署，旧版继续叫 hexo。main 完整继承优化源码 d412f606 的历史。首次 Actions 成功后已删除 feat/astro-migration、next、两个已合并的 2018 年 PR 分支；远端仅保留 main、master、hexo，旧 PR 文件快照保存在 docs/archive/。
+- 首次工作流 [37056641053](https://github.com/ihoey/blog/actions/runs/37056641053) success，源码 `804ddf65acc53274e5a5dcc7363b478fabf928ef` 构建后普通快进发布到 master `ac8d3a26f827aecb2203ad455ef68640e22084ac`，未强推。Vercel 检查 success；正式首页返回 200。
+- 远端验证：32 项测试通过，Astro check 46 文件零诊断；构建 183 页，182 个旧地址 / 576 个锚点兼容；298 个字体子集、142,899 个字形轮廓与宽度一致。首页两个文楷字体共 198,704 B。
+- 缓存依赖与生成字体；仅 main 代码推送触发部署，文档修改不触发。检查失败时不更新 master，master / hexo 不触发循环；只授予 contents 写权限，无需个人访问令牌。
+- 后续工作流改动 `f97f6fa2` 分开显示构建与校验步骤，并修复构建期间追加纯文档提交导致跳过发布的问题；已用真实临时 Git 历史验证纯文档允许发布、新源码延后发布。
+- 默认分支仍为 master；当前连接不具备仓库管理接口，建议通过仓库 Settings 将默认分支改为 main，Vercel 正式部署分支继续保持 master。这不影响 main 的自动构建。
+- 下一步：日常在 main 维护；回退前遵循发布记录中的普通提交方案，不强推 master。字体优化后的 PageSpeed 分数和浏览器交互尚未在本轮复测，不把文件体积下降视作 Lighthouse 分数提升。
 
 ## 2026-10-02 文楷加载与缓存优化（源码修改，未发布）
 

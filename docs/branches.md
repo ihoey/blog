@@ -12,21 +12,21 @@
 
 建议仓库默认分支为 `main`。当前默认仍为 `master`，待通过有仓库管理权限的入口切换；Vercel 正式发布分支仍保持 `master`。
 
-## 待清理的重复和历史分支
+## 已清理的重复和历史分支
 
 | 分支 | 核对结果 | 处理 |
 | --- | --- | --- |
-| `feat/astro-migration` | `main` 已继承其全部源码与历史；没有打开的 PR | 待删除旧分支名 |
-| `next` | 上轮根据旧版名称误记创建，与 `hexo` 同为 `57828763` | 待删除重复分支，旧版继续叫 `hexo` |
-| `add-license-1` | [PR #8](https://github.com/ihoey/blog/pull/8) 已关闭且 merged=true | 待删除旧 PR 分支 |
-| `add-code-of-conduct-1` | [PR #9](https://github.com/ihoey/blog/pull/9) 已关闭且 merged=true | 待删除旧 PR 分支 |
+| `feat/astro-migration` | `main` 已继承其全部源码与历史；没有打开的 PR | 已删除旧分支名 |
+| `next` | 上轮根据旧版名称误记创建，与 `hexo` 同为 `57828763` | 已删除重复分支，旧版继续叫 `hexo` |
+| `add-license-1` | [PR #8](https://github.com/ihoey/blog/pull/8) 已关闭且 merged=true | 已删除旧 PR 分支 |
+| `add-code-of-conduct-1` | [PR #9](https://github.com/ihoey/blog/pull/9) 已关闭且 merged=true | 已删除旧 PR 分支 |
 
 两个 2018 年分支与当前 Astro 源码没有共同祖先，不能仅靠当前源码的祖先比较判定 PR 是否合并；已分别核对 GitHub PR 的合并状态。保留原文件快照在 `docs/archive/`，原提交为：
 
 - LICENSE：`2d93dd8e01af7e9692d5e0c082770d0763375dc7`，PR #8。
 - CODE_OF_CONDUCT.md：`1b165aef54d57f32b55d6696db42af87532121fb`，PR #9。
 
-当前 GitHub 插件未提供删除分支、修改默认分支的管理接口。本轮改由 Actions 首次部署后的单次步骤清理已核对的四个分支，仅当分支 SHA 仍与记录一致时删除；之后的 main 推送不会重复执行。默认分支切换仍需仓库管理入口。当前为待执行状态，完成后重新枚举远端分支，确认仅保留 `main`、`master`、`hexo`。
+当前 GitHub 插件未提供删除分支、修改默认分支的管理接口。本轮改由 Actions 首次部署后的单次步骤清理已核对的四个分支，仅当分支 SHA 仍与记录一致时删除；之后的 main 推送不会重复执行。默认分支切换仍需仓库管理入口。首次 Actions 运行 `37056641053` 已完成清理，重新枚举远端确认仅保留 `main`、`master`、`hexo`。
 
 ## 开发与发布
 
