@@ -6,7 +6,7 @@
 
 ## 当前状态
 
-**Astro 与 WebP 优化均已上线。当前源码 18d1d41c，正式 master 8fed6f94，Vercel Production 6805612187 success。本次回退点为首版 Astro 8bbde7c4；历史 Hexo 版本继续保留。发布与回退见 docs/release/astro-rollout.md。**
+**Astro、WebP、SVG 图标、友链等高与关于页历程均已上线。本次构建源码 2a376c12，正式 master ba7a5f2b，Vercel Production 6806159473 success；直接回退点 8fed6f94。旧 GitHub Pages 自动部署因 master:/docs 不存在而失败，不影响 Vercel 正式站。发布与回退见 docs/release/astro-rollout.md。**
 
 | 项目 | 值 |
 | --- | --- |
@@ -21,6 +21,12 @@
 | 发布分支 | `master`，存放静态产物；不能用作源码迁移起点 |
 
 用户已同意 Astro 方向、独立分支和独立工作目录，并要求用文档记录进度。本地迁移、预览、验证及上线切换均已完成。
+
+## 2026-10-02 本轮正式发布完成
+
+用户确认部署后，补回打赏记录下的 2017 年原感想及 LeanCloud / Hitalk 迁移说明；补入 2021 / 2022 / 2023 / 2025 年维护记录，历程共 18 条。与前轮 SVG 一并上线为 ba7a5f2b，Vercel success，240 个正式页面 / 资源与产物一致。详见 docs/release/astro-rollout.md。本轮后续文档提交不改变线上产物。
+
+下一步：网站可正常使用；用户提到的 GitHub Actions 红叉来自旧 Pages Jekyll 流程，已解释原因，尚未修改该托管设置。可在用户确认停用旧 Pages 后清理重复部署。
 
 ## 2026-10-02 友链等高与关于页历程（本地完成，未发布）
 

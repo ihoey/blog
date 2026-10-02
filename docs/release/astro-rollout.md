@@ -2,6 +2,17 @@
 
 日期：2026-10-02。状态：**已上线，Vercel Production success；正式域名验收通过**。
 
+## 2026-10-02 SVG 图标、友链与历程发布
+
+- 用户明确授权上线。源码 `2a376c12888e08e1f5102150653fe163876c1638` 已推送 feat/astro-migration；静态 master 普通快进到 `ba7a5f2b15abe8e46bbcd780700b21464ddd74b6`，449 个文件与 dist 完全一致。
+- Vercel Production `6806159473`，北京时间 18:12:56 success；部署地址 https://blog-lepfkz226-ihoeys-projects.vercel.app。
+- 范围：20 种 SVG 替换图标字体、21 张友链卡片两行简介等高、关于页 18 条历程（含 2021–2025 年维护）、恢复打赏记录下方 2017 年感想并补充 LeanCloud 宣布停服与 Hitalk 迁移记录。
+- LeanCloud 官方公告时间已核实：2026-01-12 公告，2027-01-12 正式停服；未把未来停服写成已关闭。页面包含官方公告链接。
+- 发布前 build 183 页、verify 182 旧地址 / 576 锚点、25 项测试、check 46 文件零诊断通过。最终补充的历史文案重新构建并验证旧链接通过。
+- 正式域名 240 个页面 / 资源全部 200 且字节一致（一次临时 TLS 错误重试通过），未知路径 404，SW 退役脚本及 no-cache 响应头正确。浏览器确认关于页全部新增文案和历程显示；友链 21 卡片均 146.89px，SVG 哈希资源生效，无横向溢出。未发送真实评论、邮件或支付。
+- 本轮回退基线：`8fed6f947ba4304c5c8a48e773ef8f1142a8a2ae`。本地校验记录：work/about-history/release-manifest.json 与 production-verification.json。
+- 用户提到的 Actions 失败已定位：GitHub 自动生成的 `pages-build-deployment`（run 36994214269）仍使用 legacy Pages 配置 `master:/docs`，Jekyll 因目录不存在失败。Pages 无自定义域名，地址 https://ihoey.github.io/blog/；Vercel 正式检查成功，二者独立。当前仅调查，未变更 Pages 设置或停用工作流；建议后续停用遗留 Pages 自动部署。
+
 ## 2026-10-02 WebP 优化发布
 
 - 本次用户明确授权发布 WebP 改动；源码 `18d1d41cdf04c9200e82482f7bce80316e425bf9` 已推送 feat/astro-migration。
