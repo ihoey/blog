@@ -47,7 +47,6 @@ body{background:var(--bg)}
 @media(hover:hover) and (pointer:fine){.scissor-divider:hover .scissor-track{transform:translateX(100%)}}
 .post-row:last-child .scissor-divider{display:none}.compact .post-row{border-bottom:1px solid var(--line)}.compact .post-summary h2,.compact .post-meta{text-align:left;justify-content:flex-start}.compact .post-meta{margin-top:8px;margin-bottom:0}
 .article-shell{padding-top:18px}.article-header{grid-column:1;max-width:none;width:100%;margin:0;padding:24px 12px;text-align:center}
-.article-header .back-link{display:flex;align-items:center;gap:7px;width:fit-content;padding:4px 0;margin-bottom:24px}
 .article-header h1{font-size:clamp(27px,3vw,35px);font-weight:700;line-height:1.5;margin:0 0 20px;text-wrap:balance}
 .article-meta,.article-reading-meta,.article-tags{justify-content:center}
 .article-meta,.article-reading-meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;line-height:1.8;color:var(--muted)}
@@ -137,7 +136,7 @@ body{background:var(--bg)}
 .prose :not(pre)>code{background:var(--accent-soft);color:var(--inline-ink)}
 .prose a>code{color:inherit}
 /* Muted links still need a visible interaction state. */
-:is(.post-category,.discussion-link,.section-heading>a,.article-tags a,.back-link,.author-stats a):is(:hover,:focus-visible){color:var(--accent)}
+:is(.post-category,.discussion-link,.section-heading>a,.article-tags a,.author-stats a):is(:hover,:focus-visible){color:var(--accent)}
 .author-stats a:is(:hover,:focus-visible) b{color:inherit}
 
 /* NexT-style article previews retain the author's introduction and its formatting. */

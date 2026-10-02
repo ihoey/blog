@@ -85,7 +85,6 @@
   .friend-list p { font-size: 13px; color: var(--muted); margin-top: 8px; }
   .friend-list h2 span { color: var(--accent); }
   .article-header { max-width: 790px; padding: 48px 0 36px; }
-  .back-link { font-size: 13px; color: var(--muted); }
   .article-meta { display: flex; flex-wrap: wrap; gap: 12px; font-size: 13px; margin-top: 35px; color: var(--muted); }
   .article-meta > a { color: var(--accent); }
   .article-header h1 { font-size: clamp(27px, 3.5vw, 39px); font-weight: 650; margin-top: 16px; }
