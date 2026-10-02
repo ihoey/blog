@@ -51,8 +51,11 @@ jobs:
       - name: Typecheck and test
         run: pnpm check && pnpm test
 
-      - name: Build and verify static site
-        run: pnpm build && pnpm verify
+      - name: Build static site
+        run: pnpm build
+
+      - name: Verify routes, content and font outlines
+        run: pnpm verify
 
       - name: Checkout current static publication
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
@@ -66,8 +69,12 @@ jobs:
         run: |
           latest=$(git -C release ls-remote origin refs/heads/main | cut -f1)
           if [ "$latest" != "$SOURCE_SHA" ]; then
-            echo 'A newer main commit exists; its queued workflow will publish.' >> "$GITHUB_STEP_SUMMARY"
-            exit 0
+            git -C release fetch --no-tags --depth=1 origin "$SOURCE_SHA" "$latest"
+            if ! git -C release diff --quiet "$SOURCE_SHA" "$latest" -- . ':!docs' ':!README.MD' ':!AGENTS.md' ':!PRODUCT.md'; then
+              echo 'Newer source changes exist; their queued workflow will publish.' >> "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            echo 'Only documentation changed since this build; publishing the verified artifacts.' >> "$GITHUB_STEP_SUMMARY"
           fi
           source_author=$(git show -s --format='%an <%ae>' "$SOURCE_SHA")
           node scripts/sync-static.mjs dist release
