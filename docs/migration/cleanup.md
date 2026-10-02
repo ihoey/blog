@@ -6,9 +6,10 @@
 - 移除已经执行完成的 Actions 分支删除步骤；日常工作流仅检查、构建、验证并发布静态产物。
 - 一次性 Hexo 基线导出工具、旧 package.json 快照和 Hitalk 主题运维记录移到 docs/archive/，同步当前文档入口；仍在使用的基线和校验脚本保留。
 - 清理旧 db.json / public / .deploy 忽略规则，以及 tsconfig 中已不存在的 themes 排除项。
+- PRODUCT.md 原先把多轮相互替代的配色 / 宽度 / 导航方案放在同一入口；现整理为当前最终决定，完整历史另存 docs/archive/product-decisions-2026-10-03.md，早期视觉建议明确标注为历史。
 - 开发与发布文档统一到 main → Actions → master → Vercel，移除当前流程中的手动 worktree / 逐文件发布指导；历史发布事实仍保留。
 - 保留文章与旧 URL / 评论身份兼容、SW 退役脚本、manifest / 图标 / 二维码、完整字体 fallback 及许可证；这些仍由当前站点引用或用于历史客户端升级。
-- 本地验证：32 项测试通过，Astro check 46 文件零诊断；工作流 YAML / Shell 语法、归档工具 --help 与 diff 空白检查通过。待远端 Actions 构建验证；没有修改文章正文或页面运行代码。
+- 本地验证：32 项测试通过，Astro check 46 文件零诊断；工作流 YAML / Shell 语法、归档工具 --help 与 diff 空白检查通过。按用户要求，提交后不再等待或巡查自动流程，远端结果以 Actions 页面为准；没有修改文章正文或页面运行代码。
 
 ## 2026-10-01 初次旧项目清理（历史记录）
 
