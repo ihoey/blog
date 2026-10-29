@@ -1,16 +1,16 @@
 /* Inline SVG brushwork. Cloned backgrounds follow each wrapped line, without
    wrappers, absolute overlays, or changes to the original Markdown content. */
 :root {
-  --quote-surface: oklch(.974 .015 65);
-  --quote-accent: oklch(.64 .145 48);
+  --quote-surface: oklch(0.974 0.015 65);
+  --quote-accent: oklch(0.64 0.145 48);
   --pen-emphasis: url('/design/marks/brush-emphasis.svg');
   --pen-gold: url('/design/marks/brush-gold.svg');
   --pen-wave: url('/design/marks/wave-rose.svg');
   --pen-strike: url('/design/marks/strike.svg');
 }
-:root[data-theme=dark] {
-  --quote-surface: oklch(.205 .018 55);
-  --quote-accent: oklch(.78 .12 55);
+:root[data-theme='dark'] {
+  --quote-surface: oklch(0.205 0.018 55);
+  --quote-accent: oklch(0.78 0.12 55);
   --pen-emphasis: url('/design/marks/brush-emphasis-dark.svg');
   --pen-gold: url('/design/marks/brush-gold-dark.svg');
   --pen-wave: url('/design/marks/wave-rose-dark.svg');
@@ -43,38 +43,75 @@
   mask: url('/design/marks/quote.svg') center / contain no-repeat;
   pointer-events: none;
 }
-:is(.prose, .post-excerpt) blockquote:not(.blockquote-center) > p { margin-block: .7em; color: inherit; }
-:is(.prose, .post-excerpt) blockquote:not(.blockquote-center) > :first-child { margin-top: 0; }
-:is(.prose, .post-excerpt) blockquote:not(.blockquote-center) > :last-child { margin-bottom: 0; }
-:is(.prose, .post-excerpt) blockquote:not(.blockquote-center) blockquote:not(.blockquote-center) {
+:is(.prose, .post-excerpt) blockquote:not(.blockquote-center) > p {
+  margin-block: 0.7em;
+  color: inherit;
+}
+:is(.prose, .post-excerpt) blockquote:not(.blockquote-center) > :first-child {
+  margin-top: 0;
+}
+:is(.prose, .post-excerpt) blockquote:not(.blockquote-center) > :last-child {
+  margin-bottom: 0;
+}
+:is(.prose, .post-excerpt)
+  blockquote:not(.blockquote-center)
+  blockquote:not(.blockquote-center) {
   margin-block: 16px;
   padding: 10px 0 10px 28px;
   border-radius: 0;
   background: none;
 }
-:is(.prose, .post-excerpt) blockquote:not(.blockquote-center) blockquote:not(.blockquote-center)::before {
+:is(.prose, .post-excerpt)
+  blockquote:not(.blockquote-center)
+  blockquote:not(.blockquote-center)::before {
   top: 15px;
   left: 0;
   width: 15px;
   height: 15px;
-  opacity: .7;
+  opacity: 0.7;
 }
-:is(.prose, .post-excerpt) blockquote:not(.blockquote-center) > :is(cite, footer) {
+:is(.prose, .post-excerpt)
+  blockquote:not(.blockquote-center)
+  > :is(cite, footer) {
   display: block;
   margin-top: 14px;
   color: var(--muted);
-  font-size: .875em;
+  font-size: 0.875em;
   font-style: normal;
 }
 @media (max-width: 600px) {
-  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center) { padding: 18px 18px 18px 44px; }
-  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center)::before { top: 23px; left: 14px; width: 18px; height: 18px; }
-  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center) blockquote:not(.blockquote-center) { padding: 8px 0 8px 22px; }
-  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center) blockquote:not(.blockquote-center)::before { top: 14px; left: 0; width: 12px; height: 12px; }
+  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center) {
+    padding: 18px 18px 18px 44px;
+  }
+  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center)::before {
+    top: 23px;
+    left: 14px;
+    width: 18px;
+    height: 18px;
+  }
+  :is(.prose, .post-excerpt)
+    blockquote:not(.blockquote-center)
+    blockquote:not(.blockquote-center) {
+    padding: 8px 0 8px 22px;
+  }
+  :is(.prose, .post-excerpt)
+    blockquote:not(.blockquote-center)
+    blockquote:not(.blockquote-center)::before {
+    top: 14px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
 }
 @media print, (forced-colors: active) {
-  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center) { background: none; border-inline-start: 2px solid currentColor; padding-inline: 18px; }
-  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center)::before { display: none; }
+  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center) {
+    background: none;
+    border-inline-start: 2px solid currentColor;
+    padding-inline: 18px;
+  }
+  :is(.prose, .post-excerpt) blockquote:not(.blockquote-center)::before {
+    display: none;
+  }
 }
 
 /* Opt-in motto treatment, reusable in articles, pages and excerpts. */
@@ -113,61 +150,80 @@ blockquote.blockquote-center::after {
   mask: url('/design/marks/signoff.svg') center / contain no-repeat;
   pointer-events: none;
 }
-blockquote.blockquote-center > p { margin: 0; }
+blockquote.blockquote-center > p {
+  margin: 0;
+}
 @media print, (forced-colors: active) {
   blockquote.blockquote-center::before,
-  blockquote.blockquote-center::after { display: none; }
+  blockquote.blockquote-center::after {
+    display: none;
+  }
 }
 
 /* Keep headings, code, icons and links in their own visual language. */
-:where(.prose, .post-excerpt) :is(strong, b, mark, u, del, s):not(:where(
-  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon
-)) {
+:where(.prose, .post-excerpt)
+  :is(strong, b, mark, u, del, s):not(
+    :where(pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon)
+  ) {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   background-repeat: no-repeat;
 }
-:where(.prose, .post-excerpt) :is(strong, b, mark):not(:where(
-  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon
-)) {
+:where(.prose, .post-excerpt)
+  :is(strong, b, mark):not(
+    :where(pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon)
+  ) {
   --pen-stroke: var(--pen-emphasis);
-  --pen-height: .58em;
+  --pen-height: 0.58em;
   background-image: var(--pen-stroke), var(--pen-stroke);
-  background-position: left 90%, left 90%;
-  background-size: 0 var(--pen-height), 100% var(--pen-height);
+  background-position:
+    left 90%,
+    left 90%;
+  background-size:
+    0 var(--pen-height),
+    100% var(--pen-height);
 }
-:where(.prose, .post-excerpt) :is(strong, b) { font-weight: 700; }
+:where(.prose, .post-excerpt) :is(strong, b) {
+  font-weight: 700;
+}
 :where(.prose, .post-excerpt) mark:not(:where(pre *, code *, a *)) {
   --pen-stroke: var(--pen-gold);
   --pen-height: 1.08em;
   color: var(--ink);
   background-color: transparent;
-  background-position: left 65%, left 65%;
+  background-position:
+    left 65%,
+    left 65%;
 }
-:where(.prose, .post-excerpt) :is(em, i):not(:where(
-  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon
-)) { color: var(--rose-ink); }
-:where(.prose, .post-excerpt) u:not(:where(
-  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *
-)) {
+:where(.prose, .post-excerpt)
+  :is(em, i):not(
+    :where(pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *, .icon)
+  ) {
+  color: var(--rose-ink);
+}
+:where(.prose, .post-excerpt)
+  u:not(:where(pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *)) {
   text-decoration: none;
   background-image: var(--pen-wave);
   background-repeat: repeat-x;
   background-size: 20px 6px;
   background-position: left bottom;
-  padding-bottom: .22em;
+  padding-bottom: 0.22em;
 }
-:where(.prose, .post-excerpt) :is(del, s):not(:where(
-  pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *
-)) {
+:where(.prose, .post-excerpt)
+  :is(del, s):not(
+    :where(pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *)
+  ) {
   text-decoration: none;
   background-image: var(--pen-strike);
-  background-size: 100% .3em;
+  background-size: 100% 0.3em;
   background-position: center 55%;
 }
 
 /* One ornament per phrase; preserve emphasis semantics and the link affordance. */
-:where(.prose, .post-excerpt) :is(strong, b, mark, u, del, s) :is(strong, b, mark, u, del, s, em, i) {
+:where(.prose, .post-excerpt)
+  :is(strong, b, mark, u, del, s)
+  :is(strong, b, mark, u, del, s, em, i) {
   background: none;
   color: inherit;
   padding-bottom: 0;
@@ -177,37 +233,93 @@ blockquote.blockquote-center > p { margin: 0; }
   background: none;
   animation: none;
 }
-:where(.prose, .post-excerpt) a mark { color: inherit; background: none; }
+:where(.prose, .post-excerpt) a mark {
+  color: inherit;
+  background: none;
+}
 :where(.prose, .post-excerpt) :is(del, s) :is(del, s),
 :where(.prose, .post-excerpt) :is(strong, b, mark, u) :is(del, s),
-:where(.prose, .post-excerpt) :is(del, s):has(a, code) { text-decoration: line-through; }
+:where(.prose, .post-excerpt) :is(del, s):has(a, code) {
+  text-decoration: line-through;
+}
 
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  :where(.prose, .post-excerpt) :is(strong, b, mark):hover:not(:where(
-    pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *,
-    strong *, b *, mark *, u *, del *, s *
-  )):not(:has(a, code)) {
-    animation: pen-retrace 350ms cubic-bezier(.22, 1, .36, 1) both;
+  :where(.prose, .post-excerpt)
+    :is(strong, b, mark):hover:not(
+      :where(
+        pre *,
+        code *,
+        h1 *,
+        h2 *,
+        h3 *,
+        h4 *,
+        h5 *,
+        h6 *,
+        a *,
+        strong *,
+        b *,
+        mark *,
+        u *,
+        del *,
+        s *
+      )
+    ):not(:has(a, code)) {
+    animation: pen-retrace 350ms cubic-bezier(0.22, 1, 0.36, 1) both;
   }
-  :where(.prose, .post-excerpt) u:hover:not(:where(
-    pre *, code *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, a *,
-    strong *, b *, mark *, u *, del *, s *
-  )):not(:has(a, code)) { animation: pen-ripple 350ms ease-out; }
+  :where(.prose, .post-excerpt)
+    u:hover:not(
+      :where(
+        pre *,
+        code *,
+        h1 *,
+        h2 *,
+        h3 *,
+        h4 *,
+        h5 *,
+        h6 *,
+        a *,
+        strong *,
+        b *,
+        mark *,
+        u *,
+        del *,
+        s *
+      )
+    ):not(:has(a, code)) {
+    animation: pen-ripple 350ms ease-out;
+  }
 }
 @keyframes pen-retrace {
-  from { background-size: 0 var(--pen-height), 100% var(--pen-height); }
-  to { background-size: 100% var(--pen-height), 100% var(--pen-height); }
+  from {
+    background-size:
+      0 var(--pen-height),
+      100% var(--pen-height);
+  }
+  to {
+    background-size:
+      100% var(--pen-height),
+      100% var(--pen-height);
+  }
 }
 @keyframes pen-ripple {
-  from { background-position-x: -20px; }
-  to { background-position-x: 0; }
+  from {
+    background-position-x: -20px;
+  }
+  to {
+    background-position-x: 0;
+  }
 }
 @media print, (forced-colors: active) {
-  :where(.prose, .post-excerpt) :is(strong, b, mark, u, del, s, em, i):not(.icon) {
+  :where(.prose, .post-excerpt)
+    :is(strong, b, mark, u, del, s, em, i):not(.icon) {
     background-image: none;
     color: inherit;
     animation: none;
   }
-  :where(.prose, .post-excerpt) :is(u, mark) { text-decoration: underline; }
-  :where(.prose, .post-excerpt) :is(del, s) { text-decoration: line-through; }
+  :where(.prose, .post-excerpt) :is(u, mark) {
+    text-decoration: underline;
+  }
+  :where(.prose, .post-excerpt) :is(del, s) {
+    text-decoration: line-through;
+  }
 }

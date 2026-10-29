@@ -26,7 +26,7 @@
 }
 
 .legacy-reward .tr3 {
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .legacy-reward #DonateText {
@@ -66,7 +66,7 @@
   background: no-repeat center center;
   background-color: rgba(204, 217, 220, 0.1);
   background-size: 45px;
-  transition: all .3s;
+  transition: all 0.3s;
   cursor: pointer;
   overflow: hidden;
   line-height: 600px;
@@ -83,7 +83,7 @@
   opacity: 1;
 }
 
-.legacy-reward #donateBox>li:first-child {
+.legacy-reward #donateBox > li:first-child {
   border-width: 0;
 }
 
@@ -95,12 +95,12 @@
   background-image: url(/design/reward/paypal.svg);
 }
 
-.legacy-reward #donateBox>#QQPay {
+.legacy-reward #donateBox > #QQPay {
   background-image: url(/design/reward/qqpay.png);
   line-height: 28px;
 }
 
-.legacy-reward #donateBox>#QQPay:hover {
+.legacy-reward #donateBox > #QQPay:hover {
   overflow: visible;
 }
 
@@ -224,7 +224,8 @@
 }
 
 @keyframes legacyRewardHide {
-  from {}
+  from {
+  }
 
   20%,
   50% {
@@ -269,24 +270,107 @@
 }
 
 /* The upstream page is embedded into a 240px-tall article region. */
-.legacy-reward{padding:10px 0;margin:20px auto;width:90%;text-align:center}
-.legacy-reward .reward-content{height:240px;position:relative;isolation:isolate}
-.legacy-reward .reward-comment{font-size:14px;color:var(--muted);text-wrap:pretty}
-.legacy-reward .reward-status{font-size:12px;color:var(--muted)}
-.legacy-reward #DonateText{font-family:Arial,sans-serif}
-.legacy-reward #donateBox{box-sizing:content-box;max-width:100%;display:flex;float:none}
-.legacy-reward #donateBox li{box-sizing:content-box;flex:1;min-width:0;float:none}
-.legacy-reward #donateBox li a{width:100%;height:100%;overflow:hidden;color:transparent}
-.legacy-reward #donateBox li:focus-within{background-color:rgba(204,217,220,.3);filter:grayscale(0);opacity:1;overflow:visible}
-.legacy-reward #QRBox{width:100%;height:100%;position:absolute}
-.legacy-reward #QRBox[hidden]{display:none}
-.legacy-reward #MainBox{padding:5px;border:0;transition:none}
-.legacy-reward #MainBox img{display:block;width:190px;height:190px;object-fit:contain;border-radius:3px}
+.legacy-reward {
+  padding: 10px 0;
+  margin: 20px auto;
+  width: 90%;
+  text-align: center;
+}
+.legacy-reward .reward-content {
+  height: 240px;
+  position: relative;
+  isolation: isolate;
+}
+.legacy-reward .reward-comment {
+  font-size: 14px;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.legacy-reward .reward-status {
+  font-size: 12px;
+  color: var(--muted);
+}
+.legacy-reward #DonateText {
+  font-family: Arial, sans-serif;
+}
+.legacy-reward #donateBox {
+  box-sizing: content-box;
+  max-width: 100%;
+  display: flex;
+  float: none;
+}
+.legacy-reward #donateBox li {
+  box-sizing: content-box;
+  flex: 1;
+  min-width: 0;
+  float: none;
+}
+.legacy-reward #donateBox li a {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: transparent;
+}
+.legacy-reward #donateBox li:focus-within {
+  background-color: rgba(204, 217, 220, 0.3);
+  filter: grayscale(0);
+  opacity: 1;
+  overflow: visible;
+}
+.legacy-reward #QRBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.legacy-reward #QRBox[hidden] {
+  display: none;
+}
+.legacy-reward #MainBox {
+  padding: 5px;
+  border: 0;
+  transition: none;
+}
+.legacy-reward #MainBox img {
+  display: block;
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+  border-radius: 3px;
+}
 /* Hold the concealed starting pose during upstream's 300ms delay. */
-.legacy-reward #MainBox.showQR{animation-fill-mode:both}
-.legacy-reward #QRBox.fadeIn #MainBox{will-change:transform,opacity}
-[data-theme=dark] .legacy-reward #QRBox{background:color-mix(in oklch,var(--reading) 50%,transparent)}
-[data-theme=dark] .legacy-reward #github{filter:invert(1)}
-[data-theme=dark] .legacy-reward.blur #github{filter:invert(1) blur(3px)}
-@media(max-width:420px){.legacy-reward #donateBox{left:50%;transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){.legacy-reward #MainBox.showQR{opacity:1}.legacy-reward #MainBox,.legacy-reward #QRBox,.legacy-reward .tr3,.legacy-reward #donateBox li{animation:none!important;transition:none!important}.legacy-reward #MainBox{transform:none!important}}
+.legacy-reward #MainBox.showQR {
+  animation-fill-mode: both;
+}
+.legacy-reward #QRBox.fadeIn #MainBox {
+  will-change: transform, opacity;
+}
+[data-theme='dark'] .legacy-reward #QRBox {
+  background: color-mix(in oklch, var(--reading) 50%, transparent);
+}
+[data-theme='dark'] .legacy-reward #github {
+  filter: invert(1);
+}
+[data-theme='dark'] .legacy-reward.blur #github {
+  filter: invert(1) blur(3px);
+}
+@media (max-width: 420px) {
+  .legacy-reward #donateBox {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .legacy-reward #MainBox.showQR {
+    opacity: 1;
+  }
+  .legacy-reward #MainBox,
+  .legacy-reward #QRBox,
+  .legacy-reward .tr3,
+  .legacy-reward #donateBox li {
+    animation: none !important;
+    transition: none !important;
+  }
+  .legacy-reward #MainBox {
+    transform: none !important;
+  }
+}

@@ -8,31 +8,83 @@ import ArticleDiscussion from '../../components/ArticleDiscussion.astro';
 import { getPosts } from '../../lib/posts';
 export async function getStaticPaths() {
   const posts = await getPosts();
-  return posts.map((post, index) => ({ params: { slug: post.path.replace(/^\/posts\//, '').replace(/\.html$/, '') }, props: { post, newer: posts[index - 1], older: posts[index + 1] } }));
+  return posts.map((post, index) => ({
+    params: {
+      slug: post.path.replace(/^\/posts\//, '').replace(/\.html$/, ''),
+    },
+    props: { post, newer: posts[index - 1], older: posts[index + 1] },
+  }));
 }
 const { post, newer, older } = Astro.props;
 const { Content, headings } = await render(post);
 const toc = headings;
-const tocBase = Math.min(...toc.map(h => h.depth));
+const tocBase = Math.min(...toc.map((h) => h.depth));
 ---
-<Base title={post.data.title} description={post.description} canonical={post.path} article date={post.date} updated={post.updated}>
+
+<Base
+  title={post.data.title}
+  description={post.description}
+  canonical={post.path}
+  article
+  date={post.date}
+  updated={post.updated}
+>
   <article class="article-shell">
     <div class:list={['article-grid', { 'without-toc': toc.length === 0 }]}>
       <ArticleHeader post={post} />
       <div class="article-main">
-        <div class="prose"><Content /></div>
+        <div class="prose">
+          <Content />
+        </div>
         <ArticleDiscussion />
         <Reward />
-        <div class="article-end"><p>谢谢你读到这里。</p><a class="text-link" href="/atom.xml"><i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS</a></div>
+        <div class="article-end">
+          <p>谢谢你读到这里。</p>
+          <a class="text-link" href="/atom.xml">
+            <i class="icon icon-rss" aria-hidden="true"></i> 订阅 RSS
+          </a>
+        </div>
         <nav class="adjacent-posts" aria-label="相邻文章">
-          {newer && <a class="adjacent-newer" rel="prev" href={newer.path}><span><b aria-hidden="true">←</b> 上一篇</span><strong>{newer.data.title}</strong></a>}
-          {older && <a class="adjacent-older" rel="next" href={older.path}><span>下一篇 <b aria-hidden="true">→</b></span><strong>{older.data.title}</strong></a>}
+          {newer && (
+            <a class="adjacent-newer" rel="prev" href={newer.path}>
+              <span>
+                <b aria-hidden="true">←</b> 上一篇
+              </span>
+              <strong>{newer.data.title}</strong>
+            </a>
+          )}
+          {older && (
+            <a class="adjacent-older" rel="next" href={older.path}>
+              <span>
+                下一篇 <b aria-hidden="true">→</b>
+              </span>
+              <strong>{older.data.title}</strong>
+            </a>
+          )}
         </nav>
         <Comments path={post.path} title={post.data.title} />
       </div>
-      {toc.length > 0 && <aside class="article-toc"><details open><summary>目录</summary><nav aria-label="文章目录">{toc.map(h => <a style={`--toc-depth:${h.depth - tocBase}`} href={`#${h.slug}`}>{h.text}</a>)}</nav></details></aside>}
+      {toc.length > 0 && (
+        <aside class="article-toc">
+          <details open>
+            <summary>目录</summary>
+            <nav aria-label="文章目录">
+              {toc.map((h) => (
+                <a
+                  style={`--toc-depth:${h.depth - tocBase}`}
+                  href={`#${h.slug}`}
+                >
+                  {h.text}
+                </a>
+              ))}
+            </nav>
+          </details>
+        </aside>
+      )}
     </div>
   </article>
 </Base>
 
-<script>import "../../lib/toc";</script>
+<script>
+  import '../../lib/toc';
+</script>

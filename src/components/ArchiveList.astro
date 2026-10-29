@@ -2,7 +2,9 @@
 import PostList from './PostList.astro';
 import type { Post } from '../lib/posts';
 
-interface Props { posts: Post[] }
+interface Props {
+  posts: Post[];
+}
 const { posts } = Astro.props;
 const groups = new Map<string, Post[]>();
 for (const post of posts) {
@@ -11,9 +13,20 @@ for (const post of posts) {
   groups.get(year)!.push(post);
 }
 ---
+
 <div class="archive-years">
-  {[...groups].map(([year, entries]) => <section class="archive-year-group" aria-labelledby={`archive-year-${year}`}>
-    <h2 class="archive-year-heading" id={`archive-year-${year}`}><a href={`/archives/${year}/`}>{year}<span>年</span></a></h2>
-    <PostList posts={entries} compact headingLevel="h3" />
-  </section>)}
+  {[...groups].map(([year, entries]) => (
+    <section
+      class="archive-year-group"
+      aria-labelledby={`archive-year-${year}`}
+    >
+      <h2 class="archive-year-heading" id={`archive-year-${year}`}>
+        <a href={`/archives/${year}/`}>
+          {year}
+          <span>年</span>
+        </a>
+      </h2>
+      <PostList posts={entries} compact headingLevel="h3" />
+    </section>
+  ))}
 </div>

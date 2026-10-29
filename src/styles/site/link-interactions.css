@@ -1,0 +1,205 @@
+/* A fuller canopy and stronger feedback on the site's actual controls. */
+.scenic-header {
+  min-height: 425px;
+  padding-top: 145px;
+  padding-bottom: 58px;
+}
+.scenic-header .canopy {
+  mask-image: linear-gradient(#000 38%, #000c 66%, transparent 100%);
+}
+[data-theme='dark'] .scenic-header .canopy {
+  opacity: 0.58;
+  mask-image: linear-gradient(#000 28%, #000a 62%, transparent 100%);
+}
+.site-name-letter {
+  display: inline-block;
+  transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc((3 - var(--letter-index)) * 25ms);
+}
+.site-name:is(:hover, :focus-visible) {
+  color: white;
+}
+.site-name:is(:hover, :focus-visible) .site-name-letter {
+  transform: translateY(-2px);
+  transition-delay: calc(var(--letter-index) * 35ms);
+}
+.main-nav {
+  gap: 11px;
+}
+.main-nav a {
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.main-nav a::after {
+  left: 12px;
+  width: calc(100% - 24px);
+}
+.main-nav a:is(:hover, :focus-visible)::after,
+.main-nav a[aria-current]::after {
+  left: 12px;
+  width: calc(100% - 24px);
+  height: 2px;
+}
+.main-nav a:is(:hover, :focus-visible) {
+  background: var(--accent-soft);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+.main-nav a:is(:hover, :focus-visible) .icon {
+  color: inherit;
+}
+.home-layout {
+  padding-top: 4px;
+}
+.home-articles {
+  padding-top: 0;
+}
+.home-articles .post-list > .post-row:first-child {
+  padding-top: 20px;
+}
+.sidebar-topics > a {
+  padding: 7px 9px;
+  margin-inline: -9px;
+  border-radius: 4px;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.sidebar-topics > a:is(:hover, :focus-visible),
+.sidebar-topics > a[aria-current] {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.sidebar-topics > a:is(:hover, :focus-visible) {
+  transform: translateX(3px);
+}
+.sidebar-topics > a:is(:hover, :focus-visible) span:last-child {
+  color: inherit;
+}
+/* Shared text navigation: the label travels while a separate fine line unfolds. */
+a.text-link {
+  display: inline-block;
+  background-color: transparent;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  text-decoration: none;
+  transition:
+    color 0.18s,
+    background-size 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+a.text-link:is(:hover, :focus-visible) {
+  color: var(--accent);
+  background-size: 100% 1px;
+  transform: translateX(var(--link-travel, 3px));
+}
+a.text-link-back {
+  --link-travel: -3px;
+}
+.post-list-header h2 a {
+  padding: 3px 0;
+  margin-inline: 0;
+  border-radius: 0;
+}
+.post-actions .read-link {
+  display: inline-flex;
+}
+.pagination a.text-link {
+  align-self: center;
+  padding: 4px 0;
+}
+.site-traffic {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.site-traffic .icon {
+  margin-right: 4px;
+}
+.footer-heart {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: -4px;
+  margin-inline: 5px;
+  transform: rotate(-8deg);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.footer-bottom > span:first-child:hover .footer-heart {
+  transform: rotate(8deg) scale(1.14);
+}
+.uptime-face {
+  white-space: nowrap;
+  margin-left: 4px;
+}
+.site-footer .site-uptime {
+  line-height: 2;
+  font-variant-numeric: tabular-nums;
+}
+.site-footer a:is(:hover, :focus-visible) {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+[data-effects='off']
+  :is(
+    .site-name,
+    .site-name-letter,
+    .main-nav a,
+    .sidebar-topics > a,
+    .text-link
+  ) {
+  transform: none !important;
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    .site-name,
+    .site-name-letter,
+    .main-nav a,
+    .sidebar-topics > a,
+    .text-link
+  ) {
+    transform: none !important;
+    transition: none;
+  }
+}
+@media (max-width: 700px) {
+  .scenic-header {
+    min-height: 350px;
+    padding-top: 115px;
+    padding-bottom: 35px;
+  }
+  .scenic-header .canopy {
+    background-size: auto 380px;
+  }
+  .main-nav {
+    gap: 8px;
+  }
+  .main-nav a {
+    padding: 8px 7px;
+  }
+  .main-nav a::after,
+  .main-nav a:is(:hover, :focus-visible)::after,
+  .main-nav a[aria-current]::after {
+    left: 7px;
+    width: calc(100% - 14px);
+  }
+  .home-articles {
+    padding-top: 0;
+  }
+  .site-traffic {
+    gap: 6px 16px;
+  }
+}

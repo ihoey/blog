@@ -10,7 +10,7 @@
 | `master` | `dist/` 构建结果，Vercel 正式发布通道 | 保留；普通快进发布，不强推 |
 | `hexo` | 旧 Hexo 4.2.1 / NexT 源码 | 保留在 `57828763b8ef90ba74ad837cc42cbfa0c88e1530`，不再日常开发 |
 
-建议仓库默认分支为 `main`。当前默认仍为 `master`，待通过有仓库管理权限的入口切换；Vercel 正式发布分支仍保持 `master`。
+建议仓库默认分支为 `main`。当前 GitHub 默认分支已为 `main`（2026-10-29 核对）；Vercel 正式发布分支保持 `master`。
 
 ## 已清理的重复和历史分支
 
@@ -36,3 +36,12 @@
 4. 仅 `main` 的代码修改触发自动部署。文档修改跳过，`master` 和 `hexo` 不触发构建循环；发现更新的 main 提交时，由其排队中的工作流发布。
 5. GitHub Actions 成功表示产物已更新，不等于 Vercel 已上线；仍需核对 Vercel success 与正式域名。
 6. 最新源码 / 产物 SHA、验证结果及回退点记录在 `docs/release/astro-rollout.md`。默认分支切到 main 后，也可以从 Actions 页面手动运行工作流。
+
+## 2026-10-29 本地工作区收拢
+
+- 唯一日常目录恢复为 `/Users/ihoey/personal/project/blog`，已从 hexo 切到跟踪 origin/main 的本地 main；未新建 worktree。
+- 两个过渡 worktree 均无未提交源码，先备份旧 work 报告至 work/archives/astro-migration-2026-10-29，再使用 git worktree remove 移除。
+- 移除已合入的本地 feat/astro-migration / release/astro-2026-10-02。hexo 分支继续保留，并增加 archive/hexo-2026-09-18 标签。
+- 旧本地 master 停在 2017 年，与当前产物分支分叉；先保留 archive/local-master-2017 标签，再将本地 master 跟踪当前 origin/master。没有改写远端历史。
+- 原目录旧 Hexo 生成物（public、themes、.deploy_git、db.json）移至 work/archives/hexo-generated；不当作当前源码，也不发布。
+- origin/HEAD 同步为 main。main 保存源码，master 仍只由自动发布更新。

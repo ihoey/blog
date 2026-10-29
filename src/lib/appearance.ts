@@ -5,7 +5,11 @@ initNavHover();
 
 const root = document.documentElement;
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
-const save = (key: string, value: string) => { try { localStorage.setItem(key, value); } catch {} };
+const save = (key: string, value: string) => {
+  try {
+    localStorage.setItem(key, value);
+  } catch {}
+};
 const themeButton = document.querySelector<HTMLButtonElement>('.theme-toggle');
 motion.addEventListener('change', () => {
   root.dataset.effects = motion.matches ? 'off' : 'on';
@@ -13,36 +17,67 @@ motion.addEventListener('change', () => {
 });
 const updateControls = () => {
   const dark = root.dataset.theme === 'dark';
-  themeButton?.setAttribute('aria-label', dark ? '切换到日间主题' : '切换到夜间主题');
-  themeButton?.setAttribute('title', dark ? '切换到日间主题' : '切换到夜间主题');
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? 'hsl(210deg 15% 6%)' : 'hsl(0deg 0% 100%)');
+  themeButton?.setAttribute(
+    'aria-label',
+    dark ? '切换到日间主题' : '切换到夜间主题',
+  );
+  themeButton?.setAttribute(
+    'title',
+    dark ? '切换到日间主题' : '切换到夜间主题',
+  );
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute(
+      'content',
+      dark ? 'hsl(210deg 15% 6%)' : 'hsl(0deg 0% 100%)',
+    );
 };
 updateControls();
 themeButton?.addEventListener('click', () => {
-  const apply = () => { root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark'; save('blog-theme', root.dataset.theme); updateControls(); };
-  if (document.startViewTransition && !motion.matches && root.dataset.effects !== 'off') {
+  const apply = () => {
+    root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    save('blog-theme', root.dataset.theme);
+    updateControls();
+  };
+  if (
+    document.startViewTransition &&
+    !motion.matches &&
+    root.dataset.effects !== 'off'
+  ) {
     themeButton.disabled = true;
     const transition = document.startViewTransition(apply);
-    void transition.finished.catch(() => {}).finally(() => { themeButton.disabled = false; });
+    void transition.finished
+      .catch(() => {})
+      .finally(() => {
+        themeButton.disabled = false;
+      });
   } else apply();
 });
 const uptime = document.querySelector<HTMLElement>('[data-uptime]');
 if (uptime) {
   const updateUptime = () => {
-    const seconds = Math.max(0, Math.floor((Date.now() - Date.parse('2015-12-21T00:00:00+08:00')) / 1000));
+    const seconds = Math.max(
+      0,
+      Math.floor((Date.now() - Date.parse('2015-12-21T00:00:00+08:00')) / 1000),
+    );
     const days = Math.floor(seconds / 86400).toLocaleString('zh-CN');
-    const hours = Math.floor(seconds % 86400 / 3600);
-    const minutes = Math.floor(seconds % 3600 / 60);
+    const hours = Math.floor((seconds % 86400) / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
     uptime.textContent = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds % 60} 秒`;
   };
   updateUptime();
-  setInterval(() => { if (!document.hidden) updateUptime(); }, 1000);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) updateUptime(); });
+  setInterval(() => {
+    if (!document.hidden) updateUptime();
+  }, 1000);
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) updateUptime();
+  });
 }
 // Restore the existing site's counter only on its production origin.
 if (location.hostname === 'blog.ihoey.com') {
   const counter = document.createElement('script');
-  counter.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+  counter.src =
+    'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
   counter.async = true;
   document.head.append(counter);
 }
@@ -66,16 +101,30 @@ function updateScroll() {
   }
   scheduled = false;
 }
-addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateScroll); } }, { passive: true });
+addEventListener(
+  'scroll',
+  () => {
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(updateScroll);
+    }
+  },
+  { passive: true },
+);
 function measureDockThreshold() {
   if (scenicHeader) {
-    const clearance = Number.parseFloat(getComputedStyle(root).scrollPaddingTop) || 88;
-    dockAt = Math.max(0, scenicHeader.offsetTop + scenicHeader.offsetHeight - clearance);
+    const clearance =
+      Number.parseFloat(getComputedStyle(root).scrollPaddingTop) || 88;
+    dockAt = Math.max(
+      0,
+      scenicHeader.offsetTop + scenicHeader.offsetHeight - clearance,
+    );
   }
   updateScroll();
 }
 addEventListener('resize', measureDockThreshold);
-if (scenicHeader) new ResizeObserver(measureDockThreshold).observe(scenicHeader);
+if (scenicHeader)
+  new ResizeObserver(measureDockThreshold).observe(scenicHeader);
 measureDockThreshold();
 let finishLaunch: (() => void) | undefined;
 topButton?.addEventListener('click', () => {
@@ -97,13 +146,43 @@ const cancelLaunch = () => finishLaunch?.();
 window.addEventListener('blog:effectschange', cancelLaunch);
 motion.addEventListener('change', cancelLaunch);
 window.addEventListener('pagehide', cancelLaunch);
-document.addEventListener('visibilitychange', () => { if (document.hidden) cancelLaunch(); });
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) cancelLaunch();
+});
 let hearts = 0;
-document.addEventListener('click', event => {
-  if (root.dataset.effects === 'off' || motion.matches || event.detail === 0 || hearts >= 8) return;
-  if (!(event.target instanceof Element) || event.target.closest('a,button,[role=button],input,textarea,select,pre,code,[contenteditable]') || getSelection()?.toString()) return;
-  const heart = document.createElement('span'); heart.textContent = '♥'; heart.className = 'click-heart'; heart.setAttribute('aria-hidden','true'); heart.style.left = `${event.clientX - 8}px`; heart.style.top = `${event.clientY - 8}px`; document.body.append(heart); hearts++;
-  setTimeout(() => { heart.remove(); hearts--; }, 900);
+document.addEventListener('click', (event) => {
+  if (
+    root.dataset.effects === 'off' ||
+    motion.matches ||
+    event.detail === 0 ||
+    hearts >= 8
+  )
+    return;
+  if (
+    !(event.target instanceof Element) ||
+    event.target.closest(
+      'a,button,[role=button],input,textarea,select,pre,code,[contenteditable]',
+    ) ||
+    getSelection()?.toString()
+  )
+    return;
+  const heart = document.createElement('span');
+  heart.textContent = '♥';
+  heart.className = 'click-heart';
+  heart.setAttribute('aria-hidden', 'true');
+  heart.style.left = `${event.clientX - 8}px`;
+  heart.style.top = `${event.clientY - 8}px`;
+  document.body.append(heart);
+  hearts++;
+  setTimeout(() => {
+    heart.remove();
+    hearts--;
+  }, 900);
 });
 const originalTitle = document.title;
-document.addEventListener('visibilitychange', () => { document.title = document.hidden && root.dataset.effects !== 'off' ? '歇一会儿，小栈等你回来 · 梦魇小栈' : originalTitle; });
+document.addEventListener('visibilitychange', () => {
+  document.title =
+    document.hidden && root.dataset.effects !== 'off'
+      ? '歇一会儿，小栈等你回来 · 梦魇小栈'
+      : originalTitle;
+});

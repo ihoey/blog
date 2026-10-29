@@ -1,6 +1,12 @@
 /* Body headings only: preserve page titles, original h1–h6 semantics and IDs. */
-:root { --heading-ink: oklch(.46 .125 305); --heading-accent: oklch(.63 .17 305); }
-:root[data-theme=dark] { --heading-ink: oklch(.80 .095 305); --heading-accent: oklch(.73 .14 305); }
+:root {
+  --heading-ink: oklch(0.46 0.125 305);
+  --heading-accent: oklch(0.63 0.17 305);
+}
+:root[data-theme='dark'] {
+  --heading-ink: oklch(0.8 0.095 305);
+  --heading-accent: oklch(0.73 0.14 305);
+}
 .article-main > .prose :is(h1, h2, h3, h4, h5, h6) {
   position: relative;
   max-width: 100%;
@@ -28,7 +34,7 @@
   content: '';
   position: absolute;
   inset-inline-start: 0;
-  top: .3em;
+  top: 0.3em;
   width: 11px;
   height: 25px;
   border-radius: 3px 3px 0 0;
@@ -45,29 +51,67 @@
   content: '';
   position: absolute;
   inset-inline-start: 4px;
-  top: .35em;
+  top: 0.35em;
   width: 7px;
-  height: .85em;
+  height: 0.85em;
   border-inline-start: 2px solid var(--heading-accent);
   border-block: 2px solid var(--heading-accent);
   border-radius: 4px 0 0 4px;
   pointer-events: none;
 }
-.article-main > .prose h4 { font-size: 20px; margin-block: 30px 14px; }
-.article-main > .prose h5 { font-size: 18px; margin-block: 26px 12px; }
-.article-main > .prose h6 { font-size: 16px; margin-block: 24px 10px; color: var(--muted); letter-spacing: .04em; }
-.article-main > .prose :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) { margin-top: 20px; }
-.article-main > .prose > :is(h1, h2, h3, h4, h5, h6):first-child { margin-top: 0; }
-.article-main > .prose blockquote :is(h1, h2, h3, h4, h5, h6) { margin-top: 24px; }
-.article-main > .prose blockquote > :is(h1, h2, h3, h4, h5, h6):first-child { margin-top: 0; }
+.article-main > .prose h4 {
+  font-size: 20px;
+  margin-block: 30px 14px;
+}
+.article-main > .prose h5 {
+  font-size: 18px;
+  margin-block: 26px 12px;
+}
+.article-main > .prose h6 {
+  font-size: 16px;
+  margin-block: 24px 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.article-main
+  > .prose
+  :is(h1, h2, h3, h4, h5, h6)
+  + :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 20px;
+}
+.article-main > .prose > :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-top: 0;
+}
+.article-main > .prose blockquote :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: 24px;
+}
+.article-main > .prose blockquote > :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-top: 0;
+}
 @media (max-width: 600px) {
-  .article-main > .prose h1 { margin-top: 48px; }
-  .article-main > .prose h2 { margin-top: 40px; }
-  .article-main > .prose h3 { margin-top: 32px; }
+  .article-main > .prose h1 {
+    margin-top: 48px;
+  }
+  .article-main > .prose h2 {
+    margin-top: 40px;
+  }
+  .article-main > .prose h3 {
+    margin-top: 32px;
+  }
 }
 @media print, (forced-colors: active) {
-  .article-main > .prose :is(h1, h2, h3, h4, h5, h6) { color: inherit; break-after: avoid; }
-  .article-main > .prose h2 { padding-inline-start: 0; }
-  .article-main > .prose h3 { padding-inline-start: 0; }
-  .article-main > .prose h2::before, .article-main > .prose h3::before { display: none; }
+  .article-main > .prose :is(h1, h2, h3, h4, h5, h6) {
+    color: inherit;
+    break-after: avoid;
+  }
+  .article-main > .prose h2 {
+    padding-inline-start: 0;
+  }
+  .article-main > .prose h3 {
+    padding-inline-start: 0;
+  }
+  .article-main > .prose h2::before,
+  .article-main > .prose h3::before {
+    display: none;
+  }
 }

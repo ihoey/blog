@@ -2,13 +2,26 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
-import { dateInShanghai, localDay, articlePath, normalizeCommentPath, navigationCurrent } from '../src/lib/paths.mjs';
-const baseline = JSON.parse(readFileSync(new URL('../docs/migration/legacy-baseline.json', import.meta.url)));
+import {
+  dateInShanghai,
+  localDay,
+  articlePath,
+  normalizeCommentPath,
+  navigationCurrent,
+} from '../src/lib/paths.mjs';
+const baseline = JSON.parse(
+  readFileSync(
+    new URL('../docs/migration/legacy-baseline.json', import.meta.url),
+  ),
+);
 
 test('all 57 existing article paths match the old Hexo output, including case and nested category', () => {
   assert.equal(baseline.posts.length, 57);
   for (const post of baseline.posts) {
-    assert.equal(articlePath(post.id, post.categories, new Date(post.date)), post.path);
+    assert.equal(
+      articlePath(post.id, post.categories, new Date(post.date)),
+      post.path,
+    );
   }
 });
 
@@ -23,42 +36,100 @@ test('local publication dates stay in Shanghai even around the UTC day boundary'
 });
 
 test('Hitalk identities keep article html suffixes and normalize index aliases only', () => {
-  assert.equal(normalizeCommentPath('/guestbook/index.html?preview=1#comments'), '/guestbook/');
+  assert.equal(
+    normalizeCommentPath('/guestbook/index.html?preview=1#comments'),
+    '/guestbook/',
+  );
   assert.equal(normalizeCommentPath('/guestbook/'), '/guestbook/');
-  assert.equal(normalizeCommentPath('https://blog.ihoey.com/about/index.html'), '/about/');
-  for (const post of baseline.posts) assert.equal(normalizeCommentPath(post.path), encodeURI(post.path));
+  assert.equal(
+    normalizeCommentPath('https://blog.ihoey.com/about/index.html'),
+    '/about/',
+  );
+  for (const post of baseline.posts)
+    assert.equal(normalizeCommentPath(post.path), encodeURI(post.path));
 });
 
 test('worker retirement deletes only Hexo cache names, claims clients, and unregisters', async () => {
-  const listeners = {}; const actions = []; let pending;
-  vm.runInNewContext(readFileSync(new URL('../static/sw.js', import.meta.url), 'utf-8'), {
-    self: {
-      addEventListener: (name, fn) => { listeners[name] = fn; },
-      skipWaiting: () => actions.push('skip'),
-      clients: { claim: async () => actions.push('claim'), matchAll: async () => [{ url: 'https://blog.ihoey.com/?source=pwa#main', navigate: async url => actions.push(url) }] },
-      registration: { unregister: async () => actions.push('unregister') },
+  const listeners = {};
+  const actions = [];
+  let pending;
+  vm.runInNewContext(
+    readFileSync(new URL('../static/sw.js', import.meta.url), 'utf-8'),
+    {
+      self: {
+        addEventListener: (name, fn) => {
+          listeners[name] = fn;
+        },
+        skipWaiting: () => actions.push('skip'),
+        clients: {
+          claim: async () => actions.push('claim'),
+          matchAll: async () => [
+            {
+              url: 'https://blog.ihoey.com/?source=pwa#main',
+              navigate: async (url) => actions.push(url),
+            },
+          ],
+        },
+        registration: { unregister: async () => actions.push('unregister') },
+      },
+      caches: {
+        keys: async () => ['bs-0-0-7', 'api-0-0-3', 'unrelated-cache'],
+        delete: async (key) => actions.push(key),
+      },
     },
-    caches: { keys: async () => ['bs-0-0-7', 'api-0-0-3', 'unrelated-cache'], delete: async key => actions.push(key) },
-  });
+  );
   listeners.install();
-  listeners.activate({ waitUntil: p => { pending = p; } });
+  listeners.activate({
+    waitUntil: (p) => {
+      pending = p;
+    },
+  });
   await pending;
-  assert.deepEqual(actions, ['skip', 'bs-0-0-7', 'api-0-0-3', 'claim', 'unregister', 'https://blog.ihoey.com/?source=pwa#main']);
+  assert.deepEqual(actions, [
+    'skip',
+    'bs-0-0-7',
+    'api-0-0-3',
+    'claim',
+    'unregister',
+    'https://blog.ihoey.com/?source=pwa#main',
+  ]);
   assert.equal(listeners.fetch, undefined);
 });
-
 
 test('navigation selects legacy index aliases and directory URLs consistently', () => {
   for (const root of ['archives', 'tags', 'links', 'guestbook', 'about']) {
     for (const href of [`/${root}/`, `/${root}/index.html`]) {
-      assert.equal(navigationCurrent(`/${root}/index.html?from=nav#comments`, href), 'page');
+      assert.equal(
+        navigationCurrent(`/${root}/index.html?from=nav#comments`, href),
+        'page',
+      );
       assert.equal(navigationCurrent(`/${root}/`, href), 'page');
-      assert.equal(navigationCurrent(`/${root}/child/index.html`, href), 'location');
+      assert.equal(
+        navigationCurrent(`/${root}/child/index.html`, href),
+        'location',
+      );
       assert.equal(navigationCurrent(`/${root}-other/`, href), undefined);
     }
   }
   assert.equal(navigationCurrent('/page/2/index.html', '/'), 'location');
   assert.equal(navigationCurrent('/index.html', '/'), 'page');
-  assert.equal(navigationCurrent('/posts/rust/example.html', '/archives/index.html'), undefined);
+  assert.equal(
+    navigationCurrent('/posts/rust/example.html', '/archives/index.html'),
+    undefined,
+  );
   assert.equal(navigationCurrent('/guestbook/', '/'), undefined);
+});
+
+test('runtime legacy map matches the independent archived paths, dates and heading IDs', () => {
+  const runtime = JSON.parse(
+    readFileSync(new URL('../src/data/legacy-posts.json', import.meta.url)),
+  );
+  const expected = baseline.posts.map((post) =>
+    Object.fromEntries(
+      ['id', 'path', 'date', 'updated', 'headingIds']
+        .filter((key) => key in post)
+        .map((key) => [key, post[key]]),
+    ),
+  );
+  assert.deepEqual(runtime, expected);
 });

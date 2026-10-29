@@ -1,4 +1,4 @@
-name: Deploy Astro to master
+name: Validate and publish Astro
 
 on:
   push:
@@ -8,18 +8,24 @@ on:
       - 'README.MD'
       - 'AGENTS.md'
       - 'PRODUCT.md'
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - 'docs/**'
+      - 'README.MD'
+      - 'AGENTS.md'
+      - 'PRODUCT.md'
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
-  group: blog-production-master
+  group: ${{ github.event_name == 'pull_request' && format('blog-pr-{0}', github.event.pull_request.number) || 'blog-production-master' }}
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    if: github.ref == 'refs/heads/main'
+  validate:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -48,14 +54,43 @@ jobs:
       - name: Install locked dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Typecheck and test
-        run: pnpm check && pnpm test
+      - name: Format, typecheck and test
+        run: pnpm format:check && pnpm check && pnpm test
 
       - name: Build static site
         run: pnpm build
 
       - name: Verify routes, content and font outlines
         run: pnpm verify
+
+      - name: Retain verified static artifacts
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: static-${{ github.sha }}
+          path: dist/
+          include-hidden-files: true
+          retention-days: 3
+          if-no-files-found: error
+
+  publish:
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout publication script
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+
+      - name: Download verified static artifacts
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: static-${{ github.sha }}
+          path: dist/
 
       - name: Checkout current static publication
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6

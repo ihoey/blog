@@ -1,28 +1,105 @@
 ---
 import Icon from './Icon.astro';
 ---
+
 <aside class="article-discussion" aria-label="文章交流">
   <p class="discussion-message">
     <Icon name="comment" />
     <span>有问题请</span>
-    <a href="/guestbook/index.html">留言给我哦！<span class="discussion-arrow" aria-hidden="true">→</span></a>
+    <a href="/guestbook/index.html">
+      留言给我哦！
+      <span class="discussion-arrow" aria-hidden="true">
+        →
+      </span>
+    </a>
   </p>
   <p class="discussion-group">
     <Icon name="qq" />
     <span>也欢迎入群讨论！</span>
-    <a href="https://shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b" target="_blank" rel="noopener noreferrer nofollow" aria-label="点我呀！加入 QQ 群讨论（新窗口打开）">点我呀！<span class="discussion-arrow" aria-hidden="true">↗</span></a>
+    <a
+      href="https://shang.qq.com/wpa/qunwpa?idkey=09d9bbe548ce209b4fa8be33e58691e01f294fd80afec92a5cf886bc402d9b5b"
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      aria-label="点我呀！加入 QQ 群讨论（新窗口打开）"
+    >
+      点我呀！
+      <span class="discussion-arrow" aria-hidden="true">
+        ↗
+      </span>
+    </a>
   </p>
 </aside>
 <style>
-  .article-discussion{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;margin:36px 0 12px;padding:14px 0;font-size:14px;color:var(--muted)}
-  .article-discussion p{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:8px;margin:0}
-  .discussion-message{--discussion-ink:var(--rose-ink);--discussion-soft:var(--rose-soft)}
-  .discussion-group{--discussion-ink:var(--honey-ink);--discussion-soft:var(--honey-soft)}
-  .article-discussion .icon{font-size:15px;color:var(--discussion-ink)}
-  .article-discussion a{display:inline-flex;align-items:center;gap:7px;min-height:38px;padding:5px 12px;border-radius:999px;color:var(--discussion-ink);background:var(--discussion-soft);transition:background .2s,color .2s,box-shadow .2s}
-  .article-discussion a:is(:hover,:focus-visible){color:var(--pop-contrast);background:var(--discussion-ink);box-shadow:0 3px 12px color-mix(in oklch,var(--discussion-ink) 15%,transparent)}
-  .discussion-arrow{display:inline-block;transition:transform .25s cubic-bezier(.22,1,.36,1)}
-  .article-discussion a:is(:hover,:focus-visible) .discussion-arrow{transform:translateX(3px)}
-  .article-discussion a[target=_blank]:is(:hover,:focus-visible) .discussion-arrow{transform:translate(2px,-2px)}
-  @media(prefers-reduced-motion:reduce){.article-discussion a,.discussion-arrow{transition:none}.discussion-arrow{transform:none!important}}
+  .article-discussion {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px 28px;
+    margin: 36px 0 12px;
+    padding: 14px 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .article-discussion p {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+  }
+  .discussion-message {
+    --discussion-ink: var(--rose-ink);
+    --discussion-soft: var(--rose-soft);
+  }
+  .discussion-group {
+    --discussion-ink: var(--honey-ink);
+    --discussion-soft: var(--honey-soft);
+  }
+  .article-discussion .icon {
+    font-size: 15px;
+    color: var(--discussion-ink);
+  }
+  .article-discussion a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    color: var(--discussion-ink);
+    background: var(--discussion-soft);
+    transition:
+      background 0.2s,
+      color 0.2s,
+      box-shadow 0.2s;
+  }
+  .article-discussion a:is(:hover, :focus-visible) {
+    color: var(--pop-contrast);
+    background: var(--discussion-ink);
+    box-shadow: 0 3px 12px
+      color-mix(in oklch, var(--discussion-ink) 15%, transparent);
+  }
+  .discussion-arrow {
+    display: inline-block;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .article-discussion a:is(:hover, :focus-visible) .discussion-arrow {
+    transform: translateX(3px);
+  }
+  .article-discussion
+    a[target='_blank']:is(:hover, :focus-visible)
+    .discussion-arrow {
+    transform: translate(2px, -2px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .article-discussion a,
+    .discussion-arrow {
+      transition: none;
+    }
+    .discussion-arrow {
+      transform: none !important;
+    }
+  }
 </style>

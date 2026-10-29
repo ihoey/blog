@@ -6,7 +6,7 @@
 
 ## 常用命令
 
-使用 Node 22.23.2（见 `.nvmrc`）和 pnpm 10.28.2：
+使用 Node 22.23.4（见 `.nvmrc`）和 pnpm 10.28.2：
 
 ```sh
 pnpm install --frozen-lockfile
@@ -31,7 +31,7 @@ pnpm preview --port 4321
 验证：
 
 ```sh
-pnpm build && pnpm verify && pnpm test && pnpm check
+pnpm validate
 ```
 
 所有这些命令都不会发布网站。`pnpm start` 现在等价于本地开发；根 package.json 不再提供旧 `deploy` 命令。原 Hexo package.json 已归档至 `docs/archive/hexo-package.json`。
@@ -39,6 +39,10 @@ pnpm build && pnpm verify && pnpm test && pnpm check
 `pnpm build` 先执行 `astro sync --force` 清理内容渲染缓存，再构建，并运行 `scripts/optimize-fonts.mjs`，按生成后的页面文字制作常规 / 粗体文楷子集。首次字体压缩需要数分钟；后续使用 `.astro/reading-font-cache/` 缓存，字体源或处理脚本变化时自动失效。不要直接以 `astro build` 代替发布构建，否则会跳过字体优化。开发模式仍使用完整字体。
 
 页面优先使用子集字体，异步加载原有 unicode-range 字体声明，为任意评论和动态文字补字。`pnpm verify` 同时检查页面文字覆盖与子集字形轮廓 / 宽度；原文楷字体和授权文件保留。连续构建会排除并清理旧的派生字体资源，避免重复声明和发布目录堆积。
+
+## 当前工作目录
+
+2026-10-29 已回到 `/Users/ihoey/personal/project/blog` 的 main；旧 blog-astro / blog-release-20261002 工作区已移除。历史文档中的目录仅描述当时状态。旧性能报告与生成文件保存在该主目录的 work/archives/，不会发布。
 
 ## 文件布局
 
@@ -48,7 +52,7 @@ pnpm build && pnpm verify && pnpm test && pnpm check
 - `src/lib/posts.ts`、`listings.ts`：日期、旧 URL、分类标签与分页。
 - `src/lib/legacy-headings.mjs`：旧小节锚点及已核实的历史坏链接/嵌入降级。
 - `src/pages/`：Astro 页面、Atom 和 sitemap。
-- `src/layouts/Base.astro`、`src/styles/global.css`：页面框架与样式。
+- `src/layouts/Base.astro`：页面框架与 SEO；`src/components/SiteHeader.astro` / `SiteFooter.astro`：导航、封面与页脚；`src/styles/global.css` / `site.css`：基础规则与按顺序组织的站点样式。
 - `src/components/Eevee.astro`：作用域隔离的原伊布。
 - `static/`：随站发布的图标、Hitalk、小猫及旧 SW 退役文件。
 - `dist/`：构建产物，已忽略，不手工编辑。

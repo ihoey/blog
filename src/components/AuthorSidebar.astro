@@ -1,24 +1,41 @@
 ---
 import Icon from './Icon.astro';
 import { getPosts, taxonomy } from '../lib/posts';
-interface Props { path: string }
+interface Props {
+  path: string;
+}
 const posts = await getPosts();
 const categories = taxonomy(posts, 'categories');
 const tags = taxonomy(posts, 'tags');
 const path = decodeURI(Astro.props.path);
-const activeCategory = categories.filter(c => {
-  const category = decodeURI(c.path);
-  return path === category || path.startsWith(category + 'page/') || path.startsWith(category.replace('/categories/', '/posts/'));
-}).sort((a, b) => b.path.length - a.path.length)[0];
+const activeCategory = categories
+  .filter((c) => {
+    const category = decodeURI(c.path);
+    return (
+      path === category ||
+      path.startsWith(category + 'page/') ||
+      path.startsWith(category.replace('/categories/', '/posts/'))
+    );
+  })
+  .sort((a, b) => b.path.length - a.path.length)[0];
 const visibleCategories = categories.slice(0, 6);
-if (activeCategory && !visibleCategories.includes(activeCategory)) visibleCategories.push(activeCategory);
+if (activeCategory && !visibleCategories.includes(activeCategory))
+  visibleCategories.push(activeCategory);
 const social = [
   { name: 'GitHub', href: 'https://github.com/ihoey', icon: 'github' },
   { name: '微博', href: 'http://weibo.com/hy951121', icon: 'weibo' },
-  { name: 'QQ', href: 'http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes', icon: 'qq' },
+  {
+    name: 'QQ',
+    href: 'http://wpa.qq.com/msgrd?v=3&uin=1058221214&site=qq&menu=yes',
+    icon: 'qq',
+  },
   { name: 'E-mail', href: 'mailto:mail@ihoey.com', icon: 'envelope' },
   { name: 'Twitter', href: 'https://twitter.com/ihoeys', icon: 'twitter' },
-  { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=100008808609802', icon: 'facebook' },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/profile.php?id=100008808609802',
+    icon: 'facebook',
+  },
 ] as const;
 const friends = [
   { name: 'mythsman', href: 'https://blog.mythsman.com/' },
@@ -28,24 +45,133 @@ const friends = [
   { name: "Ehlxr's Blog", href: 'https://ehlxr.me/' },
 ];
 ---
-<aside id="author-sidebar" class="author-sidebar" aria-label="作者与分类" popover="auto">
-  <div class="sidebar-heading"><span>小栈导航</span><button class="sidebar-close" type="button" popovertarget="author-sidebar" popovertargetaction="hide" aria-label="关闭作者与分类侧栏" title="收起侧栏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 7 7-7 7" /></svg></button></div>
-  <div class="author-profile">
-    <a class="avatar-link" href="/about/index.html" aria-label="认识 Ihoey"><img src="/avatar.webp" width="88" height="88" alt="Ihoey 的头像" loading="lazy" decoding="async" /></a>
-    <h2>Ihoey</h2><p class="author-motto">心，若没有栖息的地方，<br />到哪里都是流浪……</p>
-    <div class="author-stats"><a href="/archives/index.html"><b>{posts.length}</b>文章</a><a href="/categories/index.html" aria-current={path === '/categories/' ? 'page' : undefined}><b>{categories.length}</b>分类</a><a href="/tags/index.html"><b>{tags.length}</b>标签</a></div>
-    <nav class="author-social" aria-label="联系作者">{social.map(link => <a href={link.href} target={link.href.startsWith('mailto:') ? undefined : '_blank'} rel="noopener noreferrer"><Icon name={link.icon} /><span>{link.name}</span></a>)}</nav>
-    <a class="author-feed" href="/atom.xml"><Icon name="rss" /> 订阅 RSS <span aria-hidden="true">↗</span></a>
+
+<aside
+  id="author-sidebar"
+  class="author-sidebar"
+  aria-label="作者与分类"
+  popover="auto"
+>
+  <div class="sidebar-heading">
+    <span>小栈导航</span>
+    <button
+      class="sidebar-close"
+      type="button"
+      popovertarget="author-sidebar"
+      popovertargetaction="hide"
+      aria-label="关闭作者与分类侧栏"
+      title="收起侧栏"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="m8 5 7 7-7 7" />
+      </svg>
+    </button>
   </div>
-  <nav class="sidebar-topics" aria-label="文章分类"><h3>分类</h3><a href="/" aria-current={path === '/' ? 'page' : /^\/page\/\d+\/$/.test(path) ? 'location' : undefined}><span>全部文章</span><span>{posts.length}</span></a>{visibleCategories.map(c => <a href={c.path} aria-current={c === activeCategory ? path === decodeURI(c.path) ? 'page' : 'location' : undefined}><span>{c.name}</span><span>{c.count}</span></a>)}<a href="/categories/index.html" aria-current={path === '/categories/' ? 'page' : undefined}><span>所有分类</span><span aria-hidden="true">→</span></a></nav>
-  <nav class="sidebar-friends" aria-label="友情链接"><h3>友邻</h3>{friends.map(link => <a href={link.href} target="_blank" rel="noopener noreferrer"><span>{link.name}</span><span aria-hidden="true">↗</span></a>)}<a class="all-friends" href="/links/index.html"><span>所有友链</span><span aria-hidden="true">→</span></a></nav>
+  <div class="author-profile">
+    <a class="avatar-link" href="/about/index.html" aria-label="认识 Ihoey">
+      <img
+        src="/avatar.webp"
+        width="88"
+        height="88"
+        alt="Ihoey 的头像"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+    <h2>Ihoey</h2>
+    <p class="author-motto">
+      心，若没有栖息的地方，
+      <br />
+      到哪里都是流浪……
+    </p>
+    <div class="author-stats">
+      <a href="/archives/index.html">
+        <b>{posts.length}</b>文章
+      </a>
+      <a
+        href="/categories/index.html"
+        aria-current={path === '/categories/' ? 'page' : undefined}
+      >
+        <b>{categories.length}</b>分类
+      </a>
+      <a href="/tags/index.html">
+        <b>{tags.length}</b>标签
+      </a>
+    </div>
+    <nav class="author-social" aria-label="联系作者">
+      {social.map((link) => (
+        <a
+          href={link.href}
+          target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+          rel="noopener noreferrer"
+        >
+          <Icon name={link.icon} />
+          <span>{link.name}</span>
+        </a>
+      ))}
+    </nav>
+    <a class="author-feed" href="/atom.xml">
+      <Icon name="rss" /> 订阅 RSS <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+  <nav class="sidebar-topics" aria-label="文章分类">
+    <h3>分类</h3>
+    <a
+      href="/"
+      aria-current={
+        path === '/'
+          ? 'page'
+          : /^\/page\/\d+\/$/.test(path)
+            ? 'location'
+            : undefined
+      }
+    >
+      <span>全部文章</span>
+      <span>{posts.length}</span>
+    </a>
+    {visibleCategories.map((c) => (
+      <a
+        href={c.path}
+        aria-current={
+          c === activeCategory
+            ? path === decodeURI(c.path)
+              ? 'page'
+              : 'location'
+            : undefined
+        }
+      >
+        <span>{c.name}</span>
+        <span>{c.count}</span>
+      </a>
+    ))}
+    <a
+      href="/categories/index.html"
+      aria-current={path === '/categories/' ? 'page' : undefined}
+    >
+      <span>所有分类</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </nav>
+  <nav class="sidebar-friends" aria-label="友情链接">
+    <h3>友邻</h3>
+    {friends.map((link) => (
+      <a href={link.href} target="_blank" rel="noopener noreferrer">
+        <span>{link.name}</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+    ))}
+    <a class="all-friends" href="/links/index.html">
+      <span>所有友链</span>
+      <span aria-hidden="true">→</span>
+    </a>
+  </nav>
 </aside>
 <script>
   const panel = document.querySelector<HTMLElement>('#author-sidebar');
   const toggle = document.querySelector<HTMLButtonElement>('.sidebar-toggle');
   if (panel && toggle && 'showPopover' in panel) {
     toggle.hidden = false;
-    panel.addEventListener('beforetoggle', event => {
+    panel.addEventListener('beforetoggle', (event) => {
       const expanded = (event as ToggleEvent).newState === 'open';
       toggle.setAttribute('aria-expanded', String(expanded));
       const label = expanded ? '收起作者与分类侧栏' : '展开作者与分类侧栏';

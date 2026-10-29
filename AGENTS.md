@@ -5,7 +5,7 @@
 - 开始工作前先读 `docs/astro-migration.md`，确认当前阶段、已完成内容和下一步；评论相关工作另读 `docs/hitalk.md`。
 - Astro 开发命令和文件结构见 `docs/migration/development.md`，已确认的产品与视觉意图见 `PRODUCT.md`。
 - 每完成一个阶段、做出关键决定或遇到阻塞，更新迁移文档；记录实际验证结果，区分计划、已实现和已验证。结束一轮工作前留下可直接执行的下一步。
-- 在当前独立 worktree 和 `main` 分支中开发。`master` 仅保存正式静态产物，`hexo` 保留旧版 Hexo / NexT 源码。分支管理与清理状态见 `docs/branches.md`；旧文档中的 `feat/astro-migration` 是迁移阶段的历史名称。
+- 日常复用原主目录 `/Users/ihoey/personal/project/blog` 和 `main` 分支开发；不主动创建 worktree，需要分支时先在当前目录切换。`master` 仅保存正式静态产物，`hexo` 保留旧版 Hexo / NexT 源码。分支管理与清理状态见 `docs/branches.md`；旧文档中的 `feat/astro-migration` 是迁移阶段的历史名称。
 - 保留文章正文、发布日期、分类层级、标签、原有 URL 和 Hitalk 页面标识。不要把教程代码块中的模板语法当作待转换指令。
 - 根 `package.json` 已改为纯 Astro 命令：`pnpm dev`、`pnpm build`、`pnpm preview`。旧主题、Hexo 配置和发布脚本已清理；历史代码可在 `hexo` 分支查看，归档命令不可用于本分支开发或部署。
 - 本地评论检查使用只读请求或模拟数据，不发送真实评论、邮件或点赞。发布前核对旧 Service Worker 的更新/退役方案。

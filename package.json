@@ -5,7 +5,7 @@
   "type": "module",
   "packageManager": "pnpm@10.28.2",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.23.4"
   },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1 --force",
@@ -14,19 +14,24 @@
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
     "test": "node --test tests/*.test.mjs",
-    "verify": "node scripts/migration/verify-build.mjs && node scripts/migration/verify-features.mjs && node scripts/migration/verify-fonts.mjs"
+    "verify": "node scripts/migration/verify-build.mjs && node scripts/migration/verify-features.mjs && node scripts/migration/verify-fonts.mjs",
+    "format": "prettier --write src scripts tests .github astro.config.mjs tsconfig.json package.json .prettierrc.json",
+    "format:check": "prettier --check src scripts tests .github astro.config.mjs tsconfig.json package.json .prettierrc.json",
+    "validate": "pnpm format:check && pnpm check && pnpm test && pnpm build && pnpm verify"
   },
   "dependencies": {
-    "@astrojs/markdown-remark": "7.3.1",
-    "astro": "7.3.3",
+    "@astrojs/markdown-remark": "7.3.5",
+    "astro": "7.4.4",
     "lxgw-wenkai-webfont": "1.7.0",
     "yaml": "2.9.1"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
-    "@types/node": "^22.20.4",
+    "@types/node": "^22.20.5",
     "fonteditor-core": "2.6.3",
     "parse5": "8.0.0",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
     "typescript": "5.9.3"
   }
 }

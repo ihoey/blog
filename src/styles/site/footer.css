@@ -1,0 +1,258 @@
+/* Author details sit beside the reading column; footer roles are grouped separately. */
+.author-social {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 12px;
+  text-align: left;
+  margin-top: 22px;
+}
+.author-social a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.author-social .icon {
+  margin: 0;
+  color: var(--muted);
+}
+.author-social a:is(:hover, :focus-visible) {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.author-social a:is(:hover, :focus-visible) .icon {
+  color: inherit;
+}
+.author-feed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--accent);
+}
+.author-feed:is(:hover, :focus-visible) {
+  background: var(--accent-soft);
+  border-radius: 4px;
+}
+.sidebar-topics {
+  padding-bottom: 22px;
+}
+.sidebar-friends {
+  padding: 22px 15px;
+  border-top: 1px solid var(--line);
+  text-align: left;
+}
+.sidebar-friends h3 {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+.sidebar-friends > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 9px;
+  margin-inline: -9px;
+  font-size: 12px;
+  border-radius: 4px;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+.sidebar-friends > a span:last-child {
+  color: var(--muted);
+}
+.sidebar-friends > a:is(:hover, :focus-visible) {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.sidebar-friends .all-friends {
+  margin-top: 8px;
+  color: var(--muted);
+}
+.site-footer {
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+.footer-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px 56px;
+  align-items: center;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 45px;
+}
+.footer-brand .footer-name {
+  font-size: 24px;
+  line-height: 1.5;
+}
+.footer-motto {
+  margin: 8px 0 15px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer-links .icon {
+  margin-right: 3px;
+}
+.footer-links .footer-rss {
+  color: var(--honey-ink);
+}
+.footer-links .footer-guestbook {
+  color: var(--rose-ink);
+}
+.footer-links :is(.footer-rss, .footer-guestbook) {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  transition: text-decoration-color 0.2s;
+}
+.footer-links :is(.footer-rss, .footer-guestbook):is(:hover, :focus-visible) {
+  text-decoration-color: currentColor;
+}
+.footer-links :is(.footer-rss, .footer-guestbook) .icon {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.footer-links
+  :is(.footer-rss, .footer-guestbook):is(:hover, :focus-visible)
+  .icon {
+  transform: translateY(-2px) rotate(-7deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .footer-heart,
+  .footer-links :is(.footer-rss, .footer-guestbook),
+  .footer-links :is(.footer-rss, .footer-guestbook) .icon {
+    transition: none;
+    transform: none !important;
+  }
+}
+.footer-status {
+  text-align: right;
+}
+.uptime-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 7px;
+  line-height: 1.8;
+}
+.site-footer .site-uptime {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+  color: var(--ink);
+  min-height: 27px;
+}
+.footer-status .site-traffic {
+  justify-content: flex-end;
+  margin-top: 12px;
+  gap: 8px 24px;
+}
+.footer-status .site-traffic span span {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.site-footer .footer-bottom {
+  justify-content: space-between;
+  gap: 10px 24px;
+  border-top: 1px solid var(--line);
+  margin-top: 28px;
+  padding-top: 18px;
+  text-align: left;
+  font-size: 11px;
+}
+@media (max-width: 700px) {
+  .footer-main {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+  .footer-status {
+    text-align: left;
+  }
+  .footer-status .site-traffic {
+    justify-content: flex-start;
+  }
+  .site-footer .footer-bottom {
+    justify-content: flex-start;
+    gap: 8px 18px;
+  }
+}
+
+/* Three quiet ridgelines connect the reading sky to the footer ground. */
+.site-footer {
+  --ridge-far: color-mix(in oklch, var(--bg) 70%, var(--accent-soft));
+  --ridge-middle: color-mix(in oklch, var(--bg) 35%, var(--accent-soft));
+  --ridge-near: var(--accent-soft);
+  width: 100%;
+  margin-top: 38px;
+  padding: 0;
+  border: 0;
+  background: var(--ridge-near);
+}
+.footer-landscape {
+  display: block;
+  width: 100%;
+  height: clamp(72px, 10vw, 140px);
+  background: var(--bg);
+  pointer-events: none;
+}
+.ridge-far {
+  fill: var(--ridge-far);
+}
+.ridge-middle {
+  fill: var(--ridge-middle);
+}
+.ridge-near {
+  fill: var(--ridge-near);
+}
+.footer-content {
+  width: min(var(--layout-width), calc(100% - 2 * var(--page-gutter)));
+  margin-inline: auto;
+  padding: 26px 0 24px;
+}
+.site-footer .footer-bottom {
+  border: 0;
+  margin-top: 24px;
+  padding-top: 16px;
+}
+@media (max-width: 700px) {
+  .footer-content {
+    padding-top: 20px;
+  }
+  .site-footer {
+    margin-top: 24px;
+  }
+}
+
+/* Keep selected text distinct on both page themes; code blocks retain Dracula. */
+::selection {
+  background: hsl(202deg 68% 86%);
+  color: hsl(202deg 45% 20%);
+}
+.code-block ::selection,
+.excerpt-code ::selection {
+  background: #44475a;
+  color: #f8f8f2;
+}

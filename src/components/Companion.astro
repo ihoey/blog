@@ -1,24 +1,108 @@
 ---
 import Eevee from './Eevee.astro';
-interface Props { title?: string }
+interface Props {
+  title?: string;
+}
 const { title } = Astro.props;
 ---
-<aside class="companion global-companion" data-global-companion data-page-title={title || ''} aria-label="伊布陪伴">
-  <p class="companion-message" role="status" aria-live="polite" aria-atomic="true">{title ? `欢迎阅读「${title}」` : '嗨，欢迎来到我的小栈。'}</p>
-  <button class="pet-button" type="button" aria-label="和伊布打招呼"><Eevee /></button>
+
+<aside
+  class="companion global-companion"
+  data-global-companion
+  data-page-title={title || ''}
+  aria-label="伊布陪伴"
+>
+  <p
+    class="companion-message"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+  >
+    {title ? `欢迎阅读「${title}」` : '嗨，欢迎来到我的小栈。'}
+  </p>
+  <button class="pet-button" type="button" aria-label="和伊布打招呼">
+    <Eevee />
+  </button>
   <span class="companion-caption">有伊布作伴，慢慢看。</span>
 </aside>
-<script>import '../lib/companion';</script>
+<script>
+  import '../lib/companion';
+</script>
 <style>
-.global-companion{position:fixed;left:12px;bottom:20px;z-index:2;width:140px;margin:0;pointer-events:none;--eevee-scale:.32;--eevee-width:120px;--eevee-height:106px;--eevee-left:-4px;--eevee-top:0px}
-.global-companion .companion-message{min-height:42px;margin:0;font-size:12px;line-height:1.7;padding:9px 12px;overflow-wrap:anywhere;box-shadow:0 2px 6px #0000000a}
-.global-companion .companion-message[hidden]{display:none}
-.global-companion .pet-button{margin:8px auto 0;min-width:44px;min-height:44px;border-radius:8px;transition:transform .2s ease-out}
+  .global-companion {
+    position: fixed;
+    left: 12px;
+    bottom: 20px;
+    z-index: 2;
+    width: 140px;
+    margin: 0;
+    pointer-events: none;
+    --eevee-scale: 0.32;
+    --eevee-width: 120px;
+    --eevee-height: 106px;
+    --eevee-left: -4px;
+    --eevee-top: 0px;
+  }
+  .global-companion .companion-message {
+    min-height: 42px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.7;
+    padding: 9px 12px;
+    overflow-wrap: anywhere;
+    box-shadow: 0 2px 6px #0000000a;
+  }
+  .global-companion .companion-message[hidden] {
+    display: none;
+  }
+  .global-companion .pet-button {
+    margin: 8px auto 0;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 8px;
+    transition: transform 0.2s ease-out;
+  }
 
-.global-companion .companion-caption{display:block}
-.global-companion .pet-button{pointer-events:auto}
-.global-companion .companion-message{position:absolute;bottom:100%;width:100%;margin-bottom:6px;pointer-events:none}
-@media(max-width:700px){.global-companion{left:6px;bottom:12px;width:100px;--eevee-scale:.25;--eevee-width:94px;--eevee-height:83px}.global-companion .companion-caption{display:none}.global-companion .companion-message{width:140px}}
-:global([data-effects=off]) .pet-button:hover,:global([data-effects=off]) .pet-button:focus-visible{transform:none}
-@media(prefers-reduced-motion:reduce){.global-companion .pet-button{transition:none}.global-companion .pet-button:hover,.global-companion .pet-button:focus-visible{transform:none}}
+  .global-companion .companion-caption {
+    display: block;
+  }
+  .global-companion .pet-button {
+    pointer-events: auto;
+  }
+  .global-companion .companion-message {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    margin-bottom: 6px;
+    pointer-events: none;
+  }
+  @media (max-width: 700px) {
+    .global-companion {
+      left: 6px;
+      bottom: 12px;
+      width: 100px;
+      --eevee-scale: 0.25;
+      --eevee-width: 94px;
+      --eevee-height: 83px;
+    }
+    .global-companion .companion-caption {
+      display: none;
+    }
+    .global-companion .companion-message {
+      width: 140px;
+    }
+  }
+  :global([data-effects='off']) .pet-button:hover,
+  :global([data-effects='off']) .pet-button:focus-visible {
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .global-companion .pet-button {
+      transition: none;
+    }
+    .global-companion .pet-button:hover,
+    .global-companion .pet-button:focus-visible {
+      transform: none;
+    }
+  }
 </style>

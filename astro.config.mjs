@@ -11,7 +11,9 @@ export default defineConfig({
   trailingSlash: 'ignore',
   markdown: {
     shikiConfig: { theme: 'dracula', wrap: false },
-    processor: unified({ rehypePlugins: [legacyHeadings, readingCompatibility] }),
+    processor: unified({
+      rehypePlugins: [legacyHeadings, readingCompatibility],
+    }),
   },
   devToolbar: { enabled: false },
 });
