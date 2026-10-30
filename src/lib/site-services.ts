@@ -3,11 +3,28 @@ import { legacyPublic } from '../data/legacy-public';
 declare global {
   interface Window {
     _hmt?: unknown[][];
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
 // Existing statistics stay production-only, so previews cannot pollute visits.
 if (location.hostname === 'blog.ihoey.com') {
+  // A static page config sends its own page_view; do not also send one manually.
+  // Keep a stable marker so executing the initializer twice cannot double-count.
+  if (!document.querySelector('script[data-blog-ga4]')) {
+    window.dataLayer ??= [];
+    window.gtag ??= function () {
+      window.dataLayer!.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', legacyPublic.googleAnalytics);
+    const google = document.createElement('script');
+    google.async = true;
+    google.dataset.blogGa4 = '';
+    google.src = `https://www.googletagmanager.com/gtag/js?id=${legacyPublic.googleAnalytics}`;
+    document.head.append(google);
+  }
   window._hmt ??= [];
   const analytics = document.createElement('script');
   analytics.async = true;

@@ -1,8 +1,16 @@
 # 梦魇小栈：Hexo → Astro 迁移记录
 
-更新日期：2026-10-29（Asia/Shanghai）
+更新日期：2026-10-30（Asia/Shanghai）
 
 本文件是迁移的持续进度记录。恢复工作先读本文件，再检查 Git 状态；不要仅凭对话回忆推定任务已经完成。
+
+## 2026-10-30 恢复 GA4
+
+- 用户授权使用浏览器确认的衡量 ID G-30X9Q8WKYM（媒体资源 367738231，网站流 5001363716），接回 GA4。统一在 site-services.ts 的正式域名分支初始化，gtag.js 异步加载，先排队 js / config；静态页面依赖 config 自动发送 page_view，不重复发送手动 page_view。稳定 script 标记防止同一文档重复初始化。
+- 本地、Vercel 预览和其他主机名不加载 GA4 或百度统计。保留现有百度统计、站长验证和不蒜子，不因 DNS / 注册商变化直接断言这些服务失效。
+- 用户说明域名迁到 Cloudflare；尚不确定是注册商、DNS 还是代理 / 托管迁移，不能据此判定备案已注销。用户明确选择旧备案号不确定、先保留，页脚号码未改。
+- GA4 后台显示过去 48 小时有流量，说明该资源有近期数据，并不能证明当前博客前端已经接入；接入前检查的线上 HTML 与本站 JS 未见该 G- ID / Google tag / Zaraz 注入（仅观察到原百度加载逻辑），不声称已定位既有流量来源。
+- 使用模拟环境验证生产标签和初始化队列、重复初始化、本地隔离，不向生产发送测试事件。pnpm validate 通过：34 项测试、check 49 文件零诊断、183 页构建、182 旧地址 / 576 锚点、298 字体子集和 143366 个字形轮廓 / 宽度。产物中仅一个共享 JS 包包含该衡量 ID，首页正确引用。推送后按用户既有约定不等待或查询 Actions / Vercel，不把提交等同于上线 / 后台入账。
 
 ## 2026-10-29 当前开发入口
 
@@ -750,3 +758,10 @@
 - build 183 页；verify 57 原文 / 182 旧地址 / 576 锚点，0 断链；新增产物专项检查纳入 pnpm verify。21 项测试通过；check 44 文件零错误 / 警告 / 提示。RSS XML 有效，20 篇全文 ID 对齐原版；图集交互、焦点返回、实际复制出处及代码无附注均通过。伊布原版 21 组关键帧比对一致。
 - 生产首页与 master 88b1c01b7eb6e2b4fb0b85a9e0ccd963bab6653a 一致；只读 GitHub 确认 Production 成功，Hitalk 三个代表路径只读 GET 返回 200。发布与回退记入 docs/release/astro-rollout.md，未推送 / 部署，未发送评论 / 邮件 / 支付。
 - 下一步：确认本轮预览，生成独立静态发布提交并安排切换；部署后验证正式域名 worker 响应头、评论与统计。GA4 未获新 ID，暂沿用百度 / 不蒜子，不搬旧 UA 或带令牌提交钩子。
+
+## 2026-10-30 Cloudflare 与统计的说明依据
+
+- 用户没有确定旧备案已注销，明确选择先保留旧号码；不擅自移除。
+- 注册商转移、DNS 托管、代理、源站托管并非同一操作。大陆接入商要求备案域名位于受支持的境内注册商，参考 https://cloud.tencent.com/document/product/243/73180 与 https://help.aliyun.com/zh/icp-filing/basic-icp-service/user-guide/prepare-and-check-the-domain-name 。若只是 DNS 变化，不能直接推断注册资格或备案状态发生变化。
+- Cloudflare 中国网络 / 大陆 CDN 需要有效 ICP，参考 https://developers.cloudflare.com/china-network/get-started/ 。境内外主机备案区别参考 https://help.aliyun.com/zh/dns/pubz-filing-domain-name-related-faq 。
+- 百度统计官方说明通过网站代码采集数据：https://tongji.baidu.com/web/help/articleList?category=16 。本轮未找到可据以断言「使用 Cloudflare 或未备案就禁止所有百度统计」的官方通用规则，也未登录百度后台验证账号接收状态；保留已有代码，不把脚本存在等同于后台正常入账。百度搜索 / 站长平台与统计分开核对。
