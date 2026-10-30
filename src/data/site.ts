@@ -3,6 +3,9 @@ export const site = {
   name: '梦魇小栈',
   motto: '心，若没有栖息的地方，到哪里都是流浪……',
   subtitle: '专注于分享',
+  author: 'Ihoey',
+  seoDescription:
+    '梦魇小栈是 Ihoey 的个人博客，分享 JavaScript、Node.js、Linux、Canvas 等技术笔记、开发实践与生活记录。',
   url: 'https://blog.ihoey.com',
   description: '心，若没有栖息的地方，到哪里都是流浪......',
   avatar:

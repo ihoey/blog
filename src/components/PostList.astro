@@ -27,7 +27,7 @@ const { posts, compact = false, headingLevel: Heading = 'h2' } = Astro.props;
               <Icon name="calendar" /> 发布于{' '}
               <time datetime={post.date.toISOString()}>{post.day}</time>
             </span>
-            {!compact && post.updatedDay !== post.day && (
+            {!compact && post.updated.getTime() !== post.date.getTime() && (
               <span>
                 <Icon name="updated" /> 更新于{' '}
                 <time datetime={post.updated.toISOString()}>

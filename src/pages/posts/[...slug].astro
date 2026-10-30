@@ -23,7 +23,9 @@ const tocBase = Math.min(...toc.map((h) => h.depth));
 
 <Base
   title={post.data.title}
-  description={post.description}
+  description={post.seoDescription}
+  image={post.data.image}
+  tags={post.data.tags}
   canonical={post.path}
   article
   date={post.date}

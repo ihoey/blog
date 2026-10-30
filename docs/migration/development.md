@@ -73,11 +73,22 @@ tags:
 categories:
   - javascript
 description: 可选的简短摘要。
+seoDescription: 可选，仅用于搜索和分享卡片，不影响首页摘要。
+# 只有实质内容更新时才填写；日期必须加引号，不随构建刷新。
+updated: "2026-10-30T20:00:00+08:00"
+# 可选：真实文章配图，用于分享卡片和文章结构化数据。
+image: /images/example-cover.webp
 draft: true
 ---
 ```
 
 日期使用带引号、显式时区的字符串。新文章也支持带引号的上海本地日期，例如 `"2026-9-22 20:00:00"`。`draft: true` 不生成公开页面，准备发表时移除或改成 `false`。
+
+上面的 updated / image 为填写格式示例，不要给新文章照抄不存在的图片或无关日期；无需更新或没有配图时删除对应字段。`updated` 优先于旧映射，不能早于发布日期；未填写时仍沿用历史更新时间，新文章则等于发布日期。页面可见日期、JSON-LD、Atom 和两份站点地图共用这个值，不读取文件 mtime，也不把部署当作更新。
+
+`description` 仍决定列表的纯文本摘要和 Atom summary；`seoDescription` 独立覆盖搜索 / 分享描述，缺省时沿用已有摘要，不批量重写历史文章。`image` 必须是与正文相关、可访问的图片，可使用站内绝对路径或 HTTPS 地址；未指定时分享卡片继续使用头像，但文章 JSON-LD 不再将头像当作每篇文章的配图。
+
+SEO 产物检查已纳入 `pnpm verify`：检查 canonical、描述与分享卡片、JSON-LD、可见日期 / 订阅 / sitemap 一致性及错误页 noindex。静态托管的 Atom MIME 由 `static/vercel.json` 设置；本地构建只能验证配置，正式响应头需发布后另行观察。
 
 历史文章保持原来的 frontmatter 写法，由已核实的 Hexo 基线提供准确日期与固定地址。不要用文件修改时间替代发布日期。类别数组代表层级，例如 `javascript` → `PWA`，不是两个平行分类。
 

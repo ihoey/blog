@@ -17,6 +17,9 @@ const posts = defineCollection({
     tags: list,
     categories: list,
     description: z.string().optional(),
+    seoDescription: z.string().trim().min(1).optional(),
+    updated: z.union([z.string(), z.date()]).optional(),
+    image: z.string().trim().min(1).optional(),
     draft: z.boolean().default(false),
   }),
 });

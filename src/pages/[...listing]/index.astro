@@ -11,6 +11,7 @@ import Pagination from '../../components/Pagination.astro';
 import Comments from '../../components/Comments.astro';
 import { getPosts, taxonomy } from '../../lib/posts';
 import { getListings } from '../../lib/listings';
+import { listingSEO } from '../../lib/seo.mjs';
 export async function getStaticPaths() {
   const posts = await getPosts();
   return getListings(posts)
@@ -21,6 +22,7 @@ export async function getStaticPaths() {
     }));
 }
 const { listing } = Astro.props;
+const seo = listingSEO(listing);
 const hasComments = ['page', 'tags', 'categories'].includes(listing.kind);
 const posts = await getPosts();
 const entry = listing.pageId
@@ -50,7 +52,8 @@ const terms =
 
 <Base
   title={listing.title}
-  description={listing.description}
+  seoTitle={seo.title}
+  description={seo.description}
   canonical={listing.path}
   article={listing.kind === 'page'}
   comments={hasComments}

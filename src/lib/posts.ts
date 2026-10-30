@@ -2,6 +2,7 @@ import { getCollection } from 'astro:content';
 import legacyPosts from '../data/legacy-posts.json';
 import { articlePath, dateInShanghai, localDay } from './paths.mjs';
 import { getPostPreview } from './post-preview.mjs';
+import { postUpdated } from './seo.mjs';
 
 export function summary(body: string, max = 135) {
   const intro = body.split(/<!--\s*more\s*-->|```/i)[0];
@@ -23,7 +24,8 @@ export async function getPosts() {
       const date = old ? new Date(old.date) : dateInShanghai(entry.data.date);
       const path =
         old?.path ?? articlePath(entry.id, entry.data.categories, date);
-      const updated = old?.updated ? new Date(old.updated) : date;
+      const updated = postUpdated(entry.data.updated, old?.updated, date);
+      const description = entry.data.description || summary(entry.body || '');
       return {
         ...entry,
         date,
@@ -36,7 +38,9 @@ export async function getPosts() {
           path,
           entry.data.description,
         ),
-        description: entry.data.description || summary(entry.body || ''),
+        description,
+        seoDescription:
+          entry.data.seoDescription || description || entry.data.title,
       };
     }),
   );

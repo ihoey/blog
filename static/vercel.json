@@ -8,6 +8,12 @@
       ]
     },
     {
+      "source": "/atom.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/atom+xml; charset=utf-8" }
+      ]
+    },
+    {
       "source": "/_astro/:path*",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }

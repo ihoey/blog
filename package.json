@@ -14,7 +14,7 @@
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
     "test": "node --test tests/*.test.mjs",
-    "verify": "node scripts/migration/verify-build.mjs && node scripts/migration/verify-features.mjs && node scripts/migration/verify-fonts.mjs",
+    "verify": "node scripts/migration/verify-build.mjs && node scripts/migration/verify-features.mjs && node scripts/verify-seo.mjs && node scripts/migration/verify-fonts.mjs",
     "format": "prettier --write src scripts tests .github astro.config.mjs tsconfig.json package.json .prettierrc.json",
     "format:check": "prettier --check src scripts tests .github astro.config.mjs tsconfig.json package.json .prettierrc.json",
     "validate": "pnpm format:check && pnpm check && pnpm test && pnpm build && pnpm verify"
