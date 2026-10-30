@@ -53,4 +53,4 @@ brand
 - 打赏组件以 ihoey/Playing-reward 的已核对实现为来源，保留原支付方式、二维码、延迟翻转与回弹，图片提前解码。文章末尾交流入口、原留言与群链接继续保留。
 - 恢复随机一言、运行时长、原统计和站点验证；本地未知统计显示短横线。保留全文 RSS、图集原图放大、长正文复制出处、代码行号和全级目录。PWA 离线功能暂缓，可靠退役旧缓存。
 
-具体实现与验证结果见 [维护进度](docs/astro-migration.md)、[开发说明](docs/migration/development.md) 和 [发布记录](docs/release/astro-rollout.md)。
+具体实现与验证结果见 [维护进度](docs/astro-migration.md)、[开发说明](docs/development.md) 和 [发布记录](docs/deployment.md)。

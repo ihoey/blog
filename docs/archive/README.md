@@ -1,13 +1,22 @@
 # 历史资料
 
-本目录保存旧方案的来源记录，不参与当前 Astro 构建或发布。
+本目录保存历史来源，不参与构建或发布；其中的旧目录、计划与命令不用于日常操作。当前维护从 [README](../../README.MD) 开始，站点变化统一记 [CHANGELOG](../../CHANGELOG.md)。
 
-- `astro-migration-2026-10-30.md`：迁移至 Astro 及后续维护的完整历史进度快照，包含已被取代的目录和操作方案；当前入口见 ../astro-migration.md。
+- `astro-migration-2026-10-30.md`：迁移过程的完整进度快照。
+- `product-decisions-2026-10-03.md`：已被取代的视觉讨论；当前决定见 PRODUCT.md。
+- `hitalk-hexo-history.md`：旧主题评论接入记录；当前接入见 ../hitalk.md。
+- `hexo-package.json`、`export-legacy.py`：旧依赖与一次性导出工具，不用于日常开发；导出工具会重写已核实的基线，不要重新运行。
+- `LICENSE-2018.txt`、`CODE_OF_CONDUCT-2018.md`：历史 PR 原文件，保留来源。
 
-- `hexo-package.json`：旧 Hexo 依赖与脚本快照；当前依赖以根 package.json / pnpm-lock.yaml 为准。
-- `hitalk-hexo-history.md`：旧主题评论接入及手动发布记录；当前接入见 ../hitalk.md。
-- `export-legacy.py`：迁移时一次性读取外部 Hexo db.json / public 的工具，不运行 Hexo 钩子。它会重写 docs/migration/legacy-baseline.json；现有基线已核实，不用于日常写作或构建，也不要为了更新文章重新生成。
-- `product-decisions-2026-10-03.md`：完整视觉方案讨论，含已被取代的配色、宽度、导航和侧栏方案；当前决定以根 PRODUCT.md 为准。
-- `LICENSE-2018.txt`、`CODE_OF_CONDUCT-2018.md`：两个已合并历史 PR 的原文件快照。
+重复的分支、工程、SEO、迁移验收和发布说明已合并到当前开发 / 部署文档；过期设计建议与一次性性能报告不再单独维护。原始文件完整保留在 Git 提交 [2f34bb80](https://github.com/ihoey/blog/tree/2f34bb80/docs)，例如：
 
-运行中的旧地址 / 标题锚点 / 正文校验继续使用 docs/migration 下的基线与修订清单。旧主题与完整旧源码保留在 hexo 分支；当前发布流程见 ../release/astro-rollout.md。
+```sh
+git show 2f34bb80:docs/release/astro-rollout.md
+git show 2f34bb80:docs/release/webp-optimization.md
+git show 2f34bb80:docs/release/performance-baseline-2026-10-02.md
+git show 2f34bb80:docs/migration/site-history.md
+```
+
+这些分别保存当时的部署 ID / SHA、WebP 测量方法与结果、性能基线、关于页旧历程的 Git 核对依据，不把历史数据当作当前性能或部署状态。更大的原始报告在本地忽略目录 work/archives/，旧源码在 hexo 分支。
+
+兼容检查仍使用 docs/migration/ 中的 JSON 基线、修订清单和验证数据，本轮未移动或删除它们。

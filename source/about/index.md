@@ -55,6 +55,8 @@ comments: true
 </ol>
 </section>
 
+后续的功能更新和维护记录，见 [更新日志](https://github.com/ihoey/blog/blob/main/CHANGELOG.md)。
+
 ***
 
 <center> <h2>打赏记录</h2> </center><br>

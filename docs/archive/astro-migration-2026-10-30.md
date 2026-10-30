@@ -11,7 +11,7 @@
 - 后续用户明确选择简化文章配置：移除文章 seoDescription 字段，直接复用 description；缺省自动取现有开头摘要，为空再回退到标题。开发说明和 SEO 工程说明已同步；其他 SEO 优化保留，source/ 仍未改。下方独立字段描述为首轮实现历史，以本条为当前决定。
 - 简化后再次 pnpm validate 通过：37 项测试、50 文件零诊断、183 页、182 旧地址 / 576 锚点及 SEO / 字体检查全部通过。提交推送后不等待自动发布流程。
 - 用户授权先做工程层面，明确不批量修改历史文章。本轮 source/、历史日期 / URL / 分类标签及迁移基线均未改；不重写正文，不强制填写旧文章描述或配图。
-- 独立 seoDescription 与列表摘要解耦；支持显式 updated / image，历史更新时间保持回退映射，新文章默认等于发布日期。元描述 / 分享卡片 / 图谱统一；网站、作者和文章身份关联；分页标题带页码；错误页 noindex；Atom 增加静态托管 MIME 配置。详见 [SEO 工程说明](../seo.md)。
+- 独立 seoDescription 与列表摘要解耦；支持显式 updated / image，历史更新时间保持回退映射，新文章默认等于发布日期。元描述 / 分享卡片 / 图谱统一；网站、作者和文章身份关联；分页标题带页码；错误页 noindex；Atom 增加静态托管 MIME 配置。详见 [SEO 工程说明](https://github.com/ihoey/blog/blob/2f34bb80/docs/seo.md)。
 - 本地最终 pnpm validate 通过：37 项测试、50 文件零诊断、183 页、182 旧地址 / 576 锚点、298 字体子集 / 143366 字形。SEO 检查核对文章可见日期、JSON-LD、Atom 与两份 sitemap 一致。优化前后 184 份 HTML 的整个 body 完全一致，记录在 work/seo/；页面外观与文章预览未改变。
 - 以上为本地源码及产物事实；提交推送后遵照用户约定不等待 / 查询 Actions 或 Vercel，不声称线上 MIME 已改变或搜索排名提高。下一步按授权只读检查 Search Console 站点地图 / 收录 / 抓取，再核对 Cloudflare 实际拦截规则；本轮尚未操作这两个后台。
 
@@ -25,7 +25,7 @@
 
 ## 2026-10-29 当前开发入口
 
-已按用户要求回到原主目录 `/Users/ihoey/personal/project/blog`，在 main 日常维护；blog-astro 与手动发布 worktree 已移除，Hexo 分支和归档标签保留。完成依赖安全更新、组件 / 样式模块整理、运行时历史映射分离、工程格式化及 PR 检查 / 发布分离。本地 validate 全部通过，详情和恢复路径见 [工程整理](../engineering.md)。提交推送后按既有约定不等待 / 检查 Actions 或 Vercel，不把推送当作上线确认。
+已按用户要求回到原主目录 `/Users/ihoey/personal/project/blog`，在 main 日常维护；blog-astro 与手动发布 worktree 已移除，Hexo 分支和归档标签保留。完成依赖安全更新、组件 / 样式模块整理、运行时历史映射分离、工程格式化及 PR 检查 / 发布分离。本地 validate 全部通过，详情和恢复路径见 [工程整理](https://github.com/ihoey/blog/blob/2f34bb80/docs/engineering.md)。提交推送后按既有约定不等待 / 检查 Actions 或 Vercel，不把推送当作上线确认。
 
 以下保留 2026-10-03 及更早的部署事实；旧目录描述仅为历史。
 
@@ -102,11 +102,11 @@
 
 ## 2026-10-02 WebP 图片优化（已发布）
 
-树叶背景、适配尺寸的头像和 12 张文章图片已转换并接入；正文保留原图放大，原 Markdown 不变。头像按需加载，首屏背景 preload。构建 / 旧地址验证 / 25 项测试 / check 全部通过，浏览器验证原图及头像加载正常。详见 [图片优化记录](../release/webp-optimization.md)。已发布为 8fed6f94，正式页图片 / 原图放大 / 头像 / 历史评论已验收；性能复测记录见图片优化文档。
+树叶背景、适配尺寸的头像和 12 张文章图片已转换并接入；正文保留原图放大，原 Markdown 不变。头像按需加载，首屏背景 preload。构建 / 旧地址验证 / 25 项测试 / check 全部通过，浏览器验证原图及头像加载正常。详见 [图片优化记录](https://github.com/ihoey/blog/blob/2f34bb80/docs/release/webp-optimization.md)。已发布为 8fed6f94，正式页图片 / 原图放大 / 头像 / 历史评论已验收；性能复测记录见图片优化文档。
 
 ## 2026-10-02 上线后性能基线
 
-已对正式首页 / PWA 文章运行 Lighthouse 13.5.0 的桌面与移动模拟性能检查。无运行警告结果：首页桌面 59 / 移动 58，文章桌面 60 / 移动 58；主要问题为树叶背景、字体、头像和文章大图的加载。详见 [性能基线](../release/performance-baseline-2026-10-02.md)，原始 HTML / JSON 留在本地 work/lighthouse-2026-10-02/。本轮仅测量，未修改应用代码、未重新部署；后续可按报告优先级优化并同环境复测。
+已对正式首页 / PWA 文章运行 Lighthouse 13.5.0 的桌面与移动模拟性能检查。无运行警告结果：首页桌面 59 / 移动 58，文章桌面 60 / 移动 58；主要问题为树叶背景、字体、头像和文章大图的加载。详见 [性能基线](https://github.com/ihoey/blog/blob/2f34bb80/docs/release/performance-baseline-2026-10-02.md)，原始 HTML / JSON 留在本地 work/lighthouse-2026-10-02/。本轮仅测量，未修改应用代码、未重新部署；后续可按报告优先级优化并同环境复测。
 
 ## 2026-10-02 补查：独立页旧链接
 

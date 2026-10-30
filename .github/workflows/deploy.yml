@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - 'docs/**'
       - 'README.MD'
+      - 'CHANGELOG.md'
       - 'AGENTS.md'
       - 'PRODUCT.md'
   pull_request:
@@ -13,6 +14,7 @@ on:
     paths-ignore:
       - 'docs/**'
       - 'README.MD'
+      - 'CHANGELOG.md'
       - 'AGENTS.md'
       - 'PRODUCT.md'
   workflow_dispatch:
@@ -105,7 +107,7 @@ jobs:
           latest=$(git -C release ls-remote origin refs/heads/main | cut -f1)
           if [ "$latest" != "$SOURCE_SHA" ]; then
             git -C release fetch --no-tags --depth=1 origin "$SOURCE_SHA" "$latest"
-            if ! git -C release diff --quiet "$SOURCE_SHA" "$latest" -- . ':!docs' ':!README.MD' ':!AGENTS.md' ':!PRODUCT.md'; then
+            if ! git -C release diff --quiet "$SOURCE_SHA" "$latest" -- . ':!docs' ':!README.MD' ':!CHANGELOG.md' ':!AGENTS.md' ':!PRODUCT.md'; then
               echo 'Newer source changes exist; their queued workflow will publish.' >> "$GITHUB_STEP_SUMMARY"
               exit 0
             fi
