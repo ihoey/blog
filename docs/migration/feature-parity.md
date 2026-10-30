@@ -2,6 +2,18 @@
 
 核对日期：2026-10-02。结论：发现了真实遗漏，已补齐主要阅读、订阅及站点识别能力；已于 2026-10-02 上线并通过正式域名验收。没有把“旧主题里有文件”当成“旧站启用了功能”。
 
+## 2026-10-30 正式站补查
+
+- 本轮是迁移遗漏复核，不重新巡查 Actions 或 Vercel 流水线。已在正式首页引用的 JS 中看到 G-30X9Q8WKYM；尚未据此宣称 GA4 后台已收到事件。
+- robots.txt 可读并声明两份 sitemap；Google / 百度 meta 验证保留，百度独立验证文件返回 200。sitemap.xml 含 181 个 URL、baidusitemap.xml 含 57 篇文章，XML 可解析。
+- atom.xml 返回 200，可解析为 20 个 entry，全文 content 均非空；manifest、tags / categories / about / links 和 guestbook 的 index.html 入口均返回 200。
+- sw.js 返回 200，保留 no-cache / no-store 和 JavaScript 类型，按用户决定继续退役旧离线缓存。
+- Hitalk 只读计数接口使用正常浏览器请求头返回 200，留言 114、关于 36，CORS 为 *；首次 Python 默认请求头出现 403，不能据此推断评论服务已失效。未写入评论或发送通知。
+- 原头像 CDN 地址返回 200 image/png；没有全量复测外链、原图或第三方头像。
+- 当前抽查未发现新的站内阻断性遗漏。外部待确认仍为 GA4 / 百度 / 不蒜子后台入账、搜索平台 sitemap 提交 / 抓取状态、Cloudflare WAF / 爬虫相关规则、旧备案有效性。后两项未登录相应后台核验，不宣称已配置或已失效。
+- PWA 离线按用户决定暂缓；搜索 / MathJax / 相关推荐等原配置未启用，不列作迁移缺失。
+- 顺手修正文档中的旧开发目录与 v2.css 引用；本轮没有修改页面代码、统计配置或备案展示。
+
 ## 核对依据
 
 - 原 Hexo 工作目录 `/Users/ihoey/personal/project/blog`：根 `_config.yml`、启用的 `themes/next/_config.yml`、配置合并脚本。

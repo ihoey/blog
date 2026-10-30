@@ -7,7 +7,7 @@
 - `src/lib/comments.ts`：按需加载 SDK、挂载评论和读取文章评论数。API 地址和 SDK 脚本路径在这里维护。
 - `src/components/Comments.astro`：评论容器与页面标识。
 - `src/layouts/Base.astro`：SDK CSS、页脚小猫的资源引用。
-- `src/styles/global.css`、`src/styles/v2.css`：站点内的评论布局。
+- `src/styles/global.css`、`src/styles/site.css` 及其模块：站点内的评论布局。
 - `static/lib/hitalk/3.0.0/manifest.json`：SDK 与小猫资源的来源、版本及 SHA-256；资源随站发布。
 
 仅正式域名 `blog.ihoey.com` 挂载评论和读取评论数。本地开发 / 预览显示说明，不加载可写入生产的评论组件，没有查询参数绕过方式。自动验证只读数据或使用模拟响应，不发真实评论、邮件或点赞。
@@ -27,7 +27,7 @@
 本地验证：
 
 ```sh
-pnpm build && pnpm verify && pnpm test && pnpm check
+pnpm validate
 ```
 
 `pnpm verify` 对发布目录里的 SDK 和小猫资源执行摘要校验，并核对文章评论路径。2026-10-02 已上线并核对正式读取：留言板 114 条、PWA 文章 34 条历史评论正常显示，未写入测试评论。

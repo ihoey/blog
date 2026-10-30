@@ -1,6 +1,6 @@
 # Astro 开发与预览
 
-工作目录：`/Users/ihoey/personal/project/blog-astro`
+工作目录：`/Users/ihoey/personal/project/blog`（main）
 
 分支：`main`（原 `feat/astro-migration`）。`master` 保存部署产物，`hexo` 保留旧版源码，详见 [分支约定](../branches.md)。
 
