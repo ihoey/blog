@@ -37,7 +37,7 @@ pnpm validate
 - `source/about/`、`source/guestbook/`、`source/links/`：独立页正文与友链数据。
 - `src/`：Astro 页面、组件、样式及交互；`src/data/site.ts` 统一保存站点与友链资料。
 - `static/`：直接发布的字体、图片、评论 SDK、二维码等资源。
-- `docs/migration/`：历史 URL / 锚点基线、内容修订与固定验证数据，保留给兼容校验使用。
+- `tests/fixtures/`：历史 URL / 锚点基线、内容修订与固定验证数据，保留给兼容校验使用。
 - `static/sw.js`：旧缓存退役脚本，发布时继续保留原地址。
 
 旧 Hexo 主题、配置和发布脚本已从本分支移除，可从 Git 历史恢复。原作者介绍、联系方式及打赏记录继续保存在关于页正文中。
@@ -45,7 +45,7 @@ pnpm validate
 ## 文档
 
 - [更新日志](CHANGELOG.md)：迁移以来的重要变化
-- [当前维护状态](docs/astro-migration.md)：进行中的工作与待确认项
+- [当前维护状态](docs/status.md)：进行中的工作与待确认项
 - [开发与写作](docs/development.md)：命令、文章字段、SEO、字体和资源
 - [部署与回退](docs/deployment.md)：分支职责、自动发布与排障
 - [评论接入](docs/hitalk.md)

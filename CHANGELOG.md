@@ -9,6 +9,7 @@
 - 文章统一使用可选的 description，未填写时自动提取开头摘要；不新增重复的 SEO 摘要字段，不批量改写旧文章。
 - 清理失效样式，集中导航规则；保留已经确认的阅读布局、玻璃导航和个性动效。
 - 合并开发与发布说明，用本日志记录后续变化；关于页保留早期历程并提供日志入口。
+- 清理一次性迁移工具和过程快照，构建检查转为日常脚本；保留旧链接、原文、评论身份和缓存退役兼容。
 
 源码依据：[统计恢复](https://github.com/ihoey/blog/commit/3e4ff001)、[SEO](https://github.com/ihoey/blog/commit/8bfc40eb)、[复用摘要](https://github.com/ihoey/blog/commit/910010e4)、[简化实现](https://github.com/ihoey/blog/commit/2f34bb80)。未在这些提交后等待或查询自动部署。
 

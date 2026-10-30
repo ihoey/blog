@@ -10,9 +10,7 @@ import {
   navigationCurrent,
 } from '../src/lib/paths.mjs';
 const baseline = JSON.parse(
-  readFileSync(
-    new URL('../docs/migration/legacy-baseline.json', import.meta.url),
-  ),
+  readFileSync(new URL('./fixtures/legacy-baseline.json', import.meta.url)),
 );
 
 test('all 57 existing article paths match the old Hexo output, including case and nested category', () => {

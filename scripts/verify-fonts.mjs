@@ -3,9 +3,9 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Font, woff2 } from 'fonteditor-core';
-import { collectFontCharacters } from '../optimize-fonts.mjs';
+import { collectFontCharacters } from './optimize-fonts.mjs';
 
-const dist = fileURLToPath(new URL('../../dist/', import.meta.url));
+const dist = fileURLToPath(new URL('../dist/', import.meta.url));
 await woff2.init();
 const originals = new Map([
   [400, new Map()],

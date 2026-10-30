@@ -42,7 +42,7 @@ draft: true
 - 实质更新时可填 `updated: "2026-11-01T20:00:00+08:00"`，不得早于发表时间；未填则沿用历史映射，新文章等于发布日期。可见日期、JSON-LD、Atom 和 sitemap 共用该值，不随部署刷新。
 - 可选 `image: /images/your-cover.webp` 应指向真实相关配图。无图时分享卡片沿用头像，文章 JSON-LD 不把头像当配图。
 - categories 数组表示分类层级；保留旧文章的大小写、多级路径及 .html 地址，不因整理目录改链接。
-- 正文标记见[写作样式](reading-marks.md)。有意修改旧文章时，在 docs/migration/source-edits.json 记录理由和 SHA-256，不覆盖独立迁移基线。
+- 正文标记见[写作样式](reading-marks.md)。有意修改旧文章时，在 tests/fixtures/source-edits.json 记录理由和 SHA-256，不覆盖独立迁移基线。
 
 ## 工程入口
 
@@ -51,7 +51,7 @@ draft: true
 | source/_posts/；source/about、links、guestbook/ | 原文章、独立页和友链数据 |
 | src/content.config.ts；src/lib/posts.ts、listings.ts | 字段约束、文章、分类标签、分页 |
 | src/data/site.ts | 共用站点资料，description 为简介，motto 为寄语 |
-| src/data/legacy-posts.json；docs/migration/ | 运行时旧地址映射；独立校验基线和修订清单 |
+| src/data/legacy-posts.json；tests/fixtures/ | 运行时旧地址映射；独立校验基线和修订清单 |
 | src/layouts/Base.astro；src/components/ | 页面框架、头尾与组件 |
 | src/styles/global.css、site.css 及 site/ 模块 | 基础规则与按既有级联顺序加载的样式，导航规则集中在 navigation.css |
 | src/pages/；src/lib/seo.mjs | 页面、Atom / sitemap；标题与结构化数据 |

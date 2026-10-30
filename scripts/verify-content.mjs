@@ -1,15 +1,15 @@
 import { readFile, readdir, access, writeFile, mkdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { resolve, join } from 'node:path';
-import { normalizeCommentPath, routeFile } from '../../src/lib/paths.mjs';
+import { normalizeCommentPath, routeFile } from '../src/lib/paths.mjs';
 
-const root = resolve(new URL('../../', import.meta.url).pathname);
+const root = resolve(new URL('../', import.meta.url).pathname);
 const baseline = JSON.parse(
-  await readFile(join(root, 'docs/migration/legacy-baseline.json'), 'utf-8'),
+  await readFile(join(root, 'tests/fixtures/legacy-baseline.json'), 'utf-8'),
 );
 // Explicit editorial revisions have their own hashes; keep the Hexo baseline intact.
 const sourceEdits = JSON.parse(
-  await readFile(join(root, 'docs/migration/source-edits.json'), 'utf-8'),
+  await readFile(join(root, 'tests/fixtures/source-edits.json'), 'utf-8'),
 );
 const errors = [];
 const legacyLinkWarnings = [];
@@ -163,7 +163,7 @@ const report = {
 };
 await mkdir(join(root, 'work'), { recursive: true });
 await writeFile(
-  join(root, 'work/migration-verification.json'),
+  join(root, 'work/content-verification.json'),
   JSON.stringify(report, null, 2) + '\n',
 );
 console.log(JSON.stringify(report, null, 2));

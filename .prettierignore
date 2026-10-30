@@ -1,3 +1,4 @@
 src/assets/
 src/data/*.json
+tests/fixtures/*.json
 **/*.py

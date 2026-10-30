@@ -1,10 +1,10 @@
 import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 const read = (path) =>
-  readFileSync(new URL('../../dist/' + path, import.meta.url), 'utf8');
+  readFileSync(new URL('../dist/' + path, import.meta.url), 'utf8');
 const baseline = JSON.parse(
   readFileSync(
-    new URL('../../docs/migration/legacy-baseline.json', import.meta.url),
+    new URL('../tests/fixtures/legacy-baseline.json', import.meta.url),
   ),
 );
 for (const post of baseline.posts) {
@@ -41,7 +41,7 @@ const deployment = JSON.parse(read('vercel.json'));
 assert.equal(deployment.headers[0].source, '/sw.js');
 assert.match(deployment.headers[0].headers[0].value, /no-cache/);
 console.log(
-  'Feature parity: 57 article shells; 20 full RSS entries; 57 Baidu sitemap entries; verification, manifest and worker cache headers present.',
+  'Site features: 57 article shells; 20 full RSS entries; 57 Baidu sitemap entries; verification, manifest and worker cache headers present.',
 );
 
 for (const root of [
