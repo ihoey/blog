@@ -25,7 +25,8 @@ export async function getPosts() {
       const path =
         old?.path ?? articlePath(entry.id, entry.data.categories, date);
       const updated = postUpdated(entry.data.updated, old?.updated, date);
-      const description = entry.data.description || summary(entry.body || '');
+      const description =
+        entry.data.description || summary(entry.body || '') || entry.data.title;
       return {
         ...entry,
         date,
@@ -39,8 +40,6 @@ export async function getPosts() {
           entry.data.description,
         ),
         description,
-        seoDescription:
-          entry.data.seoDescription || description || entry.data.title,
       };
     }),
   );

@@ -9,7 +9,7 @@
 - src/data/site.ts 单独维护站点 SEO 描述；保留首页寄语和友链交换描述。
 - src/lib/seo.mjs 生成关联的 WebSite / Person / WebPage / BlogPosting 图谱。作者页使用 AboutPage，作者及发布者指向真实个人；文章配图只有显式配置 image 才输出，不将头像伪装为正文配图。
 - Base.astro 统一 canonical、OG、Twitter、结构化数据。错误页显式 noindex，不输出内容图谱。列表页的 SEO 标题单独带页码，界面标题和伊布文案不受影响；列表元描述包含主题、总篇数及分页位置。
-- 新增可选 seoDescription、updated、image。seoDescription 不参与首页预览或 Atom summary；历史文章没有新增这些字段，沿用既有摘要。updated → 历史映射 → 发布日期按顺序回退；显式时间必须有效且不早于发表时间。同日有实际更新也显示更新日期，所有输出共用同一个时间。
+- 文章复用可选 description，用于列表摘要、Atom summary、搜索 / 分享和结构化数据，不另设文章 SEO 描述字段；未填写时自动提取现有开头摘要，为空则回退到标题。历史文章未改，首页现有富文本预览保留。新增可选 updated / image；updated → 历史映射 → 发布日期按顺序回退；显式时间必须有效且不早于发表时间。同日有实际更新也显示更新日期，所有输出共用同一个时间。
 - Vercel 为 /atom.xml 显式设置 application/atom+xml; charset=utf-8；保留现有全文 HTML Atom、20 篇条目、自链接和旧文章 ID，不改订阅协议。
 - scripts/verify-seo.mjs 纳入 pnpm verify，验证全站元数据和图谱、文章可见日期 / JSON-LD / Atom / 两份 sitemap 一致性、错误页 noindex 及 Atom 响应头配置。单元测试覆盖日期回退 / 拒绝倒退、分页隔离、图谱引用和按需配图。
 
