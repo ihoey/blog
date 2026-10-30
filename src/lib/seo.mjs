@@ -27,7 +27,7 @@ export function listingSEO(listing) {
 }
 
 /**
- * @param {{ site: {url: string, name: string, seoDescription: string, author: string}, title: string, description: string, canonical: string, date?: Date, updated?: Date, image?: string, tags?: string[] }} options
+ * @param {{ site: {url: string, name: string, description: string, author: string}, title: string, description: string, canonical: string, date?: Date, updated?: Date, image?: string, tags?: string[] }} options
  */
 export function pageStructuredData({
   site,
@@ -41,59 +41,47 @@ export function pageStructuredData({
 }) {
   const home = new URL('/', site.url).href;
   const url = new URL(canonical, home).href;
-  const author = new URL('/about/', home).href;
-  const websiteId = `${home}#website`;
-  const personId = `${author}#person`;
-  const pageId = `${url}#webpage`;
-  return {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'WebSite',
-        '@id': websiteId,
-        url: home,
-        name: site.name,
-        description: site.seoDescription,
-        inLanguage: 'zh-CN',
-        publisher: { '@id': personId },
-      },
-      {
-        '@type': 'Person',
-        '@id': personId,
-        name: site.author,
-        url: author,
-      },
-      {
-        '@type': canonical === '/about/' ? 'AboutPage' : 'WebPage',
-        '@id': pageId,
-        url,
-        name: title,
-        description,
-        inLanguage: 'zh-CN',
-        isPartOf: { '@id': websiteId },
-        ...(date ? { mainEntity: { '@id': `${url}#article` } } : {}),
-        ...(canonical === '/about/' ? { mainEntity: { '@id': personId } } : {}),
-      },
-      ...(date
-        ? [
-            {
-              '@type': 'BlogPosting',
-              '@id': `${url}#article`,
-              headline: title,
-              description,
-              url,
-              mainEntityOfPage: { '@id': pageId },
-              isPartOf: { '@id': websiteId },
-              datePublished: date.toISOString(),
-              dateModified: (updated || date).toISOString(),
-              inLanguage: 'zh-CN',
-              author: { '@id': personId },
-              publisher: { '@id': personId },
-              ...(image ? { image: new URL(image, url).href } : {}),
-              ...(tags.length ? { keywords: tags } : {}),
-            },
-          ]
-        : []),
-    ],
+  const author = {
+    '@type': 'Person',
+    name: site.author,
+    url: new URL('/about/', home).href,
   };
+  if (date) {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: title,
+      description,
+      url,
+      mainEntityOfPage: url,
+      datePublished: date.toISOString(),
+      dateModified: (updated || date).toISOString(),
+      inLanguage: 'zh-CN',
+      author,
+      publisher: author,
+      ...(image ? { image: new URL(image, url).href } : {}),
+      ...(tags.length ? { keywords: tags } : {}),
+    };
+  }
+  if (canonical === '/') {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: site.name,
+      description: site.description,
+      url: home,
+      inLanguage: 'zh-CN',
+      publisher: author,
+    };
+  }
+  if (canonical === '/about/') {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: title,
+      description,
+      url,
+      mainEntity: author,
+    };
+  }
 }

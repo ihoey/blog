@@ -129,6 +129,7 @@ html {
   display: none;
 }
 .site-topbar .main-nav {
+  display: flex;
   width: auto;
   margin: 0;
   justify-content: flex-start;
@@ -137,11 +138,18 @@ html {
   white-space: nowrap;
 }
 .site-topbar .main-nav a {
+  display: flex;
+  position: relative;
+  align-items: center;
   min-height: 38px;
   padding: 8px 10px;
   flex-direction: row;
   gap: 7px;
   border-radius: 999px;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .site-topbar .main-nav a:is(:hover, :focus-visible) {
   transform: none;
@@ -149,6 +157,10 @@ html {
 .site-topbar .main-nav a::after,
 .site-topbar .main-nav a:is(:hover, :focus-visible)::after,
 .site-topbar .main-nav a[aria-current]::after {
+  content: '';
+  position: absolute;
+  background: var(--accent);
+  transition: transform 0.22s ease-out;
   left: calc(50% - 12px);
   width: 24px;
   bottom: 2px;
@@ -247,6 +259,7 @@ html {
   color: var(--nav-ink);
 }
 .site-topbar .main-nav .icon {
+  font-size: 12px;
   color: inherit;
 }
 .site-topbar .main-nav a[aria-current] {
@@ -321,11 +334,19 @@ html {
   transform: none;
   transition: none;
 }
+[data-effects='off'] .site-topbar .main-nav a {
+  transform: none !important;
+  transition: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .nav-hover {
     transition: none;
   }
   .site-topbar .main-nav a .icon {
+    transform: none !important;
+    transition: none;
+  }
+  .site-topbar .main-nav a {
     transform: none !important;
     transition: none;
   }

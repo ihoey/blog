@@ -35,7 +35,7 @@ pnpm validate
 
 - `source/_posts/`：文章 Markdown。
 - `source/about/`、`source/guestbook/`、`source/links/`：独立页正文与友链数据。
-- `src/`：Astro 页面、组件、样式及交互；`src/data/site.ts` 保存友链交换资料。
+- `src/`：Astro 页面、组件、样式及交互；`src/data/site.ts` 统一保存站点与友链资料。
 - `static/`：直接发布的字体、图片、评论 SDK、二维码等资源。
 - `docs/migration/`：历史 URL / 锚点基线、内容修订记录及迁移说明。
 - `static/sw.js`：旧缓存退役脚本，发布时继续保留原地址。

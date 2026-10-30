@@ -122,44 +122,6 @@ body {
   margin-top: 9px;
   color: var(--muted);
 }
-.main-nav {
-  justify-content: center;
-  gap: 31px;
-  margin-top: 23px;
-  font-size: 13px;
-  color: var(--ink);
-}
-.main-nav a {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 0;
-}
-.main-nav .icon {
-  font-size: 12px;
-  color: var(--muted);
-}
-.main-nav a::after {
-  content: '';
-  position: absolute;
-  height: 1px;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.22s ease-out;
-}
-.main-nav a:hover::after,
-.main-nav a[aria-current]::after {
-  transform: scaleX(1);
-  width: 100%;
-  height: 1px;
-  left: 0;
-  bottom: 0;
-  border-radius: 0;
-}
 .home-quote {
   margin-top: 25px;
   color: var(--muted);
@@ -297,25 +259,6 @@ body {
   background: var(--reading);
   padding: 26px var(--preview-inset) 10px;
   border-radius: 8px;
-}
-.section-heading {
-  padding-bottom: 17px;
-}
-.section-heading h2 {
-  font-size: 16px;
-  font-weight: 500;
-}
-.section-heading > a {
-  font-size: 11px;
-}
-.section-heading h2 span {
-  font-size: 11px;
-}
-.topic-links {
-  justify-content: center;
-  gap: 6px 20px;
-  font-size: 12px;
-  padding-top: 17px;
 }
 .post-row {
   display: block;
@@ -722,16 +665,6 @@ body {
     top: 14px;
     right: 16px;
   }
-  .main-nav {
-    width: auto;
-    gap: 22px;
-    font-size: 12px;
-    margin-top: 21px;
-  }
-  .main-nav a {
-    flex-direction: column;
-    gap: 7px;
-  }
   .home-quote {
     font-size: 12px;
     margin-top: 23px;
@@ -763,18 +696,8 @@ body {
     font-size: 10px;
     margin-bottom: 18px;
   }
-  .topic-links {
-    gap: 4px 15px;
-    font-size: 11px;
-  }
   .post-row {
     padding-top: 26px;
-  }
-  .section-heading h2 {
-    font-size: 15px;
-  }
-  .section-heading > a {
-    font-size: 10px;
   }
   .scissor-divider {
     margin-top: 14px;
@@ -875,13 +798,6 @@ body {
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 0.25s;
-}
-
-.section-heading-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
 }
 
 .sidebar-toggle {
@@ -1015,8 +931,7 @@ body {
   border-radius: 0;
   font-size: 13px;
 }
-.discussion-link,
-.section-heading > a {
+.discussion-link {
   font-size: 12px;
 }
 [data-effects='off'] .adjacent-posts :is(a, b) {
@@ -1063,13 +978,10 @@ body {
   color: inherit;
 }
 /* Muted links still need a visible interaction state. */
-:is(
-  .post-category,
-  .discussion-link,
-  .section-heading > a,
-  .article-tags a,
-  .author-stats a
-):is(:hover, :focus-visible) {
+:is(.post-category, .discussion-link, .article-tags a, .author-stats a):is(
+  :hover,
+  :focus-visible
+) {
   color: var(--accent);
 }
 .author-stats a:is(:hover, :focus-visible) b {

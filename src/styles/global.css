@@ -118,30 +118,6 @@
     padding-left: 6px;
     letter-spacing: 0;
   }
-  .main-nav {
-    display: flex;
-    gap: 26px;
-    font-size: 14px;
-    color: var(--muted);
-  }
-  .main-nav a {
-    padding: 5px 0;
-    position: relative;
-  }
-  .main-nav a[aria-current] {
-    color: var(--ink);
-    font-weight: 600;
-  }
-  .main-nav a[aria-current]::after {
-    content: '';
-    width: 4px;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 50%;
-    position: absolute;
-    bottom: -4px;
-    left: calc(50% - 2px);
-  }
   .skip-link {
     position: fixed;
     top: 8px;
@@ -203,43 +179,6 @@
   .home-articles {
     max-width: 920px;
     padding-bottom: 28px;
-  }
-  .section-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--line);
-    gap: 20px;
-  }
-  .section-heading h2 {
-    font-size: 20px;
-    font-weight: 650;
-  }
-  .section-heading h2 span {
-    color: var(--muted);
-    margin-left: 8px;
-    font-size: 13px;
-    font-weight: 400;
-  }
-  .section-heading > a {
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .topic-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 22px;
-    font-size: 13px;
-    padding: 20px 0 8px;
-    color: var(--muted);
-  }
-  .topic-links a {
-    padding: 4px 0;
-  }
-  .topic-links .selected {
-    color: var(--accent);
-    font-weight: 650;
   }
   .post-row {
     display: grid;
@@ -689,9 +628,6 @@
     .intro-companion {
       margin-right: 12px;
     }
-    .main-nav {
-      gap: 18px;
-    }
     .site-byline {
       display: none;
     }
@@ -709,12 +645,6 @@
     }
     .site-name {
       font-size: 20px;
-    }
-    .main-nav {
-      width: 100%;
-      justify-content: space-between;
-      gap: 10px;
-      font-size: 13px;
     }
     .intro {
       min-height: 0;
@@ -743,9 +673,6 @@
     }
     .post-category {
       font-size: 11px;
-    }
-    .topic-links {
-      gap: 6px 18px;
     }
     .taxonomy-list,
     .friend-list {

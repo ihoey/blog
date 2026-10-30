@@ -42,12 +42,12 @@ test('paginated SEO names the page while leaving the visible listing object inta
   assert.equal(listing.title, 'JavaScript');
 });
 
-test('structured identities resolve within the graph and article images are opt-in', () => {
+test('article metadata uses the real author and only an explicit article image', () => {
   const options = {
     site: {
       url: 'https://blog.ihoey.com',
       name: '梦魇小栈',
-      seoDescription: '技术博客',
+      description: '技术博客',
       author: 'Ihoey',
     },
     canonical: '/posts/example.html',
@@ -57,34 +57,21 @@ test('structured identities resolve within the graph and article images are opt-
     updated: new Date('2023-01-01T00:00:00Z'),
     tags: ['JavaScript'],
   };
-  const graph = pageStructuredData(options)['@graph'];
-  const article = graph.find((node) => node['@type'] === 'BlogPosting');
+  const article = pageStructuredData(options);
   assert.equal(article.datePublished, options.date.toISOString());
   assert.equal(article.dateModified, options.updated.toISOString());
+  assert.equal(article.author.name, 'Ihoey');
+  assert.equal(article.author.url, 'https://blog.ihoey.com/about/');
   assert.equal(article.image, undefined); // A portrait is not an article illustration.
-  for (const node of graph) {
-    for (const key of [
-      'author',
-      'publisher',
-      'mainEntityOfPage',
-      'isPartOf',
-      'mainEntity',
-    ]) {
-      if (node[key])
-        assert.ok(graph.some((target) => target['@id'] === node[key]['@id']));
-    }
-  }
   assert.equal(
-    pageStructuredData({ ...options, image: './cover.webp' })['@graph'].at(-1)
-      .image,
+    pageStructuredData({ ...options, image: './cover.webp' }).image,
     'https://blog.ihoey.com/posts/cover.webp',
   );
   const home = pageStructuredData({
     ...options,
     canonical: '/',
     date: undefined,
-    updated: undefined,
-  })['@graph'];
-  assert.ok(home.some((node) => node['@type'] === 'WebSite'));
-  assert.ok(!home.some((node) => node['@type'] === 'BlogPosting'));
+  });
+  assert.equal(home.name, options.site.name);
+  assert.equal(home.description, options.site.description);
 });

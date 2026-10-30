@@ -2,6 +2,8 @@
 
 本目录保存旧方案的来源记录，不参与当前 Astro 构建或发布。
 
+- `astro-migration-2026-10-30.md`：迁移至 Astro 及后续维护的完整历史进度快照，包含已被取代的目录和操作方案；当前入口见 ../astro-migration.md。
+
 - `hexo-package.json`：旧 Hexo 依赖与脚本快照；当前依赖以根 package.json / pnpm-lock.yaml 为准。
 - `hitalk-hexo-history.md`：旧主题评论接入及手动发布记录；当前接入见 ../hitalk.md。
 - `export-legacy.py`：迁移时一次性读取外部 Hexo db.json / public 的工具，不运行 Hexo 钩子。它会重写 docs/migration/legacy-baseline.json；现有基线已核实，不用于日常写作或构建，也不要为了更新文章重新生成。

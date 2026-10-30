@@ -43,8 +43,7 @@ const tips: Tip[] = [
     text: '主人的社交 ID，不关注下嘛？',
   },
   {
-    selector:
-      '.author-stats a, .taxonomy-list a, .sidebar-topics a, .topic-links a',
+    selector: '.author-stats a, .taxonomy-list a, .sidebar-topics a',
     text: (el) => `去「${label(el)}」里逛逛吧～`,
   },
   {

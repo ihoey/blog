@@ -13,13 +13,13 @@
 
 ## 验证与当前状态
 
-已完成本地整理和验证，准备提交推送；不等待远端自动部署。
+本节记录 2026-10-29 的工程整理及当时验证；源码已提交推送。当前维护状态见 [维护入口](astro-migration.md)。
 
 - 唯一工作区：`/Users/ihoey/personal/project/blog`，main 跟踪 origin/main；两个迁移 / 发布 worktree 已移除。Hexo 保留分支和 archive/hexo-2026-09-18 标签；分叉的旧本地 master 先保留 archive/local-master-2017，再跟踪 origin/master。
 - 旧性能报告备份到 work/archives/astro-migration-2026-10-29，旧 Hexo 生成物移至 work/archives/hexo-generated；这些目录在 Git 中忽略，不发布。
 - Astro 7.3.3 → 7.4.4，Markdown 7.3.1 → 7.3.5，Vite 8.3.0 → 8.3.5；在允许的版本范围刷新间接依赖，包括 sharp 0.35.5、undici 8.12.3、source-map-js 1.2.2、fast-uri 3.1.9。Node 要求及 .nvmrc 同步为 22.23.4，pnpm 仍为 10.28.2。
 - npm mirror 的审计端点返回不存在，项目 registry 明确为官方 npm；最终 pnpm audit 返回 info / low / moderate / high / critical 均为 0（2026-10-29 当次结果），不将其解释为没有任何潜在风险。冻结锁文件安装通过。
-- Base 提取 SiteHeader / SiteFooter，页面增强移至 page-enhancements.ts；站名 / 格言 / 导航集中到 site.ts。v2.css 拆成 8 个按原级联顺序加载的模块，由 site.css 统一入口管理。旧规则顺序经规范化比较完全一致，本轮不盲目重排跨模块覆盖。
+- Base 提取 SiteHeader / SiteFooter，页面增强移至 page-enhancements.ts；站名 / 格言 / 导航集中到 site.ts。v2.css 拆成 8 个按原级联顺序加载的模块，由 site.css 统一入口管理。首次整理保持级联顺序；2026-10-30 后续删除失效首页样式，并将导航基础规则收拢到 navigation.css，不继续堆叠覆盖。
 - 新增 src/data/legacy-posts.json，运行处理不再读取迁移文档；增加它与独立基线的字段一致性测试。文章 source 与 static 无改动。
 - 加入 Prettier 及 Astro 插件，统一工程代码格式；排除正文、SVG 原始路径、静态 SDK、Python 和基线 JSON。pnpm validate 串联格式 / 类型 / 测试 / 构建 / 验证。
 - CI 分为只读 validate 与 main 专用 publish，发布仅接收通过验证的 artifact；发布作业独享 contents:write，PR 不上传或发布产物。Actions 按 SHA 固定，YAML、作业依赖、PR 发布条件和 shell 语法本地检查通过。Dependabot 定期创建 npm / Actions 更新 PR，不自动合并。

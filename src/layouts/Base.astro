@@ -30,7 +30,7 @@ interface Props {
 const {
   title,
   seoTitle = title,
-  description = site.seoDescription,
+  description = site.description,
   canonical = Astro.url.pathname,
   article = false,
   comments = false,
@@ -128,7 +128,7 @@ const structuredData = pageStructuredData({
       />
     )}
     <title>{fullTitle}</title>
-    {!noindex && (
+    {!noindex && structuredData && (
       <script
         is:inline
         type="application/ld+json"

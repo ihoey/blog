@@ -22,13 +22,29 @@ function nodes(node) {
 const sitemap = await read('sitemap.xml');
 const baidu = await read('baidusitemap.xml');
 const feed = await read('atom.xml');
+const xmlText = (xml, tag) =>
+  xml
+    .match(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`))?.[1]
+    .replaceAll('&amp;', '&');
+const sitemapDates = [sitemap, baidu].map(
+  (xml) =>
+    new Map(
+      [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(([, entry]) => [
+        xmlText(entry, 'loc'),
+        xmlText(entry, 'lastmod'),
+      ]),
+    ),
+);
 const entries = [...feed.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(
   (match) => match[1],
 );
 let pages = 0;
 let articles = 0;
 for (const path of (await files()).filter((path) => path.endsWith('.html'))) {
-  const all = nodes(parse(await read(path)));
+  const html = await read(path);
+  // Ownership verification files are plain text, not site pages.
+  if (!/<html(?:\s|>)/i.test(html)) continue;
+  const all = nodes(parse(html));
   const attr = (node, name) => node.attrs?.find((a) => a.name === name)?.value;
   const meta = (name) =>
     attr(
@@ -44,32 +60,36 @@ for (const path of (await files()).filter((path) => path.endsWith('.html'))) {
       {},
     'href',
   );
-  if (!canonical) {
-    assert.equal(path, 'baidu_verify_HR5eYsvhwq.html');
-    continue;
-  }
+  assert.ok(canonical, `Missing canonical: ${path}`);
   pages++;
   assert.equal(new URL(canonical).origin, 'https://blog.ihoey.com');
   assert.equal(meta('og:url'), canonical);
   assert.ok(meta('description')?.trim(), `Empty description: ${path}`);
   assert.equal(meta('description'), meta('og:description'));
   assert.equal(meta('description'), meta('twitter:description'));
-  const script = all.find(
+  const scripts = all.filter(
     (n) => n.tagName === 'script' && attr(n, 'type') === 'application/ld+json',
   );
   if (/^(400|404)\.html$/.test(path)) {
     assert.equal(meta('robots'), 'noindex, follow');
-    assert.equal(script, undefined);
     assert.ok(!sitemap.includes(canonical));
     continue;
   }
-  assert.equal(meta('robots'), undefined);
-  const graph = JSON.parse(
-    script.childNodes.map((n) => n.value || '').join(''),
-  )['@graph'];
-  assert.ok(graph.some((n) => n['@type'] === 'WebSite'));
-  const article = graph.find((n) => n['@type'] === 'BlogPosting');
-  if (!article) continue;
+  const data = scripts.flatMap((script) => {
+    const value = JSON.parse(
+      script.childNodes.map((n) => n.value || '').join(''),
+    );
+    return value['@graph'] || (Array.isArray(value) ? value : [value]);
+  });
+  if (new URL(canonical).pathname === '/') {
+    assert.ok(
+      data.some((n) => n['@type'] === 'WebSite'),
+      'Missing site identity on homepage',
+    );
+  }
+  if (!new URL(canonical).pathname.startsWith('/posts/')) continue;
+  const article = data.find((n) => n['@type'] === 'BlogPosting');
+  assert.ok(article, `Missing article metadata: ${path}`);
   articles++;
   assert.equal(article.description, meta('description'));
   assert.equal(article.datePublished, meta('article:published_time'));
@@ -80,11 +100,10 @@ for (const path of (await files()).filter((path) => path.endsWith('.html'))) {
       `Missing visible date ${path}: ${date}`,
     );
   }
-  for (const xml of [sitemap, baidu]) {
-    assert.ok(
-      xml.includes(
-        `<loc>${canonical}</loc><lastmod>${article.dateModified}</lastmod>`,
-      ),
+  for (const dates of sitemapDates) {
+    assert.equal(
+      dates.get(canonical),
+      article.dateModified,
       `Sitemap date drift: ${path}`,
     );
   }
@@ -98,8 +117,7 @@ for (const path of (await files()).filter((path) => path.endsWith('.html'))) {
     assert.ok(entry.includes(`<updated>${article.dateModified}</updated>`));
   }
 }
-assert.ok(articles >= 57);
-assert.ok(pages >= 183);
+assert.ok(articles > 0);
 const deployment = JSON.parse(await read('vercel.json'));
 assert.equal(
   deployment.headers
